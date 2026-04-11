@@ -15,21 +15,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>RFC 3339 datetime string of when this period ends.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? EndsAt { get; set; }
-#nullable restore
-#else
-        public UntypedNode EndsAt { get; set; }
-#endif
+        public DateTimeOffset? EndsAt { get; set; }
         /// <summary>RFC 3339 datetime string of when this period starts.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public UntypedNode? StartsAt { get; set; }
-#nullable restore
-#else
-        public UntypedNode StartsAt { get; set; }
-#endif
+        public DateTimeOffset? StartsAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod"/> and sets the default values.
         /// </summary>
@@ -55,8 +43,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ends_at", n => { EndsAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "starts_at", n => { StartsAt = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "ends_at", n => { EndsAt = n.GetDateTimeOffsetValue(); } },
+                { "starts_at", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -66,8 +54,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("ends_at", EndsAt);
-            writer.WriteObjectValue<UntypedNode>("starts_at", StartsAt);
+            writer.WriteDateTimeOffsetValue("ends_at", EndsAt);
+            writer.WriteDateTimeOffsetValue("starts_at", StartsAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
