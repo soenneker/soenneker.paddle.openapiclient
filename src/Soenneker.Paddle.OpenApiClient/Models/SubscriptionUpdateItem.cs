@@ -15,10 +15,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID for the price to add to this subscription, prefixed with `pri_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PriceId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateItem_price_id? PriceId { get; set; }
 #nullable restore
 #else
-        public string PriceId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateItem_price_id PriceId { get; set; }
 #endif
         /// <summary>Quantity of this item to add to the subscription. If updating an existing item and not changing the quantity, you may omit `quantity`.</summary>
         public double? Quantity { get; set; }
@@ -40,7 +40,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "price_id", n => { PriceId = n.GetStringValue(); } },
+                { "price_id", n => { PriceId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateItem_price_id>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateItem_price_id.CreateFromDiscriminatorValue); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
             };
         }
@@ -51,7 +51,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("price_id", PriceId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateItem_price_id>("price_id", PriceId);
             writer.WriteDoubleValue("quantity", Quantity);
         }
     }

@@ -16,18 +16,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Adds details of existing Paddle entities to webhook payloads sent in the simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationEntitiesCreate? Entities { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate_entities? Entities { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationEntitiesCreate Entities { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate_entities Entities { get; set; }
 #endif
         /// <summary>Options that determine which webhooks are sent as part of a simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsCreate? Options { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate_options? Options { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsCreate Options { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate_options Options { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -47,8 +47,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "entities", n => { Entities = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationEntitiesCreate>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationEntitiesCreate.CreateFromDiscriminatorValue); } },
-                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsCreate>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsCreate.CreateFromDiscriminatorValue); } },
+                { "entities", n => { Entities = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate_entities>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate_entities.CreateFromDiscriminatorValue); } },
+                { "options", n => { Options = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate_options>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate_options.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,8 +58,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationEntitiesCreate>("entities", Entities);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsCreate>("options", Options);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate_entities>("entities", Entities);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate_options>("options", Options);
         }
     }
 }

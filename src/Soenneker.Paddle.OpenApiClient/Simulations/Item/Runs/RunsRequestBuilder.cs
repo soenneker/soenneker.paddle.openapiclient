@@ -50,17 +50,17 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs
         /// Returns a paginated list of simulation runs. Use the query parameters to [page through results](https://developer.paddle.com/api-reference/about/pagination).Use the `include` parameter to [include related entities](https://developer.paddle.com/api-reference/about/include-entities) in the response.
         /// List runs for a simulation <see href="https://developer.paddle.com/api-reference/simulation-runs/list-simulation-runs" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,23 +68,23 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsGetResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new simulation run for a simulation.If successful, your response includes a copy of the new simulation run entity.
         /// Create a run for a simulation <see href="https://developer.paddle.com/api-reference/simulation-runs/create-simulation-run" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsPostResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsPostResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -92,7 +92,7 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsPostResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of simulation runs. Use the query parameters to [page through results](https://developer.paddle.com/api-reference/about/pagination).Use the `include` parameter to [include related entities](https://developer.paddle.com/api-reference/about/include-entities) in the response.
@@ -177,7 +177,7 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs
             [QueryParameter("include")]
             public global::Soenneker.Paddle.OpenApiClient.Models.SimulationsRunIncludeEnum[] Include { get; set; }
 #endif
-            /// <summary>Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id`.</summary>
+            /// <summary>&quot;Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]
@@ -187,7 +187,7 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs
             [QueryParameter("order_by")]
             public string OrderBy { get; set; }
 #endif
-            /// <summary>Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.</summary>
+            /// <summary>&quot;Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
         }

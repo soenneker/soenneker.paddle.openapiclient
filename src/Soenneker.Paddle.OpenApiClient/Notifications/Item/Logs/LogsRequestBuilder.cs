@@ -37,17 +37,17 @@ namespace Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs
         /// Returns a paginated list of notification logs for a notification. A log includes information about delivery attempts, including failures.Notifications older than 90 days aren&apos;t retained. If you try to list logs for a notification that&apos;s no longer retained, Paddle returns an error.
         /// List logs for a notification <see href="https://developer.paddle.com/api-reference/notification-logs/list-notification-logs" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs.LogsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs.LogsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs.LogsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs.LogsGetResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs.LogsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of notification logs for a notification. A log includes information about delivery attempts, including failures.Notifications older than 90 days aren&apos;t retained. If you try to list logs for a notification that&apos;s no longer retained, Paddle returns an error.
@@ -101,7 +101,7 @@ namespace Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.</summary>
+            /// <summary>&quot;Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
         }

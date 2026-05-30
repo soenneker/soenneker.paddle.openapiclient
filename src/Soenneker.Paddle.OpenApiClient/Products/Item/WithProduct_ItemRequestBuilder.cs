@@ -37,17 +37,17 @@ namespace Soenneker.Paddle.OpenApiClient.Products.Item
         /// Returns a product using its ID.Use the `include` parameter to include related price entities in the response.
         /// Get a product <see href="https://developer.paddle.com/api-reference/products/get-product" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_GetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.GetProduct200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_GetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_ItemRequestBuilder.WithProduct_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetProduct200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_ItemRequestBuilder.WithProduct_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_GetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_ItemRequestBuilder.WithProduct_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetProduct200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_ItemRequestBuilder.WithProduct_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,24 +55,24 @@ namespace Soenneker.Paddle.OpenApiClient.Products.Item
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_GetResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_GetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.GetProduct200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.GetProduct200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a product using its ID.Paddle does not upload product images to a CDN. For `image_url`, you should host images on an HTTPS server that&apos;s publicly accessible. We recommend using square images (`1:1` ratio).If successful, your response includes a copy of the updated product entity.
         /// Update a product <see href="https://developer.paddle.com/api-reference/products/update-product" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_PatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.UpdateProduct200"/></returns>
         /// <param name="body">Represents a product entity when updating products.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_PatchResponse?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.UpdateProduct200?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_PatchResponse> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.UpdateProduct200> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -81,7 +81,7 @@ namespace Soenneker.Paddle.OpenApiClient.Products.Item
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_PatchResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_PatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.UpdateProduct200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.UpdateProduct200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a product using its ID.Use the `include` parameter to include related price entities in the response.

@@ -37,18 +37,18 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Resume
         /// Resumes a paused subscription using its ID. Only `paused` subscriptions can be resumed. If an `active` subscription has a scheduled change to pause in the future, use this operation to set or change the resume date.You can&apos;t resume a `canceled` subscription.On resume, Paddle bills for a subscription immediately by default. Subscription billing dates are recalculated based on the resume date. Use the `on_resume` field to change this behavior.If successful, Paddle returns a copy of the updated subscription entity:* When resuming a `paused` subscription immediately, the subscription status is `active`, and billing dates are updated to reflect the resume date.* When scheduling a `paused` subscription to resume on a date in the future, the subscription status is `paused`, and `scheduled_change.resume_at` is updated to reflect the scheduled resume date.* When changing the resume date for an `active` subscription that&apos;s scheduled to pause, the subscription status is `active` and `scheduled_change.resume_at` is updated to reflect the scheduled resume date.This operation may result in an immediate charge, so responses may take longer than usual while a payment attempt is processed.
         /// Resume a paused subscription <see href="https://developer.paddle.com/api-reference/subscriptions/resume-subscription" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Resume.ResumePostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ResumeSubscription200"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Resume.ResumePostResponse?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResume body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ResumeSubscription200?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResume body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Resume.ResumePostResponse> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResume body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ResumeSubscription200> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResume body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Resume
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Resume.ResumePostResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Resume.ResumePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ResumeSubscription200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ResumeSubscription200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Resumes a paused subscription using its ID. Only `paused` subscriptions can be resumed. If an `active` subscription has a scheduled change to pause in the future, use this operation to set or change the resume date.You can&apos;t resume a `canceled` subscription.On resume, Paddle bills for a subscription immediately by default. Subscription billing dates are recalculated based on the resume date. Use the `on_resume` field to change this behavior.If successful, Paddle returns a copy of the updated subscription entity:* When resuming a `paused` subscription immediately, the subscription status is `active`, and billing dates are updated to reflect the resume date.* When scheduling a `paused` subscription to resume on a date in the future, the subscription status is `paused`, and `scheduled_change.resume_at` is updated to reflect the scheduled resume date.* When changing the resume date for an `active` subscription that&apos;s scheduled to pause, the subscription status is `active` and `scheduled_change.resume_at` is updated to reflect the scheduled resume date.This operation may result in an immediate charge, so responses may take longer than usual while a payment attempt is processed.

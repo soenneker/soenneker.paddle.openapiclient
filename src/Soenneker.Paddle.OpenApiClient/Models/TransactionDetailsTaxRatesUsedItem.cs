@@ -25,10 +25,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Calculated totals for the tax applied to this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Totals? Totals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsTaxRatesUsedItem_totals? Totals { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Totals Totals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsTaxRatesUsedItem_totals Totals { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsTaxRatesUsedItem"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "tax_rate", n => { TaxRate = n.GetStringValue(); } },
-                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Totals>(global::Soenneker.Paddle.OpenApiClient.Models.Totals.CreateFromDiscriminatorValue); } },
+                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsTaxRatesUsedItem_totals>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsTaxRatesUsedItem_totals.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,7 +66,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Totals>("totals", Totals);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsTaxRatesUsedItem_totals>("totals", Totals);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

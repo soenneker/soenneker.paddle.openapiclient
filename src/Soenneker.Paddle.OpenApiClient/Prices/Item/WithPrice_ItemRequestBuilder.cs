@@ -37,17 +37,17 @@ namespace Soenneker.Paddle.OpenApiClient.Prices.Item
         /// Returns a price using its ID.Use the `include` parameter to include the related product entity in the response.
         /// Get a price <see href="https://developer.paddle.com/api-reference/prices/get-price" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_GetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.GetPrice200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_GetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_ItemRequestBuilder.WithPrice_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetPrice200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_ItemRequestBuilder.WithPrice_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_GetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_ItemRequestBuilder.WithPrice_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetPrice200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_ItemRequestBuilder.WithPrice_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,24 +55,24 @@ namespace Soenneker.Paddle.OpenApiClient.Prices.Item
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_GetResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_GetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.GetPrice200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.GetPrice200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a price using its ID.If successful, your response includes a copy of the updated price entity.
         /// Update a price <see href="https://developer.paddle.com/api-reference/prices/update-price" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_PatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.UpdatePrice200"/></returns>
         /// <param name="body">Represents a price entity when updating prices.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_PatchResponse?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.UpdatePrice200?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_PatchResponse> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.UpdatePrice200> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -81,7 +81,7 @@ namespace Soenneker.Paddle.OpenApiClient.Prices.Item
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_PatchResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_PatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.UpdatePrice200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.UpdatePrice200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a price using its ID.Use the `include` parameter to include the related product entity in the response.

@@ -46,10 +46,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreate_id? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreate_id Id { get; private set; }
 #endif
         /// <summary>Whether potentially sensitive fields should be sent to this notification destination. If omitted, defaults to `false`.</summary>
         public bool? IncludeSensitiveFields { get; set; }
@@ -61,7 +61,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName?> SubscribedEvents { get; set; }
 #endif
-        /// <summary>Whether Paddle should deliver real platform events, simulation events or both to this notification destination. If omitted, defaults to `platform`.</summary>
+        /// <summary>Whether Paddle should deliver real platform events, simulation events or both to this notification destination.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingTrafficSource? TrafficSource { get; set; }
         /// <summary>Where notifications should be sent for this destination.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingType? Type { get; set; }
@@ -71,7 +71,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public NotificationSettingCreate()
         {
             AdditionalData = new Dictionary<string, object>();
-            TrafficSource = global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingTrafficSource.Platform;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -96,7 +95,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "destination", n => { Destination = n.GetStringValue(); } },
                 { "endpoint_secret_key", n => { EndpointSecretKey = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreate_id>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreate_id.CreateFromDiscriminatorValue); } },
                 { "include_sensitive_fields", n => { IncludeSensitiveFields = n.GetBoolValue(); } },
                 { "subscribed_events", n => { SubscribedEvents = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>()?.AsList(); } },
                 { "traffic_source", n => { TrafficSource = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingTrafficSource>(); } },

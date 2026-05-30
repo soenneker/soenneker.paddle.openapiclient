@@ -37,17 +37,17 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.UpdatePaymentMethodT
         /// Returns a transaction that you can pass to a checkout to let customers update their payment details. Only for subscriptions where `collection_mode` is `automatic`.The transaction returned depends on the status of the related subscription:* Where a subscription is `past_due`, it returns the most recent `past_due` transaction.* Where a subscription is `active`, it creates a new zero amount transaction for the items on a subscription.You can use the returned `checkout.url`, or pass the returned transaction ID to Paddle.js to open a checkout to present customers with a way of updating their payment details.The `customer`, `address`, `business`, `discount`, `adjustments` and `adjustments_totals` properties are only returned in the response if the API key has read permissions for those related entities.
         /// Get a transaction to update payment method <see href="https://developer.paddle.com/api-reference/subscriptions/update-payment-method" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.UpdatePaymentMethodTransaction.UpdatePaymentMethodTransactionGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.GetSubscriptionUpdatePaymentMethodTransaction200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.UpdatePaymentMethodTransaction.UpdatePaymentMethodTransactionGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetSubscriptionUpdatePaymentMethodTransaction200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.UpdatePaymentMethodTransaction.UpdatePaymentMethodTransactionGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetSubscriptionUpdatePaymentMethodTransaction200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.UpdatePaymentMethodT
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.UpdatePaymentMethodTransaction.UpdatePaymentMethodTransactionGetResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.UpdatePaymentMethodTransaction.UpdatePaymentMethodTransactionGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.GetSubscriptionUpdatePaymentMethodTransaction200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.GetSubscriptionUpdatePaymentMethodTransaction200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a transaction that you can pass to a checkout to let customers update their payment details. Only for subscriptions where `collection_mode` is `automatic`.The transaction returned depends on the status of the related subscription:* Where a subscription is `past_due`, it returns the most recent `past_due` transaction.* Where a subscription is `active`, it creates a new zero amount transaction for the items on a subscription.You can use the returned `checkout.url`, or pass the returned transaction ID to Paddle.js to open a checkout to present customers with a way of updating their payment details.The `customer`, `address`, `business`, `discount`, `adjustments` and `adjustments_totals` properties are only returned in the response if the API key has read permissions for those related entities.

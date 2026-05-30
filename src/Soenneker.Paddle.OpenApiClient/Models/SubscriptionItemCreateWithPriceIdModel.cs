@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID of an an existing catalog price to bill for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PriceId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionItemCreateWithPriceIdModel_price_id? PriceId { get; set; }
 #nullable restore
 #else
-        public string PriceId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionItemCreateWithPriceIdModel_price_id PriceId { get; set; }
 #endif
         /// <summary>Quantity to bill for.</summary>
         public int? Quantity { get; set; }
@@ -50,7 +50,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "price_id", n => { PriceId = n.GetStringValue(); } },
+                { "price_id", n => { PriceId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionItemCreateWithPriceIdModel_price_id>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionItemCreateWithPriceIdModel_price_id.CreateFromDiscriminatorValue); } },
                 { "quantity", n => { Quantity = n.GetIntValue(); } },
             };
         }
@@ -61,7 +61,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("price_id", PriceId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionItemCreateWithPriceIdModel_price_id>("price_id", PriceId);
             writer.WriteIntValue("quantity", Quantity);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -79,17 +79,17 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item
         /// Returns a subscription using its ID.Use the `include` parameter to include transaction information in the response.
         /// Get a subscription <see href="https://developer.paddle.com/api-reference/subscriptions/get-subscription" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_GetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.GetSubscription200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_GetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_ItemRequestBuilder.WithSubscription_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetSubscription200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_ItemRequestBuilder.WithSubscription_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_GetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_ItemRequestBuilder.WithSubscription_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetSubscription200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_ItemRequestBuilder.WithSubscription_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -97,24 +97,24 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_GetResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_GetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.GetSubscription200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.GetSubscription200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a subscription using its ID.When making changes to items or the next billing date for a subscription, you must include the `proration_billing_mode` field to tell Paddle how to bill for those changes.Send the complete list of items that you&apos;d like to be on a subscription — including existing items. If you omit items, they&apos;re removed from the subscription.For each item, send `price_id` and `quantity`. Paddle responds with the full price object for each price. If you&apos;re updating an existing item, you can omit the `quantity` if you don&apos;t want to update it.If successful, your response includes a copy of the updated subscription entity. When an update results in an immediate charge, responses may take longer than usual while a payment attempt is processed.
         /// Update a subscription <see href="https://developer.paddle.com/api-reference/subscriptions/update-subscription" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_PatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.UpdateSubscription200"/></returns>
         /// <param name="body">Represents a subscription entity when updating subscriptions.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_PatchResponse?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSubscription200?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_PatchResponse> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSubscription200> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -123,7 +123,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_PatchResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_PatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSubscription200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.UpdateSubscription200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a subscription using its ID.Use the `include` parameter to include transaction information in the response.

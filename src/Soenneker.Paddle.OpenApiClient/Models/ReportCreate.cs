@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsCreateModel"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsCreateModel"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReportCreate : IComposedTypeWrapper, IParsable
@@ -20,14 +20,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsCreateModel ReportAdjustmentsCreateModel { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModel"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModel? ReportBalanceCreateModel { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModel ReportBalanceCreateModel { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsCreateModel"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -61,6 +53,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsCreateModel ReportTransactionsCreateModel { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? String { get; set; }
+#nullable restore
+#else
+        public string String { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,15 +69,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.ReportCreate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             var result = new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreate();
             if("ReportAdjustmentsCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ReportAdjustmentsCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsCreateModel();
-            }
-            else if("ReportBalanceCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ReportBalanceCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModel();
             }
             else if("ReportDiscountsCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
@@ -95,6 +91,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 result.ReportTransactionsCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsCreateModel();
             }
+            else if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
             return result;
         }
         /// <summary>
@@ -106,10 +106,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReportAdjustmentsCreateModel != null)
             {
                 return ReportAdjustmentsCreateModel.GetFieldDeserializers();
-            }
-            else if(ReportBalanceCreateModel != null)
-            {
-                return ReportBalanceCreateModel.GetFieldDeserializers();
             }
             else if(ReportDiscountsCreateModel != null)
             {
@@ -140,10 +136,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsCreateModel>(null, ReportAdjustmentsCreateModel);
             }
-            else if(ReportBalanceCreateModel != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModel>(null, ReportBalanceCreateModel);
-            }
             else if(ReportDiscountsCreateModel != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsCreateModel>(null, ReportDiscountsCreateModel);
@@ -159,6 +151,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             else if(ReportTransactionsCreateModel != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsCreateModel>(null, ReportTransactionsCreateModel);
+            }
+            else if(String != null)
+            {
+                writer.WriteStringValue(null, String);
             }
         }
     }

@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Unique Paddle ID for this notification, prefixed with `ntf_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationId { get; private set; }
+        public string? NotificationId { get; set; }
 #nullable restore
 #else
-        public string NotificationId { get; private set; }
+        public string NotificationId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.NotificationReplay"/> and sets the default values.
@@ -58,6 +58,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("notification_id", NotificationId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

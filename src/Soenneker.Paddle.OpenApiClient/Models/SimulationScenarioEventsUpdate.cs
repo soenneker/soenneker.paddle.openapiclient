@@ -16,10 +16,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Configuration for this scenario simulation. Use to simulate more granular flows and populate payloads with your own entity data. If omitted, Paddle simulates the default scenario flow and populates payloads with demo examples.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig? Config { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdate_config? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig Config { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdate_config Config { get; set; }
 #endif
         /// <summary>Name of this simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,14 +32,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID of the notification setting where this simulation is sent, prefixed with `ntfset_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationSettingId { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdate_notification_setting_id? NotificationSettingId { get; private set; }
 #nullable restore
 #else
-        public string NotificationSettingId { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdate_notification_setting_id NotificationSettingId { get; private set; }
 #endif
         /// <summary>Whether this entity can be used in Paddle.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.Status? Status { get; set; }
-        /// <summary>Scenario for this simulation. Scenario simulations play all events sent for a subscription lifecycle event.</summary>
+        /// <summary>Scenario for a simulation.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsType? Type { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -59,9 +59,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdate_config>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdate_config.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "notification_setting_id", n => { NotificationSettingId = n.GetStringValue(); } },
+                { "notification_setting_id", n => { NotificationSettingId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdate_notification_setting_id>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdate_notification_setting_id.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsType>(); } },
             };
@@ -73,7 +73,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdate_config>("config", Config);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsType>("type", Type);

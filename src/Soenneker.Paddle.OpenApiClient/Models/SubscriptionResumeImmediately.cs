@@ -15,8 +15,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When this subscription change should take effect from. You can pass `immediately` to resume immediately.Valid where subscriptions have the status of `paused`.Defaults to `immediately` if omitted.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromImmediately? EffectiveFrom { get; set; }
-        /// <summary>The on_resume property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately_effective_from? EffectiveFrom { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately_effective_from EffectiveFrom { get; set; }
+#endif
+        /// <summary>How Paddle should set the billing period for the subscription when resuming. If omitted, defaults to `start_new_billing_period`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnResume? OnResume { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately"/> and sets the default values.
@@ -24,8 +30,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public SubscriptionResumeImmediately()
         {
             AdditionalData = new Dictionary<string, object>();
-            EffectiveFrom = global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromImmediately.Immediately;
-            OnResume = global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnResume.Start_new_billing_period;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -45,7 +49,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "effective_from", n => { EffectiveFrom = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromImmediately>(); } },
+                { "effective_from", n => { EffectiveFrom = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately_effective_from>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately_effective_from.CreateFromDiscriminatorValue); } },
                 { "on_resume", n => { OnResume = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnResume>(); } },
             };
         }
@@ -56,7 +60,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromImmediately>("effective_from", EffectiveFrom);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately_effective_from>("effective_from", EffectiveFrom);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnResume>("on_resume", OnResume);
             writer.WriteAdditionalData(AdditionalData);
         }

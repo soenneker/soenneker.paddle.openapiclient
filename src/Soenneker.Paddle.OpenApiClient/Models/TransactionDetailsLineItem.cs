@@ -17,34 +17,34 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_id? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_id Id { get; private set; }
 #endif
         /// <summary>Paddle ID for the price related to this transaction line item, prefixed with `pri_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PriceId { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_price_id? PriceId { get; private set; }
 #nullable restore
 #else
-        public string PriceId { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_price_id PriceId { get; private set; }
 #endif
         /// <summary>Related product entity for this transaction line item price. Reflects the entity at the time it was added to the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Product? Product { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_product? Product { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Product Product { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_product Product { get; private set; }
 #endif
         /// <summary>How proration was calculated for this item. Populated when a transaction is created from a subscription change, where `proration_billing_mode` was `prorated_immediately` or `prorated_next_billing_period`. Set automatically by Paddle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration? Proration { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_proration? Proration { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration Proration { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_proration Proration { get; private set; }
 #endif
         /// <summary>Quantity of this transaction line item.</summary>
         public int? Quantity { get; private set; }
@@ -59,18 +59,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The totals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Totals? Totals { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_totals? Totals { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Totals Totals { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_totals Totals { get; private set; }
 #endif
         /// <summary>Breakdown of the charge for one unit in the lowest denomination of a currency (e.g. cents for USD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Totals? UnitTotals { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_unit_totals? UnitTotals { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Totals UnitTotals { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_unit_totals UnitTotals { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem"/> and sets the default values.
@@ -97,14 +97,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "price_id", n => { PriceId = n.GetStringValue(); } },
-                { "product", n => { Product = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Product>(global::Soenneker.Paddle.OpenApiClient.Models.Product.CreateFromDiscriminatorValue); } },
-                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_id>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_id.CreateFromDiscriminatorValue); } },
+                { "price_id", n => { PriceId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_price_id>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_price_id.CreateFromDiscriminatorValue); } },
+                { "product", n => { Product = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_product>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_product.CreateFromDiscriminatorValue); } },
+                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_proration>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_proration.CreateFromDiscriminatorValue); } },
                 { "quantity", n => { Quantity = n.GetIntValue(); } },
                 { "tax_rate", n => { TaxRate = n.GetStringValue(); } },
-                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Totals>(global::Soenneker.Paddle.OpenApiClient.Models.Totals.CreateFromDiscriminatorValue); } },
-                { "unit_totals", n => { UnitTotals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Totals>(global::Soenneker.Paddle.OpenApiClient.Models.Totals.CreateFromDiscriminatorValue); } },
+                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_totals>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_totals.CreateFromDiscriminatorValue); } },
+                { "unit_totals", n => { UnitTotals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_unit_totals>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem_unit_totals.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

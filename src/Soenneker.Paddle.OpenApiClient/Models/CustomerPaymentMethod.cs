@@ -18,67 +18,79 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID of the address for this payment method, prefixed with `add_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressId { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_address_id? AddressId { get; private set; }
 #nullable restore
 #else
-        public string AddressId { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_address_id AddressId { get; private set; }
 #endif
         /// <summary>Information about the credit or debit card saved. `null` unless `type` is `card`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Card? Card { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_card? Card { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Card Card { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_card Card { get; private set; }
 #endif
         /// <summary>Paddle ID of the customer that this payment method is saved for, prefixed with `ctm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_customer_id? CustomerId { get; private set; }
 #nullable restore
 #else
-        public string CustomerId { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_customer_id CustomerId { get; private set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_id? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_id Id { get; private set; }
 #endif
         /// <summary>Describes how this payment method was saved.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethodOrigin? Origin { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethodOrigin? Origin { get; set; }
         /// <summary>Information about the PayPal payment method saved. `null` unless `type` is `paypal`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Paypal? Paypal { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_paypal? Paypal { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Paypal Paypal { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_paypal Paypal { get; private set; }
 #endif
         /// <summary>The saved_at property</summary>
-        public DateTimeOffset? SavedAt { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_saved_at? SavedAt { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_saved_at SavedAt { get; private set; }
+#endif
         /// <summary>Information about the Korean payment method used to pay. `null` unless `type` is `south_korea_local_card`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SouthKoreaLocalCard? SouthKoreaLocalCard { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_south_korea_local_card? SouthKoreaLocalCard { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SouthKoreaLocalCard SouthKoreaLocalCard { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_south_korea_local_card SouthKoreaLocalCard { get; private set; }
 #endif
         /// <summary>Type of payment method saved.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethodType? Type { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethodType? Type { get; set; }
         /// <summary>The underlying_details property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.UnderlyingDetails? UnderlyingDetails { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_underlying_details? UnderlyingDetails { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.UnderlyingDetails UnderlyingDetails { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_underlying_details UnderlyingDetails { get; private set; }
 #endif
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_updated_at? UpdatedAt { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_updated_at UpdatedAt { get; private set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod"/> and sets the default values.
         /// </summary>
@@ -104,17 +116,17 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address_id", n => { AddressId = n.GetStringValue(); } },
-                { "card", n => { Card = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Card>(global::Soenneker.Paddle.OpenApiClient.Models.Card.CreateFromDiscriminatorValue); } },
-                { "customer_id", n => { CustomerId = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "address_id", n => { AddressId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_address_id>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_address_id.CreateFromDiscriminatorValue); } },
+                { "card", n => { Card = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_card>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_card.CreateFromDiscriminatorValue); } },
+                { "customer_id", n => { CustomerId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_customer_id>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_customer_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_id>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_id.CreateFromDiscriminatorValue); } },
                 { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethodOrigin>(); } },
-                { "paypal", n => { Paypal = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Paypal>(global::Soenneker.Paddle.OpenApiClient.Models.Paypal.CreateFromDiscriminatorValue); } },
-                { "saved_at", n => { SavedAt = n.GetDateTimeOffsetValue(); } },
-                { "south_korea_local_card", n => { SouthKoreaLocalCard = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SouthKoreaLocalCard>(global::Soenneker.Paddle.OpenApiClient.Models.SouthKoreaLocalCard.CreateFromDiscriminatorValue); } },
+                { "paypal", n => { Paypal = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_paypal>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_paypal.CreateFromDiscriminatorValue); } },
+                { "saved_at", n => { SavedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_saved_at>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_saved_at.CreateFromDiscriminatorValue); } },
+                { "south_korea_local_card", n => { SouthKoreaLocalCard = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_south_korea_local_card>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_south_korea_local_card.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethodType>(); } },
-                { "underlying_details", n => { UnderlyingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UnderlyingDetails>(global::Soenneker.Paddle.OpenApiClient.Models.UnderlyingDetails.CreateFromDiscriminatorValue); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "underlying_details", n => { UnderlyingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_underlying_details>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_underlying_details.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_updated_at>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethod_updated_at.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -124,6 +136,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethodOrigin>("origin", Origin);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethodType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

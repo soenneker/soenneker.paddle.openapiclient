@@ -16,26 +16,26 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Revised address information for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseAddress? Address { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_address? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseAddress Address { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_address Address { get; set; }
 #endif
         /// <summary>Revised business information for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseBusiness? Business { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_business? Business { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseBusiness Business { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_business Business { get; set; }
 #endif
         /// <summary>Revised customer information for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseCustomer? Customer { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_customer? Customer { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseCustomer Customer { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_customer Customer { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -55,9 +55,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseAddress>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseAddress.CreateFromDiscriminatorValue); } },
-                { "business", n => { Business = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseBusiness>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseBusiness.CreateFromDiscriminatorValue); } },
-                { "customer", n => { Customer = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseCustomer>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseCustomer.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_address>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_address.CreateFromDiscriminatorValue); } },
+                { "business", n => { Business = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_business>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_business.CreateFromDiscriminatorValue); } },
+                { "customer", n => { Customer = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_customer>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_customer.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,9 +67,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseAddress>("address", Address);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseBusiness>("business", Business);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseCustomer>("customer", Customer);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_address>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_business>("business", Business);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevise_customer>("customer", Customer);
         }
     }
 }

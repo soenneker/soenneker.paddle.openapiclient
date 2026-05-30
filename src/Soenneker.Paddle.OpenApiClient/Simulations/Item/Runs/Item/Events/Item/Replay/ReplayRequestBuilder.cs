@@ -37,17 +37,17 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.
         /// Attempts to resend a simulation run log using its ID.Paddle creates a new simulation run log entity for the replay, related to the same simulation run.If successful, your response includes the new simulation run log entity.
         /// Replay an event for a simulation run <see href="https://developer.paddle.com/api-reference/simulation-events/replay-simulation-run-event" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.Replay.ReplayPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReplaySimulationRunEvent202"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.Replay.ReplayPostResponse?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ReplaySimulationRunEvent202?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.Replay.ReplayPostResponse> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ReplaySimulationRunEvent202> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.Replay.ReplayPostResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.Replay.ReplayPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ReplaySimulationRunEvent202>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ReplaySimulationRunEvent202.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Attempts to resend a simulation run log using its ID.Paddle creates a new simulation run log entity for the replay, related to the same simulation run.If successful, your response includes the new simulation run log entity.

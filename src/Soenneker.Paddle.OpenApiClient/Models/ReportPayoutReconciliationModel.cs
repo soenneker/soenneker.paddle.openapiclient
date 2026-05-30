@@ -16,52 +16,63 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>RFC 3339 datetime string of when this report was created.</summary>
-        public DateTimeOffset? CreatedAt { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_created_at? CreatedAt { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_created_at CreatedAt { get; private set; }
+#endif
         /// <summary>RFC 3339 datetime string of when this report expires. The report is no longer available to download after this date.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Timestamp? ExpiresAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_expires_at? ExpiresAt { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Timestamp ExpiresAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_expires_at ExpiresAt { get; private set; }
 #endif
         /// <summary>Filter criteria for this report. If omitted, reports are filtered to include data updated in the last 30 days. This means `transaction_updated_at` is greater than or equal to (`gte`) the date 30 days ago from the time the report was generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Filters { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters>? Filters { get; set; }
 #nullable restore
 #else
-        public UntypedNode Filters { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters> Filters { get; set; }
 #endif
         /// <summary>Unique Paddle ID for this report, prefixed with `rep_`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_id? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_id Id { get; private set; }
 #endif
         /// <summary>Number of records in this report. `null` if the report is `pending`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel.ReportPayoutReconciliationModel_rows? Rows { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_rows? Rows { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel.ReportPayoutReconciliationModel_rows Rows { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_rows Rows { get; private set; }
 #endif
-        /// <summary>The status property</summary>
+        /// <summary>Status of this report. Set automatically by Paddle.Reports are created as `pending` initially, then move to `ready` when they&apos;re available to download.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.ReportStatus? Status { get; private set; }
-        /// <summary>Type of report to create.</summary>
+        /// <summary>Type of report.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.ReportTypePayoutReconciliation? Type { get; set; }
         /// <summary>RFC 3339 datetime string of when this report was last updated.</summary>
-        public DateTimeOffset? UpdatedAt { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_updated_at? UpdatedAt { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_updated_at UpdatedAt { get; private set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel"/> and sets the default values.
         /// </summary>
         public ReportPayoutReconciliationModel()
         {
             AdditionalData = new Dictionary<string, object>();
-            Status = global::Soenneker.Paddle.OpenApiClient.Models.ReportStatus.Pending;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -81,14 +92,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Timestamp>(global::Soenneker.Paddle.OpenApiClient.Models.Timestamp.CreateFromDiscriminatorValue); } },
-                { "filters", n => { Filters = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "rows", n => { Rows = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel.ReportPayoutReconciliationModel_rows>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel.ReportPayoutReconciliationModel_rows.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_created_at>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_created_at.CreateFromDiscriminatorValue); } },
+                { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_expires_at>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_expires_at.CreateFromDiscriminatorValue); } },
+                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_id>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_id.CreateFromDiscriminatorValue); } },
+                { "rows", n => { Rows = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_rows>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_rows.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportStatus>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportTypePayoutReconciliation>(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_updated_at>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_updated_at.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -98,71 +109,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<UntypedNode>("filters", Filters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters>("filters", Filters);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportTypePayoutReconciliation>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_rowsMember1"/>, <see cref="int"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class ReportPayoutReconciliationModel_rows : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="int"/></summary>
-            public int? Integer { get; set; }
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_rowsMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_rowsMember1? ReportPayoutReconciliationModelRowsMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_rowsMember1 ReportPayoutReconciliationModelRowsMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel.ReportPayoutReconciliationModel_rows"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel.ReportPayoutReconciliationModel_rows CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel.ReportPayoutReconciliationModel_rows();
-                if(parseNode.GetIntValue() is int integerValue)
-                {
-                    result.Integer = integerValue;
-                }
-                else {
-                    result.ReportPayoutReconciliationModelRowsMember1 = new global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_rowsMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(ReportPayoutReconciliationModelRowsMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(ReportPayoutReconciliationModelRowsMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(Integer != null)
-                {
-                    writer.WriteIntValue(null, Integer);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_rowsMember1>(null, ReportPayoutReconciliationModelRowsMember1);
-                }
-            }
         }
     }
 }

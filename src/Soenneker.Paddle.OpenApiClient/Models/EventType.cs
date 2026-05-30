@@ -39,8 +39,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Group { get; private set; }
 #endif
-        /// <summary>The name property</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName? Name { get; private set; }
+        /// <summary>Type of event sent by Paddle, in the format `entity.event_type`.</summary>
+        public global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName? Name { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.EventType"/> and sets the default values.
         /// </summary>
@@ -79,6 +79,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

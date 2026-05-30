@@ -50,17 +50,17 @@ namespace Soenneker.Paddle.OpenApiClient.NotificationSettings
         /// Returns a paginated list of notification settings (notification destinations).
         /// List notification settings <see href="https://developer.paddle.com/api-reference/notification-settings/list-notification-settings" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationSettings200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsRequestBuilder.NotificationSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationSettings200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsRequestBuilder.NotificationSettingsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsRequestBuilder.NotificationSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationSettings200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsRequestBuilder.NotificationSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,24 +68,24 @@ namespace Soenneker.Paddle.OpenApiClient.NotificationSettings
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsGetResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationSettings200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationSettings200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new notification setting (notification destination).Pass an array of event type names to `subscribed_events` to say which events you&apos;d like to subscribe to. Paddle responds with the full event type object for each event type.If successful, your response includes a copy of the new notification setting entity. Use the returned `endpoint_secret_key` for webhook signature verification.
         /// Create a notification setting <see href="https://developer.paddle.com/api-reference/notification-settings/create-notification-setting" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateNotificationSetting201"/></returns>
         /// <param name="body">Represents a notification destination when creating notification destinations.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsPostResponse?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateNotificationSetting201?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsPostResponse> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateNotificationSetting201> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -94,7 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.NotificationSettings
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsPostResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateNotificationSetting201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateNotificationSetting201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of notification settings (notification destinations).
@@ -165,7 +165,7 @@ namespace Soenneker.Paddle.OpenApiClient.NotificationSettings
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id`.</summary>
+            /// <summary>&quot;Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]
@@ -175,7 +175,7 @@ namespace Soenneker.Paddle.OpenApiClient.NotificationSettings
             [QueryParameter("order_by")]
             public string OrderBy { get; set; }
 #endif
-            /// <summary>Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `200`; Maximum: `200`.</summary>
+            /// <summary>&quot;Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `200`; Maximum: `200`.&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Return entities that match the specified traffic source.</summary>

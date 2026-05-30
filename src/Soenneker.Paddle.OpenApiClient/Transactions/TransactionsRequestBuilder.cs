@@ -56,17 +56,17 @@ namespace Soenneker.Paddle.OpenApiClient.Transactions
         /// Returns a paginated list of transactions. Use the query parameters to page through results.Use the `include` parameter to include related entities in the response.
         /// List transactions <see href="https://developer.paddle.com/api-reference/transactions/list-transactions" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListTransactions200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsRequestBuilder.TransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListTransactions200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsRequestBuilder.TransactionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsRequestBuilder.TransactionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListTransactions200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsRequestBuilder.TransactionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -74,24 +74,24 @@ namespace Soenneker.Paddle.OpenApiClient.Transactions
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsGetResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListTransactions200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListTransactions200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new transaction.Transactions are typically created with the status of `draft` or `ready` initially:* Draft transactions have `items` against them, but don&apos;t have all of the required fields for billing. Paddle creates draft transactions automatically when a checkout is opened.* Paddle automatically marks transactions as `ready` when all of the required fields are present for billing. This includes `customer_id` and `address_id` for automatically-collected transactions, and `billing_details` for manually-collected transactions.The `collection_mode` against a transaction determines how Paddle tries to collect for payment:* Manually-collected transactions are for sales-assisted billing. Paddle sends an invoice to your customer when a transaction is `billed`. Payment is often by wire transfer.* Automatically-collected transactions are for self-serve checkouts. You may pass the transaction to a checkout or use the returned `checkout.url` to collect for payment.When a manually-collected transaction is marked as `billed` or an automatically-collected transaction is `completed`, Paddle automatically creates a related subscription for the items on the transaction.If successful, your response includes a copy of the new transaction entity.Use the `include` parameter to include related entities in the response.
         /// Create a transaction <see href="https://developer.paddle.com/api-reference/transactions/create-transaction" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateTransaction201"/></returns>
         /// <param name="body">Represents a transaction entity when creating transactions.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsPostResponse?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreate body, Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsRequestBuilder.TransactionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateTransaction201?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreate body, Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsRequestBuilder.TransactionsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsPostResponse> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreate body, Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsRequestBuilder.TransactionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateTransaction201> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreate body, Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsRequestBuilder.TransactionsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -100,7 +100,7 @@ namespace Soenneker.Paddle.OpenApiClient.Transactions
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsPostResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Transactions.TransactionsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateTransaction201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateTransaction201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of transactions. Use the query parameters to page through results.Use the `include` parameter to include related entities in the response.
@@ -231,7 +231,7 @@ namespace Soenneker.Paddle.OpenApiClient.Transactions
             [QueryParameter("invoice_number")]
             public string[] InvoiceNumber { get; set; }
 #endif
-            /// <summary>Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `billed_at`, `created_at`, `id`, and `updated_at`.</summary>
+            /// <summary>&quot;Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `billed_at`, `created_at`, `id`, and `updated_at`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]
@@ -251,7 +251,7 @@ namespace Soenneker.Paddle.OpenApiClient.Transactions
             [QueryParameter("origin")]
             public global::Soenneker.Paddle.OpenApiClient.Models.TransactionOriginQuery[] Origin { get; set; }
 #endif
-            /// <summary>Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `30`; Maximum: `30`.</summary>
+            /// <summary>&quot;Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `30`; Maximum: `30`.&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Return entities that match the specified status. Use a comma-separated list to specify multiple status values.</summary>

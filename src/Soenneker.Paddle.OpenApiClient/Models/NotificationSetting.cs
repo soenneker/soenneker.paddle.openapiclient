@@ -46,10 +46,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSetting_id? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSetting_id Id { get; private set; }
 #endif
         /// <summary>Whether potentially sensitive fields should be sent to this notification destination.</summary>
         public bool? IncludeSensitiveFields { get; set; }
@@ -95,7 +95,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "destination", n => { Destination = n.GetStringValue(); } },
                 { "endpoint_secret_key", n => { EndpointSecretKey = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSetting_id>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSetting_id.CreateFromDiscriminatorValue); } },
                 { "include_sensitive_fields", n => { IncludeSensitiveFields = n.GetBoolValue(); } },
                 { "subscribed_events", n => { SubscribedEvents = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.EventType>(global::Soenneker.Paddle.OpenApiClient.Models.EventType.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "traffic_source", n => { TrafficSource = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingTrafficSource>(); } },

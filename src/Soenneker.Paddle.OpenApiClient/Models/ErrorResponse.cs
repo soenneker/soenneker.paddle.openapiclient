@@ -19,10 +19,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Represents an error.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ApiError? Error { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse_error? Error { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ApiError Error { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse_error Error { get; set; }
 #endif
         /// <summary>The primary error message.</summary>
         public override string Message { get => base.Message; }
@@ -59,7 +59,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ApiError>(global::Soenneker.Paddle.OpenApiClient.Models.ApiError.CreateFromDiscriminatorValue); } },
+                { "error", n => { Error = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse_error>(global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse_error.CreateFromDiscriminatorValue); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Meta>(global::Soenneker.Paddle.OpenApiClient.Models.Meta.CreateFromDiscriminatorValue); } },
             };
         }
@@ -70,7 +70,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ApiError>("error", Error);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse_error>("error", Error);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Meta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);
         }

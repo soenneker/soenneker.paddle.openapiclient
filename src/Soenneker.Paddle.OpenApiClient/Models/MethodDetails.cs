@@ -18,18 +18,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Information about the credit or debit card used to pay. `null` unless `type` is `card`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Card? Card { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_card? Card { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Card Card { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_card Card { get; set; }
 #endif
         /// <summary>Information about the Korean credit or debit card used to pay. `null` unless `type` is `south_korea_local_card`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SouthKoreaLocalCard? SouthKoreaLocalCard { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_south_korea_local_card? SouthKoreaLocalCard { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SouthKoreaLocalCard SouthKoreaLocalCard { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_south_korea_local_card SouthKoreaLocalCard { get; set; }
 #endif
         /// <summary>Type of payment method used for this payment attempt.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentMethodType? Type { get; set; }
@@ -37,10 +37,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.UnderlyingDetails? UnderlyingDetails { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_underlying_details? UnderlyingDetails { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.UnderlyingDetails UnderlyingDetails { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_underlying_details UnderlyingDetails { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails"/> and sets the default values.
@@ -67,10 +67,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "card", n => { Card = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Card>(global::Soenneker.Paddle.OpenApiClient.Models.Card.CreateFromDiscriminatorValue); } },
-                { "south_korea_local_card", n => { SouthKoreaLocalCard = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SouthKoreaLocalCard>(global::Soenneker.Paddle.OpenApiClient.Models.SouthKoreaLocalCard.CreateFromDiscriminatorValue); } },
+                { "card", n => { Card = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_card>(global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_card.CreateFromDiscriminatorValue); } },
+                { "south_korea_local_card", n => { SouthKoreaLocalCard = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_south_korea_local_card>(global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_south_korea_local_card.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentMethodType>(); } },
-                { "underlying_details", n => { UnderlyingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UnderlyingDetails>(global::Soenneker.Paddle.OpenApiClient.Models.UnderlyingDetails.CreateFromDiscriminatorValue); } },
+                { "underlying_details", n => { UnderlyingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_underlying_details>(global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_underlying_details.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -80,8 +80,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Card>("card", Card);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SouthKoreaLocalCard>("south_korea_local_card", SouthKoreaLocalCard);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_card>("card", Card);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails_south_korea_local_card>("south_korea_local_card", SouthKoreaLocalCard);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentMethodType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

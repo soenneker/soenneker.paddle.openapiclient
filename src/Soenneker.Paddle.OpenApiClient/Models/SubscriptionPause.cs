@@ -15,16 +15,22 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The effective_from property</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom? EffectiveFrom { get; set; }
-        /// <summary>The on_resume property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause_effective_from? EffectiveFrom { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause_effective_from EffectiveFrom { get; set; }
+#endif
+        /// <summary>How Paddle should set the billing period for the subscription when resuming. If omitted, defaults to `start_new_billing_period`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnResume? OnResume { get; set; }
         /// <summary>RFC 3339 datetime string of when the paused subscription should resume. Omit to pause indefinitely until resumed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Timestamp? ResumeAt { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause_resume_at? ResumeAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Timestamp ResumeAt { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause_resume_at ResumeAt { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause"/> and sets the default values.
@@ -32,8 +38,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public SubscriptionPause()
         {
             AdditionalData = new Dictionary<string, object>();
-            EffectiveFrom = global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom.Next_billing_period;
-            OnResume = global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnResume.Start_new_billing_period;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -53,9 +57,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "effective_from", n => { EffectiveFrom = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom>(); } },
+                { "effective_from", n => { EffectiveFrom = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause_effective_from>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause_effective_from.CreateFromDiscriminatorValue); } },
                 { "on_resume", n => { OnResume = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnResume>(); } },
-                { "resume_at", n => { ResumeAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Timestamp>(global::Soenneker.Paddle.OpenApiClient.Models.Timestamp.CreateFromDiscriminatorValue); } },
+                { "resume_at", n => { ResumeAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause_resume_at>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause_resume_at.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -65,9 +69,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom>("effective_from", EffectiveFrom);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause_effective_from>("effective_from", EffectiveFrom);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnResume>("on_resume", OnResume);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Timestamp>("resume_at", ResumeAt);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause_resume_at>("resume_at", ResumeAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

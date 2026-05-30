@@ -43,18 +43,18 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Charge
         /// Creates a new one-time charge for a subscription. Use to bill non-recurring items to a subscription. Non-recurring items are price entities where the `billing_cycle` is `null`.If successful, Paddle responds with the updated subscription entity. However, one-time charges aren&apos;t held against the subscription entity, so the charges billed aren&apos;t returned in the response.Once created, to get details of a one-time charge:* When created with `effective_from` as `next_billing_period`, get the subscription the charge was billed to and use the `include` query parameter with the `next_transaction` value.* When created with `effective_from` as `immediately`, list transactions and use the `subscription_id` query parameter with the subscription ID of the subscription the charge was billed to.When an update results in an immediate charge, responses may take longer than usual while a payment attempt is processed.
         /// Create a one-time charge for a subscription <see href="https://developer.paddle.com/api-reference/subscriptions/create-one-time-charge" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Charge.ChargePostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateSubscriptionCharge201"/></returns>
         /// <param name="body">Represents a one-time charge for a subscription.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Charge.ChargePostResponse?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCharge body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateSubscriptionCharge201?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCharge body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Charge.ChargePostResponse> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCharge body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateSubscriptionCharge201> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCharge body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -63,7 +63,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Charge
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Charge.ChargePostResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Charge.ChargePostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateSubscriptionCharge201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateSubscriptionCharge201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new one-time charge for a subscription. Use to bill non-recurring items to a subscription. Non-recurring items are price entities where the `billing_cycle` is `null`.If successful, Paddle responds with the updated subscription entity. However, one-time charges aren&apos;t held against the subscription entity, so the charges billed aren&apos;t returned in the response.Once created, to get details of a one-time charge:* When created with `effective_from` as `next_billing_period`, get the subscription the charge was billed to and use the `include` query parameter with the `next_transaction` value.* When created with `effective_from` as `immediately`, list transactions and use the `subscription_id` query parameter with the subscription ID of the subscription the charge was billed to.When an update results in an immediate charge, responses may take longer than usual while a payment attempt is processed.

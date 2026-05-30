@@ -37,17 +37,17 @@ namespace Soenneker.Paddle.OpenApiClient.Discounts.Item
         /// Returns a discount using its ID.
         /// Get a discount <see href="https://developer.paddle.com/api-reference/discounts/get-discount" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_GetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.GetDiscount200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_GetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_ItemRequestBuilder.WithDiscount_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetDiscount200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_ItemRequestBuilder.WithDiscount_ItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_GetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_ItemRequestBuilder.WithDiscount_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetDiscount200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_ItemRequestBuilder.WithDiscount_ItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,24 +55,24 @@ namespace Soenneker.Paddle.OpenApiClient.Discounts.Item
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_GetResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_GetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.GetDiscount200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.GetDiscount200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a discount using its ID.If successful, your response includes a copy of the updated discount entity.To update a checkout recovery discount, configure your checkout recovery settings in the dashboard.
         /// Update a discount <see href="https://developer.paddle.com/api-reference/discounts/update-discount" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_PatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.UpdateDiscount200"/></returns>
         /// <param name="body">Represents a discount entity when updating discounts.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_PatchResponse?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.UpdateDiscount200?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_PatchResponse> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.UpdateDiscount200> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -81,7 +81,7 @@ namespace Soenneker.Paddle.OpenApiClient.Discounts.Item
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_PatchResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_PatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.UpdateDiscount200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.UpdateDiscount200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a discount using its ID.

@@ -8,51 +8,68 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreate"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationCreate"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseCreate"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreate"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResumeCreate"/>
+    /// Configuration for this scenario simulation. Use to simulate more granular flows and populate payloads with your own entity data.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SimulationScenarioCreateConfig : IComposedTypeWrapper, IParsable
+    public partial class SimulationScenarioCreateConfig : IAdditionalDataHolder, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreate"/></summary>
+        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
+        public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Configuration for subscription canceled simulations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreate? SimulationConfigSubscriptionCancellationCreate { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate? SubscriptionCancellation { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreate SimulationConfigSubscriptionCancellationCreate { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate SubscriptionCancellation { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationCreate"/></summary>
+        /// <summary>The subscription_creation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationCreate? SimulationConfigSubscriptionCreationCreate { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_creation? SubscriptionCreation { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationCreate SimulationConfigSubscriptionCreationCreate { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_creation SubscriptionCreation { get; private set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseCreate"/></summary>
+        /// <summary>The subscription_pause property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseCreate? SimulationConfigSubscriptionPauseCreate { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_pause? SubscriptionPause { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseCreate SimulationConfigSubscriptionPauseCreate { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_pause SubscriptionPause { get; private set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreate"/></summary>
+        /// <summary>The subscription_renewal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreate? SimulationConfigSubscriptionRenewalCreate { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_renewal? SubscriptionRenewal { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreate SimulationConfigSubscriptionRenewalCreate { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_renewal SubscriptionRenewal { get; private set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResumeCreate"/></summary>
+        /// <summary>The subscription_resume property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResumeCreate? SimulationConfigSubscriptionResumeCreate { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_resume? SubscriptionResume { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResumeCreate SimulationConfigSubscriptionResumeCreate { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_resume SubscriptionResume { get; private set; }
 #endif
+        /// <summary>Union discriminator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
+#endif
+        /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig"/> and sets the default values.
+        /// </summary>
+        public SimulationScenarioCreateConfig()
+        {
+            AdditionalData = new Dictionary<string, object>();
+        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -61,29 +78,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
-            var result = new global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig();
-            if("SimulationConfigSubscriptionCancellationCreate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SimulationConfigSubscriptionCancellationCreate = new global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreate();
-            }
-            else if("SimulationConfigSubscriptionCreationCreate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SimulationConfigSubscriptionCreationCreate = new global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationCreate();
-            }
-            else if("SimulationConfigSubscriptionPauseCreate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SimulationConfigSubscriptionPauseCreate = new global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseCreate();
-            }
-            else if("SimulationConfigSubscriptionRenewalCreate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SimulationConfigSubscriptionRenewalCreate = new global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreate();
-            }
-            else if("SimulationConfigSubscriptionResumeCreate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SimulationConfigSubscriptionResumeCreate = new global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResumeCreate();
-            }
-            return result;
+            return new global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -91,27 +86,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(SimulationConfigSubscriptionCancellationCreate != null)
+            return new Dictionary<string, Action<IParseNode>>
             {
-                return SimulationConfigSubscriptionCancellationCreate.GetFieldDeserializers();
-            }
-            else if(SimulationConfigSubscriptionCreationCreate != null)
-            {
-                return SimulationConfigSubscriptionCreationCreate.GetFieldDeserializers();
-            }
-            else if(SimulationConfigSubscriptionPauseCreate != null)
-            {
-                return SimulationConfigSubscriptionPauseCreate.GetFieldDeserializers();
-            }
-            else if(SimulationConfigSubscriptionRenewalCreate != null)
-            {
-                return SimulationConfigSubscriptionRenewalCreate.GetFieldDeserializers();
-            }
-            else if(SimulationConfigSubscriptionResumeCreate != null)
-            {
-                return SimulationConfigSubscriptionResumeCreate.GetFieldDeserializers();
-            }
-            return new Dictionary<string, Action<IParseNode>>();
+                { "subscription_cancellation", n => { SubscriptionCancellation = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate.CreateFromDiscriminatorValue); } },
+                { "subscription_creation", n => { SubscriptionCreation = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_creation>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_creation.CreateFromDiscriminatorValue); } },
+                { "subscription_pause", n => { SubscriptionPause = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_pause>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_pause.CreateFromDiscriminatorValue); } },
+                { "subscription_renewal", n => { SubscriptionRenewal = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_renewal>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_renewal.CreateFromDiscriminatorValue); } },
+                { "subscription_resume", n => { SubscriptionResume = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_resume>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioCreateConfig_subscription_resume.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetStringValue(); } },
+            };
         }
         /// <summary>
         /// Serializes information the current object
@@ -120,26 +103,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SimulationConfigSubscriptionCancellationCreate != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreate>(null, SimulationConfigSubscriptionCancellationCreate);
-            }
-            else if(SimulationConfigSubscriptionCreationCreate != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationCreate>(null, SimulationConfigSubscriptionCreationCreate);
-            }
-            else if(SimulationConfigSubscriptionPauseCreate != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseCreate>(null, SimulationConfigSubscriptionPauseCreate);
-            }
-            else if(SimulationConfigSubscriptionRenewalCreate != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreate>(null, SimulationConfigSubscriptionRenewalCreate);
-            }
-            else if(SimulationConfigSubscriptionResumeCreate != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResumeCreate>(null, SimulationConfigSubscriptionResumeCreate);
-            }
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate>("subscription_cancellation", SubscriptionCancellation);
+            writer.WriteStringValue("type", Type);
+            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

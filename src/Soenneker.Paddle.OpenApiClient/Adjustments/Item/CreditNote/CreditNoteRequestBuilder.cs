@@ -37,17 +37,17 @@ namespace Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote
         /// Returns a link to a credit note PDF for an adjustment.Credit note PDFs are created for refunds and credits as a record of an adjustment.The link returned is not a permanent link. It expires after an hour.
         /// Get a PDF credit note for an adjustment <see href="https://developer.paddle.com/api-reference/adjustments/get-credit-note-pdf" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote.CreditNoteGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.GetAdjustmentCreditNote200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote.CreditNoteGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote.CreditNoteRequestBuilder.CreditNoteRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetAdjustmentCreditNote200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote.CreditNoteRequestBuilder.CreditNoteRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote.CreditNoteGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote.CreditNoteRequestBuilder.CreditNoteRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetAdjustmentCreditNote200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote.CreditNoteRequestBuilder.CreditNoteRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote.CreditNoteGetResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote.CreditNoteGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.GetAdjustmentCreditNote200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.GetAdjustmentCreditNote200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a link to a credit note PDF for an adjustment.Credit note PDFs are created for refunds and credits as a record of an adjustment.The link returned is not a permanent link. It expires after an hour.
@@ -91,7 +91,7 @@ namespace Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class CreditNoteRequestBuilderGetQueryParameters 
         {
-            /// <summary>Determine whether the generated URL should download the PDF as an attachment saved locally, or open it inline in the browser.Default: `attachment`.</summary>
+            /// <summary>&quot;Determine whether the generated URL should download the PDF as an attachment saved locally, or open it inline in the browser.Default: `attachment`.&quot;</summary>
             [QueryParameter("disposition")]
             public global::Soenneker.Paddle.OpenApiClient.Models.Disposition? Disposition { get; set; }
         }

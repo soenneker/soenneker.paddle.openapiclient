@@ -37,18 +37,18 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview
         /// Previews an update for a subscription without applying those changes. Typically used for previewing proration before making changes to a subscription.If successful, your response includes `immediate_transaction`, `next_transaction`, and `recurring_transaction_details` so you can see expected transactions for the changes.The `update_summary` object contains details of prorated credits and charges created, along with the overall result of the update.
         /// Preview an update to a subscription <see href="https://developer.paddle.com/api-reference/subscriptions/preview-subscription" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview.PreviewPatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200"/></returns>
         /// <param name="body">Represents a subscription entity when updating subscriptions.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview.PreviewPatchResponse?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview.PreviewPatchResponse> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview.PreviewPatchResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview.PreviewPatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Previews an update for a subscription without applying those changes. Typically used for previewing proration before making changes to a subscription.If successful, your response includes `immediate_transaction`, `next_transaction`, and `recurring_transaction_details` so you can see expected transactions for the changes.The `update_summary` object contains details of prorated credits and charges created, along with the overall result of the update.

@@ -17,18 +17,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Email address for this contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem_email? Email { get; set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem_email Email { get; set; }
 #endif
         /// <summary>Full name of this contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem_name? Name { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem_name Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem"/> and sets the default values.
@@ -55,8 +55,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "email", n => { Email = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "email", n => { Email = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem_email>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem_email.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem_name>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem_name.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -66,8 +66,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem_email>("email", Email);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem_name>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

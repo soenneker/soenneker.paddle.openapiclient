@@ -15,23 +15,23 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Three-letter ISO 4217 currency code of the currency used for this transaction.</summary>
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode? CurrencyCode { get; set; }
         /// <summary>Total earnings for this transaction. This is the total minus the Paddle fee.`null` until the transaction is `completed` and the fee is processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_earnings? Earnings { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_earnings? Earnings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_earnings Earnings { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_earnings Earnings { get; set; }
 #endif
         /// <summary>Total fee taken by Paddle for this transaction. `null` until the transaction is `completed` and the fee is processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_fee? Fee { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_fee? Fee { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_fee Fee { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_fee Fee { get; set; }
 #endif
         /// <summary>Total due after credits but before any payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,8 +107,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode>(); } },
-                { "earnings", n => { Earnings = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_earnings>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_earnings.CreateFromDiscriminatorValue); } },
-                { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_fee>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_fee.CreateFromDiscriminatorValue); } },
+                { "earnings", n => { Earnings = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_earnings>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_earnings.CreateFromDiscriminatorValue); } },
+                { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_fee>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_fee.CreateFromDiscriminatorValue); } },
                 { "grand_total", n => { GrandTotal = n.GetStringValue(); } },
                 { "grand_total_tax", n => { GrandTotalTax = n.GetStringValue(); } },
                 { "retained_fee", n => { RetainedFee = n.GetStringValue(); } },
@@ -125,149 +125,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode>("currency_code", CurrencyCode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_earnings>("earnings", Earnings);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_fee>("fee", Fee);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_earnings>("earnings", Earnings);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_fee>("fee", Fee);
             writer.WriteStringValue("grand_total", GrandTotal);
             writer.WriteStringValue("subtotal", Subtotal);
             writer.WriteStringValue("tax", Tax);
             writer.WriteStringValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_earningsMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TransactionTotalsAdjusted_earnings : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_earningsMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_earningsMember1? TransactionTotalsAdjustedEarningsMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_earningsMember1 TransactionTotalsAdjustedEarningsMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_earnings"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_earnings CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_earnings();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.TransactionTotalsAdjustedEarningsMember1 = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_earningsMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(TransactionTotalsAdjustedEarningsMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TransactionTotalsAdjustedEarningsMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_earningsMember1>(null, TransactionTotalsAdjustedEarningsMember1);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_feeMember1"/>, <see cref="string"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TransactionTotalsAdjusted_fee : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="string"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public string? String { get; set; }
-#nullable restore
-#else
-            public string String { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_feeMember1"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_feeMember1? TransactionTotalsAdjustedFeeMember1 { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_feeMember1 TransactionTotalsAdjustedFeeMember1 { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_fee"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_fee CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var result = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.TransactionTotalsAdjusted_fee();
-                if(parseNode.GetStringValue() is string stringValue)
-                {
-                    result.String = stringValue;
-                }
-                else {
-                    result.TransactionTotalsAdjustedFeeMember1 = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_feeMember1();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(TransactionTotalsAdjustedFeeMember1 != null)
-                {
-                    return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TransactionTotalsAdjustedFeeMember1);
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(String != null)
-                {
-                    writer.WriteStringValue(null, String);
-                }
-                else {
-                    writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted_feeMember1>(null, TransactionTotalsAdjustedFeeMember1);
-                }
-            }
         }
     }
 }

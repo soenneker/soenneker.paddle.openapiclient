@@ -37,18 +37,18 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.PortalSessions
         /// Creates a customer portal session for a customer.The [customer portal](https://developer.paddle.com/concepts/customer-portal) is a secure, Paddle-hosted site that allowscustomers to manage their own subscriptions, payments, and account information without you having to build custom billing screens.Customers can:* View transaction history* Download invoices* Update payment methods* Manage their subscriptions including making changes or cancellations* Revise details on completed transactionsYou can create a customer portal session to generate authenticated links for a customerso that they&apos;re automatically signed in to the portal. It&apos;s typically used when linking tothe customer portal from your app where customers are already authenticated.You can include an array of `subscription_ids` to generate authenticated portal links that let customers makechanges to their subscriptions. You can use these links as part of subscription management workflows rather thanbuilding your own billing screens.Customer portal sessions are temporary and shouldn&apos;t be cached.The customer portal is fully hosted by Paddle. For security and the best customer experience, don&apos;t embed the customerportal in an iframe.
         /// Create a customer portal session <see href="https://developer.paddle.com/api-reference/customer-portals/create-customer-portal-session" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Customers.Item.PortalSessions.PortalSessionsPostResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateCustomerPortalSession201"/></returns>
         /// <param name="body">Represents a customer portal session creation request.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PortalSessions.PortalSessionsPostResponse?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateCustomerPortalSession201?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PortalSessions.PortalSessionsPostResponse> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateCustomerPortalSession201> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.PortalSessions
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PortalSessions.PortalSessionsPostResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Customers.Item.PortalSessions.PortalSessionsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateCustomerPortalSession201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateCustomerPortalSession201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a customer portal session for a customer.The [customer portal](https://developer.paddle.com/concepts/customer-portal) is a secure, Paddle-hosted site that allowscustomers to manage their own subscriptions, payments, and account information without you having to build custom billing screens.Customers can:* View transaction history* Download invoices* Update payment methods* Manage their subscriptions including making changes or cancellations* Revise details on completed transactionsYou can create a customer portal session to generate authenticated links for a customerso that they&apos;re automatically signed in to the portal. It&apos;s typically used when linking tothe customer portal from your app where customers are already authenticated.You can include an array of `subscription_ids` to generate authenticated portal links that let customers makechanges to their subscriptions. You can use these links as part of subscription management workflows rather thanbuilding your own billing screens.Customer portal sessions are temporary and shouldn&apos;t be cached.The customer portal is fully hosted by Paddle. For security and the best customer experience, don&apos;t embed the customerportal in an iframe.

@@ -43,17 +43,17 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item
         /// Returns a simulation using its ID.
         /// Get a simulation <see href="https://developer.paddle.com/api-reference/simulations/get-simulation" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Simulations.Item.WithSimulation_GetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.GetSimulation200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.WithSimulation_GetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetSimulation200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.WithSimulation_GetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetSimulation200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -61,24 +61,24 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.WithSimulation_GetResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Simulations.Item.WithSimulation_GetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.GetSimulation200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.GetSimulation200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a simulation using its ID.For scenario simulations, you can optionally include a `config.entities` object in the request body with entity IDs to populatesimulated webhook payloads with real data. The API key making the request needs read permissions:* For the entities you provided, or the request fails.* For related entities which aren&apos;t nested in the entities you provided, or static examples will be used instead.For example, when updating a subscription renewal scenario simulation with an API key that has a `subscription.read` permission but not a `transaction.read` permission,the request succeeds and the subscription data will be used in simulated payloads, but the related transaction data won&apos;t be used in payloads and falls back to a static example.If you don&apos;t provide a `config.entities` object, simulated webhook payloads are populated with static examples.If successful, your response includes a copy of the updated simulation entity.
         /// Update a simulation <see href="https://developer.paddle.com/api-reference/simulations/update-simulation" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Simulations.Item.WithSimulation_PatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.UpdateSimulation200"/></returns>
         /// <param name="body">Represents a simulation entity when updating.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.WithSimulation_PatchResponse?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SimulationUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSimulation200?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SimulationUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.WithSimulation_PatchResponse> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SimulationUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSimulation200> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SimulationUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -87,7 +87,7 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.WithSimulation_PatchResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Simulations.Item.WithSimulation_PatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSimulation200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.UpdateSimulation200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a simulation using its ID.

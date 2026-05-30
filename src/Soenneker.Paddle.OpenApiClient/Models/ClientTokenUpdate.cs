@@ -13,15 +13,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ClientTokenUpdate : IParsable
     {
-        /// <summary>The status property</summary>
+        /// <summary>Status of this client-side token.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenStatus? Status { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenUpdate"/> and sets the default values.
-        /// </summary>
-        public ClientTokenUpdate()
-        {
-            Status = global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenStatus.Active;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

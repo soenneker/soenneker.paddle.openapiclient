@@ -16,21 +16,33 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The created_at property</summary>
-        public DateTimeOffset? CreatedAt { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModel_created_at? CreatedAt { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModel_created_at CreatedAt { get; private set; }
+#endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModel_id? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModel_id Id { get; private set; }
 #endif
         /// <summary>Status of this simulation run.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunStatus? Status { get; private set; }
-        /// <summary>Single event sent for this simulation, in the format `entity.event_type`.</summary>
+        /// <summary>Type of event sent by Paddle, in the format `entity.event_type`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName? Type { get; set; }
         /// <summary>The updated_at property</summary>
-        public DateTimeOffset? UpdatedAt { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModel_updated_at? UpdatedAt { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModel_updated_at UpdatedAt { get; private set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModel"/> and sets the default values.
         /// </summary>
@@ -56,11 +68,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
+                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModel_created_at>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModel_created_at.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModel_id>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModel_id.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunStatus>(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModel_updated_at>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModel_updated_at.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

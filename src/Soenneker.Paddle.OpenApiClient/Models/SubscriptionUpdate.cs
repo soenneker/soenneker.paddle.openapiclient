@@ -18,54 +18,54 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID of the address that this subscription is for, prefixed with `add_`. Include to change the address for a subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_address_id? AddressId { get; set; }
 #nullable restore
 #else
-        public string AddressId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_address_id AddressId { get; set; }
 #endif
         /// <summary>Details for invoicing. Required if `collection_mode` is `manual`. `null` if changing `collection_mode` to `automatic`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsUpdate? BillingDetails { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_billing_details? BillingDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsUpdate BillingDetails { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_billing_details BillingDetails { get; set; }
 #endif
         /// <summary>Paddle ID of the business that this subscription is for, prefixed with `biz_`. Include to change the business for a subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessId? BusinessId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_business_id? BusinessId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessId BusinessId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_business_id BusinessId { get; set; }
 #endif
-        /// <summary>How payment is collected for transactions created for this subscription. `automatic` for checkout, `manual` for invoices.</summary>
+        /// <summary>How payment is collected. `automatic` for checkout, `manual` for invoices.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.CollectionMode? CollectionMode { get; set; }
-        /// <summary>Supported three-letter ISO 4217 currency code. Include to change the currency that a subscription bills in. When changing `collection_mode` to `manual`, you may need to change currency code to `USD`, `EUR`, or `GBP`.</summary>
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode? CurrencyCode { get; set; }
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomData? CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_custom_data? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomData CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_custom_data CustomData { get; set; }
 #endif
         /// <summary>Paddle ID of the customer that this subscription is for, prefixed with `ctm_`. Include to change the customer for a subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_customer_id? CustomerId { get; set; }
 #nullable restore
 #else
-        public string CustomerId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_customer_id CustomerId { get; set; }
 #endif
         /// <summary>Details of the discount applied to this subscription. Include to add a discount to a subscription. `null` to remove a discount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateDiscount? Discount { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_discount? Discount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateDiscount Discount { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_discount Discount { get; set; }
 #endif
         /// <summary>List of items on this subscription. Only recurring items may be added. Send the complete list of items that should be on this subscription, including existing items to retain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,18 +76,24 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateItems> Items { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this subscription is next scheduled to be billed. Include to change the next billing date.</summary>
-        public DateTimeOffset? NextBilledAt { get; set; }
-        /// <summary>The on_payment_failure property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_next_billed_at? NextBilledAt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_next_billed_at NextBilledAt { get; set; }
+#endif
+        /// <summary>How Paddle should handle changes made to a subscription or its items if the payment fails during update. If omitted, defaults to `prevent_change`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnPaymentFailure? OnPaymentFailure { get; set; }
         /// <summary>How Paddle should handle proration calculation for changes made to a subscription or its items. Required when makingchanges that impact billing.For automatically-collected subscriptions, responses may take longer than usual if a proration billing mode thatcollects for payment immediately is used.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateProrationBillingMode? ProrationBillingMode { get; set; }
         /// <summary>Change that&apos;s scheduled to be applied to a subscription. When updating, you may only set to `null` to remove a scheduled change. Use the pause subscription, cancel subscription, and resume subscription operations to create scheduled changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? ScheduledChange { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_scheduled_change? ScheduledChange { get; set; }
 #nullable restore
 #else
-        public UntypedNode ScheduledChange { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_scheduled_change ScheduledChange { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate"/> and sets the default values.
@@ -95,7 +101,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public SubscriptionUpdate()
         {
             AdditionalData = new Dictionary<string, object>();
-            OnPaymentFailure = global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnPaymentFailure.Prevent_change;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -115,19 +120,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address_id", n => { AddressId = n.GetStringValue(); } },
-                { "billing_details", n => { BillingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsUpdate>(global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsUpdate.CreateFromDiscriminatorValue); } },
-                { "business_id", n => { BusinessId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessId>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessId.CreateFromDiscriminatorValue); } },
+                { "address_id", n => { AddressId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_address_id>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_address_id.CreateFromDiscriminatorValue); } },
+                { "billing_details", n => { BillingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_billing_details>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_billing_details.CreateFromDiscriminatorValue); } },
+                { "business_id", n => { BusinessId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_business_id>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_business_id.CreateFromDiscriminatorValue); } },
                 { "collection_mode", n => { CollectionMode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CollectionMode>(); } },
                 { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode>(); } },
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomData>(global::Soenneker.Paddle.OpenApiClient.Models.CustomData.CreateFromDiscriminatorValue); } },
-                { "customer_id", n => { CustomerId = n.GetStringValue(); } },
-                { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateDiscount.CreateFromDiscriminatorValue); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_custom_data>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_custom_data.CreateFromDiscriminatorValue); } },
+                { "customer_id", n => { CustomerId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_customer_id>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_customer_id.CreateFromDiscriminatorValue); } },
+                { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_discount>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_discount.CreateFromDiscriminatorValue); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateItems>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateItems.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "next_billed_at", n => { NextBilledAt = n.GetDateTimeOffsetValue(); } },
+                { "next_billed_at", n => { NextBilledAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_next_billed_at>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_next_billed_at.CreateFromDiscriminatorValue); } },
                 { "on_payment_failure", n => { OnPaymentFailure = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnPaymentFailure>(); } },
                 { "proration_billing_mode", n => { ProrationBillingMode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateProrationBillingMode>(); } },
-                { "scheduled_change", n => { ScheduledChange = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "scheduled_change", n => { ScheduledChange = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_scheduled_change>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_scheduled_change.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -137,19 +142,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("address_id", AddressId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsUpdate>("billing_details", BillingDetails);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessId>("business_id", BusinessId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_address_id>("address_id", AddressId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_billing_details>("billing_details", BillingDetails);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_business_id>("business_id", BusinessId);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CollectionMode>("collection_mode", CollectionMode);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode>("currency_code", CurrencyCode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomData>("custom_data", CustomData);
-            writer.WriteStringValue("customer_id", CustomerId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateDiscount>("discount", Discount);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_custom_data>("custom_data", CustomData);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_customer_id>("customer_id", CustomerId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_discount>("discount", Discount);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateItems>("items", Items);
-            writer.WriteDateTimeOffsetValue("next_billed_at", NextBilledAt);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_next_billed_at>("next_billed_at", NextBilledAt);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnPaymentFailure>("on_payment_failure", OnPaymentFailure);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateProrationBillingMode>("proration_billing_mode", ProrationBillingMode);
-            writer.WriteObjectValue<UntypedNode>("scheduled_change", ScheduledChange);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate_scheduled_change>("scheduled_change", ScheduledChange);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

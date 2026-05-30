@@ -37,16 +37,17 @@ namespace Soenneker.Paddle.OpenApiClient.NotificationSettings.Item
         /// Deletes a notification setting (notification destination) using its ID.When you delete a notification setting, it&apos;s permanently removed from your account. Paddle stops sending events to your destination, and you&apos;ll lose access to all the logs for this notification setting.There&apos;s no way to recover a deleted notification setting. Deactivate a notification setting using the update notification setting operation if you&apos;ll need access to the logs or want to reactivate later on.
         /// Delete a notification setting <see href="https://developer.paddle.com/api-reference/notification-settings/delete-notification-setting" />
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
@@ -54,23 +55,23 @@ namespace Soenneker.Paddle.OpenApiClient.NotificationSettings.Item
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a notification setting (notification destination) using its ID.
         /// Get a notification setting <see href="https://developer.paddle.com/api-reference/notification-settings/get-notification-setting" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.NotificationSettings.Item.WithNotification_setting_GetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.GetNotificationSetting200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.Item.WithNotification_setting_GetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetNotificationSetting200?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.Item.WithNotification_setting_GetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GetNotificationSetting200> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -78,24 +79,24 @@ namespace Soenneker.Paddle.OpenApiClient.NotificationSettings.Item
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.Item.WithNotification_setting_GetResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.NotificationSettings.Item.WithNotification_setting_GetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.GetNotificationSetting200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.GetNotificationSetting200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Updates a notification setting (notification destination) using its ID.When updating subscribed events, send the complete list of event types that you&apos;d like to subscribe to — including existing event types. If you omit event types, they&apos;re removed from the notification setting.You only need to pass an event type name. Paddle responds with the full event type object for each event type.If successful, your response includes a copy of the updated notification setting entity.
         /// Update a notification setting <see href="https://developer.paddle.com/api-reference/notification-settings/update-notification-setting" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.NotificationSettings.Item.WithNotification_setting_PatchResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.UpdateNotificationSetting200"/></returns>
         /// <param name="body">Represents a notification destination when updating notification destinations.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.Item.WithNotification_setting_PatchResponse?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.UpdateNotificationSetting200?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.Item.WithNotification_setting_PatchResponse> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.UpdateNotificationSetting200> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -104,7 +105,7 @@ namespace Soenneker.Paddle.OpenApiClient.NotificationSettings.Item
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.Item.WithNotification_setting_PatchResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.NotificationSettings.Item.WithNotification_setting_PatchResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.UpdateNotificationSetting200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.UpdateNotificationSetting200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Deletes a notification setting (notification destination) using its ID.When you delete a notification setting, it&apos;s permanently removed from your account. Paddle stops sending events to your destination, and you&apos;ll lose access to all the logs for this notification setting.There&apos;s no way to recover a deleted notification setting. Deactivate a notification setting using the update notification setting operation if you&apos;ll need access to the logs or want to reactivate later on.

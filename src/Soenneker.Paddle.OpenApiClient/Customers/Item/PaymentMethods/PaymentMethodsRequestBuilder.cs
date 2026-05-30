@@ -50,17 +50,17 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods
         /// Returns a paginated list of payment methods that a customer has saved.  Use the query parameters to page through results.Customers can choose to save payment methods when purchasing one-time items and subscriptions by checking a box when completing checkout. You can present customers with their saved payment methods when they make a purchase in the future.Returns an empty list where customers have not saved any payment methods, or have deleted all previously saved payment methods.
         /// List payment methods for a customer <see href="https://developer.paddle.com/api-reference/payment-methods/list-payment-methods" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.PaymentMethodsGetResponse"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.PaymentMethodsGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.PaymentMethodsRequestBuilder.PaymentMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.PaymentMethodsRequestBuilder.PaymentMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.PaymentMethodsGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.PaymentMethodsRequestBuilder.PaymentMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.PaymentMethodsRequestBuilder.PaymentMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,7 +68,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.PaymentMethodsGetResponse>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.PaymentMethodsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of payment methods that a customer has saved.  Use the query parameters to page through results.Customers can choose to save payment methods when purchasing one-time items and subscriptions by checking a box when completing checkout. You can present customers with their saved payment methods when they make a purchase in the future.Returns an empty list where customers have not saved any payment methods, or have deleted all previously saved payment methods.
@@ -124,7 +124,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id`.</summary>
+            /// <summary>&quot;Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]
@@ -134,7 +134,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods
             [QueryParameter("order_by")]
             public string OrderBy { get; set; }
 #endif
-            /// <summary>Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.</summary>
+            /// <summary>&quot;Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.&quot;</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Return entities that support being presented at checkout (`true`) or not (`false`).</summary>

@@ -18,20 +18,20 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Totals for this credit balance. Where a customer has more than one subscription in this currency with a credit balance, includes totals for all subscriptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerBalance? Balance { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CreditBalance_balance? Balance { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerBalance Balance { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CreditBalance_balance Balance { get; set; }
 #endif
-        /// <summary>Three-letter ISO 4217 currency code for this credit balance.</summary>
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode? CurrencyCode { get; set; }
         /// <summary>Paddle ID of the customer that this credit balance is for, prefixed with `ctm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CreditBalance_customer_id? CustomerId { get; set; }
 #nullable restore
 #else
-        public string CustomerId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CreditBalance_customer_id CustomerId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreditBalance"/> and sets the default values.
@@ -58,9 +58,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "balance", n => { Balance = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerBalance>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerBalance.CreateFromDiscriminatorValue); } },
+                { "balance", n => { Balance = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CreditBalance_balance>(global::Soenneker.Paddle.OpenApiClient.Models.CreditBalance_balance.CreateFromDiscriminatorValue); } },
                 { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode>(); } },
-                { "customer_id", n => { CustomerId = n.GetStringValue(); } },
+                { "customer_id", n => { CustomerId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CreditBalance_customer_id>(global::Soenneker.Paddle.OpenApiClient.Models.CreditBalance_customer_id.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,9 +70,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerBalance>("balance", Balance);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CreditBalance_balance>("balance", Balance);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode>("currency_code", CurrencyCode);
-            writer.WriteStringValue("customer_id", CustomerId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CreditBalance_customer_id>("customer_id", CustomerId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -16,38 +16,44 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>RFC 3339 datetime string of when this item was added to this subscription.</summary>
-        public DateTimeOffset? CreatedAt { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_created_at? CreatedAt { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_created_at CreatedAt { get; private set; }
+#endif
         /// <summary>RFC 3339 datetime string of when this item is next scheduled to be billed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Timestamp? NextBilledAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_next_billed_at? NextBilledAt { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Timestamp NextBilledAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_next_billed_at NextBilledAt { get; private set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this item was last billed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Timestamp? PreviouslyBilledAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_previously_billed_at? PreviouslyBilledAt { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Timestamp PreviouslyBilledAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_previously_billed_at PreviouslyBilledAt { get; private set; }
 #endif
         /// <summary>Related price entity for this item. This reflects the price entity at the time it was added to the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Price? Price { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_price? Price { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Price Price { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_price Price { get; private set; }
 #endif
         /// <summary>Related product entity for this item. This reflects the product entity at the time it was added to the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Product? Product { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_product? Product { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Product Product { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_product Product { get; private set; }
 #endif
         /// <summary>Quantity of this item on the subscription.</summary>
         public double? Quantity { get; set; }
@@ -58,13 +64,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Trial dates for this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod? TrialDates { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_trial_dates? TrialDates { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod TrialDates { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_trial_dates TrialDates { get; private set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this item was last updated on this subscription.</summary>
-        public DateTimeOffset? UpdatedAt { get; private set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_updated_at? UpdatedAt { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_updated_at UpdatedAt { get; private set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription"/> and sets the default values.
         /// </summary>
@@ -90,16 +102,16 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "next_billed_at", n => { NextBilledAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Timestamp>(global::Soenneker.Paddle.OpenApiClient.Models.Timestamp.CreateFromDiscriminatorValue); } },
-                { "previously_billed_at", n => { PreviouslyBilledAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Timestamp>(global::Soenneker.Paddle.OpenApiClient.Models.Timestamp.CreateFromDiscriminatorValue); } },
-                { "price", n => { Price = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Price>(global::Soenneker.Paddle.OpenApiClient.Models.Price.CreateFromDiscriminatorValue); } },
-                { "product", n => { Product = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Product>(global::Soenneker.Paddle.OpenApiClient.Models.Product.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_created_at>(global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_created_at.CreateFromDiscriminatorValue); } },
+                { "next_billed_at", n => { NextBilledAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_next_billed_at>(global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_next_billed_at.CreateFromDiscriminatorValue); } },
+                { "previously_billed_at", n => { PreviouslyBilledAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_previously_billed_at>(global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_previously_billed_at.CreateFromDiscriminatorValue); } },
+                { "price", n => { Price = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_price>(global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_price.CreateFromDiscriminatorValue); } },
+                { "product", n => { Product = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_product>(global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_product.CreateFromDiscriminatorValue); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "recurring", n => { Recurring = n.GetBoolValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionStatus>(); } },
-                { "trial_dates", n => { TrialDates = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod>(global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod.CreateFromDiscriminatorValue); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
+                { "trial_dates", n => { TrialDates = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_trial_dates>(global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_trial_dates.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_updated_at>(global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscription_updated_at.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>

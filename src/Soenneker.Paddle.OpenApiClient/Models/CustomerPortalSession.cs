@@ -14,30 +14,36 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     public partial class CustomerPortalSession : IParsable
     {
         /// <summary>RFC 3339 datetime string of when this customer portal session was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_created_at? CreatedAt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_created_at CreatedAt { get; set; }
+#endif
         /// <summary>Paddle ID of the customer that this customer portal sessions is for, prefixed with `ctm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_customer_id? CustomerId { get; set; }
 #nullable restore
 #else
-        public string CustomerId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_customer_id CustomerId { get; set; }
 #endif
         /// <summary>The id property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_id? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_id Id { get; private set; }
 #endif
         /// <summary>Authenticated customer portal deep links. For security, the `token` appended to each link is temporary. You shouldn&apos;t store these links.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrls? Urls { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_urls? Urls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrls Urls { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_urls Urls { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -57,10 +63,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "customer_id", n => { CustomerId = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "urls", n => { Urls = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrls>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrls.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_created_at>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_created_at.CreateFromDiscriminatorValue); } },
+                { "customer_id", n => { CustomerId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_customer_id>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_customer_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_id>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_id.CreateFromDiscriminatorValue); } },
+                { "urls", n => { Urls = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_urls>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_urls.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,9 +76,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("customer_id", CustomerId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrls>("urls", Urls);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_created_at>("created_at", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_customer_id>("customer_id", CustomerId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSession_urls>("urls", Urls);
         }
     }
 }

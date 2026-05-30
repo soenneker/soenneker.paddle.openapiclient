@@ -13,7 +13,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionCharge : IParsable
     {
-        /// <summary>When one-time charges should be billed.</summary>
+        /// <summary>When this subscription change should take effect from. Defaults to `next_billing_period`, which creates a`scheduled_change` to apply the subscription change at the end of the billing period.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom? EffectiveFrom { get; set; }
         /// <summary>List of one-time charges to bill for. Only prices where the `billing_cycle` is `null` may be added.You can charge for items that you&apos;ve added to your catalog by passing the Paddle ID of an existing price entity, or you can charge for non-catalog items by passing a price object.Non-catalog items can be for existing products, or you can pass a product object as part of your price to charge for a non-catalog product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -23,15 +23,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeItems> Items { get; set; }
 #endif
-        /// <summary>The on_payment_failure property</summary>
+        /// <summary>How Paddle should handle changes made to a subscription or its items if the payment fails during update. If omitted, defaults to `prevent_change`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnPaymentFailure? OnPaymentFailure { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCharge"/> and sets the default values.
-        /// </summary>
-        public SubscriptionCharge()
-        {
-            OnPaymentFailure = global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnPaymentFailure.Prevent_change;
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>

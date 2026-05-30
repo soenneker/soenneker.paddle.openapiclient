@@ -20,10 +20,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>List of transaction items to adjust. Required if `type` is not populated or set to `partial`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreate>? Items { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate_items? Items { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreate> Items { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate_items Items { get; set; }
 #endif
         /// <summary>Why this adjustment was created. Appears in the Paddle dashboard. Retained for recordkeeping purposes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -33,17 +33,17 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Reason { get; set; }
 #endif
-        /// <summary>The tax_mode property</summary>
+        /// <summary>Whether the amounts to be adjusted are inclusive or exclusive of tax. If `internal`, adjusted amounts are considered to be inclusive of tax. If `external`, Paddle calculates the tax and adds it to the amounts provided.Only valid for adjustments where the `type` is `partial`.If omitted, defaults to `internal`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTaxMode? TaxMode { get; set; }
         /// <summary>Paddle ID of the transaction that this adjustment is for, prefixed with `txn_`.Automatically-collected transactions must be `completed`; manually-collected transactions must have a status of `billed` or `past_due`You can&apos;t create an adjustment for a transaction that has a refund that&apos;s pending approval.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransactionId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate_transaction_id? TransactionId { get; set; }
 #nullable restore
 #else
-        public string TransactionId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate_transaction_id TransactionId { get; set; }
 #endif
-        /// <summary>The type property</summary>
+        /// <summary>Type of adjustment. Use `full` to adjust the grand total for the related transaction. Include an `items` array when creating a `partial` adjustment. If omitted, defaults to `partial`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate"/> and sets the default values.
@@ -51,8 +51,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public AdjustmentCreate()
         {
             AdditionalData = new Dictionary<string, object>();
-            TaxMode = global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTaxMode.Internal;
-            Type = global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentType.Partial;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -73,10 +71,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction>(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreate>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreate.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "items", n => { Items = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate_items>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate_items.CreateFromDiscriminatorValue); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "tax_mode", n => { TaxMode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTaxMode>(); } },
-                { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
+                { "transaction_id", n => { TransactionId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate_transaction_id>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate_transaction_id.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentType>(); } },
             };
         }
@@ -88,10 +86,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction>("action", Action);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreate>("items", Items);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate_items>("items", Items);
             writer.WriteStringValue("reason", Reason);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTaxMode>("tax_mode", TaxMode);
-            writer.WriteStringValue("transaction_id", TransactionId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate_transaction_id>("transaction_id", TransactionId);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

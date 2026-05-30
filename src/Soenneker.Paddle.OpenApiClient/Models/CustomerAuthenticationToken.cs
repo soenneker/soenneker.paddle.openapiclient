@@ -24,7 +24,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public string CustomerAuthToken { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this customer authentication token expires. The token is no longer valid after this date.</summary>
-        public DateTimeOffset? ExpiresAt { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerAuthenticationToken_expires_at? ExpiresAt { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerAuthenticationToken_expires_at ExpiresAt { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CustomerAuthenticationToken"/> and sets the default values.
         /// </summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "customer_auth_token", n => { CustomerAuthToken = n.GetStringValue(); } },
-                { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
+                { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerAuthenticationToken_expires_at>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerAuthenticationToken_expires_at.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +68,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("customer_auth_token", CustomerAuthToken);
-            writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerAuthenticationToken_expires_at>("expires_at", ExpiresAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

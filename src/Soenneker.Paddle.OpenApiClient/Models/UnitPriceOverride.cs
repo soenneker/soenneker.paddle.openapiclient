@@ -15,18 +15,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Supported two-letter ISO 3166-1 alpha-2 country code. Customers located in the listed countries are charged the override price.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CountryCodes { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.CountryCode>? CountryCodes { get; set; }
 #nullable restore
 #else
-        public List<string> CountryCodes { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.CountryCode> CountryCodes { get; set; }
 #endif
         /// <summary>Override price. This price applies to customers located in the countries for this unit price override.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Money? UnitPrice { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride_unit_price? UnitPrice { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Money UnitPrice { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride_unit_price UnitPrice { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -46,8 +46,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "country_codes", n => { CountryCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Money>(global::Soenneker.Paddle.OpenApiClient.Models.Money.CreateFromDiscriminatorValue); } },
+                { "country_codes", n => { CountryCodes = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.CountryCode>(global::Soenneker.Paddle.OpenApiClient.Models.CountryCode.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride_unit_price>(global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride_unit_price.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,8 +57,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("country_codes", CountryCodes);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Money>("unit_price", UnitPrice);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.CountryCode>("country_codes", CountryCodes);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride_unit_price>("unit_price", UnitPrice);
         }
     }
 }

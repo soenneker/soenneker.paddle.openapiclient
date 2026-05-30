@@ -23,7 +23,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesCreate> Filters { get; set; }
 #endif
-        /// <summary>Type of report to create.</summary>
+        /// <summary>Type of report.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.ReportTypeProductsPrices? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesCreateModel"/> and sets the default values.
