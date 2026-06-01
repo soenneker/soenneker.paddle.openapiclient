@@ -17,7 +17,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "updated_at")]
         #pragma warning disable CS1591
-        Updated_at,
+        UpdatedAt,
         #pragma warning restore CS1591
     }
 }

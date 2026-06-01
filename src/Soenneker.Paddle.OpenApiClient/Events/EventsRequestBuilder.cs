@@ -37,17 +37,17 @@ namespace Soenneker.Paddle.OpenApiClient.Events
         /// Returns a paginated list of events that have occurred in the last 90 days. Use the query parameters to page through results.Events older than 90 days aren&apos;t retained.This is sometimes referred to as &quot;the event stream.&quot;
         /// List events <see href="https://developer.paddle.com/api-reference/events/list-events" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListEvents200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListEvents200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListEvents200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListEvents200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListEvents200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListEvents200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Events
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListEvents200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListEvents200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListEvents200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListEvents200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of events that have occurred in the last 90 days. Use the query parameters to page through results.Events older than 90 days aren&apos;t retained.This is sometimes referred to as &quot;the event stream.&quot;

@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs
 {
     /// <summary>
-    /// Builds and executes requests for operations under \simulations\{simulation_id}\runs
+    /// Builds and executes requests for operations under \simulations\{simulationId}\runs
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RunsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.simulations.item.runs.item collection</summary>
-        /// <param name="position">Paddle ID of the simulation run entity to work with.</param>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.WithSimulation_run_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.WithSimulation_run_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.WithSimulationRunItemRequestBuilder"/></returns>
+        public global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.WithSimulationRunItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("simulation_run_id", position);
-                return new global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.WithSimulation_run_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("simulationRunId", position);
+                return new global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.WithSimulationRunItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/simulations/{simulation_id}/runs{?after,id,include,order_by,per_page}", pathParameters)
+        public RunsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/simulations/{simulationId}/runs{?after,id,include,order_by,per_page}", pathParameters)
         {
         }
         /// <summary>
@@ -43,24 +43,24 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public RunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/simulations/{simulation_id}/runs{?after,id,include,order_by,per_page}", rawUrl)
+        public RunsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/simulations/{simulationId}/runs{?after,id,include,order_by,per_page}", rawUrl)
         {
         }
         /// <summary>
         /// Returns a paginated list of simulation runs. Use the query parameters to [page through results](https://developer.paddle.com/api-reference/about/pagination).Use the `include` parameter to [include related entities](https://developer.paddle.com/api-reference/about/include-entities) in the response.
         /// List runs for a simulation <see href="https://developer.paddle.com/api-reference/simulation-runs/list-simulation-runs" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.RunsRequestBuilder.RunsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,23 +68,23 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationRuns200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new simulation run for a simulation.If successful, your response includes a copy of the new simulation run entity.
         /// Create a run for a simulation <see href="https://developer.paddle.com/api-reference/simulation-runs/create-simulation-run" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -92,7 +92,7 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateSimulationRun201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of simulation runs. Use the query parameters to [page through results](https://developer.paddle.com/api-reference/about/pagination).Use the `include` parameter to [include related entities](https://developer.paddle.com/api-reference/about/include-entities) in the response.

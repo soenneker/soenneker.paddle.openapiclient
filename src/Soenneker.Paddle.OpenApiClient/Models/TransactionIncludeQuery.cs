@@ -18,11 +18,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "adjustments_totals")]
         #pragma warning disable CS1591
-        Adjustments_totals,
+        AdjustmentsTotals,
         #pragma warning restore CS1591
         [EnumMember(Value = "available_payment_methods")]
         #pragma warning disable CS1591
-        Available_payment_methods,
+        AvailablePaymentMethods,
         #pragma warning restore CS1591
         [EnumMember(Value = "business")]
         #pragma warning disable CS1591

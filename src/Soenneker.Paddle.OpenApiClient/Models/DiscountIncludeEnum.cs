@@ -10,7 +10,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "discount_group")]
         #pragma warning disable CS1591
-        Discount_group,
+        DiscountGroup,
         #pragma warning restore CS1591
     }
 }

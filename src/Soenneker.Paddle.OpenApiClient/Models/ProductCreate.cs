@@ -16,42 +16,42 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_custom_data? CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateCustomData? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_custom_data CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateCustomData CustomData { get; set; }
 #endif
         /// <summary>Short description for this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_description? Description { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_description Description { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription Description { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique Paddle ID for this product, prefixed with `pro_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_id? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_id Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Image for this product. Included in the checkout and on some customer documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_image_url? ImageUrl { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl? ImageUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_image_url ImageUrl { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl ImageUrl { get; set; }
 #endif
         /// <summary>Import information for this entity. `null` if this entity is not imported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_import_meta? ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImportMeta? ImportMeta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_import_meta ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImportMeta ImportMeta { get; set; }
 #endif
         /// <summary>Name of this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,8 +63,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #endif
         /// <summary>Tax category for this product. Used for charging the correct rate of tax. Selected tax category must be enabled on your Paddle account.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory? TaxCategory { get; set; }
-        /// <summary>Type of item. Standard items are considered part of your catalog and are shown in the Paddle dashboard.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.CatalogType? Type { get; set; }
+        /// <summary>Type of item. Standard items are considered part of your catalog and are shown in the Paddle dashboard. If omitted, defaults to `standard`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateType Type { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -83,14 +89,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_custom_data>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_custom_data.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_description>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_description.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_id>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_id.CreateFromDiscriminatorValue); } },
-                { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_image_url>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_image_url.CreateFromDiscriminatorValue); } },
-                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_import_meta>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_import_meta.CreateFromDiscriminatorValue); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateCustomData.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl.CreateFromDiscriminatorValue); } },
+                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImportMeta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tax_category", n => { TaxCategory = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CatalogType>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateType>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -100,14 +106,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_custom_data>("custom_data", CustomData);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_id>("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_image_url>("image_url", ImageUrl);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate_import_meta>("import_meta", ImportMeta);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateCustomData>("custom_data", CustomData);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription>("description", Description);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl>("image_url", ImageUrl);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImportMeta>("import_meta", ImportMeta);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory>("tax_category", TaxCategory);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CatalogType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateType>("type", Type);
         }
     }
 }

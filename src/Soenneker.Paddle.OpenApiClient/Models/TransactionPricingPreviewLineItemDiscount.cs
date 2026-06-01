@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Related discount entity for this preview line item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscount_discount? Discount { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscountDiscount? Discount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscount_discount Discount { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscountDiscount Discount { get; set; }
 #endif
         /// <summary>Total amount discounted as a result of this discount in the format of a given currency. &apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -64,7 +64,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscount_discount>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscount_discount.CreateFromDiscriminatorValue); } },
+                { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscountDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscountDiscount.CreateFromDiscriminatorValue); } },
                 { "formatted_total", n => { FormattedTotal = n.GetStringValue(); } },
                 { "total", n => { Total = n.GetStringValue(); } },
             };
@@ -76,7 +76,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscount_discount>("discount", Discount);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscountDiscount>("discount", Discount);
             writer.WriteStringValue("formatted_total", FormattedTotal);
             writer.WriteStringValue("total", Total);
             writer.WriteAdditionalData(AdditionalData);

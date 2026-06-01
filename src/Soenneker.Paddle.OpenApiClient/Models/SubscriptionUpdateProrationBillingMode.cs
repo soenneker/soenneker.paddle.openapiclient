@@ -9,23 +9,23 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "prorated_immediately")]
         #pragma warning disable CS1591
-        Prorated_immediately,
+        ProratedImmediately,
         #pragma warning restore CS1591
         [EnumMember(Value = "prorated_next_billing_period")]
         #pragma warning disable CS1591
-        Prorated_next_billing_period,
+        ProratedNextBillingPeriod,
         #pragma warning restore CS1591
         [EnumMember(Value = "full_immediately")]
         #pragma warning disable CS1591
-        Full_immediately,
+        FullImmediately,
         #pragma warning restore CS1591
         [EnumMember(Value = "full_next_billing_period")]
         #pragma warning disable CS1591
-        Full_next_billing_period,
+        FullNextBillingPeriod,
         #pragma warning restore CS1591
         [EnumMember(Value = "do_not_bill")]
         #pragma warning disable CS1591
-        Do_not_bill,
+        DoNotBill,
         #pragma warning restore CS1591
     }
 }

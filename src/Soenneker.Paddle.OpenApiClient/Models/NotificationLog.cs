@@ -15,21 +15,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>RFC 3339 datetime string of when Paddle attempted to deliver the related notification.</summary>
+        /// <summary>RFC 3339 datetime string.</summary>
+        public DateTimeOffset? AttemptedAt { get; set; }
+        /// <summary>Unique Paddle ID for this notification log, prefixed with `ntflog_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog_attempted_at? AttemptedAt { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog_attempted_at AttemptedAt { get; private set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog_id? Id { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog_id Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Response body sent by the responding server. Typically empty for success responses.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -44,10 +38,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Content-Type sent by the responding server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog_response_content_type? ResponseContentType { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationLogResponseContentType? ResponseContentType { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog_response_content_type ResponseContentType { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationLogResponseContentType ResponseContentType { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog"/> and sets the default values.
@@ -74,11 +68,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "attempted_at", n => { AttemptedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog_attempted_at>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog_attempted_at.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog_id>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog_id.CreateFromDiscriminatorValue); } },
+                { "attempted_at", n => { AttemptedAt = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "response_body", n => { ResponseBody = n.GetStringValue(); } },
                 { "response_code", n => { ResponseCode = n.GetIntValue(); } },
-                { "response_content_type", n => { ResponseContentType = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog_response_content_type>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog_response_content_type.CreateFromDiscriminatorValue); } },
+                { "response_content_type", n => { ResponseContentType = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationLogResponseContentType>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationLogResponseContentType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -88,6 +82,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("attempted_at", AttemptedAt);
+            writer.WriteStringValue("id", Id);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Notifications.Item.Replay
 {
     /// <summary>
-    /// Builds and executes requests for operations under \notifications\{notification_id}\replay
+    /// Builds and executes requests for operations under \notifications\{notificationId}\replay
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReplayRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Paddle.OpenApiClient.Notifications.Item.Replay
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/notifications/{notification_id}/replay", pathParameters)
+        public ReplayRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/notifications/{notificationId}/replay", pathParameters)
         {
         }
         /// <summary>
@@ -30,24 +30,24 @@ namespace Soenneker.Paddle.OpenApiClient.Notifications.Item.Replay
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ReplayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/notifications/{notification_id}/replay", rawUrl)
+        public ReplayRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/notifications/{notificationId}/replay", rawUrl)
         {
         }
         /// <summary>
         /// Attempts to resend a `delivered` or `failed` notification using its ID.Paddle creates a new notification entity for the replay, related to the same `event_id`. Your response includes the new `notification_id` of the created notification.Notifications older than 90 days aren&apos;t retained. If you try to replay a notification that&apos;s no longer retained, Paddle returns an error.Only notifications with the `origin` of `event` can be replayed. You can&apos;t replay a notification created for a replay.
         /// Replay a notification <see href="https://developer.paddle.com/api-reference/notifications/replay-notification" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReplayNotification202"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReplayNotification202Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ReplayNotification202?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ReplayNotification202Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ReplayNotification202> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ReplayNotification202Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Notifications.Item.Replay
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ReplayNotification202>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ReplayNotification202.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ReplayNotification202Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ReplayNotification202Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Attempts to resend a `delivered` or `failed` notification using its ID.Paddle creates a new notification entity for the replay, related to the same `event_id`. Your response includes the new `notification_id` of the created notification.Notifications older than 90 days aren&apos;t retained. If you try to replay a notification that&apos;s no longer retained, Paddle returns an error.Only notifications with the `origin` of `event` can be replayed. You can&apos;t replay a notification created for a replay.

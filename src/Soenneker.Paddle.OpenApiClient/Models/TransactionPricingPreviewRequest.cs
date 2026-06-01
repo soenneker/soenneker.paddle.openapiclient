@@ -17,58 +17,58 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Address for this preview. Send one of `address_id`, `customer_ip_address`, or the `address` object when previewing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_address? Address { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestAddress? Address { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_address Address { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestAddress Address { get; set; }
 #endif
         /// <summary>Paddle ID of the address that this preview is for, prefixed with `add_`. Send one of `address_id`, `customer_ip_address`, or the `address` object when previewing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_address_id? AddressId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestAddressId? AddressId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_address_id AddressId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestAddressId AddressId { get; set; }
 #endif
         /// <summary>Paddle ID of the business that this preview is for, prefixed with `biz_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_business_id? BusinessId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestBusinessId? BusinessId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_business_id BusinessId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestBusinessId BusinessId { get; set; }
 #endif
         /// <summary>Supported three-letter ISO 4217 currency code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_currency_code? CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCurrencyCode? CurrencyCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_currency_code CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCurrencyCode CurrencyCode { get; set; }
 #endif
         /// <summary>Paddle ID of the customer that this preview is for, prefixed with `ctm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_customer_id? CustomerId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCustomerId? CustomerId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_customer_id CustomerId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCustomerId CustomerId { get; set; }
 #endif
         /// <summary>IP address for this transaction preview. Send one of `address_id`, `customer_ip_address`, or the `address` object when previewing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_customer_ip_address? CustomerIpAddress { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCustomerIpAddress? CustomerIpAddress { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_customer_ip_address CustomerIpAddress { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCustomerIpAddress CustomerIpAddress { get; set; }
 #endif
         /// <summary>Paddle ID of the discount applied to this preview, prefixed with `dsc_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_discount_id? DiscountId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestDiscountId? DiscountId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_discount_id DiscountId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestDiscountId DiscountId { get; set; }
 #endif
         /// <summary>List of items to preview price calculations for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -103,13 +103,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_address>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_address.CreateFromDiscriminatorValue); } },
-                { "address_id", n => { AddressId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_address_id>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_address_id.CreateFromDiscriminatorValue); } },
-                { "business_id", n => { BusinessId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_business_id>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_business_id.CreateFromDiscriminatorValue); } },
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_currency_code>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_currency_code.CreateFromDiscriminatorValue); } },
-                { "customer_id", n => { CustomerId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_customer_id>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_customer_id.CreateFromDiscriminatorValue); } },
-                { "customer_ip_address", n => { CustomerIpAddress = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_customer_ip_address>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_customer_ip_address.CreateFromDiscriminatorValue); } },
-                { "discount_id", n => { DiscountId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_discount_id>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_discount_id.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestAddress>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestAddress.CreateFromDiscriminatorValue); } },
+                { "address_id", n => { AddressId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestAddressId>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestAddressId.CreateFromDiscriminatorValue); } },
+                { "business_id", n => { BusinessId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestBusinessId>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestBusinessId.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "customer_id", n => { CustomerId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCustomerId>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCustomerId.CreateFromDiscriminatorValue); } },
+                { "customer_ip_address", n => { CustomerIpAddress = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCustomerIpAddress>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCustomerIpAddress.CreateFromDiscriminatorValue); } },
+                { "discount_id", n => { DiscountId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestDiscountId>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestDiscountId.CreateFromDiscriminatorValue); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewItem>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewItem.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -120,13 +120,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_address>("address", Address);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_address_id>("address_id", AddressId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_business_id>("business_id", BusinessId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_currency_code>("currency_code", CurrencyCode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_customer_id>("customer_id", CustomerId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_customer_ip_address>("customer_ip_address", CustomerIpAddress);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequest_discount_id>("discount_id", DiscountId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestAddress>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestAddressId>("address_id", AddressId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestBusinessId>("business_id", BusinessId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCurrencyCode>("currency_code", CurrencyCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCustomerId>("customer_id", CustomerId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestCustomerIpAddress>("customer_ip_address", CustomerIpAddress);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewRequestDiscountId>("discount_id", DiscountId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewItem>("items", Items);
             writer.WriteAdditionalData(AdditionalData);
         }

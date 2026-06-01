@@ -16,18 +16,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>How often this price should be charged. `null` if price is non-recurring (one-time).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_billing_cycle? BillingCycle { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateBillingCycle? BillingCycle { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_billing_cycle BillingCycle { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateBillingCycle BillingCycle { get; set; }
 #endif
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_custom_data? CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateCustomData? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_custom_data CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateCustomData CustomData { get; set; }
 #endif
         /// <summary>Internal description for this price, not shown to customers. Typically notes for your team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,40 +40,52 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The name property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_name? Name { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateName? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_name Name { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateName Name { get; set; }
 #endif
         /// <summary>Limits on how many times the related product can be purchased at this price. Useful for discount campaigns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_quantity? Quantity { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateQuantity? Quantity { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_quantity Quantity { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateQuantity Quantity { get; set; }
 #endif
         /// <summary>Whether this entity can be used in Paddle.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.Status? Status { get; set; }
-        /// <summary>How tax is calculated for this price.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.TaxMode? TaxMode { get; set; }
+        /// <summary>The tax_mode property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateTaxMode? TaxMode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateTaxMode TaxMode { get; set; }
+#endif
         /// <summary>Trial period for the product related to this price. The billing cycle begins once the trial period is over. `null` for no trial period. Requires `billing_cycle`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_trial_period? TrialPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateTrialPeriod? TrialPeriod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_trial_period TrialPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateTrialPeriod TrialPeriod { get; set; }
 #endif
-        /// <summary>Type of item. Standard items are considered part of your catalog and are shown in the Paddle dashboard.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.CatalogType? Type { get; set; }
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateType Type { get; set; }
+#endif
         /// <summary>Base price. This price applies to all customers, except for customers located in countries where you have `unit_price_overrides`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_unit_price? UnitPrice { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateUnitPrice? UnitPrice { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_unit_price UnitPrice { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateUnitPrice UnitPrice { get; set; }
 #endif
         /// <summary>List of unit price overrides. Use to override the base price with a custom price and currency for a country or group of countries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -101,16 +113,16 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billing_cycle", n => { BillingCycle = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_billing_cycle>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_billing_cycle.CreateFromDiscriminatorValue); } },
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_custom_data>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_custom_data.CreateFromDiscriminatorValue); } },
+                { "billing_cycle", n => { BillingCycle = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateBillingCycle>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateBillingCycle.CreateFromDiscriminatorValue); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateCustomData.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_name>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_name.CreateFromDiscriminatorValue); } },
-                { "quantity", n => { Quantity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_quantity>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_quantity.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateName>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateName.CreateFromDiscriminatorValue); } },
+                { "quantity", n => { Quantity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateQuantity>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateQuantity.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>(); } },
-                { "tax_mode", n => { TaxMode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxMode>(); } },
-                { "trial_period", n => { TrialPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_trial_period>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_trial_period.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CatalogType>(); } },
-                { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_unit_price>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_unit_price.CreateFromDiscriminatorValue); } },
+                { "tax_mode", n => { TaxMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateTaxMode>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateTaxMode.CreateFromDiscriminatorValue); } },
+                { "trial_period", n => { TrialPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateTrialPeriod>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateTrialPeriod.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateType>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateType.CreateFromDiscriminatorValue); } },
+                { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateUnitPrice>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateUnitPrice.CreateFromDiscriminatorValue); } },
                 { "unit_price_overrides", n => { UnitPriceOverrides = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>(global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
@@ -121,16 +133,16 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_billing_cycle>("billing_cycle", BillingCycle);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_custom_data>("custom_data", CustomData);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateBillingCycle>("billing_cycle", BillingCycle);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateCustomData>("custom_data", CustomData);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_quantity>("quantity", Quantity);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateName>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateQuantity>("quantity", Quantity);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxMode>("tax_mode", TaxMode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_trial_period>("trial_period", TrialPeriod);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CatalogType>("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdate_unit_price>("unit_price", UnitPrice);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateTaxMode>("tax_mode", TaxMode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateTrialPeriod>("trial_period", TrialPeriod);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateUnitPrice>("unit_price", UnitPrice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>("unit_price_overrides", UnitPriceOverrides);
         }
     }

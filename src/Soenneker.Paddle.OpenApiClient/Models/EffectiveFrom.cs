@@ -9,7 +9,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "next_billing_period")]
         #pragma warning disable CS1591
-        Next_billing_period,
+        NextBillingPeriod,
         #pragma warning restore CS1591
         [EnumMember(Value = "immediately")]
         #pragma warning disable CS1591

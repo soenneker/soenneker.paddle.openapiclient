@@ -23,8 +23,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel_filters> Filters { get; set; }
 #endif
-        /// <summary>Type of report.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportTypePayoutReconciliation? Type { get; set; }
+        /// <summary>Type of report to create.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModelType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModelType Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel"/> and sets the default values.
         /// </summary>
@@ -51,7 +57,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel_filters>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel_filters.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportTypePayoutReconciliation>(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModelType>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModelType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -62,7 +68,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel_filters>("filters", Filters);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportTypePayoutReconciliation>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModelType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

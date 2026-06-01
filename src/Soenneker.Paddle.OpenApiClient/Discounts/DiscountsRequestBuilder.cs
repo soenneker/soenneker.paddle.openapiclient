@@ -19,15 +19,15 @@ namespace Soenneker.Paddle.OpenApiClient.Discounts
     public partial class DiscountsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.discounts.item collection</summary>
-        /// <param name="position">Paddle ID of the discount entity to work with.</param>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscountItemRequestBuilder"/></returns>
+        public global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscountItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("discount_id", position);
-                return new global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscount_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("discountId", position);
+                return new global::Soenneker.Paddle.OpenApiClient.Discounts.Item.WithDiscountItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -50,17 +50,17 @@ namespace Soenneker.Paddle.OpenApiClient.Discounts
         /// Returns a paginated list of discounts. Use the query parameters to page through results.By default, Paddle returns discounts that are `active`. Use the `status` query parameter to return discounts that are archived or expired.
         /// List discounts <see href="https://developer.paddle.com/api-reference/discounts/list-discounts" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListDiscounts200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListDiscounts200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListDiscounts200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Discounts.DiscountsRequestBuilder.DiscountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListDiscounts200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Discounts.DiscountsRequestBuilder.DiscountsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListDiscounts200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Discounts.DiscountsRequestBuilder.DiscountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListDiscounts200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Discounts.DiscountsRequestBuilder.DiscountsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,24 +68,24 @@ namespace Soenneker.Paddle.OpenApiClient.Discounts
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListDiscounts200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListDiscounts200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListDiscounts200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListDiscounts200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new discount.If successful, your response includes a copy of the new discount entity.
         /// Create a discount <see href="https://developer.paddle.com/api-reference/discounts/create-discount" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscount201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscount201Response"/></returns>
         /// <param name="body">Represents a discount entity when creating discounts.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscount201?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscount201Response?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscount201> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscount201Response> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -94,7 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.Discounts
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscount201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscount201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscount201Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscount201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of discounts. Use the query parameters to page through results.By default, Paddle returns discounts that are `active`. Use the `status` query parameter to return discounts that are archived or expired.

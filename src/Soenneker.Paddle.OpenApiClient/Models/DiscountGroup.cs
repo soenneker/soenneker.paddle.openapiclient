@@ -15,29 +15,23 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>Unique Paddle ID for this discount group, prefixed with `dsg_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_created_at? CreatedAt { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_created_at CreatedAt { get; private set; }
-#endif
-        /// <summary>The id property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_id? Id { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_id Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Import information for this entity. `null` if this entity is not imported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_import_meta? ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroupImportMeta? ImportMeta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_import_meta ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroupImportMeta ImportMeta { get; set; }
 #endif
         /// <summary>Unique name of this discount group, typically something short and memorable for categorization. Not shown to customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,14 +43,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #endif
         /// <summary>Whether this entity can be used in Paddle.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.Status? Status { get; set; }
-        /// <summary>The updated_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_updated_at? UpdatedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_updated_at UpdatedAt { get; private set; }
-#endif
+        /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup"/> and sets the default values.
         /// </summary>
@@ -82,12 +70,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_created_at>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_created_at.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_id>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_id.CreateFromDiscriminatorValue); } },
-                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_import_meta>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_import_meta.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroupImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroupImportMeta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>(); } },
-                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_updated_at>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_updated_at.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -97,9 +85,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroup_import_meta>("import_meta", ImportMeta);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroupImportMeta>("import_meta", ImportMeta);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>("status", Status);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

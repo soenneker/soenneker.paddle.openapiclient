@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs
 {
     /// <summary>
-    /// Builds and executes requests for operations under \notifications\{notification_id}\logs
+    /// Builds and executes requests for operations under \notifications\{notificationId}\logs
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class LogsRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/notifications/{notification_id}/logs{?after,per_page}", pathParameters)
+        public LogsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/notifications/{notificationId}/logs{?after,per_page}", pathParameters)
         {
         }
         /// <summary>
@@ -30,24 +30,24 @@ namespace Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/notifications/{notification_id}/logs{?after,per_page}", rawUrl)
+        public LogsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/notifications/{notificationId}/logs{?after,per_page}", rawUrl)
         {
         }
         /// <summary>
         /// Returns a paginated list of notification logs for a notification. A log includes information about delivery attempts, including failures.Notifications older than 90 days aren&apos;t retained. If you try to list logs for a notification that&apos;s no longer retained, Paddle returns an error.
         /// List logs for a notification <see href="https://developer.paddle.com/api-reference/notification-logs/list-notification-logs" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs.LogsRequestBuilder.LogsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListNotificationLogs200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of notification logs for a notification. A log includes information about delivery attempts, including failures.Notifications older than 90 days aren&apos;t retained. If you try to list logs for a notification that&apos;s no longer retained, Paddle returns an error.

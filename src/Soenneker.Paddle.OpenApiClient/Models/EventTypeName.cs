@@ -29,27 +29,27 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "api_key.created")]
         #pragma warning disable CS1591
-        Api_keyCreated,
+        ApiKeyCreated,
         #pragma warning restore CS1591
         [EnumMember(Value = "api_key.expired")]
         #pragma warning disable CS1591
-        Api_keyExpired,
+        ApiKeyExpired,
         #pragma warning restore CS1591
         [EnumMember(Value = "api_key.expiring")]
         #pragma warning disable CS1591
-        Api_keyExpiring,
+        ApiKeyExpiring,
         #pragma warning restore CS1591
         [EnumMember(Value = "api_key.revoked")]
         #pragma warning disable CS1591
-        Api_keyRevoked,
+        ApiKeyRevoked,
         #pragma warning restore CS1591
         [EnumMember(Value = "api_key.updated")]
         #pragma warning disable CS1591
-        Api_keyUpdated,
+        ApiKeyUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "api_key_exposure.created")]
         #pragma warning disable CS1591
-        Api_key_exposureCreated,
+        ApiKeyExposureCreated,
         #pragma warning restore CS1591
         [EnumMember(Value = "business.created")]
         #pragma warning disable CS1591
@@ -65,15 +65,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "client_token.created")]
         #pragma warning disable CS1591
-        Client_tokenCreated,
+        ClientTokenCreated,
         #pragma warning restore CS1591
         [EnumMember(Value = "client_token.revoked")]
         #pragma warning disable CS1591
-        Client_tokenRevoked,
+        ClientTokenRevoked,
         #pragma warning restore CS1591
         [EnumMember(Value = "client_token.updated")]
         #pragma warning disable CS1591
-        Client_tokenUpdated,
+        ClientTokenUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "customer.created")]
         #pragma warning disable CS1591
@@ -101,19 +101,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "discount_group.created")]
         #pragma warning disable CS1591
-        Discount_groupCreated,
+        DiscountGroupCreated,
         #pragma warning restore CS1591
         [EnumMember(Value = "discount_group.updated")]
         #pragma warning disable CS1591
-        Discount_groupUpdated,
+        DiscountGroupUpdated,
         #pragma warning restore CS1591
         [EnumMember(Value = "payment_method.saved")]
         #pragma warning disable CS1591
-        Payment_methodSaved,
+        PaymentMethodSaved,
         #pragma warning restore CS1591
         [EnumMember(Value = "payment_method.deleted")]
         #pragma warning disable CS1591
-        Payment_methodDeleted,
+        PaymentMethodDeleted,
         #pragma warning restore CS1591
         [EnumMember(Value = "payout.created")]
         #pragma warning disable CS1591
@@ -173,7 +173,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "subscription.past_due")]
         #pragma warning disable CS1591
-        SubscriptionPast_due,
+        SubscriptionPastDue,
         #pragma warning restore CS1591
         [EnumMember(Value = "subscription.paused")]
         #pragma warning disable CS1591
@@ -213,11 +213,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "transaction.past_due")]
         #pragma warning disable CS1591
-        TransactionPast_due,
+        TransactionPastDue,
         #pragma warning restore CS1591
         [EnumMember(Value = "transaction.payment_failed")]
         #pragma warning disable CS1591
-        TransactionPayment_failed,
+        TransactionPaymentFailed,
         #pragma warning restore CS1591
         [EnumMember(Value = "transaction.ready")]
         #pragma warning disable CS1591

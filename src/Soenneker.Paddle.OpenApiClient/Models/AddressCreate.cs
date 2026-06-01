@@ -16,82 +16,82 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>City of this address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_city? City { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCity? City { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_city City { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCity City { get; set; }
 #endif
         /// <summary>Supported two-letter ISO 3166-1 alpha-2 country code for this address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_country_code? CountryCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCountryCode? CountryCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_country_code CountryCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCountryCode CountryCode { get; set; }
 #endif
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_custom_data? CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCustomData? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_custom_data CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCustomData CustomData { get; set; }
 #endif
         /// <summary>Memorable description for this address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_description? Description { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateDescription? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_description Description { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateDescription Description { get; set; }
 #endif
         /// <summary>First line of this address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_first_line? FirstLine { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateFirstLine? FirstLine { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_first_line FirstLine { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateFirstLine FirstLine { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique Paddle ID for this address entity, prefixed with `add_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_id? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_id Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Import information for this entity. `null` if this entity is not imported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_import_meta? ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateImportMeta? ImportMeta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_import_meta ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateImportMeta ImportMeta { get; set; }
 #endif
         /// <summary>ZIP or postal code of this address. Required for some countries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_postal_code? PostalCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatePostalCode? PostalCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_postal_code PostalCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatePostalCode PostalCode { get; set; }
 #endif
         /// <summary>State, county, or region of this address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_region? Region { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateRegion? Region { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_region Region { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateRegion Region { get; set; }
 #endif
         /// <summary>Second line of this address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_second_line? SecondLine { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateSecondLine? SecondLine { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_second_line SecondLine { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateSecondLine SecondLine { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -111,16 +111,16 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "city", n => { City = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_city>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_city.CreateFromDiscriminatorValue); } },
-                { "country_code", n => { CountryCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_country_code>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_country_code.CreateFromDiscriminatorValue); } },
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_custom_data>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_custom_data.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_description>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_description.CreateFromDiscriminatorValue); } },
-                { "first_line", n => { FirstLine = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_first_line>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_first_line.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_id>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_id.CreateFromDiscriminatorValue); } },
-                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_import_meta>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_import_meta.CreateFromDiscriminatorValue); } },
-                { "postal_code", n => { PostalCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_postal_code>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_postal_code.CreateFromDiscriminatorValue); } },
-                { "region", n => { Region = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_region>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_region.CreateFromDiscriminatorValue); } },
-                { "second_line", n => { SecondLine = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_second_line>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_second_line.CreateFromDiscriminatorValue); } },
+                { "city", n => { City = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCity>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCity.CreateFromDiscriminatorValue); } },
+                { "country_code", n => { CountryCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCountryCode>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCountryCode.CreateFromDiscriminatorValue); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCustomData.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateDescription>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateDescription.CreateFromDiscriminatorValue); } },
+                { "first_line", n => { FirstLine = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateFirstLine>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateFirstLine.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateImportMeta.CreateFromDiscriminatorValue); } },
+                { "postal_code", n => { PostalCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatePostalCode>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatePostalCode.CreateFromDiscriminatorValue); } },
+                { "region", n => { Region = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateRegion>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateRegion.CreateFromDiscriminatorValue); } },
+                { "second_line", n => { SecondLine = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateSecondLine>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateSecondLine.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -130,15 +130,16 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_city>("city", City);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_country_code>("country_code", CountryCode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_custom_data>("custom_data", CustomData);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_first_line>("first_line", FirstLine);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_import_meta>("import_meta", ImportMeta);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_postal_code>("postal_code", PostalCode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_region>("region", Region);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate_second_line>("second_line", SecondLine);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCity>("city", City);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCountryCode>("country_code", CountryCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateCustomData>("custom_data", CustomData);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateDescription>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateFirstLine>("first_line", FirstLine);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateImportMeta>("import_meta", ImportMeta);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatePostalCode>("postal_code", PostalCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateRegion>("region", Region);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateSecondLine>("second_line", SecondLine);
         }
     }
 }

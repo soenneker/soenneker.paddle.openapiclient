@@ -15,58 +15,58 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
+        /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
+        /// <summary>The event_type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_created_at? CreatedAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventEventType? EventType { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_created_at CreatedAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventEventType EventType { get; private set; }
 #endif
-        /// <summary>Type of event sent by Paddle, in the format `entity.event_type`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName? EventType { get; set; }
-        /// <summary>The id property</summary>
+        /// <summary>Unique Paddle ID for this simulation event, prefixed with `ntfsimevt_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_id? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_id Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Simulation payload. Pass a JSON object that matches the schema for an event type to simulate a custom payload. If omitted, Paddle populates with a demo example.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_payload? Payload { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventPayload? Payload { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_payload Payload { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventPayload Payload { get; private set; }
 #endif
         /// <summary>Information about the request. Sent by Paddle as part of the simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_request? Request { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequestComposed? Request { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_request Request { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequestComposed Request { get; set; }
 #endif
         /// <summary>Information about the response. Sent by the responding server for the notification setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_response? Response { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponseComposed? Response { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_response Response { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponseComposed Response { get; set; }
 #endif
-        /// <summary>Status of this simulation run log.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventStatus? Status { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_updated_at? UpdatedAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventStatusComposed? Status { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_updated_at UpdatedAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventStatusComposed Status { get; private set; }
 #endif
+        /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent"/> and sets the default values.
         /// </summary>
@@ -92,14 +92,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_created_at>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_created_at.CreateFromDiscriminatorValue); } },
-                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_id>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_id.CreateFromDiscriminatorValue); } },
-                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_payload>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_payload.CreateFromDiscriminatorValue); } },
-                { "request", n => { Request = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_request>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_request.CreateFromDiscriminatorValue); } },
-                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_response>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_response.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventStatus>(); } },
-                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_updated_at>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_updated_at.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "event_type", n => { EventType = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventEventType>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventEventType.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventPayload>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventPayload.CreateFromDiscriminatorValue); } },
+                { "request", n => { Request = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequestComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequestComposed.CreateFromDiscriminatorValue); } },
+                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponseComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponseComposed.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventStatusComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventStatusComposed.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -109,10 +109,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>("event_type", EventType);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_request>("request", Request);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent_response>("response", Response);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventStatus>("status", Status);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequestComposed>("request", Request);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponseComposed>("response", Response);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

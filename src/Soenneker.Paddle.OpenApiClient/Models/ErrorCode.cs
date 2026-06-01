@@ -9,19 +9,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "already_canceled")]
         #pragma warning disable CS1591
-        Already_canceled,
+        AlreadyCanceled,
         #pragma warning restore CS1591
         [EnumMember(Value = "already_refunded")]
         #pragma warning disable CS1591
-        Already_refunded,
+        AlreadyRefunded,
         #pragma warning restore CS1591
         [EnumMember(Value = "authentication_failed")]
         #pragma warning disable CS1591
-        Authentication_failed,
+        AuthenticationFailed,
         #pragma warning restore CS1591
         [EnumMember(Value = "blocked_card")]
         #pragma warning disable CS1591
-        Blocked_card,
+        BlockedCard,
         #pragma warning restore CS1591
         [EnumMember(Value = "canceled")]
         #pragma warning disable CS1591
@@ -33,11 +33,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "declined_not_retryable")]
         #pragma warning disable CS1591
-        Declined_not_retryable,
+        DeclinedNotRetryable,
         #pragma warning restore CS1591
         [EnumMember(Value = "expired_card")]
         #pragma warning disable CS1591
-        Expired_card,
+        ExpiredCard,
         #pragma warning restore CS1591
         [EnumMember(Value = "fraud")]
         #pragma warning disable CS1591
@@ -45,39 +45,39 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "invalid_amount")]
         #pragma warning disable CS1591
-        Invalid_amount,
+        InvalidAmount,
         #pragma warning restore CS1591
         [EnumMember(Value = "invalid_payment_details")]
         #pragma warning disable CS1591
-        Invalid_payment_details,
+        InvalidPaymentDetails,
         #pragma warning restore CS1591
         [EnumMember(Value = "issuer_unavailable")]
         #pragma warning disable CS1591
-        Issuer_unavailable,
+        IssuerUnavailable,
         #pragma warning restore CS1591
         [EnumMember(Value = "not_enough_balance")]
         #pragma warning disable CS1591
-        Not_enough_balance,
+        NotEnoughBalance,
         #pragma warning restore CS1591
         [EnumMember(Value = "preferred_network_not_supported")]
         #pragma warning disable CS1591
-        Preferred_network_not_supported,
+        PreferredNetworkNotSupported,
         #pragma warning restore CS1591
         [EnumMember(Value = "psp_error")]
         #pragma warning disable CS1591
-        Psp_error,
+        PspError,
         #pragma warning restore CS1591
         [EnumMember(Value = "redacted_payment_method")]
         #pragma warning disable CS1591
-        Redacted_payment_method,
+        RedactedPaymentMethod,
         #pragma warning restore CS1591
         [EnumMember(Value = "system_error")]
         #pragma warning disable CS1591
-        System_error,
+        SystemError,
         #pragma warning restore CS1591
         [EnumMember(Value = "transaction_not_permitted")]
         #pragma warning disable CS1591
-        Transaction_not_permitted,
+        TransactionNotPermitted,
         #pragma warning restore CS1591
         [EnumMember(Value = "unknown")]
         #pragma warning disable CS1591

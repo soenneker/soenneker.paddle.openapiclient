@@ -9,55 +9,55 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "AUD")]
         #pragma warning disable CS1591
-        AUD,
+        Aud,
         #pragma warning restore CS1591
         [EnumMember(Value = "CAD")]
         #pragma warning disable CS1591
-        CAD,
+        Cad,
         #pragma warning restore CS1591
         [EnumMember(Value = "CHF")]
         #pragma warning disable CS1591
-        CHF,
+        Chf,
         #pragma warning restore CS1591
         [EnumMember(Value = "CNY")]
         #pragma warning disable CS1591
-        CNY,
+        Cny,
         #pragma warning restore CS1591
         [EnumMember(Value = "CZK")]
         #pragma warning disable CS1591
-        CZK,
+        Czk,
         #pragma warning restore CS1591
         [EnumMember(Value = "DKK")]
         #pragma warning disable CS1591
-        DKK,
+        Dkk,
         #pragma warning restore CS1591
         [EnumMember(Value = "EUR")]
         #pragma warning disable CS1591
-        EUR,
+        Eur,
         #pragma warning restore CS1591
         [EnumMember(Value = "GBP")]
         #pragma warning disable CS1591
-        GBP,
+        Gbp,
         #pragma warning restore CS1591
         [EnumMember(Value = "HUF")]
         #pragma warning disable CS1591
-        HUF,
+        Huf,
         #pragma warning restore CS1591
         [EnumMember(Value = "PLN")]
         #pragma warning disable CS1591
-        PLN,
+        Pln,
         #pragma warning restore CS1591
         [EnumMember(Value = "SEK")]
         #pragma warning disable CS1591
-        SEK,
+        Sek,
         #pragma warning restore CS1591
         [EnumMember(Value = "USD")]
         #pragma warning disable CS1591
-        USD,
+        Usd,
         #pragma warning restore CS1591
         [EnumMember(Value = "ZAR")]
         #pragma warning disable CS1591
-        ZAR,
+        Zar,
         #pragma warning restore CS1591
     }
 }

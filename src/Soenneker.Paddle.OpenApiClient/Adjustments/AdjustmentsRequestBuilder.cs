@@ -19,15 +19,15 @@ namespace Soenneker.Paddle.OpenApiClient.Adjustments
     public partial class AdjustmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.adjustments.item collection</summary>
-        /// <param name="position">Paddle ID of the adjustment entity to work with.</param>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.WithAdjustment_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.WithAdjustment_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.WithAdjustmentItemRequestBuilder"/></returns>
+        public global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.WithAdjustmentItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("adjustment_id", position);
-                return new global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.WithAdjustment_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("adjustmentId", position);
+                return new global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.WithAdjustmentItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -50,17 +50,17 @@ namespace Soenneker.Paddle.OpenApiClient.Adjustments
         /// Returns a paginated list of adjustments. Use the query parameters to page through results.
         /// List adjustments <see href="https://developer.paddle.com/api-reference/adjustments/list-adjustments" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListAdjustments200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListAdjustments200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListAdjustments200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Adjustments.AdjustmentsRequestBuilder.AdjustmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListAdjustments200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Adjustments.AdjustmentsRequestBuilder.AdjustmentsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListAdjustments200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Adjustments.AdjustmentsRequestBuilder.AdjustmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListAdjustments200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Adjustments.AdjustmentsRequestBuilder.AdjustmentsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,24 +68,24 @@ namespace Soenneker.Paddle.OpenApiClient.Adjustments
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListAdjustments200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListAdjustments200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListAdjustments200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListAdjustments200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates an adjustment for one or more transaction items.You can create adjustments to refund or credit all or part of a transaction and its items:* Refunds return an amount to a customer&apos;s original payment method. You can create refund adjustments for transactions that are `completed`.* Credits reduce the amount that a customer has to pay for a transaction. You can create credit adjustments for manually-collected transactions that are `billed` or `past_due`.You can create adjustments to refund transactions that are `completed`, or to reduce the amount to due on manually-collected transactions that are `billed` or `past_due`.Most refunds for live accounts are created with the status of `pending_approval` until reviewed by Paddle, but [some are automatically approved](https://developer.paddle.com/build/transactions/create-transaction-adjustments#background-refunds). For sandbox accounts, Paddle automatically approves refunds every ten minutes.Adjustments can apply to some or all items on a transaction. You&apos;ll need the Paddle ID of the transaction to create a refund or credit for, along with the Paddle ID of any transaction items (`details.line_items[].id`).If successful, your response includes a copy of the new adjustment entity.
         /// Create an adjustment <see href="https://developer.paddle.com/api-reference/adjustments/create-adjustment" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateAdjustment201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateAdjustment201Response"/></returns>
         /// <param name="body">Represents an adjustment entity when creating adjustments.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateAdjustment201?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateAdjustment201Response?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateAdjustment201> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateAdjustment201Response> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -94,7 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.Adjustments
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateAdjustment201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateAdjustment201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateAdjustment201Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateAdjustment201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of adjustments. Use the query parameters to page through results.

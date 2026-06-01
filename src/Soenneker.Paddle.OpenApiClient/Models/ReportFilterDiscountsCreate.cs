@@ -16,22 +16,28 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Field name to filter by.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsItemName? Name { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateName? Name { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateName Name { get; set; }
+#endif
         /// <summary>Operator to use when filtering. Valid when filtering by `updated_at`, `null` otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreate_operator? Operator { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateOperator? Operator { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreate_operator Operator { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateOperator Operator { get; set; }
 #endif
         /// <summary>Value to filter by. Check the allowed values descriptions for the `name` field to see valid values for a field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.UnionBranch? Value { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.UnionBranch Value { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateValue Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreate"/> and sets the default values.
@@ -58,9 +64,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsItemName>(); } },
-                { "operator", n => { Operator = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreate_operator>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreate_operator.CreateFromDiscriminatorValue); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UnionBranch>(global::Soenneker.Paddle.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateName>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateName.CreateFromDiscriminatorValue); } },
+                { "operator", n => { Operator = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateOperator>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateOperator.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateValue>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,9 +76,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsItemName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreate_operator>("operator", Operator);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UnionBranch>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateName>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateOperator>("operator", Operator);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscountsCreateValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

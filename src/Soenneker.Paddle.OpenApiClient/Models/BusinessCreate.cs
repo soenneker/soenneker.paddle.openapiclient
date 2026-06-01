@@ -16,58 +16,58 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Company number for this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_company_number? CompanyNumber { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateCompanyNumber? CompanyNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_company_number CompanyNumber { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateCompanyNumber CompanyNumber { get; set; }
 #endif
         /// <summary>List of contacts related to this business, typically used for sending invoices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_contacts? Contacts { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateContacts? Contacts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_contacts Contacts { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateContacts Contacts { get; set; }
 #endif
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_custom_data? CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateCustomData? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_custom_data CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateCustomData CustomData { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique Paddle ID for this business entity, prefixed with `biz_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_id? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_id Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Import information for this entity. `null` if this entity is not imported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_import_meta? ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateImportMeta? ImportMeta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_import_meta ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateImportMeta ImportMeta { get; set; }
 #endif
-        /// <summary>Name of this business.</summary>
+        /// <summary>Full name.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_name? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_name Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Tax or VAT Number for this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_tax_identifier? TaxIdentifier { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateTaxIdentifier? TaxIdentifier { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_tax_identifier TaxIdentifier { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateTaxIdentifier TaxIdentifier { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -87,13 +87,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "company_number", n => { CompanyNumber = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_company_number>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_company_number.CreateFromDiscriminatorValue); } },
-                { "contacts", n => { Contacts = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_contacts>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_contacts.CreateFromDiscriminatorValue); } },
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_custom_data>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_custom_data.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_id>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_id.CreateFromDiscriminatorValue); } },
-                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_import_meta>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_import_meta.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_name>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_name.CreateFromDiscriminatorValue); } },
-                { "tax_identifier", n => { TaxIdentifier = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_tax_identifier>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_tax_identifier.CreateFromDiscriminatorValue); } },
+                { "company_number", n => { CompanyNumber = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateCompanyNumber>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateCompanyNumber.CreateFromDiscriminatorValue); } },
+                { "contacts", n => { Contacts = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateContacts>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateContacts.CreateFromDiscriminatorValue); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateCustomData.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateImportMeta.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "tax_identifier", n => { TaxIdentifier = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateTaxIdentifier>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateTaxIdentifier.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -103,12 +103,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_company_number>("company_number", CompanyNumber);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_contacts>("contacts", Contacts);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_custom_data>("custom_data", CustomData);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_import_meta>("import_meta", ImportMeta);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_name>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate_tax_identifier>("tax_identifier", TaxIdentifier);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateCompanyNumber>("company_number", CompanyNumber);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateContacts>("contacts", Contacts);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateCustomData>("custom_data", CustomData);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateImportMeta>("import_meta", ImportMeta);
+            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateTaxIdentifier>("tax_identifier", TaxIdentifier);
         }
     }
 }

@@ -13,7 +13,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "adjustment_line_items")]
         #pragma warning disable CS1591
-        Adjustment_line_items,
+        AdjustmentLineItems,
         #pragma warning restore CS1591
     }
 }

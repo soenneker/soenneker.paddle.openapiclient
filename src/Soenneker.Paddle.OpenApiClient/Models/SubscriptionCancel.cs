@@ -17,10 +17,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The effective_from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCancel_effective_from? EffectiveFrom { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCancelEffectiveFrom? EffectiveFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCancel_effective_from EffectiveFrom { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCancelEffectiveFrom EffectiveFrom { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCancel"/> and sets the default values.
@@ -47,7 +47,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "effective_from", n => { EffectiveFrom = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCancel_effective_from>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCancel_effective_from.CreateFromDiscriminatorValue); } },
+                { "effective_from", n => { EffectiveFrom = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCancelEffectiveFrom>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCancelEffectiveFrom.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -57,7 +57,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCancel_effective_from>("effective_from", EffectiveFrom);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCancelEffectiveFrom>("effective_from", EffectiveFrom);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

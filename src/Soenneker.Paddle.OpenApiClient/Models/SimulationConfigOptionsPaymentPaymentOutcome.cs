@@ -14,11 +14,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "recovered_existing_payment_method")]
         #pragma warning disable CS1591
-        Recovered_existing_payment_method,
+        RecoveredExistingPaymentMethod,
         #pragma warning restore CS1591
         [EnumMember(Value = "recovered_updated_payment_method")]
         #pragma warning disable CS1591
-        Recovered_updated_payment_method,
+        RecoveredUpdatedPaymentMethod,
         #pragma warning restore CS1591
         [EnumMember(Value = "failed")]
         #pragma warning disable CS1591

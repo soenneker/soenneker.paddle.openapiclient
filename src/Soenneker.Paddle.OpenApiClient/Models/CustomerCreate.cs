@@ -16,34 +16,34 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_custom_data? CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateCustomData? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_custom_data CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateCustomData CustomData { get; set; }
 #endif
-        /// <summary>Email address for this customer.</summary>
+        /// <summary>Email address for this entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_email? Email { get; set; }
+        public string? Email { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_email Email { get; set; }
+        public string Email { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique Paddle ID for this customer entity, prefixed with `ctm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_id? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_id Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Import information for this entity. `null` if this entity is not imported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_import_meta? ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateImportMeta? ImportMeta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_import_meta ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateImportMeta ImportMeta { get; set; }
 #endif
         /// <summary>Valid IETF BCP 47 short form locale tag. If omitted, defaults to `en`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,10 +58,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Full name of this customer. Required when creating transactions where `collection_mode` is `manual` (invoices).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_name? Name { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateName? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_name Name { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateName Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate"/> and sets the default values.
@@ -88,13 +88,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_custom_data>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_custom_data.CreateFromDiscriminatorValue); } },
-                { "email", n => { Email = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_email>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_email.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_id>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_id.CreateFromDiscriminatorValue); } },
-                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_import_meta>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_import_meta.CreateFromDiscriminatorValue); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateCustomData.CreateFromDiscriminatorValue); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateImportMeta.CreateFromDiscriminatorValue); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
                 { "marketing_consent", n => { MarketingConsent = n.GetBoolValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_name>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_name.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateName>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateName.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -104,12 +104,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_custom_data>("custom_data", CustomData);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_email>("email", Email);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_import_meta>("import_meta", ImportMeta);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateCustomData>("custom_data", CustomData);
+            writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateImportMeta>("import_meta", ImportMeta);
             writer.WriteStringValue("locale", Locale);
             writer.WriteBoolValue("marketing_consent", MarketingConsent);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate_name>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateName>("name", Name);
         }
     }
 }

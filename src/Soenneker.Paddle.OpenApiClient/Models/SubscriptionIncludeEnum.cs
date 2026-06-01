@@ -10,11 +10,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "next_transaction")]
         #pragma warning disable CS1591
-        Next_transaction,
+        NextTransaction,
         #pragma warning restore CS1591
         [EnumMember(Value = "recurring_transaction_details")]
         #pragma warning disable CS1591
-        Recurring_transaction_details,
+        RecurringTransactionDetails,
         #pragma warning restore CS1591
     }
 }

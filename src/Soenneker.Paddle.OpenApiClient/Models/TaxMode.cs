@@ -9,7 +9,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "account_setting")]
         #pragma warning disable CS1591
-        Account_setting,
+        AccountSetting,
         #pragma warning restore CS1591
         [EnumMember(Value = "external")]
         #pragma warning disable CS1591
@@ -17,7 +17,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "internal")]
         #pragma warning disable CS1591
-        Internal,
+        InternalValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "location")]
         #pragma warning disable CS1591

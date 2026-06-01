@@ -9,23 +9,23 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "subscription_creation")]
         #pragma warning disable CS1591
-        Subscription_creation,
+        SubscriptionCreation,
         #pragma warning restore CS1591
         [EnumMember(Value = "subscription_renewal")]
         #pragma warning disable CS1591
-        Subscription_renewal,
+        SubscriptionRenewal,
         #pragma warning restore CS1591
         [EnumMember(Value = "subscription_pause")]
         #pragma warning disable CS1591
-        Subscription_pause,
+        SubscriptionPause,
         #pragma warning restore CS1591
         [EnumMember(Value = "subscription_resume")]
         #pragma warning disable CS1591
-        Subscription_resume,
+        SubscriptionResume,
         #pragma warning restore CS1591
         [EnumMember(Value = "subscription_cancellation")]
         #pragma warning disable CS1591
-        Subscription_cancellation,
+        SubscriptionCancellation,
         #pragma warning restore CS1591
     }
 }

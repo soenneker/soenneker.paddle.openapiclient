@@ -19,15 +19,15 @@ namespace Soenneker.Paddle.OpenApiClient.Prices
     public partial class PricesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.prices.item collection</summary>
-        /// <param name="position">Paddle ID of the price entity to work with.</param>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPriceItemRequestBuilder"/></returns>
+        public global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPriceItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("price_id", position);
-                return new global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPrice_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("priceId", position);
+                return new global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPriceItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -50,17 +50,17 @@ namespace Soenneker.Paddle.OpenApiClient.Prices
         /// Returns a paginated list of prices. Use the query parameters to page through results.By default, Paddle returns prices that are `active`. Use the `status` query parameter to return prices that are archived.Use the `include` parameter to include the related product entity in the response.
         /// List prices <see href="https://developer.paddle.com/api-reference/prices/list-prices" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListPrices200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListPrices200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListPrices200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Prices.PricesRequestBuilder.PricesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListPrices200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Prices.PricesRequestBuilder.PricesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListPrices200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Prices.PricesRequestBuilder.PricesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListPrices200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Prices.PricesRequestBuilder.PricesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,24 +68,24 @@ namespace Soenneker.Paddle.OpenApiClient.Prices
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListPrices200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListPrices200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListPrices200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListPrices200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new price.Prices describe how you charge for products. You must include a `product_id` in your request to relate this price to a product.If you omit the `quantity` object, Paddle automatically sets a minimum of `1` and a maximum of `100` for you. This means the most units that a customer can buy is 100. Set a quantity if you&apos;d like to offer a different amount.If successful, your response includes a copy of the new price entity.
         /// Create a price <see href="https://developer.paddle.com/api-reference/prices/create-price" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreatePrice201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreatePrice201Response"/></returns>
         /// <param name="body">Represents a price entity when creating prices.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreatePrice201?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.PriceCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreatePrice201Response?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.PriceCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreatePrice201> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.PriceCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreatePrice201Response> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.PriceCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -94,7 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.Prices
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreatePrice201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreatePrice201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreatePrice201Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreatePrice201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of prices. Use the query parameters to page through results.By default, Paddle returns prices that are `active`. Use the `status` query parameter to return prices that are archived.Use the `include` parameter to include the related product entity in the response.

@@ -13,7 +13,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "flat_per_seat")]
         #pragma warning disable CS1591
-        Flat_per_seat,
+        FlatPerSeat,
         #pragma warning restore CS1591
         [EnumMember(Value = "percentage")]
         #pragma warning disable CS1591

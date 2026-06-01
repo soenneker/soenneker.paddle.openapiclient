@@ -16,10 +16,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Configuration for this scenario simulation. Use to simulate more granular flows and populate payloads with your own entity data. If omitted, Paddle simulates the default scenario flow and populates payloads with demo examples.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreate_config? Config { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfig? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreate_config Config { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfig Config { get; set; }
 #endif
         /// <summary>Name of this simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -29,16 +29,22 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Paddle ID of the notification setting where this simulation is sent, prefixed with `ntfset_`.</summary>
+        /// <summary>Unique Paddle ID for this notification setting, prefixed with `ntfset_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreate_notification_setting_id? NotificationSettingId { get; private set; }
+        public string? NotificationSettingId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreate_notification_setting_id NotificationSettingId { get; private set; }
+        public string NotificationSettingId { get; set; }
 #endif
-        /// <summary>Scenario for a simulation.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsType? Type { get; set; }
+        /// <summary>Scenario for this simulation. Scenario simulations play all events sent for a subscription lifecycle event.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateType Type { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,10 +63,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreate_config>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreate_config.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfig>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfig.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "notification_setting_id", n => { NotificationSettingId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreate_notification_setting_id>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreate_notification_setting_id.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsType>(); } },
+                { "notification_setting_id", n => { NotificationSettingId = n.GetStringValue(); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateType>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,9 +76,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreate_config>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfig>("config", Config);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsType>("type", Type);
+            writer.WriteStringValue("notification_setting_id", NotificationSettingId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateType>("type", Type);
         }
     }
 }

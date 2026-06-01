@@ -21,19 +21,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "chargeback_reverse")]
         #pragma warning disable CS1591
-        Chargeback_reverse,
+        ChargebackReverse,
         #pragma warning restore CS1591
         [EnumMember(Value = "chargeback_warning")]
         #pragma warning disable CS1591
-        Chargeback_warning,
+        ChargebackWarning,
         #pragma warning restore CS1591
         [EnumMember(Value = "chargeback_warning_reverse")]
         #pragma warning disable CS1591
-        Chargeback_warning_reverse,
+        ChargebackWarningReverse,
         #pragma warning restore CS1591
         [EnumMember(Value = "credit_reverse")]
         #pragma warning disable CS1591
-        Credit_reverse,
+        CreditReverse,
         #pragma warning restore CS1591
     }
 }

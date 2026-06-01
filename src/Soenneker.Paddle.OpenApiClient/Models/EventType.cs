@@ -39,8 +39,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Group { get; private set; }
 #endif
-        /// <summary>Type of event sent by Paddle, in the format `entity.event_type`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName? Name { get; set; }
+        /// <summary>The name property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.EventTypeNameComposed? Name { get; private set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.EventTypeNameComposed Name { get; private set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.EventType"/> and sets the default values.
         /// </summary>
@@ -69,7 +75,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "available_versions", n => { AvailableVersions = n.GetCollectionOfPrimitiveValues<int?>()?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "group", n => { Group = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>(); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeNameComposed>(global::Soenneker.Paddle.OpenApiClient.Models.EventTypeNameComposed.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -79,7 +85,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

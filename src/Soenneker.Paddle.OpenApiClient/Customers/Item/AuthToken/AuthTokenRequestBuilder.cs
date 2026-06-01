@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Customers.Item.AuthToken
 {
     /// <summary>
-    /// Builds and executes requests for operations under \customers\{customer_id}\auth-token
+    /// Builds and executes requests for operations under \customers\{customerId}\auth-token
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AuthTokenRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.AuthToken
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthTokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customer_id}/auth-token", pathParameters)
+        public AuthTokenRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customerId}/auth-token", pathParameters)
         {
         }
         /// <summary>
@@ -30,24 +30,24 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.AuthToken
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AuthTokenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customer_id}/auth-token", rawUrl)
+        public AuthTokenRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customerId}/auth-token", rawUrl)
         {
         }
         /// <summary>
         /// Generates an authentication token for a customer. You can pass a generated authentication token to Paddle.js when opening a checkout to let customers work with saved payment methods.Authentication tokens are temporary and shouldn&apos;t be cached. They&apos;re valid until the `expires_at` date returned in the response.
         /// Generate an authentication token for a customer <see href="https://developer.paddle.com/api-reference/customers/generate-customer-authentication-token" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.GenerateCustomerAuthenticationToken200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.GenerateCustomerAuthenticationToken200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GenerateCustomerAuthenticationToken200?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GenerateCustomerAuthenticationToken200Response?> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GenerateCustomerAuthenticationToken200> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.GenerateCustomerAuthenticationToken200Response> PostAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.AuthToken
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.GenerateCustomerAuthenticationToken200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.GenerateCustomerAuthenticationToken200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.GenerateCustomerAuthenticationToken200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.GenerateCustomerAuthenticationToken200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Generates an authentication token for a customer. You can pass a generated authentication token to Paddle.js when opening a checkout to let customers work with saved payment methods.Authentication tokens are temporary and shouldn&apos;t be cached. They&apos;re valid until the `expires_at` date returned in the response.

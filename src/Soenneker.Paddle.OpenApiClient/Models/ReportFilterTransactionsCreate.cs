@@ -15,22 +15,28 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Field name to filter by.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsItemName? Name { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateName? Name { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateName Name { get; set; }
+#endif
         /// <summary>Operator to use when filtering. Valid when filtering by `updated_at`, `null` otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreate_operator? Operator { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateOperator? Operator { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreate_operator Operator { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateOperator Operator { get; set; }
 #endif
         /// <summary>Value to filter by. Check the allowed values descriptions for the `name` field to see valid values for a field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.UnionBranch? Value { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateValue? Value { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.UnionBranch Value { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateValue Value { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreate"/> and sets the default values.
@@ -57,9 +63,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsItemName>(); } },
-                { "operator", n => { Operator = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreate_operator>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreate_operator.CreateFromDiscriminatorValue); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UnionBranch>(global::Soenneker.Paddle.OpenApiClient.Models.UnionBranch.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateName>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateName.CreateFromDiscriminatorValue); } },
+                { "operator", n => { Operator = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateOperator>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateOperator.CreateFromDiscriminatorValue); } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateValue>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,9 +75,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsItemName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreate_operator>("operator", Operator);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UnionBranch>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateName>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateOperator>("operator", Operator);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsCreateValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -13,7 +13,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "authorized_flagged")]
         #pragma warning disable CS1591
-        Authorized_flagged,
+        AuthorizedFlagged,
         #pragma warning restore CS1591
         [EnumMember(Value = "canceled")]
         #pragma warning disable CS1591
@@ -29,11 +29,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "action_required")]
         #pragma warning disable CS1591
-        Action_required,
+        ActionRequired,
         #pragma warning restore CS1591
         [EnumMember(Value = "pending_no_action_required")]
         #pragma warning disable CS1591
-        Pending_no_action_required,
+        PendingNoActionRequired,
         #pragma warning restore CS1591
         [EnumMember(Value = "created")]
         #pragma warning disable CS1591

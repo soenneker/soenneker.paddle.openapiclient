@@ -13,7 +13,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "apple_pay")]
         #pragma warning disable CS1591
-        Apple_pay,
+        ApplePay,
         #pragma warning restore CS1591
         [EnumMember(Value = "bancontact")]
         #pragma warning disable CS1591
@@ -29,7 +29,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "google_pay")]
         #pragma warning disable CS1591
-        Google_pay,
+        GooglePay,
         #pragma warning restore CS1591
         [EnumMember(Value = "ideal")]
         #pragma warning disable CS1591
@@ -37,15 +37,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "kakao_pay")]
         #pragma warning disable CS1591
-        Kakao_pay,
+        KakaoPay,
         #pragma warning restore CS1591
         [EnumMember(Value = "korea_local")]
         #pragma warning disable CS1591
-        Korea_local,
+        KoreaLocal,
         #pragma warning restore CS1591
         [EnumMember(Value = "naver_pay")]
         #pragma warning disable CS1591
-        Naver_pay,
+        NaverPay,
         #pragma warning restore CS1591
         [EnumMember(Value = "payco")]
         #pragma warning disable CS1591
@@ -53,15 +53,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "samsung_pay")]
         #pragma warning disable CS1591
-        Samsung_pay,
+        SamsungPay,
         #pragma warning restore CS1591
         [EnumMember(Value = "south_korea_local_card")]
         #pragma warning disable CS1591
-        South_korea_local_card,
+        SouthKoreaLocalCard,
         #pragma warning restore CS1591
         [EnumMember(Value = "mb_way")]
         #pragma warning disable CS1591
-        Mb_way,
+        MbWay,
         #pragma warning restore CS1591
         [EnumMember(Value = "paypal")]
         #pragma warning disable CS1591
@@ -77,7 +77,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "wechat_pay")]
         #pragma warning disable CS1591
-        Wechat_pay,
+        WechatPay,
         #pragma warning restore CS1591
     }
 }

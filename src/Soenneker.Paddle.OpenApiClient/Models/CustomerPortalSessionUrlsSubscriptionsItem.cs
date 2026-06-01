@@ -20,13 +20,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string CancelSubscription { get; set; }
 #endif
-        /// <summary>Paddle ID of the subscription that the authenticated customer portal deep links are for.</summary>
+        /// <summary>Unique Paddle ID for this subscription entity, prefixed with `sub_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem_id? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem_id Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Link to the page for this subscription in the customer portal with the payment method update form pre-opened. Use as part of workflows to let customers update their payment details.If a manually-collected subscription, opens the overview page for this subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cancel_subscription", n => { CancelSubscription = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem_id>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "update_subscription_payment_method", n => { UpdateSubscriptionPaymentMethod = n.GetStringValue(); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cancel_subscription", CancelSubscription);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem_id>("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("update_subscription_payment_method", UpdateSubscriptionPaymentMethod);
         }
     }

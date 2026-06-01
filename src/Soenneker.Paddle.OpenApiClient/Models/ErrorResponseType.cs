@@ -9,11 +9,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "request_error")]
         #pragma warning disable CS1591
-        Request_error,
+        RequestError,
         #pragma warning restore CS1591
         [EnumMember(Value = "api_error")]
         #pragma warning disable CS1591
-        Api_error,
+        ApiError,
         #pragma warning restore CS1591
     }
 }

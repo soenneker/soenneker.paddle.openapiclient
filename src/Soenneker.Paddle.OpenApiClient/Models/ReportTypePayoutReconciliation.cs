@@ -9,7 +9,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "payout_reconciliation")]
         #pragma warning disable CS1591
-        Payout_reconciliation,
+        PayoutReconciliation,
         #pragma warning restore CS1591
     }
 }

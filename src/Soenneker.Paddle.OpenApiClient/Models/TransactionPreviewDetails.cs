@@ -34,10 +34,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Breakdown of the total for a transaction preview. `fee` and `earnings` always return `null` for transaction previews.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetails_totals? Totals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsTotals? Totals { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetails_totals Totals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsTotals Totals { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetails"/> and sets the default values.
@@ -66,7 +66,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "line_items", n => { LineItems = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItem>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "tax_rates_used", n => { TaxRatesUsed = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsTaxRatesUsedItem>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsTaxRatesUsedItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetails_totals>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetails_totals.CreateFromDiscriminatorValue); } },
+                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsTotals>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsTotals.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -77,7 +77,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItem>("line_items", LineItems);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetails_totals>("totals", Totals);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsTotals>("totals", Totals);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

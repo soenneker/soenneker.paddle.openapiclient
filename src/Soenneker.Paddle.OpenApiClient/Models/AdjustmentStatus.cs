@@ -9,7 +9,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "pending_approval")]
         #pragma warning disable CS1591
-        Pending_approval,
+        PendingApproval,
         #pragma warning restore CS1591
         [EnumMember(Value = "approved")]
         #pragma warning disable CS1591

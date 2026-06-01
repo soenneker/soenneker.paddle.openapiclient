@@ -19,15 +19,15 @@ namespace Soenneker.Paddle.OpenApiClient.Reports
     public partial class ReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.reports.item collection</summary>
-        /// <param name="position">Paddle ID of the report entity.</param>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Reports.Item.WithReport_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Paddle.OpenApiClient.Reports.Item.WithReport_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Reports.Item.WithReportItemRequestBuilder"/></returns>
+        public global::Soenneker.Paddle.OpenApiClient.Reports.Item.WithReportItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("report_id", position);
-                return new global::Soenneker.Paddle.OpenApiClient.Reports.Item.WithReport_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("reportId", position);
+                return new global::Soenneker.Paddle.OpenApiClient.Reports.Item.WithReportItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -50,17 +50,17 @@ namespace Soenneker.Paddle.OpenApiClient.Reports
         /// Returns a paginated list of reports. Use the query parameters to page through results.By default, Paddle returns reports that are `pending` or `ready`. Use the `status` query parameter to return reports that are `failed`, `expired`, or `deleted`.
         /// List reports <see href="https://developer.paddle.com/api-reference/reports/list-reports" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListReports200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListReports200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListReports200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListReports200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListReports200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListReports200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Reports.ReportsRequestBuilder.ReportsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,24 +68,24 @@ namespace Soenneker.Paddle.OpenApiClient.Reports
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListReports200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListReports200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListReports200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListReports200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new report.Reports are created as `pending` initially while Paddle generates your report. They move to `ready` when they&apos;re ready to download.You can download a report when it&apos;s ready using the [get a CSV file for a report operation](https://developer.paddle.com/api-reference/reports/get-report-csv).If successful, your response includes a copy of the new report entity.
         /// Create a report <see href="https://developer.paddle.com/api-reference/reports/create-report" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateReport201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateReport201Response"/></returns>
         /// <param name="body">Represents a report entity.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateReport201?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.ReportCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateReport201Response?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.ReportCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateReport201> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.ReportCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateReport201Response> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.ReportCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -94,7 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.Reports
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateReport201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateReport201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateReport201Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateReport201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of reports. Use the query parameters to page through results.By default, Paddle returns reports that are `pending` or `ready`. Use the `status` query parameter to return reports that are `failed`, `expired`, or `deleted`.

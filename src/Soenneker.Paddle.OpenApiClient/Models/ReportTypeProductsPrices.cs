@@ -9,7 +9,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "products_prices")]
         #pragma warning disable CS1591
-        Products_prices,
+        ProductsPrices,
         #pragma warning restore CS1591
     }
 }

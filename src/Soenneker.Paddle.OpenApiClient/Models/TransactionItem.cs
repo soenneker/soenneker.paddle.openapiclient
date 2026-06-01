@@ -17,18 +17,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The price property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItem_price? Price { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemPrice? Price { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItem_price Price { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemPrice Price { get; private set; }
 #endif
         /// <summary>How proration was calculated for this item. Populated when a transaction is created from a subscription change, where `proration_billing_mode` was `prorated_immediately` or `prorated_next_billing_period`. Set automatically by Paddle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItem_proration? Proration { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProrationComposed? Proration { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItem_proration Proration { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProrationComposed Proration { get; private set; }
 #endif
         /// <summary>Quantity of this item on the transaction.</summary>
         public int? Quantity { get; set; }
@@ -57,8 +57,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "price", n => { Price = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItem_price>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionItem_price.CreateFromDiscriminatorValue); } },
-                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItem_proration>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionItem_proration.CreateFromDiscriminatorValue); } },
+                { "price", n => { Price = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemPrice>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemPrice.CreateFromDiscriminatorValue); } },
+                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProrationComposed>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProrationComposed.CreateFromDiscriminatorValue); } },
                 { "quantity", n => { Quantity = n.GetIntValue(); } },
             };
         }

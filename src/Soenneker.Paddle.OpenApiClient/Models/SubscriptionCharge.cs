@@ -13,8 +13,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionCharge : IParsable
     {
-        /// <summary>When this subscription change should take effect from. Defaults to `next_billing_period`, which creates a`scheduled_change` to apply the subscription change at the end of the billing period.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom? EffectiveFrom { get; set; }
+        /// <summary>When one-time charges should be billed.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeEffectiveFrom? EffectiveFrom { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeEffectiveFrom EffectiveFrom { get; set; }
+#endif
         /// <summary>List of one-time charges to bill for. Only prices where the `billing_cycle` is `null` may be added.You can charge for items that you&apos;ve added to your catalog by passing the Paddle ID of an existing price entity, or you can charge for non-catalog items by passing a price object.Non-catalog items can be for existing products, or you can pass a product object as part of your price to charge for a non-catalog product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,8 +29,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeItems> Items { get; set; }
 #endif
-        /// <summary>How Paddle should handle changes made to a subscription or its items if the payment fails during update. If omitted, defaults to `prevent_change`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnPaymentFailure? OnPaymentFailure { get; set; }
+        /// <summary>The on_payment_failure property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeOnPaymentFailure? OnPaymentFailure { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeOnPaymentFailure OnPaymentFailure { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -43,9 +55,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "effective_from", n => { EffectiveFrom = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom>(); } },
+                { "effective_from", n => { EffectiveFrom = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeEffectiveFrom>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeEffectiveFrom.CreateFromDiscriminatorValue); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeItems>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeItems.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "on_payment_failure", n => { OnPaymentFailure = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnPaymentFailure>(); } },
+                { "on_payment_failure", n => { OnPaymentFailure = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeOnPaymentFailure>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeOnPaymentFailure.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -55,9 +67,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom>("effective_from", EffectiveFrom);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeEffectiveFrom>("effective_from", EffectiveFrom);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeItems>("items", Items);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOnPaymentFailure>("on_payment_failure", OnPaymentFailure);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeOnPaymentFailure>("on_payment_failure", OnPaymentFailure);
         }
     }
 }

@@ -19,15 +19,15 @@ namespace Soenneker.Paddle.OpenApiClient.DiscountGroups
     public partial class DiscountGroupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.discountGroups.item collection</summary>
-        /// <param name="position">Paddle ID of the discount group entity to work with.</param>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.DiscountGroups.Item.WithDiscount_group_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Paddle.OpenApiClient.DiscountGroups.Item.WithDiscount_group_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.DiscountGroups.Item.WithDiscountGroupItemRequestBuilder"/></returns>
+        public global::Soenneker.Paddle.OpenApiClient.DiscountGroups.Item.WithDiscountGroupItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("discount_group_id", position);
-                return new global::Soenneker.Paddle.OpenApiClient.DiscountGroups.Item.WithDiscount_group_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("discountGroupId", position);
+                return new global::Soenneker.Paddle.OpenApiClient.DiscountGroups.Item.WithDiscountGroupItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -50,17 +50,17 @@ namespace Soenneker.Paddle.OpenApiClient.DiscountGroups
         /// Returns a paginated list of discount groups. Use the query parameters to page through results.
         /// List discount groups <see href="https://developer.paddle.com/api-reference/discount-groups/list-discount-groups" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListDiscountGroups200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListDiscountGroups200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListDiscountGroups200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.DiscountGroups.DiscountGroupsRequestBuilder.DiscountGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListDiscountGroups200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.DiscountGroups.DiscountGroupsRequestBuilder.DiscountGroupsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListDiscountGroups200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.DiscountGroups.DiscountGroupsRequestBuilder.DiscountGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListDiscountGroups200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.DiscountGroups.DiscountGroupsRequestBuilder.DiscountGroupsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,24 +68,24 @@ namespace Soenneker.Paddle.OpenApiClient.DiscountGroups
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListDiscountGroups200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListDiscountGroups200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListDiscountGroups200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListDiscountGroups200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new discount group.If successful, your response includes a copy of the new discount group entity.
         /// Create a discount group <see href="https://developer.paddle.com/api-reference/discount-groups/create-discount-group" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscountGroup201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscountGroup201Response"/></returns>
         /// <param name="body">Represents a discount group entity when creating discount groups.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscountGroup201?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroupCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscountGroup201Response?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroupCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscountGroup201> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroupCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscountGroup201Response> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.DiscountGroupCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -94,7 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.DiscountGroups
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscountGroup201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscountGroup201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscountGroup201Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscountGroup201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of discount groups. Use the query parameters to page through results.

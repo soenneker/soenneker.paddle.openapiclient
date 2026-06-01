@@ -10,15 +10,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "not_provided")]
         #pragma warning disable CS1591
-        Not_provided,
+        NotProvided,
         #pragma warning restore CS1591
         [EnumMember(Value = "new")]
         #pragma warning disable CS1591
-        New,
+        NewValue,
         #pragma warning restore CS1591
         [EnumMember(Value = "existing_details_prefilled")]
         #pragma warning disable CS1591
-        Existing_details_prefilled,
+        ExistingDetailsPrefilled,
         #pragma warning restore CS1591
     }
 }

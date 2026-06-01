@@ -14,13 +14,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Paddle ID for the price to add to this transaction, prefixed with `pri_`.</summary>
+        /// <summary>Unique Paddle ID for this price, prefixed with `pri_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewItem_price_id? PriceId { get; set; }
+        public string? PriceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewItem_price_id PriceId { get; set; }
+        public string PriceId { get; set; }
 #endif
         /// <summary>Quantity of the item to preview.</summary>
         public int? Quantity { get; set; }
@@ -49,7 +49,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "price_id", n => { PriceId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewItem_price_id>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewItem_price_id.CreateFromDiscriminatorValue); } },
+                { "price_id", n => { PriceId = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetIntValue(); } },
             };
         }
@@ -60,7 +60,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewItem_price_id>("price_id", PriceId);
+            writer.WriteStringValue("price_id", PriceId);
             writer.WriteIntValue("quantity", Quantity);
             writer.WriteAdditionalData(AdditionalData);
         }

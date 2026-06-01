@@ -17,37 +17,43 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Amount adjusted for this transaction item. Required when item `type` is `partial`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_amount? Amount { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemAmount? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_amount Amount { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemAmount Amount { get; set; }
 #endif
-        /// <summary>Paddle ID for the transaction item that this adjustment item relates to, prefixed with `txnitm_`.</summary>
+        /// <summary>Unique Paddle ID for this transaction item, prefixed with `txnitm_`. Used when working with [adjustments](https://developer.paddle.com/build/transactions/create-transaction-adjustments).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_item_id? ItemId { get; set; }
+        public string? ItemId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_item_id ItemId { get; set; }
+        public string ItemId { get; set; }
 #endif
         /// <summary>How proration was calculated for this adjustment item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_proration? Proration { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemProration? Proration { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_proration Proration { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemProration Proration { get; private set; }
 #endif
         /// <summary>The totals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_totals? Totals { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTotalsComposed? Totals { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_totals Totals { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTotalsComposed Totals { get; private set; }
 #endif
         /// <summary>Type of adjustment for this transaction item. `tax` adjustments are automatically created by Paddle.Include `amount` when creating a `partial` adjustment.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemType? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTypeComposed? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTypeComposed Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem"/> and sets the default values.
         /// </summary>
@@ -73,11 +79,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_amount>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_amount.CreateFromDiscriminatorValue); } },
-                { "item_id", n => { ItemId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_item_id>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_item_id.CreateFromDiscriminatorValue); } },
-                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_proration>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_proration.CreateFromDiscriminatorValue); } },
-                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_totals>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_totals.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemType>(); } },
+                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemAmount>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemAmount.CreateFromDiscriminatorValue); } },
+                { "item_id", n => { ItemId = n.GetStringValue(); } },
+                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemProration>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemProration.CreateFromDiscriminatorValue); } },
+                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTotalsComposed>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTotalsComposed.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTypeComposed>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTypeComposed.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -87,9 +93,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_amount>("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem_item_id>("item_id", ItemId);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemAmount>("amount", Amount);
+            writer.WriteStringValue("item_id", ItemId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTypeComposed>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

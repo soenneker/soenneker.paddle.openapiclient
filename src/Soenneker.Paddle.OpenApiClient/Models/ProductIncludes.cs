@@ -15,53 +15,47 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_created_at? CreatedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_created_at CreatedAt { get; private set; }
-#endif
+        /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_custom_data? CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesCustomData? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_custom_data CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesCustomData CustomData { get; set; }
 #endif
         /// <summary>Short description for this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_description? Description { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesDescription? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_description Description { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesDescription Description { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique Paddle ID for this product, prefixed with `pro_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_id? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_id Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Image for this product. Included in the checkout and on some customer documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_image_url? ImageUrl { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesImageUrl? ImageUrl { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_image_url ImageUrl { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesImageUrl ImageUrl { get; set; }
 #endif
         /// <summary>Import information for this entity. `null` if this entity is not imported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_import_meta? ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesImportMeta? ImportMeta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_import_meta ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesImportMeta ImportMeta { get; set; }
 #endif
         /// <summary>Name of this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,20 +73,26 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.Price> Prices { get; set; }
 #endif
-        /// <summary>Whether this entity can be used in Paddle.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.Status? Status { get; set; }
-        /// <summary>Tax category for this product. Used for charging the correct rate of tax. Selected tax category must be enabled on your Paddle account.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory? TaxCategory { get; set; }
-        /// <summary>Type of item. Standard items are considered part of your catalog and are shown in the Paddle dashboard.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.CatalogType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_updated_at? UpdatedAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesStatus? Status { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_updated_at UpdatedAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesStatus Status { get; set; }
 #endif
+        /// <summary>Tax category for this product. Used for charging the correct rate of tax. Selected tax category must be enabled on your Paddle account.</summary>
+        public global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory? TaxCategory { get; set; }
+        /// <summary>The type property</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesType Type { get; set; }
+#endif
+        /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes"/> and sets the default values.
         /// </summary>
@@ -118,18 +118,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_created_at>(global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_created_at.CreateFromDiscriminatorValue); } },
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_custom_data>(global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_custom_data.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_description>(global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_description.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_id>(global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_id.CreateFromDiscriminatorValue); } },
-                { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_image_url>(global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_image_url.CreateFromDiscriminatorValue); } },
-                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_import_meta>(global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_import_meta.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesCustomData.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesDescription>(global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesDescription.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
+                { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesImageUrl>(global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesImageUrl.CreateFromDiscriminatorValue); } },
+                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesImportMeta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "prices", n => { Prices = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.Price>(global::Soenneker.Paddle.OpenApiClient.Models.Price.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>(); } },
+                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesStatus>(global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesStatus.CreateFromDiscriminatorValue); } },
                 { "tax_category", n => { TaxCategory = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CatalogType>(); } },
-                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_updated_at>(global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_updated_at.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesType>(global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesType.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -139,15 +139,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_custom_data>("custom_data", CustomData);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_description>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_image_url>("image_url", ImageUrl);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludes_import_meta>("import_meta", ImportMeta);
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesCustomData>("custom_data", CustomData);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesDescription>("description", Description);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesImageUrl>("image_url", ImageUrl);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesImportMeta>("import_meta", ImportMeta);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.Price>("prices", Prices);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>("status", Status);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory>("tax_category", TaxCategory);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CatalogType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductIncludesType>("type", Type);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

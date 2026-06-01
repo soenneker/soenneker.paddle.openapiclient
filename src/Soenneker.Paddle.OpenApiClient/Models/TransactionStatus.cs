@@ -33,7 +33,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "past_due")]
         #pragma warning disable CS1591
-        Past_due,
+        PastDue,
         #pragma warning restore CS1591
     }
 }

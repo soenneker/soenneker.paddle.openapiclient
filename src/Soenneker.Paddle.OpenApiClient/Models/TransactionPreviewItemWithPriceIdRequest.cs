@@ -17,21 +17,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this item should be included in totals for this transaction preview. Typically used to exclude one-time charges from calculations.</summary>
         public bool? IncludeInTotals { get; set; }
-        /// <summary>Paddle ID of an existing catalog price to preview charging for, prefixed with `pri_`.</summary>
+        /// <summary>Unique Paddle ID for this price, prefixed with `pri_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequest_price_id? PriceId { get; set; }
+        public string? PriceId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequest_price_id PriceId { get; set; }
+        public string PriceId { get; set; }
 #endif
         /// <summary>How proration was calculated for this item. `null` for transaction previews.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequest_proration? Proration { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequestProration? Proration { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequest_proration Proration { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequestProration Proration { get; private set; }
 #endif
         /// <summary>Quantity of this item on the transaction.</summary>
         public int? Quantity { get; set; }
@@ -61,8 +61,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "include_in_totals", n => { IncludeInTotals = n.GetBoolValue(); } },
-                { "price_id", n => { PriceId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequest_price_id>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequest_price_id.CreateFromDiscriminatorValue); } },
-                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequest_proration>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequest_proration.CreateFromDiscriminatorValue); } },
+                { "price_id", n => { PriceId = n.GetStringValue(); } },
+                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequestProration>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequestProration.CreateFromDiscriminatorValue); } },
                 { "quantity", n => { Quantity = n.GetIntValue(); } },
             };
         }
@@ -74,7 +74,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("include_in_totals", IncludeInTotals);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequest_price_id>("price_id", PriceId);
+            writer.WriteStringValue("price_id", PriceId);
             writer.WriteIntValue("quantity", Quantity);
             writer.WriteAdditionalData(AdditionalData);
         }

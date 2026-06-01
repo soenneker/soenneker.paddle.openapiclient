@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview
 {
     /// <summary>
-    /// Builds and executes requests for operations under \subscriptions\{subscription_id}\preview
+    /// Builds and executes requests for operations under \subscriptions\{subscriptionId}\preview
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PreviewRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscriptions/{subscription_id}/preview", pathParameters)
+        public PreviewRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscriptions/{subscriptionId}/preview", pathParameters)
         {
         }
         /// <summary>
@@ -30,25 +30,25 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PreviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscriptions/{subscription_id}/preview", rawUrl)
+        public PreviewRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscriptions/{subscriptionId}/preview", rawUrl)
         {
         }
         /// <summary>
         /// Previews an update for a subscription without applying those changes. Typically used for previewing proration before making changes to a subscription.If successful, your response includes `immediate_transaction`, `next_transaction`, and `recurring_transaction_details` so you can see expected transactions for the changes.The `update_summary` object contains details of prorated credits and charges created, along with the overall result of the update.
         /// Preview an update to a subscription <see href="https://developer.paddle.com/api-reference/subscriptions/preview-subscription" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200Response"/></returns>
         /// <param name="body">Represents a subscription entity when updating subscriptions.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200Response?> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200Response> PatchAsync(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -57,7 +57,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Previews an update for a subscription without applying those changes. Typically used for previewing proration before making changes to a subscription.If successful, your response includes `immediate_transaction`, `next_transaction`, and `recurring_transaction_details` so you can see expected transactions for the changes.The `update_summary` object contains details of prorated credits and charges created, along with the overall result of the update.

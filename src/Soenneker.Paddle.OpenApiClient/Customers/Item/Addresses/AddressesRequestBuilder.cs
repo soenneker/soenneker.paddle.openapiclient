@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses
 {
     /// <summary>
-    /// Builds and executes requests for operations under \customers\{customer_id}\addresses
+    /// Builds and executes requests for operations under \customers\{customerId}\addresses
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AddressesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.customers.item.addresses.item collection</summary>
-        /// <param name="position">Paddle ID of the address entity to work with.</param>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses.Item.WithAddress_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses.Item.WithAddress_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses.Item.WithAddressItemRequestBuilder"/></returns>
+        public global::Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses.Item.WithAddressItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("address_id", position);
-                return new global::Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses.Item.WithAddress_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("addressId", position);
+                return new global::Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses.Item.WithAddressItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AddressesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customer_id}/addresses{?after,id,order_by,per_page,search,status}", pathParameters)
+        public AddressesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customerId}/addresses{?after,id,order_by,per_page,search,status}", pathParameters)
         {
         }
         /// <summary>
@@ -43,24 +43,24 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AddressesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customer_id}/addresses{?after,id,order_by,per_page,search,status}", rawUrl)
+        public AddressesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customerId}/addresses{?after,id,order_by,per_page,search,status}", rawUrl)
         {
         }
         /// <summary>
         /// Returns a paginated list of addresses for a customer. Use the query parameters to page through results.By default, Paddle returns addresses that are `active`. Use the `status` query parameter to return addresses that are archived.
         /// List addresses for a customer <see href="https://developer.paddle.com/api-reference/addresses/list-addresses" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListAddresses200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListAddresses200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListAddresses200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses.AddressesRequestBuilder.AddressesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListAddresses200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses.AddressesRequestBuilder.AddressesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListAddresses200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses.AddressesRequestBuilder.AddressesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListAddresses200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses.AddressesRequestBuilder.AddressesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,24 +68,24 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListAddresses200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListAddresses200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListAddresses200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListAddresses200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Creates a new address for a customer.For tax calculation, fraud prevention, and compliance purposes, you must include a `postal_code` when creating addresses for some countries. For example, ZIP codes in the USA and postcodes in the UK. See: [Supported countries](https://developer.paddle.com/concepts/sell/supported-countries-locales)If successful, your response includes a copy of the new address entity.&quot;
         /// Create an address for a customer <see href="https://developer.paddle.com/api-reference/addresses/create-address" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateAddress201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateAddress201Response"/></returns>
         /// <param name="body">Represents an address entity when creating addresses.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateAddress201?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateAddress201Response?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateAddress201> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateAddress201Response> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -94,7 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateAddress201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateAddress201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateAddress201Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateAddress201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of addresses for a customer. Use the query parameters to page through results.By default, Paddle returns addresses that are `active`. Use the `status` query parameter to return addresses that are archived.

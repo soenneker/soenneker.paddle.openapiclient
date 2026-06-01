@@ -21,24 +21,30 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Paddle ID of the notification setting where this simulation is sent, prefixed with `ntfset_`.</summary>
+        /// <summary>Unique Paddle ID for this notification setting, prefixed with `ntfset_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreate_notification_setting_id? NotificationSettingId { get; private set; }
+        public string? NotificationSettingId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreate_notification_setting_id NotificationSettingId { get; private set; }
+        public string NotificationSettingId { get; set; }
 #endif
         /// <summary>Simulation payload. Pass a JSON object that matches the schema for an event type to simulate a custom payload. If omitted, Paddle populates with a demo example.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreate_payload? Payload { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreatePayload? Payload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreate_payload Payload { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreatePayload Payload { get; set; }
 #endif
-        /// <summary>Type of event sent by Paddle, in the format `entity.event_type`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName? Type { get; set; }
+        /// <summary>Single event sent for this simulation, in the format `entity.event_type`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreateType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreateType Type { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,9 +64,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "notification_setting_id", n => { NotificationSettingId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreate_notification_setting_id>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreate_notification_setting_id.CreateFromDiscriminatorValue); } },
-                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreate_payload>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreate_payload.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>(); } },
+                { "notification_setting_id", n => { NotificationSettingId = n.GetStringValue(); } },
+                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreatePayload>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreatePayload.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreateType>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreateType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -71,8 +77,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreate_payload>("payload", Payload);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>("type", Type);
+            writer.WriteStringValue("notification_setting_id", NotificationSettingId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreatePayload>("payload", Payload);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsCreateType>("type", Type);
         }
     }
 }

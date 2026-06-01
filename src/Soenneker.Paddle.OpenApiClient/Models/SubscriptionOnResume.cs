@@ -9,11 +9,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "continue_existing_billing_period")]
         #pragma warning disable CS1591
-        Continue_existing_billing_period,
+        ContinueExistingBillingPeriod,
         #pragma warning restore CS1591
         [EnumMember(Value = "start_new_billing_period")]
         #pragma warning disable CS1591
-        Start_new_billing_period,
+        StartNewBillingPeriod,
         #pragma warning restore CS1591
     }
 }

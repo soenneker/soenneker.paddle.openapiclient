@@ -15,14 +15,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The created_at property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModel_created_at? CreatedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModel_created_at CreatedAt { get; private set; }
-#endif
+        /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
+        public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Events associated with this simulation run. Paddle creates a list of events for each simulation runs. Returned when the`include` parameter is used with the `events` value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,26 +25,26 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent> Events { get; set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique Paddle ID for this simulation run, prefixed with `ntfsimrun_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModel_id? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModel_id Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Status of this simulation run.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunStatus? Status { get; private set; }
-        /// <summary>Scenario for a simulation.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsType? Type { get; set; }
-        /// <summary>The updated_at property</summary>
+        /// <summary>Scenario for this simulation. Scenario simulations play all events sent for a subscription lifecycle event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModel_updated_at? UpdatedAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModelType? Type { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModel_updated_at UpdatedAt { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModelType Type { get; set; }
 #endif
+        /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
+        public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModel"/> and sets the default values.
         /// </summary>
@@ -76,12 +70,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "created_at", n => { CreatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModel_created_at>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModel_created_at.CreateFromDiscriminatorValue); } },
+                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "events", n => { Events = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModel_id>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModel_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunStatus>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsType>(); } },
-                { "updated_at", n => { UpdatedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModel_updated_at>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModel_updated_at.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModelType>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModelType.CreateFromDiscriminatorValue); } },
+                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -91,8 +85,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEvent>("events", Events);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsType>("type", Type);
+            writer.WriteStringValue("id", Id);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunScenarioIncludesModelType>("type", Type);
+            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

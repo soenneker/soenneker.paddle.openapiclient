@@ -9,11 +9,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "prevent_change")]
         #pragma warning disable CS1591
-        Prevent_change,
+        PreventChange,
         #pragma warning restore CS1591
         [EnumMember(Value = "apply_change")]
         #pragma warning disable CS1591
-        Apply_change,
+        ApplyChange,
         #pragma warning restore CS1591
     }
 }

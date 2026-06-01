@@ -16,26 +16,26 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_custom_data? CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateCustomData? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_custom_data CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateCustomData CustomData { get; set; }
 #endif
-        /// <summary>Email address for this customer.</summary>
+        /// <summary>Email address for this entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_email? Email { get; set; }
+        public string? Email { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_email Email { get; set; }
+        public string Email { get; set; }
 #endif
         /// <summary>Import information for this entity. `null` if this entity is not imported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_import_meta? ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateImportMeta? ImportMeta { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_import_meta ImportMeta { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateImportMeta ImportMeta { get; set; }
 #endif
         /// <summary>Valid IETF BCP 47 short form locale tag.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,10 +50,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Full name of this customer. Required when creating transactions where `collection_mode` is `manual` (invoices).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_name? Name { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateName? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_name Name { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateName Name { get; set; }
 #endif
         /// <summary>Whether this entity can be used in Paddle.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.Status? Status { get; set; }
@@ -82,12 +82,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_custom_data>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_custom_data.CreateFromDiscriminatorValue); } },
-                { "email", n => { Email = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_email>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_email.CreateFromDiscriminatorValue); } },
-                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_import_meta>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_import_meta.CreateFromDiscriminatorValue); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateCustomData.CreateFromDiscriminatorValue); } },
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateImportMeta.CreateFromDiscriminatorValue); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
                 { "marketing_consent", n => { MarketingConsent = n.GetBoolValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_name>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_name.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateName>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateName.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>(); } },
             };
         }
@@ -98,12 +98,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_custom_data>("custom_data", CustomData);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_email>("email", Email);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_import_meta>("import_meta", ImportMeta);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateCustomData>("custom_data", CustomData);
+            writer.WriteStringValue("email", Email);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateImportMeta>("import_meta", ImportMeta);
             writer.WriteStringValue("locale", Locale);
             writer.WriteBoolValue("marketing_consent", MarketingConsent);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdate_name>("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateName>("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>("status", Status);
         }
     }

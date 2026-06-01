@@ -19,15 +19,15 @@ namespace Soenneker.Paddle.OpenApiClient.Products
     public partial class ProductsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.products.item collection</summary>
-        /// <param name="position">Paddle ID of the product entity to work with.</param>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProductItemRequestBuilder"/></returns>
+        public global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProductItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("product_id", position);
-                return new global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProduct_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("productId", position);
+                return new global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProductItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -50,17 +50,17 @@ namespace Soenneker.Paddle.OpenApiClient.Products
         /// Returns a paginated list of products. Use the query parameters to page through results.By default, Paddle returns products that are `active`. Use the `status` query parameter to return products that are archived.Use the `include` parameter to include related price entities in the response.
         /// List products <see href="https://developer.paddle.com/api-reference/products/list-products" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListProducts200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListProducts200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListProducts200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Products.ProductsRequestBuilder.ProductsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListProducts200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Products.ProductsRequestBuilder.ProductsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListProducts200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Products.ProductsRequestBuilder.ProductsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListProducts200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Products.ProductsRequestBuilder.ProductsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,24 +68,24 @@ namespace Soenneker.Paddle.OpenApiClient.Products
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListProducts200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListProducts200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListProducts200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListProducts200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new product.Paddle does not upload product images to a CDN. For `image_url`, you should host images on an HTTPS server that&apos;s publicly accessible. We recommend using square images (`1:1` ratio).If successful, your response includes a copy of the new product entity.
         /// Create product <see href="https://developer.paddle.com/api-reference/products/create-product" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateProduct201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateProduct201Response"/></returns>
         /// <param name="body">Represents a product entity when creating products.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateProduct201?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateProduct201Response?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateProduct201> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateProduct201Response> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -94,7 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.Products
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateProduct201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateProduct201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateProduct201Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateProduct201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of products. Use the query parameters to page through results.By default, Paddle returns products that are `active`. Use the `status` query parameter to return products that are archived.Use the `include` parameter to include related price entities in the response.

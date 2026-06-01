@@ -9,11 +9,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "collection_mode")]
         #pragma warning disable CS1591
-        Collection_mode,
+        CollectionMode,
         #pragma warning restore CS1591
         [EnumMember(Value = "currency_code")]
         #pragma warning disable CS1591
-        Currency_code,
+        CurrencyCode,
         #pragma warning restore CS1591
         [EnumMember(Value = "origin")]
         #pragma warning disable CS1591
@@ -25,7 +25,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "updated_at")]
         #pragma warning disable CS1591
-        Updated_at,
+        UpdatedAt,
         #pragma warning restore CS1591
     }
 }

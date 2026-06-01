@@ -26,18 +26,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Calculated totals for this adjustment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview_totals? Totals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreviewTotals? Totals { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview_totals Totals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreviewTotals Totals { get; set; }
 #endif
-        /// <summary>Paddle ID for this transaction entity that this adjustment relates to, prefixed with `txn_`.</summary>
+        /// <summary>Unique Paddle ID for this transaction entity, prefixed with `txn_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview_transaction_id? TransactionId { get; set; }
+        public string? TransactionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview_transaction_id TransactionId { get; set; }
+        public string TransactionId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview"/> and sets the default values.
@@ -65,8 +65,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview_totals>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview_totals.CreateFromDiscriminatorValue); } },
-                { "transaction_id", n => { TransactionId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview_transaction_id>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview_transaction_id.CreateFromDiscriminatorValue); } },
+                { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreviewTotals>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreviewTotals.CreateFromDiscriminatorValue); } },
+                { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -77,8 +77,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem>("items", Items);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview_totals>("totals", Totals);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview_transaction_id>("transaction_id", TransactionId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreviewTotals>("totals", Totals);
+            writer.WriteStringValue("transaction_id", TransactionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

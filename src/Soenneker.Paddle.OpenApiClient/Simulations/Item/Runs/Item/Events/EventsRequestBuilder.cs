@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events
 {
     /// <summary>
-    /// Builds and executes requests for operations under \simulations\{simulation_id}\runs\{simulation_run_id}\events
+    /// Builds and executes requests for operations under \simulations\{simulationId}\runs\{simulationRunId}\events
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.simulations.item.runs.item.events.item collection</summary>
-        /// <param name="position">Paddle ID of the simulation event entity to work with.</param>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.WithSimulation_event_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.WithSimulation_event_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.WithSimulationEventItemRequestBuilder"/></returns>
+        public global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.WithSimulationEventItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("simulation_event_id", position);
-                return new global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.WithSimulation_event_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("simulationEventId", position);
+                return new global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.WithSimulationEventItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/simulations/{simulation_id}/runs/{simulation_run_id}/events{?after,id,order_by,per_page}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/simulations/{simulationId}/runs/{simulationRunId}/events{?after,id,order_by,per_page}", pathParameters)
         {
         }
         /// <summary>
@@ -43,24 +43,24 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/simulations/{simulation_id}/runs/{simulation_run_id}/events{?after,id,order_by,per_page}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/simulations/{simulationId}/runs/{simulationRunId}/events{?after,id,order_by,per_page}", rawUrl)
         {
         }
         /// <summary>
         /// Returns a paginated list of simulations. Use the query parameters to [page through results](https://developer.paddle.com/api-reference/about/pagination).
         /// List events for a simulation run <see href="https://developer.paddle.com/api-reference/simulation-events/list-simulation-events" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationsEvents200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationsEvents200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationsEvents200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationsEvents200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationsEvents200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationsEvents200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.EventsRequestBuilder.EventsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,7 +68,7 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationsEvents200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationsEvents200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationsEvents200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListSimulationsEvents200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of simulations. Use the query parameters to [page through results](https://developer.paddle.com/api-reference/about/pagination).

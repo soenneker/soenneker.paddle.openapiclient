@@ -12,7 +12,7 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Customers.Item.CreditBalances
 {
     /// <summary>
-    /// Builds and executes requests for operations under \customers\{customer_id}\credit-balances
+    /// Builds and executes requests for operations under \customers\{customerId}\credit-balances
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditBalancesRequestBuilder : BaseRequestBuilder
@@ -22,7 +22,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.CreditBalances
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreditBalancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customer_id}/credit-balances{?currency_code}", pathParameters)
+        public CreditBalancesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customerId}/credit-balances{?currency_code}", pathParameters)
         {
         }
         /// <summary>
@@ -30,24 +30,24 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.CreditBalances
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public CreditBalancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customer_id}/credit-balances{?currency_code}", rawUrl)
+        public CreditBalancesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customerId}/credit-balances{?currency_code}", rawUrl)
         {
         }
         /// <summary>
         /// &quot;Returns a list of credit balances for each currency for a customer. Each balance has three totals:* `available`: total available to use.* `reserved`: total temporarily reserved for billed transactions.* `used`: total amount of credit used.Credit is added to the `available` total initially. When used, it moves to the `used` total.The `reserved` total is used when a credit balance is applied to a transaction that&apos;s marked as `billed`, like when working with an issued invoice. It&apos;s not available for other transactions at this point, but isn&apos;t considered `used` until the transaction is completed. If a `billed` transaction is `canceled`, any reserved credit moves back to `available`.Credit balances are created automatically by Paddle when you take an action that results in Paddle creating a credit for a customer, like making prorated changes to a subscription. An empty `data` array is returned where a customer has no credit balances.The response is not paginated.&quot;
         /// List credit balances for a customer <see href="https://developer.paddle.com/api-reference/customers/list-credit-balances" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListCreditBalances200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListCreditBalances200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListCreditBalances200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.CreditBalances.CreditBalancesRequestBuilder.CreditBalancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListCreditBalances200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.CreditBalances.CreditBalancesRequestBuilder.CreditBalancesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListCreditBalances200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.CreditBalances.CreditBalancesRequestBuilder.CreditBalancesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListCreditBalances200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.CreditBalances.CreditBalancesRequestBuilder.CreditBalancesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -55,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.CreditBalances
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListCreditBalances200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListCreditBalances200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListCreditBalances200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListCreditBalances200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Returns a list of credit balances for each currency for a customer. Each balance has three totals:* `available`: total available to use.* `reserved`: total temporarily reserved for billed transactions.* `used`: total amount of credit used.Credit is added to the `available` total initially. When used, it moves to the `used` total.The `reserved` total is used when a credit balance is applied to a transaction that&apos;s marked as `billed`, like when working with an issued invoice. It&apos;s not available for other transactions at this point, but isn&apos;t considered `used` until the transaction is completed. If a `billed` transaction is `canceled`, any reserved credit moves back to `available`.Credit balances are created automatically by Paddle when you take an action that results in Paddle creating a credit for a customer, like making prorated changes to a subscription. An empty `data` array is returned where a customer has no credit balances.The response is not paginated.&quot;

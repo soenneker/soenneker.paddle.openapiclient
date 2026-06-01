@@ -43,13 +43,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string EndpointSecretKey { get; private set; }
 #endif
-        /// <summary>The id property</summary>
+        /// <summary>Unique Paddle ID for this notification setting, prefixed with `ntfset_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreate_id? Id { get; private set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreate_id Id { get; private set; }
+        public string Id { get; set; }
 #endif
         /// <summary>Whether potentially sensitive fields should be sent to this notification destination. If omitted, defaults to `false`.</summary>
         public bool? IncludeSensitiveFields { get; set; }
@@ -61,10 +61,22 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName?> SubscribedEvents { get; set; }
 #endif
-        /// <summary>Whether Paddle should deliver real platform events, simulation events or both to this notification destination.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingTrafficSource? TrafficSource { get; set; }
+        /// <summary>Whether Paddle should deliver real platform events, simulation events or both to this notification destination. If omitted, defaults to `platform`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreateTrafficSource? TrafficSource { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreateTrafficSource TrafficSource { get; set; }
+#endif
         /// <summary>Where notifications should be sent for this destination.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingType? Type { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreateType? Type { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreateType Type { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreate"/> and sets the default values.
         /// </summary>
@@ -95,11 +107,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "destination", n => { Destination = n.GetStringValue(); } },
                 { "endpoint_secret_key", n => { EndpointSecretKey = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreate_id>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreate_id.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "include_sensitive_fields", n => { IncludeSensitiveFields = n.GetBoolValue(); } },
                 { "subscribed_events", n => { SubscribedEvents = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>()?.AsList(); } },
-                { "traffic_source", n => { TrafficSource = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingTrafficSource>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingType>(); } },
+                { "traffic_source", n => { TrafficSource = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreateTrafficSource>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreateTrafficSource.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreateType>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreateType.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -112,10 +124,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteIntValue("api_version", ApiVersion);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("destination", Destination);
+            writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("include_sensitive_fields", IncludeSensitiveFields);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>("subscribed_events", SubscribedEvents);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingTrafficSource>("traffic_source", TrafficSource);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreateTrafficSource>("traffic_source", TrafficSource);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingCreateType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

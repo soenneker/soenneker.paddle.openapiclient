@@ -9,27 +9,27 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "product_status")]
         #pragma warning disable CS1591
-        Product_status,
+        ProductStatus,
         #pragma warning restore CS1591
         [EnumMember(Value = "price_status")]
         #pragma warning disable CS1591
-        Price_status,
+        PriceStatus,
         #pragma warning restore CS1591
         [EnumMember(Value = "product_type")]
         #pragma warning disable CS1591
-        Product_type,
+        ProductType,
         #pragma warning restore CS1591
         [EnumMember(Value = "price_type")]
         #pragma warning disable CS1591
-        Price_type,
+        PriceType,
         #pragma warning restore CS1591
         [EnumMember(Value = "product_updated_at")]
         #pragma warning disable CS1591
-        Product_updated_at,
+        ProductUpdatedAt,
         #pragma warning restore CS1591
         [EnumMember(Value = "price_updated_at")]
         #pragma warning disable CS1591
-        Price_updated_at,
+        PriceUpdatedAt,
         #pragma warning restore CS1591
     }
 }

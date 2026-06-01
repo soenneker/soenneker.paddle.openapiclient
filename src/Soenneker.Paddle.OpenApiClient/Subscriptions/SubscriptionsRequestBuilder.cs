@@ -19,15 +19,15 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions
     public partial class SubscriptionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.subscriptions.item collection</summary>
-        /// <param name="position">Paddle ID of the subscription entity to work with.</param>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscriptionItemRequestBuilder"/></returns>
+        public global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscriptionItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("subscription_id", position);
-                return new global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscription_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("subscriptionId", position);
+                return new global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscriptionItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -50,17 +50,17 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions
         /// Returns a paginated list of subscriptions. Use the query parameters to page through results.
         /// List subscriptions <see href="https://developer.paddle.com/api-reference/subscriptions/list-subscriptions" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListSubscriptions200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListSubscriptions200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSubscriptions200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSubscriptions200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSubscriptions200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListSubscriptions200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Subscriptions.SubscriptionsRequestBuilder.SubscriptionsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,7 +68,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListSubscriptions200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListSubscriptions200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListSubscriptions200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListSubscriptions200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of subscriptions. Use the query parameters to page through results.

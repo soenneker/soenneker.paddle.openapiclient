@@ -9,11 +9,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "not_attempted")]
         #pragma warning disable CS1591
-        Not_attempted,
+        NotAttempted,
         #pragma warning restore CS1591
         [EnumMember(Value = "needs_retry")]
         #pragma warning disable CS1591
-        Needs_retry,
+        NeedsRetry,
         #pragma warning restore CS1591
         [EnumMember(Value = "delivered")]
         #pragma warning disable CS1591

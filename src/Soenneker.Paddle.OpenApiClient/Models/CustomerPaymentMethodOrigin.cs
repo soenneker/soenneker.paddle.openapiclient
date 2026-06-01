@@ -9,7 +9,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "saved_during_purchase")]
         #pragma warning disable CS1591
-        Saved_during_purchase,
+        SavedDuringPurchase,
         #pragma warning restore CS1591
         [EnumMember(Value = "subscription")]
         #pragma warning disable CS1591
@@ -17,7 +17,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "subscription_saved_during_purchase")]
         #pragma warning disable CS1591
-        Subscription_saved_during_purchase,
+        SubscriptionSavedDuringPurchase,
         #pragma warning restore CS1591
     }
 }

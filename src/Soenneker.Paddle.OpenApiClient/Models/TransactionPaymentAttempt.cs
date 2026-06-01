@@ -25,20 +25,20 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>RFC 3339 datetime string of when this payment was captured. `null` if `status` is not `captured`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_captured_at? CapturedAt { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptCapturedAt? CapturedAt { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_captured_at CapturedAt { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptCapturedAt CapturedAt { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Reason why a payment attempt failed. Returns `null` if payment captured successfully.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_error_code? ErrorCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptErrorCode? ErrorCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_error_code ErrorCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptErrorCode ErrorCode { get; set; }
 #endif
         /// <summary>Information about the payment method used for a payment attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,10 +59,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID of the payment method used for this payment attempt, prefixed with `paymtd_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_payment_method_id? PaymentMethodId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptPaymentMethodId? PaymentMethodId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_payment_method_id PaymentMethodId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptPaymentMethodId PaymentMethodId { get; set; }
 #endif
         /// <summary>Status of this payment attempt.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.PaymentAttemptStatus? Status { get; private set; }
@@ -101,12 +101,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetStringValue(); } },
-                { "captured_at", n => { CapturedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_captured_at>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_captured_at.CreateFromDiscriminatorValue); } },
+                { "captured_at", n => { CapturedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptCapturedAt>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptCapturedAt.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "error_code", n => { ErrorCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_error_code>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_error_code.CreateFromDiscriminatorValue); } },
+                { "error_code", n => { ErrorCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptErrorCode>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptErrorCode.CreateFromDiscriminatorValue); } },
                 { "method_details", n => { MethodDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails>(global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails.CreateFromDiscriminatorValue); } },
                 { "payment_attempt_id", n => { PaymentAttemptId = n.GetStringValue(); } },
-                { "payment_method_id", n => { PaymentMethodId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_payment_method_id>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_payment_method_id.CreateFromDiscriminatorValue); } },
+                { "payment_method_id", n => { PaymentMethodId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptPaymentMethodId>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptPaymentMethodId.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PaymentAttemptStatus>(); } },
                 { "stored_payment_method_id", n => { StoredPaymentMethodId = n.GetStringValue(); } },
             };
@@ -119,12 +119,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_captured_at>("captured_at", CapturedAt);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptCapturedAt>("captured_at", CapturedAt);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_error_code>("error_code", ErrorCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptErrorCode>("error_code", ErrorCode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails>("method_details", MethodDetails);
             writer.WriteStringValue("payment_attempt_id", PaymentAttemptId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt_payment_method_id>("payment_method_id", PaymentMethodId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttemptPaymentMethodId>("payment_method_id", PaymentMethodId);
             writer.WriteStringValue("stored_payment_method_id", StoredPaymentMethodId);
             writer.WriteAdditionalData(AdditionalData);
         }

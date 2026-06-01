@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods
 {
     /// <summary>
-    /// Builds and executes requests for operations under \customers\{customer_id}\payment-methods
+    /// Builds and executes requests for operations under \customers\{customerId}\payment-methods
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PaymentMethodsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.customers.item.paymentMethods.item collection</summary>
-        /// <param name="position">Paddle ID of the payment method entity to work with.</param>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.Item.WithPayment_method_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.Item.WithPayment_method_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.Item.WithPaymentMethodItemRequestBuilder"/></returns>
+        public global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.Item.WithPaymentMethodItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("payment_method_id", position);
-                return new global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.Item.WithPayment_method_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("paymentMethodId", position);
+                return new global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.Item.WithPaymentMethodItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PaymentMethodsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customer_id}/payment-methods{?address_id,after,order_by,per_page,supports_checkout}", pathParameters)
+        public PaymentMethodsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customerId}/payment-methods{?address_id,after,order_by,per_page,supports_checkout}", pathParameters)
         {
         }
         /// <summary>
@@ -43,24 +43,24 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PaymentMethodsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customer_id}/payment-methods{?address_id,after,order_by,per_page,supports_checkout}", rawUrl)
+        public PaymentMethodsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customerId}/payment-methods{?address_id,after,order_by,per_page,supports_checkout}", rawUrl)
         {
         }
         /// <summary>
         /// Returns a paginated list of payment methods that a customer has saved.  Use the query parameters to page through results.Customers can choose to save payment methods when purchasing one-time items and subscriptions by checking a box when completing checkout. You can present customers with their saved payment methods when they make a purchase in the future.Returns an empty list where customers have not saved any payment methods, or have deleted all previously saved payment methods.
         /// List payment methods for a customer <see href="https://developer.paddle.com/api-reference/payment-methods/list-payment-methods" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.PaymentMethodsRequestBuilder.PaymentMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.PaymentMethodsRequestBuilder.PaymentMethodsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.PaymentMethodsRequestBuilder.PaymentMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.PaymentMethodsRequestBuilder.PaymentMethodsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,7 +68,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListCustomerPaymentMethods200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of payment methods that a customer has saved.  Use the query parameters to page through results.Customers can choose to save payment methods when purchasing one-time items and subscriptions by checking a box when completing checkout. You can present customers with their saved payment methods when they make a purchase in the future.Returns an empty list where customers have not saved any payment methods, or have deleted all previously saved payment methods.

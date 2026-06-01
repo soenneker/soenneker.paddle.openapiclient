@@ -9,7 +9,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "single_event")]
         #pragma warning disable CS1591
-        Single_event,
+        SingleEvent,
         #pragma warning restore CS1591
         [EnumMember(Value = "scenario")]
         #pragma warning disable CS1591

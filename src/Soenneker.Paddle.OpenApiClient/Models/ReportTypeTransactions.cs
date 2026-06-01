@@ -13,7 +13,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "transaction_line_items")]
         #pragma warning disable CS1591
-        Transaction_line_items,
+        TransactionLineItems,
         #pragma warning restore CS1591
     }
 }

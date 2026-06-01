@@ -10,7 +10,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         [EnumMember(Value = "not_provided")]
         #pragma warning disable CS1591
-        Not_provided,
+        NotProvided,
         #pragma warning restore CS1591
         [EnumMember(Value = "prefilled")]
         #pragma warning disable CS1591
@@ -18,7 +18,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "entered_by_customer")]
         #pragma warning disable CS1591
-        Entered_by_customer,
+        EnteredByCustomer,
         #pragma warning restore CS1591
     }
 }

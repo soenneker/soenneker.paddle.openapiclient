@@ -13,21 +13,21 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses
 {
     /// <summary>
-    /// Builds and executes requests for operations under \customers\{customer_id}\businesses
+    /// Builds and executes requests for operations under \customers\{customerId}\businesses
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BusinessesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.customers.item.businesses.item collection</summary>
-        /// <param name="position">Paddle ID of the business entity to work with.</param>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses.Item.WithBusiness_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses.Item.WithBusiness_ItemRequestBuilder this[string position]
+        /// <param name="position">Unique identifier of the item</param>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses.Item.WithBusinessItemRequestBuilder"/></returns>
+        public global::Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses.Item.WithBusinessItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("business_id", position);
-                return new global::Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses.Item.WithBusiness_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("businessId", position);
+                return new global::Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses.Item.WithBusinessItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>
@@ -35,7 +35,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BusinessesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customer_id}/businesses{?after,id,order_by,per_page,search,status}", pathParameters)
+        public BusinessesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customerId}/businesses{?after,id,order_by,per_page,search,status}", pathParameters)
         {
         }
         /// <summary>
@@ -43,24 +43,24 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public BusinessesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customer_id}/businesses{?after,id,order_by,per_page,search,status}", rawUrl)
+        public BusinessesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/customers/{customerId}/businesses{?after,id,order_by,per_page,search,status}", rawUrl)
         {
         }
         /// <summary>
         /// Returns a paginated list of businesses for a customer. Use the query parameters to page through results.By default, Paddle returns businesses that are `active`. Use the `status` query parameter to return businesses that are archived.
         /// List businesses for a customer <see href="https://developer.paddle.com/api-reference/businesses/list-businesses" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListBusinesses200"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListBusinesses200Response"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListBusinesses200?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses.BusinessesRequestBuilder.BusinessesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListBusinesses200Response?> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses.BusinessesRequestBuilder.BusinessesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListBusinesses200> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses.BusinessesRequestBuilder.BusinessesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.ListBusinesses200Response> GetAsync(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses.BusinessesRequestBuilder.BusinessesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -68,24 +68,24 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListBusinesses200>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListBusinesses200.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListBusinesses200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListBusinesses200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Creates a new business for a customer.If successful, your response includes a copy of the new business entity.
         /// Create a business for a customer <see href="https://developer.paddle.com/api-reference/businesses/create-business" />
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateBusiness201"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateBusiness201Response"/></returns>
         /// <param name="body">Represents a business entity when creating businesses.</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse">When receiving a 4XX or 5XX status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateBusiness201?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateBusiness201Response?> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateBusiness201> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Paddle.OpenApiClient.Models.CreateBusiness201Response> PostAsync(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreate body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -94,7 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses
             {
                 { "XXX", global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponse.CreateFromDiscriminatorValue },
             };
-            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateBusiness201>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateBusiness201.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateBusiness201Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateBusiness201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Returns a paginated list of businesses for a customer. Use the query parameters to page through results.By default, Paddle returns businesses that are `active`. Use the `status` query parameter to return businesses that are archived.

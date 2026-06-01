@@ -46,7 +46,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public List<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName?> SubscribedEvents { get; set; }
 #endif
         /// <summary>Whether Paddle should deliver real platform events, simulation events or both to this notification destination.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingTrafficSource? TrafficSource { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdateTrafficSource? TrafficSource { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdateTrafficSource TrafficSource { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdate"/> and sets the default values.
         /// </summary>
@@ -78,7 +84,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "destination", n => { Destination = n.GetStringValue(); } },
                 { "include_sensitive_fields", n => { IncludeSensitiveFields = n.GetBoolValue(); } },
                 { "subscribed_events", n => { SubscribedEvents = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>()?.AsList(); } },
-                { "traffic_source", n => { TrafficSource = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingTrafficSource>(); } },
+                { "traffic_source", n => { TrafficSource = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdateTrafficSource>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdateTrafficSource.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -94,7 +100,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("destination", Destination);
             writer.WriteBoolValue("include_sensitive_fields", IncludeSensitiveFields);
             writer.WriteCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>("subscribed_events", SubscribedEvents);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingTrafficSource>("traffic_source", TrafficSource);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdateTrafficSource>("traffic_source", TrafficSource);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
