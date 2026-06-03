@@ -91,10 +91,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 result.ReportTransactionsModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsModel();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ReportWrapper = new global::Soenneker.Paddle.OpenApiClient.Models.ReportWrapper();
-            }
             return result;
         }
         /// <summary>

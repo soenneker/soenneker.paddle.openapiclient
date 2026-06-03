@@ -144,6 +144,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreateUsageLimit UsageLimit { get; set; }
 #endif
         /// <summary>
+        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreate"/> and sets the default values.
+        /// </summary>
+        public DiscountCreate()
+        {
+            EnabledForCheckout = true;
+            Recur = false;
+        }
+        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreate"/></returns>

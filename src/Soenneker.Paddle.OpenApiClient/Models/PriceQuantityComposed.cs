@@ -25,6 +25,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public PriceQuantityComposed()
         {
             AdditionalData = new Dictionary<string, object>();
+            Maximum = 100;
+            Minimum = 1;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

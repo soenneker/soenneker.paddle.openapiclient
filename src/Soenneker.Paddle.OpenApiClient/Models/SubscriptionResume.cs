@@ -59,14 +59,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 result.SubscriptionResumeImmediately = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SubscriptionResumeMember1 = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeMember1();
-            }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.SubscriptionResumeMember2 = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeMember2();
-            }
             else if("SubscriptionResumeOnDate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SubscriptionResumeOnDate = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDate();

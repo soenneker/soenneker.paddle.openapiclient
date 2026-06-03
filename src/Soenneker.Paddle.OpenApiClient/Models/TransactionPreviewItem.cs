@@ -40,6 +40,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public TransactionPreviewItem()
         {
             AdditionalData = new Dictionary<string, object>();
+            IncludeInTotals = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

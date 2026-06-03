@@ -59,6 +59,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public NotificationSettingUpdate()
         {
             AdditionalData = new Dictionary<string, object>();
+            Active = true;
+            IncludeSensitiveFields = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -145,6 +145,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public TransactionPricingPreviewLineItemDiscountDiscount()
         {
             AdditionalData = new Dictionary<string, object>();
+            EnabledForCheckout = true;
+            Recur = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

@@ -75,10 +75,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 result.ReportAdjustmentsCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsCreateModel();
             }
-            else if("".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-            {
-                result.ReportCreateWrapper = new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreateWrapper();
-            }
             else if("ReportDiscountsCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ReportDiscountsCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsCreateModel();

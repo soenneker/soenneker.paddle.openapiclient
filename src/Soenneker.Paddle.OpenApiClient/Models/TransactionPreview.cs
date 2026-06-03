@@ -103,6 +103,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public TransactionPreview()
         {
             AdditionalData = new Dictionary<string, object>();
+            IgnoreTrials = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

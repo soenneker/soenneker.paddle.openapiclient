@@ -84,6 +84,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             AdditionalData = new Dictionary<string, object>();
             Locale = "en";
+            MarketingConsent = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value

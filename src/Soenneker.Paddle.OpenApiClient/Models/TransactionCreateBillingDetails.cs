@@ -55,6 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public TransactionCreateBillingDetails()
         {
             AdditionalData = new Dictionary<string, object>();
+            EnableCheckout = false;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
