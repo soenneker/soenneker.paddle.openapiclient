@@ -110,7 +110,7 @@ namespace Soenneker.Paddle.OpenApiClient.NotificationSettings
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.NotificationSettings.NotificationSettingsRequestBuilder.NotificationSettingsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/notification-settings{?active,after,order_by,per_page,traffic_source}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -131,7 +131,7 @@ namespace Soenneker.Paddle.OpenApiClient.NotificationSettings
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/notification-settings", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);

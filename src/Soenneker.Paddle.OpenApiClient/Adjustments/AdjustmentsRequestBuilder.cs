@@ -110,7 +110,7 @@ namespace Soenneker.Paddle.OpenApiClient.Adjustments
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Adjustments.AdjustmentsRequestBuilder.AdjustmentsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/adjustments{?action,after,customer_id,id,order_by,per_page,status,subscription_id,transaction_id}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -131,7 +131,7 @@ namespace Soenneker.Paddle.OpenApiClient.Adjustments
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/adjustments", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
