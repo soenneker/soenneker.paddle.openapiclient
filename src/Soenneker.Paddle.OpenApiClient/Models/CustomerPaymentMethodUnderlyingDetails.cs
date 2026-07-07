@@ -14,13 +14,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The value property</summary>
+        /// <summary>The korea_local property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Value { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.UnderlyingDetailsKoreaLocal? KoreaLocal { get; private set; }
 #nullable restore
 #else
-        public string Value { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.UnderlyingDetailsKoreaLocal KoreaLocal { get; private set; }
+#endif
+        /// <summary>Union discriminator</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Type { get; set; }
+#nullable restore
+#else
+        public string Type { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CustomerPaymentMethodUnderlyingDetails"/> and sets the default values.
@@ -47,7 +55,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetStringValue(); } },
+                { "korea_local", n => { KoreaLocal = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UnderlyingDetailsKoreaLocal>(global::Soenneker.Paddle.OpenApiClient.Models.UnderlyingDetailsKoreaLocal.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -57,7 +66,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("value", Value);
+            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -19441,31 +19441,11 @@
   },
   "components": {
     "schemas": {
-      "AdjustmentItemsItemTotals": {
-        "required": [
-          "subtotal",
-          "tax",
-          "total"
-        ],
-        "type": "object",
-        "properties": {
-          "subtotal": {
-            "type": "string",
-            "description": "Amount multiplied by quantity.",
-            "readOnly": true
-          },
-          "tax": {
-            "type": "string",
-            "description": "Total tax on the subtotal.",
-            "readOnly": true
-          },
-          "total": {
-            "type": "string",
-            "description": "Total after tax.",
-            "readOnly": true
-          }
-        },
-        "readOnly": true
+      "AdjustmentItemsItemItemId": {
+        "pattern": "^txnitm_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this transaction item, prefixed with \u0060txnitm_\u0060. Used when working with [adjustments](https://developer.paddle.com/build/transactions/create-transaction-adjustments)."
       },
       "ErrorResponseType": {
         "enum": [
@@ -19584,32 +19564,11 @@
         },
         "description": "An error occurred. Check the \u0060type\u0060, \u0060code\u0060, and \u0060detail\u0060 in the returned error object for more information.\n\nValidation errors include an array of \u0060errors\u0060 with information about which fields failed validation."
       },
-      "AdjustmentItemsItemProration": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/TransactionItemProration"
-          },
-          {
-            "type": "object"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "How proration was calculated for this adjustment item.",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "TransactionItemProration": "#/components/schemas/TransactionItemProration"
-          }
-        },
+      "AdjustmentItemsItemId": {
+        "pattern": "^adjitm_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this adjustment item, prefixed with \u0060adjitm_\u0060.",
         "readOnly": true
       },
       "CountryCodeSupported": {
@@ -21476,17 +21435,17 @@
         },
         "x-jsonschema-unevaluatedProperties": {}
       },
-      "AdjustmentItemsItemAmount": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AdjustmentItemsItemAmountBranch1"
-          },
-          {
-            "type": "object"
-          }
+      "AdjustmentStatusComposed": {
+        "required": [
+          "value"
         ],
-        "description": "Amount adjusted for this transaction item. Required when item \u0060type\u0060 is \u0060partial\u0060."
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/AdjustmentStatus"
+          }
+        },
+        "readOnly": true
       },
       "ImportMeta": {
         "title": "ImportMeta",
@@ -21550,43 +21509,6 @@
         "additionalProperties": false,
         "description": "Represents an address entity when creating addresses."
       },
-      "AdjustmentItemsItemType": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/AdjustmentItemType"
-          }
-        },
-        "description": "Type of adjustment for this transaction item. \u0060tax\u0060 adjustments are automatically created by Paddle.\nInclude \u0060amount\u0060 when creating a \u0060partial\u0060 adjustment."
-      },
-      "AdjustmentItemsItemItemId": {
-        "pattern": "^txnitm_[a-z\\d]{26}$",
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this transaction item, prefixed with \u0060txnitm_\u0060. Used when working with [adjustments](https://developer.paddle.com/build/transactions/create-transaction-adjustments)."
-      },
-      "AdjustmentItemsItemId": {
-        "pattern": "^adjitm_[a-z\\d]{26}$",
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this adjustment item, prefixed with \u0060adjitm_\u0060.",
-        "readOnly": true
-      },
-      "AdjustmentStatusComposed": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/AdjustmentStatus"
-          }
-        },
-        "readOnly": true
-      },
       "AdjustmentCurrencyCode": {
         "required": [
           "value"
@@ -21618,6 +21540,43 @@
         "type": "string",
         "additionalProperties": false,
         "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060.",
+        "readOnly": true
+      },
+      "AdjustmentSubscriptionId": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AdjustmentSubscriptionIdBranch1"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "description": "Paddle ID for the subscription related to this adjustment, prefixed with \u0060sub_\u0060.\nSet automatically by Paddle based on the \u0060subscription_id\u0060 of the related transaction.",
+        "readOnly": true
+      },
+      "AdjustmentTransactionId": {
+        "pattern": "^txn_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this transaction entity, prefixed with \u0060txn_\u0060."
+      },
+      "AdjustmentTypeComposed": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/AdjustmentType"
+          }
+        }
+      },
+      "AdjustmentId": {
+        "pattern": "^adj_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this adjustment entity, prefixed with \u0060adj_\u0060.",
         "readOnly": true
       },
       "Status": {
@@ -21652,24 +21611,45 @@
           ]
         }
       },
-      "AdjustmentSubscriptionId": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AdjustmentSubscriptionIdBranch1"
-          },
-          {
-            "type": "object"
-          }
+      "AdjustmentTaxRatesUsedTotals": {
+        "title": "AdjustmentTaxRateUsedTotals",
+        "required": [
+          "subtotal",
+          "tax",
+          "total"
         ],
-        "description": "Paddle ID for the subscription related to this adjustment, prefixed with \u0060sub_\u0060.\nSet automatically by Paddle based on the \u0060subscription_id\u0060 of the related transaction.",
+        "type": "object",
+        "properties": {
+          "subtotal": {
+            "type": "string",
+            "description": "Total before tax. For tax adjustments, the value is 0.",
+            "readOnly": true
+          },
+          "tax": {
+            "type": "string",
+            "description": "Total tax on the subtotal.",
+            "readOnly": true
+          },
+          "total": {
+            "type": "string",
+            "description": "Total after tax.",
+            "readOnly": true
+          }
+        },
+        "description": "Calculated totals for the tax applied to this adjustment.",
         "readOnly": true
       },
-      "AdjustmentTransactionId": {
-        "pattern": "^txn_[a-z\\d]{26}$",
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this transaction entity, prefixed with \u0060txn_\u0060."
+      "AdjustmentPayoutTotalsCurrencyCode": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CurrencyCodePayout"
+          }
+        },
+        "description": "Three-letter ISO 4217 currency code used for the payout for this transaction. If your primary currency has changed, this reflects the primary currency at the time the transaction was billed."
       },
       "Address": {
         "title": "Address",
@@ -21861,16 +21841,22 @@
         "additionalProperties": false,
         "description": "Represents an address entity when updating addresses."
       },
-      "AdjustmentTypeComposed": {
+      "AdjustmentPayoutTotalsChargebackFeeComposed": {
         "required": [
-          "value"
+          "amount",
+          "original"
         ],
         "type": "object",
         "properties": {
-          "value": {
-            "$ref": "#/components/schemas/AdjustmentType"
+          "amount": {
+            "type": "string",
+            "description": "Chargeback fee converted into the payout currency."
+          },
+          "original": {
+            "$ref": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeOriginalComposed"
           }
-        }
+        },
+        "description": "Chargeback fees incurred for this adjustment. Only returned when the adjustment \u0060action\u0060 is \u0060chargeback\u0060 or \u0060chargeback_warning\u0060."
       },
       "AdjustmentAction": {
         "title": "AdjustmentAction",
@@ -21981,40 +21967,44 @@
           ]
         }
       },
-      "AdjustmentId": {
-        "pattern": "^adj_[a-z\\d]{26}$",
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this adjustment entity, prefixed with \u0060adj_\u0060.",
-        "readOnly": true
-      },
-      "AdjustmentTaxRatesUsedTotals": {
-        "title": "AdjustmentTaxRateUsedTotals",
+      "AdjustmentPayoutTotalsChargebackFeeOriginalComposed": {
         "required": [
-          "subtotal",
-          "tax",
-          "total"
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeOriginal"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Chargeback fee before conversion to the payout currency. \u0060null\u0060 when the chargeback fee is the same as the payout currency.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "AdjustmentPayoutTotalsChargebackFeeOriginal": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeOriginal"
+          }
+        }
+      },
+      "AdjustmentPayoutTotalsChargebackFeeOriginalCurrencyCode": {
+        "required": [
+          "value"
         ],
         "type": "object",
         "properties": {
-          "subtotal": {
-            "type": "string",
-            "description": "Total before tax. For tax adjustments, the value is 0.",
-            "readOnly": true
-          },
-          "tax": {
-            "type": "string",
-            "description": "Total tax on the subtotal.",
-            "readOnly": true
-          },
-          "total": {
-            "type": "string",
-            "description": "Total after tax.",
-            "readOnly": true
+          "value": {
+            "$ref": "#/components/schemas/CurrencyCodeChargeback"
           }
         },
-        "description": "Calculated totals for the tax applied to this adjustment.",
-        "readOnly": true
+        "description": "Three-letter ISO 4217 currency code for the original chargeback fee."
       },
       "CurrencyCode": {
         "title": "Currency code",
@@ -22327,34 +22317,39 @@
           ]
         }
       },
-      "AdjustmentPayoutTotalsCurrencyCode": {
+      "AdjustmentTotalsCurrencyCode": {
         "required": [
           "value"
         ],
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/CurrencyCodePayout"
+            "$ref": "#/components/schemas/CurrencyCode"
           }
         },
-        "description": "Three-letter ISO 4217 currency code used for the payout for this transaction. If your primary currency has changed, this reflects the primary currency at the time the transaction was billed."
+        "description": "Three-letter ISO 4217 currency code used for this adjustment.",
+        "readOnly": true
       },
-      "AdjustmentPayoutTotalsChargebackFeeComposed": {
+      "TransactionItemProrationBillingPeriod": {
         "required": [
-          "amount",
-          "original"
+          "starts_at",
+          "ends_at"
         ],
         "type": "object",
         "properties": {
-          "amount": {
+          "starts_at": {
             "type": "string",
-            "description": "Chargeback fee converted into the payout currency."
+            "description": "RFC 3339 datetime string.",
+            "format": "date-time"
           },
-          "original": {
-            "$ref": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeOriginalComposed"
+          "ends_at": {
+            "type": "string",
+            "description": "RFC 3339 datetime string.",
+            "format": "date-time"
           }
         },
-        "description": "Chargeback fees incurred for this adjustment. Only returned when the adjustment \u0060action\u0060 is \u0060chargeback\u0060 or \u0060chargeback_warning\u0060."
+        "description": "Billing period that proration is based on.",
+        "x-external-readOnly": true
       },
       "AdjustmentItemType": {
         "title": "AdjustmentItemType",
@@ -22407,32 +22402,11 @@
           ]
         }
       },
-      "AdjustmentPayoutTotalsChargebackFeeOriginalComposed": {
-        "required": [
-          "type"
-        ],
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeOriginal"
-          },
-          {
-            "type": "object"
-          }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "Chargeback fee before conversion to the payout currency. \u0060null\u0060 when the chargeback fee is the same as the payout currency.",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "AdjustmentPayoutTotalsChargebackFeeOriginal": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeOriginal"
-          }
-        }
+      "TimePeriodEndsAt": {
+        "type": "string",
+        "additionalProperties": false,
+        "description": "RFC 3339 datetime string.",
+        "format": "date-time"
       },
       "TimePeriod": {
         "title": "Time period",
@@ -23227,51 +23201,48 @@
           }
         }
       },
-      "AdjustmentPayoutTotalsChargebackFeeOriginalCurrencyCode": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/CurrencyCodeChargeback"
-          }
-        },
-        "description": "Three-letter ISO 4217 currency code for the original chargeback fee."
+      "TimePeriodStartsAt": {
+        "type": "string",
+        "additionalProperties": false,
+        "description": "RFC 3339 datetime string.",
+        "format": "date-time"
       },
-      "AdjustmentTotalsCurrencyCode": {
+      "AddressUpdateCustomData": {
         "required": [
-          "value"
+          "type"
         ],
         "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/CurrencyCode"
-          }
-        },
-        "description": "Three-letter ISO 4217 currency code used for this adjustment.",
-        "readOnly": true
-      },
-      "TransactionItemProrationBillingPeriod": {
-        "required": [
-          "starts_at",
-          "ends_at"
-        ],
-        "type": "object",
-        "properties": {
-          "starts_at": {
-            "type": "string",
-            "description": "RFC 3339 datetime string.",
-            "format": "date-time"
+        "anyOf": [
+          {
+            "type": "object",
+            "description": "Your own structured key-value data."
           },
-          "ends_at": {
+          {
+            "type": "object"
+          }
+        ],
+        "properties": {
+          "type": {
             "type": "string",
-            "description": "RFC 3339 datetime string.",
-            "format": "date-time"
+            "description": "Union discriminator"
           }
         },
-        "description": "Billing period that proration is based on.",
-        "x-external-readOnly": true
+        "description": "Your own structured key-value data.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "CustomData": "#/components/schemas/CustomData"
+          }
+        }
+      },
+      "AddressUpdateCountryCode": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CountryCode"
+          }
+        ],
+        "description": "Supported two-letter ISO 3166-1 alpha-2 country code for this address."
       },
       "ContactsCreate": {
         "required": [
@@ -23470,54 +23441,57 @@
           ]
         }
       },
-      "TimePeriodEndsAt": {
-        "type": "string",
-        "additionalProperties": false,
-        "description": "RFC 3339 datetime string.",
-        "format": "date-time"
-      },
-      "TimePeriodStartsAt": {
-        "type": "string",
-        "additionalProperties": false,
-        "description": "RFC 3339 datetime string.",
-        "format": "date-time"
-      },
-      "AddressUpdateCustomData": {
-        "required": [
-          "type"
-        ],
+      "AddressUpdateRegion": {
+        "maxLength": 200,
         "type": "object",
         "anyOf": [
           {
-            "type": "object",
-            "description": "Your own structured key-value data."
+            "$ref": "#/components/schemas/AddressUpdateRegionBranch1"
           },
           {
             "type": "object"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "Your own structured key-value data.",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "CustomData": "#/components/schemas/CustomData"
-          }
-        }
+        "description": "State, county, or region of this address."
       },
-      "AddressUpdateCountryCode": {
+      "AddressUpdatePostalCode": {
+        "maxLength": 200,
         "type": "object",
-        "allOf": [
+        "anyOf": [
           {
-            "$ref": "#/components/schemas/CountryCode"
+            "$ref": "#/components/schemas/AddressUpdatePostalCodeBranch1"
+          },
+          {
+            "type": "object"
           }
         ],
-        "description": "Supported two-letter ISO 3166-1 alpha-2 country code for this address."
+        "description": "ZIP or postal code of this address. Required for some countries."
+      },
+      "AddressUpdateCity": {
+        "maxLength": 200,
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AddressUpdateCityBranch1"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "description": "City of this address."
+      },
+      "AddressUpdateSecondLine": {
+        "maxLength": 1024,
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AddressUpdateSecondLineBranch1"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "description": "Second line of this address."
       },
       "ClientTokenStatus": {
         "title": "ClientTokenStatus",
@@ -23737,31 +23711,31 @@
           ]
         }
       },
-      "AddressUpdateRegion": {
-        "maxLength": 200,
+      "AddressUpdateFirstLine": {
+        "maxLength": 1024,
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/AddressUpdateRegionBranch1"
+            "$ref": "#/components/schemas/AddressUpdateFirstLineBranch1"
           },
           {
             "type": "object"
           }
         ],
-        "description": "State, county, or region of this address."
+        "description": "First line of this address."
       },
-      "AddressUpdatePostalCode": {
-        "maxLength": 200,
+      "AddressUpdateDescription": {
+        "maxLength": 1024,
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/AddressUpdatePostalCodeBranch1"
+            "$ref": "#/components/schemas/AddressUpdateDescriptionBranch1"
           },
           {
             "type": "object"
           }
         ],
-        "description": "ZIP or postal code of this address. Required for some countries."
+        "description": "Memorable description for this address."
       },
       "DurationInterval": {
         "enum": [
@@ -23842,31 +23816,39 @@
         },
         "description": "Details for invoicing. Required if \u0060collection_mode\u0060 is \u0060manual\u0060."
       },
-      "AddressUpdateCity": {
-        "maxLength": 200,
+      "AddressImportMeta": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/AddressUpdateCityBranch1"
+            "$ref": "#/components/schemas/ImportMeta"
           },
           {
             "type": "object"
           }
         ],
-        "description": "City of this address."
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "ImportMeta": "#/components/schemas/ImportMeta"
+          }
+        },
+        "x-external-readOnly": true
       },
-      "AddressUpdateSecondLine": {
-        "maxLength": 1024,
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AddressUpdateSecondLineBranch1"
-          },
-          {
-            "type": "object"
-          }
-        ],
-        "description": "Second line of this address."
+      "AddressUpdatedAt": {
+        "type": "string",
+        "additionalProperties": false,
+        "description": "RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.",
+        "format": "date-time",
+        "readOnly": true
       },
       "CatalogType": {
         "title": "CatalogType",
@@ -23900,31 +23882,23 @@
           ]
         }
       },
-      "AddressUpdateFirstLine": {
-        "maxLength": 1024,
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AddressUpdateFirstLineBranch1"
-          },
-          {
-            "type": "object"
-          }
-        ],
-        "description": "First line of this address."
+      "AddressCreatedAt": {
+        "type": "string",
+        "additionalProperties": false,
+        "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+        "format": "date-time",
+        "readOnly": true
       },
-      "AddressUpdateDescription": {
-        "maxLength": 1024,
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AddressUpdateDescriptionBranch1"
-          },
-          {
-            "type": "object"
-          }
+      "AddressStatus": {
+        "required": [
+          "value"
         ],
-        "description": "Memorable description for this address."
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
       },
       "PriceTrialDuration": {
         "title": "Price Trial Duration",
@@ -24237,14 +24211,15 @@
         "description": "Breakdown of the totals for a transaction after adjustments.",
         "readOnly": true
       },
-      "AddressImportMeta": {
+      "AddressCustomData": {
         "required": [
           "type"
         ],
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/ImportMeta"
+            "type": "object",
+            "description": "Your own structured key-value data."
           },
           {
             "type": "object"
@@ -24256,13 +24231,13 @@
             "description": "Union discriminator"
           }
         },
+        "description": "Your own structured key-value data.",
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "ImportMeta": "#/components/schemas/ImportMeta"
+            "CustomData": "#/components/schemas/CustomData"
           }
-        },
-        "x-external-readOnly": true
+        }
       },
       "TransactionPayoutTotals": {
         "title": "Transaction payout totals",
@@ -24432,12 +24407,14 @@
         "description": "Breakdown of the payout total for a transaction after adjustments. \u0060null\u0060 until the transaction is \u0060completed\u0060.",
         "readOnly": true
       },
-      "AddressUpdatedAt": {
-        "type": "string",
-        "additionalProperties": false,
-        "description": "RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.",
-        "format": "date-time",
-        "readOnly": true
+      "AddressCountryCode": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CountryCode"
+          }
+        ],
+        "description": "Supported two-letter ISO 3166-1 alpha-2 country code for this address."
       },
       "TaxCategory": {
         "title": "Tax category",
@@ -24527,23 +24504,27 @@
           ]
         }
       },
-      "AddressCreatedAt": {
-        "type": "string",
-        "additionalProperties": false,
-        "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
-        "format": "date-time",
-        "readOnly": true
-      },
-      "AddressStatus": {
-        "required": [
-          "value"
-        ],
+      "AddressRegion": {
         "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/Status"
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AddressRegionBranch1"
+          },
+          {
+            "type": "object"
           }
-        }
+        ]
+      },
+      "AddressPostalCode": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AddressPostalCodeBranch1"
+          },
+          {
+            "type": "object"
+          }
+        ]
       },
       "Product": {
         "title": "Product",
@@ -24606,33 +24587,16 @@
         },
         "description": "Represents a product entity."
       },
-      "AddressCustomData": {
-        "required": [
-          "type"
-        ],
+      "AddressCity": {
         "type": "object",
         "anyOf": [
           {
-            "type": "object",
-            "description": "Your own structured key-value data."
+            "$ref": "#/components/schemas/AddressCityBranch1"
           },
           {
             "type": "object"
           }
-        ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "Your own structured key-value data.",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "CustomData": "#/components/schemas/CustomData"
-          }
-        }
+        ]
       },
       "PaymentAttemptStatus": {
         "enum": [
@@ -25341,12 +25305,19 @@
         },
         "description": "Information about the Korean payment method used to pay. \u0060null\u0060 unless the type is \u0060korea_local\u0060."
       },
-      "AddressCreateId": {
-        "pattern": "^add_[a-z\\d]{26}$",
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this address entity, prefixed with \u0060add_\u0060.",
-        "readOnly": true
+      "UnderlyingDetails": {
+        "title": "PaymentMethodUnderlyingDetails",
+        "required": [
+          "korea_local"
+        ],
+        "type": "object",
+        "properties": {
+          "korea_local": {
+            "$ref": "#/components/schemas/UnderlyingDetailsKoreaLocal"
+          }
+        },
+        "description": "Information about the underlying payment method used to pay. Populated for payment methods that offer multiple payment options, like \u0060korea_local\u0060. Deprecated - use top-level type objects instead.",
+        "deprecated": true
       },
       "SouthKoreaLocalCardType": {
         "title": "SouthKoreaLocalCardType",
@@ -25545,14 +25516,16 @@
           ]
         }
       },
-      "AddressCountryCode": {
+      "AddressSecondLine": {
         "type": "object",
-        "allOf": [
+        "anyOf": [
           {
-            "$ref": "#/components/schemas/CountryCode"
+            "$ref": "#/components/schemas/AddressSecondLineBranch1"
+          },
+          {
+            "type": "object"
           }
-        ],
-        "description": "Supported two-letter ISO 3166-1 alpha-2 country code for this address."
+        ]
       },
       "SouthKoreaLocalCard": {
         "title": "SouthKoreaLocalCard",
@@ -25664,38 +25637,34 @@
           ]
         }
       },
-      "AddressRegion": {
+      "AddressFirstLine": {
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/AddressRegionBranch1"
+            "$ref": "#/components/schemas/AddressFirstLineBranch1"
           },
           {
             "type": "object"
           }
         ]
       },
-      "AddressPostalCode": {
+      "AddressDescription": {
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/AddressPostalCodeBranch1"
+            "$ref": "#/components/schemas/AddressDescriptionBranch1"
           },
           {
             "type": "object"
           }
         ]
       },
-      "AddressCity": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AddressCityBranch1"
-          },
-          {
-            "type": "object"
-          }
-        ]
+      "AddressCustomerId": {
+        "pattern": "^ctm_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060.",
+        "readOnly": true
       },
       "Card": {
         "title": "Card",
@@ -25898,16 +25867,12 @@
           ]
         }
       },
-      "AddressSecondLine": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AddressSecondLineBranch1"
-          },
-          {
-            "type": "object"
-          }
-        ]
+      "AddressId": {
+        "pattern": "^add_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this address entity, prefixed with \u0060add_\u0060.",
+        "readOnly": true
       },
       "DiscountMode": {
         "title": "DiscountMode",
@@ -25941,16 +25906,33 @@
           ]
         }
       },
-      "AddressFirstLine": {
+      "AddressCreateImportMeta": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/AddressFirstLineBranch1"
+            "$ref": "#/components/schemas/ImportMeta"
           },
           {
             "type": "object"
           }
-        ]
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Import information for this entity. \u0060null\u0060 if this entity is not imported.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "ImportMeta": "#/components/schemas/ImportMeta"
+          }
+        },
+        "x-external-readOnly": true
       },
       "CustomerPaymentMethodType": {
         "title": "SavedPaymentMethodType",
@@ -26137,23 +26119,42 @@
           ]
         }
       },
-      "AddressDescription": {
+      "AddressCreateCustomData": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/AddressDescriptionBranch1"
+            "type": "object",
+            "description": "Your own structured key-value data."
           },
           {
             "type": "object"
           }
-        ]
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "Your own structured key-value data.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "CustomData": "#/components/schemas/CustomData"
+          }
+        }
       },
-      "AddressCustomerId": {
-        "pattern": "^ctm_[a-z\\d]{26}$",
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060.",
-        "readOnly": true
+      "AddressCreateCountryCode": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CountryCode"
+          }
+        ],
+        "description": "Supported two-letter ISO 3166-1 alpha-2 country code for this address."
       },
       "ReportStatus": {
         "title": "ReportStatus",
@@ -26900,12 +26901,18 @@
           ]
         }
       },
-      "AddressId": {
-        "pattern": "^add_[a-z\\d]{26}$",
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this address entity, prefixed with \u0060add_\u0060.",
-        "readOnly": true
+      "AddressCreateRegion": {
+        "maxLength": 200,
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AddressCreateRegionBranch1"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "description": "State, county, or region of this address."
       },
       "TransactionItem": {
         "title": "TransactionItem",
@@ -27282,33 +27289,18 @@
         },
         "description": "Represents a credit balance for a customer."
       },
-      "AddressCreateImportMeta": {
-        "required": [
-          "type"
-        ],
+      "AddressCreatePostalCode": {
+        "maxLength": 200,
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/ImportMeta"
+            "$ref": "#/components/schemas/AddressCreatePostalCodeBranch1"
           },
           {
             "type": "object"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "Import information for this entity. \u0060null\u0060 if this entity is not imported.",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "ImportMeta": "#/components/schemas/ImportMeta"
-          }
-        },
-        "x-external-readOnly": true
+        "description": "ZIP or postal code of this address. Required for some countries."
       },
       "CustomerAuthenticationToken": {
         "title": "Customer Authentication Token",
@@ -27330,33 +27322,18 @@
         },
         "description": "Represents a customer authentication token."
       },
-      "AddressCreateCustomData": {
-        "required": [
-          "type"
-        ],
+      "AddressCreateCity": {
+        "maxLength": 200,
         "type": "object",
         "anyOf": [
           {
-            "type": "object",
-            "description": "Your own structured key-value data."
+            "$ref": "#/components/schemas/AddressCreateCityBranch1"
           },
           {
             "type": "object"
           }
         ],
-        "properties": {
-          "type": {
-            "type": "string",
-            "description": "Union discriminator"
-          }
-        },
-        "description": "Your own structured key-value data.",
-        "discriminator": {
-          "propertyName": "type",
-          "mapping": {
-            "CustomData": "#/components/schemas/CustomData"
-          }
-        }
+        "description": "City of this address."
       },
       "CustomerPortalSessionUrlsGeneral": {
         "title": "CustomerPortalSessionGeneralUrls",
@@ -28521,14 +28498,18 @@
         },
         "description": "Represents an event type."
       },
-      "AddressCreateCountryCode": {
+      "AddressCreateSecondLine": {
+        "maxLength": 1024,
         "type": "object",
-        "allOf": [
+        "anyOf": [
           {
-            "$ref": "#/components/schemas/CountryCode"
+            "$ref": "#/components/schemas/AddressCreateSecondLineBranch1"
+          },
+          {
+            "type": "object"
           }
         ],
-        "description": "Supported two-letter ISO 3166-1 alpha-2 country code for this address."
+        "description": "Second line of this address."
       },
       "EventData": {
         "type": "object",
@@ -28703,18 +28684,18 @@
           ]
         }
       },
-      "AddressCreateRegion": {
-        "maxLength": 200,
+      "AddressCreateFirstLine": {
+        "maxLength": 1024,
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/AddressCreateRegionBranch1"
+            "$ref": "#/components/schemas/AddressCreateFirstLineBranch1"
           },
           {
             "type": "object"
           }
         ],
-        "description": "State, county, or region of this address."
+        "description": "First line of this address."
       },
       "NotificationSettingType": {
         "title": "NotificationSettingType",
@@ -28974,18 +28955,18 @@
           ]
         }
       },
-      "AddressCreatePostalCode": {
-        "maxLength": 200,
+      "AddressCreateDescription": {
+        "maxLength": 1024,
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/AddressCreatePostalCodeBranch1"
+            "$ref": "#/components/schemas/AddressCreateDescriptionBranch1"
           },
           {
             "type": "object"
           }
         ],
-        "description": "ZIP or postal code of this address. Required for some countries."
+        "description": "Memorable description for this address."
       },
       "NotificationStatus": {
         "title": "notification_status",
@@ -29167,18 +29148,12 @@
         },
         "description": "Represents a notification entity."
       },
-      "AddressCreateCity": {
-        "maxLength": 200,
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AddressCreateCityBranch1"
-          },
-          {
-            "type": "object"
-          }
-        ],
-        "description": "City of this address."
+      "AddressCreateId": {
+        "pattern": "^add_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this address entity, prefixed with \u0060add_\u0060.",
+        "readOnly": true
       },
       "NotificationLog": {
         "title": "NotificationLog",
@@ -30904,16 +30879,31 @@
         },
         "description": "Entity when working with a discounts report."
       },
-      "ImportMetaExternalId": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ImportMetaExternalIdBranch1"
-          },
-          {
-            "type": "object"
+      "ReportTypeBalance": {
+        "title": "BalanceReportType",
+        "enum": [
+          "balance"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Type of report.",
+        "deprecated": true,
+        "x-enum-descriptions": {
+          "balance": {
+            "description": "Balance reports contain information about your account balance activity, including all movements of funds in and out of your balance. Deprecated.",
+            "deprecated": true
           }
-        ]
+        },
+        "x-ms-enum": {
+          "name": "ReportTypeBalance",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "balance",
+              "name": "Balance"
+            }
+          ]
+        }
       },
       "ReportFilterBalanceName": {
         "title": "BalanceReportFilterName",
@@ -30960,40 +30950,58 @@
         },
         "description": "List of filters applied to this report."
       },
-      "ErrorResponseError": {
+      "ReportBalanceModel": {
+        "title": "Balance report",
         "required": [
+          "id",
+          "status",
+          "rows",
+          "expires_at",
+          "updated_at",
+          "created_at",
           "type",
-          "code",
-          "detail",
-          "documentation_url"
+          "filters"
         ],
         "type": "object",
         "properties": {
+          "id": {
+            "pattern": "^[a-z]{3,10}_[a-z\\d]{26}$",
+            "type": "string",
+            "description": "Unique Paddle ID for this entity."
+          },
+          "status": {
+            "$ref": "#/components/schemas/ReportBalanceModelStatus"
+          },
+          "rows": {
+            "$ref": "#/components/schemas/ReportBalanceModelRows"
+          },
+          "expires_at": {
+            "$ref": "#/components/schemas/ReportBalanceModelExpiresAt"
+          },
+          "updated_at": {
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.",
+            "format": "date-time"
+          },
+          "created_at": {
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+            "format": "date-time"
+          },
           "type": {
-            "$ref": "#/components/schemas/ApiErrorType"
+            "$ref": "#/components/schemas/ReportBalanceModelType"
           },
-          "code": {
-            "type": "string",
-            "description": "Short snake case string that describes this error. Use to search the error reference."
-          },
-          "detail": {
-            "type": "string",
-            "description": "Some information about what went wrong as a human-readable string."
-          },
-          "documentation_url": {
-            "type": "string",
-            "description": "Link to a page in the error reference for this specific error.",
-            "format": "uri"
-          },
-          "errors": {
+          "filters": {
+            "maxItems": 10,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ErrorItem"
+              "$ref": "#/components/schemas/ReportFilterBalance"
             },
-            "description": "List of validation errors. Only returned when there\u0027s a validation error."
+            "description": "Filter criteria for this report. If omitted, reports are filtered to include data updated in the last 30 days. This means \u0060updated_at\u0060 is greater than or equal to (\u0060gte\u0060) the date 30 days ago from the time the report was generated."
           }
         },
-        "description": "Represents an error."
+        "description": "Entity when working with a balance report. Deprecated.",
+        "deprecated": true
       },
       "ReportTypePayoutReconciliation": {
         "title": "PayoutReconciliationReportType",
@@ -31092,7 +31100,7 @@
             "$ref": "#/components/schemas/ReportDiscountsModel"
           },
           {
-            "$ref": "#/components/schemas/ReportWrapper"
+            "$ref": "#/components/schemas/ReportBalanceModel"
           },
           {
             "$ref": "#/components/schemas/ReportPayoutReconciliationModel"
@@ -31112,6 +31120,7 @@
             "ReportTransactionsModel": "#/components/schemas/ReportTransactionsModel",
             "ReportProductsPricesModel": "#/components/schemas/ReportProductsPricesModel",
             "ReportDiscountsModel": "#/components/schemas/ReportDiscountsModel",
+            "ReportBalanceModel": "#/components/schemas/ReportBalanceModel",
             "ReportPayoutReconciliationModel": "#/components/schemas/ReportPayoutReconciliationModel"
           }
         }
@@ -31279,17 +31288,27 @@
         },
         "description": "List of filters applied to this report."
       },
-      "ApiErrorType": {
+      "ReportBalanceCreateModel": {
+        "title": "Balance report",
         "required": [
-          "value"
+          "type"
         ],
         "type": "object",
         "properties": {
-          "value": {
-            "$ref": "#/components/schemas/ErrorResponseType"
+          "type": {
+            "$ref": "#/components/schemas/ReportBalanceCreateModelType"
+          },
+          "filters": {
+            "maxItems": 10,
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ReportFilterBalanceCreate"
+            },
+            "description": "Filter criteria for this report. If omitted, reports are filtered to include data updated in the last 30 days. This means \u0060updated_at\u0060 is greater than or equal to (\u0060gte\u0060) the date 30 days ago from the time the report was generated."
           }
         },
-        "description": "Type of error encountered."
+        "description": "Entity when working with a balance report. Deprecated.",
+        "deprecated": true
       },
       "ReportPayoutReconciliationCreateModel": {
         "title": "Payout reconciliation report",
@@ -31333,7 +31352,7 @@
             "$ref": "#/components/schemas/ReportDiscountsCreateModel"
           },
           {
-            "$ref": "#/components/schemas/ReportCreateWrapper"
+            "$ref": "#/components/schemas/ReportBalanceCreateModel"
           },
           {
             "$ref": "#/components/schemas/ReportPayoutReconciliationCreateModel"
@@ -31353,6 +31372,7 @@
             "ReportTransactionsCreateModel": "#/components/schemas/ReportTransactionsCreateModel",
             "ReportProductsPricesCreateModel": "#/components/schemas/ReportProductsPricesCreateModel",
             "ReportDiscountsCreateModel": "#/components/schemas/ReportDiscountsCreateModel",
+            "ReportBalanceCreateModel": "#/components/schemas/ReportBalanceCreateModel",
             "ReportPayoutReconciliationCreateModel": "#/components/schemas/ReportPayoutReconciliationCreateModel"
           }
         }
@@ -31459,18 +31479,16 @@
         "description": "Represents a simulation type.",
         "readOnly": true
       },
-      "AddressCreateSecondLine": {
-        "maxLength": 1024,
+      "ImportMetaExternalId": {
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/AddressCreateSecondLineBranch1"
+            "$ref": "#/components/schemas/ImportMetaExternalIdBranch1"
           },
           {
             "type": "object"
           }
-        ],
-        "description": "Second line of this address."
+        ]
       },
       "SimulationPayload": {
         "title": "Simulation payload",
@@ -33033,18 +33051,40 @@
           ]
         }
       },
-      "AddressCreateFirstLine": {
-        "maxLength": 1024,
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AddressCreateFirstLineBranch1"
-          },
-          {
-            "type": "object"
-          }
+      "ErrorResponseError": {
+        "required": [
+          "type",
+          "code",
+          "detail",
+          "documentation_url"
         ],
-        "description": "First line of this address."
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ApiErrorType"
+          },
+          "code": {
+            "type": "string",
+            "description": "Short snake case string that describes this error. Use to search the error reference."
+          },
+          "detail": {
+            "type": "string",
+            "description": "Some information about what went wrong as a human-readable string."
+          },
+          "documentation_url": {
+            "type": "string",
+            "description": "Link to a page in the error reference for this specific error.",
+            "format": "uri"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ErrorItem"
+            },
+            "description": "List of validation errors. Only returned when there\u0027s a validation error."
+          }
+        },
+        "description": "Represents an error."
       },
       "SimulationRunStatus": {
         "title": "SimulationRunStatus",
@@ -33087,18 +33127,17 @@
           ]
         }
       },
-      "AddressCreateDescription": {
-        "maxLength": 1024,
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AddressCreateDescriptionBranch1"
-          },
-          {
-            "type": "object"
-          }
+      "ApiErrorType": {
+        "required": [
+          "value"
         ],
-        "description": "Memorable description for this address."
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/ErrorResponseType"
+          }
+        },
+        "description": "Type of error encountered."
       },
       "SimulationEventStatus": {
         "title": "SimulationEventStatus",
@@ -36469,6 +36508,84 @@
           }
         }
       },
+      "AdjustmentItemsItemType": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/AdjustmentItemType"
+          }
+        },
+        "description": "Type of adjustment for this transaction item. \u0060tax\u0060 adjustments are automatically created by Paddle.\nInclude \u0060amount\u0060 when creating a \u0060partial\u0060 adjustment."
+      },
+      "AdjustmentItemsItemAmount": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AdjustmentItemsItemAmountBranch1"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "description": "Amount adjusted for this transaction item. Required when item \u0060type\u0060 is \u0060partial\u0060."
+      },
+      "AdjustmentItemsItemProration": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/TransactionItemProration"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "description": "How proration was calculated for this adjustment item.",
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "TransactionItemProration": "#/components/schemas/TransactionItemProration"
+          }
+        },
+        "readOnly": true
+      },
+      "AdjustmentItemsItemTotals": {
+        "required": [
+          "subtotal",
+          "tax",
+          "total"
+        ],
+        "type": "object",
+        "properties": {
+          "subtotal": {
+            "type": "string",
+            "description": "Amount multiplied by quantity.",
+            "readOnly": true
+          },
+          "tax": {
+            "type": "string",
+            "description": "Total tax on the subtotal.",
+            "readOnly": true
+          },
+          "total": {
+            "type": "string",
+            "description": "Total after tax.",
+            "readOnly": true
+          }
+        },
+        "readOnly": true
+      },
       "AdjustmentTotalsComposed": {
         "required": [
           "subtotal",
@@ -37544,16 +37661,58 @@
         },
         "readOnly": true
       },
-      "MethodDetailsUnderlyingDetails": {
+      "UnderlyingDetailsKoreaLocal": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/MethodDetailsUnderlyingDetailsBranch1"
+            "$ref": "#/components/schemas/KoreaLocalUnderlyingDetails"
           },
           {
             "type": "object"
           }
         ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "KoreaLocalUnderlyingDetails": "#/components/schemas/KoreaLocalUnderlyingDetails"
+          }
+        },
+        "readOnly": true
+      },
+      "MethodDetailsUnderlyingDetails": {
+        "required": [
+          "type"
+        ],
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/UnderlyingDetails"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "UnderlyingDetails": "#/components/schemas/UnderlyingDetails"
+          }
+        },
         "readOnly": true,
         "deprecated": true
       },
@@ -40694,12 +40853,6 @@
       },
       "EventType2Data": {
         "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "description": "New or changed entity."
-          }
-        ],
         "description": "New or changed entity.",
         "readOnly": true
       },
@@ -40983,12 +41136,6 @@
       },
       "NotificationPayloadData": {
         "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "description": "New or changed entity."
-          }
-        ],
         "description": "New or changed entity.",
         "readOnly": true
       },
@@ -41253,15 +41400,30 @@
         "readOnly": true
       },
       "CustomerPaymentMethodUnderlyingDetails": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "anyOf": [
           {
-            "$ref": "#/components/schemas/CustomerPaymentMethodUnderlyingDetailsBranch1"
+            "$ref": "#/components/schemas/UnderlyingDetails"
           },
           {
             "type": "object"
           }
         ],
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Union discriminator"
+          }
+        },
+        "discriminator": {
+          "propertyName": "type",
+          "mapping": {
+            "UnderlyingDetails": "#/components/schemas/UnderlyingDetails"
+          }
+        },
         "readOnly": true
       },
       "CustomerPaymentMethodSouthKoreaLocalCard": {
@@ -43324,6 +43486,78 @@
         ],
         "description": "Value to filter by. Check the allowed values descriptions for the \u0060name\u0060 field to see valid values for a field."
       },
+      "ReportBalanceModelId": {
+        "pattern": "^[a-z]{3,10}_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this entity.",
+        "readOnly": true
+      },
+      "ReportBalanceModelStatus": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/ReportStatus"
+          }
+        },
+        "readOnly": true
+      },
+      "ReportBalanceModelRows": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ReportBalanceModelRowsBranch1"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "description": "Number of records in this report. \u0060null\u0060 if the report is \u0060pending\u0060.",
+        "readOnly": true
+      },
+      "ReportBalanceModelExpiresAt": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ReportBalanceModelExpiresAtBranch1"
+          },
+          {
+            "type": "object"
+          }
+        ],
+        "description": "RFC 3339 datetime string of when this report expires. The report is no longer available to download after this date.",
+        "readOnly": true
+      },
+      "ReportBalanceModelUpdatedAt": {
+        "type": "string",
+        "additionalProperties": false,
+        "description": "RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.",
+        "format": "date-time",
+        "readOnly": true
+      },
+      "ReportBalanceModelCreatedAt": {
+        "type": "string",
+        "additionalProperties": false,
+        "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+        "format": "date-time",
+        "readOnly": true
+      },
+      "ReportBalanceModelType": {
+        "title": "BalanceReportType",
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/ReportTypeBalance"
+          }
+        },
+        "description": "Type of report to create."
+      },
       "ReportPayoutReconciliationModelId": {
         "pattern": "^[a-z]{3,10}_[a-z\\d]{26}$",
         "type": "string",
@@ -43645,6 +43879,19 @@
           }
         ],
         "description": "Value to filter by. Check the allowed values descriptions for the \u0060name\u0060 field to see valid values for a field."
+      },
+      "ReportBalanceCreateModelType": {
+        "title": "BalanceReportType",
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/ReportTypeBalance"
+          }
+        },
+        "description": "Type of report to create."
       },
       "ReportPayoutReconciliationCreateModelType": {
         "title": "PayoutReconciliationReportType",
@@ -45226,12 +45473,6 @@
       },
       "SimulationEventPayload": {
         "type": "object",
-        "allOf": [
-          {
-            "type": "object",
-            "description": "Simulation payload. A JSON object that matches the schema for an event type."
-          }
-        ],
         "description": "Simulation payload. Pass a JSON object that matches the schema for an event type to simulate a custom payload. If omitted, Paddle populates with a demo example.",
         "readOnly": true
       },
@@ -52228,17 +52469,6 @@
           }
         }
       },
-      "AdjustmentItemTypeWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/AdjustmentItemType"
-          }
-        }
-      },
       "AdjustmentStatusWrapper": {
         "required": [
           "value"
@@ -52335,6 +52565,17 @@
         "properties": {
           "value": {
             "$ref": "#/components/schemas/ErrorResponseType"
+          }
+        }
+      },
+      "AdjustmentItemTypeWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/AdjustmentItemType"
           }
         }
       },
@@ -53328,6 +53569,28 @@
           }
         }
       },
+      "ReportTypeBalanceWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/ReportTypeBalance"
+          }
+        }
+      },
+      "ReportStatusWrapper6": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/ReportStatus"
+          }
+        }
+      },
       "ReportTypePayoutReconciliationWrapper": {
         "required": [
           "value"
@@ -53490,6 +53753,17 @@
         "properties": {
           "value": {
             "$ref": "#/components/schemas/OperatorType"
+          }
+        }
+      },
+      "ReportTypeBalanceWrapper2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/ReportTypeBalance"
           }
         }
       },
@@ -54355,17 +54629,6 @@
         "type": "object",
         "description": "Placeholder schema for path example refs"
       },
-      "AdjustmentItemsItemAmountBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
       "AdjustmentCreditAppliedToBalanceBranch1": {
         "required": [
           "value"
@@ -54567,19 +54830,6 @@
           }
         }
       },
-      "ImportMetaExternalIdBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "maxLength": 200,
-            "type": "string",
-            "description": "Reference or identifier for this entity from the provider where it was imported from."
-          }
-        }
-      },
       "AddressCreateSecondLineBranch1": {
         "required": [
           "value"
@@ -54603,6 +54853,30 @@
         }
       },
       "AddressCreateDescriptionBranch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          }
+        }
+      },
+      "ImportMetaExternalIdBranch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "maxLength": 200,
+            "type": "string",
+            "description": "Reference or identifier for this entity from the provider where it was imported from."
+          }
+        }
+      },
+      "AdjustmentItemsItemAmountBranch1": {
         "required": [
           "value"
         ],
@@ -55990,6 +56264,30 @@
         }
       },
       "ReportDiscountsModelExpiresAtBranch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string",
+            "description": "RFC 3339 datetime string.",
+            "format": "date-time"
+          }
+        }
+      },
+      "ReportBalanceModelRowsBranch1": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "integer"
+          }
+        }
+      },
+      "ReportBalanceModelExpiresAtBranch1": {
         "required": [
           "value"
         ],
@@ -57451,50 +57749,6 @@
         }
       },
       "TransactionReviseAddressSecondLineBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "ReportWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "ReportCreateWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "MethodDetailsUnderlyingDetailsBranch1": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string"
-          }
-        }
-      },
-      "CustomerPaymentMethodUnderlyingDetailsBranch1": {
         "required": [
           "value"
         ],
