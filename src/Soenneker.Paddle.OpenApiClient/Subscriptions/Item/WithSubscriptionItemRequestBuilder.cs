@@ -7,6 +7,7 @@ using Soenneker.Paddle.OpenApiClient.Models;
 using Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Activate;
 using Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Cancel;
 using Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Charge;
+using Soenneker.Paddle.OpenApiClient.Subscriptions.Item.History;
 using Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Pause;
 using Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview;
 using Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Resume;
@@ -38,6 +39,11 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item
         public global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Charge.ChargeRequestBuilder Charge
         {
             get => new global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Charge.ChargeRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The history property</summary>
+        public global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.History.HistoryRequestBuilder History
+        {
+            get => new global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.History.HistoryRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The pause property</summary>
         public global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Pause.PauseRequestBuilder Pause

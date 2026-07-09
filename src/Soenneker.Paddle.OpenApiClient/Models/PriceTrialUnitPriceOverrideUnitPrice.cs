@@ -8,29 +8,39 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Fallback array item schema
+    /// Override price. This price applies to customers located in the countries for this unit price override.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ReportPayoutReconciliationModel_filters : IAdditionalDataHolder, IParsable
+    public partial class PriceTrialUnitPriceOverrideUnitPrice : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Amount in the lowest denomination for the currency, e.g. 10 USD = 1000 (cents). Although represented as a string, this value must be a valid integer.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Amount { get; set; }
+#nullable restore
+#else
+        public string Amount { get; set; }
+#endif
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
+        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode? CurrencyCode { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverrideUnitPrice"/> and sets the default values.
         /// </summary>
-        public ReportPayoutReconciliationModel_filters()
+        public PriceTrialUnitPriceOverrideUnitPrice()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverrideUnitPrice"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverrideUnitPrice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters();
+            return new global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverrideUnitPrice();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -40,6 +50,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "amount", n => { Amount = n.GetStringValue(); } },
+                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode>(); } },
             };
         }
         /// <summary>
@@ -49,6 +61,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("amount", Amount);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode>("currency_code", CurrencyCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

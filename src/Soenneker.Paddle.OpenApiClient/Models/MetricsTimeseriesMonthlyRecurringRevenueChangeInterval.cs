@@ -8,31 +8,31 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// RFC 3339 datetime string of when this discount was first applied. `null` for canceled subscriptions where a discount was redeemed but never applied to a transaction.
+    /// Granularity for this timeseries.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DiscountSubscriptionStartsAt : IAdditionalDataHolder, IParsable
+    public partial class MetricsTimeseriesMonthlyRecurringRevenueChangeInterval : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>RFC 3339 datetime string.</summary>
-        public DateTimeOffset? Value { get; set; }
+        /// <summary>Time granularity for the datapoints.</summary>
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsInterval? Value { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.DiscountSubscriptionStartsAt"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeInterval"/> and sets the default values.
         /// </summary>
-        public DiscountSubscriptionStartsAt()
+        public MetricsTimeseriesMonthlyRecurringRevenueChangeInterval()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.DiscountSubscriptionStartsAt"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeInterval"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Paddle.OpenApiClient.Models.DiscountSubscriptionStartsAt CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeInterval CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.DiscountSubscriptionStartsAt();
+            return new global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeInterval();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,7 +42,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetDateTimeOffsetValue(); } },
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsInterval>(); } },
             };
         }
         /// <summary>
@@ -52,7 +52,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("value", Value);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsInterval>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

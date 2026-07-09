@@ -35,7 +35,7 @@ namespace Soenneker.Paddle.OpenApiClient.Prices
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PricesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/prices{?after,id,include,order_by,per_page,product_id,recurring,status,type}", pathParameters)
+        public PricesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/prices{?after,billing_cycle%2Efrequency,billing_cycle%2Einterval,id,include,order_by,per_page,product_id,recurring,status,type}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Paddle.OpenApiClient.Prices
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public PricesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/prices{?after,id,include,order_by,per_page,product_id,recurring,status,type}", rawUrl)
+        public PricesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/prices{?after,billing_cycle%2Efrequency,billing_cycle%2Einterval,id,include,order_by,per_page,product_id,recurring,status,type}", rawUrl)
         {
         }
         /// <summary>
@@ -162,6 +162,12 @@ namespace Soenneker.Paddle.OpenApiClient.Prices
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
+            /// <summary>Return entities where the price billing cycle frequency matches this value.</summary>
+            [QueryParameter("billing_cycle%2Efrequency")]
+            public int? BillingCycleFrequency { get; set; }
+            /// <summary>Return entities where the price billing cycle interval matches this value.</summary>
+            [QueryParameter("billing_cycle%2Einterval")]
+            public global::Soenneker.Paddle.OpenApiClient.Models.DurationInterval? BillingCycleInterval { get; set; }
             /// <summary>Return only the IDs specified. Use a comma-separated list to get multiple entities.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -176,11 +182,11 @@ namespace Soenneker.Paddle.OpenApiClient.Prices
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("include")]
-            public global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludeEnum[]? Include { get; set; }
+            public global::Soenneker.Paddle.OpenApiClient.Models.PriceListIncludeEnum[]? Include { get; set; }
 #nullable restore
 #else
             [QueryParameter("include")]
-            public global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludeEnum[] Include { get; set; }
+            public global::Soenneker.Paddle.OpenApiClient.Models.PriceListIncludeEnum[] Include { get; set; }
 #endif
             /// <summary>&quot;Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `billing_cycle.frequency`, `billing_cycle.interval`, `id`, `product_id`, `quantity.maximum`, `quantity.minimum`, `status`, `tax_mode`, `unit_price.amount`, and `unit_price.currency_code`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

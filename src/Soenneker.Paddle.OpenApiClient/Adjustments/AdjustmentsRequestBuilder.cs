@@ -152,9 +152,16 @@ namespace Soenneker.Paddle.OpenApiClient.Adjustments
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class AdjustmentsRequestBuilderGetQueryParameters 
         {
-            /// <summary>Return entities for the specified action.</summary>
+            /// <summary>Return entities for the specified action. Use a comma-separated list to specify multiple action values.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("action")]
-            public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentActionQuery? Action { get; set; }
+            public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentActionQuery[]? Action { get; set; }
+#nullable restore
+#else
+            [QueryParameter("action")]
+            public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentActionQuery[] Action { get; set; }
+#endif
             /// <summary>Return entities after the specified Paddle ID when working with paginated endpoints. Used in the `meta.pagination.next` URL in responses for list operations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable

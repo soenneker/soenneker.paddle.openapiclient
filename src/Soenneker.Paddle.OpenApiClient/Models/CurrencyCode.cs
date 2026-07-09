@@ -55,6 +55,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning disable CS1591
         Brl,
         #pragma warning restore CS1591
+        [EnumMember(Value = "CLP")]
+        #pragma warning disable CS1591
+        Clp,
+        #pragma warning restore CS1591
         [EnumMember(Value = "CNY")]
         #pragma warning disable CS1591
         Cny,
@@ -98,6 +102,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         [EnumMember(Value = "NZD")]
         #pragma warning disable CS1591
         Nzd,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "PEN")]
+        #pragma warning disable CS1591
+        Pen,
         #pragma warning restore CS1591
         [EnumMember(Value = "PLN")]
         #pragma warning disable CS1591

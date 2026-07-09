@@ -39,6 +39,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string CustomerIpAddress { get; set; }
 #endif
+        /// <summary>Apply a non-catalog discount to a transaction. Send one of `discount_id` or `discount`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressDiscount? Discount { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressDiscount Discount { get; set; }
+#endif
         /// <summary>Paddle ID of the discount to apply to this transaction preview, prefixed with `dsc_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,6 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressCurrencyCode.CreateFromDiscriminatorValue); } },
                 { "customer_id", n => { CustomerId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressCustomerId>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressCustomerId.CreateFromDiscriminatorValue); } },
                 { "customer_ip_address", n => { CustomerIpAddress = n.GetStringValue(); } },
+                { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressDiscount.CreateFromDiscriminatorValue); } },
                 { "discount_id", n => { DiscountId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressDiscountId>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressDiscountId.CreateFromDiscriminatorValue); } },
                 { "ignore_trials", n => { IgnoreTrials = n.GetBoolValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateItems>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateItems.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -101,6 +110,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressCustomerId>("customer_id", CustomerId);
             writer.WriteStringValue("customer_ip_address", CustomerIpAddress);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressDiscount>("discount", Discount);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddressDiscountId>("discount_id", DiscountId);
             writer.WriteBoolValue("ignore_trials", IgnoreTrials);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateItems>("items", Items);

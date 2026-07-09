@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Filter criteria for this report. If omitted, reports are filtered to include data updated in the last 30 days. This means `transaction_updated_at` is greater than or equal to (`gte`) the date 30 days ago from the time the report was generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel_filters>? Filters { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationCreate>? Filters { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel_filters> Filters { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationCreate> Filters { get; set; }
 #endif
         /// <summary>Type of report to create.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel_filters>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel_filters.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationCreate>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationCreate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModelType>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModelType.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel_filters>("filters", Filters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationCreate>("filters", Filters);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModelType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

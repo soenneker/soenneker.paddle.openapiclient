@@ -63,6 +63,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning disable CS1591
         PreferredNetworkNotSupported,
         #pragma warning restore CS1591
+        [EnumMember(Value = "prepaid_card_not_supported")]
+        #pragma warning disable CS1591
+        PrepaidCardNotSupported,
+        #pragma warning restore CS1591
         [EnumMember(Value = "psp_error")]
         #pragma warning disable CS1591
         PspError,

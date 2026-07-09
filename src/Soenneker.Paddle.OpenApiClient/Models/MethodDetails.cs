@@ -23,6 +23,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsCard Card { get; set; }
 #endif
+        /// <summary>Information about the PayPal account used to pay. `null` unless `type` is `paypal`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsPaypal? Paypal { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsPaypal Paypal { get; set; }
+#endif
         /// <summary>Information about the Korean credit or debit card used to pay. `null` unless `type` is `south_korea_local_card`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -68,6 +76,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "card", n => { Card = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsCard>(global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsCard.CreateFromDiscriminatorValue); } },
+                { "paypal", n => { Paypal = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsPaypal>(global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsPaypal.CreateFromDiscriminatorValue); } },
                 { "south_korea_local_card", n => { SouthKoreaLocalCard = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsSouthKoreaLocalCard>(global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsSouthKoreaLocalCard.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentMethodType>(); } },
                 { "underlying_details", n => { UnderlyingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsUnderlyingDetails>(global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsUnderlyingDetails.CreateFromDiscriminatorValue); } },
@@ -81,6 +90,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsCard>("card", Card);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsPaypal>("paypal", Paypal);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetailsSouthKoreaLocalCard>("south_korea_local_card", SouthKoreaLocalCard);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentMethodType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

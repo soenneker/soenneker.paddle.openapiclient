@@ -24,7 +24,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public string CardholderName { get; set; }
 #endif
         /// <summary>Month of the expiry date of the card used to pay.</summary>
-        public double? ExpiryMonth { get; set; }
+        public int? ExpiryMonth { get; set; }
         /// <summary>Year of the expiry date of the card used to pay.</summary>
         public int? ExpiryYear { get; set; }
         /// <summary>Last four digits of the card used to pay.</summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cardholder_name", n => { CardholderName = n.GetStringValue(); } },
-                { "expiry_month", n => { ExpiryMonth = n.GetDoubleValue(); } },
+                { "expiry_month", n => { ExpiryMonth = n.GetIntValue(); } },
                 { "expiry_year", n => { ExpiryYear = n.GetIntValue(); } },
                 { "last4", n => { Last4 = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
@@ -83,7 +83,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cardholder_name", CardholderName);
-            writer.WriteDoubleValue("expiry_month", ExpiryMonth);
+            writer.WriteIntValue("expiry_month", ExpiryMonth);
             writer.WriteIntValue("expiry_year", ExpiryYear);
             writer.WriteStringValue("last4", Last4);
             writer.WriteStringValue("type", Type);

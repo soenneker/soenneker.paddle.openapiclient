@@ -2,17 +2,38 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
+using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
+    /// Composed type wrapper for classes <see cref="Date"/>, <see cref="DateTimeOffset"/>, <see cref="string"/>, List&lt;global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction&gt;, List&lt;global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus&gt;, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReportFilterAdjustmentsCreateValue : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction?>? AdjustmentAction { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction?> AdjustmentAction { get; set; }
+#endif
+        /// <summary>Composed type representation for type List&lt;global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus&gt;</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus?>? AdjustmentStatus { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus?> AdjustmentStatus { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="Date"/></summary>
+        public Date? DateOnly { get; set; }
+        /// <summary>Composed type representation for type <see cref="DateTimeOffset"/></summary>
+        public DateTimeOffset? DateTimeOffset { get; set; }
         /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -38,9 +59,25 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterAdjustmentsCreateValue();
-            if(parseNode.GetStringValue() is string reportFilterAdjustmentsCreateValueStringValue)
+            if(parseNode.GetDateValue() is Date dateOnlyValue)
+            {
+                result.DateOnly = dateOnlyValue;
+            }
+            else if(parseNode.GetDateTimeOffsetValue() is DateTimeOffset dateTimeOffsetValue)
+            {
+                result.DateTimeOffset = dateTimeOffsetValue;
+            }
+            else if(parseNode.GetStringValue() is string reportFilterAdjustmentsCreateValueStringValue)
             {
                 result.ReportFilterAdjustmentsCreateValueString = reportFilterAdjustmentsCreateValueStringValue;
+            }
+            else if(parseNode.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction>()?.AsList() is List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction?> adjustmentActionValue)
+            {
+                result.AdjustmentAction = adjustmentActionValue;
+            }
+            else if(parseNode.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus>()?.AsList() is List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus?> adjustmentStatusValue)
+            {
+                result.AdjustmentStatus = adjustmentStatusValue;
             }
             else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
@@ -63,9 +100,25 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(ReportFilterAdjustmentsCreateValueString != null)
+            if(DateOnly != null)
+            {
+                writer.WriteDateValue(null, DateOnly);
+            }
+            else if(DateTimeOffset != null)
+            {
+                writer.WriteDateTimeOffsetValue(null, DateTimeOffset);
+            }
+            else if(ReportFilterAdjustmentsCreateValueString != null)
             {
                 writer.WriteStringValue(null, ReportFilterAdjustmentsCreateValueString);
+            }
+            else if(AdjustmentAction != null)
+            {
+                writer.WriteCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction>(null, AdjustmentAction);
+            }
+            else if(AdjustmentStatus != null)
+            {
+                writer.WriteCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus>(null, AdjustmentStatus);
             }
             else if(String != null)
             {

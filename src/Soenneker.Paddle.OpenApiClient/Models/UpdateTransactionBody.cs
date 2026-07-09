@@ -105,6 +105,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDetails Details { get; private set; }
 #endif
+        /// <summary>Apply a non-catalog discount to a transaction. Send one of `discount_id` or `discount`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDiscount? Discount { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDiscount Discount { get; set; }
+#endif
         /// <summary>Paddle ID of the discount to apply to this transaction, prefixed with `dsc_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -217,6 +225,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCustomData.CreateFromDiscriminatorValue); } },
                 { "customer_id", n => { CustomerId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCustomerId>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCustomerId.CreateFromDiscriminatorValue); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDetails>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDetails.CreateFromDiscriminatorValue); } },
+                { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDiscount.CreateFromDiscriminatorValue); } },
                 { "discount_id", n => { DiscountId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDiscountId>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDiscountId.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "invoice_id", n => { InvoiceId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyInvoiceId>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyInvoiceId.CreateFromDiscriminatorValue); } },
@@ -246,6 +255,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCustomData>("custom_data", CustomData);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCustomerId>("customer_id", CustomerId);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDiscount>("discount", Discount);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDiscountId>("discount_id", DiscountId);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemUpdate>("items", Items);

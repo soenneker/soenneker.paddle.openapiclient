@@ -7,6 +7,7 @@ using Microsoft.Kiota.Serialization.Json;
 using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Paddle.OpenApiClient.Adjustments;
+using Soenneker.Paddle.OpenApiClient.CheckoutDomains;
 using Soenneker.Paddle.OpenApiClient.ClientTokens;
 using Soenneker.Paddle.OpenApiClient.Customers;
 using Soenneker.Paddle.OpenApiClient.DiscountGroups;
@@ -14,6 +15,7 @@ using Soenneker.Paddle.OpenApiClient.Discounts;
 using Soenneker.Paddle.OpenApiClient.EventTypes;
 using Soenneker.Paddle.OpenApiClient.Events;
 using Soenneker.Paddle.OpenApiClient.Ips;
+using Soenneker.Paddle.OpenApiClient.Metrics;
 using Soenneker.Paddle.OpenApiClient.NotificationSettings;
 using Soenneker.Paddle.OpenApiClient.Notifications;
 using Soenneker.Paddle.OpenApiClient.Prices;
@@ -40,6 +42,11 @@ namespace Soenneker.Paddle.OpenApiClient
         public global::Soenneker.Paddle.OpenApiClient.Adjustments.AdjustmentsRequestBuilder Adjustments
         {
             get => new global::Soenneker.Paddle.OpenApiClient.Adjustments.AdjustmentsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The checkoutDomains property</summary>
+        public global::Soenneker.Paddle.OpenApiClient.CheckoutDomains.CheckoutDomainsRequestBuilder CheckoutDomains
+        {
+            get => new global::Soenneker.Paddle.OpenApiClient.CheckoutDomains.CheckoutDomainsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The clientTokens property</summary>
         public global::Soenneker.Paddle.OpenApiClient.ClientTokens.ClientTokensRequestBuilder ClientTokens
@@ -75,6 +82,11 @@ namespace Soenneker.Paddle.OpenApiClient
         public global::Soenneker.Paddle.OpenApiClient.Ips.IpsRequestBuilder Ips
         {
             get => new global::Soenneker.Paddle.OpenApiClient.Ips.IpsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The metrics property</summary>
+        public global::Soenneker.Paddle.OpenApiClient.Metrics.MetricsRequestBuilder Metrics
+        {
+            get => new global::Soenneker.Paddle.OpenApiClient.Metrics.MetricsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The notifications property</summary>
         public global::Soenneker.Paddle.OpenApiClient.Notifications.NotificationsRequestBuilder Notifications

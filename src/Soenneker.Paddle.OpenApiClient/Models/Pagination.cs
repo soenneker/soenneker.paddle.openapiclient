@@ -15,7 +15,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Estimated number of entities for this response.</summary>
+        /// <summary>Estimated number of entities for this response.For datasets with 100,000 or fewer matches, returns the exact count. For datasets with more than 100,000 matches, returns `100001` to indicate that more than 100,000 entities match. Returns `-1` when counting is skipped or couldn&apos;t be calculated.Use `has_more` and `next` to page through all results rather than relying on `estimated_total` for an exact count.</summary>
         public int? EstimatedTotal { get; private set; }
         /// <summary>Whether this response has another page.</summary>
         public bool? HasMore { get; private set; }

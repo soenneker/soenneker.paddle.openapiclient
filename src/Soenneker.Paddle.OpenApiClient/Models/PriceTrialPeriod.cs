@@ -35,6 +35,22 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Type { get; set; }
 #endif
+        /// <summary>Trial price. Customers are billed this amount for the duration of the trial period. Applies to all customers except those in countries with `unit_price_overrides`. If `null`, customers are not charged during the trial.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationUnitPrice? UnitPrice { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationUnitPrice UnitPrice { get; set; }
+#endif
+        /// <summary>List of unit price overrides for trial pricing. Use to override base trial price with a custom trial price and currency for a country or group of countries.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverride>? UnitPriceOverrides { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverride> UnitPriceOverrides { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialPeriod"/> and sets the default values.
         /// </summary>
@@ -64,6 +80,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationInterval>(global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationInterval.CreateFromDiscriminatorValue); } },
                 { "requires_payment_method", n => { RequiresPaymentMethod = n.GetBoolValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
+                { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationUnitPrice>(global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationUnitPrice.CreateFromDiscriminatorValue); } },
+                { "unit_price_overrides", n => { UnitPriceOverrides = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverride>(global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverride.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -77,6 +95,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationInterval>("interval", Interval);
             writer.WriteBoolValue("requires_payment_method", RequiresPaymentMethod);
             writer.WriteStringValue("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationUnitPrice>("unit_price", UnitPrice);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverride>("unit_price_overrides", UnitPriceOverrides);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

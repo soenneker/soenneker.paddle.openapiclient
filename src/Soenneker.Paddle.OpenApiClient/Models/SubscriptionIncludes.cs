@@ -63,6 +63,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesCollectionMode CollectionMode { get; set; }
 #endif
+        /// <summary>List of active consent requirements for the subscription&apos;s current billing period.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirement>? ConsentRequirements { get; set; }
+#nullable restore
+#else
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirement> ConsentRequirements { get; set; }
+#endif
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Supported three-letter ISO 4217 currency code. Transactions for this subscription are created in this currency. Must be `USD`, `EUR`, or `GBP` if `collection_mode` is `manual`.</summary>
@@ -234,6 +242,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "business_id", n => { BusinessId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesBusinessId>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesBusinessId.CreateFromDiscriminatorValue); } },
                 { "canceled_at", n => { CanceledAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesCanceledAt>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesCanceledAt.CreateFromDiscriminatorValue); } },
                 { "collection_mode", n => { CollectionMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesCollectionMode>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesCollectionMode.CreateFromDiscriminatorValue); } },
+                { "consent_requirements", n => { ConsentRequirements = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirement>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirement.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesCurrencyCode.CreateFromDiscriminatorValue); } },
                 { "current_billing_period", n => { CurrentBillingPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesCurrentBillingPeriod>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesCurrentBillingPeriod.CreateFromDiscriminatorValue); } },
@@ -266,6 +275,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesBillingDetails>("billing_details", BillingDetails);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesBusinessId>("business_id", BusinessId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesCollectionMode>("collection_mode", CollectionMode);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirement>("consent_requirements", ConsentRequirements);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesCustomData>("custom_data", CustomData);

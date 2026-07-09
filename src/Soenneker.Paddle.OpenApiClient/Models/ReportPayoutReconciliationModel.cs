@@ -28,10 +28,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Filter criteria for this report. If omitted, reports are filtered to include data updated in the last 30 days. This means `transaction_updated_at` is greater than or equal to (`gte`) the date 30 days ago from the time the report was generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters>? Filters { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliation>? Filters { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters> Filters { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliation> Filters { get; set; }
 #endif
         /// <summary>Unique Paddle ID for this entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -94,7 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelExpiresAt>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelExpiresAt.CreateFromDiscriminatorValue); } },
-                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliation>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "rows", n => { Rows = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelRows>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelRows.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelStatus>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelStatus.CreateFromDiscriminatorValue); } },
@@ -110,7 +110,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModel_filters>("filters", Filters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliation>("filters", Filters);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

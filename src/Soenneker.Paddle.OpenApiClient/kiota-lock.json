@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "B59BF861F837436F315293AC1D3DBB2AF89F0123DC668EDD128984B3C02A1867B165A3B53A0A1A1DCE3D1106B409D949ADF9DE0B39A2FE81A3B8943251CBC783",
+  "descriptionHash": "73B40DE7C6DBDA826C966EF65D0191AB19D478996443D710EED3FB5FC87DA10CD5AB54E337206ADAB44E3184B437D1832F8172E9008A956DE77F1E131DAA047C",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.33.0",
+  "kiotaVersion": "1.34.0",
   "clientClassName": "PaddleOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Paddle.OpenApiClient",

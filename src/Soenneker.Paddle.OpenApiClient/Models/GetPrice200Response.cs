@@ -14,13 +14,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Represents a price entity with included entities.</summary>
+        /// <summary>Represents a price entity with included entities, including product collections.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludes? Data { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludes? Data { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludes Data { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludes Data { get; set; }
 #endif
         /// <summary>Information about this response.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludes>(global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludes.CreateFromDiscriminatorValue); } },
+                { "data", n => { Data = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludes>(global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludes.CreateFromDiscriminatorValue); } },
                 { "meta", n => { Meta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Meta>(global::Soenneker.Paddle.OpenApiClient.Models.Meta.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludes>("data", Data);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludes>("data", Data);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Meta>("meta", Meta);
             writer.WriteAdditionalData(AdditionalData);
         }

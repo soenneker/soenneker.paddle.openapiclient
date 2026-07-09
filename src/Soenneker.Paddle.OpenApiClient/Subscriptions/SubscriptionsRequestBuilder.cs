@@ -35,7 +35,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscriptions{?address_id,after,collection_mode,customer_id,id,order_by,per_page,price_id,scheduled_change_action,status}", pathParameters)
+        public SubscriptionsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscriptions{?address_id,after,collection_mode,customer_id,id,next_billed_at,order_by,per_page,price_id,scheduled_change_action,status}", pathParameters)
         {
         }
         /// <summary>
@@ -43,7 +43,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscriptions{?address_id,after,collection_mode,customer_id,id,order_by,per_page,price_id,scheduled_change_action,status}", rawUrl)
+        public SubscriptionsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/subscriptions{?address_id,after,collection_mode,customer_id,id,next_billed_at,order_by,per_page,price_id,scheduled_change_action,status}", rawUrl)
         {
         }
         /// <summary>
@@ -146,6 +146,16 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions
 #else
             [QueryParameter("id")]
             public string[] Id { get; set; }
+#endif
+            /// <summary>Return entities next billed at a specific time. Pass `null` to return entities with no next billing date.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("next_billed_at")]
+            public string? NextBilledAt { get; set; }
+#nullable restore
+#else
+            [QueryParameter("next_billed_at")]
+            public string NextBilledAt { get; set; }
 #endif
             /// <summary>&quot;Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id`.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

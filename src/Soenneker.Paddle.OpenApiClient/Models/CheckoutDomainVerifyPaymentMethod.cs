@@ -8,31 +8,22 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// RFC 3339 datetime string of when this discount no longer applies. Where a discount has `maximum_recurring_intervals`, this is the date of the last billing period where this discount applies. `null` where a discount recurs forever.
+    /// Represents a request to verify a payment method for a checkout domain.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class DiscountSubscriptionEndsAt : IAdditionalDataHolder, IParsable
+    public partial class CheckoutDomainVerifyPaymentMethod : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>RFC 3339 datetime string.</summary>
-        public DateTimeOffset? Value { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.DiscountSubscriptionEndsAt"/> and sets the default values.
-        /// </summary>
-        public DiscountSubscriptionEndsAt()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Payment method to verify. Currently only apple_pay is supported.</summary>
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutDomainPaymentMethod? PaymentMethod { get; set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.DiscountSubscriptionEndsAt"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CheckoutDomainVerifyPaymentMethod"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Paddle.OpenApiClient.Models.DiscountSubscriptionEndsAt CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Paddle.OpenApiClient.Models.CheckoutDomainVerifyPaymentMethod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.DiscountSubscriptionEndsAt();
+            return new global::Soenneker.Paddle.OpenApiClient.Models.CheckoutDomainVerifyPaymentMethod();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -42,7 +33,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "value", n => { Value = n.GetDateTimeOffsetValue(); } },
+                { "payment_method", n => { PaymentMethod = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutDomainPaymentMethod>(); } },
             };
         }
         /// <summary>
@@ -52,8 +43,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutDomainPaymentMethod>("payment_method", PaymentMethod);
         }
     }
 }
