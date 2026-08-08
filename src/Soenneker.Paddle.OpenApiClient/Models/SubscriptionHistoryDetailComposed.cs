@@ -120,21 +120,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCanceledEffectiveFrom EffectiveFrom { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when the subscription was first billed. `null` when the subscription has never been billed — for example, an imported subscription recovering from `past_due`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedFirstBilledAt? FirstBilledAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedFirstBilledAt FirstBilledAt { get; set; }
-#endif
+        public DateTimeOffset? FirstBilledAt { get; set; }
         /// <summary>Whether the subscription had a payment method when it was created. `null` if this couldn&apos;t be determined.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedHasPaymentMethod? HasPaymentMethod { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedHasPaymentMethod HasPaymentMethod { get; set; }
-#endif
+        public bool? HasPaymentMethod { get; set; }
         /// <summary>Items on the subscription when it was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -144,13 +132,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedItems Items { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when the subscription was next scheduled to be billed at the time of activation. `null` when the subscription has no next billing date — for example, a recovered `past_due` subscription that is scheduled to cancel or pause.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedNextBilledAt? NextBilledAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedNextBilledAt NextBilledAt { get; set; }
-#endif
+        public DateTimeOffset? NextBilledAt { get; set; }
         /// <summary>How Paddle handled payment failure for the operation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -263,10 +245,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "customer", n => { Customer = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedCustomer>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedCustomer.CreateFromDiscriminatorValue); } },
                 { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedDiscount.CreateFromDiscriminatorValue); } },
                 { "effective_from", n => { EffectiveFrom = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCanceledEffectiveFrom>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCanceledEffectiveFrom.CreateFromDiscriminatorValue); } },
-                { "first_billed_at", n => { FirstBilledAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedFirstBilledAt>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedFirstBilledAt.CreateFromDiscriminatorValue); } },
-                { "has_payment_method", n => { HasPaymentMethod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedHasPaymentMethod>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedHasPaymentMethod.CreateFromDiscriminatorValue); } },
+                { "first_billed_at", n => { FirstBilledAt = n.GetDateTimeOffsetValue(); } },
+                { "has_payment_method", n => { HasPaymentMethod = n.GetBoolValue(); } },
                 { "items", n => { Items = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedItems>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedItems.CreateFromDiscriminatorValue); } },
-                { "next_billed_at", n => { NextBilledAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedNextBilledAt>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedNextBilledAt.CreateFromDiscriminatorValue); } },
+                { "next_billed_at", n => { NextBilledAt = n.GetDateTimeOffsetValue(); } },
                 { "on_payment_failure", n => { OnPaymentFailure = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedOnPaymentFailure>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedOnPaymentFailure.CreateFromDiscriminatorValue); } },
                 { "on_resume", n => { OnResume = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedOnResume>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedOnResume.CreateFromDiscriminatorValue); } },
                 { "operation", n => { Operation = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttemptedOperation>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttemptedOperation.CreateFromDiscriminatorValue); } },
@@ -299,10 +281,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedCustomer>("customer", Customer);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedDiscount>("discount", Discount);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCanceledEffectiveFrom>("effective_from", EffectiveFrom);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedFirstBilledAt>("first_billed_at", FirstBilledAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedHasPaymentMethod>("has_payment_method", HasPaymentMethod);
+            writer.WriteDateTimeOffsetValue("first_billed_at", FirstBilledAt);
+            writer.WriteBoolValue("has_payment_method", HasPaymentMethod);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedItems>("items", Items);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedNextBilledAt>("next_billed_at", NextBilledAt);
+            writer.WriteDateTimeOffsetValue("next_billed_at", NextBilledAt);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedOnPaymentFailure>("on_payment_failure", OnPaymentFailure);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedOnResume>("on_resume", OnResume);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttemptedOperation>("operation", Operation);

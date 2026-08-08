@@ -24,13 +24,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountDiscount Discount { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when the discount stops being effective on the subscription. `null` if the discount does not have an end date.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountEndsAt? EndsAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountEndsAt EndsAt { get; set; }
-#endif
+        public DateTimeOffset? EndsAt { get; set; }
         /// <summary>RFC 3339 datetime string.</summary>
         public DateTimeOffset? StartsAt { get; set; }
         /// <summary>Union discriminator</summary>
@@ -67,7 +61,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountDiscount.CreateFromDiscriminatorValue); } },
-                { "ends_at", n => { EndsAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountEndsAt>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountEndsAt.CreateFromDiscriminatorValue); } },
+                { "ends_at", n => { EndsAt = n.GetDateTimeOffsetValue(); } },
                 { "starts_at", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -80,7 +74,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountDiscount>("discount", Discount);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountEndsAt>("ends_at", EndsAt);
+            writer.WriteDateTimeOffsetValue("ends_at", EndsAt);
             writer.WriteDateTimeOffsetValue("starts_at", StartsAt);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

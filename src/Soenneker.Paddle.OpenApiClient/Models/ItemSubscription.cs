@@ -18,21 +18,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>RFC 3339 datetime string of when this item is next scheduled to be billed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionNextBilledAt? NextBilledAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionNextBilledAt NextBilledAt { get; private set; }
-#endif
+        public DateTimeOffset? NextBilledAt { get; private set; }
         /// <summary>RFC 3339 datetime string of when this item was last billed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionPreviouslyBilledAt? PreviouslyBilledAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionPreviouslyBilledAt PreviouslyBilledAt { get; private set; }
-#endif
+        public DateTimeOffset? PreviouslyBilledAt { get; private set; }
         /// <summary>Related price entity for this item. This reflects the price entity at the time it was added to the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,8 +85,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "next_billed_at", n => { NextBilledAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionNextBilledAt>(global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionNextBilledAt.CreateFromDiscriminatorValue); } },
-                { "previously_billed_at", n => { PreviouslyBilledAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionPreviouslyBilledAt>(global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionPreviouslyBilledAt.CreateFromDiscriminatorValue); } },
+                { "next_billed_at", n => { NextBilledAt = n.GetDateTimeOffsetValue(); } },
+                { "previously_billed_at", n => { PreviouslyBilledAt = n.GetDateTimeOffsetValue(); } },
                 { "price", n => { Price = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionPrice>(global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionPrice.CreateFromDiscriminatorValue); } },
                 { "product", n => { Product = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionProduct>(global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionProduct.CreateFromDiscriminatorValue); } },
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },

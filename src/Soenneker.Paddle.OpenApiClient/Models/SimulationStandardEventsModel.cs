@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Configuration for scenario simulations. `null` for single events.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelConfig? Config { get; set; }
+        public UntypedNode? Config { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelConfig Config { get; set; }
+        public UntypedNode Config { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -34,13 +34,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this simulation was last run. `null` until run. Set automatically by Paddle.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelLastRunAt? LastRunAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelLastRunAt LastRunAt { get; set; }
-#endif
+        public DateTimeOffset? LastRunAt { get; set; }
         /// <summary>Name of this simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,10 +102,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelConfig>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelConfig.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "last_run_at", n => { LastRunAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelLastRunAt>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelLastRunAt.CreateFromDiscriminatorValue); } },
+                { "last_run_at", n => { LastRunAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notification_setting_id", n => { NotificationSettingId = n.GetStringValue(); } },
                 { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelPayload>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelPayload.CreateFromDiscriminatorValue); } },
@@ -127,10 +121,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelConfig>("config", Config);
+            writer.WriteObjectValue<UntypedNode>("config", Config);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelLastRunAt>("last_run_at", LastRunAt);
+            writer.WriteDateTimeOffsetValue("last_run_at", LastRunAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("notification_setting_id", NotificationSettingId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelPayload>("payload", Payload);

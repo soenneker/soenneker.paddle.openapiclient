@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID for the price related to this transaction line item, prefixed with `pri_`.The value is null for custom prices being previewed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemPriceId? PriceId { get; private set; }
+        public string? PriceId { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemPriceId PriceId { get; private set; }
+        public string PriceId { get; private set; }
 #endif
         /// <summary>Related product entity for this transaction line item price.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +90,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "price_id", n => { PriceId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemPriceId>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemPriceId.CreateFromDiscriminatorValue); } },
+                { "price_id", n => { PriceId = n.GetStringValue(); } },
                 { "product", n => { Product = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemProduct>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemProduct.CreateFromDiscriminatorValue); } },
                 { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemProration>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemProration.CreateFromDiscriminatorValue); } },
                 { "quantity", n => { Quantity = n.GetIntValue(); } },

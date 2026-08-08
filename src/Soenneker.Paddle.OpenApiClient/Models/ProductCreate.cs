@@ -24,10 +24,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Short description for this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Unique Paddle ID for this product, prefixed with `pro_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +90,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateCustomData.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl.CreateFromDiscriminatorValue); } },
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImportMeta.CreateFromDiscriminatorValue); } },
@@ -107,7 +107,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateCustomData>("custom_data", CustomData);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl>("image_url", ImageUrl);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImportMeta>("import_meta", ImportMeta);

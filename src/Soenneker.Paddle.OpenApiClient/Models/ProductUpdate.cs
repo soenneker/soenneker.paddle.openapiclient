@@ -24,10 +24,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Short description for this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdateDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdateDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Image for this product. Included in the checkout and on some customer documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,7 +76,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdateCustomData.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdateDescription>(global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdateDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdateImageUrl>(global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdateImageUrl.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>(); } },
@@ -92,7 +92,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdateCustomData>("custom_data", CustomData);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdateDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdateImageUrl>("image_url", ImageUrl);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>("status", Status);

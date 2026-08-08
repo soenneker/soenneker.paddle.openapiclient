@@ -37,13 +37,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Description { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Limits on how many times the related product can be purchased at this price. Useful for discount campaigns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -116,7 +116,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "billing_cycle", n => { BillingCycle = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateBillingCycle>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateBillingCycle.CreateFromDiscriminatorValue); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateCustomData.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateName>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateQuantity>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateQuantity.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>(); } },
                 { "tax_mode", n => { TaxMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateTaxMode>(global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateTaxMode.CreateFromDiscriminatorValue); } },
@@ -136,7 +136,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateBillingCycle>("billing_cycle", BillingCycle);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateCustomData>("custom_data", CustomData);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateQuantity>("quantity", Quantity);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceUpdateTaxMode>("tax_mode", TaxMode);

@@ -8,26 +8,18 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlBranch1"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlBranch3"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlMember1"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlMember1"/>, <see cref="string"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionSubscriptionProductCreateImageUrl : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlBranch1"/></summary>
+        /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlBranch1? TransactionSubscriptionProductCreateImageUrlBranch1 { get; set; }
+        public string? String { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlBranch1 TransactionSubscriptionProductCreateImageUrlBranch1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlBranch3"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlBranch3? TransactionSubscriptionProductCreateImageUrlBranch3 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlBranch3 TransactionSubscriptionProductCreateImageUrlBranch3 { get; set; }
+        public string String { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlMember1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -46,9 +38,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl();
-            result.TransactionSubscriptionProductCreateImageUrlBranch1 = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlBranch1();
-            result.TransactionSubscriptionProductCreateImageUrlBranch3 = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlBranch3();
-            result.TransactionSubscriptionProductCreateImageUrlMember1 = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlMember1();
+            if(parseNode.GetStringValue() is string stringValue)
+            {
+                result.String = stringValue;
+            }
+            else {
+                result.TransactionSubscriptionProductCreateImageUrlMember1 = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlMember1();
+            }
             return result;
         }
         /// <summary>
@@ -57,9 +53,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(TransactionSubscriptionProductCreateImageUrlBranch1 != null || TransactionSubscriptionProductCreateImageUrlBranch3 != null || TransactionSubscriptionProductCreateImageUrlMember1 != null)
+            if(TransactionSubscriptionProductCreateImageUrlMember1 != null)
             {
-                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TransactionSubscriptionProductCreateImageUrlBranch1, TransactionSubscriptionProductCreateImageUrlBranch3, TransactionSubscriptionProductCreateImageUrlMember1);
+                return ParseNodeHelper.MergeDeserializersForIntersectionWrapper(TransactionSubscriptionProductCreateImageUrlMember1);
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -70,7 +66,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlBranch1>(null, TransactionSubscriptionProductCreateImageUrlBranch1, TransactionSubscriptionProductCreateImageUrlBranch3, TransactionSubscriptionProductCreateImageUrlMember1);
+            if(String != null)
+            {
+                writer.WriteStringValue(null, String);
+            }
+            else {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrlMember1>(null, TransactionSubscriptionProductCreateImageUrlMember1);
+            }
         }
     }
 }

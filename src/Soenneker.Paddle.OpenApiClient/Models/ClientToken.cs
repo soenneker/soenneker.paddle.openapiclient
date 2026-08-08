@@ -15,13 +15,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>The description property</summary>
+        /// <summary>Short description of this client-side token. Typically gives details about what the token is used for and where it&apos;s used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Unique Paddle ID for this client-side token entity, prefixed with `ctkn_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,13 +40,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this client-side token was revoked. `null` if not revoked.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenRevokedAt? RevokedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenRevokedAt RevokedAt { get; private set; }
-#endif
+        public DateTimeOffset? RevokedAt { get; private set; }
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -84,10 +78,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenDescription>(global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "revoked_at", n => { RevokedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenRevokedAt>(global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenRevokedAt.CreateFromDiscriminatorValue); } },
+                { "revoked_at", n => { RevokedAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenStatusComposed>(global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenStatusComposed.CreateFromDiscriminatorValue); } },
                 { "token", n => { Token = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -101,7 +95,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenStatusComposed>("status", Status);

@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID of a subscription to simulate as paused. Adds details of that subscription to webhook payloads.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseEntitiesSubscriptionId? SubscriptionId { get; set; }
+        public string? SubscriptionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseEntitiesSubscriptionId SubscriptionId { get; set; }
+        public string SubscriptionId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseEntitiesComposed"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "subscription_id", n => { SubscriptionId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseEntitiesSubscriptionId>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseEntitiesSubscriptionId.CreateFromDiscriminatorValue); } },
+                { "subscription_id", n => { SubscriptionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseEntitiesSubscriptionId>("subscription_id", SubscriptionId);
+            writer.WriteStringValue("subscription_id", SubscriptionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

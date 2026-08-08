@@ -18,34 +18,34 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID of an address. Adds address details to webhook payloads. Requires `customer_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationAddressId? AddressId { get; set; }
+        public string? AddressId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationAddressId AddressId { get; set; }
+        public string AddressId { get; set; }
 #endif
         /// <summary>Paddle ID of a business. Adds business details to webhook payloads. Requires `customer_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationBusinessId? BusinessId { get; set; }
+        public string? BusinessId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationBusinessId BusinessId { get; set; }
+        public string BusinessId { get; set; }
 #endif
         /// <summary>Paddle ID of a customer. Adds customer details to webhook payloads.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationCustomerId? CustomerId { get; set; }
+        public string? CustomerId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationCustomerId CustomerId { get; set; }
+        public string CustomerId { get; set; }
 #endif
         /// <summary>Paddle ID of a discount. Adds discount details (including price calculations) to webhook payloads. Requires `items` or `transaction_id` for the discount to be applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationDiscountId? DiscountId { get; set; }
+        public string? DiscountId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationDiscountId DiscountId { get; set; }
+        public string DiscountId { get; set; }
 #endif
         /// <summary>Items to include on the simulated subscription. Only existing products and prices can be simulated. Non-catalog items aren&apos;t supported. At least one recurring price must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -58,18 +58,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID of a payment method. Adds payment method details to webhook payloads. Requires `customer_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationPaymentMethodId? PaymentMethodId { get; set; }
+        public string? PaymentMethodId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationPaymentMethodId PaymentMethodId { get; set; }
+        public string PaymentMethodId { get; set; }
 #endif
         /// <summary>Paddle ID of a transaction. Bases the subscription on the transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationTransactionId? TransactionId { get; set; }
+        public string? TransactionId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationTransactionId TransactionId { get; set; }
+        public string TransactionId { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationEntities"/> and sets the default values.
@@ -96,13 +96,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address_id", n => { AddressId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationAddressId>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationAddressId.CreateFromDiscriminatorValue); } },
-                { "business_id", n => { BusinessId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationBusinessId>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationBusinessId.CreateFromDiscriminatorValue); } },
-                { "customer_id", n => { CustomerId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationCustomerId>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationCustomerId.CreateFromDiscriminatorValue); } },
-                { "discount_id", n => { DiscountId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationDiscountId>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationDiscountId.CreateFromDiscriminatorValue); } },
+                { "address_id", n => { AddressId = n.GetStringValue(); } },
+                { "business_id", n => { BusinessId = n.GetStringValue(); } },
+                { "customer_id", n => { CustomerId = n.GetStringValue(); } },
+                { "discount_id", n => { DiscountId = n.GetStringValue(); } },
                 { "items", n => { Items = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationItemsComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationItemsComposed.CreateFromDiscriminatorValue); } },
-                { "payment_method_id", n => { PaymentMethodId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationPaymentMethodId>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationPaymentMethodId.CreateFromDiscriminatorValue); } },
-                { "transaction_id", n => { TransactionId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationTransactionId>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationTransactionId.CreateFromDiscriminatorValue); } },
+                { "payment_method_id", n => { PaymentMethodId = n.GetStringValue(); } },
+                { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -112,13 +112,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationAddressId>("address_id", AddressId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationBusinessId>("business_id", BusinessId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationCustomerId>("customer_id", CustomerId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationDiscountId>("discount_id", DiscountId);
+            writer.WriteStringValue("address_id", AddressId);
+            writer.WriteStringValue("business_id", BusinessId);
+            writer.WriteStringValue("customer_id", CustomerId);
+            writer.WriteStringValue("discount_id", DiscountId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationItemsComposed>("items", Items);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationPaymentMethodId>("payment_method_id", PaymentMethodId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationTransactionId>("transaction_id", TransactionId);
+            writer.WriteStringValue("payment_method_id", PaymentMethodId);
+            writer.WriteStringValue("transaction_id", TransactionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

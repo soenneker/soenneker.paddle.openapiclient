@@ -58,18 +58,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Total earnings for this transaction. This is the total minus the Paddle fee. `null` until the transaction is `completed` and the fee is processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsEarnings? Earnings { get; set; }
+        public string? Earnings { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsEarnings Earnings { get; set; }
+        public string Earnings { get; set; }
 #endif
         /// <summary>Total fee taken by Paddle for this transaction. `null` until the transaction is `completed` and the fee is processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsFee? Fee { get; set; }
+        public string? Fee { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsFee Fee { get; set; }
+        public string Fee { get; set; }
 #endif
         /// <summary>Total due on a transaction after credits but before any payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -141,8 +141,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "credit_to_balance", n => { CreditToBalance = n.GetStringValue(); } },
                 { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsCurrencyCode.CreateFromDiscriminatorValue); } },
                 { "discount", n => { Discount = n.GetStringValue(); } },
-                { "earnings", n => { Earnings = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsEarnings>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsEarnings.CreateFromDiscriminatorValue); } },
-                { "fee", n => { Fee = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsFee>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsFee.CreateFromDiscriminatorValue); } },
+                { "earnings", n => { Earnings = n.GetStringValue(); } },
+                { "fee", n => { Fee = n.GetStringValue(); } },
                 { "grand_total", n => { GrandTotal = n.GetStringValue(); } },
                 { "grand_total_tax", n => { GrandTotalTax = n.GetStringValue(); } },
                 { "subtotal", n => { Subtotal = n.GetStringValue(); } },
@@ -161,8 +161,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("credit", Credit);
             writer.WriteStringValue("credit_to_balance", CreditToBalance);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsCurrencyCode>("currency_code", CurrencyCode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsEarnings>("earnings", Earnings);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsFee>("fee", Fee);
+            writer.WriteStringValue("earnings", Earnings);
+            writer.WriteStringValue("fee", Fee);
             writer.WriteStringValue("grand_total", GrandTotal);
             writer.WriteAdditionalData(AdditionalData);
         }

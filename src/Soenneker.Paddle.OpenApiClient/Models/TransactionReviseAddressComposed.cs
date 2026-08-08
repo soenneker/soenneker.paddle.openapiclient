@@ -42,10 +42,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Revised second line of the address for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseAddressSecondLine? SecondLine { get; set; }
+        public string? SecondLine { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseAddressSecondLine SecondLine { get; set; }
+        public string SecondLine { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseAddressComposed"/> and sets the default values.
@@ -75,7 +75,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "city", n => { City = n.GetStringValue(); } },
                 { "first_line", n => { FirstLine = n.GetStringValue(); } },
                 { "region", n => { Region = n.GetStringValue(); } },
-                { "second_line", n => { SecondLine = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseAddressSecondLine>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseAddressSecondLine.CreateFromDiscriminatorValue); } },
+                { "second_line", n => { SecondLine = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -88,7 +88,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("city", City);
             writer.WriteStringValue("first_line", FirstLine);
             writer.WriteStringValue("region", Region);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionReviseAddressSecondLine>("second_line", SecondLine);
+            writer.WriteStringValue("second_line", SecondLine);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

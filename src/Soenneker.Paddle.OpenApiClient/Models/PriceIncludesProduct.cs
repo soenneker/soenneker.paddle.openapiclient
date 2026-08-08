@@ -28,10 +28,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Short description for this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Unique Paddle ID for this product, prefixed with `pro_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,7 +112,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCustomData.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductDescription>(global::Soenneker.Paddle.OpenApiClient.Models.ProductDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductImageUrl>(global::Soenneker.Paddle.OpenApiClient.Models.ProductImageUrl.CreateFromDiscriminatorValue); } },
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.ProductImportMeta.CreateFromDiscriminatorValue); } },
@@ -132,7 +132,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCustomData>("custom_data", CustomData);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductImageUrl>("image_url", ImageUrl);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductImportMeta>("import_meta", ImportMeta);

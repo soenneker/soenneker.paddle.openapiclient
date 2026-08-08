@@ -38,10 +38,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Content-Type sent by the responding server.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationLogResponseContentType? ResponseContentType { get; private set; }
+        public string? ResponseContentType { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationLogResponseContentType ResponseContentType { get; private set; }
+        public string ResponseContentType { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.NotificationLog"/> and sets the default values.
@@ -72,7 +72,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "response_body", n => { ResponseBody = n.GetStringValue(); } },
                 { "response_code", n => { ResponseCode = n.GetIntValue(); } },
-                { "response_content_type", n => { ResponseContentType = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationLogResponseContentType>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationLogResponseContentType.CreateFromDiscriminatorValue); } },
+                { "response_content_type", n => { ResponseContentType = n.GetStringValue(); } },
             };
         }
         /// <summary>

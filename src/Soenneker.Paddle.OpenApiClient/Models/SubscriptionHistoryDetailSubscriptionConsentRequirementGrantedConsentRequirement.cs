@@ -26,13 +26,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>RFC 3339 datetime string of when the customer granted their consent. `null` if not yet granted.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementGrantedAt? GrantedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementGrantedAt GrantedAt { get; set; }
-#endif
+        public DateTimeOffset? GrantedAt { get; set; }
         /// <summary>Unique Paddle ID for this subscription consent requirement entity, prefixed with `subconreq_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -58,13 +52,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementStatusComposed Status { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when consent was voided or no longer required. `null` if not voided.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementVoidedAt? VoidedAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementVoidedAt VoidedAt { get; set; }
-#endif
+        public DateTimeOffset? VoidedAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionConsentRequirementGrantedConsentRequirement"/> and sets the default values.
         /// </summary>
@@ -92,11 +80,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "consent_period", n => { ConsentPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementConsentPeriod>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementConsentPeriod.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "granted_at", n => { GrantedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementGrantedAt>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementGrantedAt.CreateFromDiscriminatorValue); } },
+                { "granted_at", n => { GrantedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "requirement", n => { Requirement = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementRequirement>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementRequirement.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementStatusComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementStatusComposed.CreateFromDiscriminatorValue); } },
-                { "voided_at", n => { VoidedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementVoidedAt>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementVoidedAt.CreateFromDiscriminatorValue); } },
+                { "voided_at", n => { VoidedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -108,11 +96,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementConsentPeriod>("consent_period", ConsentPeriod);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementGrantedAt>("granted_at", GrantedAt);
+            writer.WriteDateTimeOffsetValue("granted_at", GrantedAt);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementRequirement>("requirement", Requirement);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementStatusComposed>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementVoidedAt>("voided_at", VoidedAt);
+            writer.WriteDateTimeOffsetValue("voided_at", VoidedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

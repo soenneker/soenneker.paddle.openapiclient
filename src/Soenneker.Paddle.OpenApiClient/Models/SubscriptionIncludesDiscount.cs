@@ -16,13 +16,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>RFC 3339 datetime string of when this discount no longer applies. Where a discount has `maximum_recurring_intervals`, this is the date of the last billing period where this discount applies. `null` where a discount recurs forever.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountEndsAt? EndsAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountEndsAt EndsAt { get; set; }
-#endif
+        public DateTimeOffset? EndsAt { get; set; }
         /// <summary>Unique Paddle ID for this discount, prefixed with `dsc_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,13 +26,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this discount was first applied. `null` for canceled subscriptions where a discount was redeemed but never applied to a transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountStartsAt? StartsAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountStartsAt StartsAt { get; set; }
-#endif
+        public DateTimeOffset? StartsAt { get; set; }
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -72,9 +60,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "ends_at", n => { EndsAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountEndsAt>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountEndsAt.CreateFromDiscriminatorValue); } },
+                { "ends_at", n => { EndsAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "starts_at", n => { StartsAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountStartsAt>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountStartsAt.CreateFromDiscriminatorValue); } },
+                { "starts_at", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -85,9 +73,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountEndsAt>("ends_at", EndsAt);
+            writer.WriteDateTimeOffsetValue("ends_at", EndsAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountStartsAt>("starts_at", StartsAt);
+            writer.WriteDateTimeOffsetValue("starts_at", StartsAt);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -34,13 +34,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this simulation was last run. `null` until run. Set automatically by Paddle.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelLastRunAt? LastRunAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelLastRunAt LastRunAt { get; set; }
-#endif
+        public DateTimeOffset? LastRunAt { get; set; }
         /// <summary>Name of this simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,10 +54,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Simulation payload. `null` for scenarios.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelPayload? Payload { get; set; }
+        public UntypedNode? Payload { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelPayload Payload { get; set; }
+        public UntypedNode Payload { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,10 +105,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "config", n => { Config = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelConfig>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelConfig.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "last_run_at", n => { LastRunAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelLastRunAt>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelLastRunAt.CreateFromDiscriminatorValue); } },
+                { "last_run_at", n => { LastRunAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notification_setting_id", n => { NotificationSettingId = n.GetStringValue(); } },
-                { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelPayload>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelPayload.CreateFromDiscriminatorValue); } },
+                { "payload", n => { Payload = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelStatus>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelStatus.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelType>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelType.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -130,10 +124,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelConfig>("config", Config);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("id", Id);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelLastRunAt>("last_run_at", LastRunAt);
+            writer.WriteDateTimeOffsetValue("last_run_at", LastRunAt);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("notification_setting_id", NotificationSettingId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelPayload>("payload", Payload);
+            writer.WriteObjectValue<UntypedNode>("payload", Payload);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

@@ -57,13 +57,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesImportMeta ImportMeta { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Related product for this price. Returned when the `include` parameter is used with the `product` value.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -170,7 +170,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesImportMeta.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesName>(global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "product", n => { Product = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesProduct>(global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesProduct.CreateFromDiscriminatorValue); } },
                 { "product_id", n => { ProductId = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesQuantity>(global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesQuantity.CreateFromDiscriminatorValue); } },
@@ -196,7 +196,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesImportMeta>("import_meta", ImportMeta);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesProduct>("product", Product);
             writer.WriteStringValue("product_id", ProductId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceWithProductCollectionIncludesQuantity>("quantity", Quantity);

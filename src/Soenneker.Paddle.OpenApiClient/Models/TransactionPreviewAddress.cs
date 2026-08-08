@@ -26,10 +26,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>ZIP or postal code of this address. Include for more accurate tax calculations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewPostalCode? PostalCode { get; set; }
+        public string? PostalCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewPostalCode PostalCode { get; set; }
+        public string PostalCode { get; set; }
 #endif
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "country_code", n => { CountryCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCountryCode>(global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCountryCode.CreateFromDiscriminatorValue); } },
-                { "postal_code", n => { PostalCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewPostalCode>(global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewPostalCode.CreateFromDiscriminatorValue); } },
+                { "postal_code", n => { PostalCode = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -77,7 +77,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCountryCode>("country_code", CountryCode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewPostalCode>("postal_code", PostalCode);
+            writer.WriteStringValue("postal_code", PostalCode);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

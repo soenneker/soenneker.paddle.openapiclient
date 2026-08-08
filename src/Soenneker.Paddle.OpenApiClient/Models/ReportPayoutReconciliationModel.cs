@@ -18,13 +18,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>RFC 3339 datetime string of when this report expires. The report is no longer available to download after this date.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelExpiresAt? ExpiresAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelExpiresAt ExpiresAt { get; private set; }
-#endif
+        public DateTimeOffset? ExpiresAt { get; private set; }
         /// <summary>Filter criteria for this report. If omitted, reports are filtered to include data updated in the last 30 days. This means `transaction_updated_at` is greater than or equal to (`gte`) the date 30 days ago from the time the report was generated.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -42,13 +36,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>Number of records in this report. `null` if the report is `pending`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelRows? Rows { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelRows Rows { get; private set; }
-#endif
+        public int? Rows { get; private set; }
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -93,10 +81,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelExpiresAt>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelExpiresAt.CreateFromDiscriminatorValue); } },
+                { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliation>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliation.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "rows", n => { Rows = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelRows>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelRows.CreateFromDiscriminatorValue); } },
+                { "rows", n => { Rows = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelStatus>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelStatus.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelType>(global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelType.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },

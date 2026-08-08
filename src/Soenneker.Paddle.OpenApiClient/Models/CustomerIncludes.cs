@@ -62,10 +62,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Full name of this customer. Required when creating transactions where `collection_mode` is `manual` (invoices).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerIncludesName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerIncludesName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +111,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerIncludesImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerIncludesImportMeta.CreateFromDiscriminatorValue); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
                 { "marketing_consent", n => { MarketingConsent = n.GetBoolValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerIncludesName>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerIncludesName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerIncludesStatus>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerIncludesStatus.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -130,7 +130,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerIncludesImportMeta>("import_meta", ImportMeta);
             writer.WriteStringValue("locale", Locale);
             writer.WriteBoolValue("marketing_consent", MarketingConsent);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerIncludesName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerIncludesStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

@@ -58,10 +58,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Full name of this customer. Required when creating transactions where `collection_mode` is `manual` (invoices).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreate"/> and sets the default values.
@@ -95,7 +95,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateImportMeta.CreateFromDiscriminatorValue); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
                 { "marketing_consent", n => { MarketingConsent = n.GetBoolValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateName>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -111,7 +111,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateImportMeta>("import_meta", ImportMeta);
             writer.WriteStringValue("locale", Locale);
             writer.WriteBoolValue("marketing_consent", MarketingConsent);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerCreateName>("name", Name);
+            writer.WriteStringValue("name", Name);
         }
     }
 }

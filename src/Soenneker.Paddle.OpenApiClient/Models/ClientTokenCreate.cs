@@ -13,13 +13,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ClientTokenCreate : IParsable
     {
-        /// <summary>The description property</summary>
+        /// <summary>Short description of this client-side token. Typically gives details about what the token is used for and where it&apos;s used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenCreateDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenCreateDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Short name of this client-side token. Typically unique and human-identifiable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenCreateDescription>(global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenCreateDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenCreateDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteStringValue("name", Name);
         }
     }

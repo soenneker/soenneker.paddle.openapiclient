@@ -25,10 +25,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Link to the page for this subscription in the customer portal with the payment method update form pre-opened. Use as part of workflows to let customers update their payment details. `null` for manually-collected subscriptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionManagementUrlsUpdatePaymentMethod? UpdatePaymentMethod { get; set; }
+        public string? UpdatePaymentMethod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionManagementUrlsUpdatePaymentMethod UpdatePaymentMethod { get; set; }
+        public string UpdatePaymentMethod { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionIncludesManagementUrls"/> and sets the default values.
@@ -56,7 +56,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cancel", n => { Cancel = n.GetStringValue(); } },
-                { "update_payment_method", n => { UpdatePaymentMethod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionManagementUrlsUpdatePaymentMethod>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionManagementUrlsUpdatePaymentMethod.CreateFromDiscriminatorValue); } },
+                { "update_payment_method", n => { UpdatePaymentMethod = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -67,7 +67,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cancel", Cancel);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionManagementUrlsUpdatePaymentMethod>("update_payment_method", UpdatePaymentMethod);
+            writer.WriteStringValue("update_payment_method", UpdatePaymentMethod);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

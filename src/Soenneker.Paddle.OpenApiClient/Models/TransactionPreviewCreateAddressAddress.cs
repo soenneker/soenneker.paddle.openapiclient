@@ -26,10 +26,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>ZIP or postal code of this address. Include for more accurate tax calculations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreatePostalCode? PostalCode { get; set; }
+        public string? PostalCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreatePostalCode PostalCode { get; set; }
+        public string PostalCode { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressAddress"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "country_code", n => { CountryCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreateCountryCode>(global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreateCountryCode.CreateFromDiscriminatorValue); } },
-                { "postal_code", n => { PostalCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreatePostalCode>(global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreatePostalCode.CreateFromDiscriminatorValue); } },
+                { "postal_code", n => { PostalCode = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreateCountryCode>("country_code", CountryCode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreatePostalCode>("postal_code", PostalCode);
+            writer.WriteStringValue("postal_code", PostalCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -14,13 +14,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>The external_id property</summary>
+        /// <summary>Reference or identifier for this entity from the provider where it was imported from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ImportMetaExternalId? ExternalId { get; set; }
+        public string? ExternalId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ImportMetaExternalId ExternalId { get; set; }
+        public string ExternalId { get; set; }
 #endif
         /// <summary>Name of the platform or provider where this entity was imported from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -63,7 +63,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "external_id", n => { ExternalId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ImportMetaExternalId>(global::Soenneker.Paddle.OpenApiClient.Models.ImportMetaExternalId.CreateFromDiscriminatorValue); } },
+                { "external_id", n => { ExternalId = n.GetStringValue(); } },
                 { "imported_from", n => { ImportedFrom = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
@@ -75,7 +75,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ImportMetaExternalId>("external_id", ExternalId);
+            writer.WriteStringValue("external_id", ExternalId);
             writer.WriteStringValue("imported_from", ImportedFrom);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);

@@ -16,13 +16,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>RFC 3339 datetime string of when this notification was delivered. `null` if not yet delivered successfully.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationDeliveredAt? DeliveredAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationDeliveredAt DeliveredAt { get; private set; }
-#endif
+        public DateTimeOffset? DeliveredAt { get; private set; }
         /// <summary>Unique Paddle ID for this notification, prefixed with `ntf_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -32,13 +26,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this notification was last attempted.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationLastAttemptAt? LastAttemptAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationLastAttemptAt LastAttemptAt { get; private set; }
-#endif
+        public DateTimeOffset? LastAttemptAt { get; private set; }
         /// <summary>Unique Paddle ID for this notification setting, prefixed with `ntfset_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -66,21 +54,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Soenneker.Paddle.OpenApiClient.Models.NotificationPayloadComposed Payload { get; private set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this notification was replayed. `null` if not replayed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationReplayedAt? ReplayedAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationReplayedAt ReplayedAt { get; private set; }
-#endif
+        public DateTimeOffset? ReplayedAt { get; private set; }
         /// <summary>RFC 3339 datetime string of when this notification is scheduled to be retried.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationRetryAt? RetryAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationRetryAt RetryAt { get; private set; }
-#endif
+        public DateTimeOffset? RetryAt { get; private set; }
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,15 +100,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "delivered_at", n => { DeliveredAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationDeliveredAt>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationDeliveredAt.CreateFromDiscriminatorValue); } },
+                { "delivered_at", n => { DeliveredAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "last_attempt_at", n => { LastAttemptAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationLastAttemptAt>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationLastAttemptAt.CreateFromDiscriminatorValue); } },
+                { "last_attempt_at", n => { LastAttemptAt = n.GetDateTimeOffsetValue(); } },
                 { "notification_setting_id", n => { NotificationSettingId = n.GetStringValue(); } },
                 { "occurred_at", n => { OccurredAt = n.GetDateTimeOffsetValue(); } },
                 { "origin", n => { Origin = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationOriginComposed>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationOriginComposed.CreateFromDiscriminatorValue); } },
                 { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationPayloadComposed>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationPayloadComposed.CreateFromDiscriminatorValue); } },
-                { "replayed_at", n => { ReplayedAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationReplayedAt>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationReplayedAt.CreateFromDiscriminatorValue); } },
-                { "retry_at", n => { RetryAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationRetryAt>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationRetryAt.CreateFromDiscriminatorValue); } },
+                { "replayed_at", n => { ReplayedAt = n.GetDateTimeOffsetValue(); } },
+                { "retry_at", n => { RetryAt = n.GetDateTimeOffsetValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationStatusComposed>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationStatusComposed.CreateFromDiscriminatorValue); } },
                 { "times_attempted", n => { TimesAttempted = n.GetIntValue(); } },
                 { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationType>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationType.CreateFromDiscriminatorValue); } },

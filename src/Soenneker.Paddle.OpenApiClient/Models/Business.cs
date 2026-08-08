@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Company number for this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCompanyNumber? CompanyNumber { get; set; }
+        public string? CompanyNumber { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCompanyNumber CompanyNumber { get; set; }
+        public string CompanyNumber { get; set; }
 #endif
         /// <summary>List of contacts related to this business, typically used for sending invoices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -84,10 +84,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Tax or VAT Number for this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessTaxIdentifier? TaxIdentifier { get; set; }
+        public string? TaxIdentifier { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessTaxIdentifier TaxIdentifier { get; set; }
+        public string TaxIdentifier { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -116,7 +116,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "company_number", n => { CompanyNumber = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCompanyNumber>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCompanyNumber.CreateFromDiscriminatorValue); } },
+                { "company_number", n => { CompanyNumber = n.GetStringValue(); } },
                 { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCustomData.CreateFromDiscriminatorValue); } },
@@ -125,7 +125,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessImportMeta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessStatus>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessStatus.CreateFromDiscriminatorValue); } },
-                { "tax_identifier", n => { TaxIdentifier = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessTaxIdentifier>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessTaxIdentifier.CreateFromDiscriminatorValue); } },
+                { "tax_identifier", n => { TaxIdentifier = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -136,7 +136,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCompanyNumber>("company_number", CompanyNumber);
+            writer.WriteStringValue("company_number", CompanyNumber);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.BusinessContactsItem>("contacts", Contacts);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCustomData>("custom_data", CustomData);
@@ -145,7 +145,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessImportMeta>("import_meta", ImportMeta);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessStatus>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessTaxIdentifier>("tax_identifier", TaxIdentifier);
+            writer.WriteStringValue("tax_identifier", TaxIdentifier);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }

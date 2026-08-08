@@ -26,10 +26,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>PayPal billing agreement identifier. Only populated for subscription payments where a billing agreement was created between the customer and PayPal. `null` for one-off PayPal payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaypalReference? Reference { get; set; }
+        public string? Reference { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaypalReference Reference { get; set; }
+        public string Reference { get; set; }
 #endif
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "reference", n => { Reference = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaypalReference>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaypalReference.CreateFromDiscriminatorValue); } },
+                { "reference", n => { Reference = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }
@@ -77,7 +77,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("email", Email);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaypalReference>("reference", Reference);
+            writer.WriteStringValue("reference", Reference);
             writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -17,10 +17,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Amount adjusted for this transaction item. Required when item `type` is `partial`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemAmount? Amount { get; set; }
+        public string? Amount { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemAmount Amount { get; set; }
+        public string Amount { get; set; }
 #endif
         /// <summary>Unique Paddle ID for this transaction item, prefixed with `txnitm_`. Used when working with [adjustments](https://developer.paddle.com/build/transactions/create-transaction-adjustments).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -79,7 +79,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "amount", n => { Amount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemAmount>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemAmount.CreateFromDiscriminatorValue); } },
+                { "amount", n => { Amount = n.GetStringValue(); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
                 { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemProration>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemProration.CreateFromDiscriminatorValue); } },
                 { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTotalsComposed>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTotalsComposed.CreateFromDiscriminatorValue); } },
@@ -93,7 +93,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemAmount>("amount", Amount);
+            writer.WriteStringValue("amount", Amount);
             writer.WriteStringValue("item_id", ItemId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTypeComposed>("type", Type);
             writer.WriteAdditionalData(AdditionalData);

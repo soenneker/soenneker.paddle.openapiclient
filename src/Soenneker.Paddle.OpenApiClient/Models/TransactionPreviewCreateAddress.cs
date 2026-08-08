@@ -34,10 +34,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID of the customer that this transaction preview is for, prefixed with `ctm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressCustomerId? CustomerId { get; set; }
+        public string? CustomerId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressCustomerId CustomerId { get; set; }
+        public string CustomerId { get; set; }
 #endif
         /// <summary>Apply a non-catalog discount to a transaction. Send one of `discount_id` or `discount`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,10 +50,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID of the discount to apply to this transaction preview, prefixed with `dsc_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressDiscountId? DiscountId { get; set; }
+        public string? DiscountId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressDiscountId DiscountId { get; set; }
+        public string DiscountId { get; set; }
 #endif
         /// <summary>Whether trials should be ignored for transaction preview calculations.By default, recurring items with trials are considered to have a zero charge when previewing. Set to `true` to disable this.</summary>
         public bool? IgnoreTrials { get; set; }
@@ -93,9 +93,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "address", n => { Address = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressAddress>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressAddress.CreateFromDiscriminatorValue); } },
                 { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressCurrencyCode.CreateFromDiscriminatorValue); } },
-                { "customer_id", n => { CustomerId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressCustomerId>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressCustomerId.CreateFromDiscriminatorValue); } },
+                { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressDiscount.CreateFromDiscriminatorValue); } },
-                { "discount_id", n => { DiscountId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressDiscountId>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressDiscountId.CreateFromDiscriminatorValue); } },
+                { "discount_id", n => { DiscountId = n.GetStringValue(); } },
                 { "ignore_trials", n => { IgnoreTrials = n.GetBoolValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateItems>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateItems.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -109,9 +109,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressAddress>("address", Address);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressCurrencyCode>("currency_code", CurrencyCode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressCustomerId>("customer_id", CustomerId);
+            writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressDiscount>("discount", Discount);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddressDiscountId>("discount_id", DiscountId);
+            writer.WriteStringValue("discount_id", DiscountId);
             writer.WriteBoolValue("ignore_trials", IgnoreTrials);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateItems>("items", Items);
             writer.WriteAdditionalData(AdditionalData);

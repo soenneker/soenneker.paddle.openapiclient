@@ -43,10 +43,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Unique Paddle ID for this price, prefixed with `pri_`.The value is null for custom prices being previewed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewId? Id { get; private set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewId Id { get; private set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Import information for this entity. `null` if this entity is not imported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,21 +56,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewImportMeta ImportMeta { get; set; }
 #endif
-        /// <summary>The name property</summary>
+        /// <summary>Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Paddle ID for the product that this price is for, prefixed with `pro_`.The value is null for custom products being previewed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewProductId? ProductId { get; set; }
+        public string? ProductId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewProductId ProductId { get; set; }
+        public string ProductId { get; set; }
 #endif
         /// <summary>Limits on how many times the related product can be purchased at this price. Useful for discount campaigns.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -159,10 +159,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewCustomData.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewId>(global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewId.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewImportMeta.CreateFromDiscriminatorValue); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewName>(global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewName.CreateFromDiscriminatorValue); } },
-                { "product_id", n => { ProductId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewProductId>(global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewProductId.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
+                { "product_id", n => { ProductId = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewQuantity>(global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewQuantity.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewStatus>(global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewStatus.CreateFromDiscriminatorValue); } },
                 { "tax_mode", n => { TaxMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewTaxMode>(global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewTaxMode.CreateFromDiscriminatorValue); } },
@@ -185,8 +185,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewCustomData>("custom_data", CustomData);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewImportMeta>("import_meta", ImportMeta);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewProductId>("product_id", ProductId);
+            writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("product_id", ProductId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewQuantity>("quantity", Quantity);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewTaxMode>("tax_mode", TaxMode);

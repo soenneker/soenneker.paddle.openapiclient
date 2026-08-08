@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The ID of the actor in relation to the `type`. `null` where the type of actor doesn&apos;t have an ID.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ActorId? Id { get; set; }
+        public string? Id { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ActorId Id { get; set; }
+        public string Id { get; set; }
 #endif
         /// <summary>The type of actor that performed this action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ActorId>(global::Soenneker.Paddle.OpenApiClient.Models.ActorId.CreateFromDiscriminatorValue); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ActorTypeComposed>(global::Soenneker.Paddle.OpenApiClient.Models.ActorTypeComposed.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ActorId>("id", Id);
+            writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ActorTypeComposed>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }

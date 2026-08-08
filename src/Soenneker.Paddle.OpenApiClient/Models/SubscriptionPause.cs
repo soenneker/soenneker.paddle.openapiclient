@@ -31,13 +31,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseOnResume OnResume { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when the paused subscription should resume. Omit to pause indefinitely until resumed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseResumeAt? ResumeAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseResumeAt ResumeAt { get; set; }
-#endif
+        public DateTimeOffset? ResumeAt { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause"/> and sets the default values.
         /// </summary>
@@ -65,7 +59,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "effective_from", n => { EffectiveFrom = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseEffectiveFrom>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseEffectiveFrom.CreateFromDiscriminatorValue); } },
                 { "on_resume", n => { OnResume = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseOnResume>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseOnResume.CreateFromDiscriminatorValue); } },
-                { "resume_at", n => { ResumeAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseResumeAt>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseResumeAt.CreateFromDiscriminatorValue); } },
+                { "resume_at", n => { ResumeAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>
@@ -77,7 +71,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseEffectiveFrom>("effective_from", EffectiveFrom);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseOnResume>("on_resume", OnResume);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseResumeAt>("resume_at", ResumeAt);
+            writer.WriteDateTimeOffsetValue("resume_at", ResumeAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

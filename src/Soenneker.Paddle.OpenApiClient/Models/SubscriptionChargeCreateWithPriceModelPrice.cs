@@ -34,10 +34,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Unique Paddle ID for this product, prefixed with `pro_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -106,7 +106,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelCustomData.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelName>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "product_id", n => { ProductId = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelQuantity>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelQuantity.CreateFromDiscriminatorValue); } },
                 { "tax_mode", n => { TaxMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelTaxMode>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelTaxMode.CreateFromDiscriminatorValue); } },
@@ -123,7 +123,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelCustomData>("custom_data", CustomData);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteStringValue("product_id", ProductId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelQuantity>("quantity", Quantity);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceInternalPriceModelTaxMode>("tax_mode", TaxMode);

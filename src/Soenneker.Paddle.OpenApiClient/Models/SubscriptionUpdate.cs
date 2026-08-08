@@ -34,10 +34,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID of the business that this subscription is for, prefixed with `biz_`. Include to change the business for a subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateBusinessId? BusinessId { get; set; }
+        public string? BusinessId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateBusinessId BusinessId { get; set; }
+        public string BusinessId { get; set; }
 #endif
         /// <summary>How payment is collected for transactions created for this subscription. `automatic` for checkout, `manual` for invoices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -102,10 +102,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Change that&apos;s scheduled to be applied to a subscription. When updating, you may only set to `null` to remove a scheduled change. Use the pause subscription, cancel subscription, and resume subscription operations to create scheduled changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateScheduledChange? ScheduledChange { get; set; }
+        public UntypedNode? ScheduledChange { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateScheduledChange ScheduledChange { get; set; }
+        public UntypedNode ScheduledChange { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdate"/> and sets the default values.
@@ -134,7 +134,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "address_id", n => { AddressId = n.GetStringValue(); } },
                 { "billing_details", n => { BillingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateBillingDetails>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateBillingDetails.CreateFromDiscriminatorValue); } },
-                { "business_id", n => { BusinessId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateBusinessId>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateBusinessId.CreateFromDiscriminatorValue); } },
+                { "business_id", n => { BusinessId = n.GetStringValue(); } },
                 { "collection_mode", n => { CollectionMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateCollectionMode>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateCollectionMode.CreateFromDiscriminatorValue); } },
                 { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateCurrencyCode.CreateFromDiscriminatorValue); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateCustomData.CreateFromDiscriminatorValue); } },
@@ -144,7 +144,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "next_billed_at", n => { NextBilledAt = n.GetDateTimeOffsetValue(); } },
                 { "on_payment_failure", n => { OnPaymentFailure = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateOnPaymentFailure>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateOnPaymentFailure.CreateFromDiscriminatorValue); } },
                 { "proration_billing_mode", n => { ProrationBillingMode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateProrationBillingMode>(); } },
-                { "scheduled_change", n => { ScheduledChange = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateScheduledChange>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateScheduledChange.CreateFromDiscriminatorValue); } },
+                { "scheduled_change", n => { ScheduledChange = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -156,7 +156,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("address_id", AddressId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateBillingDetails>("billing_details", BillingDetails);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateBusinessId>("business_id", BusinessId);
+            writer.WriteStringValue("business_id", BusinessId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateCollectionMode>("collection_mode", CollectionMode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateCustomData>("custom_data", CustomData);
@@ -166,7 +166,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("next_billed_at", NextBilledAt);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateOnPaymentFailure>("on_payment_failure", OnPaymentFailure);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateProrationBillingMode>("proration_billing_mode", ProrationBillingMode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateScheduledChange>("scheduled_change", ScheduledChange);
+            writer.WriteObjectValue<UntypedNode>("scheduled_change", ScheduledChange);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

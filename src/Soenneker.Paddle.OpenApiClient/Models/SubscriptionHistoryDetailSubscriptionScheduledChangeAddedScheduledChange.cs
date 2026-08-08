@@ -26,13 +26,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>RFC 3339 datetime string.</summary>
         public DateTimeOffset? EffectiveAt { get; set; }
         /// <summary>RFC 3339 datetime string of when a paused subscription should resume. Only used for `pause` scheduled changes.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChangeResumeAt? ResumeAt { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChangeResumeAt ResumeAt { get; private set; }
-#endif
+        public DateTimeOffset? ResumeAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeAddedScheduledChange"/> and sets the default values.
         /// </summary>
@@ -60,7 +54,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "action", n => { Action = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChangeActionComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChangeActionComposed.CreateFromDiscriminatorValue); } },
                 { "effective_at", n => { EffectiveAt = n.GetDateTimeOffsetValue(); } },
-                { "resume_at", n => { ResumeAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChangeResumeAt>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChangeResumeAt.CreateFromDiscriminatorValue); } },
+                { "resume_at", n => { ResumeAt = n.GetDateTimeOffsetValue(); } },
             };
         }
         /// <summary>

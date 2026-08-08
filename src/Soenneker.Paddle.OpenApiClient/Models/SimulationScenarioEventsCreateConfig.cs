@@ -26,34 +26,34 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The subscription_creation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionCreation? SubscriptionCreation { get; private set; }
+        public UntypedNode? SubscriptionCreation { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionCreation SubscriptionCreation { get; private set; }
+        public UntypedNode SubscriptionCreation { get; private set; }
 #endif
         /// <summary>The subscription_pause property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionPause? SubscriptionPause { get; private set; }
+        public UntypedNode? SubscriptionPause { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionPause SubscriptionPause { get; private set; }
+        public UntypedNode SubscriptionPause { get; private set; }
 #endif
         /// <summary>The subscription_renewal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionRenewal? SubscriptionRenewal { get; private set; }
+        public UntypedNode? SubscriptionRenewal { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionRenewal SubscriptionRenewal { get; private set; }
+        public UntypedNode SubscriptionRenewal { get; private set; }
 #endif
         /// <summary>The subscription_resume property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionResume? SubscriptionResume { get; private set; }
+        public UntypedNode? SubscriptionResume { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionResume SubscriptionResume { get; private set; }
+        public UntypedNode SubscriptionResume { get; private set; }
 #endif
         /// <summary>Union discriminator</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -89,10 +89,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "subscription_cancellation", n => { SubscriptionCancellation = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate.CreateFromDiscriminatorValue); } },
-                { "subscription_creation", n => { SubscriptionCreation = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionCreation>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionCreation.CreateFromDiscriminatorValue); } },
-                { "subscription_pause", n => { SubscriptionPause = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionPause>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionPause.CreateFromDiscriminatorValue); } },
-                { "subscription_renewal", n => { SubscriptionRenewal = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionRenewal>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionRenewal.CreateFromDiscriminatorValue); } },
-                { "subscription_resume", n => { SubscriptionResume = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionResume>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationCreateSubscriptionResume.CreateFromDiscriminatorValue); } },
+                { "subscription_creation", n => { SubscriptionCreation = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "subscription_pause", n => { SubscriptionPause = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "subscription_renewal", n => { SubscriptionRenewal = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "subscription_resume", n => { SubscriptionResume = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
             };
         }

@@ -26,10 +26,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Checkout URL to use for the payment link for this transaction. Pass the URL for an approved domain, or `null` to set to your default payment URL.Paddle returns a unique payment link composed of the URL passed or your default payment URL + `?_ptxn=` and the Paddle ID for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreateUrl? Url { get; set; }
+        public string? Url { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreateUrl Url { get; set; }
+        public string Url { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCheckout"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "type", n => { Type = n.GetStringValue(); } },
-                { "url", n => { Url = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreateUrl>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreateUrl.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("type", Type);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreateUrl>("url", Url);
+            writer.WriteStringValue("url", Url);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

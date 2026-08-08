@@ -28,18 +28,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Short description for this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Unique Paddle ID for this product, prefixed with `pro_`.The value is null for custom products being previewed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewId? Id { get; private set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewId Id { get; private set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Image for this product. Included in the checkout and on some customer documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -112,8 +112,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewCustomData.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewDescription>(global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewDescription.CreateFromDiscriminatorValue); } },
-                { "id", n => { Id = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewId>(global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewId.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
+                { "id", n => { Id = n.GetStringValue(); } },
                 { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewImageUrl>(global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewImageUrl.CreateFromDiscriminatorValue); } },
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewImportMeta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -132,7 +132,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewCustomData>("custom_data", CustomData);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewImageUrl>("image_url", ImageUrl);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductPreviewImportMeta>("import_meta", ImportMeta);
             writer.WriteStringValue("name", Name);

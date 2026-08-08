@@ -26,10 +26,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Short description for this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription? Description { get; set; }
+        public string? Description { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription Description { get; set; }
+        public string Description { get; set; }
 #endif
         /// <summary>Image for this product. Included in the checkout and on some customer documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,7 +75,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateCustomData.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetStringValue(); } },
                 { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tax_category", n => { TaxCategory = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory>(); } },
@@ -89,7 +89,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateCustomData>("custom_data", CustomData);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription>("description", Description);
+            writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl>("image_url", ImageUrl);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory>("tax_category", TaxCategory);

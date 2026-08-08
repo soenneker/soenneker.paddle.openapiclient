@@ -50,10 +50,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Full name of this customer. Required when creating transactions where `collection_mode` is `manual` (invoices).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateName? Name { get; set; }
+        public string? Name { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateName Name { get; set; }
+        public string Name { get; set; }
 #endif
         /// <summary>Whether this entity can be used in Paddle.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.Status? Status { get; set; }
@@ -88,7 +88,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateImportMeta.CreateFromDiscriminatorValue); } },
                 { "locale", n => { Locale = n.GetStringValue(); } },
                 { "marketing_consent", n => { MarketingConsent = n.GetBoolValue(); } },
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateName>(global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateName.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>(); } },
             };
         }
@@ -104,7 +104,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateImportMeta>("import_meta", ImportMeta);
             writer.WriteStringValue("locale", Locale);
             writer.WriteBoolValue("marketing_consent", MarketingConsent);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerUpdateName>("name", Name);
+            writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>("status", Status);
         }
     }

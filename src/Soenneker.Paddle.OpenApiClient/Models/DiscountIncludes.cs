@@ -26,10 +26,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Unique code that customers can use to redeem this discount at checkout. Not case-sensitive.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesCode? Code { get; set; }
+        public string? Code { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesCode Code { get; set; }
+        public string Code { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -68,21 +68,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID for the discount group related to this discount, prefixed with `dsg_`. `null` if not in a discount group.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesDiscountGroupId? DiscountGroupId { get; set; }
+        public string? DiscountGroupId { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesDiscountGroupId DiscountGroupId { get; set; }
+        public string DiscountGroupId { get; set; }
 #endif
         /// <summary>Whether this discount can be redeemed by customers at checkout (`true`) or not (`false`).</summary>
         public bool? EnabledForCheckout { get; set; }
         /// <summary>RFC 3339 datetime string of when this discount expires. Discount can no longer be redeemed after this date has elapsed. `null` if this discount can be redeemed forever.Expired discounts can&apos;t be redeemed against transactions or checkouts, but can be applied when updating subscriptions.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesExpiresAt? ExpiresAt { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesExpiresAt ExpiresAt { get; set; }
-#endif
+        public DateTimeOffset? ExpiresAt { get; set; }
         /// <summary>Unique Paddle ID for this discount, prefixed with `dsc_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -100,13 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesImportMeta ImportMeta { get; set; }
 #endif
         /// <summary>Number of subscription billing periods that this discount recurs for. Requires `recur`. `null` if this discount recurs forever.Subscription renewals, midcycle changes, and one-time charges billed to a subscription aren&apos;t considered a redemption. `times_used` is not incremented in these cases.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesMaximumRecurringIntervals? MaximumRecurringIntervals { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesMaximumRecurringIntervals MaximumRecurringIntervals { get; set; }
-#endif
+        public int? MaximumRecurringIntervals { get; set; }
         /// <summary>The mode property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -140,13 +128,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
         /// <summary>Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. `null` if this discount can be redeemed an unlimited amount of times.Paddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren&apos;t considered a redemption.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesUsageLimit? UsageLimit { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesUsageLimit UsageLimit { get; set; }
-#endif
+        public int? UsageLimit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludes"/> and sets the default values.
         /// </summary>
@@ -175,18 +157,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetStringValue(); } },
-                { "code", n => { Code = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesCode>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesCode.CreateFromDiscriminatorValue); } },
+                { "code", n => { Code = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesCurrencyCode.CreateFromDiscriminatorValue); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesCustomData.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "discount_group", n => { DiscountGroup = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesDiscountGroup>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesDiscountGroup.CreateFromDiscriminatorValue); } },
-                { "discount_group_id", n => { DiscountGroupId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesDiscountGroupId>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesDiscountGroupId.CreateFromDiscriminatorValue); } },
+                { "discount_group_id", n => { DiscountGroupId = n.GetStringValue(); } },
                 { "enabled_for_checkout", n => { EnabledForCheckout = n.GetBoolValue(); } },
-                { "expires_at", n => { ExpiresAt = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesExpiresAt>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesExpiresAt.CreateFromDiscriminatorValue); } },
+                { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesImportMeta.CreateFromDiscriminatorValue); } },
-                { "maximum_recurring_intervals", n => { MaximumRecurringIntervals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesMaximumRecurringIntervals>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesMaximumRecurringIntervals.CreateFromDiscriminatorValue); } },
+                { "maximum_recurring_intervals", n => { MaximumRecurringIntervals = n.GetIntValue(); } },
                 { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesMode>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesMode.CreateFromDiscriminatorValue); } },
                 { "recur", n => { Recur = n.GetBoolValue(); } },
                 { "restrict_to", n => { RestrictTo = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesRestrictTo>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesRestrictTo.CreateFromDiscriminatorValue); } },
@@ -194,7 +176,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "times_used", n => { TimesUsed = n.GetIntValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountType>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "usage_limit", n => { UsageLimit = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesUsageLimit>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesUsageLimit.CreateFromDiscriminatorValue); } },
+                { "usage_limit", n => { UsageLimit = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -205,25 +187,25 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesCode>("code", Code);
+            writer.WriteStringValue("code", Code);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesCustomData>("custom_data", CustomData);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesDiscountGroup>("discount_group", DiscountGroup);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesDiscountGroupId>("discount_group_id", DiscountGroupId);
+            writer.WriteStringValue("discount_group_id", DiscountGroupId);
             writer.WriteBoolValue("enabled_for_checkout", EnabledForCheckout);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesExpiresAt>("expires_at", ExpiresAt);
+            writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesImportMeta>("import_meta", ImportMeta);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesMaximumRecurringIntervals>("maximum_recurring_intervals", MaximumRecurringIntervals);
+            writer.WriteIntValue("maximum_recurring_intervals", MaximumRecurringIntervals);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesMode>("mode", Mode);
             writer.WriteBoolValue("recur", Recur);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesRestrictTo>("restrict_to", RestrictTo);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesUsageLimit>("usage_limit", UsageLimit);
+            writer.WriteIntValue("usage_limit", UsageLimit);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
