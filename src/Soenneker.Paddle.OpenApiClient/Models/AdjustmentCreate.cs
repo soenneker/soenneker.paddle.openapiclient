@@ -20,10 +20,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>List of transaction items to adjust. Required if `type` is not populated or set to `partial`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateItems? Items { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreate>? Items { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateItems Items { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreate> Items { get; set; }
 #endif
         /// <summary>Why this adjustment was created. Appears in the Paddle dashboard. Retained for recordkeeping purposes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction>(); } },
-                { "items", n => { Items = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateItems>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateItems.CreateFromDiscriminatorValue); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreate>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "tax_mode", n => { TaxMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateTaxMode>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateTaxMode.CreateFromDiscriminatorValue); } },
                 { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
@@ -98,7 +98,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction>("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateItems>("items", Items);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreate>("items", Items);
             writer.WriteStringValue("reason", Reason);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateTaxMode>("tax_mode", TaxMode);
             writer.WriteStringValue("transaction_id", TransactionId);

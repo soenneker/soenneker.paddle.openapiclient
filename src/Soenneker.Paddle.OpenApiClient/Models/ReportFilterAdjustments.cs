@@ -26,10 +26,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Operator to use when filtering. Valid when filtering by `updated_at`, `null` otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterAdjustmentsOperator? Operator { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper? Operator { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterAdjustmentsOperator Operator { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper Operator { get; set; }
 #endif
         /// <summary>Value to filter by. Check the allowed values descriptions for the `name` field to see valid values for a field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterAdjustmentsNameComposed>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterAdjustmentsNameComposed.CreateFromDiscriminatorValue); } },
-                { "operator", n => { Operator = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterAdjustmentsOperator>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterAdjustmentsOperator.CreateFromDiscriminatorValue); } },
+                { "operator", n => { Operator = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper>(global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterAdjustmentsValue>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterAdjustmentsValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -77,7 +77,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterAdjustmentsNameComposed>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterAdjustmentsOperator>("operator", Operator);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper>("operator", Operator);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterAdjustmentsValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

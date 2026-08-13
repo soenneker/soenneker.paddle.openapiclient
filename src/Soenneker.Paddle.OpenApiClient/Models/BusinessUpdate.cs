@@ -24,10 +24,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>List of contacts related to this business, typically used for sending invoices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateContacts? Contacts { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ContactsCreate>? Contacts { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateContacts Contacts { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ContactsCreate> Contacts { get; set; }
 #endif
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +74,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "company_number", n => { CompanyNumber = n.GetStringValue(); } },
-                { "contacts", n => { Contacts = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateContacts>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateContacts.CreateFromDiscriminatorValue); } },
+                { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ContactsCreate>(global::Soenneker.Paddle.OpenApiClient.Models.ContactsCreate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateCustomData.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>(); } },
@@ -89,7 +89,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("company_number", CompanyNumber);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateContacts>("contacts", Contacts);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ContactsCreate>("contacts", Contacts);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateCustomData>("custom_data", CustomData);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>("status", Status);

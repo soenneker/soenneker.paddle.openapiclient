@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Period during which consent for this subscription can be granted. `null` if there is no `next_billed_at` or the consent requirement does not apply to the current billing period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementConsentPeriod? ConsentPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod? ConsentPeriod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementConsentPeriod ConsentPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod ConsentPeriod { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
@@ -78,7 +78,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "consent_period", n => { ConsentPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementConsentPeriod>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementConsentPeriod.CreateFromDiscriminatorValue); } },
+                { "consent_period", n => { ConsentPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod>(global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "granted_at", n => { GrantedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -94,7 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirementConsentPeriod>("consent_period", ConsentPeriod);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod>("consent_period", ConsentPeriod);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("granted_at", GrantedAt);
             writer.WriteStringValue("id", Id);

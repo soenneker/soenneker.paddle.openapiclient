@@ -60,18 +60,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Details for invoicing. Required if `collection_mode` is `manual`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesBillingDetails? BillingDetails { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BillingDetails? BillingDetails { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesBillingDetails BillingDetails { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BillingDetails BillingDetails { get; set; }
 #endif
         /// <summary>Time period that this transaction is for. Set automatically by Paddle for subscription renewals to describe the period that charges are for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesBillingPeriod? BillingPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod? BillingPeriod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesBillingPeriod BillingPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod BillingPeriod { get; set; }
 #endif
         /// <summary>Business for this transaction. Reflects the entity at the time it was added to the transaction, or its revision if `revised_at` is not `null`. Returned when the `include` parameter is used with the `business` value and the transaction has a `business_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -92,10 +92,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The checkout property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesCheckout? Checkout { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckout? Checkout { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesCheckout Checkout { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckout Checkout { get; set; }
 #endif
         /// <summary>How payment is collected for this transaction. `automatic` for checkout, `manual` for invoices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -257,11 +257,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "adjustments_totals", n => { AdjustmentsTotals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesAdjustmentsTotals>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesAdjustmentsTotals.CreateFromDiscriminatorValue); } },
                 { "available_payment_methods", n => { AvailablePaymentMethods = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodType>()?.AsList(); } },
                 { "billed_at", n => { BilledAt = n.GetDateTimeOffsetValue(); } },
-                { "billing_details", n => { BillingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesBillingDetails>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesBillingDetails.CreateFromDiscriminatorValue); } },
-                { "billing_period", n => { BillingPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesBillingPeriod>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesBillingPeriod.CreateFromDiscriminatorValue); } },
+                { "billing_details", n => { BillingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BillingDetails>(global::Soenneker.Paddle.OpenApiClient.Models.BillingDetails.CreateFromDiscriminatorValue); } },
+                { "billing_period", n => { BillingPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod>(global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod.CreateFromDiscriminatorValue); } },
                 { "business", n => { Business = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesBusiness>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesBusiness.CreateFromDiscriminatorValue); } },
                 { "business_id", n => { BusinessId = n.GetStringValue(); } },
-                { "checkout", n => { Checkout = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesCheckout>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesCheckout.CreateFromDiscriminatorValue); } },
+                { "checkout", n => { Checkout = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckout>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckout.CreateFromDiscriminatorValue); } },
                 { "collection_mode", n => { CollectionMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesCollectionMode>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesCollectionMode.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesCurrencyCode.CreateFromDiscriminatorValue); } },
@@ -294,11 +294,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("address_id", AddressId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.Adjustment>("adjustments", Adjustments);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesAdjustmentsTotals>("adjustments_totals", AdjustmentsTotals);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesBillingDetails>("billing_details", BillingDetails);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesBillingPeriod>("billing_period", BillingPeriod);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BillingDetails>("billing_details", BillingDetails);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod>("billing_period", BillingPeriod);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesBusiness>("business", Business);
             writer.WriteStringValue("business_id", BusinessId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesCheckout>("checkout", Checkout);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckout>("checkout", Checkout);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesCollectionMode>("collection_mode", CollectionMode);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesCurrencyCode>("currency_code", CurrencyCode);

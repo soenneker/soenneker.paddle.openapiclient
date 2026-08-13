@@ -52,10 +52,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Trial dates for this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionTrialDates? TrialDates { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod? TrialDates { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionTrialDates TrialDates { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod TrialDates { get; private set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
@@ -92,7 +92,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "quantity", n => { Quantity = n.GetDoubleValue(); } },
                 { "recurring", n => { Recurring = n.GetBoolValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionStatusComposed>(global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionStatusComposed.CreateFromDiscriminatorValue); } },
-                { "trial_dates", n => { TrialDates = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionTrialDates>(global::Soenneker.Paddle.OpenApiClient.Models.ItemSubscriptionTrialDates.CreateFromDiscriminatorValue); } },
+                { "trial_dates", n => { TrialDates = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod>(global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }

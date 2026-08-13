@@ -26,10 +26,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Chargeback fee before conversion to the payout currency. `null` when the chargeback fee is the same as the payout currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginalComposed? Original { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginal? Original { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginalComposed Original { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginal Original { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeComposed"/> and sets the default values.
@@ -57,7 +57,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetStringValue(); } },
-                { "original", n => { Original = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginalComposed>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginalComposed.CreateFromDiscriminatorValue); } },
+                { "original", n => { Original = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginal>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginal.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -68,7 +68,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginalComposed>("original", Original);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginal>("original", Original);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

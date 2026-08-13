@@ -41,10 +41,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>How proration was calculated for this adjustment item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemsItemProration? Proration { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration? Proration { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemsItemProration Proration { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration Proration { get; private set; }
 #endif
         /// <summary>The totals property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -90,7 +90,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "amount", n => { Amount = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "item_id", n => { ItemId = n.GetStringValue(); } },
-                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemsItemProration>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemsItemProration.CreateFromDiscriminatorValue); } },
+                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration.CreateFromDiscriminatorValue); } },
                 { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemsItemTotals>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemsItemTotals.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemsItemType>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemsItemType.CreateFromDiscriminatorValue); } },
             };

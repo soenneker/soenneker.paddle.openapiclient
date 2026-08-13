@@ -26,10 +26,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Operator to use when filtering. Valid when filtering by `transaction_updated_at` or `balance_movement_date`, must be `null` otherwise.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationOperator? Operator { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper6? Operator { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationOperator Operator { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper6 Operator { get; set; }
 #endif
         /// <summary>Value to filter by. Check the allowed values descriptions for the `name` field to see valid values for a field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,7 +65,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationNameComposed>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationNameComposed.CreateFromDiscriminatorValue); } },
-                { "operator", n => { Operator = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationOperator>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationOperator.CreateFromDiscriminatorValue); } },
+                { "operator", n => { Operator = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper6>(global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper6.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationValue>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -77,7 +77,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationNameComposed>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationOperator>("operator", Operator);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper6>("operator", Operator);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliationValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

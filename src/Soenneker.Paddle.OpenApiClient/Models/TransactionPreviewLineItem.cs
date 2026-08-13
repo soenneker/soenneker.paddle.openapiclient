@@ -34,10 +34,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>How proration was calculated for this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemProration? Proration { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration? Proration { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemProration Proration { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration Proration { get; set; }
 #endif
         /// <summary>Quantity of this transaction line item.</summary>
         public int? Quantity { get; private set; }
@@ -92,7 +92,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "price_id", n => { PriceId = n.GetStringValue(); } },
                 { "product", n => { Product = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemProduct>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemProduct.CreateFromDiscriminatorValue); } },
-                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemProration>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemProration.CreateFromDiscriminatorValue); } },
+                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration.CreateFromDiscriminatorValue); } },
                 { "quantity", n => { Quantity = n.GetIntValue(); } },
                 { "tax_rate", n => { TaxRate = n.GetStringValue(); } },
                 { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemTotals>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemTotals.CreateFromDiscriminatorValue); } },
@@ -106,7 +106,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItemProration>("proration", Proration);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration>("proration", Proration);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -50,10 +50,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Items to include on the simulated subscription. Only existing products and prices can be simulated. Non-catalog items aren&apos;t supported. At least one recurring price must be provided.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationItemsComposed? Items { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionItemWithPriceId>? Items { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationItemsComposed Items { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionItemWithPriceId> Items { get; set; }
 #endif
         /// <summary>Paddle ID of a payment method. Adds payment method details to webhook payloads. Requires `customer_id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -100,7 +100,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "business_id", n => { BusinessId = n.GetStringValue(); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "discount_id", n => { DiscountId = n.GetStringValue(); } },
-                { "items", n => { Items = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationItemsComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationItemsComposed.CreateFromDiscriminatorValue); } },
+                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionItemWithPriceId>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionItemWithPriceId.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "payment_method_id", n => { PaymentMethodId = n.GetStringValue(); } },
                 { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
             };
@@ -116,7 +116,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("business_id", BusinessId);
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteStringValue("discount_id", DiscountId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigEntitiesSubscriptionCreationItemsComposed>("items", Items);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionItemWithPriceId>("items", Items);
             writer.WriteStringValue("payment_method_id", PaymentMethodId);
             writer.WriteStringValue("transaction_id", TransactionId);
             writer.WriteAdditionalData(AdditionalData);

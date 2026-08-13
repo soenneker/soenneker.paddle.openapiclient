@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Determines which webhooks are sent based on what happens to the subscription when payment recovery attempts are exhausted. Only applies when `payment_outcome` is `failed`. If omitted, defaults to `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedActionComposed? DunningExhaustedAction { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedActionWrapper? DunningExhaustedAction { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedActionComposed DunningExhaustedAction { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedActionWrapper DunningExhaustedAction { get; set; }
 #endif
         /// <summary>Determines which webhooks are sent based on the outcome of the payment. If omitted, defaults to `success`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,7 +56,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dunning_exhausted_action", n => { DunningExhaustedAction = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedActionComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedActionComposed.CreateFromDiscriminatorValue); } },
+                { "dunning_exhausted_action", n => { DunningExhaustedAction = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedActionWrapper>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedActionWrapper.CreateFromDiscriminatorValue); } },
                 { "payment_outcome", n => { PaymentOutcome = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentPaymentOutcomeComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentPaymentOutcomeComposed.CreateFromDiscriminatorValue); } },
             };
         }
@@ -67,7 +67,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedActionComposed>("dunning_exhausted_action", DunningExhaustedAction);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedActionWrapper>("dunning_exhausted_action", DunningExhaustedAction);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentPaymentOutcomeComposed>("payment_outcome", PaymentOutcome);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -17,10 +17,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The effective_from property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseEffectiveFrom? EffectiveFrom { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromWrapper3? EffectiveFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseEffectiveFrom EffectiveFrom { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromWrapper3 EffectiveFrom { get; set; }
 #endif
         /// <summary>The on_resume property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -57,7 +57,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "effective_from", n => { EffectiveFrom = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseEffectiveFrom>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseEffectiveFrom.CreateFromDiscriminatorValue); } },
+                { "effective_from", n => { EffectiveFrom = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromWrapper3>(global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromWrapper3.CreateFromDiscriminatorValue); } },
                 { "on_resume", n => { OnResume = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseOnResume>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseOnResume.CreateFromDiscriminatorValue); } },
                 { "resume_at", n => { ResumeAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -69,7 +69,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseEffectiveFrom>("effective_from", EffectiveFrom);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromWrapper3>("effective_from", EffectiveFrom);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseOnResume>("on_resume", OnResume);
             writer.WriteDateTimeOffsetValue("resume_at", ResumeAt);
             writer.WriteAdditionalData(AdditionalData);

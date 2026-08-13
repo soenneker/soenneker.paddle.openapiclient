@@ -17,10 +17,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>When this subscription change should take effect from. You can pass `immediately` to resume immediately.Valid where subscriptions have the status of `paused`.Defaults to `immediately` if omitted.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediatelyEffectiveFrom? EffectiveFrom { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromImmediatelyWrapper? EffectiveFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediatelyEffectiveFrom EffectiveFrom { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromImmediatelyWrapper EffectiveFrom { get; set; }
 #endif
         /// <summary>The on_resume property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "effective_from", n => { EffectiveFrom = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediatelyEffectiveFrom>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediatelyEffectiveFrom.CreateFromDiscriminatorValue); } },
+                { "effective_from", n => { EffectiveFrom = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromImmediatelyWrapper>(global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromImmediatelyWrapper.CreateFromDiscriminatorValue); } },
                 { "on_resume", n => { OnResume = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediatelyOnResume>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediatelyOnResume.CreateFromDiscriminatorValue); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediatelyEffectiveFrom>("effective_from", EffectiveFrom);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFromImmediatelyWrapper>("effective_from", EffectiveFrom);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediatelyOnResume>("on_resume", OnResume);
             writer.WriteAdditionalData(AdditionalData);
         }

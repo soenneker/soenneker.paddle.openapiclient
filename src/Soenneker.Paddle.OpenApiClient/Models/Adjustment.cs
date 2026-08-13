@@ -56,10 +56,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Breakdown of how this adjustment affects your payout balance.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsComposed? PayoutTotals { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotals? PayoutTotals { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsComposed PayoutTotals { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotals PayoutTotals { get; private set; }
 #endif
         /// <summary>Why this adjustment was created. Appears in the Paddle dashboard. Retained for record-keeping purposes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -151,7 +151,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemsItem>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemsItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "payout_totals", n => { PayoutTotals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsComposed>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsComposed.CreateFromDiscriminatorValue); } },
+                { "payout_totals", n => { PayoutTotals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotals>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotals.CreateFromDiscriminatorValue); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatusComposed>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatusComposed.CreateFromDiscriminatorValue); } },
                 { "subscription_id", n => { SubscriptionId = n.GetStringValue(); } },
