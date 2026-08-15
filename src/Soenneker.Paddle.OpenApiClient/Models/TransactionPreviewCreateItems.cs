@@ -45,7 +45,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateItems CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateItems();
             if("TransactionPreviewItemWithPriceAndProductRequest".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {

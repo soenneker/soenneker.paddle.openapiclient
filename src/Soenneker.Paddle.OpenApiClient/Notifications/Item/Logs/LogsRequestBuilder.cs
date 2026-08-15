@@ -101,7 +101,7 @@ namespace Soenneker.Paddle.OpenApiClient.Notifications.Item.Logs
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>&quot;Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.&quot;</summary>
+            /// <summary>Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
         }

@@ -55,14 +55,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public UntypedNode SubscriptionResume { get; private set; }
 #endif
-        /// <summary>Union discriminator</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public string? Type { get; set; }
-#nullable restore
-#else
-        public string Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfig"/> and sets the default values.
         /// </summary>
@@ -93,7 +85,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "subscription_pause", n => { SubscriptionPause = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "subscription_renewal", n => { SubscriptionRenewal = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "subscription_resume", n => { SubscriptionResume = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -104,7 +95,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreate>("subscription_cancellation", SubscriptionCancellation);
-            writer.WriteStringValue("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

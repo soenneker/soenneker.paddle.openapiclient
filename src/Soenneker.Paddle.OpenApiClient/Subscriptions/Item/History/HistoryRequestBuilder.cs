@@ -141,7 +141,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.History
             [QueryParameter("occurred_at")]
             public string OccurredAt { get; set; }
 #endif
-            /// <summary>&quot;Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=occurred_at[DESC]`.Valid fields for ordering: `occurred_at`.&quot;</summary>
+            /// <summary>Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=occurred_at[DESC]`.Valid fields for ordering: `occurred_at`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]
@@ -151,7 +151,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.History
             [QueryParameter("order_by")]
             public string OrderBy { get; set; }
 #endif
-            /// <summary>&quot;Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.&quot;</summary>
+            /// <summary>Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Return history entries that match the specified reason. Use a comma-separated list to specify multiple reason values.</summary>

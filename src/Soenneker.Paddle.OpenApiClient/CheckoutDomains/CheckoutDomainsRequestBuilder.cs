@@ -134,7 +134,7 @@ namespace Soenneker.Paddle.OpenApiClient.CheckoutDomains
             [QueryParameter("id")]
             public string[] Id { get; set; }
 #endif
-            /// <summary>&quot;Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id`, `created_at`, and `updated_at`.&quot;</summary>
+            /// <summary>Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id`, `created_at`, and `updated_at`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]
@@ -144,7 +144,7 @@ namespace Soenneker.Paddle.OpenApiClient.CheckoutDomains
             [QueryParameter("order_by")]
             public string OrderBy { get; set; }
 #endif
-            /// <summary>&quot;Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.&quot;</summary>
+            /// <summary>Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Return entities that match the specified status. Use a comma-separated list to specify multiple status values.</summary>

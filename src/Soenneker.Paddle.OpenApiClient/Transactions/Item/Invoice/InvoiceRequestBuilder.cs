@@ -91,7 +91,7 @@ namespace Soenneker.Paddle.OpenApiClient.Transactions.Item.Invoice
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class InvoiceRequestBuilderGetQueryParameters 
         {
-            /// <summary>&quot;Determine whether the generated URL should download the PDF as an attachment saved locally, or open it inline in the browser.Default: `attachment`.&quot;</summary>
+            /// <summary>Determine whether the generated URL should download the PDF as an attachment saved locally, or open it inline in the browser.Default: `attachment`.</summary>
             [QueryParameter("disposition")]
             public global::Soenneker.Paddle.OpenApiClient.Models.Disposition? Disposition { get; set; }
         }

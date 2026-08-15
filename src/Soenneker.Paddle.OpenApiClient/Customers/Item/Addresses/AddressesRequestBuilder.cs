@@ -71,7 +71,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses
             return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListAddresses200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListAddresses200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// &quot;Creates a new address for a customer.For tax calculation, fraud prevention, and compliance purposes, you must include a `postal_code` when creating addresses for some countries. For example, ZIP codes in the USA and postcodes in the UK. See: [Supported countries](https://developer.paddle.com/concepts/sell/supported-countries-locales)If successful, your response includes a copy of the new address entity.&quot;
+        /// Creates a new address for a customer.For tax calculation, fraud prevention, and compliance purposes, you must include a `postal_code` when creating addresses for some countries. For example, ZIP codes in the USA and postcodes in the UK. See: [Supported countries](https://developer.paddle.com/concepts/sell/supported-countries-locales)If successful, your response includes a copy of the new address entity.
         /// Create an address for a customer <see href="https://developer.paddle.com/api-reference/addresses/create-address" />
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreateAddress201Response"/></returns>
@@ -116,7 +116,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses
             return requestInfo;
         }
         /// <summary>
-        /// &quot;Creates a new address for a customer.For tax calculation, fraud prevention, and compliance purposes, you must include a `postal_code` when creating addresses for some countries. For example, ZIP codes in the USA and postcodes in the UK. See: [Supported countries](https://developer.paddle.com/concepts/sell/supported-countries-locales)If successful, your response includes a copy of the new address entity.&quot;
+        /// Creates a new address for a customer.For tax calculation, fraud prevention, and compliance purposes, you must include a `postal_code` when creating addresses for some countries. For example, ZIP codes in the USA and postcodes in the UK. See: [Supported countries](https://developer.paddle.com/concepts/sell/supported-countries-locales)If successful, your response includes a copy of the new address entity.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Represents an address entity when creating addresses.</param>
@@ -172,7 +172,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses
             [QueryParameter("id")]
             public string[] Id { get; set; }
 #endif
-            /// <summary>&quot;Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id`.&quot;</summary>
+            /// <summary>Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]
@@ -182,7 +182,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses
             [QueryParameter("order_by")]
             public string OrderBy { get; set; }
 #endif
-            /// <summary>&quot;Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.&quot;</summary>
+            /// <summary>Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Return entities that match a search query. Searches all fields except `status`, `created_at`, and `updated_at`.</summary>

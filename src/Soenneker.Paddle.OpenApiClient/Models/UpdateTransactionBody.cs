@@ -151,10 +151,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The origin property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PublicTransactionOriginWrapper? Origin { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionOrigin? Origin { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PublicTransactionOriginWrapper Origin { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionOrigin Origin { get; set; }
 #endif
         /// <summary>List of payment attempts for this transaction, including successful payments. Sorted by `created_at` in descending order, so most recent attempts are returned first.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -225,7 +225,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "invoice_id", n => { InvoiceId = n.GetStringValue(); } },
                 { "invoice_number", n => { InvoiceNumber = n.GetStringValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemUpdate>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemUpdate.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "origin", n => { Origin = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PublicTransactionOriginWrapper>(global::Soenneker.Paddle.OpenApiClient.Models.PublicTransactionOriginWrapper.CreateFromDiscriminatorValue); } },
+                { "origin", n => { Origin = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionOrigin>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionOrigin.CreateFromDiscriminatorValue); } },
                 { "payments", n => { Payments = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyStatus>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyStatus.CreateFromDiscriminatorValue); } },
                 { "subscription_id", n => { SubscriptionId = n.GetStringValue(); } },
@@ -253,7 +253,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("discount_id", DiscountId);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemUpdate>("items", Items);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PublicTransactionOriginWrapper>("origin", Origin);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionOrigin>("origin", Origin);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyStatus>("status", Status);
             writer.WriteStringValue("subscription_id", SubscriptionId);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

@@ -16,10 +16,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Supported two-letter ISO 3166-1 alpha-2 country code. Customers located in the listed countries are charged the override price.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupportedWrapper>? CountryCodes { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.CountryCode>? CountryCodes { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupportedWrapper> CountryCodes { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.CountryCode> CountryCodes { get; set; }
 #endif
         /// <summary>Override price. This price applies to customers located in the countries for this unit price override.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "country_codes", n => { CountryCodes = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupportedWrapper>(global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupportedWrapper.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "country_codes", n => { CountryCodes = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.CountryCode>(global::Soenneker.Paddle.OpenApiClient.Models.CountryCode.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverrideUnitPrice>(global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverrideUnitPrice.CreateFromDiscriminatorValue); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupportedWrapper>("country_codes", CountryCodes);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.CountryCode>("country_codes", CountryCodes);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverrideUnitPrice>("unit_price", UnitPrice);
         }
     }

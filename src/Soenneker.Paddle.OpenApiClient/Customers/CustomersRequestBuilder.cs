@@ -182,7 +182,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers
             [QueryParameter("id")]
             public string[] Id { get; set; }
 #endif
-            /// <summary>&quot;Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id`.&quot;</summary>
+            /// <summary>Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]
@@ -192,7 +192,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers
             [QueryParameter("order_by")]
             public string OrderBy { get; set; }
 #endif
-            /// <summary>&quot;Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.&quot;</summary>
+            /// <summary>Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
             /// <summary>Return entities that match a search query. Searches `id`, `name`, and `email` fields. Use the `email` query parameter for precise matching of email addresses.</summary>
