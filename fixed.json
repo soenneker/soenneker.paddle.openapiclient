@@ -54137,7 +54137,7 @@
         "type": "object",
         "allOf": [
           {
-            "$ref": "#/components/schemas/SubscriptionHistoryReason"
+            "$ref": "#/components/schemas/SubscriptionHistoryReasonEnumWrapper"
           }
         ],
         "description": "Why the entry was created. Only applicable to certain actions; \u0060null\u0060 otherwise.",
