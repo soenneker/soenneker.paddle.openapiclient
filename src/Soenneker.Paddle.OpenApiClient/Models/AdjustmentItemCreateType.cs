@@ -7,29 +7,32 @@ using System.IO;
 using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
+    /// <summary>
+    /// Type of adjustment for this transaction item. `tax` adjustments are automatically created by Paddle.Include `amount` when creating a `partial` adjustment.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class DiscountCreateRestrictToMember1 : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class AdjustmentItemCreateType : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Type of adjustment for this transaction item. `tax` adjustments are automatically created by Paddle.Include `amount` when creating a `partial` adjustment.</summary>
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemType? Value { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreateRestrictToMember1"/> and sets the default values.
+        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreateType"/> and sets the default values.
         /// </summary>
-        public DiscountCreateRestrictToMember1()
+        public AdjustmentItemCreateType()
         {
             AdditionalData = new Dictionary<string, object>();
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreateRestrictToMember1"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreateType"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreateRestrictToMember1 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreateType CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreateRestrictToMember1();
+            return new global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreateType();
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,6 +42,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemType>(); } },
             };
         }
         /// <summary>
@@ -48,6 +52,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemType>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

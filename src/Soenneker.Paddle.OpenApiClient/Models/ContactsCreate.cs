@@ -14,6 +14,22 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Email address for this entity.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Email { get; set; }
+#nullable restore
+#else
+        public string Email { get; set; }
+#endif
+        /// <summary>Full name.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? Name { get; set; }
+#nullable restore
+#else
+        public string Name { get; set; }
+#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ContactsCreate"/> and sets the default values.
         /// </summary>
@@ -39,6 +55,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "email", n => { Email = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +66,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("email", Email);
+            writer.WriteStringValue("name", Name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

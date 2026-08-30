@@ -21660,50 +21660,26 @@
   },
   "components": {
     "schemas": {
+      "BusinessCustomerId": {
+        "pattern": "^ctm_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060.",
+        "readOnly": true
+      },
+      "BusinessId": {
+        "pattern": "^biz_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this business entity, prefixed with \u0060biz_\u0060.",
+        "readOnly": true
+      },
       "BusinessContactsItemEmail": {
         "maxLength": 320,
         "type": "string",
         "additionalProperties": false,
         "description": "Email address for this entity.",
         "format": "email"
-      },
-      "BusinessContactsItemName": {
-        "maxLength": 1024,
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Full name."
-      },
-      "BusinessCreateImportMeta": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ImportMeta"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "properties": {
-          "external_id": {
-            "maxLength": 200,
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "Reference or identifier for this entity from the provider where it was imported from."
-          },
-          "imported_from": {
-            "examples": [
-              "paddle_classic"
-            ],
-            "maxLength": 200,
-            "minLength": 1,
-            "type": "string",
-            "description": "Name of the platform or provider where this entity was imported from."
-          }
-        },
-        "description": "Import information for this entity. \u0060null\u0060 if this entity is not imported.",
-        "x-external-readOnly": true
       },
       "CountryCodeSupported": {
         "enum": [
@@ -23703,42 +23679,50 @@
         },
         "description": "An error occurred. Check the \u0060type\u0060, \u0060code\u0060, and \u0060detail\u0060 in the returned error object for more information.\n\nValidation errors include an array of \u0060errors\u0060 with information about which fields failed validation."
       },
-      "BusinessCreateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Your own structured key-value data."
-      },
-      "BusinessCreateContacts": {
-        "maxItems": 100,
-        "uniqueItems": true,
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactsCreate"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "List of contacts related to this business, typically used for sending invoices."
-      },
-      "BusinessCreateName": {
+      "BusinessContactsItemName": {
         "maxLength": 1024,
-        "minLength": 1,
         "type": "string",
         "additionalProperties": false,
         "description": "Full name."
+      },
+      "BusinessCreateImportMeta": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ImportMeta"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "properties": {
+          "external_id": {
+            "maxLength": 200,
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Reference or identifier for this entity from the provider where it was imported from."
+          },
+          "imported_from": {
+            "examples": [
+              "paddle_classic"
+            ],
+            "maxLength": 200,
+            "minLength": 1,
+            "type": "string",
+            "description": "Name of the platform or provider where this entity was imported from."
+          }
+        },
+        "description": "Import information for this entity. \u0060null\u0060 if this entity is not imported.",
+        "x-external-readOnly": true
+      },
+      "BusinessCreateCustomData": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "description": "Your own structured key-value data."
       },
       "CustomData": {
         "unevaluatedProperties": {},
@@ -23749,12 +23733,12 @@
           "customer_reference_id": "abcd1234"
         }
       },
-      "BusinessCreateId": {
-        "pattern": "^biz_[a-z\\d]{26}$",
+      "BusinessCreateName": {
+        "maxLength": 1024,
+        "minLength": 1,
         "type": "string",
         "additionalProperties": false,
-        "description": "Unique Paddle ID for this business entity, prefixed with \u0060biz_\u0060.",
-        "readOnly": true
+        "description": "Full name."
       },
       "ImportMeta": {
         "title": "ImportMeta",
@@ -23865,6 +23849,13 @@
         "additionalProperties": false,
         "description": "Represents an address entity when creating addresses."
       },
+      "BusinessCreateId": {
+        "pattern": "^biz_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this business entity, prefixed with \u0060biz_\u0060.",
+        "readOnly": true
+      },
       "ContactsCreateEmail": {
         "maxLength": 320,
         "type": "string",
@@ -23877,23 +23868,6 @@
         "type": "string",
         "additionalProperties": false,
         "description": "Full name."
-      },
-      "AdjustmentCreateItems": {
-        "maxItems": 100,
-        "minItems": 1,
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AdjustmentItemCreate"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "List of transaction items to adjust. Required if \u0060type\u0060 is not populated or set to \u0060partial\u0060."
       },
       "AdjustmentCreateTransactionId": {
         "pattern": "^txn_[a-z\\d]{26}$",
@@ -25646,7 +25620,14 @@
             "description": "Why this adjustment was created. Appears in the Paddle dashboard. Retained for recordkeeping purposes."
           },
           "items": {
-            "$ref": "#/components/schemas/AdjustmentCreateItems"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AdjustmentItemCreate"
+            },
+            "description": "List of transaction items to adjust. Required if \u0060type\u0060 is not populated or set to \u0060partial\u0060."
           }
         },
         "description": "Represents an adjustment entity when creating adjustments."
@@ -25824,7 +25805,14 @@
             "description": "Tax or VAT Number for this business."
           },
           "contacts": {
-            "$ref": "#/components/schemas/BusinessCreateContacts"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ContactsCreate"
+            },
+            "description": "List of contacts related to this business, typically used for sending invoices."
           },
           "custom_data": {
             "$ref": "#/components/schemas/BusinessCreateCustomData"
@@ -25975,7 +25963,14 @@
             "$ref": "#/components/schemas/Status"
           },
           "contacts": {
-            "$ref": "#/components/schemas/BusinessUpdateContacts"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/ContactsCreate"
+            },
+            "description": "List of contacts related to this business, typically used for sending invoices."
           },
           "custom_data": {
             "$ref": "#/components/schemas/BusinessUpdateCustomData"
@@ -29114,15 +29109,9 @@
         }
       },
       "AddressUpdateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -30849,15 +30838,9 @@
         "description": "Represents a credit balance for a customer."
       },
       "AddressCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -31160,7 +31143,15 @@
             "description": "Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. \u0060null\u0060 if this discount can be redeemed an unlimited amount of times.\n\nPaddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren\u0027t considered a redemption."
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountCreateRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           },
           "expires_at": {
             "type": [
@@ -31381,7 +31372,15 @@
             "description": "Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. \u0060null\u0060 if this discount can be redeemed an unlimited amount of times.\n\nPaddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren\u0027t considered a redemption."
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountIncludesRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           },
           "expires_at": {
             "type": [
@@ -31514,7 +31513,15 @@
             "description": "Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. \u0060null\u0060 if this discount can be redeemed an unlimited amount of times.\n\nPaddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren\u0027t considered a redemption."
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           },
           "expires_at": {
             "type": [
@@ -31622,7 +31629,15 @@
             "description": "Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. \u0060null\u0060 if this discount can be redeemed an unlimited amount of times.\n\nPaddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren\u0027t considered a redemption."
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountUpdateRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           },
           "expires_at": {
             "type": [
@@ -36397,15 +36412,9 @@
         "readOnly": true
       },
       "AddressCreateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -36727,7 +36736,18 @@
             ]
           },
           "items": {
-            "$ref": "#/components/schemas/SimulationConfigEntitiesSubscriptionCreationItemsComposed"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/SubscriptionItemWithPriceId"
+            },
+            "description": "Items to include on the simulated subscription. Only existing products and prices can be simulated. Non-catalog items aren\u0027t supported. At least one recurring price must be provided.",
+            "x-permissions": [
+              "price.read",
+              "product.read"
+            ]
           }
         },
         "description": "Configuration resources for subscription creation simulations"
@@ -40037,7 +40057,14 @@
             "$ref": "#/components/schemas/SubscriptionHistoryDetailSubscriptionCreatedBillingCycle"
           },
           "items": {
-            "$ref": "#/components/schemas/SubscriptionHistoryDetailSubscriptionCreatedItems"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/SubscriptionHistoryDetailItem"
+            },
+            "description": "Items on the subscription when it was created."
           },
           "custom_data": {
             "$ref": "#/components/schemas/SubscriptionHistoryDetailSubscriptionCreatedCustomData"
@@ -43240,7 +43267,14 @@
             "$ref": "#/components/schemas/DiscountCustomCustomData"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountCustomRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           }
         },
         "additionalProperties": false,
@@ -44367,20 +44401,6 @@
           }
         }
       },
-      "BusinessId": {
-        "pattern": "^biz_[a-z\\d]{26}$",
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this business entity, prefixed with \u0060biz_\u0060.",
-        "readOnly": true
-      },
-      "BusinessCustomerId": {
-        "pattern": "^ctm_[a-z\\d]{26}$",
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060.",
-        "readOnly": true
-      },
       "BusinessName": {
         "maxLength": 1024,
         "minLength": 1,
@@ -44414,15 +44434,9 @@
         "readOnly": true
       },
       "BusinessCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -44465,33 +44479,10 @@
         "additionalProperties": false,
         "description": "Full name."
       },
-      "BusinessUpdateContacts": {
-        "maxItems": 100,
-        "uniqueItems": true,
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ContactsCreate"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "List of contacts related to this business, typically used for sending invoices."
-      },
       "BusinessUpdateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -44887,15 +44878,9 @@
         "description": "Image for this product. Included in the checkout and on some customer documents."
       },
       "ProductCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -45279,15 +45264,9 @@
         }
       },
       "PriceCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -45624,15 +45603,9 @@
         "description": "Image for this product. Included in the checkout and on some customer documents."
       },
       "ProductPreviewCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -46146,15 +46119,9 @@
         "format": "email"
       },
       "CustomerCreateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -46216,15 +46183,9 @@
         }
       },
       "CustomerCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -46763,15 +46724,9 @@
         "readOnly": true
       },
       "TransactionCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -46970,15 +46925,9 @@
         }
       },
       "CustomerIncludesCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -47036,15 +46985,9 @@
         "format": "email"
       },
       "CustomerUpdateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -47313,33 +47256,10 @@
         },
         "description": "Supported three-letter ISO 4217 currency code. Required where discount type is \u0060flat\u0060 or \u0060flat_per_seat\u0060."
       },
-      "DiscountCreateRestrictTo": {
-        "uniqueItems": true,
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
-      },
       "DiscountCreateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -47435,34 +47355,12 @@
         },
         "description": "Supported three-letter ISO 4217 currency code. Required where discount type is \u0060flat\u0060 or \u0060flat_per_seat\u0060."
       },
-      "DiscountIncludesRestrictTo": {
-        "uniqueItems": true,
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
-      },
       "DiscountIncludesCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
-        ]
+        "type": [
+          "null",
+          "object"
+        ],
+        "description": "Your own structured key-value data."
       },
       "DiscountIncludesCreatedAt": {
         "type": "string",
@@ -47599,34 +47497,12 @@
         },
         "description": "Supported three-letter ISO 4217 currency code. Required where discount type is \u0060flat\u0060 or \u0060flat_per_seat\u0060."
       },
-      "DiscountRestrictTo": {
-        "uniqueItems": true,
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
-      },
       "DiscountCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
-        ]
+        "type": [
+          "null",
+          "object"
+        ],
+        "description": "Your own structured key-value data."
       },
       "DiscountCreatedAt": {
         "type": "string",
@@ -47723,33 +47599,10 @@
         },
         "description": "Supported three-letter ISO 4217 currency code. Required where discount type is \u0060flat\u0060 or \u0060flat_per_seat\u0060."
       },
-      "DiscountUpdateRestrictTo": {
-        "uniqueItems": true,
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
-      },
       "DiscountUpdateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -47955,15 +47808,9 @@
         "description": "Limits on how many times the related product can be purchased at this price. Useful for discount campaigns. If omitted, defaults to 1-100."
       },
       "TransactionPriceCreateWithProductIdCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -48825,15 +48672,9 @@
         "description": "Limits on how many times the related product can be purchased at this price. Useful for discount campaigns. If omitted, defaults to 1-100."
       },
       "PriceCreateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -48907,15 +48748,9 @@
         "description": "Image for this product. Included in the checkout and on some customer documents."
       },
       "ProductCreateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -49105,15 +48940,9 @@
         }
       },
       "PriceIncludesCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -49383,15 +49212,9 @@
         }
       },
       "PriceWithProductCollectionIncludesCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -49676,15 +49499,9 @@
         "description": "Limits on how many times the related product can be purchased at this price. Useful for discount campaigns."
       },
       "PriceUpdateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -49775,7 +49592,15 @@
             "description": "Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. \u0060null\u0060 if this discount can be redeemed an unlimited amount of times.\n\nPaddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren\u0027t considered a redemption."
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           },
           "expires_at": {
             "type": [
@@ -50253,15 +50078,9 @@
         "description": "Image for this product. Included in the checkout and on some customer documents."
       },
       "ProductIncludesCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -50352,15 +50171,9 @@
         "description": "Image for this product. Included in the checkout and on some customer documents."
       },
       "ProductUpdateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -51531,15 +51344,9 @@
         "description": "Single event sent for this simulation, in the format \u0060entity.event_type\u0060."
       },
       "SimulationStandardEventsModelPayload": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Simulation payload. A JSON object that matches the schema for an event type."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Simulation payload."
       },
@@ -51601,25 +51408,6 @@
         "type": "string",
         "additionalProperties": false,
         "description": "Unique Paddle ID for this price, prefixed with \u0060pri_\u0060."
-      },
-      "SimulationConfigEntitiesSubscriptionCreationItemsComposed": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SubscriptionItemWithPriceId"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Items to include on the simulated subscription. Only existing products and prices can be simulated. Non-catalog items aren\u0027t supported. At least one recurring price must be provided.",
-        "x-permissions": [
-          "price.read",
-          "product.read"
-        ]
       },
       "SimulationConfigSubscriptionCreationOptionsCustomerSimulatedAsComposed": {
         "required": [
@@ -51737,7 +51525,18 @@
             ]
           },
           "items": {
-            "$ref": "#/components/schemas/SimulationConfigEntitiesSubscriptionCreationItemsComposed"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/SubscriptionItemWithPriceId"
+            },
+            "description": "Items to include on the simulated subscription. Only existing products and prices can be simulated. Non-catalog items aren\u0027t supported. At least one recurring price must be provided.",
+            "x-permissions": [
+              "price.read",
+              "product.read"
+            ]
           }
         },
         "description": "Adds details of existing Paddle entities to webhook payloads sent in the simulation."
@@ -52096,15 +51895,9 @@
         "description": "Single event sent for this simulation, in the format \u0060entity.event_type\u0060."
       },
       "SimulationStandardEventsCreatePayload": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Simulation payload. A JSON object that matches the schema for an event type."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Simulation payload. Pass a JSON object that matches the schema for an event type to simulate a custom payload. If omitted, Paddle populates with a demo example."
       },
@@ -52568,15 +52361,9 @@
         "description": "Single event sent for this simulation, in the format \u0060entity.event_type\u0060."
       },
       "SimulationStandardEventsUpdatePayload": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Simulation payload. A JSON object that matches the schema for an event type."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Simulation payload. Pass a JSON object that matches the schema for an event type to simulate a custom payload. Set to \u0060null\u0060 to clear and populate with a demo example."
       },
@@ -53600,7 +53387,15 @@
             "description": "Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. \u0060null\u0060 if this discount can be redeemed an unlimited amount of times.\n\nPaddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren\u0027t considered a redemption."
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           },
           "expires_at": {
             "type": [
@@ -54026,31 +53821,10 @@
         },
         "description": "Billing cycle of the subscription when it was created."
       },
-      "SubscriptionHistoryDetailSubscriptionCreatedItems": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SubscriptionHistoryDetailItem"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Items on the subscription when it was created."
-      },
       "SubscriptionHistoryDetailSubscriptionCreatedCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Custom data of the subscription when it was created."
       },
@@ -54100,15 +53874,9 @@
         "description": "Updated three-letter ISO 4217 currency code for the currency on this subscription. This is what the currency was changed to."
       },
       "SubscriptionHistoryDetailSubscriptionCustomDataUpdatedCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Updated custom data on the subscription. \u0060null\u0060 if custom data was removed. This is what the custom data was changed to."
       },
@@ -55214,15 +54982,9 @@
         "readOnly": true
       },
       "SubscriptionIncludesCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -55564,15 +55326,9 @@
         "readOnly": true
       },
       "SubscriptionCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -55745,15 +55501,9 @@
         "description": "Image for this product. Included in the checkout and on some customer documents."
       },
       "TransactionSubscriptionProductCreateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -55861,15 +55611,9 @@
         "description": "Limits on how many times the related product can be purchased at this price. Useful for discount campaigns. If omitted, defaults to 1-100."
       },
       "TransactionPriceCreateWithProductCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -56059,15 +55803,9 @@
         "description": "Details for invoicing. Required if \u0060collection_mode\u0060 is \u0060manual\u0060. \u0060null\u0060 if changing \u0060collection_mode\u0060 to \u0060automatic\u0060."
       },
       "SubscriptionUpdateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -56223,15 +55961,9 @@
         "readOnly": true
       },
       "SubscriptionTransactionIncludesCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -56743,7 +56475,15 @@
             "description": "Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. \u0060null\u0060 if this discount can be redeemed an unlimited amount of times.\n\nPaddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren\u0027t considered a redemption."
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           },
           "expires_at": {
             "type": [
@@ -57177,15 +56917,9 @@
         "readOnly": true
       },
       "SubscriptionPreviewCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -57405,15 +57139,9 @@
         "description": "Limits on how many times the related product can be purchased at this price. Useful for discount campaigns. If omitted, defaults to 1-100."
       },
       "SubscriptionChargeCreateWithPriceInternalPriceModelCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -57526,15 +57254,9 @@
         "description": "Limits on how many times the related product can be purchased at this price. Useful for discount campaigns. If omitted, defaults to 1-100."
       },
       "SubscriptionChargeCreateWithPriceAndProductPriceCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -57657,15 +57379,9 @@
         "readOnly": true
       },
       "TransactionIncludesCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -58251,7 +57967,15 @@
             "description": "Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. \u0060null\u0060 if this discount can be redeemed an unlimited amount of times.\n\nPaddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren\u0027t considered a redemption."
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           },
           "expires_at": {
             "type": [
@@ -58319,33 +58043,11 @@
         }
       },
       "DiscountCustomCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
-      },
-      "DiscountCustomRestrictTo": {
-        "uniqueItems": true,
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
       },
       "TransactionItemCreateWithPriceIdProration": {
         "type": "object",
@@ -58551,15 +58253,9 @@
         "description": "Status of this transaction. You may set a transaction to \u0060billed\u0060 when creating,\nor omit to let Paddle set the status. Transactions are created as \u0060ready\u0060 if they have\nan \u0060address_id\u0060, \u0060customer_id\u0060, and \u0060items\u0060, otherwise they are created as \u0060draft\u0060.\n\nMarking as \u0060billed\u0060 when creating is typically used when working with manually-collected\ntransactions as part of an invoicing workflow. Billed transactions cannot be updated, only canceled."
       },
       "TransactionCreateCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -58641,7 +58337,14 @@
             "$ref": "#/components/schemas/DiscountCustomCustomData"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountCustomRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           }
         },
         "description": "Apply a non-catalog discount to a transaction. Send one of \u0060discount_id\u0060 or \u0060discount\u0060."
@@ -58803,15 +58506,9 @@
         "description": "Status of this transaction. You may set a transaction to \u0060billed\u0060 or \u0060canceled\u0060. Billed transactions cannot be changed.\n\nFor manually-collected transactions, marking as \u0060billed\u0060 is essentially issuing an invoice."
       },
       "UpdateTransactionBodyCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -58884,7 +58581,14 @@
             "$ref": "#/components/schemas/DiscountCustomCustomData"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountCustomRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           }
         },
         "description": "Apply a non-catalog discount to a transaction. Send one of \u0060discount_id\u0060 or \u0060discount\u0060."
@@ -59152,15 +58856,9 @@
         }
       },
       "PricePreviewCustomData": {
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "object",
-            "description": "Your own structured key-value data."
-          },
-          {
-            "type": "null"
-          }
+        "type": [
+          "null",
+          "object"
         ],
         "description": "Your own structured key-value data."
       },
@@ -59642,7 +59340,14 @@
             "$ref": "#/components/schemas/DiscountCustomCustomData"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountCustomRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           }
         },
         "description": "Apply a non-catalog discount to a transaction. Send one of \u0060discount_id\u0060 or \u0060discount\u0060."
@@ -59704,7 +59409,14 @@
             "$ref": "#/components/schemas/DiscountCustomCustomData"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountCustomRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           }
         },
         "description": "Apply a non-catalog discount to a transaction. Send one of \u0060discount_id\u0060 or \u0060discount\u0060."
@@ -59788,7 +59500,14 @@
             "$ref": "#/components/schemas/DiscountCustomCustomData"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountCustomRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           }
         },
         "description": "Apply a non-catalog discount to a transaction. Send one of \u0060discount_id\u0060 or \u0060discount\u0060."
@@ -59850,7 +59569,14 @@
             "$ref": "#/components/schemas/DiscountCustomCustomData"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountCustomRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           }
         },
         "description": "Apply a non-catalog discount to a transaction. Send one of \u0060discount_id\u0060 or \u0060discount\u0060."
@@ -66962,28 +66688,6 @@
           }
         ]
       },
-      "AdjustmentCreatedRequestDataTaxRatesUsed": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AdjustmentCreatedRequestDataTaxRatesUsedAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
-      "AdjustmentUpdatedRequestDataTaxRatesUsed": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AdjustmentUpdatedRequestDataTaxRatesUsedAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ]
-      },
       "ApiKeyCreatedRequestDataPermissionsItem": {
         "type": "object",
         "oneOf": [
@@ -67023,60 +66727,6 @@
             "$ref": "#/components/schemas/ApiKeyRevokedRequestDataPermissionsItemOneOf1"
           }
         ]
-      },
-      "DiscountCreatedRequestDataRestrictTo": {
-        "maxItems": 50,
-        "uniqueItems": true,
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
-      },
-      "DiscountImportedRequestDataRestrictTo": {
-        "maxItems": 50,
-        "uniqueItems": true,
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
-      },
-      "DiscountUpdatedRequestDataRestrictTo": {
-        "maxItems": 50,
-        "uniqueItems": true,
-        "type": "object",
-        "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
-              "type": "string"
-            }
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
       },
       "PriceCreatedRequestDataTrialPeriodUnitPriceOverridesItemCountryCodesItem": {
         "type": "object",
@@ -67310,18 +66960,6 @@
         ],
         "description": "Image for this product. Included in the checkout and on some customer documents."
       },
-      "SubscriptionActivatedRequestDataConsentRequirements": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataConsentRequirementsAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "List of active consent requirements for the subscription\u0027s current billing period."
-      },
       "SubscriptionCanceledRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemCountryCodesItem": {
         "type": "object",
         "oneOf": [
@@ -67359,18 +66997,6 @@
           }
         ],
         "description": "Image for this product. Included in the checkout and on some customer documents."
-      },
-      "SubscriptionCanceledRequestDataConsentRequirements": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataConsentRequirementsAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "List of active consent requirements for the subscription\u0027s current billing period."
       },
       "SubscriptionCreatedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemCountryCodesItem": {
         "type": "object",
@@ -67410,18 +67036,6 @@
         ],
         "description": "Image for this product. Included in the checkout and on some customer documents."
       },
-      "SubscriptionCreatedRequestDataConsentRequirements": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataConsentRequirementsAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "List of active consent requirements for the subscription\u0027s current billing period."
-      },
       "SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemCountryCodesItem": {
         "type": "object",
         "oneOf": [
@@ -67459,18 +67073,6 @@
           }
         ],
         "description": "Image for this product. Included in the checkout and on some customer documents."
-      },
-      "SubscriptionImportedRequestDataConsentRequirements": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SubscriptionImportedRequestDataConsentRequirementsAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "List of active consent requirements for the subscription\u0027s current billing period."
       },
       "SubscriptionPastDueRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemCountryCodesItem": {
         "type": "object",
@@ -67510,18 +67112,6 @@
         ],
         "description": "Image for this product. Included in the checkout and on some customer documents."
       },
-      "SubscriptionPastDueRequestDataConsentRequirements": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataConsentRequirementsAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "List of active consent requirements for the subscription\u0027s current billing period."
-      },
       "SubscriptionPausedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemCountryCodesItem": {
         "type": "object",
         "oneOf": [
@@ -67559,18 +67149,6 @@
           }
         ],
         "description": "Image for this product. Included in the checkout and on some customer documents."
-      },
-      "SubscriptionPausedRequestDataConsentRequirements": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SubscriptionPausedRequestDataConsentRequirementsAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "List of active consent requirements for the subscription\u0027s current billing period."
       },
       "SubscriptionResumedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemCountryCodesItem": {
         "type": "object",
@@ -67610,18 +67188,6 @@
         ],
         "description": "Image for this product. Included in the checkout and on some customer documents."
       },
-      "SubscriptionResumedRequestDataConsentRequirements": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SubscriptionResumedRequestDataConsentRequirementsAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "List of active consent requirements for the subscription\u0027s current billing period."
-      },
       "SubscriptionTrialingRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemCountryCodesItem": {
         "type": "object",
         "oneOf": [
@@ -67660,18 +67226,6 @@
         ],
         "description": "Image for this product. Included in the checkout and on some customer documents."
       },
-      "SubscriptionTrialingRequestDataConsentRequirements": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataConsentRequirementsAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "List of active consent requirements for the subscription\u0027s current billing period."
-      },
       "SubscriptionUpdatedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemCountryCodesItem": {
         "type": "object",
         "oneOf": [
@@ -67709,18 +67263,6 @@
           }
         ],
         "description": "Image for this product. Included in the checkout and on some customer documents."
-      },
-      "SubscriptionUpdatedRequestDataConsentRequirements": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataConsentRequirementsAnyOf1"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "description": "List of active consent requirements for the subscription\u0027s current billing period."
       },
       "TransactionBilledRequestDataOrigin": {
         "type": "object",
@@ -68191,72 +67733,6 @@
           }
         ],
         "description": "Image for this product. Included in the checkout and on some customer documents."
-      },
-      "AdjustmentCreatedRequestDataTaxRatesUsedAnyOf1": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AdjustmentCreatedRequestDataTaxRatesUsedAnyOf1Item"
-        }
-      },
-      "AdjustmentUpdatedRequestDataTaxRatesUsedAnyOf1": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/AdjustmentUpdatedRequestDataTaxRatesUsedAnyOf1Item"
-        }
-      },
-      "SubscriptionActivatedRequestDataConsentRequirementsAnyOf1": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SubscriptionActivatedRequestDataConsentRequirementsAnyOf1Item"
-        }
-      },
-      "SubscriptionCanceledRequestDataConsentRequirementsAnyOf1": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SubscriptionCanceledRequestDataConsentRequirementsAnyOf1Item"
-        }
-      },
-      "SubscriptionCreatedRequestDataConsentRequirementsAnyOf1": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SubscriptionCreatedRequestDataConsentRequirementsAnyOf1Item"
-        }
-      },
-      "SubscriptionImportedRequestDataConsentRequirementsAnyOf1": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SubscriptionImportedRequestDataConsentRequirementsAnyOf1Item"
-        }
-      },
-      "SubscriptionPastDueRequestDataConsentRequirementsAnyOf1": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SubscriptionPastDueRequestDataConsentRequirementsAnyOf1Item"
-        }
-      },
-      "SubscriptionPausedRequestDataConsentRequirementsAnyOf1": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SubscriptionPausedRequestDataConsentRequirementsAnyOf1Item"
-        }
-      },
-      "SubscriptionResumedRequestDataConsentRequirementsAnyOf1": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SubscriptionResumedRequestDataConsentRequirementsAnyOf1Item"
-        }
-      },
-      "SubscriptionTrialingRequestDataConsentRequirementsAnyOf1": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SubscriptionTrialingRequestDataConsentRequirementsAnyOf1Item"
-        }
-      },
-      "SubscriptionUpdatedRequestDataConsentRequirementsAnyOf1": {
-        "type": "array",
-        "items": {
-          "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataConsentRequirementsAnyOf1Item"
-        }
       },
       "AddressCreatedRequestData": {
         "required": [
@@ -68752,7 +68228,13 @@
             "$ref": "#/components/schemas/AdjustmentCreatedRequestDataPayoutTotals"
           },
           "tax_rates_used": {
-            "$ref": "#/components/schemas/AdjustmentCreatedRequestDataTaxRatesUsed"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AdjustmentCreatedRequestDataTaxRatesUsedItem"
+            }
           },
           "created_at": {
             "examples": [
@@ -68870,7 +68352,13 @@
             "$ref": "#/components/schemas/AdjustmentUpdatedRequestDataPayoutTotals"
           },
           "tax_rates_used": {
-            "$ref": "#/components/schemas/AdjustmentUpdatedRequestDataTaxRatesUsed"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/AdjustmentUpdatedRequestDataTaxRatesUsedItem"
+            }
           },
           "created_at": {
             "examples": [
@@ -70439,7 +69927,15 @@
             "description": "Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. \u0060null\u0060 if this discount can be redeemed an unlimited amount of times.\n\nPaddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren\u0027t considered a redemption."
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountCreatedRequestDataRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           },
           "expires_at": {
             "type": [
@@ -70575,7 +70071,15 @@
             "description": "Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. \u0060null\u0060 if this discount can be redeemed an unlimited amount of times.\n\nPaddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren\u0027t considered a redemption."
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountImportedRequestDataRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           },
           "expires_at": {
             "type": [
@@ -70711,7 +70215,15 @@
             "description": "Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. \u0060null\u0060 if this discount can be redeemed an unlimited amount of times.\n\nPaddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren\u0027t considered a redemption."
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountUpdatedRequestDataRestrictTo"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "pattern": "^(pri|pro)_[a-z\\d]{26}$",
+              "type": "string"
+            },
+            "description": "Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. \u0060null\u0060 if this discount applies to all products and prices."
           },
           "expires_at": {
             "type": [
@@ -71840,7 +71352,14 @@
             }
           },
           "consent_requirements": {
-            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataConsentRequirements"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/SubscriptionActivatedRequestDataConsentRequirementsItem"
+            },
+            "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
             "$ref": "#/components/schemas/SubscriptionActivatedRequestDataCustomData"
@@ -72003,7 +71522,14 @@
             }
           },
           "consent_requirements": {
-            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataConsentRequirements"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/SubscriptionCanceledRequestDataConsentRequirementsItem"
+            },
+            "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
             "$ref": "#/components/schemas/SubscriptionCanceledRequestDataCustomData"
@@ -72167,7 +71693,14 @@
             }
           },
           "consent_requirements": {
-            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataConsentRequirements"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/SubscriptionCreatedRequestDataConsentRequirementsItem"
+            },
+            "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
             "$ref": "#/components/schemas/SubscriptionCreatedRequestDataCustomData"
@@ -72339,7 +71872,14 @@
             }
           },
           "consent_requirements": {
-            "$ref": "#/components/schemas/SubscriptionImportedRequestDataConsentRequirements"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/SubscriptionImportedRequestDataConsentRequirementsItem"
+            },
+            "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
             "$ref": "#/components/schemas/SubscriptionImportedRequestDataCustomData"
@@ -72502,7 +72042,14 @@
             }
           },
           "consent_requirements": {
-            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataConsentRequirements"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/SubscriptionPastDueRequestDataConsentRequirementsItem"
+            },
+            "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
             "$ref": "#/components/schemas/SubscriptionPastDueRequestDataCustomData"
@@ -72665,7 +72212,14 @@
             }
           },
           "consent_requirements": {
-            "$ref": "#/components/schemas/SubscriptionPausedRequestDataConsentRequirements"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/SubscriptionPausedRequestDataConsentRequirementsItem"
+            },
+            "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
             "$ref": "#/components/schemas/SubscriptionPausedRequestDataCustomData"
@@ -72828,7 +72382,14 @@
             }
           },
           "consent_requirements": {
-            "$ref": "#/components/schemas/SubscriptionResumedRequestDataConsentRequirements"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/SubscriptionResumedRequestDataConsentRequirementsItem"
+            },
+            "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
             "$ref": "#/components/schemas/SubscriptionResumedRequestDataCustomData"
@@ -72991,7 +72552,14 @@
             }
           },
           "consent_requirements": {
-            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataConsentRequirements"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/SubscriptionTrialingRequestDataConsentRequirementsItem"
+            },
+            "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
             "$ref": "#/components/schemas/SubscriptionTrialingRequestDataCustomData"
@@ -73154,7 +72722,14 @@
             }
           },
           "consent_requirements": {
-            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataConsentRequirements"
+            "type": [
+              "null",
+              "array"
+            ],
+            "items": {
+              "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataConsentRequirementsItem"
+            },
+            "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
             "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataCustomData"
@@ -74945,579 +74520,6 @@
         },
         "description": "New or changed entity."
       },
-      "AdjustmentCreatedRequestDataTaxRatesUsedAnyOf1Item": {
-        "title": "AdjustmentTaxRateUsed",
-        "required": [
-          "tax_rate",
-          "totals"
-        ],
-        "type": "object",
-        "properties": {
-          "tax_rate": {
-            "examples": [
-              "0.2"
-            ],
-            "type": "string",
-            "description": "Rate used to calculate tax for this adjustment."
-          },
-          "totals": {
-            "$ref": "#/components/schemas/AdjustmentCreatedRequestDataTaxRatesUsedAnyOf1ItemTotals"
-          }
-        },
-        "description": "List of tax rates applied for this adjustment."
-      },
-      "AdjustmentUpdatedRequestDataTaxRatesUsedAnyOf1Item": {
-        "title": "AdjustmentTaxRateUsed",
-        "required": [
-          "tax_rate",
-          "totals"
-        ],
-        "type": "object",
-        "properties": {
-          "tax_rate": {
-            "examples": [
-              "0.2"
-            ],
-            "type": "string",
-            "description": "Rate used to calculate tax for this adjustment."
-          },
-          "totals": {
-            "$ref": "#/components/schemas/AdjustmentUpdatedRequestDataTaxRatesUsedAnyOf1ItemTotals"
-          }
-        },
-        "description": "List of tax rates applied for this adjustment."
-      },
-      "SubscriptionActivatedRequestDataConsentRequirementsAnyOf1Item": {
-        "title": "SubscriptionConsentRequirement",
-        "required": [
-          "id",
-          "requirement",
-          "status",
-          "created_at",
-          "consent_period",
-          "granted_at",
-          "voided_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "examples": [
-              "subconreq_01gm302t81w94gyjpjpqypkzkf"
-            ],
-            "title": "Subscription Consent Requirement ID",
-            "pattern": "^subconreq_[a-z\\d]{26}$",
-            "type": "string",
-            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
-          },
-          "requirement": {
-            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataConsentRequirementsAnyOf1ItemRequirement"
-          },
-          "status": {
-            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataConsentRequirementsAnyOf1ItemStatus"
-          },
-          "created_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Created at",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
-            "format": "date-time"
-          },
-          "consent_period": {
-            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataConsentRequirementsAnyOf1ItemConsentPeriod"
-          },
-          "granted_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
-            "format": "date-time"
-          },
-          "voided_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
-            "format": "date-time"
-          }
-        },
-        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
-      },
-      "SubscriptionCanceledRequestDataConsentRequirementsAnyOf1Item": {
-        "title": "SubscriptionConsentRequirement",
-        "required": [
-          "id",
-          "requirement",
-          "status",
-          "created_at",
-          "consent_period",
-          "granted_at",
-          "voided_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "examples": [
-              "subconreq_01gm302t81w94gyjpjpqypkzkf"
-            ],
-            "title": "Subscription Consent Requirement ID",
-            "pattern": "^subconreq_[a-z\\d]{26}$",
-            "type": "string",
-            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
-          },
-          "requirement": {
-            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataConsentRequirementsAnyOf1ItemRequirement"
-          },
-          "status": {
-            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataConsentRequirementsAnyOf1ItemStatus"
-          },
-          "created_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Created at",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
-            "format": "date-time"
-          },
-          "consent_period": {
-            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataConsentRequirementsAnyOf1ItemConsentPeriod"
-          },
-          "granted_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
-            "format": "date-time"
-          },
-          "voided_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
-            "format": "date-time"
-          }
-        },
-        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
-      },
-      "SubscriptionCreatedRequestDataConsentRequirementsAnyOf1Item": {
-        "title": "SubscriptionConsentRequirement",
-        "required": [
-          "id",
-          "requirement",
-          "status",
-          "created_at",
-          "consent_period",
-          "granted_at",
-          "voided_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "examples": [
-              "subconreq_01gm302t81w94gyjpjpqypkzkf"
-            ],
-            "title": "Subscription Consent Requirement ID",
-            "pattern": "^subconreq_[a-z\\d]{26}$",
-            "type": "string",
-            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
-          },
-          "requirement": {
-            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataConsentRequirementsAnyOf1ItemRequirement"
-          },
-          "status": {
-            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataConsentRequirementsAnyOf1ItemStatus"
-          },
-          "created_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Created at",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
-            "format": "date-time"
-          },
-          "consent_period": {
-            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataConsentRequirementsAnyOf1ItemConsentPeriod"
-          },
-          "granted_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
-            "format": "date-time"
-          },
-          "voided_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
-            "format": "date-time"
-          }
-        },
-        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
-      },
-      "SubscriptionImportedRequestDataConsentRequirementsAnyOf1Item": {
-        "title": "SubscriptionConsentRequirement",
-        "required": [
-          "id",
-          "requirement",
-          "status",
-          "created_at",
-          "consent_period",
-          "granted_at",
-          "voided_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "examples": [
-              "subconreq_01gm302t81w94gyjpjpqypkzkf"
-            ],
-            "title": "Subscription Consent Requirement ID",
-            "pattern": "^subconreq_[a-z\\d]{26}$",
-            "type": "string",
-            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
-          },
-          "requirement": {
-            "$ref": "#/components/schemas/SubscriptionImportedRequestDataConsentRequirementsAnyOf1ItemRequirement"
-          },
-          "status": {
-            "$ref": "#/components/schemas/SubscriptionImportedRequestDataConsentRequirementsAnyOf1ItemStatus"
-          },
-          "created_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Created at",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
-            "format": "date-time"
-          },
-          "consent_period": {
-            "$ref": "#/components/schemas/SubscriptionImportedRequestDataConsentRequirementsAnyOf1ItemConsentPeriod"
-          },
-          "granted_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
-            "format": "date-time"
-          },
-          "voided_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
-            "format": "date-time"
-          }
-        },
-        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
-      },
-      "SubscriptionPastDueRequestDataConsentRequirementsAnyOf1Item": {
-        "title": "SubscriptionConsentRequirement",
-        "required": [
-          "id",
-          "requirement",
-          "status",
-          "created_at",
-          "consent_period",
-          "granted_at",
-          "voided_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "examples": [
-              "subconreq_01gm302t81w94gyjpjpqypkzkf"
-            ],
-            "title": "Subscription Consent Requirement ID",
-            "pattern": "^subconreq_[a-z\\d]{26}$",
-            "type": "string",
-            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
-          },
-          "requirement": {
-            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataConsentRequirementsAnyOf1ItemRequirement"
-          },
-          "status": {
-            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataConsentRequirementsAnyOf1ItemStatus"
-          },
-          "created_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Created at",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
-            "format": "date-time"
-          },
-          "consent_period": {
-            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataConsentRequirementsAnyOf1ItemConsentPeriod"
-          },
-          "granted_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
-            "format": "date-time"
-          },
-          "voided_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
-            "format": "date-time"
-          }
-        },
-        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
-      },
-      "SubscriptionPausedRequestDataConsentRequirementsAnyOf1Item": {
-        "title": "SubscriptionConsentRequirement",
-        "required": [
-          "id",
-          "requirement",
-          "status",
-          "created_at",
-          "consent_period",
-          "granted_at",
-          "voided_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "examples": [
-              "subconreq_01gm302t81w94gyjpjpqypkzkf"
-            ],
-            "title": "Subscription Consent Requirement ID",
-            "pattern": "^subconreq_[a-z\\d]{26}$",
-            "type": "string",
-            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
-          },
-          "requirement": {
-            "$ref": "#/components/schemas/SubscriptionPausedRequestDataConsentRequirementsAnyOf1ItemRequirement"
-          },
-          "status": {
-            "$ref": "#/components/schemas/SubscriptionPausedRequestDataConsentRequirementsAnyOf1ItemStatus"
-          },
-          "created_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Created at",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
-            "format": "date-time"
-          },
-          "consent_period": {
-            "$ref": "#/components/schemas/SubscriptionPausedRequestDataConsentRequirementsAnyOf1ItemConsentPeriod"
-          },
-          "granted_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
-            "format": "date-time"
-          },
-          "voided_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
-            "format": "date-time"
-          }
-        },
-        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
-      },
-      "SubscriptionResumedRequestDataConsentRequirementsAnyOf1Item": {
-        "title": "SubscriptionConsentRequirement",
-        "required": [
-          "id",
-          "requirement",
-          "status",
-          "created_at",
-          "consent_period",
-          "granted_at",
-          "voided_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "examples": [
-              "subconreq_01gm302t81w94gyjpjpqypkzkf"
-            ],
-            "title": "Subscription Consent Requirement ID",
-            "pattern": "^subconreq_[a-z\\d]{26}$",
-            "type": "string",
-            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
-          },
-          "requirement": {
-            "$ref": "#/components/schemas/SubscriptionResumedRequestDataConsentRequirementsAnyOf1ItemRequirement"
-          },
-          "status": {
-            "$ref": "#/components/schemas/SubscriptionResumedRequestDataConsentRequirementsAnyOf1ItemStatus"
-          },
-          "created_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Created at",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
-            "format": "date-time"
-          },
-          "consent_period": {
-            "$ref": "#/components/schemas/SubscriptionResumedRequestDataConsentRequirementsAnyOf1ItemConsentPeriod"
-          },
-          "granted_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
-            "format": "date-time"
-          },
-          "voided_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
-            "format": "date-time"
-          }
-        },
-        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
-      },
-      "SubscriptionTrialingRequestDataConsentRequirementsAnyOf1Item": {
-        "title": "SubscriptionConsentRequirement",
-        "required": [
-          "id",
-          "requirement",
-          "status",
-          "created_at",
-          "consent_period",
-          "granted_at",
-          "voided_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "examples": [
-              "subconreq_01gm302t81w94gyjpjpqypkzkf"
-            ],
-            "title": "Subscription Consent Requirement ID",
-            "pattern": "^subconreq_[a-z\\d]{26}$",
-            "type": "string",
-            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
-          },
-          "requirement": {
-            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataConsentRequirementsAnyOf1ItemRequirement"
-          },
-          "status": {
-            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataConsentRequirementsAnyOf1ItemStatus"
-          },
-          "created_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Created at",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
-            "format": "date-time"
-          },
-          "consent_period": {
-            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataConsentRequirementsAnyOf1ItemConsentPeriod"
-          },
-          "granted_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
-            "format": "date-time"
-          },
-          "voided_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
-            "format": "date-time"
-          }
-        },
-        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
-      },
-      "SubscriptionUpdatedRequestDataConsentRequirementsAnyOf1Item": {
-        "title": "SubscriptionConsentRequirement",
-        "required": [
-          "id",
-          "requirement",
-          "status",
-          "created_at",
-          "consent_period",
-          "granted_at",
-          "voided_at"
-        ],
-        "type": "object",
-        "properties": {
-          "id": {
-            "examples": [
-              "subconreq_01gm302t81w94gyjpjpqypkzkf"
-            ],
-            "title": "Subscription Consent Requirement ID",
-            "pattern": "^subconreq_[a-z\\d]{26}$",
-            "type": "string",
-            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
-          },
-          "requirement": {
-            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataConsentRequirementsAnyOf1ItemRequirement"
-          },
-          "status": {
-            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataConsentRequirementsAnyOf1ItemStatus"
-          },
-          "created_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Created at",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
-            "format": "date-time"
-          },
-          "consent_period": {
-            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataConsentRequirementsAnyOf1ItemConsentPeriod"
-          },
-          "granted_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
-            "format": "date-time"
-          },
-          "voided_at": {
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
-            "format": "date-time"
-          }
-        },
-        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
-      },
       "AddressCreatedRequestDataCustomData": {
         "type": [
           "null",
@@ -75811,6 +74813,27 @@
         },
         "description": "Breakdown of how this adjustment affects your payout balance."
       },
+      "AdjustmentCreatedRequestDataTaxRatesUsedItem": {
+        "title": "AdjustmentTaxRateUsed",
+        "required": [
+          "tax_rate",
+          "totals"
+        ],
+        "type": "object",
+        "properties": {
+          "tax_rate": {
+            "examples": [
+              "0.2"
+            ],
+            "type": "string",
+            "description": "Rate used to calculate tax for this adjustment."
+          },
+          "totals": {
+            "$ref": "#/components/schemas/AdjustmentCreatedRequestDataTaxRatesUsedItemTotals"
+          }
+        },
+        "description": "List of tax rates applied for this adjustment."
+      },
       "AdjustmentUpdatedRequestDataItemsItem": {
         "required": [
           "id",
@@ -75983,6 +75006,27 @@
           }
         },
         "description": "Breakdown of how this adjustment affects your payout balance."
+      },
+      "AdjustmentUpdatedRequestDataTaxRatesUsedItem": {
+        "title": "AdjustmentTaxRateUsed",
+        "required": [
+          "tax_rate",
+          "totals"
+        ],
+        "type": "object",
+        "properties": {
+          "tax_rate": {
+            "examples": [
+              "0.2"
+            ],
+            "type": "string",
+            "description": "Rate used to calculate tax for this adjustment."
+          },
+          "totals": {
+            "$ref": "#/components/schemas/AdjustmentUpdatedRequestDataTaxRatesUsedItemTotals"
+          }
+        },
+        "description": "List of tax rates applied for this adjustment."
       },
       "BusinessCreatedRequestDataContactsItem": {
         "required": [
@@ -77414,6 +76458,65 @@
         },
         "description": "Represents a subscription item."
       },
+      "SubscriptionActivatedRequestDataConsentRequirementsItem": {
+        "title": "SubscriptionConsentRequirement",
+        "required": [
+          "id",
+          "requirement",
+          "status",
+          "created_at",
+          "consent_period",
+          "granted_at",
+          "voided_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "examples": [
+              "subconreq_01gm302t81w94gyjpjpqypkzkf"
+            ],
+            "title": "Subscription Consent Requirement ID",
+            "pattern": "^subconreq_[a-z\\d]{26}$",
+            "type": "string",
+            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
+          },
+          "requirement": {
+            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataConsentRequirementsItemRequirement"
+          },
+          "status": {
+            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataConsentRequirementsItemStatus"
+          },
+          "created_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Created at",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+            "format": "date-time"
+          },
+          "consent_period": {
+            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataConsentRequirementsItemConsentPeriod"
+          },
+          "granted_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
+            "format": "date-time"
+          },
+          "voided_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
+            "format": "date-time"
+          }
+        },
+        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
+      },
       "SubscriptionActivatedRequestDataCustomData": {
         "type": [
           "null",
@@ -77689,6 +76792,65 @@
           }
         },
         "description": "Represents a subscription item."
+      },
+      "SubscriptionCanceledRequestDataConsentRequirementsItem": {
+        "title": "SubscriptionConsentRequirement",
+        "required": [
+          "id",
+          "requirement",
+          "status",
+          "created_at",
+          "consent_period",
+          "granted_at",
+          "voided_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "examples": [
+              "subconreq_01gm302t81w94gyjpjpqypkzkf"
+            ],
+            "title": "Subscription Consent Requirement ID",
+            "pattern": "^subconreq_[a-z\\d]{26}$",
+            "type": "string",
+            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
+          },
+          "requirement": {
+            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataConsentRequirementsItemRequirement"
+          },
+          "status": {
+            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataConsentRequirementsItemStatus"
+          },
+          "created_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Created at",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+            "format": "date-time"
+          },
+          "consent_period": {
+            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataConsentRequirementsItemConsentPeriod"
+          },
+          "granted_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
+            "format": "date-time"
+          },
+          "voided_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
+            "format": "date-time"
+          }
+        },
+        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
       },
       "SubscriptionCanceledRequestDataCustomData": {
         "type": [
@@ -77966,6 +77128,65 @@
         },
         "description": "Represents a subscription item."
       },
+      "SubscriptionCreatedRequestDataConsentRequirementsItem": {
+        "title": "SubscriptionConsentRequirement",
+        "required": [
+          "id",
+          "requirement",
+          "status",
+          "created_at",
+          "consent_period",
+          "granted_at",
+          "voided_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "examples": [
+              "subconreq_01gm302t81w94gyjpjpqypkzkf"
+            ],
+            "title": "Subscription Consent Requirement ID",
+            "pattern": "^subconreq_[a-z\\d]{26}$",
+            "type": "string",
+            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
+          },
+          "requirement": {
+            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataConsentRequirementsItemRequirement"
+          },
+          "status": {
+            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataConsentRequirementsItemStatus"
+          },
+          "created_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Created at",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+            "format": "date-time"
+          },
+          "consent_period": {
+            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataConsentRequirementsItemConsentPeriod"
+          },
+          "granted_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
+            "format": "date-time"
+          },
+          "voided_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
+            "format": "date-time"
+          }
+        },
+        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
+      },
       "SubscriptionCreatedRequestDataCustomData": {
         "type": [
           "null",
@@ -78241,6 +77462,65 @@
           }
         },
         "description": "Represents a subscription item."
+      },
+      "SubscriptionImportedRequestDataConsentRequirementsItem": {
+        "title": "SubscriptionConsentRequirement",
+        "required": [
+          "id",
+          "requirement",
+          "status",
+          "created_at",
+          "consent_period",
+          "granted_at",
+          "voided_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "examples": [
+              "subconreq_01gm302t81w94gyjpjpqypkzkf"
+            ],
+            "title": "Subscription Consent Requirement ID",
+            "pattern": "^subconreq_[a-z\\d]{26}$",
+            "type": "string",
+            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
+          },
+          "requirement": {
+            "$ref": "#/components/schemas/SubscriptionImportedRequestDataConsentRequirementsItemRequirement"
+          },
+          "status": {
+            "$ref": "#/components/schemas/SubscriptionImportedRequestDataConsentRequirementsItemStatus"
+          },
+          "created_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Created at",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+            "format": "date-time"
+          },
+          "consent_period": {
+            "$ref": "#/components/schemas/SubscriptionImportedRequestDataConsentRequirementsItemConsentPeriod"
+          },
+          "granted_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
+            "format": "date-time"
+          },
+          "voided_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
+            "format": "date-time"
+          }
+        },
+        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
       },
       "SubscriptionImportedRequestDataCustomData": {
         "type": [
@@ -78518,6 +77798,65 @@
         },
         "description": "Represents a subscription item."
       },
+      "SubscriptionPastDueRequestDataConsentRequirementsItem": {
+        "title": "SubscriptionConsentRequirement",
+        "required": [
+          "id",
+          "requirement",
+          "status",
+          "created_at",
+          "consent_period",
+          "granted_at",
+          "voided_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "examples": [
+              "subconreq_01gm302t81w94gyjpjpqypkzkf"
+            ],
+            "title": "Subscription Consent Requirement ID",
+            "pattern": "^subconreq_[a-z\\d]{26}$",
+            "type": "string",
+            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
+          },
+          "requirement": {
+            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataConsentRequirementsItemRequirement"
+          },
+          "status": {
+            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataConsentRequirementsItemStatus"
+          },
+          "created_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Created at",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+            "format": "date-time"
+          },
+          "consent_period": {
+            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataConsentRequirementsItemConsentPeriod"
+          },
+          "granted_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
+            "format": "date-time"
+          },
+          "voided_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
+            "format": "date-time"
+          }
+        },
+        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
+      },
       "SubscriptionPastDueRequestDataCustomData": {
         "type": [
           "null",
@@ -78793,6 +78132,65 @@
           }
         },
         "description": "Represents a subscription item."
+      },
+      "SubscriptionPausedRequestDataConsentRequirementsItem": {
+        "title": "SubscriptionConsentRequirement",
+        "required": [
+          "id",
+          "requirement",
+          "status",
+          "created_at",
+          "consent_period",
+          "granted_at",
+          "voided_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "examples": [
+              "subconreq_01gm302t81w94gyjpjpqypkzkf"
+            ],
+            "title": "Subscription Consent Requirement ID",
+            "pattern": "^subconreq_[a-z\\d]{26}$",
+            "type": "string",
+            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
+          },
+          "requirement": {
+            "$ref": "#/components/schemas/SubscriptionPausedRequestDataConsentRequirementsItemRequirement"
+          },
+          "status": {
+            "$ref": "#/components/schemas/SubscriptionPausedRequestDataConsentRequirementsItemStatus"
+          },
+          "created_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Created at",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+            "format": "date-time"
+          },
+          "consent_period": {
+            "$ref": "#/components/schemas/SubscriptionPausedRequestDataConsentRequirementsItemConsentPeriod"
+          },
+          "granted_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
+            "format": "date-time"
+          },
+          "voided_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
+            "format": "date-time"
+          }
+        },
+        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
       },
       "SubscriptionPausedRequestDataCustomData": {
         "type": [
@@ -79070,6 +78468,65 @@
         },
         "description": "Represents a subscription item."
       },
+      "SubscriptionResumedRequestDataConsentRequirementsItem": {
+        "title": "SubscriptionConsentRequirement",
+        "required": [
+          "id",
+          "requirement",
+          "status",
+          "created_at",
+          "consent_period",
+          "granted_at",
+          "voided_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "examples": [
+              "subconreq_01gm302t81w94gyjpjpqypkzkf"
+            ],
+            "title": "Subscription Consent Requirement ID",
+            "pattern": "^subconreq_[a-z\\d]{26}$",
+            "type": "string",
+            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
+          },
+          "requirement": {
+            "$ref": "#/components/schemas/SubscriptionResumedRequestDataConsentRequirementsItemRequirement"
+          },
+          "status": {
+            "$ref": "#/components/schemas/SubscriptionResumedRequestDataConsentRequirementsItemStatus"
+          },
+          "created_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Created at",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+            "format": "date-time"
+          },
+          "consent_period": {
+            "$ref": "#/components/schemas/SubscriptionResumedRequestDataConsentRequirementsItemConsentPeriod"
+          },
+          "granted_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
+            "format": "date-time"
+          },
+          "voided_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
+            "format": "date-time"
+          }
+        },
+        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
+      },
       "SubscriptionResumedRequestDataCustomData": {
         "type": [
           "null",
@@ -79346,6 +78803,65 @@
         },
         "description": "Represents a subscription item."
       },
+      "SubscriptionTrialingRequestDataConsentRequirementsItem": {
+        "title": "SubscriptionConsentRequirement",
+        "required": [
+          "id",
+          "requirement",
+          "status",
+          "created_at",
+          "consent_period",
+          "granted_at",
+          "voided_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "examples": [
+              "subconreq_01gm302t81w94gyjpjpqypkzkf"
+            ],
+            "title": "Subscription Consent Requirement ID",
+            "pattern": "^subconreq_[a-z\\d]{26}$",
+            "type": "string",
+            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
+          },
+          "requirement": {
+            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataConsentRequirementsItemRequirement"
+          },
+          "status": {
+            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataConsentRequirementsItemStatus"
+          },
+          "created_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Created at",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+            "format": "date-time"
+          },
+          "consent_period": {
+            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataConsentRequirementsItemConsentPeriod"
+          },
+          "granted_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
+            "format": "date-time"
+          },
+          "voided_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
+            "format": "date-time"
+          }
+        },
+        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
+      },
       "SubscriptionTrialingRequestDataCustomData": {
         "type": [
           "null",
@@ -79621,6 +79137,65 @@
           }
         },
         "description": "Represents a subscription item."
+      },
+      "SubscriptionUpdatedRequestDataConsentRequirementsItem": {
+        "title": "SubscriptionConsentRequirement",
+        "required": [
+          "id",
+          "requirement",
+          "status",
+          "created_at",
+          "consent_period",
+          "granted_at",
+          "voided_at"
+        ],
+        "type": "object",
+        "properties": {
+          "id": {
+            "examples": [
+              "subconreq_01gm302t81w94gyjpjpqypkzkf"
+            ],
+            "title": "Subscription Consent Requirement ID",
+            "pattern": "^subconreq_[a-z\\d]{26}$",
+            "type": "string",
+            "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
+          },
+          "requirement": {
+            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataConsentRequirementsItemRequirement"
+          },
+          "status": {
+            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataConsentRequirementsItemStatus"
+          },
+          "created_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Created at",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+            "format": "date-time"
+          },
+          "consent_period": {
+            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataConsentRequirementsItemConsentPeriod"
+          },
+          "granted_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when the customer granted their consent. \u0060null\u0060 if not yet granted.",
+            "format": "date-time"
+          },
+          "voided_at": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "RFC 3339 datetime string of when consent was voided or no longer required. \u0060null\u0060 if not voided.",
+            "format": "date-time"
+          }
+        },
+        "description": "Represents a specific condition under which explicit customer consent is, or was, mandated for a subscription renewal."
       },
       "SubscriptionUpdatedRequestDataCustomData": {
         "type": [
@@ -81962,351 +81537,6 @@
         },
         "description": "Paddle Checkout details for this transaction. Returned for automatically-collected transactions and where \u0060billing_details.enable_checkout\u0060 is \u0060true\u0060 for manually-collected transactions; \u0060null\u0060 otherwise."
       },
-      "AdjustmentCreatedRequestDataTaxRatesUsedAnyOf1ItemTotals": {
-        "title": "AdjustmentTaxRateUsedTotals",
-        "required": [
-          "subtotal",
-          "tax",
-          "total"
-        ],
-        "type": "object",
-        "properties": {
-          "subtotal": {
-            "examples": [
-              "15000"
-            ],
-            "type": "string",
-            "description": "Total before tax. For tax adjustments, the value is 0."
-          },
-          "tax": {
-            "examples": [
-              "1500"
-            ],
-            "type": "string",
-            "description": "Total tax on the subtotal."
-          },
-          "total": {
-            "examples": [
-              "16500"
-            ],
-            "type": "string",
-            "description": "Total after tax."
-          }
-        },
-        "description": "Calculated totals for the tax applied to this adjustment."
-      },
-      "AdjustmentUpdatedRequestDataTaxRatesUsedAnyOf1ItemTotals": {
-        "title": "AdjustmentTaxRateUsedTotals",
-        "required": [
-          "subtotal",
-          "tax",
-          "total"
-        ],
-        "type": "object",
-        "properties": {
-          "subtotal": {
-            "examples": [
-              "15000"
-            ],
-            "type": "string",
-            "description": "Total before tax. For tax adjustments, the value is 0."
-          },
-          "tax": {
-            "examples": [
-              "1500"
-            ],
-            "type": "string",
-            "description": "Total tax on the subtotal."
-          },
-          "total": {
-            "examples": [
-              "16500"
-            ],
-            "type": "string",
-            "description": "Total after tax."
-          }
-        },
-        "description": "Calculated totals for the tax applied to this adjustment."
-      },
-      "SubscriptionActivatedRequestDataConsentRequirementsAnyOf1ItemConsentPeriod": {
-        "required": [
-          "starts_at",
-          "ends_at"
-        ],
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "starts_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period starts.",
-            "format": "date-time"
-          },
-          "ends_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period ends.",
-            "format": "date-time"
-          }
-        },
-        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
-      },
-      "SubscriptionCanceledRequestDataConsentRequirementsAnyOf1ItemConsentPeriod": {
-        "required": [
-          "starts_at",
-          "ends_at"
-        ],
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "starts_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period starts.",
-            "format": "date-time"
-          },
-          "ends_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period ends.",
-            "format": "date-time"
-          }
-        },
-        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
-      },
-      "SubscriptionCreatedRequestDataConsentRequirementsAnyOf1ItemConsentPeriod": {
-        "required": [
-          "starts_at",
-          "ends_at"
-        ],
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "starts_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period starts.",
-            "format": "date-time"
-          },
-          "ends_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period ends.",
-            "format": "date-time"
-          }
-        },
-        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
-      },
-      "SubscriptionImportedRequestDataConsentRequirementsAnyOf1ItemConsentPeriod": {
-        "required": [
-          "starts_at",
-          "ends_at"
-        ],
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "starts_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period starts.",
-            "format": "date-time"
-          },
-          "ends_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period ends.",
-            "format": "date-time"
-          }
-        },
-        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
-      },
-      "SubscriptionPastDueRequestDataConsentRequirementsAnyOf1ItemConsentPeriod": {
-        "required": [
-          "starts_at",
-          "ends_at"
-        ],
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "starts_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period starts.",
-            "format": "date-time"
-          },
-          "ends_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period ends.",
-            "format": "date-time"
-          }
-        },
-        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
-      },
-      "SubscriptionPausedRequestDataConsentRequirementsAnyOf1ItemConsentPeriod": {
-        "required": [
-          "starts_at",
-          "ends_at"
-        ],
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "starts_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period starts.",
-            "format": "date-time"
-          },
-          "ends_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period ends.",
-            "format": "date-time"
-          }
-        },
-        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
-      },
-      "SubscriptionResumedRequestDataConsentRequirementsAnyOf1ItemConsentPeriod": {
-        "required": [
-          "starts_at",
-          "ends_at"
-        ],
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "starts_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period starts.",
-            "format": "date-time"
-          },
-          "ends_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period ends.",
-            "format": "date-time"
-          }
-        },
-        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
-      },
-      "SubscriptionTrialingRequestDataConsentRequirementsAnyOf1ItemConsentPeriod": {
-        "required": [
-          "starts_at",
-          "ends_at"
-        ],
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "starts_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period starts.",
-            "format": "date-time"
-          },
-          "ends_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period ends.",
-            "format": "date-time"
-          }
-        },
-        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
-      },
-      "SubscriptionUpdatedRequestDataConsentRequirementsAnyOf1ItemConsentPeriod": {
-        "required": [
-          "starts_at",
-          "ends_at"
-        ],
-        "type": [
-          "null",
-          "object"
-        ],
-        "properties": {
-          "starts_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period starts.",
-            "format": "date-time"
-          },
-          "ends_at": {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string of when this period ends.",
-            "format": "date-time"
-          }
-        },
-        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
-      },
       "AdjustmentCreatedRequestDataItemsItemProration": {
         "required": [
           "rate",
@@ -82381,6 +81611,39 @@
         },
         "description": "Chargeback fees incurred for this adjustment. Only returned when the adjustment \u0060action\u0060 is \u0060chargeback\u0060 or \u0060chargeback_warning\u0060."
       },
+      "AdjustmentCreatedRequestDataTaxRatesUsedItemTotals": {
+        "title": "AdjustmentTaxRateUsedTotals",
+        "required": [
+          "subtotal",
+          "tax",
+          "total"
+        ],
+        "type": "object",
+        "properties": {
+          "subtotal": {
+            "examples": [
+              "15000"
+            ],
+            "type": "string",
+            "description": "Total before tax. For tax adjustments, the value is 0."
+          },
+          "tax": {
+            "examples": [
+              "1500"
+            ],
+            "type": "string",
+            "description": "Total tax on the subtotal."
+          },
+          "total": {
+            "examples": [
+              "16500"
+            ],
+            "type": "string",
+            "description": "Total after tax."
+          }
+        },
+        "description": "Calculated totals for the tax applied to this adjustment."
+      },
       "AdjustmentUpdatedRequestDataItemsItemProration": {
         "required": [
           "rate",
@@ -82454,6 +81717,39 @@
           }
         },
         "description": "Chargeback fees incurred for this adjustment. Only returned when the adjustment \u0060action\u0060 is \u0060chargeback\u0060 or \u0060chargeback_warning\u0060."
+      },
+      "AdjustmentUpdatedRequestDataTaxRatesUsedItemTotals": {
+        "title": "AdjustmentTaxRateUsedTotals",
+        "required": [
+          "subtotal",
+          "tax",
+          "total"
+        ],
+        "type": "object",
+        "properties": {
+          "subtotal": {
+            "examples": [
+              "15000"
+            ],
+            "type": "string",
+            "description": "Total before tax. For tax adjustments, the value is 0."
+          },
+          "tax": {
+            "examples": [
+              "1500"
+            ],
+            "type": "string",
+            "description": "Total tax on the subtotal."
+          },
+          "total": {
+            "examples": [
+              "16500"
+            ],
+            "type": "string",
+            "description": "Total after tax."
+          }
+        },
+        "description": "Calculated totals for the tax applied to this adjustment."
       },
       "PriceCreatedRequestDataTrialPeriodUnitPrice": {
         "required": [
@@ -82878,6 +82174,37 @@
         },
         "description": "Related product entity for this item. This reflects the product entity at the time it was added to the subscription."
       },
+      "SubscriptionActivatedRequestDataConsentRequirementsItemConsentPeriod": {
+        "required": [
+          "starts_at",
+          "ends_at"
+        ],
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "starts_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period starts.",
+            "format": "date-time"
+          },
+          "ends_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period ends.",
+            "format": "date-time"
+          }
+        },
+        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
+      },
       "SubscriptionCanceledRequestDataBillingDetailsPaymentTerms": {
         "title": "Duration",
         "required": [
@@ -83117,6 +82444,37 @@
           }
         },
         "description": "Related product entity for this item. This reflects the product entity at the time it was added to the subscription."
+      },
+      "SubscriptionCanceledRequestDataConsentRequirementsItemConsentPeriod": {
+        "required": [
+          "starts_at",
+          "ends_at"
+        ],
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "starts_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period starts.",
+            "format": "date-time"
+          },
+          "ends_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period ends.",
+            "format": "date-time"
+          }
+        },
+        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
       },
       "SubscriptionCreatedRequestDataBillingDetailsPaymentTerms": {
         "title": "Duration",
@@ -83358,6 +82716,37 @@
         },
         "description": "Related product entity for this item. This reflects the product entity at the time it was added to the subscription."
       },
+      "SubscriptionCreatedRequestDataConsentRequirementsItemConsentPeriod": {
+        "required": [
+          "starts_at",
+          "ends_at"
+        ],
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "starts_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period starts.",
+            "format": "date-time"
+          },
+          "ends_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period ends.",
+            "format": "date-time"
+          }
+        },
+        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
+      },
       "SubscriptionImportedRequestDataBillingDetailsPaymentTerms": {
         "title": "Duration",
         "required": [
@@ -83597,6 +82986,37 @@
           }
         },
         "description": "Related product entity for this item. This reflects the product entity at the time it was added to the subscription."
+      },
+      "SubscriptionImportedRequestDataConsentRequirementsItemConsentPeriod": {
+        "required": [
+          "starts_at",
+          "ends_at"
+        ],
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "starts_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period starts.",
+            "format": "date-time"
+          },
+          "ends_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period ends.",
+            "format": "date-time"
+          }
+        },
+        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
       },
       "SubscriptionPastDueRequestDataBillingDetailsPaymentTerms": {
         "title": "Duration",
@@ -83838,6 +83258,37 @@
         },
         "description": "Related product entity for this item. This reflects the product entity at the time it was added to the subscription."
       },
+      "SubscriptionPastDueRequestDataConsentRequirementsItemConsentPeriod": {
+        "required": [
+          "starts_at",
+          "ends_at"
+        ],
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "starts_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period starts.",
+            "format": "date-time"
+          },
+          "ends_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period ends.",
+            "format": "date-time"
+          }
+        },
+        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
+      },
       "SubscriptionPausedRequestDataBillingDetailsPaymentTerms": {
         "title": "Duration",
         "required": [
@@ -84077,6 +83528,37 @@
           }
         },
         "description": "Related product entity for this item. This reflects the product entity at the time it was added to the subscription."
+      },
+      "SubscriptionPausedRequestDataConsentRequirementsItemConsentPeriod": {
+        "required": [
+          "starts_at",
+          "ends_at"
+        ],
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "starts_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period starts.",
+            "format": "date-time"
+          },
+          "ends_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period ends.",
+            "format": "date-time"
+          }
+        },
+        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
       },
       "SubscriptionResumedRequestDataBillingDetailsPaymentTerms": {
         "title": "Duration",
@@ -84318,6 +83800,37 @@
         },
         "description": "Related product entity for this item. This reflects the product entity at the time it was added to the subscription."
       },
+      "SubscriptionResumedRequestDataConsentRequirementsItemConsentPeriod": {
+        "required": [
+          "starts_at",
+          "ends_at"
+        ],
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "starts_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period starts.",
+            "format": "date-time"
+          },
+          "ends_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period ends.",
+            "format": "date-time"
+          }
+        },
+        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
+      },
       "SubscriptionTrialingRequestDataBillingDetailsPaymentTerms": {
         "title": "Duration",
         "required": [
@@ -84558,6 +84071,37 @@
         },
         "description": "Related product entity for this item. This reflects the product entity at the time it was added to the subscription."
       },
+      "SubscriptionTrialingRequestDataConsentRequirementsItemConsentPeriod": {
+        "required": [
+          "starts_at",
+          "ends_at"
+        ],
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "starts_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period starts.",
+            "format": "date-time"
+          },
+          "ends_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period ends.",
+            "format": "date-time"
+          }
+        },
+        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
+      },
       "SubscriptionUpdatedRequestDataBillingDetailsPaymentTerms": {
         "title": "Duration",
         "required": [
@@ -84797,6 +84341,37 @@
           }
         },
         "description": "Related product entity for this item. This reflects the product entity at the time it was added to the subscription."
+      },
+      "SubscriptionUpdatedRequestDataConsentRequirementsItemConsentPeriod": {
+        "required": [
+          "starts_at",
+          "ends_at"
+        ],
+        "type": [
+          "null",
+          "object"
+        ],
+        "properties": {
+          "starts_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period starts.",
+            "format": "date-time"
+          },
+          "ends_at": {
+            "examples": [
+              "2024-10-12T07:20:50.52Z"
+            ],
+            "title": "Timestamp",
+            "type": "string",
+            "description": "RFC 3339 datetime string of when this period ends.",
+            "format": "date-time"
+          }
+        },
+        "description": "Period during which consent for this subscription can be granted. \u0060null\u0060 if there is no \u0060next_billed_at\u0060 or the consent requirement does not apply to the current billing period."
       },
       "TransactionBilledRequestDataBillingDetailsPaymentTerms": {
         "title": "Duration",
@@ -228563,636 +228138,6 @@
           ]
         }
       },
-      "SubscriptionActivatedRequestDataConsentRequirementsAnyOf1ItemRequirement": {
-        "enum": [
-          "trial_ending",
-          "introductory_discount_ending"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Type of consent required for successful renewal.",
-        "x-enum-descriptions": {
-          "trial_ending": {
-            "description": "Consent required because the trial period is ending."
-          },
-          "introductory_discount_ending": {
-            "description": "Consent required because an initial discount is ending."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionActivatedRequestDataConsentRequirementsAnyOf1ItemRequirement",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "trial_ending",
-              "name": "TrialEnding"
-            },
-            {
-              "value": "introductory_discount_ending",
-              "name": "IntroductoryDiscountEnding"
-            }
-          ]
-        }
-      },
-      "SubscriptionActivatedRequestDataConsentRequirementsAnyOf1ItemStatus": {
-        "enum": [
-          "pending",
-          "granted",
-          "voided"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Status of this consent requirement.",
-        "x-enum-descriptions": {
-          "pending": {
-            "description": "Consent not yet granted. Subscription is canceled on next renewal."
-          },
-          "granted": {
-            "description": "Consent granted. Subscription renews normally."
-          },
-          "voided": {
-            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionActivatedRequestDataConsentRequirementsAnyOf1ItemStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "pending",
-              "name": "Pending"
-            },
-            {
-              "value": "granted",
-              "name": "Granted"
-            },
-            {
-              "value": "voided",
-              "name": "Voided"
-            }
-          ]
-        }
-      },
-      "SubscriptionCanceledRequestDataConsentRequirementsAnyOf1ItemRequirement": {
-        "enum": [
-          "trial_ending",
-          "introductory_discount_ending"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Type of consent required for successful renewal.",
-        "x-enum-descriptions": {
-          "trial_ending": {
-            "description": "Consent required because the trial period is ending."
-          },
-          "introductory_discount_ending": {
-            "description": "Consent required because an initial discount is ending."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionCanceledRequestDataConsentRequirementsAnyOf1ItemRequirement",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "trial_ending",
-              "name": "TrialEnding"
-            },
-            {
-              "value": "introductory_discount_ending",
-              "name": "IntroductoryDiscountEnding"
-            }
-          ]
-        }
-      },
-      "SubscriptionCanceledRequestDataConsentRequirementsAnyOf1ItemStatus": {
-        "enum": [
-          "pending",
-          "granted",
-          "voided"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Status of this consent requirement.",
-        "x-enum-descriptions": {
-          "pending": {
-            "description": "Consent not yet granted. Subscription is canceled on next renewal."
-          },
-          "granted": {
-            "description": "Consent granted. Subscription renews normally."
-          },
-          "voided": {
-            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionCanceledRequestDataConsentRequirementsAnyOf1ItemStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "pending",
-              "name": "Pending"
-            },
-            {
-              "value": "granted",
-              "name": "Granted"
-            },
-            {
-              "value": "voided",
-              "name": "Voided"
-            }
-          ]
-        }
-      },
-      "SubscriptionCreatedRequestDataConsentRequirementsAnyOf1ItemRequirement": {
-        "enum": [
-          "trial_ending",
-          "introductory_discount_ending"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Type of consent required for successful renewal.",
-        "x-enum-descriptions": {
-          "trial_ending": {
-            "description": "Consent required because the trial period is ending."
-          },
-          "introductory_discount_ending": {
-            "description": "Consent required because an initial discount is ending."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionCreatedRequestDataConsentRequirementsAnyOf1ItemRequirement",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "trial_ending",
-              "name": "TrialEnding"
-            },
-            {
-              "value": "introductory_discount_ending",
-              "name": "IntroductoryDiscountEnding"
-            }
-          ]
-        }
-      },
-      "SubscriptionCreatedRequestDataConsentRequirementsAnyOf1ItemStatus": {
-        "enum": [
-          "pending",
-          "granted",
-          "voided"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Status of this consent requirement.",
-        "x-enum-descriptions": {
-          "pending": {
-            "description": "Consent not yet granted. Subscription is canceled on next renewal."
-          },
-          "granted": {
-            "description": "Consent granted. Subscription renews normally."
-          },
-          "voided": {
-            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionCreatedRequestDataConsentRequirementsAnyOf1ItemStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "pending",
-              "name": "Pending"
-            },
-            {
-              "value": "granted",
-              "name": "Granted"
-            },
-            {
-              "value": "voided",
-              "name": "Voided"
-            }
-          ]
-        }
-      },
-      "SubscriptionImportedRequestDataConsentRequirementsAnyOf1ItemRequirement": {
-        "enum": [
-          "trial_ending",
-          "introductory_discount_ending"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Type of consent required for successful renewal.",
-        "x-enum-descriptions": {
-          "trial_ending": {
-            "description": "Consent required because the trial period is ending."
-          },
-          "introductory_discount_ending": {
-            "description": "Consent required because an initial discount is ending."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionImportedRequestDataConsentRequirementsAnyOf1ItemRequirement",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "trial_ending",
-              "name": "TrialEnding"
-            },
-            {
-              "value": "introductory_discount_ending",
-              "name": "IntroductoryDiscountEnding"
-            }
-          ]
-        }
-      },
-      "SubscriptionImportedRequestDataConsentRequirementsAnyOf1ItemStatus": {
-        "enum": [
-          "pending",
-          "granted",
-          "voided"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Status of this consent requirement.",
-        "x-enum-descriptions": {
-          "pending": {
-            "description": "Consent not yet granted. Subscription is canceled on next renewal."
-          },
-          "granted": {
-            "description": "Consent granted. Subscription renews normally."
-          },
-          "voided": {
-            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionImportedRequestDataConsentRequirementsAnyOf1ItemStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "pending",
-              "name": "Pending"
-            },
-            {
-              "value": "granted",
-              "name": "Granted"
-            },
-            {
-              "value": "voided",
-              "name": "Voided"
-            }
-          ]
-        }
-      },
-      "SubscriptionPastDueRequestDataConsentRequirementsAnyOf1ItemRequirement": {
-        "enum": [
-          "trial_ending",
-          "introductory_discount_ending"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Type of consent required for successful renewal.",
-        "x-enum-descriptions": {
-          "trial_ending": {
-            "description": "Consent required because the trial period is ending."
-          },
-          "introductory_discount_ending": {
-            "description": "Consent required because an initial discount is ending."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionPastDueRequestDataConsentRequirementsAnyOf1ItemRequirement",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "trial_ending",
-              "name": "TrialEnding"
-            },
-            {
-              "value": "introductory_discount_ending",
-              "name": "IntroductoryDiscountEnding"
-            }
-          ]
-        }
-      },
-      "SubscriptionPastDueRequestDataConsentRequirementsAnyOf1ItemStatus": {
-        "enum": [
-          "pending",
-          "granted",
-          "voided"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Status of this consent requirement.",
-        "x-enum-descriptions": {
-          "pending": {
-            "description": "Consent not yet granted. Subscription is canceled on next renewal."
-          },
-          "granted": {
-            "description": "Consent granted. Subscription renews normally."
-          },
-          "voided": {
-            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionPastDueRequestDataConsentRequirementsAnyOf1ItemStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "pending",
-              "name": "Pending"
-            },
-            {
-              "value": "granted",
-              "name": "Granted"
-            },
-            {
-              "value": "voided",
-              "name": "Voided"
-            }
-          ]
-        }
-      },
-      "SubscriptionPausedRequestDataConsentRequirementsAnyOf1ItemRequirement": {
-        "enum": [
-          "trial_ending",
-          "introductory_discount_ending"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Type of consent required for successful renewal.",
-        "x-enum-descriptions": {
-          "trial_ending": {
-            "description": "Consent required because the trial period is ending."
-          },
-          "introductory_discount_ending": {
-            "description": "Consent required because an initial discount is ending."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionPausedRequestDataConsentRequirementsAnyOf1ItemRequirement",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "trial_ending",
-              "name": "TrialEnding"
-            },
-            {
-              "value": "introductory_discount_ending",
-              "name": "IntroductoryDiscountEnding"
-            }
-          ]
-        }
-      },
-      "SubscriptionPausedRequestDataConsentRequirementsAnyOf1ItemStatus": {
-        "enum": [
-          "pending",
-          "granted",
-          "voided"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Status of this consent requirement.",
-        "x-enum-descriptions": {
-          "pending": {
-            "description": "Consent not yet granted. Subscription is canceled on next renewal."
-          },
-          "granted": {
-            "description": "Consent granted. Subscription renews normally."
-          },
-          "voided": {
-            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionPausedRequestDataConsentRequirementsAnyOf1ItemStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "pending",
-              "name": "Pending"
-            },
-            {
-              "value": "granted",
-              "name": "Granted"
-            },
-            {
-              "value": "voided",
-              "name": "Voided"
-            }
-          ]
-        }
-      },
-      "SubscriptionResumedRequestDataConsentRequirementsAnyOf1ItemRequirement": {
-        "enum": [
-          "trial_ending",
-          "introductory_discount_ending"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Type of consent required for successful renewal.",
-        "x-enum-descriptions": {
-          "trial_ending": {
-            "description": "Consent required because the trial period is ending."
-          },
-          "introductory_discount_ending": {
-            "description": "Consent required because an initial discount is ending."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionResumedRequestDataConsentRequirementsAnyOf1ItemRequirement",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "trial_ending",
-              "name": "TrialEnding"
-            },
-            {
-              "value": "introductory_discount_ending",
-              "name": "IntroductoryDiscountEnding"
-            }
-          ]
-        }
-      },
-      "SubscriptionResumedRequestDataConsentRequirementsAnyOf1ItemStatus": {
-        "enum": [
-          "pending",
-          "granted",
-          "voided"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Status of this consent requirement.",
-        "x-enum-descriptions": {
-          "pending": {
-            "description": "Consent not yet granted. Subscription is canceled on next renewal."
-          },
-          "granted": {
-            "description": "Consent granted. Subscription renews normally."
-          },
-          "voided": {
-            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionResumedRequestDataConsentRequirementsAnyOf1ItemStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "pending",
-              "name": "Pending"
-            },
-            {
-              "value": "granted",
-              "name": "Granted"
-            },
-            {
-              "value": "voided",
-              "name": "Voided"
-            }
-          ]
-        }
-      },
-      "SubscriptionTrialingRequestDataConsentRequirementsAnyOf1ItemRequirement": {
-        "enum": [
-          "trial_ending",
-          "introductory_discount_ending"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Type of consent required for successful renewal.",
-        "x-enum-descriptions": {
-          "trial_ending": {
-            "description": "Consent required because the trial period is ending."
-          },
-          "introductory_discount_ending": {
-            "description": "Consent required because an initial discount is ending."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionTrialingRequestDataConsentRequirementsAnyOf1ItemRequirement",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "trial_ending",
-              "name": "TrialEnding"
-            },
-            {
-              "value": "introductory_discount_ending",
-              "name": "IntroductoryDiscountEnding"
-            }
-          ]
-        }
-      },
-      "SubscriptionTrialingRequestDataConsentRequirementsAnyOf1ItemStatus": {
-        "enum": [
-          "pending",
-          "granted",
-          "voided"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Status of this consent requirement.",
-        "x-enum-descriptions": {
-          "pending": {
-            "description": "Consent not yet granted. Subscription is canceled on next renewal."
-          },
-          "granted": {
-            "description": "Consent granted. Subscription renews normally."
-          },
-          "voided": {
-            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionTrialingRequestDataConsentRequirementsAnyOf1ItemStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "pending",
-              "name": "Pending"
-            },
-            {
-              "value": "granted",
-              "name": "Granted"
-            },
-            {
-              "value": "voided",
-              "name": "Voided"
-            }
-          ]
-        }
-      },
-      "SubscriptionUpdatedRequestDataConsentRequirementsAnyOf1ItemRequirement": {
-        "enum": [
-          "trial_ending",
-          "introductory_discount_ending"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Type of consent required for successful renewal.",
-        "x-enum-descriptions": {
-          "trial_ending": {
-            "description": "Consent required because the trial period is ending."
-          },
-          "introductory_discount_ending": {
-            "description": "Consent required because an initial discount is ending."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionUpdatedRequestDataConsentRequirementsAnyOf1ItemRequirement",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "trial_ending",
-              "name": "TrialEnding"
-            },
-            {
-              "value": "introductory_discount_ending",
-              "name": "IntroductoryDiscountEnding"
-            }
-          ]
-        }
-      },
-      "SubscriptionUpdatedRequestDataConsentRequirementsAnyOf1ItemStatus": {
-        "enum": [
-          "pending",
-          "granted",
-          "voided"
-        ],
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Status of this consent requirement.",
-        "x-enum-descriptions": {
-          "pending": {
-            "description": "Consent not yet granted. Subscription is canceled on next renewal."
-          },
-          "granted": {
-            "description": "Consent granted. Subscription renews normally."
-          },
-          "voided": {
-            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
-          }
-        },
-        "x-ms-enum": {
-          "name": "SubscriptionUpdatedRequestDataConsentRequirementsAnyOf1ItemStatus",
-          "modelAsString": false,
-          "values": [
-            {
-              "value": "pending",
-              "name": "Pending"
-            },
-            {
-              "value": "granted",
-              "name": "Granted"
-            },
-            {
-              "value": "voided",
-              "name": "Voided"
-            }
-          ]
-        }
-      },
       "AdjustmentCreatedRequestDataItemsItemType": {
         "examples": [
           "full"
@@ -231434,6 +230379,76 @@
           ]
         }
       },
+      "SubscriptionActivatedRequestDataConsentRequirementsItemRequirement": {
+        "enum": [
+          "trial_ending",
+          "introductory_discount_ending"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Type of consent required for successful renewal.",
+        "x-enum-descriptions": {
+          "trial_ending": {
+            "description": "Consent required because the trial period is ending."
+          },
+          "introductory_discount_ending": {
+            "description": "Consent required because an initial discount is ending."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionActivatedRequestDataConsentRequirementsItemRequirement",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "trial_ending",
+              "name": "TrialEnding"
+            },
+            {
+              "value": "introductory_discount_ending",
+              "name": "IntroductoryDiscountEnding"
+            }
+          ]
+        }
+      },
+      "SubscriptionActivatedRequestDataConsentRequirementsItemStatus": {
+        "enum": [
+          "pending",
+          "granted",
+          "voided"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Status of this consent requirement.",
+        "x-enum-descriptions": {
+          "pending": {
+            "description": "Consent not yet granted. Subscription is canceled on next renewal."
+          },
+          "granted": {
+            "description": "Consent granted. Subscription renews normally."
+          },
+          "voided": {
+            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionActivatedRequestDataConsentRequirementsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "granted",
+              "name": "Granted"
+            },
+            {
+              "value": "voided",
+              "name": "Voided"
+            }
+          ]
+        }
+      },
       "SubscriptionCanceledRequestDataDiscountType": {
         "title": "SubscriptionDiscountType",
         "enum": [
@@ -231575,6 +230590,76 @@
             {
               "value": "trialing",
               "name": "Trialing"
+            }
+          ]
+        }
+      },
+      "SubscriptionCanceledRequestDataConsentRequirementsItemRequirement": {
+        "enum": [
+          "trial_ending",
+          "introductory_discount_ending"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Type of consent required for successful renewal.",
+        "x-enum-descriptions": {
+          "trial_ending": {
+            "description": "Consent required because the trial period is ending."
+          },
+          "introductory_discount_ending": {
+            "description": "Consent required because an initial discount is ending."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionCanceledRequestDataConsentRequirementsItemRequirement",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "trial_ending",
+              "name": "TrialEnding"
+            },
+            {
+              "value": "introductory_discount_ending",
+              "name": "IntroductoryDiscountEnding"
+            }
+          ]
+        }
+      },
+      "SubscriptionCanceledRequestDataConsentRequirementsItemStatus": {
+        "enum": [
+          "pending",
+          "granted",
+          "voided"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Status of this consent requirement.",
+        "x-enum-descriptions": {
+          "pending": {
+            "description": "Consent not yet granted. Subscription is canceled on next renewal."
+          },
+          "granted": {
+            "description": "Consent granted. Subscription renews normally."
+          },
+          "voided": {
+            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionCanceledRequestDataConsentRequirementsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "granted",
+              "name": "Granted"
+            },
+            {
+              "value": "voided",
+              "name": "Voided"
             }
           ]
         }
@@ -231724,6 +230809,76 @@
           ]
         }
       },
+      "SubscriptionCreatedRequestDataConsentRequirementsItemRequirement": {
+        "enum": [
+          "trial_ending",
+          "introductory_discount_ending"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Type of consent required for successful renewal.",
+        "x-enum-descriptions": {
+          "trial_ending": {
+            "description": "Consent required because the trial period is ending."
+          },
+          "introductory_discount_ending": {
+            "description": "Consent required because an initial discount is ending."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionCreatedRequestDataConsentRequirementsItemRequirement",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "trial_ending",
+              "name": "TrialEnding"
+            },
+            {
+              "value": "introductory_discount_ending",
+              "name": "IntroductoryDiscountEnding"
+            }
+          ]
+        }
+      },
+      "SubscriptionCreatedRequestDataConsentRequirementsItemStatus": {
+        "enum": [
+          "pending",
+          "granted",
+          "voided"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Status of this consent requirement.",
+        "x-enum-descriptions": {
+          "pending": {
+            "description": "Consent not yet granted. Subscription is canceled on next renewal."
+          },
+          "granted": {
+            "description": "Consent granted. Subscription renews normally."
+          },
+          "voided": {
+            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionCreatedRequestDataConsentRequirementsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "granted",
+              "name": "Granted"
+            },
+            {
+              "value": "voided",
+              "name": "Voided"
+            }
+          ]
+        }
+      },
       "SubscriptionImportedRequestDataDiscountType": {
         "title": "SubscriptionDiscountType",
         "enum": [
@@ -231865,6 +231020,76 @@
             {
               "value": "trialing",
               "name": "Trialing"
+            }
+          ]
+        }
+      },
+      "SubscriptionImportedRequestDataConsentRequirementsItemRequirement": {
+        "enum": [
+          "trial_ending",
+          "introductory_discount_ending"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Type of consent required for successful renewal.",
+        "x-enum-descriptions": {
+          "trial_ending": {
+            "description": "Consent required because the trial period is ending."
+          },
+          "introductory_discount_ending": {
+            "description": "Consent required because an initial discount is ending."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionImportedRequestDataConsentRequirementsItemRequirement",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "trial_ending",
+              "name": "TrialEnding"
+            },
+            {
+              "value": "introductory_discount_ending",
+              "name": "IntroductoryDiscountEnding"
+            }
+          ]
+        }
+      },
+      "SubscriptionImportedRequestDataConsentRequirementsItemStatus": {
+        "enum": [
+          "pending",
+          "granted",
+          "voided"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Status of this consent requirement.",
+        "x-enum-descriptions": {
+          "pending": {
+            "description": "Consent not yet granted. Subscription is canceled on next renewal."
+          },
+          "granted": {
+            "description": "Consent granted. Subscription renews normally."
+          },
+          "voided": {
+            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionImportedRequestDataConsentRequirementsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "granted",
+              "name": "Granted"
+            },
+            {
+              "value": "voided",
+              "name": "Voided"
             }
           ]
         }
@@ -232014,6 +231239,76 @@
           ]
         }
       },
+      "SubscriptionPastDueRequestDataConsentRequirementsItemRequirement": {
+        "enum": [
+          "trial_ending",
+          "introductory_discount_ending"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Type of consent required for successful renewal.",
+        "x-enum-descriptions": {
+          "trial_ending": {
+            "description": "Consent required because the trial period is ending."
+          },
+          "introductory_discount_ending": {
+            "description": "Consent required because an initial discount is ending."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionPastDueRequestDataConsentRequirementsItemRequirement",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "trial_ending",
+              "name": "TrialEnding"
+            },
+            {
+              "value": "introductory_discount_ending",
+              "name": "IntroductoryDiscountEnding"
+            }
+          ]
+        }
+      },
+      "SubscriptionPastDueRequestDataConsentRequirementsItemStatus": {
+        "enum": [
+          "pending",
+          "granted",
+          "voided"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Status of this consent requirement.",
+        "x-enum-descriptions": {
+          "pending": {
+            "description": "Consent not yet granted. Subscription is canceled on next renewal."
+          },
+          "granted": {
+            "description": "Consent granted. Subscription renews normally."
+          },
+          "voided": {
+            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionPastDueRequestDataConsentRequirementsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "granted",
+              "name": "Granted"
+            },
+            {
+              "value": "voided",
+              "name": "Voided"
+            }
+          ]
+        }
+      },
       "SubscriptionPausedRequestDataDiscountType": {
         "title": "SubscriptionDiscountType",
         "enum": [
@@ -232155,6 +231450,76 @@
             {
               "value": "trialing",
               "name": "Trialing"
+            }
+          ]
+        }
+      },
+      "SubscriptionPausedRequestDataConsentRequirementsItemRequirement": {
+        "enum": [
+          "trial_ending",
+          "introductory_discount_ending"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Type of consent required for successful renewal.",
+        "x-enum-descriptions": {
+          "trial_ending": {
+            "description": "Consent required because the trial period is ending."
+          },
+          "introductory_discount_ending": {
+            "description": "Consent required because an initial discount is ending."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionPausedRequestDataConsentRequirementsItemRequirement",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "trial_ending",
+              "name": "TrialEnding"
+            },
+            {
+              "value": "introductory_discount_ending",
+              "name": "IntroductoryDiscountEnding"
+            }
+          ]
+        }
+      },
+      "SubscriptionPausedRequestDataConsentRequirementsItemStatus": {
+        "enum": [
+          "pending",
+          "granted",
+          "voided"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Status of this consent requirement.",
+        "x-enum-descriptions": {
+          "pending": {
+            "description": "Consent not yet granted. Subscription is canceled on next renewal."
+          },
+          "granted": {
+            "description": "Consent granted. Subscription renews normally."
+          },
+          "voided": {
+            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionPausedRequestDataConsentRequirementsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "granted",
+              "name": "Granted"
+            },
+            {
+              "value": "voided",
+              "name": "Voided"
             }
           ]
         }
@@ -232304,6 +231669,76 @@
           ]
         }
       },
+      "SubscriptionResumedRequestDataConsentRequirementsItemRequirement": {
+        "enum": [
+          "trial_ending",
+          "introductory_discount_ending"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Type of consent required for successful renewal.",
+        "x-enum-descriptions": {
+          "trial_ending": {
+            "description": "Consent required because the trial period is ending."
+          },
+          "introductory_discount_ending": {
+            "description": "Consent required because an initial discount is ending."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionResumedRequestDataConsentRequirementsItemRequirement",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "trial_ending",
+              "name": "TrialEnding"
+            },
+            {
+              "value": "introductory_discount_ending",
+              "name": "IntroductoryDiscountEnding"
+            }
+          ]
+        }
+      },
+      "SubscriptionResumedRequestDataConsentRequirementsItemStatus": {
+        "enum": [
+          "pending",
+          "granted",
+          "voided"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Status of this consent requirement.",
+        "x-enum-descriptions": {
+          "pending": {
+            "description": "Consent not yet granted. Subscription is canceled on next renewal."
+          },
+          "granted": {
+            "description": "Consent granted. Subscription renews normally."
+          },
+          "voided": {
+            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionResumedRequestDataConsentRequirementsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "granted",
+              "name": "Granted"
+            },
+            {
+              "value": "voided",
+              "name": "Voided"
+            }
+          ]
+        }
+      },
       "SubscriptionTrialingRequestDataDiscountType": {
         "title": "SubscriptionDiscountType",
         "enum": [
@@ -232449,6 +231884,76 @@
           ]
         }
       },
+      "SubscriptionTrialingRequestDataConsentRequirementsItemRequirement": {
+        "enum": [
+          "trial_ending",
+          "introductory_discount_ending"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Type of consent required for successful renewal.",
+        "x-enum-descriptions": {
+          "trial_ending": {
+            "description": "Consent required because the trial period is ending."
+          },
+          "introductory_discount_ending": {
+            "description": "Consent required because an initial discount is ending."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionTrialingRequestDataConsentRequirementsItemRequirement",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "trial_ending",
+              "name": "TrialEnding"
+            },
+            {
+              "value": "introductory_discount_ending",
+              "name": "IntroductoryDiscountEnding"
+            }
+          ]
+        }
+      },
+      "SubscriptionTrialingRequestDataConsentRequirementsItemStatus": {
+        "enum": [
+          "pending",
+          "granted",
+          "voided"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Status of this consent requirement.",
+        "x-enum-descriptions": {
+          "pending": {
+            "description": "Consent not yet granted. Subscription is canceled on next renewal."
+          },
+          "granted": {
+            "description": "Consent granted. Subscription renews normally."
+          },
+          "voided": {
+            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionTrialingRequestDataConsentRequirementsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "granted",
+              "name": "Granted"
+            },
+            {
+              "value": "voided",
+              "name": "Voided"
+            }
+          ]
+        }
+      },
       "SubscriptionUpdatedRequestDataDiscountType": {
         "title": "SubscriptionDiscountType",
         "enum": [
@@ -232590,6 +232095,76 @@
             {
               "value": "trialing",
               "name": "Trialing"
+            }
+          ]
+        }
+      },
+      "SubscriptionUpdatedRequestDataConsentRequirementsItemRequirement": {
+        "enum": [
+          "trial_ending",
+          "introductory_discount_ending"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Type of consent required for successful renewal.",
+        "x-enum-descriptions": {
+          "trial_ending": {
+            "description": "Consent required because the trial period is ending."
+          },
+          "introductory_discount_ending": {
+            "description": "Consent required because an initial discount is ending."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionUpdatedRequestDataConsentRequirementsItemRequirement",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "trial_ending",
+              "name": "TrialEnding"
+            },
+            {
+              "value": "introductory_discount_ending",
+              "name": "IntroductoryDiscountEnding"
+            }
+          ]
+        }
+      },
+      "SubscriptionUpdatedRequestDataConsentRequirementsItemStatus": {
+        "enum": [
+          "pending",
+          "granted",
+          "voided"
+        ],
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Status of this consent requirement.",
+        "x-enum-descriptions": {
+          "pending": {
+            "description": "Consent not yet granted. Subscription is canceled on next renewal."
+          },
+          "granted": {
+            "description": "Consent granted. Subscription renews normally."
+          },
+          "voided": {
+            "description": "Consent voided. Consent requirement is no longer applicable, either because the consent is no longer required, or another consent requirement has replaced it."
+          }
+        },
+        "x-ms-enum": {
+          "name": "SubscriptionUpdatedRequestDataConsentRequirementsItemStatus",
+          "modelAsString": false,
+          "values": [
+            {
+              "value": "pending",
+              "name": "Pending"
+            },
+            {
+              "value": "granted",
+              "name": "Granted"
+            },
+            {
+              "value": "voided",
+              "name": "Voided"
             }
           ]
         }

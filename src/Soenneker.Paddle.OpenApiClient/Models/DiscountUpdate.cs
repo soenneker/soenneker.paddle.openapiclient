@@ -98,10 +98,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. `null` if this discount applies to all products and prices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdateRestrictTo? RestrictTo { get; set; }
+        public List<string>? RestrictTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdateRestrictTo RestrictTo { get; set; }
+        public List<string> RestrictTo { get; set; }
 #endif
         /// <summary>Whether this entity can be used in Paddle.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.DiscountStatus? Status { get; set; }
@@ -159,7 +159,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "maximum_recurring_intervals", n => { MaximumRecurringIntervals = n.GetIntValue(); } },
                 { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdateMode>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdateMode.CreateFromDiscriminatorValue); } },
                 { "recur", n => { Recur = n.GetBoolValue(); } },
-                { "restrict_to", n => { RestrictTo = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdateRestrictTo>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdateRestrictTo.CreateFromDiscriminatorValue); } },
+                { "restrict_to", n => { RestrictTo = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountStatus>(); } },
                 { "times_used", n => { TimesUsed = n.GetIntValue(); } },
                 { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdateType>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdateType.CreateFromDiscriminatorValue); } },
@@ -188,7 +188,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteIntValue("maximum_recurring_intervals", MaximumRecurringIntervals);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdateMode>("mode", Mode);
             writer.WriteBoolValue("recur", Recur);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdateRestrictTo>("restrict_to", RestrictTo);
+            writer.WriteCollectionOfPrimitiveValues<string>("restrict_to", RestrictTo);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountUpdateType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

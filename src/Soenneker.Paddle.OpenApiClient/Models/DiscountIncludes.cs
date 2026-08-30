@@ -41,7 +41,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper8 CurrencyCode { get; set; }
 #endif
-        /// <summary>The custom_data property</summary>
+        /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesCustomData? CustomData { get; set; }
@@ -108,10 +108,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. `null` if this discount applies to all products and prices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesRestrictTo? RestrictTo { get; set; }
+        public List<string>? RestrictTo { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesRestrictTo RestrictTo { get; set; }
+        public List<string> RestrictTo { get; set; }
 #endif
         /// <summary>The status property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -171,7 +171,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "maximum_recurring_intervals", n => { MaximumRecurringIntervals = n.GetIntValue(); } },
                 { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesMode>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesMode.CreateFromDiscriminatorValue); } },
                 { "recur", n => { Recur = n.GetBoolValue(); } },
-                { "restrict_to", n => { RestrictTo = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesRestrictTo>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesRestrictTo.CreateFromDiscriminatorValue); } },
+                { "restrict_to", n => { RestrictTo = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesStatus>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesStatus.CreateFromDiscriminatorValue); } },
                 { "times_used", n => { TimesUsed = n.GetIntValue(); } },
                 { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountType>(); } },
@@ -201,7 +201,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteIntValue("maximum_recurring_intervals", MaximumRecurringIntervals);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesMode>("mode", Mode);
             writer.WriteBoolValue("recur", Recur);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesRestrictTo>("restrict_to", RestrictTo);
+            writer.WriteCollectionOfPrimitiveValues<string>("restrict_to", RestrictTo);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountIncludesStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

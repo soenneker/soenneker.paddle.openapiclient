@@ -7,13 +7,24 @@ using System.IO;
 using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
+    /// <summary>
+    /// Represents a change to an item on the subscription at the time of a history entry.
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
     public partial class SubscriptionHistoryDetailItem : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
+        /// <summary>Price on the subscription.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItemPrice? Price { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItemPrice Price { get; set; }
+#endif
+        /// <summary>Quantity of the item on the subscription at the time of the history entry.</summary>
+        public int? Quantity { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem"/> and sets the default values.
         /// </summary>
@@ -39,6 +50,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "price", n => { Price = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItemPrice>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItemPrice.CreateFromDiscriminatorValue); } },
+                { "quantity", n => { Quantity = n.GetIntValue(); } },
             };
         }
         /// <summary>
@@ -48,6 +61,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItemPrice>("price", Price);
+            writer.WriteIntValue("quantity", Quantity);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
