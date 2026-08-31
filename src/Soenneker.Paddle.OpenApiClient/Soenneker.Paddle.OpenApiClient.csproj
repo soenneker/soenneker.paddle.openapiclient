@@ -7,7 +7,7 @@
     </PropertyGroup>
 
     <PropertyGroup>
-        <Description>A .NET client generated from the Paddle OpenAPI schema, updated daily</Description>
+        <Description>Typed request builders and models for working with Paddle billing data from .NET.</Description>
         <Version Condition="'$(BUILD_VERSION)' == ''">4.0.0</Version>
         <Version Condition="'$(BUILD_VERSION)' != ''">$(BUILD_VERSION)</Version>
         <AssemblyName>Soenneker.Paddle.OpenApiClient</AssemblyName>
