@@ -40738,6 +40738,9 @@
         "description": "Details specific to \u0060subscription_scheduled_change_updated\u0060 actions."
       },
       "SubscriptionHistoryDetail": {
+        "required": [
+          "action"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -40868,6 +40871,9 @@
           },
           "on_resume": {
             "$ref": "#/components/schemas/SubscriptionHistoryDetailSubscriptionResumedOnResume"
+          },
+          "action": {
+            "type": "string"
           }
         },
         "discriminator": {
