@@ -65,12 +65,16 @@
             "$ref": "#/components/parameters/ListAddressesQueryParams.search"
           },
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
-          },
-          {
             "description": "Set to \u0060true\u0060 to skip the count query on list operations. When set, \u0060meta.pagination.estimated_total\u0060 returns \u0060-1\u0060 instead of an exact count.",
             "$ref": "#/components/parameters/SkipCountHeader"
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -188,8 +192,12 @@
         "operationId": "CreateAddress",
         "parameters": [
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -287,12 +295,20 @@
         "operationId": "GetAddress",
         "parameters": [
           {
-            "description": "Paddle ID of the address entity to work with.",
-            "$ref": "#/components/parameters/AddressIdPathParam"
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
+            "name": "addressId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -365,12 +381,20 @@
         "operationId": "UpdateAddress",
         "parameters": [
           {
-            "description": "Paddle ID of the address entity to work with.",
-            "$ref": "#/components/parameters/AddressIdPathParam"
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
+            "name": "addressId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -1020,12 +1044,16 @@
         "operationId": "GetAdjustmentCreditNote",
         "parameters": [
           {
-            "description": "Paddle ID of the adjustment entity to work with.",
-            "$ref": "#/components/parameters/AdjustmentIdPathParam"
-          },
-          {
             "description": "Determine whether the generated URL should download the PDF as an attachment saved locally, or open it inline in the browser.\n\nDefault: \u0060attachment\u0060.",
             "$ref": "#/components/parameters/GetCreditNoteParams"
+          },
+          {
+            "name": "adjustmentId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1111,12 +1139,16 @@
             "$ref": "#/components/parameters/ListBusinessesQueryParams.search"
           },
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
-          },
-          {
             "description": "Set to \u0060true\u0060 to skip the count query on list operations. When set, \u0060meta.pagination.estimated_total\u0060 returns \u0060-1\u0060 instead of an exact count.",
             "$ref": "#/components/parameters/SkipCountHeader"
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1227,8 +1259,12 @@
         "operationId": "CreateBusiness",
         "parameters": [
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -1331,12 +1367,20 @@
         "operationId": "GetBusiness",
         "parameters": [
           {
-            "description": "Paddle ID of the business entity to work with.",
-            "$ref": "#/components/parameters/BusinessIdPathParam"
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
+            "name": "businessId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1421,12 +1465,20 @@
         "operationId": "UpdateBusiness",
         "parameters": [
           {
-            "description": "Paddle ID of the business entity to work with.",
-            "$ref": "#/components/parameters/BusinessIdPathParam"
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
+            "name": "businessId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -1663,8 +1715,12 @@
         "operationId": "GetCheckoutDomain",
         "parameters": [
           {
-            "description": "Paddle ID of the checkout domain entity to work with.",
-            "$ref": "#/components/parameters/DomainIdPathParam"
+            "name": "domainId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1733,8 +1789,12 @@
         "operationId": "DeleteCheckoutDomain",
         "parameters": [
           {
-            "description": "Paddle ID of the checkout domain entity to work with.",
-            "$ref": "#/components/parameters/DomainIdPathParam"
+            "name": "domainId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1776,8 +1836,12 @@
         "operationId": "VerifyCheckoutDomainPaymentMethod",
         "parameters": [
           {
-            "description": "Paddle ID of the checkout domain entity to work with.",
-            "$ref": "#/components/parameters/DomainIdPathParam"
+            "name": "domainId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -2051,8 +2115,12 @@
         "operationId": "GetClientToken",
         "parameters": [
           {
-            "description": "Paddle ID of the client-side token entity.",
-            "$ref": "#/components/parameters/ClientTokenIdPathParam"
+            "name": "clientTokenId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2119,8 +2187,12 @@
         "operationId": "UpdateClientToken",
         "parameters": [
           {
-            "description": "Paddle ID of the client-side token entity.",
-            "$ref": "#/components/parameters/ClientTokenIdPathParam"
+            "name": "clientTokenId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -2434,8 +2506,12 @@
         "operationId": "GetCustomer",
         "parameters": [
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2504,8 +2580,12 @@
         "operationId": "UpdateCustomer",
         "parameters": [
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -2594,12 +2674,16 @@
         "operationId": "ListCreditBalances",
         "parameters": [
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
-          },
-          {
             "description": "Return entities that match the currency code. Use a comma-separated list to specify multiple currency codes.",
             "$ref": "#/components/parameters/ListCreditBalancesQueryParams"
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2669,8 +2753,12 @@
         "operationId": "GenerateCustomerAuthenticationToken",
         "parameters": [
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2733,8 +2821,12 @@
         "operationId": "CreateCustomerPortalSession",
         "parameters": [
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -3008,8 +3100,12 @@
         "operationId": "GetDiscountGroup",
         "parameters": [
           {
-            "description": "Paddle ID of the discount group entity to work with.",
-            "$ref": "#/components/parameters/DiscountGroupIdPathParam"
+            "name": "discountGroupId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3074,8 +3170,12 @@
         "operationId": "UpdateDiscountGroup",
         "parameters": [
           {
-            "description": "Paddle ID of the discount group entity to work with.",
-            "$ref": "#/components/parameters/DiscountGroupIdPathParam"
+            "name": "discountGroupId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -3460,8 +3560,12 @@
             "$ref": "#/components/parameters/DiscountIncludeQuery"
           },
           {
-            "description": "Paddle ID of the discount entity to work with.",
-            "$ref": "#/components/parameters/DiscountIdPathParam"
+            "name": "discountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3543,8 +3647,12 @@
         "operationId": "UpdateDiscount",
         "parameters": [
           {
-            "description": "Paddle ID of the discount entity to work with.",
-            "$ref": "#/components/parameters/DiscountIdPathParam"
+            "name": "discountId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -7718,8 +7826,12 @@
         "operationId": "GetNotificationSetting",
         "parameters": [
           {
-            "description": "Paddle ID of the notification setting entity (notification destination) to work with.",
-            "$ref": "#/components/parameters/NotificationSettingIdPathParam"
+            "name": "notificationSettingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -7909,8 +8021,12 @@
         "operationId": "UpdateNotificationSetting",
         "parameters": [
           {
-            "description": "Paddle ID of the notification setting entity (notification destination) to work with.",
-            "$ref": "#/components/parameters/NotificationSettingIdPathParam"
+            "name": "notificationSettingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -8119,8 +8235,12 @@
         "operationId": "DeleteNotificationSetting",
         "parameters": [
           {
-            "description": "Paddle ID of the notification setting entity (notification destination) to work with.",
-            "$ref": "#/components/parameters/NotificationSettingIdPathParam"
+            "name": "notificationSettingId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -8815,8 +8935,12 @@
         "operationId": "GetNotification",
         "parameters": [
           {
-            "description": "Paddle ID of the notification entity to work with.",
-            "$ref": "#/components/parameters/NotificationIdPathParam"
+            "name": "notificationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -8918,12 +9042,16 @@
             "$ref": "#/components/parameters/PaginationParams.per_page"
           },
           {
-            "description": "Paddle ID of the notification entity to work with.",
-            "$ref": "#/components/parameters/NotificationIdPathParam"
-          },
-          {
             "description": "Set to \u0060true\u0060 to skip the count query on list operations. When set, \u0060meta.pagination.estimated_total\u0060 returns \u0060-1\u0060 instead of an exact count.",
             "$ref": "#/components/parameters/SkipCountHeader"
+          },
+          {
+            "name": "notificationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -9060,8 +9188,12 @@
         "operationId": "ReplayNotification",
         "parameters": [
           {
-            "description": "Paddle ID of the notification entity to work with.",
-            "$ref": "#/components/parameters/NotificationIdPathParam"
+            "name": "notificationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -9123,10 +9255,6 @@
         "operationId": "ListCustomerPaymentMethods",
         "parameters": [
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
-          },
-          {
             "description": "Return entities after the specified Paddle ID when working with paginated endpoints. Used in the \u0060meta.pagination.next\u0060 URL in responses for list operations.",
             "$ref": "#/components/parameters/PaginationParams.after"
           },
@@ -9149,6 +9277,14 @@
           {
             "description": "Set to \u0060true\u0060 to skip the count query on list operations. When set, \u0060meta.pagination.estimated_total\u0060 returns \u0060-1\u0060 instead of an exact count.",
             "$ref": "#/components/parameters/SkipCountHeader"
+          },
+          {
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -9234,12 +9370,20 @@
         "operationId": "GetCustomerPaymentMethod",
         "parameters": [
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "description": "Paddle ID of the payment method entity to work with.",
-            "$ref": "#/components/parameters/PaymentMethodIdPathParam"
+            "name": "paymentMethodId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -9315,12 +9459,20 @@
         "operationId": "DeleteCustomerPaymentMethod",
         "parameters": [
           {
-            "description": "Paddle ID of the customer entity to work with.",
-            "$ref": "#/components/parameters/CustomerIdPathParam"
+            "name": "customerId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "description": "Paddle ID of the payment method entity to work with.",
-            "$ref": "#/components/parameters/PaymentMethodIdPathParam"
+            "name": "paymentMethodId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -9957,8 +10109,12 @@
             "$ref": "#/components/parameters/PriceIncludeQuery"
           },
           {
-            "description": "Paddle ID of the price entity to work with.",
-            "$ref": "#/components/parameters/PriceIdPathParam"
+            "name": "priceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -10042,8 +10198,12 @@
         "operationId": "UpdatePrice",
         "parameters": [
           {
-            "description": "Paddle ID of the price entity to work with.",
-            "$ref": "#/components/parameters/PriceIdPathParam"
+            "name": "priceId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -10849,8 +11009,12 @@
             "$ref": "#/components/parameters/ProductIncludeQuery"
           },
           {
-            "description": "Paddle ID of the product entity to work with.",
-            "$ref": "#/components/parameters/ProductIdPathParam"
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -10934,8 +11098,12 @@
         "operationId": "UpdateProduct",
         "parameters": [
           {
-            "description": "Paddle ID of the product entity to work with.",
-            "$ref": "#/components/parameters/ProductIdPathParam"
+            "name": "productId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -11366,8 +11534,12 @@
         "operationId": "GetReport",
         "parameters": [
           {
-            "description": "Paddle ID of the report entity.",
-            "$ref": "#/components/parameters/ReportIdPathParam"
+            "name": "reportId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -11454,8 +11626,12 @@
         "operationId": "GetReportCsv",
         "parameters": [
           {
-            "description": "Paddle ID of the report entity.",
-            "$ref": "#/components/parameters/ReportIdPathParam"
+            "name": "reportId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -12506,8 +12682,12 @@
         "operationId": "GetSimulation",
         "parameters": [
           {
-            "description": "Paddle ID of the simulation entity to work with.",
-            "$ref": "#/components/parameters/SimulationIdPathParam"
+            "name": "simulationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -12597,8 +12777,12 @@
         "operationId": "UpdateSimulation",
         "parameters": [
           {
-            "description": "Paddle ID of the simulation entity to work with.",
-            "$ref": "#/components/parameters/SimulationIdPathParam"
+            "name": "simulationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -12773,10 +12957,6 @@
         "operationId": "ListSimulationRuns",
         "parameters": [
           {
-            "description": "Paddle ID of the simulation entity to work with.",
-            "$ref": "#/components/parameters/SimulationIdPathParam"
-          },
-          {
             "description": "Return only the IDs specified. Use a comma-separated list to get multiple entities.",
             "$ref": "#/components/parameters/FilterIdParam"
           },
@@ -12799,6 +12979,14 @@
           {
             "description": "Set to \u0060true\u0060 to skip the count query on list operations. When set, \u0060meta.pagination.estimated_total\u0060 returns \u0060-1\u0060 instead of an exact count.",
             "$ref": "#/components/parameters/SkipCountHeader"
+          },
+          {
+            "name": "simulationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -12877,8 +13065,12 @@
         "operationId": "CreateSimulationRun",
         "parameters": [
           {
-            "description": "Paddle ID of the simulation entity to work with.",
-            "$ref": "#/components/parameters/SimulationIdPathParam"
+            "name": "simulationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -12944,16 +13136,24 @@
         "operationId": "GetSimulationRun",
         "parameters": [
           {
-            "description": "Paddle ID of the simulation entity to work with.",
-            "$ref": "#/components/parameters/SimulationIdPathParam"
-          },
-          {
-            "description": "Paddle ID of the simulation run entity to work with.",
-            "$ref": "#/components/parameters/SimulationRunIdPathParam"
-          },
-          {
             "description": "Include related entities in the response.",
             "$ref": "#/components/parameters/SimulationsRunIncludeQuery"
+          },
+          {
+            "name": "simulationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "simulationRunId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -13019,14 +13219,6 @@
         "operationId": "ListSimulationsEvents",
         "parameters": [
           {
-            "description": "Paddle ID of the simulation entity to work with.",
-            "$ref": "#/components/parameters/SimulationIdPathParam"
-          },
-          {
-            "description": "Paddle ID of the simulation run entity to work with.",
-            "$ref": "#/components/parameters/SimulationRunIdPathParam"
-          },
-          {
             "description": "Return only the IDs specified. Use a comma-separated list to get multiple entities.",
             "$ref": "#/components/parameters/FilterIdParam"
           },
@@ -13045,6 +13237,22 @@
           {
             "description": "Set to \u0060true\u0060 to skip the count query on list operations. When set, \u0060meta.pagination.estimated_total\u0060 returns \u0060-1\u0060 instead of an exact count.",
             "$ref": "#/components/parameters/SkipCountHeader"
+          },
+          {
+            "name": "simulationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "simulationRunId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -13168,16 +13376,28 @@
         "operationId": "GetSimulationEvent",
         "parameters": [
           {
-            "description": "Paddle ID of the simulation entity to work with.",
-            "$ref": "#/components/parameters/SimulationIdPathParam"
+            "name": "simulationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "description": "Paddle ID of the simulation run entity to work with.",
-            "$ref": "#/components/parameters/SimulationRunIdPathParam"
+            "name": "simulationRunId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "description": "Paddle ID of the simulation event entity to work with.",
-            "$ref": "#/components/parameters/SimulationEventIdPathParam"
+            "name": "simulationEventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -13293,16 +13513,28 @@
         "operationId": "ReplaySimulationRunEvent",
         "parameters": [
           {
-            "description": "Paddle ID of the simulation entity to work with.",
-            "$ref": "#/components/parameters/SimulationIdPathParam"
+            "name": "simulationId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "description": "Paddle ID of the simulation run entity to work with.",
-            "$ref": "#/components/parameters/SimulationRunIdPathParam"
+            "name": "simulationRunId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           },
           {
-            "description": "Paddle ID of the simulation event entity to work with.",
-            "$ref": "#/components/parameters/SimulationEventIdPathParam"
+            "name": "simulationEventId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -14465,8 +14697,12 @@
             "$ref": "#/components/parameters/SubscriptionIncludeQuery"
           },
           {
-            "description": "Paddle ID of the subscription entity to work with.",
-            "$ref": "#/components/parameters/SubscriptionIdPathParam"
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -14673,8 +14909,12 @@
         "operationId": "UpdateSubscription",
         "parameters": [
           {
-            "description": "Paddle ID of the subscription entity to work with.",
-            "$ref": "#/components/parameters/SubscriptionIdPathParam"
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -14965,8 +15205,12 @@
         "operationId": "CancelSubscription",
         "parameters": [
           {
-            "description": "Paddle ID of the subscription entity to work with.",
-            "$ref": "#/components/parameters/SubscriptionIdPathParam"
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -15240,8 +15484,12 @@
         "operationId": "PauseSubscription",
         "parameters": [
           {
-            "description": "Paddle ID of the subscription entity to work with.",
-            "$ref": "#/components/parameters/SubscriptionIdPathParam"
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -15523,8 +15771,12 @@
         "operationId": "ResumeSubscription",
         "parameters": [
           {
-            "description": "Paddle ID of the subscription entity to work with.",
-            "$ref": "#/components/parameters/SubscriptionIdPathParam"
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -15751,8 +16003,12 @@
         "operationId": "ActivateSubscription",
         "parameters": [
           {
-            "description": "Paddle ID of the subscription entity to work with.",
-            "$ref": "#/components/parameters/SubscriptionIdPathParam"
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -15939,8 +16195,12 @@
         "operationId": "GetSubscriptionUpdatePaymentMethodTransaction",
         "parameters": [
           {
-            "description": "Paddle ID of the subscription entity to work with.",
-            "$ref": "#/components/parameters/SubscriptionIdPathParam"
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -16195,8 +16455,12 @@
         "operationId": "PreviewSubscriptionUpdate",
         "parameters": [
           {
-            "description": "Paddle ID of the subscription entity to work with.",
-            "$ref": "#/components/parameters/SubscriptionIdPathParam"
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -16991,8 +17255,12 @@
         "operationId": "CreateSubscriptionCharge",
         "parameters": [
           {
-            "description": "Paddle ID of the subscription entity to work with.",
-            "$ref": "#/components/parameters/SubscriptionIdPathParam"
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -17275,8 +17543,12 @@
         "operationId": "PreviewSubscriptionCharge",
         "parameters": [
           {
-            "description": "Paddle ID of the subscription entity to work with.",
-            "$ref": "#/components/parameters/SubscriptionIdPathParam"
+            "name": "subscriptionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -20045,8 +20317,12 @@
             "$ref": "#/components/parameters/BaseTransactionParams"
           },
           {
-            "description": "Paddle ID of the transaction entity to work with.",
-            "$ref": "#/components/parameters/TransactionIdPathParam"
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -20454,8 +20730,12 @@
             "$ref": "#/components/parameters/BaseTransactionParams"
           },
           {
-            "description": "Paddle ID of the transaction entity to work with.",
-            "$ref": "#/components/parameters/TransactionIdPathParam"
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -21164,8 +21444,12 @@
         "operationId": "ReviseTransaction",
         "parameters": [
           {
-            "description": "Paddle ID of the transaction entity to work with.",
-            "$ref": "#/components/parameters/TransactionIdPathParam"
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -21597,12 +21881,16 @@
         "operationId": "GetTransactionInvoice",
         "parameters": [
           {
-            "description": "Paddle ID of the transaction entity to work with.",
-            "$ref": "#/components/parameters/TransactionIdPathParam"
-          },
-          {
             "description": "Determine whether the generated URL should download the PDF as an attachment saved locally, or open it inline in the browser.\n\nDefault: \u0060attachment\u0060.",
             "$ref": "#/components/parameters/GetInvoicePdfParams"
+          },
+          {
+            "name": "transactionId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
