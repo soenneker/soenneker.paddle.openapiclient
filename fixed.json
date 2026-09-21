@@ -177,7 +177,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "address.read"
+        ]
       },
       "post": {
         "tags": [
@@ -278,7 +281,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "address.write"
+        ]
       }
     },
     "/customers/{customerId}/addresses/{addressId}": {
@@ -366,7 +372,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "address.read"
+        ]
       },
       "patch": {
         "tags": [
@@ -478,7 +487,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "address.write"
+        ]
       }
     },
     "/adjustments": {
@@ -897,7 +909,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "adjustment.read"
+        ]
       },
       "post": {
         "tags": [
@@ -1027,7 +1042,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "adjustment.write"
+        ]
       }
     },
     "/adjustments/{adjustmentId}/credit-note": {
@@ -1098,7 +1116,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "adjustment.read"
+        ]
       }
     },
     "/customers/{customerId}/businesses": {
@@ -1244,7 +1265,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "business.read"
+        ]
       },
       "post": {
         "tags": [
@@ -1350,7 +1374,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "business.write"
+        ]
       }
     },
     "/customers/{customerId}/businesses/{businessId}": {
@@ -1450,7 +1477,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "business.read"
+        ]
       },
       "patch": {
         "tags": [
@@ -1582,7 +1612,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "business.write"
+        ]
       }
     },
     "/checkout-domains": {
@@ -1698,7 +1731,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "checkout_domain.read"
+        ]
       }
     },
     "/checkout-domains/{domainId}": {
@@ -1774,7 +1810,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "checkout_domain.read"
+        ]
       },
       "delete": {
         "tags": [
@@ -1819,7 +1858,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "checkout_domain.write"
+        ]
       }
     },
     "/checkout-domains/{domainId}/verify-payment-method": {
@@ -1913,7 +1955,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "checkout_domain.write"
+        ]
       }
     },
     "/client-tokens": {
@@ -2017,7 +2062,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "client_token.read"
+        ]
       },
       "post": {
         "tags": [
@@ -2098,7 +2146,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "client_token.write"
+        ]
       }
     },
     "/client-tokens/{clientTokenId}": {
@@ -2172,7 +2223,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "client_token.read"
+        ]
       },
       "patch": {
         "tags": [
@@ -2262,7 +2316,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "client_token.write"
+        ]
       }
     },
     "/customers": {
@@ -2406,7 +2463,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "customer.read"
+        ]
       },
       "post": {
         "tags": [
@@ -2489,7 +2549,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "customer.write"
+        ]
       }
     },
     "/customers/{customerId}": {
@@ -2565,7 +2628,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "customer.read"
+        ]
       },
       "patch": {
         "tags": [
@@ -2657,7 +2723,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "customer.write"
+        ]
       }
     },
     "/customers/{customerId}/credit-balances": {
@@ -2736,7 +2805,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "customer.read"
+        ]
       }
     },
     "/customers/{customerId}/auth-token": {
@@ -2804,7 +2876,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "customer_auth_token.write"
+        ]
       }
     },
     "/customers/{customerId}/portal-sessions": {
@@ -2905,7 +2980,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "customer_portal_session.write"
+        ]
       }
     },
     "/discount-groups": {
@@ -3005,7 +3083,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "discount.read"
+        ]
       },
       "post": {
         "tags": [
@@ -3083,7 +3164,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "discount.write"
+        ]
       }
     },
     "/discount-groups/{discountGroupId}": {
@@ -3155,7 +3239,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "discount.read"
+        ]
       },
       "patch": {
         "tags": [
@@ -3243,7 +3330,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "discount.write"
+        ]
       }
     },
     "/discounts": {
@@ -3439,7 +3529,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "discount.read"
+        ]
       },
       "post": {
         "tags": [
@@ -3539,7 +3632,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "discount.write"
+        ]
       }
     },
     "/discounts/{discountId}": {
@@ -3632,7 +3728,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "discount.read"
+        ]
       },
       "patch": {
         "tags": [
@@ -3742,7 +3841,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "discount.write"
+        ]
       }
     },
     "/event-types": {
@@ -4134,7 +4236,8 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": []
       }
     },
     "/events": {
@@ -6752,7 +6855,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification.read"
+        ]
       }
     },
     "/ips": {
@@ -6817,7 +6923,8 @@
             }
           }
         },
-        "security": []
+        "security": [],
+        "x-permissions": []
       }
     },
     "/metrics/monthly-recurring-revenue": {
@@ -6894,7 +7001,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "metrics.read"
+        ]
       }
     },
     "/metrics/active-subscribers": {
@@ -6970,7 +7080,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "metrics.read"
+        ]
       }
     },
     "/metrics/monthly-recurring-revenue-change": {
@@ -7047,7 +7160,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "metrics.read"
+        ]
       }
     },
     "/metrics/revenue": {
@@ -7128,7 +7244,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "metrics.read"
+        ]
       }
     },
     "/metrics/refunds": {
@@ -7205,7 +7324,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "metrics.read"
+        ]
       }
     },
     "/metrics/chargebacks": {
@@ -7281,7 +7403,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "metrics.read"
+        ]
       }
     },
     "/metrics/checkout-conversion": {
@@ -7365,7 +7490,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "metrics.read"
+        ]
       }
     },
     "/notification-settings": {
@@ -7586,7 +7714,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_setting.read"
+        ]
       },
       "post": {
         "tags": [
@@ -7809,7 +7940,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_setting.write"
+        ]
       }
     },
     "/notification-settings/{notificationSettingId}": {
@@ -8006,7 +8140,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_setting.read"
+        ]
       },
       "patch": {
         "tags": [
@@ -8220,7 +8357,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_setting.write"
+        ]
       },
       "delete": {
         "tags": [
@@ -8265,7 +8405,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_setting.write"
+        ]
       }
     },
     "/notifications": {
@@ -8918,7 +9061,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification.read"
+        ]
       }
     },
     "/notifications/{notificationId}": {
@@ -9017,7 +9163,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification.read"
+        ]
       }
     },
     "/notifications/{notificationId}/logs": {
@@ -9171,7 +9320,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification.read"
+        ]
       }
     },
     "/notifications/{notificationId}/replay": {
@@ -9238,7 +9390,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification.write"
+        ]
       }
     },
     "/customers/{customerId}/payment-methods": {
@@ -9353,7 +9508,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "payment_method.read"
+        ]
       }
     },
     "/customers/{customerId}/payment-methods/{paymentMethodId}": {
@@ -9444,7 +9602,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "payment_method.read"
+        ]
       },
       "delete": {
         "tags": [
@@ -9497,7 +9658,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "payment_method.write"
+        ]
       }
     },
     "/prices": {
@@ -9903,7 +10067,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "price.read"
+        ]
       },
       "post": {
         "tags": [
@@ -10088,7 +10255,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "price.write"
+        ]
       }
     },
     "/prices/{priceId}": {
@@ -10183,7 +10353,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "price.read"
+        ]
       },
       "patch": {
         "tags": [
@@ -10344,7 +10517,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "price.write"
+        ]
       }
     },
     "/pricing-preview": {
@@ -10656,7 +10832,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "transaction.read"
+        ]
       }
     },
     "/products": {
@@ -10873,7 +11052,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "product.read"
+        ]
       },
       "post": {
         "tags": [
@@ -10988,7 +11170,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "product.write"
+        ]
       }
     },
     "/products/{productId}": {
@@ -11083,7 +11268,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "product.read"
+        ]
       },
       "patch": {
         "tags": [
@@ -11190,7 +11378,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "product.write"
+        ]
       }
     },
     "/reports": {
@@ -11401,7 +11592,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "report.read"
+        ]
       },
       "post": {
         "tags": [
@@ -11517,7 +11711,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "report.write"
+        ]
       }
     },
     "/reports/{reportId}": {
@@ -11609,7 +11806,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "report.read"
+        ]
       }
     },
     "/reports/{reportId}/download-url": {
@@ -11683,7 +11883,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "report.read"
+        ]
       }
     },
     "/simulation-types": {
@@ -12235,7 +12438,8 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": []
       }
     },
     "/simulations": {
@@ -12372,7 +12576,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_simulation.read"
+        ]
       },
       "post": {
         "tags": [
@@ -12665,7 +12872,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_simulation.write"
+        ]
       }
     },
     "/simulations/{simulationId}": {
@@ -12762,7 +12972,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_simulation.read"
+        ]
       },
       "patch": {
         "tags": [
@@ -12940,7 +13153,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_simulation.write"
+        ]
       }
     },
     "/simulations/{simulationId}/runs": {
@@ -13050,7 +13266,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_simulation.read"
+        ]
       },
       "post": {
         "tags": [
@@ -13119,7 +13338,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_simulation.write"
+        ]
       }
     },
     "/simulations/{simulationId}/runs/{simulationRunId}": {
@@ -13202,7 +13424,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_simulation.read"
+        ]
       }
     },
     "/simulations/{simulationId}/runs/{simulationRunId}/events": {
@@ -13359,7 +13584,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_simulation.read"
+        ]
       }
     },
     "/simulations/{simulationId}/runs/{simulationRunId}/events/{simulationEventId}": {
@@ -13496,7 +13724,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_simulation.read"
+        ]
       }
     },
     "/simulations/{simulationId}/runs/{simulationRunId}/events/{simulationEventId}/replay": {
@@ -13601,7 +13832,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "notification_simulation.write"
+        ]
       }
     },
     "/subscriptions/{subscriptionId}/history": {
@@ -13787,7 +14021,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "subscription_history.read"
+        ]
       }
     },
     "/subscriptions": {
@@ -14676,7 +14913,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "subscription.read"
+        ]
       }
     },
     "/subscriptions/{subscriptionId}": {
@@ -14894,7 +15134,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "subscription.read"
+        ]
       },
       "patch": {
         "tags": [
@@ -15188,7 +15431,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "subscription.write"
+        ]
       }
     },
     "/subscriptions/{subscriptionId}/cancel": {
@@ -15467,7 +15713,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "subscription.write"
+        ]
       }
     },
     "/subscriptions/{subscriptionId}/pause": {
@@ -15754,7 +16003,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "subscription.write"
+        ]
       }
     },
     "/subscriptions/{subscriptionId}/resume": {
@@ -15986,7 +16238,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "subscription.write"
+        ]
       }
     },
     "/subscriptions/{subscriptionId}/activate": {
@@ -16178,7 +16433,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "subscription.write"
+        ]
       }
     },
     "/subscriptions/{subscriptionId}/update-payment-method-transaction": {
@@ -16438,7 +16696,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "transaction.write"
+        ]
       }
     },
     "/subscriptions/{subscriptionId}/preview": {
@@ -17238,7 +17499,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "subscription.read"
+        ]
       }
     },
     "/subscriptions/{subscriptionId}/charge": {
@@ -17526,7 +17790,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "subscription.write"
+        ]
       }
     },
     "/subscriptions/{subscriptionId}/charge/preview": {
@@ -18072,7 +18339,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "subscription.read"
+        ]
       }
     },
     "/transactions": {
@@ -19914,7 +20184,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "transaction.read"
+        ]
       },
       "post": {
         "tags": [
@@ -20296,7 +20569,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "transaction.write"
+        ]
       }
     },
     "/transactions/{transactionId}": {
@@ -20711,7 +20987,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "transaction.read"
+        ]
       },
       "patch": {
         "tags": [
@@ -21086,7 +21365,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "transaction.write"
+        ]
       }
     },
     "/transactions/preview": {
@@ -21427,7 +21709,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "transaction.read"
+        ]
       }
     },
     "/transactions/{transactionId}/revise": {
@@ -21864,7 +22149,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "transaction.write"
+        ]
       }
     },
     "/transactions/{transactionId}/invoice": {
@@ -21942,7 +22230,10 @@
               }
             }
           }
-        }
+        },
+        "x-permissions": [
+          "transaction.read"
+        ]
       }
     }
   },
@@ -282346,6 +282637,14 @@
             }
           },
           "$ref": "#/components/schemas/CollectionMode"
+        },
+        "x-enum-descriptions": {
+          "automatic": {
+            "description": "Return entities where payment is collected automatically using a checkout or saved payment method."
+          },
+          "manual": {
+            "description": "Return entities where payment is collected manually. Customers are sent an invoice with payment terms and can make a payment offline or using a checkout."
+          }
         }
       },
       "ListTransactionsQueryParams.created_at": {
