@@ -84,7 +84,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -233,7 +234,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -324,7 +326,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -437,7 +440,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -554,7 +558,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -959,7 +964,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -1081,7 +1087,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -1179,7 +1186,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -1324,7 +1332,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -1417,7 +1426,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -1552,7 +1562,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -1667,7 +1678,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -1766,7 +1778,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -1843,7 +1856,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             }
@@ -1911,7 +1925,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -2002,7 +2017,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -2104,7 +2120,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -2181,7 +2198,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -2274,7 +2292,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -2375,7 +2394,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -2505,7 +2525,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -2584,7 +2605,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -2679,7 +2701,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -2762,7 +2785,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -2840,7 +2864,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -2931,7 +2956,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -3027,7 +3053,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -3124,7 +3151,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -3199,7 +3227,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -3290,7 +3319,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -3397,7 +3427,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -3578,7 +3609,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -3671,7 +3703,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -3784,7 +3817,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -3866,7 +3900,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -4281,7 +4316,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -6883,7 +6919,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -7541,7 +7578,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -7775,7 +7813,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -7975,7 +8014,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -8192,7 +8232,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -8390,7 +8431,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             }
@@ -8472,7 +8514,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -9096,7 +9139,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -9210,7 +9254,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -9355,7 +9400,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -9449,7 +9495,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -9551,7 +9598,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -9643,7 +9691,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             }
@@ -9733,7 +9782,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -10149,7 +10199,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -10294,7 +10345,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -10433,7 +10485,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -10572,7 +10625,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -10895,7 +10949,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -11111,7 +11166,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -11209,7 +11265,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -11319,7 +11376,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -11425,7 +11483,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -11651,7 +11710,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -11746,7 +11806,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -11848,7 +11909,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -11908,7 +11970,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -12491,7 +12554,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -12698,7 +12762,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -12907,7 +12972,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -13067,7 +13133,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -13212,7 +13279,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -13299,7 +13367,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -13385,7 +13454,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -13487,7 +13557,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -13635,7 +13706,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -13775,7 +13847,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -13909,7 +13982,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -14096,7 +14170,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -14952,7 +15027,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -15199,7 +15275,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -15484,7 +15561,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -15767,7 +15845,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -16056,7 +16135,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -16273,7 +16353,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -16468,7 +16549,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -16763,7 +16845,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -17558,7 +17641,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -17849,7 +17933,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -18426,7 +18511,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -20260,7 +20346,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -20608,7 +20695,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -21056,7 +21144,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -21427,7 +21516,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -21770,7 +21860,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -22195,7 +22286,8 @@
               "Request-Id": {
                 "required": true,
                 "schema": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
                 }
               }
             },
@@ -22239,26 +22331,32 @@
   },
   "components": {
     "schemas": {
-      "BusinessCustomerId": {
-        "pattern": "^ctm_[a-z\\d]{26}$",
+      "RequestId": {
+        "examples": [
+          "b15ec92e-8688-40d4-a04d-f44cbec93355"
+        ],
         "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060.",
+        "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+      },
+      "CreatedAt": {
+        "examples": [
+          "2024-10-12T07:20:50.52Z"
+        ],
+        "title": "Created at",
+        "type": "string",
+        "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+        "format": "date-time",
         "readOnly": true
       },
-      "BusinessId": {
-        "pattern": "^biz_[a-z\\d]{26}$",
+      "UpdatedAt": {
+        "examples": [
+          "2024-10-13T07:20:50.52Z"
+        ],
+        "title": "Updated at",
         "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this business entity, prefixed with \u0060biz_\u0060.",
+        "description": "RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.",
+        "format": "date-time",
         "readOnly": true
-      },
-      "BusinessContactsItemEmail": {
-        "maxLength": 320,
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Email address for this entity.",
-        "format": "email"
       },
       "CountryCodeSupported": {
         "enum": [
@@ -24258,50 +24356,31 @@
         },
         "description": "An error occurred. Check the \u0060type\u0060, \u0060code\u0060, and \u0060detail\u0060 in the returned error object for more information.\n\nValidation errors include an array of \u0060errors\u0060 with information about which fields failed validation."
       },
-      "BusinessContactsItemName": {
+      "Name": {
+        "title": "Name",
         "maxLength": 1024,
         "type": "string",
-        "additionalProperties": false,
         "description": "Full name."
       },
-      "BusinessCreateImportMeta": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ImportMeta"
-          },
-          {
-            "type": "null"
-          }
+      "Email": {
+        "examples": [
+          "test@paddle.com"
         ],
-        "properties": {
-          "external_id": {
-            "maxLength": 200,
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "Reference or identifier for this entity from the provider where it was imported from."
-          },
-          "imported_from": {
-            "examples": [
-              "paddle_classic"
-            ],
-            "maxLength": 200,
-            "minLength": 1,
-            "type": "string",
-            "description": "Name of the platform or provider where this entity was imported from."
-          }
-        },
-        "description": "Import information for this entity. \u0060null\u0060 if this entity is not imported.",
-        "x-external-readOnly": true
+        "title": "Email address",
+        "maxLength": 320,
+        "minLength": 1,
+        "type": "string",
+        "description": "Email address for this entity.",
+        "format": "email"
       },
-      "BusinessCreateCustomData": {
-        "type": [
-          "null",
-          "object"
+      "AddressId": {
+        "examples": [
+          "add_01gm302t81w94gyjpjpqypkzkf"
         ],
-        "description": "Your own structured key-value data."
+        "title": "Address ID",
+        "pattern": "^add_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this address entity, prefixed with \u0060add_\u0060."
       },
       "CustomData": {
         "unevaluatedProperties": {},
@@ -24312,12 +24391,16 @@
           "customer_reference_id": "abcd1234"
         }
       },
-      "BusinessCreateName": {
-        "maxLength": 1024,
+      "ExternalId": {
+        "examples": [
+          "9b95b0b8-e10f-441a-862e-1936a6d818ab"
+        ],
+        "title": "External ID",
+        "maxLength": 200,
         "minLength": 1,
         "type": "string",
-        "additionalProperties": false,
-        "description": "Full name."
+        "description": "Reference or identifier for this entity from the provider where it was imported from.",
+        "readOnly": true
       },
       "ImportMeta": {
         "title": "ImportMeta",
@@ -24428,67 +24511,65 @@
         "additionalProperties": false,
         "description": "Represents an address entity when creating addresses."
       },
-      "BusinessCreateId": {
-        "pattern": "^biz_[a-z\\d]{26}$",
+      "CustomerId": {
+        "examples": [
+          "ctm_01grnn4zta5a1mf02jjze7y2ys"
+        ],
+        "title": "Customer ID",
+        "pattern": "^ctm_[a-z\\d]{26}$",
         "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this business entity, prefixed with \u0060biz_\u0060.",
-        "readOnly": true
+        "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060."
       },
-      "ContactsCreateEmail": {
-        "maxLength": 320,
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Email address for this entity.",
-        "format": "email"
-      },
-      "ContactsCreateName": {
+      "AddressDescription": {
+        "examples": [
+          "Paddle.com"
+        ],
+        "title": "Description",
         "maxLength": 1024,
         "type": "string",
-        "additionalProperties": false,
-        "description": "Full name."
+        "description": "Memorable description for this address."
       },
-      "AdjustmentCreateTransactionId": {
-        "pattern": "^txn_[a-z\\d]{26}$",
+      "AddressFirstLine": {
+        "examples": [
+          "3811 Ditmars Blvd"
+        ],
+        "title": "First line",
+        "maxLength": 1024,
         "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this transaction entity, prefixed with \u0060txn_\u0060."
+        "description": "First line of this address."
       },
-      "AdjustmentCreateTaxMode": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/AdjustmentTaxMode"
-          }
-        },
-        "writeOnly": true
+      "AddressSecondLine": {
+        "title": "Second line",
+        "maxLength": 1024,
+        "type": "string",
+        "description": "Second line of this address."
       },
-      "AdjustmentCreateType": {
-        "required": [
-          "value"
+      "AddressCity": {
+        "examples": [
+          "Astoria"
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/AdjustmentType"
-          }
-        }
+        "title": "City",
+        "maxLength": 200,
+        "type": "string",
+        "description": "City of this address."
       },
-      "AdjustmentItemCreateType": {
-        "title": "AdjustmentItemCreateType",
-        "required": [
-          "value"
+      "AddressPostalCode": {
+        "examples": [
+          "11105-1803"
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/AdjustmentItemType"
-          }
-        },
-        "description": "Type of adjustment for this transaction item. \u0060tax\u0060 adjustments are automatically created by Paddle.\nInclude \u0060amount\u0060 when creating a \u0060partial\u0060 adjustment."
+        "title": "Postal Code",
+        "maxLength": 200,
+        "type": "string",
+        "description": "ZIP or postal code of this address. Required for some countries."
+      },
+      "AddressRegion": {
+        "examples": [
+          "NY"
+        ],
+        "title": "Region",
+        "maxLength": 200,
+        "type": "string",
+        "description": "State, county, or region of this address."
       },
       "Status": {
         "title": "Status",
@@ -24789,11 +24870,14 @@
         "additionalProperties": false,
         "description": "Represents an address entity when updating addresses."
       },
-      "AdjustmentItemCreateItemId": {
-        "pattern": "^txnitm_[a-z\\d]{26}$",
+      "AdjustmentId": {
+        "examples": [
+          "adj_01gya6twkp8y0tv1e19rsgst9m"
+        ],
+        "title": "Adjustment ID",
+        "pattern": "^adj_[a-z\\d]{26}$",
         "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this transaction item, prefixed with \u0060txnitm_\u0060. Used when working with [adjustments](https://developer.paddle.com/build/transactions/create-transaction-adjustments)."
+        "description": "Unique Paddle ID for this adjustment entity, prefixed with \u0060adj_\u0060."
       },
       "AdjustmentAction": {
         "title": "AdjustmentAction",
@@ -24907,63 +24991,23 @@
           ]
         }
       },
-      "AdjustmentItemTotalsComposed": {
-        "required": [
-          "subtotal",
-          "tax",
-          "total"
+      "TransactionId": {
+        "examples": [
+          "txn_01h04vsbhqc62t8hmd4z3b578c"
         ],
-        "type": "object",
-        "properties": {
-          "subtotal": {
-            "examples": [
-              "15000"
-            ],
-            "type": "string",
-            "description": "Amount multiplied by quantity.",
-            "readOnly": true
-          },
-          "tax": {
-            "examples": [
-              "1500"
-            ],
-            "type": "string",
-            "description": "Total tax on the subtotal.",
-            "readOnly": true
-          },
-          "total": {
-            "examples": [
-              "16500"
-            ],
-            "type": "string",
-            "description": "Total after tax.",
-            "readOnly": true
-          }
-        },
-        "readOnly": true
+        "title": "Transaction ID",
+        "pattern": "^txn_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this transaction entity, prefixed with \u0060txn_\u0060."
       },
-      "AdjustmentItemProration": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/TransactionItemProration"
-          },
-          {
-            "type": "null"
-          }
+      "SubscriptionId": {
+        "examples": [
+          "sub_01h04vsc0qhwtsbsxh3422wjs4"
         ],
-        "properties": {
-          "rate": {
-            "type": "string",
-            "description": "Rate used to calculate proration.",
-            "x-external-readOnly": true
-          },
-          "billing_period": {
-            "$ref": "#/components/schemas/TransactionItemProrationBillingPeriod"
-          }
-        },
-        "description": "How proration was calculated for this adjustment item.",
-        "readOnly": true
+        "title": "Subscription ID",
+        "pattern": "^sub_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this subscription entity, prefixed with \u0060sub_\u0060."
       },
       "CurrencyCode": {
         "title": "Currency code",
@@ -25292,22 +25336,22 @@
           ]
         }
       },
-      "AdjustmentItemTypeComposed": {
-        "required": [
-          "value"
+      "AdjustmentItemId": {
+        "examples": [
+          "adjitm_01gw4rs4kex0prncwfne87ft8x"
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/AdjustmentItemType"
-          }
-        },
-        "description": "Type of adjustment for this transaction item. \u0060tax\u0060 adjustments are automatically created by Paddle.\nInclude \u0060amount\u0060 when creating a \u0060partial\u0060 adjustment."
+        "title": "Adjustment item ID",
+        "pattern": "^adjitm_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this adjustment item, prefixed with \u0060adjitm_\u0060."
       },
-      "AdjustmentItemItemId": {
+      "TransactionItemId": {
+        "examples": [
+          "txnitm_01gm302t81w94gyjpjpqypkzkf"
+        ],
+        "title": "Transaction item ID",
         "pattern": "^txnitm_[a-z\\d]{26}$",
         "type": "string",
-        "additionalProperties": false,
         "description": "Unique Paddle ID for this transaction item, prefixed with \u0060txnitm_\u0060. Used when working with [adjustments](https://developer.paddle.com/build/transactions/create-transaction-adjustments)."
       },
       "AdjustmentItemType": {
@@ -25364,12 +25408,14 @@
           ]
         }
       },
-      "AdjustmentUpdatedAt": {
+      "Timestamp": {
+        "examples": [
+          "2024-10-12T07:20:50.52Z"
+        ],
+        "title": "Timestamp",
         "type": "string",
-        "additionalProperties": false,
-        "description": "RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.",
-        "format": "date-time",
-        "readOnly": true
+        "description": "RFC 3339 datetime string.",
+        "format": "date-time"
       },
       "TimePeriod": {
         "title": "Time period",
@@ -26255,76 +26301,21 @@
           }
         }
       },
-      "AdjustmentCreatedAt": {
+      "ImageUrl": {
+        "title": "Image Url",
+        "minLength": 1,
         "type": "string",
-        "additionalProperties": false,
-        "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
-        "format": "date-time",
-        "readOnly": true
+        "description": "A URL to an image.",
+        "format": "uri"
       },
-      "AdjustmentPayoutTotalsComposed": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AdjustmentPayoutTotals"
-          },
-          {
-            "type": "null"
-          }
+      "BusinessId": {
+        "examples": [
+          "biz_01grrebrzaee2qj2fqqhmcyzaj"
         ],
-        "properties": {
-          "subtotal": {
-            "examples": [
-              "15000"
-            ],
-            "type": "string",
-            "description": "Adjustment total before tax and fees."
-          },
-          "tax": {
-            "examples": [
-              "1500"
-            ],
-            "type": "string",
-            "description": "Total tax on the adjustment subtotal."
-          },
-          "total": {
-            "examples": [
-              "16500"
-            ],
-            "type": "string",
-            "description": "Adjustment total after tax."
-          },
-          "fee": {
-            "examples": [
-              "300"
-            ],
-            "type": "string",
-            "description": "Adjusted Paddle fee."
-          },
-          "retained_fee": {
-            "examples": [
-              "300"
-            ],
-            "type": "string",
-            "description": "Paddle fees retained for this adjustment.",
-            "readOnly": true
-          },
-          "chargeback_fee": {
-            "$ref": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeComposed"
-          },
-          "earnings": {
-            "examples": [
-              "15120"
-            ],
-            "type": "string",
-            "description": "Adjusted payout earnings. This is the adjustment total plus adjusted Paddle fees, excluding chargeback fees."
-          },
-          "currency_code": {
-            "$ref": "#/components/schemas/AdjustmentPayoutTotalsCurrencyCode"
-          }
-        },
-        "description": "Breakdown of how this adjustment affects your payout balance.",
-        "readOnly": true
+        "title": "Business ID",
+        "pattern": "^biz_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this business entity, prefixed with \u0060biz_\u0060."
       },
       "ContactsCreate": {
         "required": [
@@ -26613,105 +26604,22 @@
           ]
         }
       },
-      "AdjustmentTotalsComposed": {
-        "required": [
-          "subtotal",
-          "tax",
-          "total",
-          "fee",
-          "earnings",
-          "currency_code"
+      "CheckoutDomainId": {
+        "examples": [
+          "chedom_01kkertpke0gv2t61p1pq8v23x"
         ],
-        "type": "object",
-        "properties": {
-          "subtotal": {
-            "examples": [
-              "15000"
-            ],
-            "type": "string",
-            "description": "Total before tax. For tax adjustments, the value is 0.",
-            "readOnly": true
-          },
-          "tax": {
-            "examples": [
-              "1500"
-            ],
-            "type": "string",
-            "description": "Total tax on the subtotal.",
-            "readOnly": true
-          },
-          "total": {
-            "examples": [
-              "16500"
-            ],
-            "type": "string",
-            "description": "Total after tax.",
-            "readOnly": true
-          },
-          "fee": {
-            "examples": [
-              "300"
-            ],
-            "type": "string",
-            "description": "Total fee taken by Paddle for this adjustment.",
-            "readOnly": true
-          },
-          "retained_fee": {
-            "examples": [
-              "300"
-            ],
-            "type": "string",
-            "description": "Paddle fees retained for this adjustment.",
-            "readOnly": true
-          },
-          "earnings": {
-            "examples": [
-              "14700"
-            ],
-            "type": "string",
-            "description": "Total earnings. This is the subtotal minus the Paddle fee.\nFor tax adjustments, this value is negative, which means a positive effect in the transaction earnings.\nThis is because the fee is originally calculated from the transaction total, so if a tax adjustment is made,\nthen the fee portion of it is returned.",
-            "readOnly": true
-          },
-          "currency_code": {
-            "$ref": "#/components/schemas/AdjustmentTotalsCurrencyCode"
-          }
-        },
-        "readOnly": true
+        "title": "Checkout Domain ID",
+        "pattern": "^chedom_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this checkout domain entity, prefixed with \u0060chedom_\u0060."
       },
-      "AdjustmentItemsItemTotals": {
-        "required": [
-          "subtotal",
-          "tax",
-          "total"
+      "CheckoutDomainHost": {
+        "examples": [
+          "example.com"
         ],
-        "type": "object",
-        "properties": {
-          "subtotal": {
-            "examples": [
-              "15000"
-            ],
-            "type": "string",
-            "description": "Amount multiplied by quantity.",
-            "readOnly": true
-          },
-          "tax": {
-            "examples": [
-              "1500"
-            ],
-            "type": "string",
-            "description": "Total tax on the subtotal.",
-            "readOnly": true
-          },
-          "total": {
-            "examples": [
-              "16500"
-            ],
-            "type": "string",
-            "description": "Total after tax.",
-            "readOnly": true
-          }
-        },
-        "readOnly": true
+        "type": "string",
+        "description": "Checkout domain name.",
+        "format": "hostname"
       },
       "CheckoutDomainApprovalStatus": {
         "enum": [
@@ -26931,53 +26839,33 @@
           ]
         }
       },
-      "AdjustmentItemsItemProration": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/TransactionItemProration"
-          },
-          {
-            "type": "null"
-          }
+      "ClientTokenId": {
+        "examples": [
+          "ctkn_01ghbkd0frb9k95cnhwd1bxpvk"
         ],
-        "properties": {
-          "rate": {
-            "type": "string",
-            "description": "Rate used to calculate proration.",
-            "x-external-readOnly": true
-          },
-          "billing_period": {
-            "$ref": "#/components/schemas/TransactionItemProrationBillingPeriod"
-          }
-        },
-        "description": "How proration was calculated for this adjustment item.",
-        "readOnly": true
-      },
-      "AdjustmentItemsItemType": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/AdjustmentItemType"
-          }
-        },
-        "description": "Type of adjustment for this transaction item. \u0060tax\u0060 adjustments are automatically created by Paddle.\nInclude \u0060amount\u0060 when creating a \u0060partial\u0060 adjustment."
-      },
-      "AdjustmentItemsItemItemId": {
-        "pattern": "^txnitm_[a-z\\d]{26}$",
+        "title": "ClientTokenID",
+        "pattern": "^ctkn_[a-z\\d]{26}$",
         "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this transaction item, prefixed with \u0060txnitm_\u0060. Used when working with [adjustments](https://developer.paddle.com/build/transactions/create-transaction-adjustments)."
+        "description": "Unique Paddle ID for this client-side token entity, prefixed with \u0060ctkn_\u0060."
       },
-      "AdjustmentItemsItemId": {
-        "pattern": "^adjitm_[a-z\\d]{26}$",
+      "ClientTokenToken": {
+        "title": "ClientTokenToken",
         "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this adjustment item, prefixed with \u0060adjitm_\u0060.",
-        "readOnly": true
+        "description": "A client-side token, prefixed with \u0060test\u0060 or \u0060live\u0060 depending on the environment of your account.  Pass as the \u0060token\u0060 parameter when initializing Paddle.js to authenticate."
+      },
+      "ClientTokenName": {
+        "title": "ClientTokenName",
+        "maxLength": 150,
+        "minLength": 1,
+        "type": "string",
+        "description": "Short name of this client-side token. Typically unique and human-identifiable."
+      },
+      "ClientTokenDescription": {
+        "title": "ClientTokenDescription",
+        "maxLength": 500,
+        "minLength": 1,
+        "type": "string",
+        "description": "Short description of this client-side token. Typically gives details about what the token is used for and where it\u0027s used."
       },
       "ClientTokenStatus": {
         "title": "ClientTokenStatus",
@@ -27111,16 +26999,14 @@
         "additionalProperties": false,
         "description": "Represents a client-side token entity."
       },
-      "AdjustmentStatusComposed": {
-        "required": [
-          "value"
+      "EventId": {
+        "examples": [
+          "evt_01gks14ge726w50ch2tmaw2a1x"
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/AdjustmentStatus"
-          }
-        },
+        "title": "Event ID",
+        "pattern": "^evt_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this event, prefixed with \u0060evt_\u0060.",
         "readOnly": true
       },
       "PublicTransactionOrigin": {
@@ -27230,25 +27116,22 @@
           ]
         }
       },
-      "AdjustmentCurrencyCode": {
-        "required": [
-          "value"
+      "DiscountId": {
+        "examples": [
+          "dsc_01gv5kpg05xp104ek2fmgjwttf"
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/CurrencyCode"
-          }
-        },
-        "description": "Three-letter ISO 4217 currency code for this adjustment. Set automatically by Paddle based on the \u0060currency_code\u0060 of the related transaction.",
-        "readOnly": true
-      },
-      "AdjustmentCustomerId": {
-        "pattern": "^ctm_[a-z\\d]{26}$",
+        "title": "Discount ID",
+        "pattern": "^dsc_[a-z\\d]{26}$",
         "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060.",
-        "readOnly": true
+        "description": "Unique Paddle ID for this discount, prefixed with \u0060dsc_\u0060."
+      },
+      "DiscountCode": {
+        "title": "Discount code",
+        "maxLength": 32,
+        "minLength": 1,
+        "pattern": "^[a-zA-Z0-9]{1,32}$",
+        "type": "string",
+        "description": "Unique code that customers can use to apply this discount at checkout. Use letters and numbers only, up to 32 characters. Not case-sensitive."
       },
       "DurationInterval": {
         "enum": [
@@ -27333,22 +27216,23 @@
         },
         "description": "Details for invoicing. Required if \u0060collection_mode\u0060 is \u0060manual\u0060."
       },
-      "AdjustmentTransactionId": {
-        "pattern": "^txn_[a-z\\d]{26}$",
-        "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this transaction entity, prefixed with \u0060txn_\u0060."
-      },
-      "AdjustmentTypeComposed": {
-        "required": [
-          "value"
+      "PriceId": {
+        "examples": [
+          "pri_01gsz8z1q1n00f12qt82y31smh"
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/AdjustmentType"
-          }
-        }
+        "title": "Price ID",
+        "pattern": "^pri_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this price, prefixed with \u0060pri_\u0060."
+      },
+      "ProductId": {
+        "examples": [
+          "pro_01gsz97mq9pa4fkyy0wqenepkz"
+        ],
+        "title": "Product ID",
+        "pattern": "^pro_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this product, prefixed with \u0060pro_\u0060."
       },
       "CatalogType": {
         "title": "CatalogType",
@@ -27382,49 +27266,17 @@
           ]
         }
       },
-      "AdjustmentId": {
-        "pattern": "^adj_[a-z\\d]{26}$",
+      "PriceName": {
+        "title": "Price Name",
+        "maxLength": 150,
+        "minLength": 1,
         "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this adjustment entity, prefixed with \u0060adj_\u0060.",
-        "readOnly": true
+        "description": "Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills."
       },
-      "AdjustmentTaxRatesUsedTotals": {
-        "title": "AdjustmentTaxRateUsedTotals",
-        "required": [
-          "subtotal",
-          "tax",
-          "total"
-        ],
-        "type": "object",
-        "properties": {
-          "subtotal": {
-            "examples": [
-              "15000"
-            ],
-            "type": "string",
-            "description": "Total before tax. For tax adjustments, the value is 0.",
-            "readOnly": true
-          },
-          "tax": {
-            "examples": [
-              "1500"
-            ],
-            "type": "string",
-            "description": "Total tax on the subtotal.",
-            "readOnly": true
-          },
-          "total": {
-            "examples": [
-              "16500"
-            ],
-            "type": "string",
-            "description": "Total after tax.",
-            "readOnly": true
-          }
-        },
-        "description": "Calculated totals for the tax applied to this adjustment.",
-        "readOnly": true
+      "PriceRequiresPaymentMethod": {
+        "title": "Price Requires Payment Method",
+        "type": "boolean",
+        "description": "Whether this price requires a payment method (\u0060true\u0060) or not (\u0060false\u0060) when trialing. If \u0060false\u0060, customers can sign up for subscription without entering their payment details, often referred to as a \u0022cardless trial.\u0022"
       },
       "MoneyOptionalCurrency": {
         "title": "Money with optional currency",
@@ -27891,17 +27743,13 @@
         "description": "Breakdown of the totals for a transaction after adjustments.",
         "readOnly": true
       },
-      "AdjustmentPayoutTotalsCurrencyCode": {
-        "required": [
-          "value"
+      "CurrencyExchangeRate": {
+        "examples": [
+          "1.0513135"
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/CurrencyCodePayout"
-          }
-        },
-        "description": "Three-letter ISO 4217 currency code used for the payout for this transaction. If your primary currency has changed, this reflects the primary currency at the time the transaction was billed."
+        "title": "currency_exchange_rate",
+        "type": "string",
+        "description": "Currency exchange rate, including margin if applicable. \u00601.0\u0060 if the transaction currency matches your payout currency."
       },
       "TransactionPayoutTotals": {
         "title": "Transaction payout totals",
@@ -28131,25 +27979,12 @@
         "description": "Breakdown of the payout total for a transaction after adjustments. \u0060null\u0060 until the transaction is \u0060completed\u0060.",
         "readOnly": true
       },
-      "AdjustmentPayoutTotalsChargebackFeeComposed": {
-        "required": [
-          "amount",
-          "original"
-        ],
-        "type": "object",
-        "properties": {
-          "amount": {
-            "examples": [
-              "1680"
-            ],
-            "type": "string",
-            "description": "Chargeback fee converted into the payout currency."
-          },
-          "original": {
-            "$ref": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeOriginalComposed"
-          }
-        },
-        "description": "Chargeback fees incurred for this adjustment. Only returned when the adjustment \u0060action\u0060 is \u0060chargeback\u0060 or \u0060chargeback_warning\u0060."
+      "ProductName": {
+        "title": "Product Name",
+        "maxLength": 200,
+        "minLength": 1,
+        "type": "string",
+        "description": "Name of this product."
       },
       "TaxCategory": {
         "title": "Tax category",
@@ -28239,29 +28074,11 @@
           ]
         }
       },
-      "AdjustmentPayoutTotalsChargebackFeeOriginalComposed": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeOriginal"
-          },
-          {
-            "type": "null"
-          }
-        ],
-        "properties": {
-          "amount": {
-            "examples": [
-              "1500"
-            ],
-            "type": "string",
-            "description": "Fee amount for this chargeback in the original currency."
-          },
-          "currency_code": {
-            "$ref": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeOriginalCurrencyCode"
-          }
-        },
-        "description": "Chargeback fee before conversion to the payout currency. \u0060null\u0060 when the chargeback fee is the same as the payout currency."
+      "EmptyString": {
+        "title": "Empty String",
+        "maxLength": 0,
+        "minLength": 0,
+        "type": "string"
       },
       "Product": {
         "title": "Product",
@@ -28329,20 +28146,14 @@
         },
         "description": "Represents a product entity."
       },
-      "AdjustmentPayoutTotalsChargebackFeeOriginalCurrencyCode": {
+      "PaymentMethodId": {
         "examples": [
-          "USD"
+          "paymtd_01hkm9xwqpbbpr1ksmvg3sx3v1"
         ],
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/CurrencyCodeChargeback"
-          }
-        },
-        "description": "Three-letter ISO 4217 currency code for the original chargeback fee."
+        "title": "Payment Method ID",
+        "pattern": "^paymtd_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this payment method entity, prefixed with \u0060paymtd_\u0060."
       },
       "PaymentAttemptStatus": {
         "enum": [
@@ -29270,21 +29081,13 @@
           ]
         }
       },
-      "AdjustmentTotalsCurrencyCode": {
+      "CardLast4": {
         "examples": [
-          "USD"
+          "4242"
         ],
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/CurrencyCode"
-          }
-        },
-        "description": "Three-letter ISO 4217 currency code used for this adjustment.",
-        "readOnly": true
+        "title": "Card Last Four",
+        "type": "string",
+        "description": "Last four digits of the card used to pay."
       },
       "SouthKoreaLocalCard": {
         "title": "SouthKoreaLocalCard",
@@ -29397,38 +29200,26 @@
           ]
         }
       },
-      "TransactionItemProrationBillingPeriod": {
-        "required": [
-          "starts_at",
-          "ends_at"
+      "CardExpiryMonth": {
+        "examples": [
+          12
         ],
-        "type": "object",
-        "properties": {
-          "starts_at": {
-            "type": "string",
-            "description": "RFC 3339 datetime string.",
-            "format": "date-time"
-          },
-          "ends_at": {
-            "type": "string",
-            "description": "RFC 3339 datetime string.",
-            "format": "date-time"
-          }
-        },
-        "description": "Billing period that proration is based on.",
-        "x-external-readOnly": true
+        "title": "Card Expiry Month",
+        "type": "integer",
+        "description": "Month of the expiry date of the card used to pay."
       },
-      "TimePeriodEndsAt": {
-        "type": "string",
-        "additionalProperties": false,
-        "description": "RFC 3339 datetime string.",
-        "format": "date-time"
+      "CardExpiryYear": {
+        "examples": [
+          2028
+        ],
+        "title": "Card Expiry Year",
+        "type": "integer",
+        "description": "Year of the expiry date of the card used to pay."
       },
-      "TimePeriodStartsAt": {
+      "CardCardholderName": {
+        "title": "Cardholder Name",
         "type": "string",
-        "additionalProperties": false,
-        "description": "RFC 3339 datetime string.",
-        "format": "date-time"
+        "description": "The name on the card used to pay."
       },
       "Card": {
         "title": "Card",
@@ -29687,12 +29478,9 @@
           ]
         }
       },
-      "AddressUpdateCustomData": {
-        "type": [
-          "null",
-          "object"
-        ],
-        "description": "Your own structured key-value data."
+      "DiscountRestrictTo": {
+        "pattern": "^(pri|pro)_[a-z\\d]{26}$",
+        "type": "string"
       },
       "DiscountMode": {
         "title": "DiscountMode",
@@ -29726,14 +29514,14 @@
           ]
         }
       },
-      "AddressUpdateCountryCode": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/CountryCode"
-          }
+      "DiscountGroupId": {
+        "examples": [
+          "dsg_01js2gqehzccfkywgx1jk2mtsp"
         ],
-        "description": "Supported two-letter ISO 3166-1 alpha-2 country code for this address."
+        "title": "Discount Group ID",
+        "pattern": "^dsg_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this discount group, prefixed with \u0060dsg_\u0060."
       },
       "CustomerPaymentMethodType": {
         "title": "SavedPaymentMethodType",
@@ -29920,43 +29708,39 @@
           ]
         }
       },
-      "AddressImportMeta": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ImportMeta"
-          },
-          {
-            "type": "null"
-          }
+      "SavedAt": {
+        "examples": [
+          "2024-10-12T07:20:50.52Z"
         ],
-        "properties": {
-          "external_id": {
-            "maxLength": 200,
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "Reference or identifier for this entity from the provider where it was imported from."
-          },
-          "imported_from": {
-            "examples": [
-              "paddle_classic"
-            ],
-            "maxLength": 200,
-            "minLength": 1,
-            "type": "string",
-            "description": "Name of the platform or provider where this entity was imported from."
-          }
-        },
-        "x-external-readOnly": true
-      },
-      "AddressUpdatedAt": {
+        "title": "Saved at",
         "type": "string",
-        "additionalProperties": false,
-        "description": "RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.",
+        "description": "RFC 3339 datetime string of when this entity was saved. Set automatically by Paddle.",
         "format": "date-time",
         "readOnly": true
+      },
+      "PaddleId": {
+        "examples": [
+          "txnitm_01gm302t81w94gyjpjpqypkzkf",
+          "txn_01h04vsbhqc62t8hmd4z3b578c",
+          "sub_01h04vsc0qhwtsbsxh3422wjs4",
+          "rep_01h9apkx1d320kpvvfyezr96k0",
+          "pro_01gsz97mq9pa4fkyy0wqenepkz",
+          "pri_01gsz8z1q1n00f12qt82y31smh",
+          "ntfset_01gt21c5pdx9q1e4mh1xrsjjn6",
+          "ntflog_01gyfq570sy1nsv2123sbs68kv",
+          "ntf_01ghbkd0frb9k95cnhwd1bxpvk",
+          "evt_01gks14ge726w50ch2tmaw2a1x",
+          "dsc_01gv5kpg05xp104ek2fmgjwttf",
+          "ctm_01grnn4zta5a1mf02jjze7y2ys",
+          "biz_01grrebrzaee2qj2fqqhmcyzaj",
+          "adjitm_01gw4rs4kex0prncwfne87ft8x",
+          "adj_01gya6twkp8y0tv1e19rsgst9m",
+          "add_01gm302t81w94gyjpjpqypkzkf"
+        ],
+        "title": "PaddleID",
+        "pattern": "^[a-z]{3,10}_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this entity."
       },
       "ReportStatus": {
         "title": "ReportStatus",
@@ -30634,12 +30418,14 @@
         },
         "description": "Import information for the subscription entity. \u0060null\u0060 if this entity is not imported."
       },
-      "AddressCreatedAt": {
+      "SubscriptionConsentRequirementId": {
+        "examples": [
+          "subconreq_01gm302t81w94gyjpjpqypkzkf"
+        ],
+        "title": "Subscription Consent Requirement ID",
+        "pattern": "^subconreq_[a-z\\d]{26}$",
         "type": "string",
-        "additionalProperties": false,
-        "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
-        "format": "date-time",
-        "readOnly": true
+        "description": "Unique Paddle ID for this subscription consent requirement entity, prefixed with \u0060subconreq_\u0060."
       },
       "SubscriptionConsentRequirementType": {
         "enum": [
@@ -30953,16 +30739,13 @@
           ]
         }
       },
-      "AddressStatus": {
-        "required": [
-          "value"
+      "DocumentNumber": {
+        "examples": [
+          "123-45678"
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/Status"
-          }
-        }
+        "type": "string",
+        "description": "Document number that is automatically generated by Paddle.",
+        "readOnly": true
       },
       "TransactionItem": {
         "title": "TransactionItem",
@@ -31416,12 +31199,13 @@
         },
         "description": "Represents a credit balance for a customer."
       },
-      "AddressCustomData": {
-        "type": [
-          "null",
-          "object"
+      "CustomerAuthToken": {
+        "examples": [
+          "pca_01hstrngzv6v4ard25jgvywwqq_01hsgrwf0ev6gxm74bp0gebxas_o7scuiadqtvbtspkmbwfnyrvyrq3zig6"
         ],
-        "description": "Your own structured key-value data."
+        "title": "Customer Auth Token",
+        "type": "string",
+        "description": "Authentication token generated by Paddle for this customer. Pass to Paddle.js when opening a checkout to let customers work with saved payment methods."
       },
       "CustomerAuthenticationToken": {
         "title": "Customer Authentication Token",
@@ -31443,14 +31227,14 @@
         },
         "description": "Represents a customer authentication token."
       },
-      "AddressCountryCode": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/CountryCode"
-          }
+      "CustomerPortalSessionId": {
+        "examples": [
+          "cpls_01h4ge9r64c22exjsx0fy8b48b"
         ],
-        "description": "Supported two-letter ISO 3166-1 alpha-2 country code for this address."
+        "title": "Customer Portal Session ID",
+        "pattern": "^cpls_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this customer portal session entity, prefixed with \u0060cpls_\u0060."
       },
       "CustomerPortalSessionUrlsGeneral": {
         "title": "CustomerPortalSessionGeneralUrls",
@@ -33417,11 +33201,14 @@
           ]
         }
       },
-      "AddressCustomerId": {
-        "pattern": "^ctm_[a-z\\d]{26}$",
+      "NotificationSettingId": {
+        "examples": [
+          "ntfset_01gt21c5pdx9q1e4mh1xrsjjn6"
+        ],
+        "title": "Notification setting ID",
+        "pattern": "^ntfset_[a-z\\d]{26}$",
         "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060.",
+        "description": "Unique Paddle ID for this notification setting, prefixed with \u0060ntfset_\u0060.",
         "readOnly": true
       },
       "NotificationSettingType": {
@@ -33682,11 +33469,14 @@
           ]
         }
       },
-      "AddressId": {
-        "pattern": "^add_[a-z\\d]{26}$",
+      "NotificationId": {
+        "examples": [
+          "ntf_01ghbkd0frb9k95cnhwd1bxpvk"
+        ],
+        "title": "Notification ID",
+        "pattern": "^ntf_[a-z\\d]{26}$",
         "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this address entity, prefixed with \u0060add_\u0060.",
+        "description": "Unique Paddle ID for this notification, prefixed with \u0060ntf_\u0060.",
         "readOnly": true
       },
       "NotificationStatus": {
@@ -33893,37 +33683,15 @@
         },
         "description": "Represents a notification entity."
       },
-      "AddressCreateImportMeta": {
-        "type": "object",
-        "anyOf": [
-          {
-            "$ref": "#/components/schemas/ImportMeta"
-          },
-          {
-            "type": "null"
-          }
+      "NotificationLogId": {
+        "examples": [
+          "ntflog_01gyfq570sy1nsv2123sbs68kv"
         ],
-        "properties": {
-          "external_id": {
-            "maxLength": 200,
-            "type": [
-              "null",
-              "string"
-            ],
-            "description": "Reference or identifier for this entity from the provider where it was imported from."
-          },
-          "imported_from": {
-            "examples": [
-              "paddle_classic"
-            ],
-            "maxLength": 200,
-            "minLength": 1,
-            "type": "string",
-            "description": "Name of the platform or provider where this entity was imported from."
-          }
-        },
-        "description": "Import information for this entity. \u0060null\u0060 if this entity is not imported.",
-        "x-external-readOnly": true
+        "title": "Notification log ID",
+        "pattern": "^ntflog_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this notification log, prefixed with \u0060ntflog_\u0060.",
+        "readOnly": true
       },
       "NotificationLog": {
         "title": "NotificationLog",
@@ -36990,12 +36758,15 @@
         "description": "Represents a simulation type.",
         "readOnly": true
       },
-      "AddressCreateCustomData": {
-        "type": [
-          "null",
-          "object"
+      "SimulationId": {
+        "examples": [
+          "ntfsim_01ghbkd0frb9k95cnhwd1bxpvk"
         ],
-        "description": "Your own structured key-value data."
+        "title": "Simulation ID",
+        "pattern": "^ntfsim_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this simulation, prefixed with \u0060ntfsim_\u0060.",
+        "readOnly": true
       },
       "SimulationPayload": {
         "unevaluatedProperties": {},
@@ -38864,14 +38635,15 @@
           ]
         }
       },
-      "AddressCreateCountryCode": {
-        "type": "object",
-        "allOf": [
-          {
-            "$ref": "#/components/schemas/CountryCode"
-          }
+      "SimulationRunId": {
+        "examples": [
+          "ntfsimrun_01ghbkd0frb9k95cnhwd1bxpvk"
         ],
-        "description": "Supported two-letter ISO 3166-1 alpha-2 country code for this address."
+        "title": "Simulation Run ID",
+        "pattern": "^ntfsimrun_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this simulation run, prefixed with \u0060ntfsimrun_\u0060.",
+        "readOnly": true
       },
       "SimulationRunStatus": {
         "title": "SimulationRunStatus",
@@ -38914,11 +38686,14 @@
           ]
         }
       },
-      "AddressCreateId": {
-        "pattern": "^add_[a-z\\d]{26}$",
+      "SimulationEventId": {
+        "examples": [
+          "ntfsimevt_01hvg8ykjrcdr4jvv9rqcbkhfa"
+        ],
+        "title": "Simulation Event ID",
+        "pattern": "^ntfsimevt_[a-z\\d]{26}$",
         "type": "string",
-        "additionalProperties": false,
-        "description": "Unique Paddle ID for this address entity, prefixed with \u0060add_\u0060.",
+        "description": "Unique Paddle ID for this simulation event, prefixed with \u0060ntfsimevt_\u0060.",
         "readOnly": true
       },
       "SimulationEventStatus": {
@@ -39792,61 +39567,23 @@
           ]
         }
       },
-      "ErrorResponseError": {
-        "required": [
-          "type",
-          "code",
-          "detail",
-          "documentation_url"
+      "SubscriptionHistoryId": {
+        "examples": [
+          "subhis_01kagxfkdpvsdvnm7xw4avwvsp"
         ],
-        "type": "object",
-        "properties": {
-          "type": {
-            "$ref": "#/components/schemas/ApiErrorType"
-          },
-          "code": {
-            "examples": [
-              "not_found"
-            ],
-            "type": "string",
-            "description": "Short snake case string that describes this error. Use to search the error reference."
-          },
-          "detail": {
-            "examples": [
-              "Entity pro_01gsz97mq9pa4fkyy0wqenepkz not found"
-            ],
-            "type": "string",
-            "description": "Some information about what went wrong as a human-readable string."
-          },
-          "documentation_url": {
-            "examples": [
-              "https://developer.paddle.com/errors/shared/not_found"
-            ],
-            "type": "string",
-            "description": "Link to a page in the error reference for this specific error.",
-            "format": "uri"
-          },
-          "errors": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ErrorItem"
-            },
-            "description": "List of validation errors. Only returned when there\u0027s a validation error."
-          }
-        },
-        "description": "Represents an error."
+        "title": "Subscription History ID",
+        "pattern": "^subhis_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this subscription history entry, prefixed with \u0060subhis_\u0060."
       },
-      "ApiErrorType": {
-        "required": [
-          "value"
+      "SubscriptionHistoryGroupId": {
+        "examples": [
+          "subhisgrp_01kagxffkcme9fhd6srqgkmssd"
         ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/ErrorResponseType"
-          }
-        },
-        "description": "Type of error encountered."
+        "title": "Subscription History Group ID",
+        "pattern": "^subhisgrp_[a-z\\d]{26}$",
+        "type": "string",
+        "description": "Unique Paddle ID for this subscription history group. History entries that occurred at the same time, as part of the same request, share the same group ID. Prefixed with \u0060subhisgrp_\u0060."
       },
       "ActionSource": {
         "title": "Action Source",
@@ -44986,6 +44723,875 @@
           }
         }
       },
+      "ApiErrorType": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/ErrorResponseType"
+          }
+        },
+        "description": "Type of error encountered."
+      },
+      "ErrorResponseError": {
+        "required": [
+          "type",
+          "code",
+          "detail",
+          "documentation_url"
+        ],
+        "type": "object",
+        "properties": {
+          "type": {
+            "$ref": "#/components/schemas/ApiErrorType"
+          },
+          "code": {
+            "examples": [
+              "not_found"
+            ],
+            "type": "string",
+            "description": "Short snake case string that describes this error. Use to search the error reference."
+          },
+          "detail": {
+            "examples": [
+              "Entity pro_01gsz97mq9pa4fkyy0wqenepkz not found"
+            ],
+            "type": "string",
+            "description": "Some information about what went wrong as a human-readable string."
+          },
+          "documentation_url": {
+            "examples": [
+              "https://developer.paddle.com/errors/shared/not_found"
+            ],
+            "type": "string",
+            "description": "Link to a page in the error reference for this specific error.",
+            "format": "uri"
+          },
+          "errors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ErrorItem"
+            },
+            "description": "List of validation errors. Only returned when there\u0027s a validation error."
+          }
+        },
+        "description": "Represents an error."
+      },
+      "AddressCreateId": {
+        "pattern": "^add_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this address entity, prefixed with \u0060add_\u0060.",
+        "readOnly": true
+      },
+      "AddressCreateCountryCode": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CountryCode"
+          }
+        ],
+        "description": "Supported two-letter ISO 3166-1 alpha-2 country code for this address."
+      },
+      "AddressCreateCustomData": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "description": "Your own structured key-value data."
+      },
+      "AddressCreateImportMeta": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ImportMeta"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "properties": {
+          "external_id": {
+            "maxLength": 200,
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Reference or identifier for this entity from the provider where it was imported from."
+          },
+          "imported_from": {
+            "examples": [
+              "paddle_classic"
+            ],
+            "maxLength": 200,
+            "minLength": 1,
+            "type": "string",
+            "description": "Name of the platform or provider where this entity was imported from."
+          }
+        },
+        "description": "Import information for this entity. \u0060null\u0060 if this entity is not imported.",
+        "x-external-readOnly": true
+      },
+      "AddressIdComposed": {
+        "pattern": "^add_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this address entity, prefixed with \u0060add_\u0060.",
+        "readOnly": true
+      },
+      "AddressCustomerId": {
+        "pattern": "^ctm_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060.",
+        "readOnly": true
+      },
+      "AddressCountryCode": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CountryCode"
+          }
+        ],
+        "description": "Supported two-letter ISO 3166-1 alpha-2 country code for this address."
+      },
+      "AddressCustomData": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "description": "Your own structured key-value data."
+      },
+      "AddressStatus": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "AddressCreatedAt": {
+        "type": "string",
+        "additionalProperties": false,
+        "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+        "format": "date-time",
+        "readOnly": true
+      },
+      "AddressUpdatedAt": {
+        "type": "string",
+        "additionalProperties": false,
+        "description": "RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.",
+        "format": "date-time",
+        "readOnly": true
+      },
+      "AddressImportMeta": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ImportMeta"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "properties": {
+          "external_id": {
+            "maxLength": 200,
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Reference or identifier for this entity from the provider where it was imported from."
+          },
+          "imported_from": {
+            "examples": [
+              "paddle_classic"
+            ],
+            "maxLength": 200,
+            "minLength": 1,
+            "type": "string",
+            "description": "Name of the platform or provider where this entity was imported from."
+          }
+        },
+        "x-external-readOnly": true
+      },
+      "AddressUpdateCountryCode": {
+        "type": "object",
+        "allOf": [
+          {
+            "$ref": "#/components/schemas/CountryCode"
+          }
+        ],
+        "description": "Supported two-letter ISO 3166-1 alpha-2 country code for this address."
+      },
+      "AddressUpdateCustomData": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "description": "Your own structured key-value data."
+      },
+      "TimePeriodStartsAt": {
+        "type": "string",
+        "additionalProperties": false,
+        "description": "RFC 3339 datetime string.",
+        "format": "date-time"
+      },
+      "TimePeriodEndsAt": {
+        "type": "string",
+        "additionalProperties": false,
+        "description": "RFC 3339 datetime string.",
+        "format": "date-time"
+      },
+      "TransactionItemProrationBillingPeriod": {
+        "required": [
+          "starts_at",
+          "ends_at"
+        ],
+        "type": "object",
+        "properties": {
+          "starts_at": {
+            "type": "string",
+            "description": "RFC 3339 datetime string.",
+            "format": "date-time"
+          },
+          "ends_at": {
+            "type": "string",
+            "description": "RFC 3339 datetime string.",
+            "format": "date-time"
+          }
+        },
+        "description": "Billing period that proration is based on.",
+        "x-external-readOnly": true
+      },
+      "AdjustmentTotalsCurrencyCode": {
+        "examples": [
+          "USD"
+        ],
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CurrencyCode"
+          }
+        },
+        "description": "Three-letter ISO 4217 currency code used for this adjustment.",
+        "readOnly": true
+      },
+      "AdjustmentPayoutTotalsChargebackFeeOriginalCurrencyCode": {
+        "examples": [
+          "USD"
+        ],
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CurrencyCodeChargeback"
+          }
+        },
+        "description": "Three-letter ISO 4217 currency code for the original chargeback fee."
+      },
+      "AdjustmentPayoutTotalsChargebackFeeOriginalComposed": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeOriginal"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "properties": {
+          "amount": {
+            "examples": [
+              "1500"
+            ],
+            "type": "string",
+            "description": "Fee amount for this chargeback in the original currency."
+          },
+          "currency_code": {
+            "$ref": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeOriginalCurrencyCode"
+          }
+        },
+        "description": "Chargeback fee before conversion to the payout currency. \u0060null\u0060 when the chargeback fee is the same as the payout currency."
+      },
+      "AdjustmentPayoutTotalsChargebackFeeComposed": {
+        "required": [
+          "amount",
+          "original"
+        ],
+        "type": "object",
+        "properties": {
+          "amount": {
+            "examples": [
+              "1680"
+            ],
+            "type": "string",
+            "description": "Chargeback fee converted into the payout currency."
+          },
+          "original": {
+            "$ref": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeOriginalComposed"
+          }
+        },
+        "description": "Chargeback fees incurred for this adjustment. Only returned when the adjustment \u0060action\u0060 is \u0060chargeback\u0060 or \u0060chargeback_warning\u0060."
+      },
+      "AdjustmentPayoutTotalsCurrencyCode": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CurrencyCodePayout"
+          }
+        },
+        "description": "Three-letter ISO 4217 currency code used for the payout for this transaction. If your primary currency has changed, this reflects the primary currency at the time the transaction was billed."
+      },
+      "AdjustmentTaxRatesUsedTotals": {
+        "title": "AdjustmentTaxRateUsedTotals",
+        "required": [
+          "subtotal",
+          "tax",
+          "total"
+        ],
+        "type": "object",
+        "properties": {
+          "subtotal": {
+            "examples": [
+              "15000"
+            ],
+            "type": "string",
+            "description": "Total before tax. For tax adjustments, the value is 0.",
+            "readOnly": true
+          },
+          "tax": {
+            "examples": [
+              "1500"
+            ],
+            "type": "string",
+            "description": "Total tax on the subtotal.",
+            "readOnly": true
+          },
+          "total": {
+            "examples": [
+              "16500"
+            ],
+            "type": "string",
+            "description": "Total after tax.",
+            "readOnly": true
+          }
+        },
+        "description": "Calculated totals for the tax applied to this adjustment.",
+        "readOnly": true
+      },
+      "AdjustmentIdComposed": {
+        "pattern": "^adj_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this adjustment entity, prefixed with \u0060adj_\u0060.",
+        "readOnly": true
+      },
+      "AdjustmentTypeComposed": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/AdjustmentType"
+          }
+        }
+      },
+      "AdjustmentTransactionId": {
+        "pattern": "^txn_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this transaction entity, prefixed with \u0060txn_\u0060."
+      },
+      "AdjustmentCustomerId": {
+        "pattern": "^ctm_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060.",
+        "readOnly": true
+      },
+      "AdjustmentCurrencyCode": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CurrencyCode"
+          }
+        },
+        "description": "Three-letter ISO 4217 currency code for this adjustment. Set automatically by Paddle based on the \u0060currency_code\u0060 of the related transaction.",
+        "readOnly": true
+      },
+      "AdjustmentStatusComposed": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/AdjustmentStatus"
+          }
+        },
+        "readOnly": true
+      },
+      "AdjustmentItemsItemId": {
+        "pattern": "^adjitm_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this adjustment item, prefixed with \u0060adjitm_\u0060.",
+        "readOnly": true
+      },
+      "AdjustmentItemsItemItemId": {
+        "pattern": "^txnitm_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this transaction item, prefixed with \u0060txnitm_\u0060. Used when working with [adjustments](https://developer.paddle.com/build/transactions/create-transaction-adjustments)."
+      },
+      "AdjustmentItemsItemType": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/AdjustmentItemType"
+          }
+        },
+        "description": "Type of adjustment for this transaction item. \u0060tax\u0060 adjustments are automatically created by Paddle.\nInclude \u0060amount\u0060 when creating a \u0060partial\u0060 adjustment."
+      },
+      "AdjustmentItemsItemProration": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/TransactionItemProration"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "properties": {
+          "rate": {
+            "type": "string",
+            "description": "Rate used to calculate proration.",
+            "x-external-readOnly": true
+          },
+          "billing_period": {
+            "$ref": "#/components/schemas/TransactionItemProrationBillingPeriod"
+          }
+        },
+        "description": "How proration was calculated for this adjustment item.",
+        "readOnly": true
+      },
+      "AdjustmentItemsItemTotals": {
+        "required": [
+          "subtotal",
+          "tax",
+          "total"
+        ],
+        "type": "object",
+        "properties": {
+          "subtotal": {
+            "examples": [
+              "15000"
+            ],
+            "type": "string",
+            "description": "Amount multiplied by quantity.",
+            "readOnly": true
+          },
+          "tax": {
+            "examples": [
+              "1500"
+            ],
+            "type": "string",
+            "description": "Total tax on the subtotal.",
+            "readOnly": true
+          },
+          "total": {
+            "examples": [
+              "16500"
+            ],
+            "type": "string",
+            "description": "Total after tax.",
+            "readOnly": true
+          }
+        },
+        "readOnly": true
+      },
+      "AdjustmentTotalsComposed": {
+        "required": [
+          "subtotal",
+          "tax",
+          "total",
+          "fee",
+          "earnings",
+          "currency_code"
+        ],
+        "type": "object",
+        "properties": {
+          "subtotal": {
+            "examples": [
+              "15000"
+            ],
+            "type": "string",
+            "description": "Total before tax. For tax adjustments, the value is 0.",
+            "readOnly": true
+          },
+          "tax": {
+            "examples": [
+              "1500"
+            ],
+            "type": "string",
+            "description": "Total tax on the subtotal.",
+            "readOnly": true
+          },
+          "total": {
+            "examples": [
+              "16500"
+            ],
+            "type": "string",
+            "description": "Total after tax.",
+            "readOnly": true
+          },
+          "fee": {
+            "examples": [
+              "300"
+            ],
+            "type": "string",
+            "description": "Total fee taken by Paddle for this adjustment.",
+            "readOnly": true
+          },
+          "retained_fee": {
+            "examples": [
+              "300"
+            ],
+            "type": "string",
+            "description": "Paddle fees retained for this adjustment.",
+            "readOnly": true
+          },
+          "earnings": {
+            "examples": [
+              "14700"
+            ],
+            "type": "string",
+            "description": "Total earnings. This is the subtotal minus the Paddle fee.\nFor tax adjustments, this value is negative, which means a positive effect in the transaction earnings.\nThis is because the fee is originally calculated from the transaction total, so if a tax adjustment is made,\nthen the fee portion of it is returned.",
+            "readOnly": true
+          },
+          "currency_code": {
+            "$ref": "#/components/schemas/AdjustmentTotalsCurrencyCode"
+          }
+        },
+        "readOnly": true
+      },
+      "AdjustmentPayoutTotalsComposed": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/AdjustmentPayoutTotals"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "properties": {
+          "subtotal": {
+            "examples": [
+              "15000"
+            ],
+            "type": "string",
+            "description": "Adjustment total before tax and fees."
+          },
+          "tax": {
+            "examples": [
+              "1500"
+            ],
+            "type": "string",
+            "description": "Total tax on the adjustment subtotal."
+          },
+          "total": {
+            "examples": [
+              "16500"
+            ],
+            "type": "string",
+            "description": "Adjustment total after tax."
+          },
+          "fee": {
+            "examples": [
+              "300"
+            ],
+            "type": "string",
+            "description": "Adjusted Paddle fee."
+          },
+          "retained_fee": {
+            "examples": [
+              "300"
+            ],
+            "type": "string",
+            "description": "Paddle fees retained for this adjustment.",
+            "readOnly": true
+          },
+          "chargeback_fee": {
+            "$ref": "#/components/schemas/AdjustmentPayoutTotalsChargebackFeeComposed"
+          },
+          "earnings": {
+            "examples": [
+              "15120"
+            ],
+            "type": "string",
+            "description": "Adjusted payout earnings. This is the adjustment total plus adjusted Paddle fees, excluding chargeback fees."
+          },
+          "currency_code": {
+            "$ref": "#/components/schemas/AdjustmentPayoutTotalsCurrencyCode"
+          }
+        },
+        "description": "Breakdown of how this adjustment affects your payout balance.",
+        "readOnly": true
+      },
+      "AdjustmentCreatedAt": {
+        "type": "string",
+        "additionalProperties": false,
+        "description": "RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.",
+        "format": "date-time",
+        "readOnly": true
+      },
+      "AdjustmentUpdatedAt": {
+        "type": "string",
+        "additionalProperties": false,
+        "description": "RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.",
+        "format": "date-time",
+        "readOnly": true
+      },
+      "AdjustmentItemItemId": {
+        "pattern": "^txnitm_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this transaction item, prefixed with \u0060txnitm_\u0060. Used when working with [adjustments](https://developer.paddle.com/build/transactions/create-transaction-adjustments)."
+      },
+      "AdjustmentItemTypeComposed": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/AdjustmentItemType"
+          }
+        },
+        "description": "Type of adjustment for this transaction item. \u0060tax\u0060 adjustments are automatically created by Paddle.\nInclude \u0060amount\u0060 when creating a \u0060partial\u0060 adjustment."
+      },
+      "AdjustmentItemProration": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/TransactionItemProration"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "properties": {
+          "rate": {
+            "type": "string",
+            "description": "Rate used to calculate proration.",
+            "x-external-readOnly": true
+          },
+          "billing_period": {
+            "$ref": "#/components/schemas/TransactionItemProrationBillingPeriod"
+          }
+        },
+        "description": "How proration was calculated for this adjustment item.",
+        "readOnly": true
+      },
+      "AdjustmentItemTotalsComposed": {
+        "required": [
+          "subtotal",
+          "tax",
+          "total"
+        ],
+        "type": "object",
+        "properties": {
+          "subtotal": {
+            "examples": [
+              "15000"
+            ],
+            "type": "string",
+            "description": "Amount multiplied by quantity.",
+            "readOnly": true
+          },
+          "tax": {
+            "examples": [
+              "1500"
+            ],
+            "type": "string",
+            "description": "Total tax on the subtotal.",
+            "readOnly": true
+          },
+          "total": {
+            "examples": [
+              "16500"
+            ],
+            "type": "string",
+            "description": "Total after tax.",
+            "readOnly": true
+          }
+        },
+        "readOnly": true
+      },
+      "AdjustmentItemCreateItemId": {
+        "pattern": "^txnitm_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this transaction item, prefixed with \u0060txnitm_\u0060. Used when working with [adjustments](https://developer.paddle.com/build/transactions/create-transaction-adjustments)."
+      },
+      "AdjustmentItemCreateType": {
+        "title": "AdjustmentItemCreateType",
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/AdjustmentItemType"
+          }
+        },
+        "description": "Type of adjustment for this transaction item. \u0060tax\u0060 adjustments are automatically created by Paddle.\nInclude \u0060amount\u0060 when creating a \u0060partial\u0060 adjustment."
+      },
+      "AdjustmentCreateType": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/AdjustmentType"
+          }
+        }
+      },
+      "AdjustmentCreateTaxMode": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/AdjustmentTaxMode"
+          }
+        },
+        "writeOnly": true
+      },
+      "AdjustmentCreateTransactionId": {
+        "pattern": "^txn_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this transaction entity, prefixed with \u0060txn_\u0060."
+      },
+      "ContactsCreateName": {
+        "maxLength": 1024,
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Full name."
+      },
+      "ContactsCreateEmail": {
+        "maxLength": 320,
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Email address for this entity.",
+        "format": "email"
+      },
+      "BusinessCreateId": {
+        "pattern": "^biz_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this business entity, prefixed with \u0060biz_\u0060.",
+        "readOnly": true
+      },
+      "BusinessCreateName": {
+        "maxLength": 1024,
+        "minLength": 1,
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Full name."
+      },
+      "BusinessCreateCustomData": {
+        "type": [
+          "null",
+          "object"
+        ],
+        "description": "Your own structured key-value data."
+      },
+      "BusinessCreateImportMeta": {
+        "type": "object",
+        "anyOf": [
+          {
+            "$ref": "#/components/schemas/ImportMeta"
+          },
+          {
+            "type": "null"
+          }
+        ],
+        "properties": {
+          "external_id": {
+            "maxLength": 200,
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "Reference or identifier for this entity from the provider where it was imported from."
+          },
+          "imported_from": {
+            "examples": [
+              "paddle_classic"
+            ],
+            "maxLength": 200,
+            "minLength": 1,
+            "type": "string",
+            "description": "Name of the platform or provider where this entity was imported from."
+          }
+        },
+        "description": "Import information for this entity. \u0060null\u0060 if this entity is not imported.",
+        "x-external-readOnly": true
+      },
+      "BusinessContactsItemName": {
+        "maxLength": 1024,
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Full name."
+      },
+      "BusinessContactsItemEmail": {
+        "maxLength": 320,
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Email address for this entity.",
+        "format": "email"
+      },
+      "BusinessIdComposed": {
+        "pattern": "^biz_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this business entity, prefixed with \u0060biz_\u0060.",
+        "readOnly": true
+      },
+      "BusinessCustomerId": {
+        "pattern": "^ctm_[a-z\\d]{26}$",
+        "type": "string",
+        "additionalProperties": false,
+        "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060.",
+        "readOnly": true
+      },
       "BusinessName": {
         "maxLength": 1024,
         "minLength": 1,
@@ -45071,7 +45677,7 @@
         ],
         "description": "Your own structured key-value data."
       },
-      "CheckoutDomainId": {
+      "CheckoutDomainIdComposed": {
         "pattern": "^chedom_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -45117,14 +45723,14 @@
         "format": "date-time",
         "readOnly": true
       },
-      "ClientTokenId": {
+      "ClientTokenIdComposed": {
         "pattern": "^ctkn_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
         "description": "Unique Paddle ID for this client-side token entity, prefixed with \u0060ctkn_\u0060.",
         "readOnly": true
       },
-      "ClientTokenToken": {
+      "ClientTokenTokenComposed": {
         "type": "string",
         "additionalProperties": false,
         "description": "A client-side token, prefixed with \u0060test\u0060 or \u0060live\u0060 depending on the environment of your account.  Pass as the \u0060token\u0060 parameter when initializing Paddle.js to authenticate.",
@@ -45426,7 +46032,7 @@
         },
         "description": "Three-letter ISO 4217 currency code used for the payout for this transaction. If your primary currency has changed, this reflects the primary currency at the time the transaction was billed."
       },
-      "ProductId": {
+      "ProductIdComposed": {
         "pattern": "^pro_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -45695,7 +46301,7 @@
         "format": "date-time",
         "readOnly": true
       },
-      "PriceId": {
+      "PriceIdComposed": {
         "pattern": "^pri_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -46742,7 +47348,7 @@
         "description": "Import information for this entity. \u0060null\u0060 if this entity is not imported.",
         "x-external-readOnly": true
       },
-      "CustomerId": {
+      "CustomerIdComposed": {
         "pattern": "^ctm_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -47301,7 +47907,7 @@
         },
         "description": "Breakdown of the payout total for a transaction after adjustments. \u0060null\u0060 until the transaction is \u0060completed\u0060."
       },
-      "TransactionId": {
+      "TransactionIdComposed": {
         "pattern": "^txn_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -47687,7 +48293,7 @@
         },
         "description": "Authenticated customer portal deep links that aren\u0027t associated with a specific entity."
       },
-      "CustomerPortalSessionId": {
+      "CustomerPortalSessionIdComposed": {
         "pattern": "^cpls_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -47727,7 +48333,7 @@
         "description": "RFC 3339 datetime string.",
         "format": "date-time"
       },
-      "DiscountGroupId": {
+      "DiscountGroupIdComposed": {
         "pattern": "^dsg_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -48036,7 +48642,7 @@
         "description": "Discount group for this discount. Returned when the \u0060include\u0060 parameter is used with the \u0060discount_group\u0060 value and the discount has a \u0060discount_group_id\u0060.",
         "x-included": true
       },
-      "DiscountId": {
+      "DiscountIdComposed": {
         "pattern": "^dsc_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -48699,7 +49305,7 @@
         "description": "RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.",
         "format": "date-time"
       },
-      "NotificationSettingId": {
+      "NotificationSettingIdComposed": {
         "pattern": "^ntfset_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -48806,7 +49412,7 @@
         "description": "New or changed entity.",
         "readOnly": true
       },
-      "NotificationId": {
+      "NotificationIdComposed": {
         "pattern": "^ntf_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -48897,7 +49503,7 @@
         "description": "Unique Paddle ID for this notification setting, prefixed with \u0060ntfset_\u0060.",
         "readOnly": true
       },
-      "NotificationLogId": {
+      "NotificationLogIdComposed": {
         "pattern": "^ntflog_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -52980,7 +53586,7 @@
         ],
         "description": "Configuration for this scenario simulation. Use to simulate more granular flows and populate payloads with your own entity data. If omitted, Paddle simulates the default scenario flow and populates payloads with demo examples."
       },
-      "SimulationEventId": {
+      "SimulationEventIdComposed": {
         "pattern": "^ntfsimevt_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -55239,14 +55845,14 @@
         },
         "description": "Details of the updated scheduled change on the subscription. This is what the scheduled change was changed to."
       },
-      "SubscriptionHistoryId": {
+      "SubscriptionHistoryIdComposed": {
         "pattern": "^subhis_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
         "description": "Unique Paddle ID for this subscription history entry, prefixed with \u0060subhis_\u0060.",
         "readOnly": true
       },
-      "SubscriptionHistoryGroupId": {
+      "SubscriptionHistoryGroupIdComposed": {
         "pattern": "^subhisgrp_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -55665,7 +56271,7 @@
         "description": "Preview of the recurring transaction for this subscription. This is what the customer can expect to be billed when there are no prorated or one-time charges. Returned when the \u0060include\u0060 parameter is used with the \u0060recurring_transaction_details\u0060 value.",
         "x-included": true
       },
-      "SubscriptionId": {
+      "SubscriptionIdComposed": {
         "pattern": "^sub_[a-z\\d]{26}$",
         "type": "string",
         "additionalProperties": false,
@@ -64464,14 +65070,80 @@
           }
         }
       },
-      "AdjustmentTaxModeWrapper": {
+      "PublicTransactionOriginWrapper": {
         "required": [
           "value"
         ],
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/AdjustmentTaxMode"
+            "$ref": "#/components/schemas/PublicTransactionOrigin"
+          }
+        }
+      },
+      "SubscriptionHistoryReasonEnumWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/SubscriptionHistoryReasonEnum"
+          }
+        }
+      },
+      "ErrorResponseTypeWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/ErrorResponseType"
+          }
+        }
+      },
+      "StatusWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/Status"
+          }
+        }
+      },
+      "CurrencyCodeWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CurrencyCode"
+          }
+        }
+      },
+      "CurrencyCodeChargebackWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CurrencyCodeChargeback"
+          }
+        }
+      },
+      "CurrencyCodePayoutWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CurrencyCodePayout"
           }
         }
       },
@@ -64483,6 +65155,28 @@
         "properties": {
           "value": {
             "$ref": "#/components/schemas/AdjustmentType"
+          }
+        }
+      },
+      "CurrencyCodeWrapper2": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/CurrencyCode"
+          }
+        }
+      },
+      "AdjustmentStatusWrapper": {
+        "required": [
+          "value"
+        ],
+        "type": "object",
+        "properties": {
+          "value": {
+            "$ref": "#/components/schemas/AdjustmentStatus"
           }
         }
       },
@@ -64519,39 +65213,6 @@
           }
         }
       },
-      "AdjustmentStatusWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/AdjustmentStatus"
-          }
-        }
-      },
-      "PublicTransactionOriginWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/PublicTransactionOrigin"
-          }
-        }
-      },
-      "CurrencyCodeWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/CurrencyCode"
-          }
-        }
-      },
       "AdjustmentTypeWrapper2": {
         "required": [
           "value"
@@ -64563,69 +65224,14 @@
           }
         }
       },
-      "CurrencyCodePayoutWrapper": {
+      "AdjustmentTaxModeWrapper": {
         "required": [
           "value"
         ],
         "type": "object",
         "properties": {
           "value": {
-            "$ref": "#/components/schemas/CurrencyCodePayout"
-          }
-        }
-      },
-      "CurrencyCodeChargebackWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/CurrencyCodeChargeback"
-          }
-        }
-      },
-      "CurrencyCodeWrapper2": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/CurrencyCode"
-          }
-        }
-      },
-      "StatusWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/Status"
-          }
-        }
-      },
-      "ErrorResponseTypeWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/ErrorResponseType"
-          }
-        }
-      },
-      "SubscriptionHistoryReasonEnumWrapper": {
-        "required": [
-          "value"
-        ],
-        "type": "object",
-        "properties": {
-          "value": {
-            "$ref": "#/components/schemas/SubscriptionHistoryReasonEnum"
+            "$ref": "#/components/schemas/AdjustmentTaxMode"
           }
         }
       },
