@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Information about the Korean payment method used to pay.
+    /// Information about the Korean credit or debit card used to pay.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SouthKoreaLocalCard : IAdditionalDataHolder, IParsable
@@ -23,7 +23,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Last4 { get; set; }
 #endif
-        /// <summary>Type of Korean payment method used to pay.</summary>
+        /// <summary>Type of Korean credit or debit card used to pay.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SouthKoreaLocalCardType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SouthKoreaLocalCard"/> and sets the default values.

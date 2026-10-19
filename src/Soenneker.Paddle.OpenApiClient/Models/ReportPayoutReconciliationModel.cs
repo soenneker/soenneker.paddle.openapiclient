@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>RFC 3339 datetime string of when this report expires. The report is no longer available to download after this date.</summary>
         public DateTimeOffset? ExpiresAt { get; private set; }
-        /// <summary>Filter criteria for this report. If omitted, reports are filtered to include data updated in the last 30 days. This means `transaction_updated_at` is greater than or equal to (`gte`) the date 30 days ago from the time the report was generated.</summary>
+        /// <summary>Filter criteria for this report. If none of a `gte` filter for `transaction_updated_at`, a `remittance_reference` filter, or a `balance_movement_date` filter is passed, reports are filtered to include data updated in the last month. This means `transaction_updated_at` is greater than or equal to (`gte`) the same date and time one calendar month before the report was generated, so the window is between 28 and 31 days depending on the month.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterReconciliation>? Filters { get; set; }

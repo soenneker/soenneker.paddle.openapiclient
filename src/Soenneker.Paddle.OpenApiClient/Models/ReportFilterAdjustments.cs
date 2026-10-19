@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Filter criteria for this report. If omitted when creating, reports are filtered to include data updated in the last 30 days. This means `updated_at` is greater than or equal to (`gte`) the date 30 days ago from the time the report was generated.
+    /// Filter criteria for this report. If no `gte` filter for `updated_at` is passed when creating, reports are filtered to include data updated in the last month. This means `updated_at` is greater than or equal to (`gte`) the same date and time one calendar month before the report was generated, so the window is between 28 and 31 days depending on the month.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReportFilterAdjustments : IAdditionalDataHolder, IParsable

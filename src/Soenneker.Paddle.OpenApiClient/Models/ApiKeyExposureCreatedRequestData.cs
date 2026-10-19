@@ -25,9 +25,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string ApiKeyId { get; set; }
 #endif
-        /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
+        /// <summary>RFC 3339 datetime string of when this API key exposure was found. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>Short description of this API key exposure.</summary>
+        /// <summary>Additional details about this exposure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Description { get; set; }
@@ -43,7 +43,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>Reference or identifier for this exposure.</summary>
+        /// <summary>A unique URL or reference pointing to the source of the exposure. When `source` is `github`, a URL to the location of the exposure is returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Reference { get; set; }

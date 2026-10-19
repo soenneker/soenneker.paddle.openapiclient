@@ -34,7 +34,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Charge.Preview
         {
         }
         /// <summary>
-        /// Previews creating a one-time charge for a subscription without billing that charge. Typically used for previewing calculations before making changes to a subscription.One-time charges are non-recurring items. These are price entities where the `billing_cycle` is `null`.If successful, your response includes `immediate_transaction`, `next_transaction`, and `recurring_transaction_details` so you can see expected transactions for the changes.
+        /// Previews creating a one-time charge for a subscription without billing that charge. Typically used for previewing calculations before making changes to a subscription.One-time charges are non-recurring items. These are price entities where the `billing_cycle` is `null`.You can&apos;t preview one-time charges for subscriptions that are `past_due`.If successful, your response includes `immediate_transaction`, `next_transaction`, and `recurring_transaction_details` so you can see expected transactions for the changes.
         /// Preview a one-time charge for a subscription <see href="https://developer.paddle.com/api-reference/subscriptions/preview-subscription-charge" />
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionCharge200Response"/></returns>
@@ -60,7 +60,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Charge.Preview
             return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionCharge200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionCharge200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Previews creating a one-time charge for a subscription without billing that charge. Typically used for previewing calculations before making changes to a subscription.One-time charges are non-recurring items. These are price entities where the `billing_cycle` is `null`.If successful, your response includes `immediate_transaction`, `next_transaction`, and `recurring_transaction_details` so you can see expected transactions for the changes.
+        /// Previews creating a one-time charge for a subscription without billing that charge. Typically used for previewing calculations before making changes to a subscription.One-time charges are non-recurring items. These are price entities where the `billing_cycle` is `null`.You can&apos;t preview one-time charges for subscriptions that are `past_due`.If successful, your response includes `immediate_transaction`, `next_transaction`, and `recurring_transaction_details` so you can see expected transactions for the changes.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Represents a one-time charge for a subscription.</param>

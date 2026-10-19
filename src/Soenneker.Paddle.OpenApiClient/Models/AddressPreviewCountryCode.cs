@@ -15,7 +15,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Two-letter ISO 3166-1 alpha-2 representation of a supported country.</summary>
+        /// <summary>Two-letter code for a country that Paddle supports sales to. Typically an ISO 3166-1 alpha-2 code, though Paddle uses a small number of codes that ISO doesn&apos;t currently assign.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupported? Value { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCountryCode"/> and sets the default values.

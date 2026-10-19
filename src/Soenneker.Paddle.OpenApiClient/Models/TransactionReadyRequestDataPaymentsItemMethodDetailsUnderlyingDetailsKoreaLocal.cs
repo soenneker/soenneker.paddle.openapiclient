@@ -8,14 +8,15 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Information about the Korean payment method used to pay. `null` unless the type is `korea_local`.
+    /// Information about the Korean payment method used to pay. `null` unless the type is `korea_local`. Deprecated - use top-level type objects instead.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionReadyRequestDataPaymentsItemMethodDetailsUnderlyingDetailsKoreaLocal : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Type of Korean payment method used to pay.</summary>
+        /// <summary>Type of Korean payment method used to pay. Deprecated - use top-level type objects instead.</summary>
+        [Obsolete("")]
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataPaymentsItemMethodDetailsUnderlyingDetailsKoreaLocalType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataPaymentsItemMethodDetailsUnderlyingDetailsKoreaLocal"/> and sets the default values.

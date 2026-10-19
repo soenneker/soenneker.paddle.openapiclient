@@ -70,10 +70,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Supported three-letter ISO 4217 currency code. Must be `USD`, `EUR`, or `GBP` if `collection_mode` is `manual`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper27? CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper30? CurrencyCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper27 CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper30 CurrencyCode { get; set; }
 #endif
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom Discount { get; set; }
 #endif
-        /// <summary>Paddle ID of the discount to apply to this transaction, prefixed with `dsc_`.</summary>
+        /// <summary>Paddle ID of the discount to apply to this transaction, prefixed with `dsc_`. Send one of `discount_id` or `discount`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DiscountId { get; set; }
@@ -215,7 +215,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "checkout", n => { Checkout = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreate>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreate.CreateFromDiscriminatorValue); } },
                 { "collection_mode", n => { CollectionMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateCollectionMode>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateCollectionMode.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper27>(global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper27.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper30>(global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper30.CreateFromDiscriminatorValue); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateCustomData.CreateFromDiscriminatorValue); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDetails>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDetails.CreateFromDiscriminatorValue); } },
@@ -246,7 +246,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreate>("checkout", Checkout);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateCollectionMode>("collection_mode", CollectionMode);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper27>("currency_code", CurrencyCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper30>("currency_code", CurrencyCode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateCustomData>("custom_data", CustomData);
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom>("discount", Discount);

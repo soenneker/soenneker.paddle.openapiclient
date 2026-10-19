@@ -25,7 +25,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #endif
         /// <summary>Three-letter ISO 4217 currency code used for the payout for this transaction. If your primary currency has changed, this reflects the primary currency at the time the transaction was billed.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreatedRequestDataDetailsAdjustedPayoutTotalsCurrencyCode? CurrencyCode { get; set; }
-        /// <summary>Total earnings for this payout. This is the subtotal minus the Paddle fee, excluding chargeback fees.</summary>
+        /// <summary>Total earnings for this payout. This is the subtotal minus the fee.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Earnings { get; set; }

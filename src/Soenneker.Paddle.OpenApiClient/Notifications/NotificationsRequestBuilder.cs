@@ -114,7 +114,7 @@ namespace Soenneker.Paddle.OpenApiClient.Notifications
             [QueryParameter("after")]
             public string After { get; set; }
 #endif
-            /// <summary>Return entities that contain the Paddle ID specified. Pass a transaction, customer, or subscription ID.</summary>
+            /// <summary>Return entities that contain the value specified. Pass a Paddle ID or email address that appears in the event payload, or part of one. Complete Paddle IDs and email addresses match exactly; partial values match as a prefix or substring, and must be at least three characters.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("filter")]

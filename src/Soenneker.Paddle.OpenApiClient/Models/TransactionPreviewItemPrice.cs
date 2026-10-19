@@ -99,10 +99,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Trial period for the product related to this price. The billing cycle begins once the trial period is over. `null` for no trial period. Requires `billing_cycle`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Duration? TrialPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDuration? TrialPeriod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Duration TrialPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDuration TrialPeriod { get; set; }
 #endif
         /// <summary>The type property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -166,7 +166,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "quantity", n => { Quantity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewQuantity>(global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewQuantity.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewStatus>(global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewStatus.CreateFromDiscriminatorValue); } },
                 { "tax_mode", n => { TaxMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewTaxMode>(global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewTaxMode.CreateFromDiscriminatorValue); } },
-                { "trial_period", n => { TrialPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Duration>(global::Soenneker.Paddle.OpenApiClient.Models.Duration.CreateFromDiscriminatorValue); } },
+                { "trial_period", n => { TrialPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDuration>(global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDuration.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewType>(global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewType.CreateFromDiscriminatorValue); } },
                 { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewUnitPrice>(global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewUnitPrice.CreateFromDiscriminatorValue); } },
                 { "unit_price_overrides", n => { UnitPriceOverrides = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>(global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -190,7 +190,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewQuantity>("quantity", Quantity);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewTaxMode>("tax_mode", TaxMode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Duration>("trial_period", TrialPeriod);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDuration>("trial_period", TrialPeriod);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PricePreviewUnitPrice>("unit_price", UnitPrice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>("unit_price_overrides", UnitPriceOverrides);

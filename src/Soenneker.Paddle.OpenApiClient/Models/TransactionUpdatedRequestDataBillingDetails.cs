@@ -25,7 +25,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #endif
         /// <summary>Whether the related transaction may be paid using Paddle Checkout. If omitted when creating a transaction, defaults to `false`.</summary>
         public bool? EnableCheckout { get; set; }
-        /// <summary>How long a customer has to pay this invoice once issued.</summary>
+        /// <summary>How long a customer has to pay this invoice once issued. The invoice is due at the end of its payment terms, and is marked as `past_due` 24 hours after its due date if unpaid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionUpdatedRequestDataBillingDetailsPaymentTerms? PaymentTerms { get; set; }

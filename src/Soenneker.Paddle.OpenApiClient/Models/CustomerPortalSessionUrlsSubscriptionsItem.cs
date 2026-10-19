@@ -36,6 +36,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string UpdateSubscriptionPaymentMethod { get; set; }
 #endif
+        /// <summary>Link to the page for this subscription in the customer portal, with no form pre-opened. Use to let customers manage the subscription themselves rather than sending them into one specific action.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? ViewSubscription { get; set; }
+#nullable restore
+#else
+        public string ViewSubscription { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -57,6 +65,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "cancel_subscription", n => { CancelSubscription = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "update_subscription_payment_method", n => { UpdateSubscriptionPaymentMethod = n.GetStringValue(); } },
+                { "view_subscription", n => { ViewSubscription = n.GetStringValue(); } },
             };
         }
         /// <summary>
@@ -69,6 +78,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("cancel_subscription", CancelSubscription);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("update_subscription_payment_method", UpdateSubscriptionPaymentMethod);
+            writer.WriteStringValue("view_subscription", ViewSubscription);
         }
     }
 }

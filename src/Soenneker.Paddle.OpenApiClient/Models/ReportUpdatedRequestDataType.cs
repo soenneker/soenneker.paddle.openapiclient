@@ -31,5 +31,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning disable CS1591
         Discounts,
         #pragma warning restore CS1591
+        [EnumMember(Value = "balance")]
+        #pragma warning disable CS1591
+        Balance,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "payout_reconciliation")]
+        #pragma warning disable CS1591
+        PayoutReconciliation,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "checkouts")]
+        #pragma warning disable CS1591
+        Checkouts,
+        #pragma warning restore CS1591
+        [EnumMember(Value = "subscriptions")]
+        #pragma warning disable CS1591
+        Subscriptions,
+        #pragma warning restore CS1591
     }
 }

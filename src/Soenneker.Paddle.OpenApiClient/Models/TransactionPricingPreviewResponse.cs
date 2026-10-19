@@ -49,10 +49,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Supported three-letter ISO 4217 currency code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper15? CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper18? CurrencyCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper15 CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper18 CurrencyCode { get; set; }
 #endif
         /// <summary>Paddle ID of the customer that this preview is for, prefixed with `ctm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -115,7 +115,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "address_id", n => { AddressId = n.GetStringValue(); } },
                 { "available_payment_methods", n => { AvailablePaymentMethods = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodType>()?.AsList(); } },
                 { "business_id", n => { BusinessId = n.GetStringValue(); } },
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper15>(global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper15.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper18>(global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper18.CreateFromDiscriminatorValue); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "customer_ip_address", n => { CustomerIpAddress = n.GetStringValue(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewResponseDetails>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewResponseDetails.CreateFromDiscriminatorValue); } },
@@ -132,7 +132,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview>("address", Address);
             writer.WriteStringValue("address_id", AddressId);
             writer.WriteStringValue("business_id", BusinessId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper15>("currency_code", CurrencyCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper18>("currency_code", CurrencyCode);
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteStringValue("customer_ip_address", CustomerIpAddress);
             writer.WriteStringValue("discount_id", DiscountId);

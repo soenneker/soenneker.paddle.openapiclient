@@ -31,7 +31,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeCurrencyCode CurrencyCode { get; set; }
 #endif
-        /// <summary>Total earnings. This is the subtotal minus the Paddle fee.For tax adjustments, this value is negative, which means a positive effect in the transaction earnings.This is because the fee is originally calculated from the transaction total, so if a tax adjustment is made,then the fee portion of it is returned.As a result, the earnings from all the adjustments performed could be either negative, positive or zero.</summary>
+        /// <summary>Total earnings. This is the subtotal minus the fee.For tax adjustments, this value is negative, which means a positive effect in the transaction earnings.This is because the fee is originally calculated from the transaction total, so if a tax adjustment is made,then the fee portion of it is returned.As a result, the earnings from all the adjustments performed could be either negative, positive or zero.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Earnings { get; private set; }

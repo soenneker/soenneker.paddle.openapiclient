@@ -24,7 +24,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public string City { get; set; }
 #endif
         /// <summary>The country_code property</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCodeOneOf1? CountryCode { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCode? CountryCode { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCode CountryCode { get; set; }
+#endif
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Your own structured key-value data.</summary>
@@ -129,7 +135,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "city", n => { City = n.GetStringValue(); } },
-                { "country_code", n => { CountryCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCodeOneOf1>(); } },
+                { "country_code", n => { CountryCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCode>(global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCode.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCustomData.CreateFromDiscriminatorValue); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
@@ -152,7 +158,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("city", City);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCodeOneOf1>("country_code", CountryCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCode>("country_code", CountryCode);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCustomData>("custom_data", CustomData);
             writer.WriteStringValue("customer_id", CustomerId);

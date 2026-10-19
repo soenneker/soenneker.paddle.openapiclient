@@ -36,10 +36,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Supported three-letter ISO 4217 currency code. Required where discount type is `flat` or `flat_per_seat`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper9? CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper11? CurrencyCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper9 CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper11 CurrencyCode { get; set; }
 #endif
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,13 +113,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.DiscountStatusComposed Status { get; set; }
 #endif
-        /// <summary>How many times this discount has been redeemed. Automatically incremented by Paddle.Paddle counts a usage as a redemption on a checkout, transaction, or subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren&apos;t considered a redemption.</summary>
+        /// <summary>How many times this discount has been redeemed. Automatically incremented by Paddle.Paddle counts a usage as a redemption on a checkout, transaction, or subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren&apos;t considered a redemption.Incremented when a transaction completes, rather than when a discount is applied to a checkout. See `usage_limit` for how this affects enforcement of the limit.</summary>
         public int? TimesUsed { get; private set; }
         /// <summary>Type of discount. Determines how this discount impacts the checkout or transaction total.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.DiscountType? Type { get; set; }
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
         public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. `null` if this discount can be redeemed an unlimited amount of times.Paddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren&apos;t considered a redemption.</summary>
+        /// <summary>Maximum number of times this discount can be redeemed. This is an overall limit for this discount, rather than a per-customer limit. `null` if this discount can be redeemed an unlimited amount of times.Paddle counts a usage as a redemption on a checkout, transaction, or the initial application against a subscription. Transactions created for subscription renewals, midcycle changes, and one-time charges aren&apos;t considered a redemption.Paddle checks this limit when a discount is applied to a checkout or transaction, comparing it against `times_used` at that moment. As `times_used` only increments when a transaction completes, checkouts that are open at the same time can each pass this check, so in some cases a discount may be redeemed more times than this limit allows.</summary>
         public int? UsageLimit { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionIncludesDiscount"/> and sets the default values.
@@ -151,7 +151,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "amount", n => { Amount = n.GetStringValue(); } },
                 { "code", n => { Code = n.GetStringValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper9>(global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper9.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper11>(global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper11.CreateFromDiscriminatorValue); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomData.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "discount_group_id", n => { DiscountGroupId = n.GetStringValue(); } },
@@ -180,7 +180,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("amount", Amount);
             writer.WriteStringValue("code", Code);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper9>("currency_code", CurrencyCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper11>("currency_code", CurrencyCode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomData>("custom_data", CustomData);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("discount_group_id", DiscountGroupId);

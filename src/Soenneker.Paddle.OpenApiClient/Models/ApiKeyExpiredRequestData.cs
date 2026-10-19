@@ -63,6 +63,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<string> Permissions { get; set; }
 #endif
+        /// <summary>Whether this API key can be rotated. `null` for events that occurred before this field was introduced.</summary>
+        public bool? Rotatable { get; set; }
         /// <summary>Status of this API key.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExpiredRequestDataStatus? Status { get; set; }
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
@@ -101,6 +103,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "last_used_at", n => { LastUsedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "rotatable", n => { Rotatable = n.GetBoolValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExpiredRequestDataStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -121,6 +124,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("last_used_at", LastUsedAt);
             writer.WriteStringValue("name", Name);
             writer.WriteCollectionOfPrimitiveValues<string>("permissions", Permissions);
+            writer.WriteBoolValue("rotatable", Rotatable);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExpiredRequestDataStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

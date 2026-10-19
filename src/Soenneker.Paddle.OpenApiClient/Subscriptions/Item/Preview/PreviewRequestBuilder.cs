@@ -34,7 +34,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview
         {
         }
         /// <summary>
-        /// Previews an update for a subscription without applying those changes. Typically used for previewing proration before making changes to a subscription.If successful, your response includes `immediate_transaction`, `next_transaction`, and `recurring_transaction_details` so you can see expected transactions for the changes.The `update_summary` object contains details of prorated credits and charges created, along with the overall result of the update.
+        /// Previews an update for a subscription without applying those changes. Typically used for previewing proration before making changes to a subscription.If successful, your response includes `immediate_transaction`, `next_transaction`, and `recurring_transaction_details` so you can see expected transactions for the changes.The `update_summary` object contains details of prorated credits and charges created, along with the overall result of the update.You can&apos;t preview updates for a subscription that&apos;s `past_due`, except to remove a scheduled change by setting `scheduled_change` to `null`.
         /// Preview an update to a subscription <see href="https://developer.paddle.com/api-reference/subscriptions/preview-subscription" />
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200Response"/></returns>
@@ -60,7 +60,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.Preview
             return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.PreviewSubscriptionUpdate200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Previews an update for a subscription without applying those changes. Typically used for previewing proration before making changes to a subscription.If successful, your response includes `immediate_transaction`, `next_transaction`, and `recurring_transaction_details` so you can see expected transactions for the changes.The `update_summary` object contains details of prorated credits and charges created, along with the overall result of the update.
+        /// Previews an update for a subscription without applying those changes. Typically used for previewing proration before making changes to a subscription.If successful, your response includes `immediate_transaction`, `next_transaction`, and `recurring_transaction_details` so you can see expected transactions for the changes.The `update_summary` object contains details of prorated credits and charges created, along with the overall result of the update.You can&apos;t preview updates for a subscription that&apos;s `past_due`, except to remove a scheduled change by setting `scheduled_change` to `null`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Represents a subscription entity when updating subscriptions.</param>

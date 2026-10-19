@@ -8,14 +8,16 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Information about the Korean payment method used to pay. `null` unless the type is `korea_local`.
+    /// Information about the Korean payment method used to pay. `null` unless the type is `korea_local`. Deprecated - use top-level type objects instead.
     /// </summary>
+    [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class KoreaLocalUnderlyingDetails : IAdditionalDataHolder, IParsable
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The type property</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.KoreaLocalUnderlyingDetailsType? Type { get; private set; }

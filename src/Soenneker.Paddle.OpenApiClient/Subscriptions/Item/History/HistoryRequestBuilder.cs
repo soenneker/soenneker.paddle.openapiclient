@@ -34,7 +34,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.History
         {
         }
         /// <summary>
-        /// Returns a paginated list of history entries for a subscription. Use the query parameters to filter and page through results.Subscription history records the changes made to a subscription over its lifetime, so you can see what changed, when it happened, where it originated, and who made the change. Each change is a separate history entry, and some entries also include a reason.Paddle began recording subscription history on June 29, 2026. For subscriptions that existed before then, Paddle automatically creates `subscription_created` and `subscription_canceled` entries and attempts to infer details from the subscription&apos;s initial state.History entries are ordered by newest first by default (`occurred_at` in descending order).
+        /// Returns a paginated list of history entries for a subscription. Use the query parameters to filter and page through results.Subscription history records the changes made to a subscription over its lifetime, so you can see what changed, when it happened, where it originated, and who made the change. Each change is a separate history entry, and some entries also include a reason.Paddle began recording subscription history on June 29, 2026. For subscriptions that existed before then, Paddle automatically creates `subscription_created` and `subscription_canceled` entries and attempts to infer details from the subscription&apos;s initial state.History entries are ordered by newest first by default (`id` in descending order).
         /// List history for a subscription <see href="https://developer.paddle.com/api-reference/subscription-history/list-subscription-history" />
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListSubscriptionHistory200Response"/></returns>
@@ -58,7 +58,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.History
             return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.ListSubscriptionHistory200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.ListSubscriptionHistory200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a paginated list of history entries for a subscription. Use the query parameters to filter and page through results.Subscription history records the changes made to a subscription over its lifetime, so you can see what changed, when it happened, where it originated, and who made the change. Each change is a separate history entry, and some entries also include a reason.Paddle began recording subscription history on June 29, 2026. For subscriptions that existed before then, Paddle automatically creates `subscription_created` and `subscription_canceled` entries and attempts to infer details from the subscription&apos;s initial state.History entries are ordered by newest first by default (`occurred_at` in descending order).
+        /// Returns a paginated list of history entries for a subscription. Use the query parameters to filter and page through results.Subscription history records the changes made to a subscription over its lifetime, so you can see what changed, when it happened, where it originated, and who made the change. Each change is a separate history entry, and some entries also include a reason.Paddle began recording subscription history on June 29, 2026. For subscriptions that existed before then, Paddle automatically creates `subscription_created` and `subscription_canceled` entries and attempts to infer details from the subscription&apos;s initial state.History entries are ordered by newest first by default (`id` in descending order).
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -86,7 +86,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.History
             return new global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.History.HistoryRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a paginated list of history entries for a subscription. Use the query parameters to filter and page through results.Subscription history records the changes made to a subscription over its lifetime, so you can see what changed, when it happened, where it originated, and who made the change. Each change is a separate history entry, and some entries also include a reason.Paddle began recording subscription history on June 29, 2026. For subscriptions that existed before then, Paddle automatically creates `subscription_created` and `subscription_canceled` entries and attempts to infer details from the subscription&apos;s initial state.History entries are ordered by newest first by default (`occurred_at` in descending order).
+        /// Returns a paginated list of history entries for a subscription. Use the query parameters to filter and page through results.Subscription history records the changes made to a subscription over its lifetime, so you can see what changed, when it happened, where it originated, and who made the change. Each change is a separate history entry, and some entries also include a reason.Paddle began recording subscription history on June 29, 2026. For subscriptions that existed before then, Paddle automatically creates `subscription_created` and `subscription_canceled` entries and attempts to infer details from the subscription&apos;s initial state.History entries are ordered by newest first by default (`id` in descending order).
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class HistoryRequestBuilderGetQueryParameters 
@@ -141,7 +141,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.History
             [QueryParameter("occurred_at")]
             public string OccurredAt { get; set; }
 #endif
-            /// <summary>Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=occurred_at[DESC]`.Valid fields for ordering: `occurred_at`.</summary>
+            /// <summary>Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[DESC]`.Valid fields for ordering: `id`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("order_by")]

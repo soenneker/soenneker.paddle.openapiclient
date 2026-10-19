@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
-    /// <summary>Two-letter ISO 3166-1 alpha-2 representation of a supported country.</summary>
+    /// <summary>Two-letter code for a country that Paddle supports sales to. Typically an ISO 3166-1 alpha-2 code, though Paddle uses a small number of codes that ISO doesn&apos;t currently assign.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AddressCreatedRequestDataCountryCodeOneOf1
     {

@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>RFC 3339 datetime string of when this report expires. The report is no longer available to download after this date.</summary>
         public DateTimeOffset? ExpiresAt { get; private set; }
-        /// <summary>Filter criteria for this report. If omitted, reports are filtered to include checkouts created in the last 30 days. This means `checkout_created_at` is greater than or equal to (`gte`) the date 30 days ago from the time the report was generated. To filter by a specific date range, pass two `checkout_created_at` filters with `gte` and `lt` operators.</summary>
+        /// <summary>Filter criteria for this report. If no `gte` filter for `checkout_created_at` is passed, reports are filtered to include checkouts created in the last month. This means `checkout_created_at` is greater than or equal to (`gte`) the same date and time one calendar month before the report was generated, so the window is between 28 and 31 days depending on the month. To filter by a specific date range, pass two `checkout_created_at` filters with `gte` and `lt` operators.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterCheckouts>? Filters { get; set; }

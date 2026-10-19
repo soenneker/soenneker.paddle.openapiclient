@@ -5,6 +5,7 @@ using Microsoft.Kiota.Abstractions;
 using Soenneker.Paddle.OpenApiClient.Metrics.ActiveSubscribers;
 using Soenneker.Paddle.OpenApiClient.Metrics.Chargebacks;
 using Soenneker.Paddle.OpenApiClient.Metrics.CheckoutConversion;
+using Soenneker.Paddle.OpenApiClient.Metrics.Explore;
 using Soenneker.Paddle.OpenApiClient.Metrics.MonthlyRecurringRevenue;
 using Soenneker.Paddle.OpenApiClient.Metrics.MonthlyRecurringRevenueChange;
 using Soenneker.Paddle.OpenApiClient.Metrics.Refunds;
@@ -35,6 +36,11 @@ namespace Soenneker.Paddle.OpenApiClient.Metrics
         public global::Soenneker.Paddle.OpenApiClient.Metrics.CheckoutConversion.CheckoutConversionRequestBuilder CheckoutConversion
         {
             get => new global::Soenneker.Paddle.OpenApiClient.Metrics.CheckoutConversion.CheckoutConversionRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The explore property</summary>
+        public global::Soenneker.Paddle.OpenApiClient.Metrics.Explore.ExploreRequestBuilder Explore
+        {
+            get => new global::Soenneker.Paddle.OpenApiClient.Metrics.Explore.ExploreRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The monthlyRecurringRevenue property</summary>
         public global::Soenneker.Paddle.OpenApiClient.Metrics.MonthlyRecurringRevenue.MonthlyRecurringRevenueRequestBuilder MonthlyRecurringRevenue

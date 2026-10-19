@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Supported three-letter ISO 4217 currency code.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper32? CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper35? CurrencyCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper32 CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper35 CurrencyCode { get; set; }
 #endif
         /// <summary>Paddle ID of the customer that this transaction preview is for, prefixed with `ctm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom Discount { get; set; }
 #endif
-        /// <summary>Paddle ID of the discount to apply to this transaction preview, prefixed with `dsc_`.</summary>
+        /// <summary>Paddle ID of the discount to apply to this transaction preview, prefixed with `dsc_`. Send one of `discount_id` or `discount`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DiscountId { get; set; }
@@ -91,7 +91,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper32>(global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper32.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper35>(global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper35.CreateFromDiscriminatorValue); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "customer_ip_address", n => { CustomerIpAddress = n.GetStringValue(); } },
                 { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom.CreateFromDiscriminatorValue); } },
@@ -107,7 +107,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper32>("currency_code", CurrencyCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper35>("currency_code", CurrencyCode);
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteStringValue("customer_ip_address", CustomerIpAddress);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom>("discount", Discount);

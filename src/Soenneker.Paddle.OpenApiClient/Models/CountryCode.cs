@@ -7,22 +7,28 @@ using System.IO;
 using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
+    /// <summary>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeNonSupportedWrapper"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupportedWrapper"/>
+    /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    #pragma warning disable CS1591
-    public partial class CountryCode : IAdditionalDataHolder, IParsable
-    #pragma warning restore CS1591
+    public partial class CountryCode : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Two-letter ISO 3166-1 alpha-2 representation of a supported country.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupported? Value { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CountryCode"/> and sets the default values.
-        /// </summary>
-        public CountryCode()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeNonSupportedWrapper"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeNonSupportedWrapper? CountryCodeNonSupportedWrapper { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeNonSupportedWrapper CountryCodeNonSupportedWrapper { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupportedWrapper"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupportedWrapper? CountryCodeSupportedWrapper { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupportedWrapper CountryCodeSupportedWrapper { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -31,7 +37,17 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.CountryCode CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.CountryCode();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Paddle.OpenApiClient.Models.CountryCode();
+            if("CountryCodeNonSupportedWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CountryCodeNonSupportedWrapper = new global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeNonSupportedWrapper();
+            }
+            else if("CountryCodeSupportedWrapper".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.CountryCodeSupportedWrapper = new global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupportedWrapper();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -39,10 +55,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(CountryCodeNonSupportedWrapper != null)
             {
-                { "value", n => { Value = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupported>(); } },
-            };
+                return CountryCodeNonSupportedWrapper.GetFieldDeserializers();
+            }
+            else if(CountryCodeSupportedWrapper != null)
+            {
+                return CountryCodeSupportedWrapper.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -51,8 +72,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupported>("value", Value);
-            writer.WriteAdditionalData(AdditionalData);
+            if(CountryCodeNonSupportedWrapper != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeNonSupportedWrapper>(null, CountryCodeNonSupportedWrapper);
+            }
+            else if(CountryCodeSupportedWrapper != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupportedWrapper>(null, CountryCodeSupportedWrapper);
+            }
         }
     }
 }

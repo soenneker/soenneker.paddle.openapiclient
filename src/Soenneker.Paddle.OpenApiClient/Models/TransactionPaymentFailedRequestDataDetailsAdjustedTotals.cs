@@ -17,7 +17,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Three-letter ISO 4217 currency code of the currency used for this transaction.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataDetailsAdjustedTotalsCurrencyCode? CurrencyCode { get; set; }
-        /// <summary>Total earnings for this transaction. This is the total minus the Paddle fee.`null` until the transaction is `completed` and the fee is processed.</summary>
+        /// <summary>Total earnings for this transaction. This is the total minus the fee.`null` until the transaction is `completed` and the fee is processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Earnings { get; set; }

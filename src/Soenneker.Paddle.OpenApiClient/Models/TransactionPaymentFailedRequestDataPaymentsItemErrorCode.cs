@@ -19,6 +19,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning disable CS1591
         AuthenticationFailed,
         #pragma warning restore CS1591
+        [EnumMember(Value = "blocked_by_policy")]
+        #pragma warning disable CS1591
+        BlockedByPolicy,
+        #pragma warning restore CS1591
         [EnumMember(Value = "blocked_card")]
         #pragma warning disable CS1591
         BlockedCard,

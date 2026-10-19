@@ -23,7 +23,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjustedCurrencyCode CurrencyCode { get; set; }
 #endif
-        /// <summary>Total earnings for this transaction. This is the total minus the Paddle fee.`null` until the transaction is `completed` and the fee is processed.</summary>
+        /// <summary>Total earnings for this transaction. This is the total minus the fee.`null` until the transaction is `completed` and the fee is processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Earnings { get; set; }

@@ -16,7 +16,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Information about the Korean payment method used to pay. `null` unless the type is `korea_local`.</summary>
+        /// <summary>Information about the Korean payment method used to pay. `null` unless the type is `korea_local`. Deprecated - use top-level type objects instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataPaymentsItemMethodDetailsUnderlyingDetailsKoreaLocal? KoreaLocal { get; set; }

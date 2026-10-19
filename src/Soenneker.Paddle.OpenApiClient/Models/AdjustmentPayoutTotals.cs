@@ -31,7 +31,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsCurrencyCode CurrencyCode { get; set; }
 #endif
-        /// <summary>Adjusted payout earnings. This is the adjustment total plus adjusted Paddle fees, excluding chargeback fees.</summary>
+        /// <summary>Adjusted payout earnings. This is the adjustment total plus adjusted fees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Earnings { get; set; }

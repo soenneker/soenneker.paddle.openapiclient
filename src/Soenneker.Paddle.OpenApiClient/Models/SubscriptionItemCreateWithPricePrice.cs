@@ -74,10 +74,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Trial period for the product related to this price. The billing cycle begins once the trial period is over. `null` for no trial period. Requires `billing_cycle`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Duration? TrialPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreate? TrialPeriod { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Duration TrialPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreate TrialPeriod { get; set; }
 #endif
         /// <summary>Base price. This price applies to all customers, except for customers located in countries where you have `unit_price_overrides`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -127,7 +127,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "product_id", n => { ProductId = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdQuantity>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdQuantity.CreateFromDiscriminatorValue); } },
                 { "tax_mode", n => { TaxMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdTaxMode>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdTaxMode.CreateFromDiscriminatorValue); } },
-                { "trial_period", n => { TrialPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Duration>(global::Soenneker.Paddle.OpenApiClient.Models.Duration.CreateFromDiscriminatorValue); } },
+                { "trial_period", n => { TrialPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreate>(global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreate.CreateFromDiscriminatorValue); } },
                 { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdUnitPrice>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdUnitPrice.CreateFromDiscriminatorValue); } },
                 { "unit_price_overrides", n => { UnitPriceOverrides = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>(global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -146,7 +146,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("product_id", ProductId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdQuantity>("quantity", Quantity);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdTaxMode>("tax_mode", TaxMode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Duration>("trial_period", TrialPeriod);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreate>("trial_period", TrialPeriod);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdUnitPrice>("unit_price", UnitPrice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>("unit_price_overrides", UnitPriceOverrides);
             writer.WriteAdditionalData(AdditionalData);

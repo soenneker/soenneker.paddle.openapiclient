@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportCheckoutsCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsCreateModel"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportCheckoutsCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModel"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsCreateModel"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReportCreate : IComposedTypeWrapper, IParsable
@@ -61,6 +61,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesCreateModel ReportProductsPricesCreateModel { get; set; }
 #endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModel"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModel? ReportSubscriptionsCreateModel { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModel ReportSubscriptionsCreateModel { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsCreateModel"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -103,6 +111,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 result.ReportProductsPricesCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesCreateModel();
             }
+            else if("ReportSubscriptionsCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ReportSubscriptionsCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModel();
+            }
             else if("ReportTransactionsCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.ReportTransactionsCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsCreateModel();
@@ -138,6 +150,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             else if(ReportProductsPricesCreateModel != null)
             {
                 return ReportProductsPricesCreateModel.GetFieldDeserializers();
+            }
+            else if(ReportSubscriptionsCreateModel != null)
+            {
+                return ReportSubscriptionsCreateModel.GetFieldDeserializers();
             }
             else if(ReportTransactionsCreateModel != null)
             {
@@ -175,6 +191,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             else if(ReportProductsPricesCreateModel != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesCreateModel>(null, ReportProductsPricesCreateModel);
+            }
+            else if(ReportSubscriptionsCreateModel != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModel>(null, ReportSubscriptionsCreateModel);
             }
             else if(ReportTransactionsCreateModel != null)
             {

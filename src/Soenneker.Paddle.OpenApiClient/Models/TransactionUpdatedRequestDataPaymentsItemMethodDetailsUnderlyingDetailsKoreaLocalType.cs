@@ -3,8 +3,9 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
-    /// <summary>Type of Korean payment method used to pay.</summary>
+    /// <summary>Type of Korean payment method used to pay. Deprecated - use top-level type objects instead.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+    [Obsolete("")]
     public enum TransactionUpdatedRequestDataPaymentsItemMethodDetailsUnderlyingDetailsKoreaLocalType
     {
         [EnumMember(Value = "bc")]

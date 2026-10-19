@@ -22,7 +22,7 @@ namespace Soenneker.Paddle.OpenApiClient.Events
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events{?after,event_type,order_by,per_page}", pathParameters)
+        public EventsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events{?after,event_type,filter,from,order_by,per_page,to}", pathParameters)
         {
         }
         /// <summary>
@@ -30,7 +30,7 @@ namespace Soenneker.Paddle.OpenApiClient.Events
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events{?after,event_type,order_by,per_page}", rawUrl)
+        public EventsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/events{?after,event_type,filter,from,order_by,per_page,to}", rawUrl)
         {
         }
         /// <summary>
@@ -111,6 +111,26 @@ namespace Soenneker.Paddle.OpenApiClient.Events
             [QueryParameter("event_type")]
             public global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName[] EventType { get; set; }
 #endif
+            /// <summary>Return entities that contain the value specified. Pass a Paddle ID or email address that appears in the event payload, or part of one. Complete Paddle IDs and email addresses match exactly; partial values match as a prefix or substring, and must be at least three characters.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("filter")]
+            public string? Filter { get; set; }
+#nullable restore
+#else
+            [QueryParameter("filter")]
+            public string Filter { get; set; }
+#endif
+            /// <summary>Return entities from a specific time. Pass an RFC 3339 datetime string.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("from")]
+            public string? From { get; set; }
+#nullable restore
+#else
+            [QueryParameter("from")]
+            public string From { get; set; }
+#endif
             /// <summary>Order returned entities by the specified field and direction (`[ASC]` or `[DESC]`). For example, `?order_by=id[ASC]`.Valid fields for ordering: `id` (for `event_id`).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -124,6 +144,16 @@ namespace Soenneker.Paddle.OpenApiClient.Events
             /// <summary>Set how many entities are returned per page. Paddle returns the maximum number of results if a number greater than the maximum is requested. Check `meta.pagination.per_page` in the response to see how many were returned.Default: `50`; Maximum: `200`.</summary>
             [QueryParameter("per_page")]
             public int? PerPage { get; set; }
+            /// <summary>Return entities up to a specific time. Pass an RFC 3339 datetime string.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("to")]
+            public string? To { get; set; }
+#nullable restore
+#else
+            [QueryParameter("to")]
+            public string To { get; set; }
+#endif
         }
     }
 }

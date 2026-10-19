@@ -7,6 +7,7 @@ using System.IO;
 using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
+    [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
     public partial class KoreaLocalUnderlyingDetailsType : IAdditionalDataHolder, IParsable
@@ -14,7 +15,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Type of Korean payment method used to pay.</summary>
+        /// <summary>Type of Korean payment method used to pay. Deprecated - use top-level type objects instead.</summary>
+        [Obsolete("")]
         public global::Soenneker.Paddle.OpenApiClient.Models.KoreaLocalUnderlyingPaymentMethodType? Value { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.KoreaLocalUnderlyingDetailsType"/> and sets the default values.

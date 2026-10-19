@@ -23,7 +23,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Last4 { get; set; }
 #endif
-        /// <summary>Type of Korean payment method used to pay.</summary>
+        /// <summary>Type of Korean credit or debit card used to pay.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCompletedRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCardType? Type { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionCompletedRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCard"/> and sets the default values.

@@ -70,10 +70,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Supported three-letter ISO 4217 currency code. Must be `USD`, `EUR`, or `GBP` if `collection_mode` is `manual`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper28? CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper31? CurrencyCode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper28 CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper31 CurrencyCode { get; set; }
 #endif
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -107,7 +107,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom Discount { get; set; }
 #endif
-        /// <summary>Paddle ID of the discount to apply to this transaction, prefixed with `dsc_`.</summary>
+        /// <summary>Paddle ID of the discount to apply to this transaction, prefixed with `dsc_`. Send one of `discount_id` or `discount`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DiscountId { get; set; }
@@ -164,7 +164,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentAttempt> Payments { get; private set; }
 #endif
-        /// <summary>Status of this transaction. You may set a transaction to `billed` or `canceled`. Billed transactions cannot be changed.For manually-collected transactions, marking as `billed` is essentially issuing an invoice.</summary>
+        /// <summary>Status of this transaction. You may set a transaction to `billed` or `canceled`. Billed transactions cannot be updated, only canceled.For manually-collected transactions, marking as `billed` is essentially issuing an invoice.You can cancel transactions that are `draft`, `ready`, `billed`, or `past_due`, except transactions that Paddle created for a subscription and automatically-collected transactions that are `past_due`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyStatus? Status { get; set; }
@@ -215,7 +215,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "checkout", n => { Checkout = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreate>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreate.CreateFromDiscriminatorValue); } },
                 { "collection_mode", n => { CollectionMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCollectionMode>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCollectionMode.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper28>(global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper28.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper31>(global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper31.CreateFromDiscriminatorValue); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCustomData.CreateFromDiscriminatorValue); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDetails>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDetails.CreateFromDiscriminatorValue); } },
@@ -246,7 +246,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreate>("checkout", Checkout);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCollectionMode>("collection_mode", CollectionMode);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper28>("currency_code", CurrencyCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper31>("currency_code", CurrencyCode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCustomData>("custom_data", CustomData);
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom>("discount", Discount);

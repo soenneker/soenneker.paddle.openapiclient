@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Status of this transaction. You may set a transaction to `billed` or `canceled`. Billed transactions cannot be changed.For manually-collected transactions, marking as `billed` is essentially issuing an invoice.
+    /// Status of this transaction. You may set a transaction to `billed` or `canceled`. Billed transactions cannot be updated, only canceled.For manually-collected transactions, marking as `billed` is essentially issuing an invoice.You can cancel transactions that are `draft`, `ready`, `billed`, or `past_due`, except transactions that Paddle created for a subscription and automatically-collected transactions that are `past_due`.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class UpdateTransactionBodyStatus : IAdditionalDataHolder, IParsable

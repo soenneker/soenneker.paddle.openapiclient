@@ -47,7 +47,7 @@ namespace Soenneker.Paddle.OpenApiClient.Discounts
         {
         }
         /// <summary>
-        /// Returns a paginated list of discounts. Use the query parameters to page through results.By default, Paddle returns discounts that are `active`. Use the `status` query parameter to return discounts that are archived or expired.
+        /// Returns a paginated list of discounts. Use the query parameters to page through results.By default, Paddle returns discounts that are `active`. Use the `status` query parameter to return discounts that are archived.
         /// List discounts <see href="https://developer.paddle.com/api-reference/discounts/list-discounts" />
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ListDiscounts200Response"/></returns>
@@ -97,7 +97,7 @@ namespace Soenneker.Paddle.OpenApiClient.Discounts
             return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscount201Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.CreateDiscount201Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns a paginated list of discounts. Use the query parameters to page through results.By default, Paddle returns discounts that are `active`. Use the `status` query parameter to return discounts that are archived or expired.
+        /// Returns a paginated list of discounts. Use the query parameters to page through results.By default, Paddle returns discounts that are `active`. Use the `status` query parameter to return discounts that are archived.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -147,7 +147,7 @@ namespace Soenneker.Paddle.OpenApiClient.Discounts
             return new global::Soenneker.Paddle.OpenApiClient.Discounts.DiscountsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Returns a paginated list of discounts. Use the query parameters to page through results.By default, Paddle returns discounts that are `active`. Use the `status` query parameter to return discounts that are archived or expired.
+        /// Returns a paginated list of discounts. Use the query parameters to page through results.By default, Paddle returns discounts that are `active`. Use the `status` query parameter to return discounts that are archived.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class DiscountsRequestBuilderGetQueryParameters 

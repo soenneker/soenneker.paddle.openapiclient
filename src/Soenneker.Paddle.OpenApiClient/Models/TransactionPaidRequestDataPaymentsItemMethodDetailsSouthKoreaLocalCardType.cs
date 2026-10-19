@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
-    /// <summary>Type of Korean payment method used to pay.</summary>
+    /// <summary>Type of Korean credit or debit card used to pay.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TransactionPaidRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCardType
     {

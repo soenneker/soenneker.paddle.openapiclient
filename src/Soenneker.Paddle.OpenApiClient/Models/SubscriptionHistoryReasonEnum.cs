@@ -31,5 +31,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning disable CS1591
         Chargeback,
         #pragma warning restore CS1591
+        [EnumMember(Value = "eu_withdrawal")]
+        #pragma warning disable CS1591
+        EuWithdrawal,
+        #pragma warning restore CS1591
     }
 }
