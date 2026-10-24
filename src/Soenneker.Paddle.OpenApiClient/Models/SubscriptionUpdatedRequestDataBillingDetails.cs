@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Notes or other information to include on this invoice. Appears on invoice documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AdditionalInformation { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataBillingDetailsAdditionalInformation? AdditionalInformation { get; set; }
 #nullable restore
 #else
-        public string AdditionalInformation { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataBillingDetailsAdditionalInformation AdditionalInformation { get; set; }
 #endif
         /// <summary>Whether the related transaction may be paid using Paddle Checkout. If omitted when creating a transaction, defaults to `false`.</summary>
         public bool? EnableCheckout { get; set; }
@@ -67,7 +67,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additional_information", n => { AdditionalInformation = n.GetStringValue(); } },
+                { "additional_information", n => { AdditionalInformation = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataBillingDetailsAdditionalInformation>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataBillingDetailsAdditionalInformation.CreateFromDiscriminatorValue); } },
                 { "enable_checkout", n => { EnableCheckout = n.GetBoolValue(); } },
                 { "payment_terms", n => { PaymentTerms = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataBillingDetailsPaymentTerms>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataBillingDetailsPaymentTerms.CreateFromDiscriminatorValue); } },
                 { "purchase_order_number", n => { PurchaseOrderNumber = n.GetStringValue(); } },
@@ -80,7 +80,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("additional_information", AdditionalInformation);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataBillingDetailsAdditionalInformation>("additional_information", AdditionalInformation);
             writer.WriteBoolValue("enable_checkout", EnableCheckout);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataBillingDetailsPaymentTerms>("payment_terms", PaymentTerms);
             writer.WriteStringValue("purchase_order_number", PurchaseOrderNumber);

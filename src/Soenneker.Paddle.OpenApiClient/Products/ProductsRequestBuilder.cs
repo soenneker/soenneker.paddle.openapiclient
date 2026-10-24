@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.Products
     public partial class ProductsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.products.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the product entity to work with.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProductItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.Products.Item.WithProductItemRequestBuilder this[string position]
         {

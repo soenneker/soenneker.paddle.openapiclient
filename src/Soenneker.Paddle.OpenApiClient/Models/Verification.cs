@@ -14,23 +14,17 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     public partial class Verification : IParsable
     {
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Unique Paddle ID for this verification entity, prefixed with `slrvrf_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
-        /// <summary>Overall status of the verification, derived from the status of its steps. `pending` until the first step exists.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Overall status of the verification, derived from the status of its steps.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.VerificationStatusComposed? Status { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.VerificationStatusComposed Status { get; private set; }
-#endif
         /// <summary>Verification steps that make up this verification.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,15 +34,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public List<global::Soenneker.Paddle.OpenApiClient.Models.VerificationStep> Steps { get; private set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>Type of verification. An account has at most one `onboarding` verification.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        public DateTimeOffset? UpdatedAt { get; private set; }
+        /// <summary>Type of verification.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.VerificationVerificationType? VerificationType { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.VerificationVerificationType VerificationType { get; private set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,10 +57,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.VerificationStatusComposed>(global::Soenneker.Paddle.OpenApiClient.Models.VerificationStatusComposed.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.VerificationStatusComposed>(); } },
                 { "steps", n => { Steps = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.VerificationStep>(global::Soenneker.Paddle.OpenApiClient.Models.VerificationStep.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-                { "verification_type", n => { VerificationType = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.VerificationVerificationType>(global::Soenneker.Paddle.OpenApiClient.Models.VerificationVerificationType.CreateFromDiscriminatorValue); } },
+                { "verification_type", n => { VerificationType = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.VerificationVerificationType>(); } },
             };
         }
         /// <summary>
@@ -82,9 +70,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
         }
     }
 }

@@ -14,7 +14,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     public partial class ClientToken : IParsable
     {
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Short description of this client-side token. Typically gives details about what the token is used for and where it&apos;s used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -26,10 +26,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Unique Paddle ID for this client-side token entity, prefixed with `ctkn_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Short name of this client-side token. Typically unique and human-identifiable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,24 +41,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #endif
         /// <summary>RFC 3339 datetime string of when this client-side token was revoked. `null` if not revoked.</summary>
         public DateTimeOffset? RevokedAt { get; private set; }
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Status of this client-side token.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenStatusComposed? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenStatusComposed Status { get; set; }
-#endif
         /// <summary>A client-side token, prefixed with `test` or `live` depending on the environment of your account.  Pass as the `token` parameter when initializing Paddle.js to authenticate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Token { get; set; }
+        public string? Token { get; private set; }
 #nullable restore
 #else
-        public string Token { get; set; }
+        public string Token { get; private set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -82,7 +76,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "revoked_at", n => { RevokedAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenStatusComposed>(global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenStatusComposed.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenStatusComposed>(); } },
                 { "token", n => { Token = n.GetStringValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -94,13 +88,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenStatusComposed>("status", Status);
-            writer.WriteStringValue("token", Token);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenStatusComposed>("status", Status);
         }
     }
 }

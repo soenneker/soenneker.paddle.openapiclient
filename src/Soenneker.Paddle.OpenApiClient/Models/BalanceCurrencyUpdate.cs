@@ -13,14 +13,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class BalanceCurrencyUpdate : IParsable
     {
-        /// <summary>Currency that you&apos;d like your Paddle balance to be held in and paid out from. If more than one currency is in `enabled`, it must be one of them.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code for balance currencies.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyUpdatePreferred? Preferred { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyUpdatePreferred Preferred { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +33,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "preferred", n => { Preferred = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyUpdatePreferred>(global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyUpdatePreferred.CreateFromDiscriminatorValue); } },
+                { "preferred", n => { Preferred = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyUpdatePreferred>(); } },
             };
         }
         /// <summary>
@@ -49,7 +43,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyUpdatePreferred>("preferred", Preferred);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyUpdatePreferred>("preferred", Preferred);
         }
     }
 }

@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceCustomData? CustomData { get; set; }
+        public UntypedNode? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceCustomData CustomData { get; set; }
+        public UntypedNode CustomData { get; set; }
 #endif
         /// <summary>Internal description for this price, not shown to customers. Typically notes for your team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -34,10 +34,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceName? Name { get; set; }
 #nullable restore
 #else
-        public string Name { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceName Name { get; set; }
 #endif
         /// <summary>Product object for a non-catalog item to charge for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,14 +55,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceQuantity Quantity { get; set; }
 #endif
-        /// <summary>The tax_mode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>How tax is calculated for this price.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceTaxMode? TaxMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceTaxMode TaxMode { get; set; }
-#endif
         /// <summary>Base price. This price applies to all customers, except for customers located in countries where you have `unit_price_overrides`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -104,12 +98,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceCustomData.CreateFromDiscriminatorValue); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "name", n => { Name = n.GetStringValue(); } },
+                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceName>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceName.CreateFromDiscriminatorValue); } },
                 { "product", n => { Product = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceProduct>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceProduct.CreateFromDiscriminatorValue); } },
                 { "quantity", n => { Quantity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceQuantity>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceQuantity.CreateFromDiscriminatorValue); } },
-                { "tax_mode", n => { TaxMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceTaxMode>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceTaxMode.CreateFromDiscriminatorValue); } },
+                { "tax_mode", n => { TaxMode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceTaxMode>(); } },
                 { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceUnitPrice>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceUnitPrice.CreateFromDiscriminatorValue); } },
                 { "unit_price_overrides", n => { UnitPriceOverrides = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>(global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride.CreateFromDiscriminatorValue)?.AsList(); } },
             };
@@ -121,12 +115,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceCustomData>("custom_data", CustomData);
+            writer.WriteObjectValue<UntypedNode>("custom_data", CustomData);
             writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("name", Name);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceName>("name", Name);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceProduct>("product", Product);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceQuantity>("quantity", Quantity);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceTaxMode>("tax_mode", TaxMode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceTaxMode>("tax_mode", TaxMode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceUnitPrice>("unit_price", UnitPrice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>("unit_price_overrides", UnitPriceOverrides);
             writer.WriteAdditionalData(AdditionalData);

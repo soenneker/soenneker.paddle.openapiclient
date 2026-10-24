@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.Prices
     public partial class PricesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.prices.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the price entity to work with.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPriceItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.Prices.Item.WithPriceItemRequestBuilder this[string position]
         {

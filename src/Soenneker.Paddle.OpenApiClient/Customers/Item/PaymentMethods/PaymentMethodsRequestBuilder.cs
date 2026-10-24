@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods
     public partial class PaymentMethodsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.customers.item.paymentMethods.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the payment method entity to work with.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.Item.WithPaymentMethodItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.Customers.Item.PaymentMethods.Item.WithPaymentMethodItemRequestBuilder this[string position]
         {

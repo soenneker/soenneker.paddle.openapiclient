@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses
     public partial class BusinessesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.customers.item.businesses.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the business entity to work with.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses.Item.WithBusinessItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.Customers.Item.Businesses.Item.WithBusinessItemRequestBuilder this[string position]
         {

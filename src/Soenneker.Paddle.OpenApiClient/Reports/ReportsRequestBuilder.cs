@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.Reports
     public partial class ReportsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.reports.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the report entity.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Reports.Item.WithReportItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.Reports.Item.WithReportItemRequestBuilder this[string position]
         {

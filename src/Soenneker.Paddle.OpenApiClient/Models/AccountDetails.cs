@@ -18,42 +18,42 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Name shown to customers on invoices, receipts, and in the Paddle customer portal. Only Paddle can change this, so contact Paddle support to update it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DisplayName { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsDisplayName? DisplayName { get; set; }
 #nullable restore
 #else
-        public string DisplayName { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsDisplayName DisplayName { get; set; }
 #endif
         /// <summary>Contact email address for this account. Paddle uses it for account and payout correspondence, and it may be shown to customers as a support contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Email { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsEmail? Email { get; set; }
 #nullable restore
 #else
-        public string Email { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsEmail Email { get; set; }
 #endif
         /// <summary>Unique Paddle ID for this account, prefixed with `slr_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>Numeric ID for this account. Include this value when contacting Paddle support. Use `id` to identify this account programmatically.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegacyId { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegacyId? LegacyId { get; private set; }
 #nullable restore
 #else
-        public string LegacyId { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegacyId LegacyId { get; private set; }
 #endif
         /// <summary>Registered legal name of the business that operates this account. Shown at checkout. Only Paddle can change this, so contact Paddle support to update it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? LegalName { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName? LegalName { get; set; }
 #nullable restore
 #else
-        public string LegalName { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName LegalName { get; set; }
 #endif
         /// <summary>Website for the product or service sold through this account. Only Paddle can change this, so contact Paddle support to update it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -88,11 +88,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "display_name", n => { DisplayName = n.GetStringValue(); } },
-                { "email", n => { Email = n.GetStringValue(); } },
+                { "display_name", n => { DisplayName = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsDisplayName>(global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsDisplayName.CreateFromDiscriminatorValue); } },
+                { "email", n => { Email = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsEmail>(global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsEmail.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "legacy_id", n => { LegacyId = n.GetStringValue(); } },
-                { "legal_name", n => { LegalName = n.GetStringValue(); } },
+                { "legacy_id", n => { LegacyId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegacyId>(global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegacyId.CreateFromDiscriminatorValue); } },
+                { "legal_name", n => { LegalName = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName>(global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName.CreateFromDiscriminatorValue); } },
                 { "website", n => { Website = n.GetStringValue(); } },
             };
         }
@@ -103,10 +103,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("display_name", DisplayName);
-            writer.WriteStringValue("email", Email);
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("legal_name", LegalName);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsDisplayName>("display_name", DisplayName);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsEmail>("email", Email);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName>("legal_name", LegalName);
             writer.WriteStringValue("website", Website);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -11,10 +11,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// Represents an error.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ErrorResponseError : IAdditionalDataHolder, IParsable
+    public partial class ErrorResponseError : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Short snake case string that describes this error. Use to search the error reference.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,21 +45,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.ErrorItem> Errors { get; set; }
 #endif
-        /// <summary>Type of error encountered.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Represents an error.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.ApiErrorType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ApiErrorType Type { get; set; }
-#endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ErrorResponseError"/> and sets the default values.
-        /// </summary>
-        public ErrorResponseError()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -84,7 +69,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "detail", n => { Detail = n.GetStringValue(); } },
                 { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
                 { "errors", n => { Errors = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ErrorItem>(global::Soenneker.Paddle.OpenApiClient.Models.ErrorItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ApiErrorType>(global::Soenneker.Paddle.OpenApiClient.Models.ApiErrorType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ApiErrorType>(); } },
             };
         }
         /// <summary>
@@ -98,8 +83,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("detail", Detail);
             writer.WriteStringValue("documentation_url", DocumentationUrl);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ErrorItem>("errors", Errors);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ApiErrorType>("type", Type);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ApiErrorType>("type", Type);
         }
     }
 }

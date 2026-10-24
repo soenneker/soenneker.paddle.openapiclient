@@ -33,14 +33,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Reason { get; set; }
 #endif
-        /// <summary>The tax_mode property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Whether the amounts to be adjusted are inclusive or exclusive of tax. If `internal`, adjusted amounts are considered to be inclusive of tax. If `external`, Paddle calculates the tax and adds it to the amounts provided.Only valid for adjustments where the `type` is `partial`.If omitted, defaults to `internal`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateTaxMode? TaxMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateTaxMode TaxMode { get; set; }
-#endif
         /// <summary>Unique Paddle ID for this transaction entity, prefixed with `txn_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,14 +43,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string TransactionId { get; set; }
 #endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Type of adjustment. Use `full` to adjust the grand total for the related transaction. Include an `items` array when creating a `partial` adjustment. If omitted, defaults to `partial`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreate"/> and sets the default values.
         /// </summary>
@@ -85,9 +73,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction>(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreate>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
-                { "tax_mode", n => { TaxMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateTaxMode>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateTaxMode.CreateFromDiscriminatorValue); } },
+                { "tax_mode", n => { TaxMode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateTaxMode>(); } },
                 { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateType>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateType>(); } },
             };
         }
         /// <summary>
@@ -100,9 +88,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction>("action", Action);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemCreate>("items", Items);
             writer.WriteStringValue("reason", Reason);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateTaxMode>("tax_mode", TaxMode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateTaxMode>("tax_mode", TaxMode);
             writer.WriteStringValue("transaction_id", TransactionId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreateType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

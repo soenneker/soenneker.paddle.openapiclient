@@ -23,14 +23,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Amount { get; set; }
 #endif
-        /// <summary>Three-letter ISO 4217 currency code for the original chargeback fee.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Three-letter ISO 4217 currency code for chargeback fees.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginalCurrencyCode? CurrencyCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginalCurrencyCode CurrencyCode { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginal"/> and sets the default values.
         /// </summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetStringValue(); } },
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginalCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginalCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginalCurrencyCode>(); } },
             };
         }
         /// <summary>
@@ -68,7 +62,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginalCurrencyCode>("currency_code", CurrencyCode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjustedChargebackFeeOriginalCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

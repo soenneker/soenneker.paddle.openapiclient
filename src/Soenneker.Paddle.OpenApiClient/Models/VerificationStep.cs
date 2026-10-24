@@ -14,35 +14,23 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     public partial class VerificationStep : IParsable
     {
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>RFC 3339 datetime string of when this step expires. `null` if this step never expires.</summary>
         public DateTimeOffset? ExpiresAt { get; private set; }
         /// <summary>Unique Paddle ID for this verification step entity, prefixed with `slrvrfstp_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
-        /// <summary>The key property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Key of the verification step.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.VerificationStepKeyComposed? Key { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.VerificationStepKeyComposed Key { get; private set; }
-#endif
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Status of the verification step.Steps are created as `pending` initially, then move through `in_progress` and `in_review` states as Paddle processes each step.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.VerificationStepStatusComposed? Status { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.VerificationStepStatusComposed Status { get; private set; }
-#endif
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -64,8 +52,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "key", n => { Key = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.VerificationStepKeyComposed>(global::Soenneker.Paddle.OpenApiClient.Models.VerificationStepKeyComposed.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.VerificationStepStatusComposed>(global::Soenneker.Paddle.OpenApiClient.Models.VerificationStepStatusComposed.CreateFromDiscriminatorValue); } },
+                { "key", n => { Key = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.VerificationStepKeyComposed>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.VerificationStepStatusComposed>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -76,9 +64,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
         }
     }
 }

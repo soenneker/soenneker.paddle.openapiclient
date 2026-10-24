@@ -74,10 +74,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedRequestDataCustomData? CustomData { get; set; }
+        public UntypedNode? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedRequestDataCustomData CustomData { get; set; }
+        public UntypedNode CustomData { get; set; }
 #endif
         /// <summary>Unique Paddle ID for this customer entity, prefixed with `ctm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -174,7 +174,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedRequestDataCurrencyCode>(); } },
                 { "current_billing_period", n => { CurrentBillingPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedRequestDataCurrentBillingPeriod>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedRequestDataCurrentBillingPeriod.CreateFromDiscriminatorValue); } },
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedRequestDataCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedRequestDataCustomData.CreateFromDiscriminatorValue); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedRequestDataDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedRequestDataDiscount.CreateFromDiscriminatorValue); } },
                 { "first_billed_at", n => { FirstBilledAt = n.GetDateTimeOffsetValue(); } },
@@ -206,7 +206,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedRequestDataCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedRequestDataCurrentBillingPeriod>("current_billing_period", CurrentBillingPeriod);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedRequestDataCustomData>("custom_data", CustomData);
+            writer.WriteObjectValue<UntypedNode>("custom_data", CustomData);
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedRequestDataDiscount>("discount", Discount);
             writer.WriteDateTimeOffsetValue("first_billed_at", FirstBilledAt);

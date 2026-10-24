@@ -20,18 +20,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductCustomData? CustomData { get; set; }
+        public UntypedNode? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductCustomData CustomData { get; set; }
+        public UntypedNode CustomData { get; set; }
 #endif
         /// <summary>Short description for this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductDescription? Description { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductDescription Description { get; set; }
 #endif
         /// <summary>Unique Paddle ID for this product, prefixed with `pro_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,8 +99,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductCustomData.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetStringValue(); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductDescription>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductDescription.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductImageUrl>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductImageUrl.CreateFromDiscriminatorValue); } },
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductImportMeta.CreateFromDiscriminatorValue); } },
@@ -119,8 +119,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductCustomData>("custom_data", CustomData);
-            writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<UntypedNode>("custom_data", CustomData);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductDescription>("description", Description);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductImageUrl>("image_url", ImageUrl);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsLineItemsItemProductImportMeta>("import_meta", ImportMeta);

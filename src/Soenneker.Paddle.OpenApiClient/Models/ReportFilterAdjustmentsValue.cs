@@ -25,10 +25,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Composed type representation for type List&lt;global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus&gt;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus?>? AdjustmentStatus { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus>? AdjustmentStatus { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus?> AdjustmentStatus { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus> AdjustmentStatus { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="Date"/></summary>
         public Date? DateOnly { get; set; }
@@ -75,7 +75,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 result.AdjustmentAction = adjustmentActionValue;
             }
-            else if(parseNode.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus>()?.AsList() is List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus?> adjustmentStatusValue)
+            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus> adjustmentStatusValue)
             {
                 result.AdjustmentStatus = adjustmentStatusValue;
             }
@@ -118,7 +118,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             }
             else if(AdjustmentStatus != null)
             {
-                writer.WriteCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus>(null, AdjustmentStatus);
+                writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus>(null, AdjustmentStatus);
             }
             else if(String != null)
             {

@@ -23,14 +23,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceBalance Balance { get; set; }
 #endif
-        /// <summary>Three-letter ISO 4217 currency code for this credit balance.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceCurrencyCode? CurrencyCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceCurrencyCode CurrencyCode { get; set; }
-#endif
         /// <summary>Unique Paddle ID for this customer entity, prefixed with `ctm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +59,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "balance", n => { Balance = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceBalance>(global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceBalance.CreateFromDiscriminatorValue); } },
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceCurrencyCode>(); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
             };
         }
@@ -77,7 +71,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceBalance>("balance", Balance);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceCurrencyCode>("currency_code", CurrencyCode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteAdditionalData(AdditionalData);
         }

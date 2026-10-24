@@ -14,13 +14,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     public partial class TaxSettingsUpdate : IParsable
     {
         /// <summary>Default setting of how tax is calculated for prices. Used when prices have a `tax_mode` of `account_setting`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.TaxSettingsUpdateDefaultTaxMode? DefaultTaxMode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TaxSettingsUpdateDefaultTaxMode DefaultTaxMode { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +33,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "default_tax_mode", n => { DefaultTaxMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxSettingsUpdateDefaultTaxMode>(global::Soenneker.Paddle.OpenApiClient.Models.TaxSettingsUpdateDefaultTaxMode.CreateFromDiscriminatorValue); } },
+                { "default_tax_mode", n => { DefaultTaxMode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxSettingsUpdateDefaultTaxMode>(); } },
             };
         }
         /// <summary>
@@ -49,7 +43,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxSettingsUpdateDefaultTaxMode>("default_tax_mode", DefaultTaxMode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxSettingsUpdateDefaultTaxMode>("default_tax_mode", DefaultTaxMode);
         }
     }
 }

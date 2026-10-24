@@ -23,14 +23,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterSubscriptionsCreate> Filters { get; set; }
 #endif
-        /// <summary>Type of report to create.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Type of report.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModelType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModelType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModel"/> and sets the default values.
         /// </summary>
@@ -57,7 +51,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterSubscriptionsCreate>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterSubscriptionsCreate.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModelType>(global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModelType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModelType>(); } },
             };
         }
         /// <summary>
@@ -68,7 +62,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterSubscriptionsCreate>("filters", Filters);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModelType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModelType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

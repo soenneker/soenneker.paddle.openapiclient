@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions
     public partial class SubscriptionsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.subscriptions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the subscription entity to work with.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscriptionItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.WithSubscriptionItemRequestBuilder this[string position]
         {

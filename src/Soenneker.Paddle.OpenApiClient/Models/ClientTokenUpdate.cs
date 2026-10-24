@@ -13,14 +13,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ClientTokenUpdate : IParsable
     {
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Status of this client-side token.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenUpdateStatus? Status { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenUpdateStatus Status { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -39,7 +33,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenUpdateStatus>(global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenUpdateStatus.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenUpdateStatus>(); } },
             };
         }
         /// <summary>
@@ -49,7 +43,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenUpdateStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ClientTokenUpdateStatus>("status", Status);
         }
     }
 }

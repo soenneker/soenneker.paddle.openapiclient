@@ -18,13 +18,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Amount of time.</summary>
         public int? Frequency { get; set; }
         /// <summary>Unit of time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.DurationIntervalComposed? Interval { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DurationIntervalComposed Interval { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingCycleUpdatedBillingCycle"/> and sets the default values.
         /// </summary>
@@ -51,7 +45,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "frequency", n => { Frequency = n.GetIntValue(); } },
-                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DurationIntervalComposed>(global::Soenneker.Paddle.OpenApiClient.Models.DurationIntervalComposed.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DurationIntervalComposed>(); } },
             };
         }
         /// <summary>
@@ -62,7 +56,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("frequency", Frequency);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DurationIntervalComposed>("interval", Interval);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DurationIntervalComposed>("interval", Interval);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

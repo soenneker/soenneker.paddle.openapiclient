@@ -23,14 +23,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Field { get; set; }
 #endif
-        /// <summary>Comparison operator. Must be valid for the field, otherwise `invalid_operator`. Only `in` is supported for now.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Filter operator for a metric query. Each entity lists the operators valid for each dimension, and an operator that isn&apos;t valid for a field returns `invalid_operator`. Only `in` is supported.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilterOp? Op { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilterOp Op { get; set; }
-#endif
         /// <summary>The array of values to match for the `in` operator.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +59,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "field", n => { Field = n.GetStringValue(); } },
-                { "op", n => { Op = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilterOp>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilterOp.CreateFromDiscriminatorValue); } },
+                { "op", n => { Op = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilterOp>(); } },
                 { "value", n => { Value = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -77,7 +71,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("field", Field);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilterOp>("op", Op);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilterOp>("op", Op);
             writer.WriteCollectionOfPrimitiveValues<string>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

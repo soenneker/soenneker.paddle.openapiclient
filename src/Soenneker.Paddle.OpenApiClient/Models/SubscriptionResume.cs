@@ -8,11 +8,19 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeMember1"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeMember2"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDate"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.EmptyObject"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeMember1"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDate"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionResume : IComposedTypeWrapper, IParsable
     {
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.EmptyObject"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.EmptyObject? EmptyObject { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.EmptyObject EmptyObject { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -28,14 +36,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeMember1 SubscriptionResumeMember1 { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeMember2"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeMember2? SubscriptionResumeMember2 { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeMember2 SubscriptionResumeMember2 { get; set; }
 #endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDate"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -55,7 +55,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResume();
-            if("SubscriptionResumeImmediately".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("EmptyObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.EmptyObject = new global::Soenneker.Paddle.OpenApiClient.Models.EmptyObject();
+            }
+            else if("SubscriptionResumeImmediately".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
                 result.SubscriptionResumeImmediately = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately();
             }
@@ -71,17 +75,17 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(SubscriptionResumeImmediately != null)
+            if(EmptyObject != null)
+            {
+                return EmptyObject.GetFieldDeserializers();
+            }
+            else if(SubscriptionResumeImmediately != null)
             {
                 return SubscriptionResumeImmediately.GetFieldDeserializers();
             }
             else if(SubscriptionResumeMember1 != null)
             {
                 return SubscriptionResumeMember1.GetFieldDeserializers();
-            }
-            else if(SubscriptionResumeMember2 != null)
-            {
-                return SubscriptionResumeMember2.GetFieldDeserializers();
             }
             else if(SubscriptionResumeOnDate != null)
             {
@@ -96,17 +100,17 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SubscriptionResumeImmediately != null)
+            if(EmptyObject != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.EmptyObject>(null, EmptyObject);
+            }
+            else if(SubscriptionResumeImmediately != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately>(null, SubscriptionResumeImmediately);
             }
             else if(SubscriptionResumeMember1 != null)
             {
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeMember1>(null, SubscriptionResumeMember1);
-            }
-            else if(SubscriptionResumeMember2 != null)
-            {
-                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeMember2>(null, SubscriptionResumeMember2);
             }
             else if(SubscriptionResumeOnDate != null)
             {

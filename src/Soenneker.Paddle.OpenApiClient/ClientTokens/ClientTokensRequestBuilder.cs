@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.ClientTokens
     public partial class ClientTokensRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.clientTokens.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the client-side token entity.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.ClientTokens.Item.WithClientTokenItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.ClientTokens.Item.WithClientTokenItemRequestBuilder this[string position]
         {

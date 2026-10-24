@@ -11,10 +11,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// What a customer sees on their statement. Set automatically by Paddle based on `name`.Which value applies depends on how the customer pays, which isn&apos;t something you choose.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class StatementDescriptorSettingsPreview : IAdditionalDataHolder, IParsable
+    public partial class StatementDescriptorSettingsPreview : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Descriptor shown for most payments: the Paddle prefix followed directly by `name`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,13 +29,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Paypal { get; private set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.StatementDescriptorSettingsPreview"/> and sets the default values.
-        /// </summary>
-        public StatementDescriptorSettingsPreview()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -67,7 +58,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

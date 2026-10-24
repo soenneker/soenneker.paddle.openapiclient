@@ -25,14 +25,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #endif
         /// <summary>Whether you can hold your balance in this currency. You can set your balance currency in the dashboard.</summary>
         public bool? CanBeBalance { get; private set; }
-        /// <summary>Three-letter ISO 4217 code for the currency.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyDefinitionCode? Code { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyDefinitionCode Code { get; private set; }
-#endif
         /// <summary>The number of decimal places in the common notation of the currency.</summary>
         public int? DecimalPlaces { get; private set; }
         /// <summary>Minimum charge for this currency in the lowest denomination for this currency, for example 10 USD = 1000 (cents). Payment can&apos;t be attempted for a transaction or checkout below this amount.</summary>
@@ -78,7 +72,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "applicable_countries", n => { ApplicableCountries = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.CountryCodeSupported>()?.AsList(); } },
                 { "can_be_balance", n => { CanBeBalance = n.GetBoolValue(); } },
-                { "code", n => { Code = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyDefinitionCode>(global::Soenneker.Paddle.OpenApiClient.Models.CurrencyDefinitionCode.CreateFromDiscriminatorValue); } },
+                { "code", n => { Code = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyDefinitionCode>(); } },
                 { "decimal_places", n => { DecimalPlaces = n.GetIntValue(); } },
                 { "minimum_payment_amount", n => { MinimumPaymentAmount = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },

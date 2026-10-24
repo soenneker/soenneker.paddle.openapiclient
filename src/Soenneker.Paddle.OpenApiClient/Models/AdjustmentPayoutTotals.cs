@@ -23,14 +23,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeComposed ChargebackFee { get; set; }
 #endif
-        /// <summary>Three-letter ISO 4217 currency code used for the payout for this transaction. If your primary currency has changed, this reflects the primary currency at the time the transaction was billed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code for payouts from Paddle.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsCurrencyCode? CurrencyCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsCurrencyCode CurrencyCode { get; set; }
-#endif
         /// <summary>Adjusted payout earnings. This is the adjustment total plus adjusted fees.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,7 +99,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "chargeback_fee", n => { ChargebackFee = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeComposed>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeComposed.CreateFromDiscriminatorValue); } },
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsCurrencyCode>(); } },
                 { "earnings", n => { Earnings = n.GetStringValue(); } },
                 { "fee", n => { Fee = n.GetStringValue(); } },
                 { "retained_fee", n => { RetainedFee = n.GetStringValue(); } },
@@ -122,7 +116,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeComposed>("chargeback_fee", ChargebackFee);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsCurrencyCode>("currency_code", CurrencyCode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteStringValue("earnings", Earnings);
             writer.WriteStringValue("fee", Fee);
             writer.WriteStringValue("subtotal", Subtotal);

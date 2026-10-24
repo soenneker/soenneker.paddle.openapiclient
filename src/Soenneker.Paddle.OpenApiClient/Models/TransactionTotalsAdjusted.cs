@@ -15,14 +15,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Three-letter ISO 4217 currency code of the currency used for this transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjustedCurrencyCode? CurrencyCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjustedCurrencyCode CurrencyCode { get; set; }
-#endif
         /// <summary>Total earnings for this transaction. This is the total minus the fee.`null` until the transaction is `completed` and the fee is processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -112,7 +106,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjustedCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjustedCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjustedCurrencyCode>(); } },
                 { "earnings", n => { Earnings = n.GetStringValue(); } },
                 { "fee", n => { Fee = n.GetStringValue(); } },
                 { "grand_total", n => { GrandTotal = n.GetStringValue(); } },
@@ -130,7 +124,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjustedCurrencyCode>("currency_code", CurrencyCode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjustedCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteStringValue("earnings", Earnings);
             writer.WriteStringValue("fee", Fee);
             writer.WriteStringValue("grand_total", GrandTotal);

@@ -11,10 +11,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// Authenticated customer portal deep links that aren&apos;t associated with a specific entity.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CustomerPortalSessionUrlsGeneralComposed : IAdditionalDataHolder, IParsable
+    public partial class CustomerPortalSessionUrlsGeneralComposed : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Link to the overview page in the customer portal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,13 +21,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Overview { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsGeneralComposed"/> and sets the default values.
-        /// </summary>
-        public CustomerPortalSessionUrlsGeneralComposed()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +50,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("overview", Overview);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

@@ -16,13 +16,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the marketing consent checkbox is shown at checkout.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn? AudienceOptIn { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn AudienceOptIn { get; set; }
-#endif
         /// <summary>Whether customers can enter discount codes at checkout.</summary>
         public bool? DiscountsEnabled { get; set; }
         /// <summary>Whether customers can save payment methods at checkout for future purchases.</summary>
@@ -52,7 +46,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "audience_opt_in", n => { AudienceOptIn = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn>(global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn.CreateFromDiscriminatorValue); } },
+                { "audience_opt_in", n => { AudienceOptIn = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn>(); } },
                 { "discounts_enabled", n => { DiscountsEnabled = n.GetBoolValue(); } },
                 { "saved_payment_methods_enabled", n => { SavedPaymentMethodsEnabled = n.GetBoolValue(); } },
             };
@@ -64,7 +58,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn>("audience_opt_in", AudienceOptIn);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn>("audience_opt_in", AudienceOptIn);
             writer.WriteBoolValue("discounts_enabled", DiscountsEnabled);
             writer.WriteBoolValue("saved_payment_methods_enabled", SavedPaymentMethodsEnabled);
             writer.WriteAdditionalData(AdditionalData);

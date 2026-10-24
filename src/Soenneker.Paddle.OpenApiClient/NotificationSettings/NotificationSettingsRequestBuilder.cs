@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.NotificationSettings
     public partial class NotificationSettingsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.notificationSettings.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the notification setting entity (notification destination) to work with.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.NotificationSettings.Item.WithNotificationSettingItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.NotificationSettings.Item.WithNotificationSettingItemRequestBuilder this[string position]
         {

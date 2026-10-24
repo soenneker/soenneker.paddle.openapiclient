@@ -18,10 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Brand color for overlay checkout, as a six-digit hex code including the leading `#`.`null` when no brand color is set, in which case the default checkout color applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryCheckoutColor { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayPrimaryCheckoutColor? PrimaryCheckoutColor { get; set; }
 #nullable restore
 #else
-        public string PrimaryCheckoutColor { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayPrimaryCheckoutColor PrimaryCheckoutColor { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlay"/> and sets the default values.
@@ -48,7 +48,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "primary_checkout_color", n => { PrimaryCheckoutColor = n.GetStringValue(); } },
+                { "primary_checkout_color", n => { PrimaryCheckoutColor = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayPrimaryCheckoutColor>(global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayPrimaryCheckoutColor.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -58,7 +58,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("primary_checkout_color", PrimaryCheckoutColor);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayPrimaryCheckoutColor>("primary_checkout_color", PrimaryCheckoutColor);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

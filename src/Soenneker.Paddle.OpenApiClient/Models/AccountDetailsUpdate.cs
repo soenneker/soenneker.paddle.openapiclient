@@ -13,7 +13,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountDetailsUpdate : IParsable
     {
-        /// <summary>Email address for this entity.</summary>
+        /// <summary>Contact email address for this account. Must be unique across Paddle accounts, so a value already in use returns an `account_email_conflict` error. You can&apos;t clear it, because Paddle uses it for account and payout correspondence.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Email { get; set; }

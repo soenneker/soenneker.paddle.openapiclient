@@ -15,14 +15,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Sort direction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Sort direction for a metric ordering.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderByDir? Dir { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderByDir Dir { get; set; }
-#endif
         /// <summary>Measure or dimension to order by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +50,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dir", n => { Dir = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderByDir>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderByDir.CreateFromDiscriminatorValue); } },
+                { "dir", n => { Dir = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderByDir>(); } },
                 { "field", n => { Field = n.GetStringValue(); } },
             };
         }
@@ -67,7 +61,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderByDir>("dir", Dir);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderByDir>("dir", Dir);
             writer.WriteStringValue("field", Field);
             writer.WriteAdditionalData(AdditionalData);
         }

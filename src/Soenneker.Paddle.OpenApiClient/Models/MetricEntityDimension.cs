@@ -33,14 +33,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Value type for the dimension.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Value type of a metrics field, whether a dimension or a measure. Numeric values are returned as strings to preserve precision.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension"/> and sets the default values.
         /// </summary>
@@ -70,7 +64,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "filter_ops", n => { FilterOps = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator>()?.AsList(); } },
                 { "multi_valued", n => { MultiValued = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType>(global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType>(); } },
             };
         }
         /// <summary>
@@ -83,7 +77,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator>("filter_ops", FilterOps);
             writer.WriteBoolValue("multi_valued", MultiValued);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

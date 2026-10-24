@@ -14,13 +14,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     public partial class UpdateSummaryResultComposed : IAdditionalDataHolder, IParsable
     {
         /// <summary>Whether the subscription change results in a prorated credit or a charge.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultActionComposed? Action { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultActionComposed Action { get; set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount representing the result of this update, either a charge or a credit.</summary>
@@ -31,14 +25,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Amount { get; set; }
 #endif
-        /// <summary>Three-letter ISO 4217 currency code for the transaction or adjustment.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultCurrencyCode? CurrencyCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultCurrencyCode CurrencyCode { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultComposed"/> and sets the default values.
         /// </summary>
@@ -64,9 +52,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultActionComposed>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultActionComposed.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultActionComposed>(); } },
                 { "amount", n => { Amount = n.GetStringValue(); } },
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultCurrencyCode>(); } },
             };
         }
         /// <summary>
@@ -76,9 +64,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultActionComposed>("action", Action);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultActionComposed>("action", Action);
             writer.WriteStringValue("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultCurrencyCode>("currency_code", CurrencyCode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

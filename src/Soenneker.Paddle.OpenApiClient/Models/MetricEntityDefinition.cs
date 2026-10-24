@@ -23,14 +23,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension> Dimensions { get; set; }
 #endif
-        /// <summary>Entity name for this metric. Pass it as the `entity` when you query.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Entity name for a queryable Explore metric. Pass it as the `entity` when you query.`subscriptions` isn&apos;t available in sandbox, where it&apos;s treated as `unknown_entity`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionEntity? Entity { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionEntity Entity { get; set; }
-#endif
         /// <summary>Measures available to select and aggregate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +67,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dimensions", n => { Dimensions = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension>(global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "entity", n => { Entity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionEntity>(global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionEntity.CreateFromDiscriminatorValue); } },
+                { "entity", n => { Entity = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionEntity>(); } },
                 { "measures", n => { Measures = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityMeasure>(global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityMeasure.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "time_dimension", n => { TimeDimension = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionTimeDimension>(global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionTimeDimension.CreateFromDiscriminatorValue); } },
             };
@@ -86,7 +80,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension>("dimensions", Dimensions);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionEntity>("entity", Entity);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionEntity>("entity", Entity);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityMeasure>("measures", Measures);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionTimeDimension>("time_dimension", TimeDimension);
             writer.WriteAdditionalData(AdditionalData);

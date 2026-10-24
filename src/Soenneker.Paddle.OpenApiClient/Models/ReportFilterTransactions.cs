@@ -15,21 +15,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Field name to filter by.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsName? Name { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsName Name { get; set; }
-#endif
         /// <summary>Operator to use when filtering. Valid when filtering by `updated_at`, `null` otherwise.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper2? Operator { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper2 Operator { get; set; }
-#endif
+        public global::Soenneker.Paddle.OpenApiClient.Models.OperatorType? Operator { get; set; }
         /// <summary>Value to filter by. Check the allowed values descriptions for the `name` field to see valid values for a field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -63,8 +51,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsName>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsName.CreateFromDiscriminatorValue); } },
-                { "operator", n => { Operator = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper2>(global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper2.CreateFromDiscriminatorValue); } },
+                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsName>(); } },
+                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.OperatorType>(); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsValue>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -75,8 +63,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsName>("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.OperatorTypeWrapper2>("operator", Operator);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsName>("name", Name);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.OperatorType>("operator", Operator);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterTransactionsValue>("value", Value);
             writer.WriteAdditionalData(AdditionalData);
         }

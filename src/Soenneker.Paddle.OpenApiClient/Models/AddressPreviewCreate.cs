@@ -16,20 +16,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Supported two-letter ISO 3166-1 alpha-2 country code for this address.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreateCountryCode? CountryCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreateCountryCode CountryCode { get; set; }
-#endif
         /// <summary>ZIP or postal code of this address. Include for more accurate tax calculations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostalCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreatePostalCode? PostalCode { get; set; }
 #nullable restore
 #else
-        public string PostalCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreatePostalCode PostalCode { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreate"/> and sets the default values.
@@ -56,8 +50,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "country_code", n => { CountryCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreateCountryCode>(global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreateCountryCode.CreateFromDiscriminatorValue); } },
-                { "postal_code", n => { PostalCode = n.GetStringValue(); } },
+                { "country_code", n => { CountryCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreateCountryCode>(); } },
+                { "postal_code", n => { PostalCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreatePostalCode>(global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreatePostalCode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -67,8 +61,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreateCountryCode>("country_code", CountryCode);
-            writer.WriteStringValue("postal_code", PostalCode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreateCountryCode>("country_code", CountryCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreviewCreatePostalCode>("postal_code", PostalCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

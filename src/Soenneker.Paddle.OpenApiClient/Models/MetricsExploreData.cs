@@ -15,24 +15,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Three-letter ISO 4217 currency code for values in the response. Derived from your balance currency. Omitted when the response has no currency values.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataCurrencyCode? CurrencyCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataCurrencyCode CurrencyCode { get; set; }
-#endif
         /// <summary>RFC 3339 datetime string.</summary>
         public DateTimeOffset? EndsAt { get; set; }
-        /// <summary>Entity name for the metric that was queried.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Entity name for a queryable Explore metric. Pass it as the `entity` when you query.`subscriptions` isn&apos;t available in sandbox, where it&apos;s treated as `unknown_entity`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataEntity? Entity { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataEntity Entity { get; set; }
-#endif
         /// <summary>Describes the dimension and measure fields in this result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -41,14 +29,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields Fields { get; set; }
 #endif
-        /// <summary>Time bucketing applied to the result.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Interval that a metric query is bucketed by. Buckets are UTC, and weeks start on Monday.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataInterval? Interval { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataInterval Interval { get; set; }
-#endif
         /// <summary>One entry per segment (dimension combination), each carrying its full time series. Capped by `per_page`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,11 +68,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataCurrencyCode>(); } },
                 { "ends_at", n => { EndsAt = n.GetDateTimeOffsetValue(); } },
-                { "entity", n => { Entity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataEntity>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataEntity.CreateFromDiscriminatorValue); } },
+                { "entity", n => { Entity = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataEntity>(); } },
                 { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields.CreateFromDiscriminatorValue); } },
-                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataInterval>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataInterval.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataInterval>(); } },
                 { "series", n => { Series = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "starts_at", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -103,11 +85,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataCurrencyCode>("currency_code", CurrencyCode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteDateTimeOffsetValue("ends_at", EndsAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataEntity>("entity", Entity);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataEntity>("entity", Entity);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields>("fields", Fields);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataInterval>("interval", Interval);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataInterval>("interval", Interval);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries>("series", Series);
             writer.WriteDateTimeOffsetValue("starts_at", StartsAt);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

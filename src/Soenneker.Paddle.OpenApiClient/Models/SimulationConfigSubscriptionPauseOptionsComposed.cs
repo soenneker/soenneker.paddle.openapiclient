@@ -16,13 +16,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Determines which webhooks are sent based on when the subscription is paused or canceled. If omitted, defaults to `immediately`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseOptionsEffectiveFromComposed? EffectiveFrom { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseOptionsEffectiveFromComposed EffectiveFrom { get; set; }
-#endif
         /// <summary>Whether a simulated subscription has a past due transaction (`true`) or not (`false`), which determines whether events occur for canceling past due transactions. If omitted, defaults to `false`.</summary>
         public bool? HasPastDueTransaction { get; set; }
         /// <summary>
@@ -51,7 +45,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "effective_from", n => { EffectiveFrom = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseOptionsEffectiveFromComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseOptionsEffectiveFromComposed.CreateFromDiscriminatorValue); } },
+                { "effective_from", n => { EffectiveFrom = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseOptionsEffectiveFromComposed>(); } },
                 { "has_past_due_transaction", n => { HasPastDueTransaction = n.GetBoolValue(); } },
             };
         }
@@ -62,7 +56,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseOptionsEffectiveFromComposed>("effective_from", EffectiveFrom);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPauseOptionsEffectiveFromComposed>("effective_from", EffectiveFrom);
             writer.WriteBoolValue("has_past_due_transaction", HasPastDueTransaction);
             writer.WriteAdditionalData(AdditionalData);
         }

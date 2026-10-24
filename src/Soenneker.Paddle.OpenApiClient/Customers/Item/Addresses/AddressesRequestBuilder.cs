@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses
     public partial class AddressesRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.customers.item.addresses.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the address entity to work with.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses.Item.WithAddressItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses.Item.WithAddressItemRequestBuilder this[string position]
         {

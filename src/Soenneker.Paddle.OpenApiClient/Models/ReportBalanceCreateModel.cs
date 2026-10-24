@@ -24,14 +24,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterBalanceCreate> Filters { get; set; }
 #endif
-        /// <summary>Type of report to create.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Type of report.</summary>
+        [Obsolete("")]
         public global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModelType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModelType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModel"/> and sets the default values.
         /// </summary>
@@ -58,7 +53,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterBalanceCreate>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterBalanceCreate.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModelType>(global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModelType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModelType>(); } },
             };
         }
         /// <summary>
@@ -69,7 +64,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterBalanceCreate>("filters", Filters);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModelType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModelType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

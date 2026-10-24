@@ -16,10 +16,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Supported two-letter ISO 3166-1 alpha-2 country code. Customers located in the listed countries are charged the override price.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? CountryCodes { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemCountryCodesItem?>? CountryCodes { get; set; }
 #nullable restore
 #else
-        public List<string> CountryCodes { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemCountryCodesItem?> CountryCodes { get; set; }
 #endif
         /// <summary>Override price. This price applies to customers located in the countries for this unit price override.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +47,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "country_codes", n => { CountryCodes = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "country_codes", n => { CountryCodes = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemCountryCodesItem>()?.AsList(); } },
                 { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemUnitPrice>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemUnitPrice.CreateFromDiscriminatorValue); } },
             };
         }
@@ -58,7 +58,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("country_codes", CountryCodes);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemCountryCodesItem>("country_codes", CountryCodes);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdatedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItemUnitPrice>("unit_price", UnitPrice);
         }
     }

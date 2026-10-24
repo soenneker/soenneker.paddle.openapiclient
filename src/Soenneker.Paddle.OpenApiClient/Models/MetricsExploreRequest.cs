@@ -23,14 +23,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<string> Dimensions { get; set; }
 #endif
-        /// <summary>Entity name for the metric to query. One metric per request. An unknown value, including `subscriptions` in sandbox, returns `unknown_entity`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Entity name for a queryable Explore metric. Pass it as the `entity` when you query.`subscriptions` isn&apos;t available in sandbox, where it&apos;s treated as `unknown_entity`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestEntity? Entity { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestEntity Entity { get; set; }
-#endif
         /// <summary>Filters to narrow results by dimension. Multiple filters are combined, so results must match all of them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -47,14 +41,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string From { get; set; }
 #endif
-        /// <summary>Interval that results are bucketed by. Every query is bucketed, so each entry in `timeseries` carries a `timestamp`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Interval that a metric query is bucketed by. Buckets are UTC, and weeks start on Monday.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestInterval? Interval { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestInterval Interval { get; set; }
-#endif
         /// <summary>One or more measures to compute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -108,10 +96,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dimensions", n => { Dimensions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "entity", n => { Entity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestEntity>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestEntity.CreateFromDiscriminatorValue); } },
+                { "entity", n => { Entity = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestEntity>(); } },
                 { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilter>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilter.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "from", n => { From = n.GetStringValue(); } },
-                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestInterval>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestInterval.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestInterval>(); } },
                 { "measures", n => { Measures = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreMeasure>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreMeasure.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "order_by", n => { OrderBy = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderBy>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderBy.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "per_page", n => { PerPage = n.GetIntValue(); } },
@@ -126,10 +114,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("dimensions", Dimensions);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestEntity>("entity", Entity);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestEntity>("entity", Entity);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilter>("filters", Filters);
             writer.WriteStringValue("from", From);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestInterval>("interval", Interval);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestInterval>("interval", Interval);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreMeasure>("measures", Measures);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderBy>("order_by", OrderBy);
             writer.WriteIntValue("per_page", PerPage);

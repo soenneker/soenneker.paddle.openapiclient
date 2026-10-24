@@ -24,13 +24,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public string DocumentationUrl { get; set; }
 #endif
         /// <summary>Environment that the API is serving the request in.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.RootApiEnvironment? Environment { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootApiEnvironment Environment { get; set; }
-#endif
         /// <summary>Human-readable name of the API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -73,7 +67,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "documentation_url", n => { DocumentationUrl = n.GetStringValue(); } },
-                { "environment", n => { Environment = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.RootApiEnvironment>(global::Soenneker.Paddle.OpenApiClient.Models.RootApiEnvironment.CreateFromDiscriminatorValue); } },
+                { "environment", n => { Environment = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.RootApiEnvironment>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "version", n => { Version = n.GetStringValue(); } },
             };
@@ -86,7 +80,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("documentation_url", DocumentationUrl);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.RootApiEnvironment>("environment", Environment);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.RootApiEnvironment>("environment", Environment);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("version", Version);
             writer.WriteAdditionalData(AdditionalData);

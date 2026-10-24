@@ -24,10 +24,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomCustomData? CustomData { get; set; }
+        public UntypedNode? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomCustomData CustomData { get; set; }
+        public UntypedNode CustomData { get; set; }
 #endif
         /// <summary>Short description for this discount for your reference. Not shown to customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -38,25 +38,25 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public string Description { get; set; }
 #endif
         /// <summary>Number of subscription billing periods that this discount recurs for. Requires `recur`. `null` if this discount recurs forever.Subscription renewals, midcycle changes, and one-time charges billed to a subscription aren&apos;t considered a redemption. `times_used` is not incremented in these cases.</summary>
-        public int? MaximumRecurringIntervals { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomMaximumRecurringIntervals? MaximumRecurringIntervals { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomMaximumRecurringIntervals MaximumRecurringIntervals { get; set; }
+#endif
         /// <summary>Whether this discount applies for multiple subscription billing periods (`true`) or not (`false`). If omitted, defaults to `false`.</summary>
         public bool? Recur { get; set; }
         /// <summary>Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. `null` if this discount applies to all products and prices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? RestrictTo { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomRestrictTo? RestrictTo { get; set; }
 #nullable restore
 #else
-        public List<string> RestrictTo { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomRestrictTo RestrictTo { get; set; }
 #endif
         /// <summary>Type of discount. Determines how this discount impacts the checkout or transaction total.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom"/> and sets the default values.
         /// </summary>
@@ -83,12 +83,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetStringValue(); } },
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomCustomData.CreateFromDiscriminatorValue); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "maximum_recurring_intervals", n => { MaximumRecurringIntervals = n.GetIntValue(); } },
+                { "maximum_recurring_intervals", n => { MaximumRecurringIntervals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomMaximumRecurringIntervals>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomMaximumRecurringIntervals.CreateFromDiscriminatorValue); } },
                 { "recur", n => { Recur = n.GetBoolValue(); } },
-                { "restrict_to", n => { RestrictTo = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomType>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomType.CreateFromDiscriminatorValue); } },
+                { "restrict_to", n => { RestrictTo = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomRestrictTo>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomRestrictTo.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomType>(); } },
             };
         }
         /// <summary>
@@ -99,12 +99,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomCustomData>("custom_data", CustomData);
+            writer.WriteObjectValue<UntypedNode>("custom_data", CustomData);
             writer.WriteStringValue("description", Description);
-            writer.WriteIntValue("maximum_recurring_intervals", MaximumRecurringIntervals);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomMaximumRecurringIntervals>("maximum_recurring_intervals", MaximumRecurringIntervals);
             writer.WriteBoolValue("recur", Recur);
-            writer.WriteCollectionOfPrimitiveValues<string>("restrict_to", RestrictTo);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomRestrictTo>("restrict_to", RestrictTo);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomType>("type", Type);
         }
     }
 }

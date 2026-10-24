@@ -39,14 +39,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string CreditToBalance { get; set; }
 #endif
-        /// <summary>Three-letter ISO 4217 currency code used for the payout for this transaction. If your primary currency has changed, this reflects the primary currency at the time the transaction was billed.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code for payouts from Paddle.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsCurrencyCode? CurrencyCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsCurrencyCode CurrencyCode { get; set; }
-#endif
         /// <summary>Total discount as a result of any discounts applied.Except for percentage discounts, Paddle applies tax to discounts based on the line item `price.tax_mode`. If `price.tax_mode` for a line item is `internal`, Paddle removes tax from the discount applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,7 +149,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "balance", n => { Balance = n.GetStringValue(); } },
                 { "credit", n => { Credit = n.GetStringValue(); } },
                 { "credit_to_balance", n => { CreditToBalance = n.GetStringValue(); } },
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsCurrencyCode>(); } },
                 { "discount", n => { Discount = n.GetStringValue(); } },
                 { "earnings", n => { Earnings = n.GetStringValue(); } },
                 { "exchange_rate", n => { ExchangeRate = n.GetStringValue(); } },
@@ -178,7 +172,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("balance", Balance);
             writer.WriteStringValue("credit", Credit);
             writer.WriteStringValue("credit_to_balance", CreditToBalance);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsCurrencyCode>("currency_code", CurrencyCode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteStringValue("discount", Discount);
             writer.WriteStringValue("earnings", Earnings);
             writer.WriteStringValue("exchange_rate", ExchangeRate);

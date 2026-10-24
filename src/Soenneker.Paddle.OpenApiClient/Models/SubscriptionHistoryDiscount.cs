@@ -28,13 +28,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>RFC 3339 datetime string.</summary>
         public DateTimeOffset? StartsAt { get; set; }
         /// <summary>The type of discount.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountTypeComposed? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountTypeComposed Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscount"/> and sets the default values.
         /// </summary>
@@ -63,7 +57,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountDiscount.CreateFromDiscriminatorValue); } },
                 { "ends_at", n => { EndsAt = n.GetDateTimeOffsetValue(); } },
                 { "starts_at", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountTypeComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountTypeComposed.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountTypeComposed>(); } },
             };
         }
         /// <summary>
@@ -76,7 +70,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountDiscount>("discount", Discount);
             writer.WriteDateTimeOffsetValue("ends_at", EndsAt);
             writer.WriteDateTimeOffsetValue("starts_at", StartsAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountTypeComposed>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountTypeComposed>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

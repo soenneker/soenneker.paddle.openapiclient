@@ -15,14 +15,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Aggregation applied. Omitted for derived measures (`aggs: null` in the entity&apos;s metadata).</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Aggregation applied to a measure field. Each entity defines which aggregations are allowed for each field. An aggregation that isn&apos;t allowed returns `invalid_aggregation`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureAgg? Agg { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureAgg Agg { get; set; }
-#endif
         /// <summary>Measure field this column was computed from. Omitted for derived measures.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,14 +33,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>Value type for the measure.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Value type of a metrics field, whether a dimension or a measure. Numeric values are returned as strings to preserve precision.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure"/> and sets the default values.
         /// </summary>
@@ -72,10 +60,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agg", n => { Agg = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureAgg>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureAgg.CreateFromDiscriminatorValue); } },
+                { "agg", n => { Agg = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureAgg>(); } },
                 { "field", n => { Field = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureType>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureType>(); } },
             };
         }
         /// <summary>
@@ -85,10 +73,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureAgg>("agg", Agg);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureAgg>("agg", Agg);
             writer.WriteStringValue("field", Field);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasureType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

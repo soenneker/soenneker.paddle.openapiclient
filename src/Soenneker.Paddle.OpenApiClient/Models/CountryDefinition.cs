@@ -20,21 +20,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Whether Paddle holds region data for this country. Regions are only defined where sales are restricted below country level.</summary>
         public bool? HasRegions { get; private set; }
         /// <summary>Two-letter code for the country. Typically an ISO 3166-1 alpha-2 code, though Paddle uses a small number of codes that ISO doesn&apos;t currently assign.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionIso? Iso { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionIso Iso { get; private set; }
-#endif
         /// <summary>Three-letter code for the country. Typically an ISO 3166-1 alpha-3 code, though Paddle uses a small number of codes that ISO doesn&apos;t currently assign.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionIso3? Iso3 { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionIso3 Iso3 { get; private set; }
-#endif
         /// <summary>Formal English name of the country, in uppercase ASCII characters only. Typically the ISO 3166-1 name. Use `printable_name` for display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -43,14 +31,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Name { get; private set; }
 #endif
-        /// <summary>Default payout currency for this country. You can set your payout currency in the dashboard, so it may differ from this default.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code for payouts from Paddle.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionPayoutCurrency? PayoutCurrency { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionPayoutCurrency PayoutCurrency { get; private set; }
-#endif
         /// <summary>Common English name of the country, formatted for display.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -60,21 +42,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public string PrintableName { get; private set; }
 #endif
         /// <summary>How tax is presented for prices to customers in this country by default.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionTaxModeComposed? TaxMode { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionTaxModeComposed TaxMode { get; private set; }
-#endif
-        /// <summary>Currency used for automatic price conversion when the customer is in this country.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionTransactionCurrency? TransactionCurrency { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionTransactionCurrency TransactionCurrency { get; private set; }
-#endif
         /// <summary>Whether Paddle requires a postal code as part of addresses in this country.</summary>
         public bool? UsesPostalCode { get; private set; }
         /// <summary>
@@ -104,13 +74,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "allow_sales", n => { AllowSales = n.GetBoolValue(); } },
                 { "has_regions", n => { HasRegions = n.GetBoolValue(); } },
-                { "iso", n => { Iso = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionIso>(global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionIso.CreateFromDiscriminatorValue); } },
-                { "iso3", n => { Iso3 = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionIso3>(global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionIso3.CreateFromDiscriminatorValue); } },
+                { "iso", n => { Iso = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionIso>(); } },
+                { "iso3", n => { Iso3 = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionIso3>(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "payout_currency", n => { PayoutCurrency = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionPayoutCurrency>(global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionPayoutCurrency.CreateFromDiscriminatorValue); } },
+                { "payout_currency", n => { PayoutCurrency = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionPayoutCurrency>(); } },
                 { "printable_name", n => { PrintableName = n.GetStringValue(); } },
-                { "tax_mode", n => { TaxMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionTaxModeComposed>(global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionTaxModeComposed.CreateFromDiscriminatorValue); } },
-                { "transaction_currency", n => { TransactionCurrency = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionTransactionCurrency>(global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionTransactionCurrency.CreateFromDiscriminatorValue); } },
+                { "tax_mode", n => { TaxMode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionTaxModeComposed>(); } },
+                { "transaction_currency", n => { TransactionCurrency = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CountryDefinitionTransactionCurrency>(); } },
                 { "uses_postal_code", n => { UsesPostalCode = n.GetBoolValue(); } },
             };
         }

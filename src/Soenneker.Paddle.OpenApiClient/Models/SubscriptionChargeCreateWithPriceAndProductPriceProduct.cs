@@ -11,25 +11,23 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// Product object for a non-catalog item to charge for.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SubscriptionChargeCreateWithPriceAndProductPriceProduct : IAdditionalDataHolder, IParsable
+    public partial class SubscriptionChargeCreateWithPriceAndProductPriceProduct : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateCustomData? CustomData { get; set; }
+        public UntypedNode? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateCustomData CustomData { get; set; }
+        public UntypedNode CustomData { get; set; }
 #endif
         /// <summary>Short description for this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription? Description { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription Description { get; set; }
 #endif
         /// <summary>Image for this product. Included in the checkout and on some customer documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,13 +48,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Tax category for this product. Used for charging the correct rate of tax. Selected tax category must be enabled on your Paddle account.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory? TaxCategory { get; set; }
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceProduct"/> and sets the default values.
-        /// </summary>
-        public SubscriptionChargeCreateWithPriceAndProductPriceProduct()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceProduct"/></returns>
@@ -74,8 +65,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateCustomData.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetStringValue(); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription.CreateFromDiscriminatorValue); } },
                 { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tax_category", n => { TaxCategory = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory>(); } },
@@ -88,12 +79,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateCustomData>("custom_data", CustomData);
-            writer.WriteStringValue("description", Description);
+            writer.WriteObjectValue<UntypedNode>("custom_data", CustomData);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription>("description", Description);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl>("image_url", ImageUrl);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory>("tax_category", TaxCategory);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

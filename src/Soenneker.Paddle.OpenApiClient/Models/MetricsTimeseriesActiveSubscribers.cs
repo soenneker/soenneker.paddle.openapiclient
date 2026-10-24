@@ -17,14 +17,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>RFC 3339 datetime string.</summary>
         public DateTimeOffset? EndsAt { get; set; }
-        /// <summary>Granularity for this timeseries.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Time granularity for the datapoints.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesActiveSubscribersInterval? Interval { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesActiveSubscribersInterval Interval { get; set; }
-#endif
         /// <summary>RFC 3339 datetime string.</summary>
         public DateTimeOffset? StartsAt { get; set; }
         /// <summary>Array of datapoints. Empty if `to` and `from` are the same.</summary>
@@ -36,7 +30,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesActiveSubscribersDatapoint> Timeseries { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesActiveSubscribers"/> and sets the default values.
         /// </summary>
@@ -63,7 +57,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "ends_at", n => { EndsAt = n.GetDateTimeOffsetValue(); } },
-                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesActiveSubscribersInterval>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesActiveSubscribersInterval.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesActiveSubscribersInterval>(); } },
                 { "starts_at", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
                 { "timeseries", n => { Timeseries = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesActiveSubscribersDatapoint>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesActiveSubscribersDatapoint.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -77,10 +71,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("ends_at", EndsAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesActiveSubscribersInterval>("interval", Interval);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesActiveSubscribersInterval>("interval", Interval);
             writer.WriteDateTimeOffsetValue("starts_at", StartsAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesActiveSubscribersDatapoint>("timeseries", Timeseries);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

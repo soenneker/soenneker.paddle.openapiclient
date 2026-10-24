@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.DiscountGroups
     public partial class DiscountGroupsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.discountGroups.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the discount group entity to work with.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.DiscountGroups.Item.WithDiscountGroupItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.DiscountGroups.Item.WithDiscountGroupItemRequestBuilder this[string position]
         {

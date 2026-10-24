@@ -16,29 +16,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Determines which webhooks are sent based on whether a new, existing, or no business was provided. If omitted, defaults to `not_provided`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsBusinessSimulatedAsComposed? BusinessSimulatedAs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsBusinessSimulatedAsComposed BusinessSimulatedAs { get; set; }
-#endif
         /// <summary>Determines which webhooks are sent based on whether a new or existing customer subscribes, and how their details are entered if they&apos;re an existing customer. If omitted, defaults to `new`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsCustomerSimulatedAsComposed? CustomerSimulatedAs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsCustomerSimulatedAsComposed CustomerSimulatedAs { get; set; }
-#endif
         /// <summary>Determines which webhooks are sent based on whether a discount is used and how it&apos;s entered. If omitted, defaults to `not_provided`.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsDiscountSimulatedAsComposed? DiscountSimulatedAs { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsDiscountSimulatedAsComposed DiscountSimulatedAs { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsComposed"/> and sets the default values.
         /// </summary>
@@ -64,9 +46,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "business_simulated_as", n => { BusinessSimulatedAs = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsBusinessSimulatedAsComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsBusinessSimulatedAsComposed.CreateFromDiscriminatorValue); } },
-                { "customer_simulated_as", n => { CustomerSimulatedAs = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsCustomerSimulatedAsComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsCustomerSimulatedAsComposed.CreateFromDiscriminatorValue); } },
-                { "discount_simulated_as", n => { DiscountSimulatedAs = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsDiscountSimulatedAsComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsDiscountSimulatedAsComposed.CreateFromDiscriminatorValue); } },
+                { "business_simulated_as", n => { BusinessSimulatedAs = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsBusinessSimulatedAsComposed>(); } },
+                { "customer_simulated_as", n => { CustomerSimulatedAs = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsCustomerSimulatedAsComposed>(); } },
+                { "discount_simulated_as", n => { DiscountSimulatedAs = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsDiscountSimulatedAsComposed>(); } },
             };
         }
         /// <summary>
@@ -76,9 +58,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsBusinessSimulatedAsComposed>("business_simulated_as", BusinessSimulatedAs);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsCustomerSimulatedAsComposed>("customer_simulated_as", CustomerSimulatedAs);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsDiscountSimulatedAsComposed>("discount_simulated_as", DiscountSimulatedAs);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsBusinessSimulatedAsComposed>("business_simulated_as", BusinessSimulatedAs);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsCustomerSimulatedAsComposed>("customer_simulated_as", CustomerSimulatedAs);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsDiscountSimulatedAsComposed>("discount_simulated_as", DiscountSimulatedAs);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

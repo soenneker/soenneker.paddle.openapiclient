@@ -21,14 +21,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Amount { get; set; }
 #endif
-        /// <summary>Kind of discount. `percentage` is the only kind.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Kind of discount offered in a checkout recovery email.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountTypeComposed? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountTypeComposed Type { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -48,7 +42,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountTypeComposed>(global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountTypeComposed.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountTypeComposed>(); } },
             };
         }
         /// <summary>
@@ -59,7 +53,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountTypeComposed>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountTypeComposed>("type", Type);
         }
     }
 }

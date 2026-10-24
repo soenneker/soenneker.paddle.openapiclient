@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events
     public partial class EventsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.simulations.item.runs.item.events.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the simulation event entity to work with.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.WithSimulationEventItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.Events.Item.WithSimulationEventItemRequestBuilder this[string position]
         {

@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs
     public partial class RunsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.simulations.item.runs.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the simulation run entity to work with.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.WithSimulationRunItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.Simulations.Item.Runs.Item.WithSimulationRunItemRequestBuilder this[string position]
         {

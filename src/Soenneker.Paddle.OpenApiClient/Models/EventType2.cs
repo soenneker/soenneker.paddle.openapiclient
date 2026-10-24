@@ -26,21 +26,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Unique Paddle ID for this event, prefixed with `evt_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventId { get; set; }
+        public string? EventId { get; private set; }
 #nullable restore
 #else
-        public string EventId { get; set; }
+        public string EventId { get; private set; }
 #endif
-        /// <summary>The event_type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Type of event sent by Paddle, in the format `entity.event_type`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.EventType2EventType? EventType { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.EventType2EventType EventType { get; private set; }
-#endif
         /// <summary>RFC 3339 datetime string.</summary>
-        public DateTimeOffset? OccurredAt { get; set; }
+        public DateTimeOffset? OccurredAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.EventType2"/> and sets the default values.
         /// </summary>
@@ -68,7 +62,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.EventType2Data>(global::Soenneker.Paddle.OpenApiClient.Models.EventType2Data.CreateFromDiscriminatorValue); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
-                { "event_type", n => { EventType = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.EventType2EventType>(global::Soenneker.Paddle.OpenApiClient.Models.EventType2EventType.CreateFromDiscriminatorValue); } },
+                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EventType2EventType>(); } },
                 { "occurred_at", n => { OccurredAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -79,8 +73,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("event_id", EventId);
-            writer.WriteDateTimeOffsetValue("occurred_at", OccurredAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

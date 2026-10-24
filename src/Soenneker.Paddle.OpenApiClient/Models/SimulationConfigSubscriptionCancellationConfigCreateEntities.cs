@@ -11,10 +11,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// Adds details of existing Paddle entities to webhook payloads sent in the simulation.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SimulationConfigSubscriptionCancellationConfigCreateEntities : IAdditionalDataHolder, IParsable
+    public partial class SimulationConfigSubscriptionCancellationConfigCreateEntities : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Paddle ID of a subscription to simulate as canceled. Adds details of that subscription to webhook payloads.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -23,13 +21,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string SubscriptionId { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreateEntities"/> and sets the default values.
-        /// </summary>
-        public SimulationConfigSubscriptionCancellationConfigCreateEntities()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -59,7 +50,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("subscription_id", SubscriptionId);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

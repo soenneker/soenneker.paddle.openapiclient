@@ -24,13 +24,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Authentication method used for this request. `null` when the request doesn&apos;t have valid credentials.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootAuthTypeWrapper? AuthType { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootAuthTypeWrapper AuthType { get; set; }
-#endif
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootAuthType? AuthType { get; set; }
         /// <summary>Names of the permissions granted to the caller, for example `transaction.read`. Empty when the request doesn&apos;t have valid credentials.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -65,7 +59,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount>(global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount.CreateFromDiscriminatorValue); } },
-                { "auth_type", n => { AuthType = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.RootAuthTypeWrapper>(global::Soenneker.Paddle.OpenApiClient.Models.RootAuthTypeWrapper.CreateFromDiscriminatorValue); } },
+                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.RootAuthType>(); } },
                 { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }
@@ -77,7 +71,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount>("account", Account);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.RootAuthTypeWrapper>("auth_type", AuthType);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.RootAuthType>("auth_type", AuthType);
             writer.WriteCollectionOfPrimitiveValues<string>("permissions", Permissions);
             writer.WriteAdditionalData(AdditionalData);
         }

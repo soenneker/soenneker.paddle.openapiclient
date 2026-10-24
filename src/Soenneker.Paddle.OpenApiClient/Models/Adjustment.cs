@@ -18,32 +18,26 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Whether this adjustment was applied to the related customer&apos;s credit balance. Only returned for `credit` adjustments.</summary>
         public bool? CreditAppliedToBalance { get; private set; }
-        /// <summary>Three-letter ISO 4217 currency code for this adjustment. Set automatically by Paddle based on the `currency_code` of the related transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCurrencyCode? CurrencyCode { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCurrencyCode CurrencyCode { get; private set; }
-#endif
         /// <summary>Unique Paddle ID for this customer entity, prefixed with `ctm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get; set; }
+        public string? CustomerId { get; private set; }
 #nullable restore
 #else
-        public string CustomerId { get; set; }
+        public string CustomerId { get; private set; }
 #endif
         /// <summary>Unique Paddle ID for this adjustment entity, prefixed with `adj_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>List of items on this adjustment. Required if `type` is not populated or set to `partial`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -69,14 +63,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string Reason { get; set; }
 #endif
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Status of this adjustment. Set automatically by Paddle.Most refunds for live accounts are created with the status of `pending_approval` until reviewed by Paddle, but some are automatically approved. For sandbox accounts, Paddle automatically approves refunds every ten minutes.Credit adjustments don&apos;t require approval from Paddle, so they&apos;re created as `approved`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatusComposed? Status { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatusComposed Status { get; private set; }
-#endif
         /// <summary>Paddle ID for the subscription related to this adjustment, prefixed with `sub_`.Set automatically by Paddle based on the `subscription_id` of the related transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -109,16 +97,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string TransactionId { get; set; }
 #endif
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Type of adjustment. Use `full` to adjust the grand total for the related transaction. Include an `items` array when creating a `partial` adjustment. If omitted, defaults to `partial`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTypeComposed? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTypeComposed Type { get; set; }
-#endif
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.Adjustment"/> and sets the default values.
         /// </summary>
@@ -147,18 +129,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "credit_applied_to_balance", n => { CreditAppliedToBalance = n.GetBoolValue(); } },
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCurrencyCode>(); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemsItem>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "payout_totals", n => { PayoutTotals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotals>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotals.CreateFromDiscriminatorValue); } },
                 { "reason", n => { Reason = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatusComposed>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatusComposed.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatusComposed>(); } },
                 { "subscription_id", n => { SubscriptionId = n.GetStringValue(); } },
                 { "tax_rates_used", n => { TaxRatesUsed = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTaxRatesUsed>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTaxRatesUsed.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTotalsComposed>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTotalsComposed.CreateFromDiscriminatorValue); } },
                 { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTypeComposed>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTypeComposed.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTypeComposed>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -170,14 +152,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction>("action", Action);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteStringValue("customer_id", CustomerId);
-            writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemsItem>("items", Items);
             writer.WriteStringValue("reason", Reason);
             writer.WriteStringValue("transaction_id", TransactionId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTypeComposed>("type", Type);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTypeComposed>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

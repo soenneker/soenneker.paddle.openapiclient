@@ -16,13 +16,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Aggregation to apply. Must be allowed for this field, otherwise `invalid_aggregation`. Omit for derived measures.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsAggregationWrapper2? Agg { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsAggregationWrapper2 Agg { get; set; }
-#endif
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsAggregation? Agg { get; set; }
         /// <summary>Measure field. An unknown field returns `unknown_field`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -56,7 +50,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agg", n => { Agg = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsAggregationWrapper2>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsAggregationWrapper2.CreateFromDiscriminatorValue); } },
+                { "agg", n => { Agg = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsAggregation>(); } },
                 { "field", n => { Field = n.GetStringValue(); } },
             };
         }
@@ -67,7 +61,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsAggregationWrapper2>("agg", Agg);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsAggregation>("agg", Agg);
             writer.WriteStringValue("field", Field);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -14,14 +14,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Three-letter ISO 4217 currency code used for this adjustment.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTotalsCurrencyCode? CurrencyCode { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTotalsCurrencyCode CurrencyCode { get; private set; }
-#endif
         /// <summary>Total earnings. This is the subtotal minus the fee.For tax adjustments, this value is negative, which means a positive effect in the transaction earnings.This is because the fee is originally calculated from the transaction total, so if a tax adjustment is made,then the fee portion of it is returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,7 +89,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTotalsCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTotalsCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentTotalsCurrencyCode>(); } },
                 { "earnings", n => { Earnings = n.GetStringValue(); } },
                 { "fee", n => { Fee = n.GetStringValue(); } },
                 { "retained_fee", n => { RetainedFee = n.GetStringValue(); } },

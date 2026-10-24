@@ -15,31 +15,25 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>City of this address.</summary>
+        /// <summary>The city property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? City { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCity? City { get; set; }
 #nullable restore
 #else
-        public string City { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCity City { get; set; }
 #endif
         /// <summary>The country_code property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCountryCode? CountryCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCountryCode CountryCode { get; set; }
-#endif
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; set; }
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCustomData? CustomData { get; set; }
+        public UntypedNode? CustomData { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCustomData CustomData { get; set; }
+        public UntypedNode CustomData { get; set; }
 #endif
         /// <summary>The ID of the customer this address belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -49,21 +43,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string CustomerId { get; set; }
 #endif
-        /// <summary>Memorable description for this address.</summary>
+        /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataDescription? Description { get; set; }
 #nullable restore
 #else
-        public string Description { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataDescription Description { get; set; }
 #endif
-        /// <summary>First line of this address.</summary>
+        /// <summary>The first_line property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FirstLine { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataFirstLine? FirstLine { get; set; }
 #nullable restore
 #else
-        public string FirstLine { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataFirstLine FirstLine { get; set; }
 #endif
         /// <summary>Unique Paddle ID for this address entity, prefixed with `add_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,29 +75,29 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataImportMeta ImportMeta { get; set; }
 #endif
-        /// <summary>ZIP or postal code of this address. Required for some countries.</summary>
+        /// <summary>The postal_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PostalCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataPostalCode? PostalCode { get; set; }
 #nullable restore
 #else
-        public string PostalCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataPostalCode PostalCode { get; set; }
 #endif
-        /// <summary>State, county, or region of this address.</summary>
+        /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Region { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataRegion? Region { get; set; }
 #nullable restore
 #else
-        public string Region { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataRegion Region { get; set; }
 #endif
-        /// <summary>Second line of this address.</summary>
+        /// <summary>The second_line property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SecondLine { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataSecondLine? SecondLine { get; set; }
 #nullable restore
 #else
-        public string SecondLine { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataSecondLine SecondLine { get; set; }
 #endif
         /// <summary>Whether this entity can be used in Paddle.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataStatus? Status { get; set; }
@@ -134,18 +128,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "city", n => { City = n.GetStringValue(); } },
-                { "country_code", n => { CountryCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCountryCode>(global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCountryCode.CreateFromDiscriminatorValue); } },
+                { "city", n => { City = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCity>(global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCity.CreateFromDiscriminatorValue); } },
+                { "country_code", n => { CountryCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCountryCode>(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCustomData.CreateFromDiscriminatorValue); } },
+                { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
-                { "description", n => { Description = n.GetStringValue(); } },
-                { "first_line", n => { FirstLine = n.GetStringValue(); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataDescription>(global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataDescription.CreateFromDiscriminatorValue); } },
+                { "first_line", n => { FirstLine = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataFirstLine>(global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataFirstLine.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataImportMeta.CreateFromDiscriminatorValue); } },
-                { "postal_code", n => { PostalCode = n.GetStringValue(); } },
-                { "region", n => { Region = n.GetStringValue(); } },
-                { "second_line", n => { SecondLine = n.GetStringValue(); } },
+                { "postal_code", n => { PostalCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataPostalCode>(global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataPostalCode.CreateFromDiscriminatorValue); } },
+                { "region", n => { Region = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataRegion>(global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataRegion.CreateFromDiscriminatorValue); } },
+                { "second_line", n => { SecondLine = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataSecondLine>(global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataSecondLine.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -157,18 +151,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("city", City);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCountryCode>("country_code", CountryCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCity>("city", City);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCountryCode>("country_code", CountryCode);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataCustomData>("custom_data", CustomData);
+            writer.WriteObjectValue<UntypedNode>("custom_data", CustomData);
             writer.WriteStringValue("customer_id", CustomerId);
-            writer.WriteStringValue("description", Description);
-            writer.WriteStringValue("first_line", FirstLine);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataDescription>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataFirstLine>("first_line", FirstLine);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataImportMeta>("import_meta", ImportMeta);
-            writer.WriteStringValue("postal_code", PostalCode);
-            writer.WriteStringValue("region", Region);
-            writer.WriteStringValue("second_line", SecondLine);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataPostalCode>("postal_code", PostalCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataRegion>("region", Region);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataSecondLine>("second_line", SecondLine);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressUpdatedRequestDataStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);

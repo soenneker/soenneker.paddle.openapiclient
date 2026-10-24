@@ -23,14 +23,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed Breakdown { get; set; }
 #endif
-        /// <summary>Three-letter ISO 4217 currency code used for adjustments for this transaction.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeCurrencyCode? CurrencyCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeCurrencyCode CurrencyCode { get; set; }
-#endif
         /// <summary>Total earnings. This is the subtotal minus the fee.For tax adjustments, this value is negative, which means a positive effect in the transaction earnings.This is because the fee is originally calculated from the transaction total, so if a tax adjustment is made,then the fee portion of it is returned.As a result, the earnings from all the adjustments performed could be either negative, positive or zero.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -105,7 +99,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "breakdown", n => { Breakdown = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed.CreateFromDiscriminatorValue); } },
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeCurrencyCode>(); } },
                 { "earnings", n => { Earnings = n.GetStringValue(); } },
                 { "fee", n => { Fee = n.GetStringValue(); } },
                 { "retained_fee", n => { RetainedFee = n.GetStringValue(); } },
@@ -122,7 +116,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed>("breakdown", Breakdown);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeCurrencyCode>("currency_code", CurrencyCode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

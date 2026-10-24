@@ -16,10 +16,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Brand color for overlay checkout, as a six-digit hex code including the leading `#`.Pass `null` to clear the brand color and fall back to the default checkout color.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PrimaryCheckoutColor { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayUpdatePrimaryCheckoutColor? PrimaryCheckoutColor { get; set; }
 #nullable restore
 #else
-        public string PrimaryCheckoutColor { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayUpdatePrimaryCheckoutColor PrimaryCheckoutColor { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -39,7 +39,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "primary_checkout_color", n => { PrimaryCheckoutColor = n.GetStringValue(); } },
+                { "primary_checkout_color", n => { PrimaryCheckoutColor = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayUpdatePrimaryCheckoutColor>(global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayUpdatePrimaryCheckoutColor.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -49,7 +49,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("primary_checkout_color", PrimaryCheckoutColor);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayUpdatePrimaryCheckoutColor>("primary_checkout_color", PrimaryCheckoutColor);
         }
     }
 }

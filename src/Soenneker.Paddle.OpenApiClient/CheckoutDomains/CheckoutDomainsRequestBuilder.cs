@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.CheckoutDomains
     public partial class CheckoutDomainsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.checkoutDomains.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the checkout domain entity to work with.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.CheckoutDomains.Item.WithDomainItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.CheckoutDomains.Item.WithDomainItemRequestBuilder this[string position]
         {

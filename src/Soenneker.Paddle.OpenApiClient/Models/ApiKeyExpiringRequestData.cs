@@ -58,10 +58,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Permissions assigned to this API key. Determines what actions the API key can perform.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Permissions { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExpiringRequestDataPermissionsItem?>? Permissions { get; set; }
 #nullable restore
 #else
-        public List<string> Permissions { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExpiringRequestDataPermissionsItem?> Permissions { get; set; }
 #endif
         /// <summary>Whether this API key can be rotated. `null` for events that occurred before this field was introduced.</summary>
         public bool? Rotatable { get; set; }
@@ -102,7 +102,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "key", n => { Key = n.GetStringValue(); } },
                 { "last_used_at", n => { LastUsedAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
+                { "permissions", n => { Permissions = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExpiringRequestDataPermissionsItem>()?.AsList(); } },
                 { "rotatable", n => { Rotatable = n.GetBoolValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExpiringRequestDataStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -123,7 +123,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("key", Key);
             writer.WriteDateTimeOffsetValue("last_used_at", LastUsedAt);
             writer.WriteStringValue("name", Name);
-            writer.WriteCollectionOfPrimitiveValues<string>("permissions", Permissions);
+            writer.WriteCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExpiringRequestDataPermissionsItem>("permissions", Permissions);
             writer.WriteBoolValue("rotatable", Rotatable);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExpiringRequestDataStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

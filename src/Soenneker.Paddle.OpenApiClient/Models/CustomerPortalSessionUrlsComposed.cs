@@ -11,10 +11,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// Authenticated customer portal deep links. For security, the `token` appended to each link is temporary. You shouldn&apos;t store these links.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CustomerPortalSessionUrlsComposed : IAdditionalDataHolder, IParsable
+    public partial class CustomerPortalSessionUrlsComposed : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Authenticated customer portal deep links that aren&apos;t associated with a specific entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -31,13 +29,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem> Subscriptions { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsComposed"/> and sets the default values.
-        /// </summary>
-        public CustomerPortalSessionUrlsComposed()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -69,7 +60,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsGeneralComposed>("general", General);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem>("subscriptions", Subscriptions);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

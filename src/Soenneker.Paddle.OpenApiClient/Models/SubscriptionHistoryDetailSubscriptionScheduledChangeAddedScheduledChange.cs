@@ -14,17 +14,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     public partial class SubscriptionHistoryDetailSubscriptionScheduledChangeAddedScheduledChange : IAdditionalDataHolder, IParsable
     {
         /// <summary>Kind of change that&apos;s scheduled to be applied to this subscription.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChangeActionComposed? Action { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChangeActionComposed Action { get; private set; }
-#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>RFC 3339 datetime string.</summary>
-        public DateTimeOffset? EffectiveAt { get; set; }
+        public DateTimeOffset? EffectiveAt { get; private set; }
         /// <summary>RFC 3339 datetime string of when a paused subscription should resume. Only used for `pause` scheduled changes.</summary>
         public DateTimeOffset? ResumeAt { get; private set; }
         /// <summary>
@@ -52,7 +46,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChangeActionComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChangeActionComposed.CreateFromDiscriminatorValue); } },
+                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChangeActionComposed>(); } },
                 { "effective_at", n => { EffectiveAt = n.GetDateTimeOffsetValue(); } },
                 { "resume_at", n => { ResumeAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -64,7 +58,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("effective_at", EffectiveAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

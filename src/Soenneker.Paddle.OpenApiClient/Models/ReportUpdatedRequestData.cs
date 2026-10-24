@@ -8,48 +8,75 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// New or changed entity.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportAdjustments"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportBalance"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportCheckouts"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscounts"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportPayoutReconciliation"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportProductsPrices"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportSubscriptions"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportTransactions"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ReportUpdatedRequestData : IAdditionalDataHolder, IParsable
+    public partial class ReportUpdatedRequestData : IComposedTypeWrapper, IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>RFC 3339 datetime string of when this report was created.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
-        /// <summary>RFC 3339 datetime string of when this report expires. The report is no longer available to download after this date.</summary>
-        public DateTimeOffset? ExpiresAt { get; set; }
-        /// <summary>Filter criteria for this report. If no `gte` filter for `updated_at` is passed, reports are filtered to include data updated in the last month. This means `updated_at` is greater than or equal to (`gte`) the same date and time one calendar month before the report was generated, so the window is between 28 and 31 days depending on the month.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportAdjustments"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataFiltersItem>? Filters { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportAdjustments? ReportUpdatedRequestDataReportAdjustments { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataFiltersItem> Filters { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportAdjustments ReportUpdatedRequestDataReportAdjustments { get; set; }
 #endif
-        /// <summary>Unique Paddle ID for this report, prefixed with `rep_`</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportBalance"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportBalance? ReportUpdatedRequestDataReportBalance { get; set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportBalance ReportUpdatedRequestDataReportBalance { get; set; }
 #endif
-        /// <summary>Number of records in this report. `null` if the report is `pending`.</summary>
-        public int? Rows { get; set; }
-        /// <summary>Status of this report. Set automatically by Paddle.Reports are created as `pending` initially, then move to `ready` when they&apos;re available to download.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataStatus? Status { get; set; }
-        /// <summary>Type of report to create.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataType? Type { get; set; }
-        /// <summary>RFC 3339 datetime string of when this report was last updated.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestData"/> and sets the default values.
-        /// </summary>
-        public ReportUpdatedRequestData()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportCheckouts"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportCheckouts? ReportUpdatedRequestDataReportCheckouts { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportCheckouts ReportUpdatedRequestDataReportCheckouts { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscounts"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscounts? ReportUpdatedRequestDataReportDiscounts { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscounts ReportUpdatedRequestDataReportDiscounts { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportPayoutReconciliation"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportPayoutReconciliation? ReportUpdatedRequestDataReportPayoutReconciliation { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportPayoutReconciliation ReportUpdatedRequestDataReportPayoutReconciliation { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportProductsPrices"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportProductsPrices? ReportUpdatedRequestDataReportProductsPrices { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportProductsPrices ReportUpdatedRequestDataReportProductsPrices { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportSubscriptions"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportSubscriptions? ReportUpdatedRequestDataReportSubscriptions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportSubscriptions ReportUpdatedRequestDataReportSubscriptions { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportTransactions"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportTransactions? ReportUpdatedRequestDataReportTransactions { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportTransactions ReportUpdatedRequestDataReportTransactions { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -58,7 +85,41 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestData();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
+            var result = new global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestData();
+            if("ReportUpdatedRequestDataReportAdjustments".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ReportUpdatedRequestDataReportAdjustments = new global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportAdjustments();
+            }
+            else if("ReportUpdatedRequestDataReportBalance".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ReportUpdatedRequestDataReportBalance = new global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportBalance();
+            }
+            else if("ReportUpdatedRequestDataReportCheckouts".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ReportUpdatedRequestDataReportCheckouts = new global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportCheckouts();
+            }
+            else if("ReportUpdatedRequestDataReportDiscounts".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ReportUpdatedRequestDataReportDiscounts = new global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscounts();
+            }
+            else if("ReportUpdatedRequestDataReportPayoutReconciliation".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ReportUpdatedRequestDataReportPayoutReconciliation = new global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportPayoutReconciliation();
+            }
+            else if("ReportUpdatedRequestDataReportProductsPrices".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ReportUpdatedRequestDataReportProductsPrices = new global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportProductsPrices();
+            }
+            else if("ReportUpdatedRequestDataReportSubscriptions".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ReportUpdatedRequestDataReportSubscriptions = new global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportSubscriptions();
+            }
+            else if("ReportUpdatedRequestDataReportTransactions".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.ReportUpdatedRequestDataReportTransactions = new global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportTransactions();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -66,17 +127,39 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(ReportUpdatedRequestDataReportAdjustments != null)
             {
-                { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
-                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataFiltersItem>(global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataFiltersItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "id", n => { Id = n.GetStringValue(); } },
-                { "rows", n => { Rows = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataStatus>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataType>(); } },
-                { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
-            };
+                return ReportUpdatedRequestDataReportAdjustments.GetFieldDeserializers();
+            }
+            else if(ReportUpdatedRequestDataReportBalance != null)
+            {
+                return ReportUpdatedRequestDataReportBalance.GetFieldDeserializers();
+            }
+            else if(ReportUpdatedRequestDataReportCheckouts != null)
+            {
+                return ReportUpdatedRequestDataReportCheckouts.GetFieldDeserializers();
+            }
+            else if(ReportUpdatedRequestDataReportDiscounts != null)
+            {
+                return ReportUpdatedRequestDataReportDiscounts.GetFieldDeserializers();
+            }
+            else if(ReportUpdatedRequestDataReportPayoutReconciliation != null)
+            {
+                return ReportUpdatedRequestDataReportPayoutReconciliation.GetFieldDeserializers();
+            }
+            else if(ReportUpdatedRequestDataReportProductsPrices != null)
+            {
+                return ReportUpdatedRequestDataReportProductsPrices.GetFieldDeserializers();
+            }
+            else if(ReportUpdatedRequestDataReportSubscriptions != null)
+            {
+                return ReportUpdatedRequestDataReportSubscriptions.GetFieldDeserializers();
+            }
+            else if(ReportUpdatedRequestDataReportTransactions != null)
+            {
+                return ReportUpdatedRequestDataReportTransactions.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -85,15 +168,38 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataFiltersItem>("filters", Filters);
-            writer.WriteStringValue("id", Id);
-            writer.WriteIntValue("rows", Rows);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataStatus>("status", Status);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataType>("type", Type);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
-            writer.WriteAdditionalData(AdditionalData);
+            if(ReportUpdatedRequestDataReportAdjustments != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportAdjustments>(null, ReportUpdatedRequestDataReportAdjustments);
+            }
+            else if(ReportUpdatedRequestDataReportBalance != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportBalance>(null, ReportUpdatedRequestDataReportBalance);
+            }
+            else if(ReportUpdatedRequestDataReportCheckouts != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportCheckouts>(null, ReportUpdatedRequestDataReportCheckouts);
+            }
+            else if(ReportUpdatedRequestDataReportDiscounts != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscounts>(null, ReportUpdatedRequestDataReportDiscounts);
+            }
+            else if(ReportUpdatedRequestDataReportPayoutReconciliation != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportPayoutReconciliation>(null, ReportUpdatedRequestDataReportPayoutReconciliation);
+            }
+            else if(ReportUpdatedRequestDataReportProductsPrices != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportProductsPrices>(null, ReportUpdatedRequestDataReportProductsPrices);
+            }
+            else if(ReportUpdatedRequestDataReportSubscriptions != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportSubscriptions>(null, ReportUpdatedRequestDataReportSubscriptions);
+            }
+            else if(ReportUpdatedRequestDataReportTransactions != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportTransactions>(null, ReportUpdatedRequestDataReportTransactions);
+            }
         }
     }
 }

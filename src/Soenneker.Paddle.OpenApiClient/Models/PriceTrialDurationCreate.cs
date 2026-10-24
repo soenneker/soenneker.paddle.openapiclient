@@ -17,13 +17,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Amount of time.</summary>
         public int? Frequency { get; set; }
         /// <summary>Unit of time.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreateInterval? Interval { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreateInterval Interval { get; set; }
-#endif
         /// <summary>Whether this price requires a payment method (`true`) or not (`false`) when trialing. If `false`, customers can sign up for subscription without entering their payment details, often referred to as a &quot;cardless trial.&quot;</summary>
         public bool? RequiresPaymentMethod { get; set; }
         /// <summary>Trial price. Customers are billed this amount for the duration of the trial period. Applies to all customers except those in countries with `unit_price_overrides`. If `null`, customers are not charged during the trial.</summary>
@@ -48,6 +42,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public PriceTrialDurationCreate()
         {
             AdditionalData = new Dictionary<string, object>();
+            RequiresPaymentMethod = true;
         }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -68,7 +63,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "frequency", n => { Frequency = n.GetIntValue(); } },
-                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreateInterval>(global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreateInterval.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreateInterval>(); } },
                 { "requires_payment_method", n => { RequiresPaymentMethod = n.GetBoolValue(); } },
                 { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MoneyOptionalCurrency>(global::Soenneker.Paddle.OpenApiClient.Models.MoneyOptionalCurrency.CreateFromDiscriminatorValue); } },
                 { "unit_price_overrides", n => { UnitPriceOverrides = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverride>(global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverride.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -82,7 +77,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("frequency", Frequency);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreateInterval>("interval", Interval);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreateInterval>("interval", Interval);
             writer.WriteBoolValue("requires_payment_method", RequiresPaymentMethod);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MoneyOptionalCurrency>("unit_price", UnitPrice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialUnitPriceOverride>("unit_price_overrides", UnitPriceOverrides);

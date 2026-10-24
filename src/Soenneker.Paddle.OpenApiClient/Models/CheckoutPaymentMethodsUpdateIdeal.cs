@@ -11,19 +11,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// Settings to update for the iDEAL payment method.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class CheckoutPaymentMethodsUpdateIdeal : IAdditionalDataHolder, IParsable
+    public partial class CheckoutPaymentMethodsUpdateIdeal : IParsable
     {
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this payment method is enabled for checkout.</summary>
         public bool? Enabled { get; set; }
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateIdeal"/> and sets the default values.
-        /// </summary>
-        public CheckoutPaymentMethodsUpdateIdeal()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -53,7 +44,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("enabled", Enabled);
-            writer.WriteAdditionalData(AdditionalData);
         }
     }
 }

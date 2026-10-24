@@ -20,31 +20,25 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Unique Paddle ID for this notification, prefixed with `ntf_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this notification was last attempted.</summary>
         public DateTimeOffset? LastAttemptAt { get; private set; }
         /// <summary>Unique Paddle ID for this notification setting, prefixed with `ntfset_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationSettingId { get; set; }
+        public string? NotificationSettingId { get; private set; }
 #nullable restore
 #else
-        public string NotificationSettingId { get; set; }
+        public string NotificationSettingId { get; private set; }
 #endif
         /// <summary>RFC 3339 datetime string.</summary>
-        public DateTimeOffset? OccurredAt { get; set; }
-        /// <summary>The origin property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        public DateTimeOffset? OccurredAt { get; private set; }
+        /// <summary>Describes how this notification was created.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.NotificationOriginComposed? Origin { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationOriginComposed Origin { get; private set; }
-#endif
         /// <summary>Notification payload. Includes the new or changed event.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,24 +51,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public DateTimeOffset? ReplayedAt { get; private set; }
         /// <summary>RFC 3339 datetime string of when this notification is scheduled to be retried.</summary>
         public DateTimeOffset? RetryAt { get; private set; }
-        /// <summary>The status property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Status of this notification.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.NotificationStatusComposed? Status { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationStatusComposed Status { get; private set; }
-#endif
         /// <summary>How many times delivery of this notification has been attempted. Automatically incremented by Paddle after an attempt.</summary>
         public int? TimesAttempted { get; private set; }
-        /// <summary>The type property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Type of event sent by Paddle, in the format `entity.event_type`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.NotificationType? Type { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationType Type { get; private set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.Notification"/> and sets the default values.
         /// </summary>
@@ -105,13 +87,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "last_attempt_at", n => { LastAttemptAt = n.GetDateTimeOffsetValue(); } },
                 { "notification_setting_id", n => { NotificationSettingId = n.GetStringValue(); } },
                 { "occurred_at", n => { OccurredAt = n.GetDateTimeOffsetValue(); } },
-                { "origin", n => { Origin = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationOriginComposed>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationOriginComposed.CreateFromDiscriminatorValue); } },
+                { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationOriginComposed>(); } },
                 { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationPayloadComposed>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationPayloadComposed.CreateFromDiscriminatorValue); } },
                 { "replayed_at", n => { ReplayedAt = n.GetDateTimeOffsetValue(); } },
                 { "retry_at", n => { RetryAt = n.GetDateTimeOffsetValue(); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationStatusComposed>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationStatusComposed.CreateFromDiscriminatorValue); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationStatusComposed>(); } },
                 { "times_attempted", n => { TimesAttempted = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationType>(global::Soenneker.Paddle.OpenApiClient.Models.NotificationType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationType>(); } },
             };
         }
         /// <summary>
@@ -121,9 +103,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("id", Id);
-            writer.WriteStringValue("notification_setting_id", NotificationSettingId);
-            writer.WriteDateTimeOffsetValue("occurred_at", OccurredAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -23,22 +23,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public List<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyCode?> Enabled { get; private set; }
 #endif
-        /// <summary>Currency that you&apos;d like your Paddle balance to be held in and paid out from.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code for balance currencies.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPreferred? Preferred { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPreferred Preferred { get; set; }
-#endif
-        /// <summary>Currency that your Paddle balance is currently held in and paid out from. Set by Paddle. When you change `preferred`, Paddle updates this to match. That&apos;s immediately if more than one currency is in `enabled` or your balance is zero, otherwise after your next payout.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code for balance currencies.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPrimary? Primary { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPrimary Primary { get; private set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrency"/> and sets the default values.
         /// </summary>
@@ -65,8 +53,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyCode>()?.AsList(); } },
-                { "preferred", n => { Preferred = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPreferred>(global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPreferred.CreateFromDiscriminatorValue); } },
-                { "primary", n => { Primary = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPrimary>(global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPrimary.CreateFromDiscriminatorValue); } },
+                { "preferred", n => { Preferred = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPreferred>(); } },
+                { "primary", n => { Primary = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPrimary>(); } },
             };
         }
         /// <summary>
@@ -76,7 +64,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPreferred>("preferred", Preferred);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPreferred>("preferred", Preferred);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

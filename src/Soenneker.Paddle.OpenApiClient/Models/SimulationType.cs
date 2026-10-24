@@ -56,13 +56,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>Type of simulation.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.SimulationTypeType? Type { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationTypeType Type { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationType"/> and sets the default values.
         /// </summary>
@@ -93,7 +87,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "group", n => { Group = n.GetStringValue(); } },
                 { "label", n => { Label = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationTypeType>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationTypeType.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationTypeType>(); } },
             };
         }
         /// <summary>
@@ -108,7 +102,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("group", Group);
             writer.WriteStringValue("label", Label);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationTypeType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationTypeType>("type", Type);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

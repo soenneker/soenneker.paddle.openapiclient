@@ -19,7 +19,7 @@ namespace Soenneker.Paddle.OpenApiClient.Adjustments
     public partial class AdjustmentsRequestBuilder : BaseRequestBuilder
     {
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.adjustments.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the adjustment entity to work with.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.WithAdjustmentItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.WithAdjustmentItemRequestBuilder this[string position]
         {

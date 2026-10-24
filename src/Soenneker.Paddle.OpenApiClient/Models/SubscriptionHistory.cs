@@ -34,44 +34,32 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Unique Paddle ID for this subscription history group. History entries that occurred at the same time, as part of the same request, share the same group ID. Prefixed with `subhisgrp_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GroupId { get; set; }
+        public string? GroupId { get; private set; }
 #nullable restore
 #else
-        public string GroupId { get; set; }
+        public string GroupId { get; private set; }
 #endif
         /// <summary>Unique Paddle ID for this subscription history entry, prefixed with `subhis_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get; private set; }
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get; private set; }
 #endif
         /// <summary>RFC 3339 datetime string.</summary>
-        public DateTimeOffset? OccurredAt { get; set; }
+        public DateTimeOffset? OccurredAt { get; private set; }
         /// <summary>Why the entry was created. Only applicable to certain actions; `null` otherwise.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryReasonComposed? Reason { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryReasonComposed Reason { get; private set; }
-#endif
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryReasonEnum? Reason { get; private set; }
         /// <summary>Where the entry originated from.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistorySource? Source { get; private set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistorySource Source { get; private set; }
-#endif
         /// <summary>Unique Paddle ID for this subscription entity, prefixed with `sub_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SubscriptionId { get; set; }
+        public string? SubscriptionId { get; private set; }
 #nullable restore
 #else
-        public string SubscriptionId { get; set; }
+        public string SubscriptionId { get; private set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistory"/> and sets the default values.
@@ -103,8 +91,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "group_id", n => { GroupId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "occurred_at", n => { OccurredAt = n.GetDateTimeOffsetValue(); } },
-                { "reason", n => { Reason = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryReasonComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryReasonComposed.CreateFromDiscriminatorValue); } },
-                { "source", n => { Source = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistorySource>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistorySource.CreateFromDiscriminatorValue); } },
+                { "reason", n => { Reason = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryReasonEnum>(); } },
+                { "source", n => { Source = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistorySource>(); } },
                 { "subscription_id", n => { SubscriptionId = n.GetStringValue(); } },
             };
         }
@@ -115,10 +103,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("group_id", GroupId);
-            writer.WriteStringValue("id", Id);
-            writer.WriteDateTimeOffsetValue("occurred_at", OccurredAt);
-            writer.WriteStringValue("subscription_id", SubscriptionId);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

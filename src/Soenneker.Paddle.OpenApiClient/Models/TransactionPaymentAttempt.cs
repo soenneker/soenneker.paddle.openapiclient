@@ -25,15 +25,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>RFC 3339 datetime string of when this payment was captured. `null` if `status` is not `captured`.</summary>
         public DateTimeOffset? CapturedAt { get; set; }
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Reason why a payment attempt failed. Returns `null` if payment captured successfully.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ErrorCodeWrapper? ErrorCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ErrorCodeWrapper ErrorCode { get; set; }
-#endif
+        public global::Soenneker.Paddle.OpenApiClient.Models.ErrorCode? ErrorCode { get; set; }
         /// <summary>Information about the payment method used for a payment attempt.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -97,7 +91,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "amount", n => { Amount = n.GetStringValue(); } },
                 { "captured_at", n => { CapturedAt = n.GetDateTimeOffsetValue(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "error_code", n => { ErrorCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ErrorCodeWrapper>(global::Soenneker.Paddle.OpenApiClient.Models.ErrorCodeWrapper.CreateFromDiscriminatorValue); } },
+                { "error_code", n => { ErrorCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ErrorCode>(); } },
                 { "method_details", n => { MethodDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails>(global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails.CreateFromDiscriminatorValue); } },
                 { "payment_attempt_id", n => { PaymentAttemptId = n.GetStringValue(); } },
                 { "payment_method_id", n => { PaymentMethodId = n.GetStringValue(); } },
@@ -114,8 +108,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("amount", Amount);
             writer.WriteDateTimeOffsetValue("captured_at", CapturedAt);
-            writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ErrorCodeWrapper>("error_code", ErrorCode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ErrorCode>("error_code", ErrorCode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MethodDetails>("method_details", MethodDetails);
             writer.WriteStringValue("payment_attempt_id", PaymentAttemptId);
             writer.WriteStringValue("payment_method_id", PaymentMethodId);

@@ -16,14 +16,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>RFC 3339 datetime string.</summary>
         public DateTimeOffset? EffectiveFrom { get; set; }
-        /// <summary>The on_resume property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>How Paddle should set the billing period for the subscription when resuming. If omitted, defaults to `start_new_billing_period`.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDateOnResume? OnResume { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDateOnResume OnResume { get; set; }
-#endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDate"/> and sets the default values.
         /// </summary>
@@ -50,7 +44,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "effective_from", n => { EffectiveFrom = n.GetDateTimeOffsetValue(); } },
-                { "on_resume", n => { OnResume = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDateOnResume>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDateOnResume.CreateFromDiscriminatorValue); } },
+                { "on_resume", n => { OnResume = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDateOnResume>(); } },
             };
         }
         /// <summary>
@@ -61,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("effective_from", EffectiveFrom);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDateOnResume>("on_resume", OnResume);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDateOnResume>("on_resume", OnResume);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -25,7 +25,7 @@ namespace Soenneker.Paddle.OpenApiClient.Transactions
             get => new global::Soenneker.Paddle.OpenApiClient.Transactions.Preview.PreviewRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>Gets an item from the Soenneker.Paddle.OpenApiClient.transactions.item collection</summary>
-        /// <param name="position">Unique identifier of the item</param>
+        /// <param name="position">Paddle ID of the transaction entity to work with.</param>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Transactions.Item.WithTransactionItemRequestBuilder"/></returns>
         public global::Soenneker.Paddle.OpenApiClient.Transactions.Item.WithTransactionItemRequestBuilder this[string position]
         {

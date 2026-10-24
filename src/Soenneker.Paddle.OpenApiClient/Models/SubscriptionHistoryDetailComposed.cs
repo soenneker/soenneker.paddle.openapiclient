@@ -8,212 +8,275 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Details specific to the action. The fields returned depend on the value of `action`.
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivated"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionAddressUpdated"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingCycleUpdated"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDateUpdated"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDetailsUpdated"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessAdded"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessRemoved"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessUpdated"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCanceled"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdated"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionConsentRequirementGranted"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreated"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCurrencyUpdated"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCustomDataUpdated"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCustomerUpdated"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAdded"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountExpired"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountRemoved"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAdded"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemQuantityUpdated"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemRemoved"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeApplied"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPastDue"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaused"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttempted"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodAdded"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodRemoved"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodUpdated"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionRenewed"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumed"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeAdded"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeRemoved"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SubscriptionHistoryDetailComposed : IAdditionalDataHolder, IParsable
+    public partial class SubscriptionHistoryDetailComposed : IComposedTypeWrapper, IParsable
     {
-        /// <summary>The action property</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivated"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Action { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivated? SubscriptionHistoryDetailSubscriptionActivated { get; set; }
 #nullable restore
 #else
-        public string Action { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivated SubscriptionHistoryDetailSubscriptionActivated { get; set; }
 #endif
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Updated address against the subscription. This is what the address was changed to.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionAddressUpdated"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionAddressUpdatedAddress? Address { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionAddressUpdated? SubscriptionHistoryDetailSubscriptionAddressUpdated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionAddressUpdatedAddress Address { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionAddressUpdated SubscriptionHistoryDetailSubscriptionAddressUpdated { get; set; }
 #endif
-        /// <summary>Updated billing cycle of the subscription. This is what the billing cycle was changed to.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingCycleUpdated"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingCycleUpdatedBillingCycle? BillingCycle { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingCycleUpdated? SubscriptionHistoryDetailSubscriptionBillingCycleUpdated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingCycleUpdatedBillingCycle BillingCycle { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingCycleUpdated SubscriptionHistoryDetailSubscriptionBillingCycleUpdated { get; set; }
 #endif
-        /// <summary>Updated billing details on the subscription. This is what the billing details were changed to.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDateUpdated"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDetailsUpdatedBillingDetails? BillingDetails { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDateUpdated? SubscriptionHistoryDetailSubscriptionBillingDateUpdated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDetailsUpdatedBillingDetails BillingDetails { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDateUpdated SubscriptionHistoryDetailSubscriptionBillingDateUpdated { get; set; }
 #endif
-        /// <summary>New business on the subscription.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDetailsUpdated"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessAddedBusiness? Business { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDetailsUpdated? SubscriptionHistoryDetailSubscriptionBillingDetailsUpdated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessAddedBusiness Business { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDetailsUpdated SubscriptionHistoryDetailSubscriptionBillingDetailsUpdated { get; set; }
 #endif
-        /// <summary>How payment is collected for this subscription. This is what the collection mode was changed to.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessAdded"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdatedCollectionMode? CollectionMode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessAdded? SubscriptionHistoryDetailSubscriptionBusinessAdded { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdatedCollectionMode CollectionMode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessAdded SubscriptionHistoryDetailSubscriptionBusinessAdded { get; set; }
 #endif
-        /// <summary>Details about the consent requirement that was granted.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessRemoved"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionConsentRequirementGrantedConsentRequirement? ConsentRequirement { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessRemoved? SubscriptionHistoryDetailSubscriptionBusinessRemoved { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionConsentRequirementGrantedConsentRequirement ConsentRequirement { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessRemoved SubscriptionHistoryDetailSubscriptionBusinessRemoved { get; set; }
 #endif
-        /// <summary>Supported three-letter ISO 4217 currency code of the subscription when it was created.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessUpdated"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper20? CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessUpdated? SubscriptionHistoryDetailSubscriptionBusinessUpdated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper20 CurrencyCode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessUpdated SubscriptionHistoryDetailSubscriptionBusinessUpdated { get; set; }
 #endif
-        /// <summary>Billing period of the subscription at the time of activation.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCanceled"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedCurrentBillingPeriod? CurrentBillingPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCanceled? SubscriptionHistoryDetailSubscriptionCanceled { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedCurrentBillingPeriod CurrentBillingPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCanceled SubscriptionHistoryDetailSubscriptionCanceled { get; set; }
 #endif
-        /// <summary>Custom data of the subscription when it was created.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdated"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedCustomData? CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdated? SubscriptionHistoryDetailSubscriptionCollectionModeUpdated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedCustomData CustomData { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdated SubscriptionHistoryDetailSubscriptionCollectionModeUpdated { get; set; }
 #endif
-        /// <summary>Customer for the subscription when it was created.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionConsentRequirementGranted"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Customer? Customer { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionConsentRequirementGranted? SubscriptionHistoryDetailSubscriptionConsentRequirementGranted { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Customer Customer { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionConsentRequirementGranted SubscriptionHistoryDetailSubscriptionConsentRequirementGranted { get; set; }
 #endif
-        /// <summary>Discount attached to the subscription when it was created.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreated"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscount? Discount { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreated? SubscriptionHistoryDetailSubscriptionCreated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscount Discount { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreated SubscriptionHistoryDetailSubscriptionCreated { get; set; }
 #endif
-        /// <summary>Whether the subscription was canceled immediately, or scheduled to cancel.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCurrencyUpdated"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryCanceledEffectiveFromWrapper? EffectiveFrom { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCurrencyUpdated? SubscriptionHistoryDetailSubscriptionCurrencyUpdated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryCanceledEffectiveFromWrapper EffectiveFrom { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCurrencyUpdated SubscriptionHistoryDetailSubscriptionCurrencyUpdated { get; set; }
 #endif
-        /// <summary>RFC 3339 datetime string of when the subscription was first billed. `null` when the subscription has never been billed — for example, an imported subscription recovering from `past_due`.</summary>
-        public DateTimeOffset? FirstBilledAt { get; set; }
-        /// <summary>Whether the subscription had a payment method when it was created. `null` if this couldn&apos;t be determined.</summary>
-        public bool? HasPaymentMethod { get; set; }
-        /// <summary>Items on the subscription when it was created.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCustomDataUpdated"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem>? Items { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCustomDataUpdated? SubscriptionHistoryDetailSubscriptionCustomDataUpdated { get; set; }
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem> Items { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCustomDataUpdated SubscriptionHistoryDetailSubscriptionCustomDataUpdated { get; set; }
 #endif
-        /// <summary>RFC 3339 datetime string of when the subscription was next scheduled to be billed at the time of activation. `null` when the subscription has no next billing date — for example, a recovered `past_due` subscription that is scheduled to cancel or pause.</summary>
-        public DateTimeOffset? NextBilledAt { get; set; }
-        /// <summary>How Paddle handled payment failure for the operation.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCustomerUpdated"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedOnPaymentFailure? OnPaymentFailure { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCustomerUpdated? SubscriptionHistoryDetailSubscriptionCustomerUpdated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedOnPaymentFailure OnPaymentFailure { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCustomerUpdated SubscriptionHistoryDetailSubscriptionCustomerUpdated { get; set; }
 #endif
-        /// <summary>How the subscription was resumed. Indicates whether a new billing period was started or the existing one continued.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAdded"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedOnResume? OnResume { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAdded? SubscriptionHistoryDetailSubscriptionDiscountAdded { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedOnResume OnResume { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAdded SubscriptionHistoryDetailSubscriptionDiscountAdded { get; set; }
 #endif
-        /// <summary>Operation that resulted in the failed payment attempt. Use the related transaction ID to get the full details of the attempted change.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountExpired"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttemptedOperation? Operation { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountExpired? SubscriptionHistoryDetailSubscriptionDiscountExpired { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttemptedOperation Operation { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountExpired SubscriptionHistoryDetailSubscriptionDiscountExpired { get; set; }
 #endif
-        /// <summary>Price of the item that was added to the subscription.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountRemoved"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedPrice? Price { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountRemoved? SubscriptionHistoryDetailSubscriptionDiscountRemoved { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedPrice Price { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountRemoved SubscriptionHistoryDetailSubscriptionDiscountRemoved { get; set; }
 #endif
-        /// <summary>How proration was calculated for this billing date change.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAdded"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDateUpdatedProrationBillingMode? ProrationBillingMode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAdded? SubscriptionHistoryDetailSubscriptionItemAdded { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDateUpdatedProrationBillingMode ProrationBillingMode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAdded SubscriptionHistoryDetailSubscriptionItemAdded { get; set; }
 #endif
-        /// <summary>Quantity of the item on the subscription after being added.</summary>
-        public int? Quantity { get; set; }
-        /// <summary>Details of the scheduled change that was added to the subscription.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemQuantityUpdated"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeAddedScheduledChange? ScheduledChange { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemQuantityUpdated? SubscriptionHistoryDetailSubscriptionItemQuantityUpdated { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeAddedScheduledChange ScheduledChange { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemQuantityUpdated SubscriptionHistoryDetailSubscriptionItemQuantityUpdated { get; set; }
 #endif
-        /// <summary>Status of the subscription after activation.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemRemoved"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedStatus? Status { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemRemoved? SubscriptionHistoryDetailSubscriptionItemRemoved { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedStatus Status { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemRemoved SubscriptionHistoryDetailSubscriptionItemRemoved { get; set; }
 #endif
-        /// <summary>Unique Paddle ID for this transaction entity, prefixed with `txn_`.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeApplied"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransactionId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeApplied? SubscriptionHistoryDetailSubscriptionOneOffChargeApplied { get; set; }
 #nullable restore
 #else
-        public string TransactionId { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeApplied SubscriptionHistoryDetailSubscriptionOneOffChargeApplied { get; set; }
 #endif
-        /// <summary>Summary of the quantity change. For a new item, `quantity_delta` matches the resulting `quantity` since the previous quantity was zero.</summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPastDue"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedUpdateSummary? UpdateSummary { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPastDue? SubscriptionHistoryDetailSubscriptionPastDue { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedUpdateSummary UpdateSummary { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPastDue SubscriptionHistoryDetailSubscriptionPastDue { get; set; }
 #endif
-        /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailComposed"/> and sets the default values.
-        /// </summary>
-        public SubscriptionHistoryDetailComposed()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaused"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaused? SubscriptionHistoryDetailSubscriptionPaused { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaused SubscriptionHistoryDetailSubscriptionPaused { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttempted"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttempted? SubscriptionHistoryDetailSubscriptionPaymentAttempted { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttempted SubscriptionHistoryDetailSubscriptionPaymentAttempted { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodAdded"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodAdded? SubscriptionHistoryDetailSubscriptionPaymentMethodAdded { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodAdded SubscriptionHistoryDetailSubscriptionPaymentMethodAdded { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodRemoved"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodRemoved? SubscriptionHistoryDetailSubscriptionPaymentMethodRemoved { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodRemoved SubscriptionHistoryDetailSubscriptionPaymentMethodRemoved { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodUpdated"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodUpdated? SubscriptionHistoryDetailSubscriptionPaymentMethodUpdated { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodUpdated SubscriptionHistoryDetailSubscriptionPaymentMethodUpdated { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionRenewed"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionRenewed? SubscriptionHistoryDetailSubscriptionRenewed { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionRenewed SubscriptionHistoryDetailSubscriptionRenewed { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumed"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumed? SubscriptionHistoryDetailSubscriptionResumed { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumed SubscriptionHistoryDetailSubscriptionResumed { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeAdded"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeAdded? SubscriptionHistoryDetailSubscriptionScheduledChangeAdded { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeAdded SubscriptionHistoryDetailSubscriptionScheduledChangeAdded { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeRemoved"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeRemoved? SubscriptionHistoryDetailSubscriptionScheduledChangeRemoved { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeRemoved SubscriptionHistoryDetailSubscriptionScheduledChangeRemoved { get; set; }
+#endif
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated? SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated { get; set; }
+#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -222,7 +285,141 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailComposed();
+            var mappingValue = parseNode.GetChildNode("action")?.GetStringValue();
+            var result = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailComposed();
+            if("subscription_activated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionActivated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivated();
+            }
+            else if("subscription_address_updated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionAddressUpdated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionAddressUpdated();
+            }
+            else if("subscription_billing_cycle_updated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionBillingCycleUpdated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingCycleUpdated();
+            }
+            else if("subscription_billing_date_updated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionBillingDateUpdated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDateUpdated();
+            }
+            else if("subscription_billing_details_updated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionBillingDetailsUpdated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDetailsUpdated();
+            }
+            else if("subscription_business_added".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionBusinessAdded = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessAdded();
+            }
+            else if("subscription_business_removed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionBusinessRemoved = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessRemoved();
+            }
+            else if("subscription_business_updated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionBusinessUpdated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessUpdated();
+            }
+            else if("subscription_canceled".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionCanceled = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCanceled();
+            }
+            else if("subscription_collection_mode_updated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionCollectionModeUpdated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdated();
+            }
+            else if("subscription_consent_requirement_granted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionConsentRequirementGranted = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionConsentRequirementGranted();
+            }
+            else if("subscription_created".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionCreated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreated();
+            }
+            else if("subscription_currency_updated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionCurrencyUpdated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCurrencyUpdated();
+            }
+            else if("subscription_custom_data_updated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionCustomDataUpdated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCustomDataUpdated();
+            }
+            else if("subscription_customer_updated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionCustomerUpdated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCustomerUpdated();
+            }
+            else if("subscription_discount_added".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionDiscountAdded = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAdded();
+            }
+            else if("subscription_discount_expired".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionDiscountExpired = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountExpired();
+            }
+            else if("subscription_discount_removed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionDiscountRemoved = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountRemoved();
+            }
+            else if("subscription_item_added".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionItemAdded = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAdded();
+            }
+            else if("subscription_item_quantity_updated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionItemQuantityUpdated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemQuantityUpdated();
+            }
+            else if("subscription_item_removed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionItemRemoved = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemRemoved();
+            }
+            else if("subscription_one_off_charge_applied".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionOneOffChargeApplied = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeApplied();
+            }
+            else if("subscription_past_due".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionPastDue = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPastDue();
+            }
+            else if("subscription_paused".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionPaused = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaused();
+            }
+            else if("subscription_payment_attempted".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionPaymentAttempted = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttempted();
+            }
+            else if("subscription_payment_method_added".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionPaymentMethodAdded = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodAdded();
+            }
+            else if("subscription_payment_method_removed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionPaymentMethodRemoved = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodRemoved();
+            }
+            else if("subscription_payment_method_updated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionPaymentMethodUpdated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodUpdated();
+            }
+            else if("subscription_renewed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionRenewed = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionRenewed();
+            }
+            else if("subscription_resumed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionResumed = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumed();
+            }
+            else if("subscription_scheduled_change_added".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionScheduledChangeAdded = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeAdded();
+            }
+            else if("subscription_scheduled_change_removed".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionScheduledChangeRemoved = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeRemoved();
+            }
+            else if("subscription_scheduled_change_updated".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                result.SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated();
+            }
+            return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -230,36 +427,139 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            if(SubscriptionHistoryDetailSubscriptionActivated != null)
             {
-                { "action", n => { Action = n.GetStringValue(); } },
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionAddressUpdatedAddress>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionAddressUpdatedAddress.CreateFromDiscriminatorValue); } },
-                { "billing_cycle", n => { BillingCycle = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingCycleUpdatedBillingCycle>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingCycleUpdatedBillingCycle.CreateFromDiscriminatorValue); } },
-                { "billing_details", n => { BillingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDetailsUpdatedBillingDetails>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDetailsUpdatedBillingDetails.CreateFromDiscriminatorValue); } },
-                { "business", n => { Business = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessAddedBusiness>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessAddedBusiness.CreateFromDiscriminatorValue); } },
-                { "collection_mode", n => { CollectionMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdatedCollectionMode>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdatedCollectionMode.CreateFromDiscriminatorValue); } },
-                { "consent_requirement", n => { ConsentRequirement = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionConsentRequirementGrantedConsentRequirement>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionConsentRequirementGrantedConsentRequirement.CreateFromDiscriminatorValue); } },
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper20>(global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper20.CreateFromDiscriminatorValue); } },
-                { "current_billing_period", n => { CurrentBillingPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedCurrentBillingPeriod>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedCurrentBillingPeriod.CreateFromDiscriminatorValue); } },
-                { "custom_data", n => { CustomData = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedCustomData>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedCustomData.CreateFromDiscriminatorValue); } },
-                { "customer", n => { Customer = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Customer>(global::Soenneker.Paddle.OpenApiClient.Models.Customer.CreateFromDiscriminatorValue); } },
-                { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscount.CreateFromDiscriminatorValue); } },
-                { "effective_from", n => { EffectiveFrom = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryCanceledEffectiveFromWrapper>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryCanceledEffectiveFromWrapper.CreateFromDiscriminatorValue); } },
-                { "first_billed_at", n => { FirstBilledAt = n.GetDateTimeOffsetValue(); } },
-                { "has_payment_method", n => { HasPaymentMethod = n.GetBoolValue(); } },
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "next_billed_at", n => { NextBilledAt = n.GetDateTimeOffsetValue(); } },
-                { "on_payment_failure", n => { OnPaymentFailure = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedOnPaymentFailure>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedOnPaymentFailure.CreateFromDiscriminatorValue); } },
-                { "on_resume", n => { OnResume = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedOnResume>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedOnResume.CreateFromDiscriminatorValue); } },
-                { "operation", n => { Operation = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttemptedOperation>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttemptedOperation.CreateFromDiscriminatorValue); } },
-                { "price", n => { Price = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedPrice>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedPrice.CreateFromDiscriminatorValue); } },
-                { "proration_billing_mode", n => { ProrationBillingMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDateUpdatedProrationBillingMode>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDateUpdatedProrationBillingMode.CreateFromDiscriminatorValue); } },
-                { "quantity", n => { Quantity = n.GetIntValue(); } },
-                { "scheduled_change", n => { ScheduledChange = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeAddedScheduledChange>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeAddedScheduledChange.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedStatus>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedStatus.CreateFromDiscriminatorValue); } },
-                { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
-                { "update_summary", n => { UpdateSummary = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedUpdateSummary>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedUpdateSummary.CreateFromDiscriminatorValue); } },
-            };
+                return SubscriptionHistoryDetailSubscriptionActivated.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionAddressUpdated != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionAddressUpdated.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionBillingCycleUpdated != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionBillingCycleUpdated.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionBillingDateUpdated != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionBillingDateUpdated.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionBillingDetailsUpdated != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionBillingDetailsUpdated.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionBusinessAdded != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionBusinessAdded.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionBusinessRemoved != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionBusinessRemoved.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionBusinessUpdated != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionBusinessUpdated.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionCanceled != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionCanceled.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionCollectionModeUpdated != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionCollectionModeUpdated.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionConsentRequirementGranted != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionConsentRequirementGranted.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionCreated != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionCreated.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionCurrencyUpdated != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionCurrencyUpdated.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionCustomDataUpdated != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionCustomDataUpdated.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionCustomerUpdated != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionCustomerUpdated.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionDiscountAdded != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionDiscountAdded.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionDiscountExpired != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionDiscountExpired.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionDiscountRemoved != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionDiscountRemoved.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionItemAdded != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionItemAdded.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionItemQuantityUpdated != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionItemQuantityUpdated.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionItemRemoved != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionItemRemoved.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionOneOffChargeApplied != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionOneOffChargeApplied.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionPastDue != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionPastDue.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionPaused != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionPaused.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionPaymentAttempted != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionPaymentAttempted.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionPaymentMethodAdded != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionPaymentMethodAdded.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionPaymentMethodRemoved != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionPaymentMethodRemoved.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionPaymentMethodUpdated != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionPaymentMethodUpdated.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionRenewed != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionRenewed.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionResumed != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionResumed.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionScheduledChangeAdded != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionScheduledChangeAdded.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionScheduledChangeRemoved != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionScheduledChangeRemoved.GetFieldDeserializers();
+            }
+            else if(SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated != null)
+            {
+                return SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated.GetFieldDeserializers();
+            }
+            return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
         /// Serializes information the current object
@@ -268,34 +568,138 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("action", Action);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionAddressUpdatedAddress>("address", Address);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingCycleUpdatedBillingCycle>("billing_cycle", BillingCycle);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDetailsUpdatedBillingDetails>("billing_details", BillingDetails);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessAddedBusiness>("business", Business);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdatedCollectionMode>("collection_mode", CollectionMode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionConsentRequirementGrantedConsentRequirement>("consent_requirement", ConsentRequirement);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCodeWrapper20>("currency_code", CurrencyCode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedCurrentBillingPeriod>("current_billing_period", CurrentBillingPeriod);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreatedCustomData>("custom_data", CustomData);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Customer>("customer", Customer);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscount>("discount", Discount);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryCanceledEffectiveFromWrapper>("effective_from", EffectiveFrom);
-            writer.WriteDateTimeOffsetValue("first_billed_at", FirstBilledAt);
-            writer.WriteBoolValue("has_payment_method", HasPaymentMethod);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem>("items", Items);
-            writer.WriteDateTimeOffsetValue("next_billed_at", NextBilledAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedOnPaymentFailure>("on_payment_failure", OnPaymentFailure);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedOnResume>("on_resume", OnResume);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttemptedOperation>("operation", Operation);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedPrice>("price", Price);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDateUpdatedProrationBillingMode>("proration_billing_mode", ProrationBillingMode);
-            writer.WriteIntValue("quantity", Quantity);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeAddedScheduledChange>("scheduled_change", ScheduledChange);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedStatus>("status", Status);
-            writer.WriteStringValue("transaction_id", TransactionId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedUpdateSummary>("update_summary", UpdateSummary);
-            writer.WriteAdditionalData(AdditionalData);
+            if(SubscriptionHistoryDetailSubscriptionActivated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivated>(null, SubscriptionHistoryDetailSubscriptionActivated);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionAddressUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionAddressUpdated>(null, SubscriptionHistoryDetailSubscriptionAddressUpdated);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionBillingCycleUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingCycleUpdated>(null, SubscriptionHistoryDetailSubscriptionBillingCycleUpdated);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionBillingDateUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDateUpdated>(null, SubscriptionHistoryDetailSubscriptionBillingDateUpdated);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionBillingDetailsUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBillingDetailsUpdated>(null, SubscriptionHistoryDetailSubscriptionBillingDetailsUpdated);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionBusinessAdded != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessAdded>(null, SubscriptionHistoryDetailSubscriptionBusinessAdded);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionBusinessRemoved != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessRemoved>(null, SubscriptionHistoryDetailSubscriptionBusinessRemoved);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionBusinessUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionBusinessUpdated>(null, SubscriptionHistoryDetailSubscriptionBusinessUpdated);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionCanceled != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCanceled>(null, SubscriptionHistoryDetailSubscriptionCanceled);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionCollectionModeUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdated>(null, SubscriptionHistoryDetailSubscriptionCollectionModeUpdated);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionConsentRequirementGranted != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionConsentRequirementGranted>(null, SubscriptionHistoryDetailSubscriptionConsentRequirementGranted);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionCreated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCreated>(null, SubscriptionHistoryDetailSubscriptionCreated);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionCurrencyUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCurrencyUpdated>(null, SubscriptionHistoryDetailSubscriptionCurrencyUpdated);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionCustomDataUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCustomDataUpdated>(null, SubscriptionHistoryDetailSubscriptionCustomDataUpdated);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionCustomerUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCustomerUpdated>(null, SubscriptionHistoryDetailSubscriptionCustomerUpdated);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionDiscountAdded != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAdded>(null, SubscriptionHistoryDetailSubscriptionDiscountAdded);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionDiscountExpired != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountExpired>(null, SubscriptionHistoryDetailSubscriptionDiscountExpired);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionDiscountRemoved != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountRemoved>(null, SubscriptionHistoryDetailSubscriptionDiscountRemoved);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionItemAdded != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAdded>(null, SubscriptionHistoryDetailSubscriptionItemAdded);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionItemQuantityUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemQuantityUpdated>(null, SubscriptionHistoryDetailSubscriptionItemQuantityUpdated);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionItemRemoved != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemRemoved>(null, SubscriptionHistoryDetailSubscriptionItemRemoved);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionOneOffChargeApplied != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeApplied>(null, SubscriptionHistoryDetailSubscriptionOneOffChargeApplied);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionPastDue != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPastDue>(null, SubscriptionHistoryDetailSubscriptionPastDue);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionPaused != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaused>(null, SubscriptionHistoryDetailSubscriptionPaused);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionPaymentAttempted != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentAttempted>(null, SubscriptionHistoryDetailSubscriptionPaymentAttempted);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionPaymentMethodAdded != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodAdded>(null, SubscriptionHistoryDetailSubscriptionPaymentMethodAdded);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionPaymentMethodRemoved != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodRemoved>(null, SubscriptionHistoryDetailSubscriptionPaymentMethodRemoved);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionPaymentMethodUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPaymentMethodUpdated>(null, SubscriptionHistoryDetailSubscriptionPaymentMethodUpdated);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionRenewed != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionRenewed>(null, SubscriptionHistoryDetailSubscriptionRenewed);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionResumed != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumed>(null, SubscriptionHistoryDetailSubscriptionResumed);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionScheduledChangeAdded != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeAdded>(null, SubscriptionHistoryDetailSubscriptionScheduledChangeAdded);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionScheduledChangeRemoved != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeRemoved>(null, SubscriptionHistoryDetailSubscriptionScheduledChangeRemoved);
+            }
+            else if(SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated != null)
+            {
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated>(null, SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated);
+            }
         }
     }
 }

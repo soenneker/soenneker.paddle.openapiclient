@@ -15,24 +15,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>Supported three-letter ISO 4217 currency code for this metric. Returned in your primary balance currency, converted using the exchange rate at the time of each transaction. If your primary balance currency changes, amounts continue to be returned in the previous currency until the next payout period begins.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Supported three-letter ISO 4217 currency code.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeCurrencyCode? CurrencyCode { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeCurrencyCode CurrencyCode { get; set; }
-#endif
         /// <summary>RFC 3339 datetime string.</summary>
         public DateTimeOffset? EndsAt { get; set; }
-        /// <summary>Granularity for this timeseries.</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
+        /// <summary>Time granularity for the datapoints.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeInterval? Interval { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeInterval Interval { get; set; }
-#endif
         /// <summary>RFC 3339 datetime string.</summary>
         public DateTimeOffset? StartsAt { get; set; }
         /// <summary>Array of datapoints. Empty if `to` and `from` are the same.</summary>
@@ -44,7 +32,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueDatapoint> Timeseries { get; set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChange"/> and sets the default values.
         /// </summary>
@@ -70,9 +58,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeCurrencyCode.CreateFromDiscriminatorValue); } },
+                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeCurrencyCode>(); } },
                 { "ends_at", n => { EndsAt = n.GetDateTimeOffsetValue(); } },
-                { "interval", n => { Interval = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeInterval>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeInterval.CreateFromDiscriminatorValue); } },
+                { "interval", n => { Interval = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeInterval>(); } },
                 { "starts_at", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
                 { "timeseries", n => { Timeseries = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueDatapoint>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueDatapoint.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -85,12 +73,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeCurrencyCode>("currency_code", CurrencyCode);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteDateTimeOffsetValue("ends_at", EndsAt);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeInterval>("interval", Interval);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueChangeInterval>("interval", Interval);
             writer.WriteDateTimeOffsetValue("starts_at", StartsAt);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesMonthlyRecurringRevenueDatapoint>("timeseries", Timeseries);
-            writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
