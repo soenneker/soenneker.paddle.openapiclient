@@ -15,7 +15,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>URL that Paddle opens when a checkout is created without a URL of its own. `null` until set.Must use `https`, and its domain must be an approved checkout domain for your account.Paddle appends `?_ptxn=` and the transaction ID to this URL. The page must have Paddle.js set up to read it and open the checkout.</summary>
+        /// <summary>URL that Paddle opens when a checkout is created without a URL of its own. `null` until set.Must use `https`. In live accounts, its domain must also be an approved checkout domain for your account.Paddle appends `?_ptxn=` and the transaction ID to this URL. The page must have Paddle.js set up to read it and open the checkout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultUrl { get; set; }

@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
-    /// <summary>This parameter indicates the type of adjustment that will be created. Partial and full refunds can be requested, but needs approval from Paddle. Tax refunds, chargeback and chargeback_warning are reserved for Paddle internal users.</summary>
+    /// <summary>How this adjustment impacts the related transaction.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum AdjustmentCreatedRequestDataAction
     {

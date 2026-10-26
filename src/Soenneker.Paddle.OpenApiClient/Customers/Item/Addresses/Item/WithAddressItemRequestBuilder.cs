@@ -59,7 +59,7 @@ namespace Soenneker.Paddle.OpenApiClient.Customers.Item.Addresses.Item
         }
         /// <summary>
         /// Updates an address for a customer using its ID and related customer ID.If successful, your response includes a copy of the updated address entity.
-        /// Update an address for a customer <see href="https://developer.paddle.com/api-reference/addresses/update-adddress" />
+        /// Update an address for a customer <see href="https://developer.paddle.com/api-reference/addresses/update-address" />
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.UpdateAddress200Response"/></returns>
         /// <param name="body">Represents an address entity when updating addresses.</param>

@@ -13,7 +13,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CheckoutUrlUpdate : IParsable
     {
-        /// <summary>URL that Paddle opens when a checkout is created without a URL of its own. Pass `null` to clear it.Must use `https`, and its domain must be an approved checkout domain for your account.Paddle appends `?_ptxn=` and the transaction ID to this URL. The page must have Paddle.js set up to read it and open the checkout.</summary>
+        /// <summary>URL that Paddle opens when a checkout is created without a URL of its own. Pass `null` to clear it.Must use `https`. In live accounts, its domain must also be an approved checkout domain for your account.Paddle appends `?_ptxn=` and the transaction ID to this URL. The page must have Paddle.js set up to read it and open the checkout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? DefaultUrl { get; set; }

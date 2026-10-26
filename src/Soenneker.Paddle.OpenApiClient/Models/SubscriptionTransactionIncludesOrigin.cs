@@ -13,19 +13,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         #pragma warning restore CS1591
         [EnumMember(Value = "subscription_charge")]
         #pragma warning disable CS1591
-        SubscriptionCharge,
+        Subscription_charge,
         #pragma warning restore CS1591
         [EnumMember(Value = "subscription_payment_method_change")]
         #pragma warning disable CS1591
-        SubscriptionPaymentMethodChange,
+        Subscription_payment_method_change,
         #pragma warning restore CS1591
         [EnumMember(Value = "subscription_recurring")]
         #pragma warning disable CS1591
-        SubscriptionRecurring,
+        Subscription_recurring,
         #pragma warning restore CS1591
         [EnumMember(Value = "subscription_update")]
         #pragma warning disable CS1591
-        SubscriptionUpdate,
+        Subscription_update,
         #pragma warning restore CS1591
         [EnumMember(Value = "web")]
         #pragma warning disable CS1591

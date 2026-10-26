@@ -58,7 +58,7 @@ namespace Soenneker.Paddle.OpenApiClient.Settings.CheckoutUrl
             return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.GetCheckoutUrl200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.GetCheckoutUrl200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Updates the checkout URL settings for your account.Pass `null` to clear `default_url`.Returns a `checkout_url_domain_not_approved` error if the URL&apos;s domain isn&apos;t an approved checkout domain for your account.If successful, your response includes a copy of the updated checkout URL settings entity.
+        /// Updates the checkout URL settings for your account.Pass `null` to clear `default_url`.In live accounts, the URL&apos;s domain must be an approved checkout domain for your account, or the request returns a `checkout_url_domain_not_approved` error. Sandbox accounts accept any `https` URL.If successful, your response includes a copy of the updated checkout URL settings entity.
         /// Update checkout URL settings <see href="https://developer.paddle.com/api-reference/settings/update-checkout-url" />
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.UpdateCheckoutUrl200Response"/></returns>
@@ -103,7 +103,7 @@ namespace Soenneker.Paddle.OpenApiClient.Settings.CheckoutUrl
             return requestInfo;
         }
         /// <summary>
-        /// Updates the checkout URL settings for your account.Pass `null` to clear `default_url`.Returns a `checkout_url_domain_not_approved` error if the URL&apos;s domain isn&apos;t an approved checkout domain for your account.If successful, your response includes a copy of the updated checkout URL settings entity.
+        /// Updates the checkout URL settings for your account.Pass `null` to clear `default_url`.In live accounts, the URL&apos;s domain must be an approved checkout domain for your account, or the request returns a `checkout_url_domain_not_approved` error. Sandbox accounts accept any `https` URL.If successful, your response includes a copy of the updated checkout URL settings entity.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">Represents the checkout URL settings for your account when updating them.</param>

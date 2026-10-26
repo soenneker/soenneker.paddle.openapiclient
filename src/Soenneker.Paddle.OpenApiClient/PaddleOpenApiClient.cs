@@ -191,7 +191,7 @@ namespace Soenneker.Paddle.OpenApiClient
             PathParameters.TryAdd("baseurl", RequestAdapter.BaseUrl);
         }
         /// <summary>
-        /// Returns information about the Paddle API and the caller making the request, including their account and permissions.Authentication is optional. A request with no credentials, or with an API key that Paddle doesn&apos;t recognize, still succeeds, with `caller.auth_type` and `caller.account` set to `null` and an empty `caller.permissions`. To check that an API key works, make sure `caller.account` isn&apos;t `null`.
+        /// Returns information about the Paddle API and the caller making the request, including their account and permissions.Authentication is optional. A request with no credentials still succeeds, with `caller.auth_type` and `caller.account` set to `null` and an empty `caller.permissions`. A request with an API key that isn&apos;t valid returns a `403` error, like any other operation. To check that an API key works, make sure `caller.account` isn&apos;t `null`.
         /// Get API root <see href="https://developer.paddle.com/api-reference/api-root/get-api-root" />
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.GetApiRoot200Response"/></returns>
@@ -215,7 +215,7 @@ namespace Soenneker.Paddle.OpenApiClient
             return await RequestAdapter.SendAsync<global::Soenneker.Paddle.OpenApiClient.Models.GetApiRoot200Response>(requestInfo, global::Soenneker.Paddle.OpenApiClient.Models.GetApiRoot200Response.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Returns information about the Paddle API and the caller making the request, including their account and permissions.Authentication is optional. A request with no credentials, or with an API key that Paddle doesn&apos;t recognize, still succeeds, with `caller.auth_type` and `caller.account` set to `null` and an empty `caller.permissions`. To check that an API key works, make sure `caller.account` isn&apos;t `null`.
+        /// Returns information about the Paddle API and the caller making the request, including their account and permissions.Authentication is optional. A request with no credentials still succeeds, with `caller.auth_type` and `caller.account` set to `null` and an empty `caller.permissions`. A request with an API key that isn&apos;t valid returns a `403` error, like any other operation. To check that an API key works, make sure `caller.account` isn&apos;t `null`.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>

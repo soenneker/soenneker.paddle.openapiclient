@@ -13,7 +13,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AdjustmentCreatedRequestData : IAdditionalDataHolder, IParsable
     {
-        /// <summary>This parameter indicates the type of adjustment that will be created. Partial and full refunds can be requested, but needs approval from Paddle. Tax refunds, chargeback and chargeback_warning are reserved for Paddle internal users.</summary>
+        /// <summary>How this adjustment impacts the related transaction.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataAction? Action { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

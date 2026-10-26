@@ -32,10 +32,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Unique Paddle ID for this notification setting, prefixed with `ntfset_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationSettingId { get; private set; }
+        public string? NotificationSettingId { get; set; }
 #nullable restore
 #else
-        public string NotificationSettingId { get; private set; }
+        public string NotificationSettingId { get; set; }
 #endif
         /// <summary>Scenario for a simulation.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateType? Type { get; set; }
@@ -72,6 +72,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfig>("config", Config);
             writer.WriteStringValue("name", Name);
+            writer.WriteStringValue("notification_setting_id", NotificationSettingId);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateType>("type", Type);
         }
     }
