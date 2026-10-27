@@ -71,15 +71,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 result.ReportFilterAdjustmentsValueString = reportFilterAdjustmentsValueStringValue;
             }
-            else if(parseNode.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction>()?.AsList() is List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction?> adjustmentActionValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction>()?.AsList() is List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentAction?> adjustmentActionValue)
             {
                 result.AdjustmentAction = adjustmentActionValue;
             }
-            else if(parseNode.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus> adjustmentStatusValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentStatus> adjustmentStatusValue)
             {
                 result.AdjustmentStatus = adjustmentStatusValue;
             }
-            else if(parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
+            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
                 result.String = stringValue;
             }
