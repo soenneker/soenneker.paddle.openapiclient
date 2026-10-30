@@ -12,19 +12,31 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionBilledRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCard : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("last4") is { } nullNodeLast4 && nullNodeLast4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Last4 = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Last four digits of the card used to pay.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Last4 { get; set; }
+        public string? Last4 { get => _explicitNullValueLast4; set { _explicitNullValueLast4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last4"); else _explicitNullProperties?.Remove("last4"); } }
+        private string? _explicitNullValueLast4 = default!;
 #nullable restore
 #else
-        public string Last4 { get; set; }
+        public string Last4 { get => _explicitNullValueLast4; set { _explicitNullValueLast4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last4"); else _explicitNullProperties?.Remove("last4"); } }
+        private string _explicitNullValueLast4 = default!;
 #endif
         /// <summary>Type of Korean credit or debit card used to pay.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCardType? Type { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCardType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCardType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCard"/> and sets the default values.
         /// </summary>
@@ -40,7 +52,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCard CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCard();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCard(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -63,6 +77,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("last4", Last4);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCardType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

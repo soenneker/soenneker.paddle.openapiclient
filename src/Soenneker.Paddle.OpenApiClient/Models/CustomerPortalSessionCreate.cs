@@ -12,14 +12,24 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerPortalSessionCreate : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("subscription_ids") is { } nullNodeSubscriptionIds && nullNodeSubscriptionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionIds = null;
+        }
+
         /// <summary>List of subscriptions to create authenticated customer portal deep links for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? SubscriptionIds { get; set; }
+        public List<string>? SubscriptionIds { get => _explicitNullValueSubscriptionIds; set { _explicitNullValueSubscriptionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_ids"); else _explicitNullProperties?.Remove("subscription_ids"); } }
+        private List<string>? _explicitNullValueSubscriptionIds = default!;
 #nullable restore
 #else
-        public List<string> SubscriptionIds { get; set; }
+        public List<string> SubscriptionIds { get => _explicitNullValueSubscriptionIds; set { _explicitNullValueSubscriptionIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_ids"); else _explicitNullProperties?.Remove("subscription_ids"); } }
+        private List<string> _explicitNullValueSubscriptionIds = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +39,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionCreate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionCreate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionCreate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,7 +59,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteCollectionOfPrimitiveValues<string>("subscription_ids", SubscriptionIds);
+            writer.WriteCollectionOfPrimitiveValues<string>("subscription_ids", SubscriptionIds);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

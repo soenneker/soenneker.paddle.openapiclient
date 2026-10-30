@@ -12,24 +12,37 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MetricsExploreSeries : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
+            if (parseNode.GetChildNode("timeseries") is { } nullNodeTimeseries && nullNodeTimeseries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeseries = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Dimension values for this segment, keyed by a subset of the requested dimensions. Empty for a result with no breakdown applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeriesDimensionsProperty? Dimensions { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeriesDimensionsProperty? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeriesDimensionsProperty? _explicitNullValueDimensions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeriesDimensionsProperty Dimensions { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeriesDimensionsProperty Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeriesDimensionsProperty _explicitNullValueDimensions = default!;
 #endif
         /// <summary>Time series for this segment. One entry per time bucket, ordered chronologically.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPoint>? Timeseries { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPoint>? Timeseries { get => _explicitNullValueTimeseries; set { _explicitNullValueTimeseries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeseries"); else _explicitNullProperties?.Remove("timeseries"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPoint>? _explicitNullValueTimeseries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPoint> Timeseries { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPoint> Timeseries { get => _explicitNullValueTimeseries; set { _explicitNullValueTimeseries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeseries"); else _explicitNullProperties?.Remove("timeseries"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPoint> _explicitNullValueTimeseries = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeriesDimensionsProperty>("dimensions", Dimensions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPoint>("timeseries", Timeseries);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

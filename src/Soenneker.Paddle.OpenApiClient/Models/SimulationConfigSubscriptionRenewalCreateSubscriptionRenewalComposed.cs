@@ -12,22 +12,35 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("entities") is { } nullNodeEntities && nullNodeEntities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entities = null;
+            if (parseNode.GetChildNode("options") is { } nullNodeOptions && nullNodeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Options = null;
+        }
+
         /// <summary>Adds details of existing Paddle entities to webhook payloads sent in the simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalEntitiesComposed? Entities { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalEntitiesComposed? Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalEntitiesComposed? _explicitNullValueEntities = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalEntitiesComposed Entities { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalEntitiesComposed Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalEntitiesComposed _explicitNullValueEntities = default!;
 #endif
         /// <summary>Options that determine which webhooks are sent as part of a simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalOptions? Options { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalOptions? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalOptions? _explicitNullValueOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalOptions Options { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalOptions Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalOptions _explicitNullValueOptions = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +50,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +72,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalEntitiesComposed>("entities", Entities);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalOptions>("options", Options);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalOptions>("options", Options);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

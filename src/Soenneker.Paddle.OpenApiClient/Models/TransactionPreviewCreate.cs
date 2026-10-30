@@ -12,7 +12,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionPreviewCreate : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddress"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -54,11 +59,22 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreate();
-            result.TransactionPreviewCreateAddress = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddress();
-            result.TransactionPreviewCreateIpAddress = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddress();
-            result.TransactionPreviewCreatePaddleIds = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreatePaddleIds();
-            result.TransactionPreviewCreateWithoutAddress = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateWithoutAddress();
-            return result;
+            
+            
+            
+            
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("items") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("items") != null && parseNode.GetChildNode("address") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("items") != null && parseNode.GetChildNode("customer_ip_address") != null))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("items") != null && parseNode.GetChildNode("customer_id") != null && parseNode.GetChildNode("address_id") != null))();
+            if (result.TransactionPreviewCreateAddress == null && result.TransactionPreviewCreateIpAddress == null && result.TransactionPreviewCreatePaddleIds == null && result.TransactionPreviewCreateWithoutAddress == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3) result.TransactionPreviewCreateWithoutAddress = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateWithoutAddress(), parseNode);
+            if (result.TransactionPreviewCreateAddress == null && result.TransactionPreviewCreateIpAddress == null && result.TransactionPreviewCreatePaddleIds == null && result.TransactionPreviewCreateWithoutAddress == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3) result.TransactionPreviewCreateAddress = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddress(), parseNode);
+            if (result.TransactionPreviewCreateAddress == null && result.TransactionPreviewCreateIpAddress == null && result.TransactionPreviewCreatePaddleIds == null && result.TransactionPreviewCreateWithoutAddress == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3) result.TransactionPreviewCreateIpAddress = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateIpAddress(), parseNode);
+            if (result.TransactionPreviewCreateAddress == null && result.TransactionPreviewCreateIpAddress == null && result.TransactionPreviewCreatePaddleIds == null && result.TransactionPreviewCreateWithoutAddress == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.TransactionPreviewCreatePaddleIds = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreatePaddleIds(), parseNode);
+            if (result.TransactionPreviewCreateAddress == null && result.TransactionPreviewCreateIpAddress == null && result.TransactionPreviewCreatePaddleIds == null && result.TransactionPreviewCreateWithoutAddress == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +94,13 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (TransactionPreviewCreateAddress == null && TransactionPreviewCreateIpAddress == null && TransactionPreviewCreatePaddleIds == null && TransactionPreviewCreateWithoutAddress == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (TransactionPreviewCreateAddress != null && TransactionPreviewCreateIpAddress == null && TransactionPreviewCreatePaddleIds == null && TransactionPreviewCreateWithoutAddress == null) { if (TransactionPreviewCreateAddress is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransactionPreviewCreateAddress); return; }
+            if (TransactionPreviewCreateIpAddress != null && TransactionPreviewCreateAddress == null && TransactionPreviewCreatePaddleIds == null && TransactionPreviewCreateWithoutAddress == null) { if (TransactionPreviewCreateIpAddress is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransactionPreviewCreateIpAddress); return; }
+            if (TransactionPreviewCreatePaddleIds != null && TransactionPreviewCreateAddress == null && TransactionPreviewCreateIpAddress == null && TransactionPreviewCreateWithoutAddress == null) { if (TransactionPreviewCreatePaddleIds is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransactionPreviewCreatePaddleIds); return; }
+            if (TransactionPreviewCreateWithoutAddress != null && TransactionPreviewCreateAddress == null && TransactionPreviewCreateIpAddress == null && TransactionPreviewCreatePaddleIds == null) { if (TransactionPreviewCreateWithoutAddress is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransactionPreviewCreateWithoutAddress); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateAddress>(null, TransactionPreviewCreateAddress, TransactionPreviewCreateIpAddress, TransactionPreviewCreatePaddleIds, TransactionPreviewCreateWithoutAddress);
         }

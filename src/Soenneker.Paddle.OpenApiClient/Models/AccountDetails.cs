@@ -12,24 +12,39 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AccountDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("display_name") is { } nullNodeDisplayName && nullNodeDisplayName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DisplayName = null;
+            if (parseNode.GetChildNode("email") is { } nullNodeEmail && nullNodeEmail.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Email = null;
+            if (parseNode.GetChildNode("legal_name") is { } nullNodeLegalName && nullNodeLegalName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LegalName = null;
+            if (parseNode.GetChildNode("website") is { } nullNodeWebsite && nullNodeWebsite.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Website = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Name shown to customers on invoices, receipts, and in the Paddle customer portal. Only Paddle can change this, so contact Paddle support to update it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsDisplayName? DisplayName { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsDisplayName? DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsDisplayName? _explicitNullValueDisplayName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsDisplayName DisplayName { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsDisplayName DisplayName { get => _explicitNullValueDisplayName; set { _explicitNullValueDisplayName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("display_name"); else _explicitNullProperties?.Remove("display_name"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsDisplayName _explicitNullValueDisplayName = default!;
 #endif
         /// <summary>Contact email address for this account. Paddle uses it for account and payout correspondence, and it may be shown to customers as a support contact.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsEmail? Email { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsEmail? Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsEmail? _explicitNullValueEmail = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsEmail Email { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsEmail Email { get => _explicitNullValueEmail; set { _explicitNullValueEmail = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("email"); else _explicitNullProperties?.Remove("email"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsEmail _explicitNullValueEmail = default!;
 #endif
         /// <summary>Unique Paddle ID for this account, prefixed with `slr_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -50,18 +65,22 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Registered legal name of the business that operates this account. Shown at checkout. Only Paddle can change this, so contact Paddle support to update it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName? LegalName { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName? LegalName { get => _explicitNullValueLegalName; set { _explicitNullValueLegalName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legal_name"); else _explicitNullProperties?.Remove("legal_name"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName? _explicitNullValueLegalName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName LegalName { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName LegalName { get => _explicitNullValueLegalName; set { _explicitNullValueLegalName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("legal_name"); else _explicitNullProperties?.Remove("legal_name"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName _explicitNullValueLegalName = default!;
 #endif
         /// <summary>Website for the product or service sold through this account. Only Paddle can change this, so contact Paddle support to update it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website { get; set; }
+        public string? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string? _explicitNullValueWebsite = default!;
 #nullable restore
 #else
-        public string Website { get; set; }
+        public string Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private string _explicitNullValueWebsite = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AccountDetails"/> and sets the default values.
@@ -78,7 +97,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.AccountDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.AccountDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.AccountDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,6 +126,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsEmail>("email", Email);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName>("legal_name", LegalName);
             writer.WriteStringValue("website", Website);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,24 +12,37 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AdjustmentUpdatedRequestDataTaxRatesUsedItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("tax_rate") is { } nullNodeTaxRate && nullNodeTaxRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxRate = null;
+            if (parseNode.GetChildNode("totals") is { } nullNodeTotals && nullNodeTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Totals = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Rate used to calculate tax for this adjustment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxRate { get; set; }
+        public string? TaxRate { get => _explicitNullValueTaxRate; set { _explicitNullValueTaxRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_rate"); else _explicitNullProperties?.Remove("tax_rate"); } }
+        private string? _explicitNullValueTaxRate = default!;
 #nullable restore
 #else
-        public string TaxRate { get; set; }
+        public string TaxRate { get => _explicitNullValueTaxRate; set { _explicitNullValueTaxRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_rate"); else _explicitNullProperties?.Remove("tax_rate"); } }
+        private string _explicitNullValueTaxRate = default!;
 #endif
         /// <summary>Calculated totals for the tax applied to this adjustment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataTaxRatesUsedItemTotals? Totals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataTaxRatesUsedItemTotals? Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataTaxRatesUsedItemTotals? _explicitNullValueTotals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataTaxRatesUsedItemTotals Totals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataTaxRatesUsedItemTotals Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataTaxRatesUsedItemTotals _explicitNullValueTotals = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataTaxRatesUsedItem"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataTaxRatesUsedItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataTaxRatesUsedItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataTaxRatesUsedItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("tax_rate", TaxRate);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataTaxRatesUsedItemTotals>("totals", Totals);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

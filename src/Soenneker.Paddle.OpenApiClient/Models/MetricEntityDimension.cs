@@ -12,29 +12,46 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MetricEntityDimension : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("filter_ops") is { } nullNodeFilterOps && nullNodeFilterOps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterOps = null;
+            if (parseNode.GetChildNode("multi_valued") is { } nullNodeMultiValued && nullNodeMultiValued.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultiValued = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Filter operators supported for this dimension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator?>? FilterOps { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator?>? FilterOps { get => _explicitNullValueFilterOps; set { _explicitNullValueFilterOps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_ops"); else _explicitNullProperties?.Remove("filter_ops"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator?>? _explicitNullValueFilterOps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator?> FilterOps { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator?> FilterOps { get => _explicitNullValueFilterOps; set { _explicitNullValueFilterOps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_ops"); else _explicitNullProperties?.Remove("filter_ops"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator?> _explicitNullValueFilterOps = default!;
 #endif
         /// <summary>Whether the dimension can hold more than one value per record. When `true`, a single record can appear under more than one value, so a breakdown on this dimension can total more than the figure with no breakdown applied. `false` if omitted.</summary>
-        public bool? MultiValued { get; set; }
+        public bool? MultiValued { get => _explicitNullValueMultiValued; set { _explicitNullValueMultiValued = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multi_valued"); else _explicitNullProperties?.Remove("multi_valued"); } }
+        private bool? _explicitNullValueMultiValued = default!;
         /// <summary>Dimension identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Value type of a metrics field, whether a dimension or a measure. Numeric values are returned as strings to preserve precision.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType? Type { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension"/> and sets the default values.
         /// </summary>
@@ -51,7 +68,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +95,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteBoolValue("multi_valued", MultiValued);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

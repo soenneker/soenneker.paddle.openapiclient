@@ -12,15 +12,28 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SimulationConfigSubscriptionCreationOptionsComposed : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("business_simulated_as") is { } nullNodeBusinessSimulatedAs && nullNodeBusinessSimulatedAs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessSimulatedAs = null;
+            if (parseNode.GetChildNode("customer_simulated_as") is { } nullNodeCustomerSimulatedAs && nullNodeCustomerSimulatedAs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerSimulatedAs = null;
+            if (parseNode.GetChildNode("discount_simulated_as") is { } nullNodeDiscountSimulatedAs && nullNodeDiscountSimulatedAs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountSimulatedAs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Determines which webhooks are sent based on whether a new, existing, or no business was provided. If omitted, defaults to `not_provided`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsBusinessSimulatedAsComposed? BusinessSimulatedAs { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsBusinessSimulatedAsComposed? BusinessSimulatedAs { get => _explicitNullValueBusinessSimulatedAs; set { _explicitNullValueBusinessSimulatedAs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_simulated_as"); else _explicitNullProperties?.Remove("business_simulated_as"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsBusinessSimulatedAsComposed? _explicitNullValueBusinessSimulatedAs = default!;
         /// <summary>Determines which webhooks are sent based on whether a new or existing customer subscribes, and how their details are entered if they&apos;re an existing customer. If omitted, defaults to `new`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsCustomerSimulatedAsComposed? CustomerSimulatedAs { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsCustomerSimulatedAsComposed? CustomerSimulatedAs { get => _explicitNullValueCustomerSimulatedAs; set { _explicitNullValueCustomerSimulatedAs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_simulated_as"); else _explicitNullProperties?.Remove("customer_simulated_as"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsCustomerSimulatedAsComposed? _explicitNullValueCustomerSimulatedAs = default!;
         /// <summary>Determines which webhooks are sent based on whether a discount is used and how it&apos;s entered. If omitted, defaults to `not_provided`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsDiscountSimulatedAsComposed? DiscountSimulatedAs { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsDiscountSimulatedAsComposed? DiscountSimulatedAs { get => _explicitNullValueDiscountSimulatedAs; set { _explicitNullValueDiscountSimulatedAs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount_simulated_as"); else _explicitNullProperties?.Remove("discount_simulated_as"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsDiscountSimulatedAsComposed? _explicitNullValueDiscountSimulatedAs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsComposed"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsComposed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsComposed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsBusinessSimulatedAsComposed>("business_simulated_as", BusinessSimulatedAs);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsCustomerSimulatedAsComposed>("customer_simulated_as", CustomerSimulatedAs);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreationOptionsDiscountSimulatedAsComposed>("discount_simulated_as", DiscountSimulatedAs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

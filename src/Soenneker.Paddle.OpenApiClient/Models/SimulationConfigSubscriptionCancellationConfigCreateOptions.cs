@@ -12,11 +12,22 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SimulationConfigSubscriptionCancellationConfigCreateOptions : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("effective_from") is { } nullNodeEffectiveFrom && nullNodeEffectiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveFrom = null;
+            if (parseNode.GetChildNode("has_past_due_transaction") is { } nullNodeHasPastDueTransaction && nullNodeHasPastDueTransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPastDueTransaction = null;
+        }
+
         /// <summary>Determines which webhooks are sent based on when the subscription is paused or canceled. If omitted, defaults to `immediately`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsCreateEffectiveFrom? EffectiveFrom { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsCreateEffectiveFrom? EffectiveFrom { get => _explicitNullValueEffectiveFrom; set { _explicitNullValueEffectiveFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_from"); else _explicitNullProperties?.Remove("effective_from"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsCreateEffectiveFrom? _explicitNullValueEffectiveFrom = default!;
         /// <summary>Whether a simulated subscription has a past due transaction (`true`) or not (`false`), which determines whether events occur for canceling past due transactions. If omitted, defaults to `false`.</summary>
-        public bool? HasPastDueTransaction { get; set; }
+        public bool? HasPastDueTransaction { get => _explicitNullValueHasPastDueTransaction; set { _explicitNullValueHasPastDueTransaction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("has_past_due_transaction"); else _explicitNullProperties?.Remove("has_past_due_transaction"); } }
+        private bool? _explicitNullValueHasPastDueTransaction = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreateOptions"/> and sets the default values.
         /// </summary>
@@ -32,7 +43,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreateOptions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreateOptions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationConfigCreateOptions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -54,7 +65,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsCreateEffectiveFrom>("effective_from", EffectiveFrom);
-            writer.WriteBoolValue("has_past_due_transaction", HasPastDueTransaction);
+            writer.WriteBoolValue("has_past_due_transaction", HasPastDueTransaction);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

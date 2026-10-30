@@ -12,17 +12,29 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SimulationConfigOptionsPaymentRecoveredUpdated : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dunning_exhausted_action") is { } nullNodeDunningExhaustedAction && nullNodeDunningExhaustedAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DunningExhaustedAction = null;
+            if (parseNode.GetChildNode("payment_outcome") is { } nullNodePaymentOutcome && nullNodePaymentOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentOutcome = null;
+        }
+
         /// <summary>Determines which webhooks are sent based on what happens to the subscription when payment recovery attempts are exhausted. Only applies when `payment_outcome` is `failed`. If omitted, defaults to `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? DunningExhaustedAction { get; set; }
+        public UntypedNode? DunningExhaustedAction { get => _explicitNullValueDunningExhaustedAction; set { _explicitNullValueDunningExhaustedAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dunning_exhausted_action"); else _explicitNullProperties?.Remove("dunning_exhausted_action"); } }
+        private UntypedNode? _explicitNullValueDunningExhaustedAction = default!;
 #nullable restore
 #else
-        public UntypedNode DunningExhaustedAction { get; set; }
+        public UntypedNode DunningExhaustedAction { get => _explicitNullValueDunningExhaustedAction; set { _explicitNullValueDunningExhaustedAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dunning_exhausted_action"); else _explicitNullProperties?.Remove("dunning_exhausted_action"); } }
+        private UntypedNode _explicitNullValueDunningExhaustedAction = default!;
 #endif
         /// <summary>Determines which webhooks are sent based on the outcome of the payment. If omitted, defaults to `success`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentRecoveredUpdatedPaymentOutcomeComposed? PaymentOutcome { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentRecoveredUpdatedPaymentOutcomeComposed? PaymentOutcome { get => _explicitNullValuePaymentOutcome; set { _explicitNullValuePaymentOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_outcome"); else _explicitNullProperties?.Remove("payment_outcome"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentRecoveredUpdatedPaymentOutcomeComposed? _explicitNullValuePaymentOutcome = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -31,7 +43,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentRecoveredUpdated CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentRecoveredUpdated();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentRecoveredUpdated(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,7 +65,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<UntypedNode>("dunning_exhausted_action", DunningExhaustedAction);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentRecoveredUpdatedPaymentOutcomeComposed>("payment_outcome", PaymentOutcome);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentRecoveredUpdatedPaymentOutcomeComposed>("payment_outcome", PaymentOutcome);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

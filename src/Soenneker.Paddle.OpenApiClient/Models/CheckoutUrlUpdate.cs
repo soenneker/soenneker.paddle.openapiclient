@@ -12,14 +12,24 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CheckoutUrlUpdate : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("default_url") is { } nullNodeDefaultUrl && nullNodeDefaultUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultUrl = null;
+        }
+
         /// <summary>URL that Paddle opens when a checkout is created without a URL of its own. Pass `null` to clear it.Must use `https`. In live accounts, its domain must also be an approved checkout domain for your account.Paddle appends `?_ptxn=` and the transaction ID to this URL. The page must have Paddle.js set up to read it and open the checkout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultUrl { get; set; }
+        public string? DefaultUrl { get => _explicitNullValueDefaultUrl; set { _explicitNullValueDefaultUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_url"); else _explicitNullProperties?.Remove("default_url"); } }
+        private string? _explicitNullValueDefaultUrl = default!;
 #nullable restore
 #else
-        public string DefaultUrl { get; set; }
+        public string DefaultUrl { get => _explicitNullValueDefaultUrl; set { _explicitNullValueDefaultUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_url"); else _explicitNullProperties?.Remove("default_url"); } }
+        private string _explicitNullValueDefaultUrl = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +39,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.CheckoutUrlUpdate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.CheckoutUrlUpdate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.CheckoutUrlUpdate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,7 +59,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("default_url", DefaultUrl);
+            writer.WriteStringValue("default_url", DefaultUrl);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

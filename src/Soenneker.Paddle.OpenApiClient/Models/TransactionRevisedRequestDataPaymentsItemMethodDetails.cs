@@ -12,43 +12,64 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionRevisedRequestDataPaymentsItemMethodDetails : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("card") is { } nullNodeCard && nullNodeCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Card = null;
+            if (parseNode.GetChildNode("paypal") is { } nullNodePaypal && nullNodePaypal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paypal = null;
+            if (parseNode.GetChildNode("south_korea_local_card") is { } nullNodeSouthKoreaLocalCard && nullNodeSouthKoreaLocalCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SouthKoreaLocalCard = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("underlying_details") is { } nullNodeUnderlyingDetails && nullNodeUnderlyingDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnderlyingDetails = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about the credit or debit card used to pay. `null` unless `type` is `card`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsCard? Card { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsCard? Card { get => _explicitNullValueCard; set { _explicitNullValueCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card"); else _explicitNullProperties?.Remove("card"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsCard? _explicitNullValueCard = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsCard Card { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsCard Card { get => _explicitNullValueCard; set { _explicitNullValueCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card"); else _explicitNullProperties?.Remove("card"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsCard _explicitNullValueCard = default!;
 #endif
         /// <summary>Information about the PayPal account used to pay. `null` unless `type` is `paypal`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsPaypal? Paypal { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsPaypal? Paypal { get => _explicitNullValuePaypal; set { _explicitNullValuePaypal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paypal"); else _explicitNullProperties?.Remove("paypal"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsPaypal? _explicitNullValuePaypal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsPaypal Paypal { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsPaypal Paypal { get => _explicitNullValuePaypal; set { _explicitNullValuePaypal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paypal"); else _explicitNullProperties?.Remove("paypal"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsPaypal _explicitNullValuePaypal = default!;
 #endif
         /// <summary>Information about the Korean credit or debit card used to pay. `null` unless `type` is `south_korea_local_card`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCard? SouthKoreaLocalCard { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCard? SouthKoreaLocalCard { get => _explicitNullValueSouthKoreaLocalCard; set { _explicitNullValueSouthKoreaLocalCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("south_korea_local_card"); else _explicitNullProperties?.Remove("south_korea_local_card"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCard? _explicitNullValueSouthKoreaLocalCard = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCard SouthKoreaLocalCard { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCard SouthKoreaLocalCard { get => _explicitNullValueSouthKoreaLocalCard; set { _explicitNullValueSouthKoreaLocalCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("south_korea_local_card"); else _explicitNullProperties?.Remove("south_korea_local_card"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCard _explicitNullValueSouthKoreaLocalCard = default!;
 #endif
         /// <summary>Type of payment method used for this payment attempt.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsType? Type { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsType? _explicitNullValueType = default!;
         /// <summary>Information about the underlying payment method used to pay. Populated for payment methods that offer multiple payment options, like `korea_local`. Deprecated - use top-level type objects instead.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsUnderlyingDetails? UnderlyingDetails { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsUnderlyingDetails? UnderlyingDetails { get => _explicitNullValueUnderlyingDetails; set { _explicitNullValueUnderlyingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("underlying_details"); else _explicitNullProperties?.Remove("underlying_details"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsUnderlyingDetails? _explicitNullValueUnderlyingDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsUnderlyingDetails UnderlyingDetails { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsUnderlyingDetails UnderlyingDetails { get => _explicitNullValueUnderlyingDetails; set { _explicitNullValueUnderlyingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("underlying_details"); else _explicitNullProperties?.Remove("underlying_details"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsUnderlyingDetails _explicitNullValueUnderlyingDetails = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetails"/> and sets the default values.
@@ -65,7 +86,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetails CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetails();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetails(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -94,6 +115,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsSouthKoreaLocalCard>("south_korea_local_card", SouthKoreaLocalCard);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataPaymentsItemMethodDetailsUnderlyingDetails>("underlying_details", UnderlyingDetails);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

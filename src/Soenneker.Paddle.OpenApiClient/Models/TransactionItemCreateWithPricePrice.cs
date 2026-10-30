@@ -12,82 +12,118 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionItemCreateWithPricePrice : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("billing_cycle") is { } nullNodeBillingCycle && nullNodeBillingCycle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingCycle = null;
+            if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("product_id") is { } nullNodeProductId && nullNodeProductId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProductId = null;
+            if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
+            if (parseNode.GetChildNode("tax_mode") is { } nullNodeTaxMode && nullNodeTaxMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxMode = null;
+            if (parseNode.GetChildNode("trial_period") is { } nullNodeTrialPeriod && nullNodeTrialPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrialPeriod = null;
+            if (parseNode.GetChildNode("unit_price") is { } nullNodeUnitPrice && nullNodeUnitPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitPrice = null;
+            if (parseNode.GetChildNode("unit_price_overrides") is { } nullNodeUnitPriceOverrides && nullNodeUnitPriceOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitPriceOverrides = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How often this price should be charged. `null` if price is non-recurring (one-time).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Duration? BillingCycle { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.Duration? BillingCycle { get => _explicitNullValueBillingCycle; set { _explicitNullValueBillingCycle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_cycle"); else _explicitNullProperties?.Remove("billing_cycle"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.Duration? _explicitNullValueBillingCycle = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Duration BillingCycle { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.Duration BillingCycle { get => _explicitNullValueBillingCycle; set { _explicitNullValueBillingCycle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_cycle"); else _explicitNullProperties?.Remove("billing_cycle"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.Duration _explicitNullValueBillingCycle = default!;
 #endif
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? CustomData { get; set; }
+        public UntypedNode? CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
+        private UntypedNode? _explicitNullValueCustomData = default!;
 #nullable restore
 #else
-        public UntypedNode CustomData { get; set; }
+        public UntypedNode CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
+        private UntypedNode _explicitNullValueCustomData = default!;
 #endif
         /// <summary>Internal description for this price, not shown to customers. Typically notes for your team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdName? Name { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdName? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdName Name { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdName Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdName _explicitNullValueName = default!;
 #endif
         /// <summary>Unique Paddle ID for this product, prefixed with `pro_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ProductId { get; set; }
+        public string? ProductId { get => _explicitNullValueProductId; set { _explicitNullValueProductId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product_id"); else _explicitNullProperties?.Remove("product_id"); } }
+        private string? _explicitNullValueProductId = default!;
 #nullable restore
 #else
-        public string ProductId { get; set; }
+        public string ProductId { get => _explicitNullValueProductId; set { _explicitNullValueProductId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product_id"); else _explicitNullProperties?.Remove("product_id"); } }
+        private string _explicitNullValueProductId = default!;
 #endif
         /// <summary>Limits on how many times the related product can be purchased at this price. Useful for discount campaigns. If omitted, defaults to 1-100.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdQuantity? Quantity { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdQuantity? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdQuantity? _explicitNullValueQuantity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdQuantity Quantity { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdQuantity Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdQuantity _explicitNullValueQuantity = default!;
 #endif
         /// <summary>How tax is calculated for this price.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdTaxMode? TaxMode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdTaxMode? TaxMode { get => _explicitNullValueTaxMode; set { _explicitNullValueTaxMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_mode"); else _explicitNullProperties?.Remove("tax_mode"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdTaxMode? _explicitNullValueTaxMode = default!;
         /// <summary>Trial period for the product related to this price. The billing cycle begins once the trial period is over. `null` for no trial period. Requires `billing_cycle`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreate? TrialPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreate? TrialPeriod { get => _explicitNullValueTrialPeriod; set { _explicitNullValueTrialPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial_period"); else _explicitNullProperties?.Remove("trial_period"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreate? _explicitNullValueTrialPeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreate TrialPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreate TrialPeriod { get => _explicitNullValueTrialPeriod; set { _explicitNullValueTrialPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial_period"); else _explicitNullProperties?.Remove("trial_period"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreate _explicitNullValueTrialPeriod = default!;
 #endif
         /// <summary>Base price. This price applies to all customers, except for customers located in countries where you have `unit_price_overrides`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdUnitPrice? UnitPrice { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdUnitPrice? UnitPrice { get => _explicitNullValueUnitPrice; set { _explicitNullValueUnitPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price"); else _explicitNullProperties?.Remove("unit_price"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdUnitPrice? _explicitNullValueUnitPrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdUnitPrice UnitPrice { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdUnitPrice UnitPrice { get => _explicitNullValueUnitPrice; set { _explicitNullValueUnitPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price"); else _explicitNullProperties?.Remove("unit_price"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdUnitPrice _explicitNullValueUnitPrice = default!;
 #endif
         /// <summary>List of unit price overrides. Use to override the base price with a custom price and currency for a country or group of countries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>? UnitPriceOverrides { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>? UnitPriceOverrides { get => _explicitNullValueUnitPriceOverrides; set { _explicitNullValueUnitPriceOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price_overrides"); else _explicitNullProperties?.Remove("unit_price_overrides"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>? _explicitNullValueUnitPriceOverrides = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride> UnitPriceOverrides { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride> UnitPriceOverrides { get => _explicitNullValueUnitPriceOverrides; set { _explicitNullValueUnitPriceOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price_overrides"); else _explicitNullProperties?.Remove("unit_price_overrides"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride> _explicitNullValueUnitPriceOverrides = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPricePrice"/> and sets the default values.
@@ -104,7 +140,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPricePrice CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPricePrice();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPricePrice(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -143,6 +179,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDurationCreate>("trial_period", TrialPeriod);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPriceCreateWithProductIdUnitPrice>("unit_price", UnitPrice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>("unit_price_overrides", UnitPriceOverrides);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

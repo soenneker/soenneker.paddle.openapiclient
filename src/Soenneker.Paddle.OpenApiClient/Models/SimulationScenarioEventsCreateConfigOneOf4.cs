@@ -11,8 +11,16 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// Configuration for subscription renewed simulations.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SimulationScenarioEventsCreateConfigMember4 : IParsable
-    {
+    public partial class SimulationScenarioEventsCreateConfigOneOf4 : IParsable
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("subscription_renewal") is { } nullNodeSubscriptionRenewal && nullNodeSubscriptionRenewal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionRenewal = null;
+        }
+
         /// <summary>The subscription_cancellation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -40,10 +48,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Configuration for subscription renewed simulations.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed? SubscriptionRenewal { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed? SubscriptionRenewal { get => _explicitNullValueSubscriptionRenewal; set { _explicitNullValueSubscriptionRenewal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_renewal"); else _explicitNullProperties?.Remove("subscription_renewal"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed? _explicitNullValueSubscriptionRenewal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed SubscriptionRenewal { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed SubscriptionRenewal { get => _explicitNullValueSubscriptionRenewal; set { _explicitNullValueSubscriptionRenewal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_renewal"); else _explicitNullProperties?.Remove("subscription_renewal"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed _explicitNullValueSubscriptionRenewal = default!;
 #endif
         /// <summary>The subscription_resume property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -56,12 +66,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfigMember4"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfigOneOf4"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfigMember4 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfigOneOf4 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfigMember4();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfigOneOf4(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -85,7 +95,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed>("subscription_renewal", SubscriptionRenewal);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed>("subscription_renewal", SubscriptionRenewal);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

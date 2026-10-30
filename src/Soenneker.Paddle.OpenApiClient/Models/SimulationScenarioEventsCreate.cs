@@ -12,33 +12,51 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SimulationScenarioEventsCreate : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("config") is { } nullNodeConfig && nullNodeConfig.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Config = null;
+            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("notification_setting_id") is { } nullNodeNotificationSettingId && nullNodeNotificationSettingId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationSettingId = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Configuration for this scenario simulation. Use to simulate more granular flows and populate payloads with your own entity data. If omitted, Paddle simulates the default scenario flow and populates payloads with demo examples.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfig? Config { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfig Config { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>Name of this simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get; set; }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get; set; }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        private string _explicitNullValueName = default!;
 #endif
         /// <summary>Unique Paddle ID for this notification setting, prefixed with `ntfset_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationSettingId { get; set; }
+        public string? NotificationSettingId { get => _explicitNullValueNotificationSettingId; set { _explicitNullValueNotificationSettingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_setting_id"); else _explicitNullProperties?.Remove("notification_setting_id"); } }
+        private string? _explicitNullValueNotificationSettingId = default!;
 #nullable restore
 #else
-        public string NotificationSettingId { get; set; }
+        public string NotificationSettingId { get => _explicitNullValueNotificationSettingId; set { _explicitNullValueNotificationSettingId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_setting_id"); else _explicitNullProperties?.Remove("notification_setting_id"); } }
+        private string _explicitNullValueNotificationSettingId = default!;
 #endif
         /// <summary>Scenario for a simulation.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateType? Type { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateType? _explicitNullValueType = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -47,7 +65,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -73,7 +91,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateConfig>("config", Config);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("notification_setting_id", NotificationSettingId);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsCreateType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

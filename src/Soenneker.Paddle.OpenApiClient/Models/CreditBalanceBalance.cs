@@ -12,32 +12,48 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CreditBalanceBalance : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("available") is { } nullNodeAvailable && nullNodeAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Available = null;
+            if (parseNode.GetChildNode("reserved") is { } nullNodeReserved && nullNodeReserved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reserved = null;
+            if (parseNode.GetChildNode("used") is { } nullNodeUsed && nullNodeUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Used = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total amount of credit available to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Available { get; set; }
+        public string? Available { get => _explicitNullValueAvailable; set { _explicitNullValueAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available"); else _explicitNullProperties?.Remove("available"); } }
+        private string? _explicitNullValueAvailable = default!;
 #nullable restore
 #else
-        public string Available { get; set; }
+        public string Available { get => _explicitNullValueAvailable; set { _explicitNullValueAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available"); else _explicitNullProperties?.Remove("available"); } }
+        private string _explicitNullValueAvailable = default!;
 #endif
         /// <summary>Total amount of credit temporarily reserved for `billed` transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reserved { get; set; }
+        public string? Reserved { get => _explicitNullValueReserved; set { _explicitNullValueReserved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reserved"); else _explicitNullProperties?.Remove("reserved"); } }
+        private string? _explicitNullValueReserved = default!;
 #nullable restore
 #else
-        public string Reserved { get; set; }
+        public string Reserved { get => _explicitNullValueReserved; set { _explicitNullValueReserved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reserved"); else _explicitNullProperties?.Remove("reserved"); } }
+        private string _explicitNullValueReserved = default!;
 #endif
         /// <summary>Total amount of credit used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Used { get; set; }
+        public string? Used { get => _explicitNullValueUsed; set { _explicitNullValueUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used"); else _explicitNullProperties?.Remove("used"); } }
+        private string? _explicitNullValueUsed = default!;
 #nullable restore
 #else
-        public string Used { get; set; }
+        public string Used { get => _explicitNullValueUsed; set { _explicitNullValueUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used"); else _explicitNullProperties?.Remove("used"); } }
+        private string _explicitNullValueUsed = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceBalance"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceBalance CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceBalance();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.CreditBalanceBalance(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("available", Available);
             writer.WriteStringValue("reserved", Reserved);
             writer.WriteStringValue("used", Used);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

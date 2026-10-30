@@ -11,15 +11,28 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SubscriptionPause : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("effective_from") is { } nullNodeEffectiveFrom && nullNodeEffectiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveFrom = null;
+            if (parseNode.GetChildNode("on_resume") is { } nullNodeOnResume && nullNodeOnResume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnResume = null;
+            if (parseNode.GetChildNode("resume_at") is { } nullNodeResumeAt && nullNodeResumeAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResumeAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The effective_from property</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom? EffectiveFrom { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom? EffectiveFrom { get => _explicitNullValueEffectiveFrom; set { _explicitNullValueEffectiveFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_from"); else _explicitNullProperties?.Remove("effective_from"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom? _explicitNullValueEffectiveFrom = default!;
         /// <summary>How Paddle should set the billing period for the subscription when resuming. If omitted, defaults to `start_new_billing_period`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseOnResume? OnResume { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseOnResume? OnResume { get => _explicitNullValueOnResume; set { _explicitNullValueOnResume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_resume"); else _explicitNullProperties?.Remove("on_resume"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseOnResume? _explicitNullValueOnResume = default!;
         /// <summary>RFC 3339 datetime string of when the paused subscription should resume. Omit to pause indefinitely until resumed.</summary>
-        public DateTimeOffset? ResumeAt { get; set; }
+        public DateTimeOffset? ResumeAt { get => _explicitNullValueResumeAt; set { _explicitNullValueResumeAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resume_at"); else _explicitNullProperties?.Remove("resume_at"); } }
+        private DateTimeOffset? _explicitNullValueResumeAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause"/> and sets the default values.
         /// </summary>
@@ -35,7 +48,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPause(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -60,6 +73,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom>("effective_from", EffectiveFrom);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPauseOnResume>("on_resume", OnResume);
             writer.WriteDateTimeOffsetValue("resume_at", ResumeAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

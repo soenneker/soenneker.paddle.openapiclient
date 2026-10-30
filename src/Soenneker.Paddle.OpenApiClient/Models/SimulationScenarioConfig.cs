@@ -12,48 +12,70 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SimulationScenarioConfig : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("subscription_cancellation") is { } nullNodeSubscriptionCancellation && nullNodeSubscriptionCancellation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionCancellation = null;
+            if (parseNode.GetChildNode("subscription_creation") is { } nullNodeSubscriptionCreation && nullNodeSubscriptionCreation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionCreation = null;
+            if (parseNode.GetChildNode("subscription_pause") is { } nullNodeSubscriptionPause && nullNodeSubscriptionPause.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionPause = null;
+            if (parseNode.GetChildNode("subscription_renewal") is { } nullNodeSubscriptionRenewal && nullNodeSubscriptionRenewal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionRenewal = null;
+            if (parseNode.GetChildNode("subscription_resume") is { } nullNodeSubscriptionResume && nullNodeSubscriptionResume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionResume = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The subscription_cancellation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellation? SubscriptionCancellation { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellation? SubscriptionCancellation { get => _explicitNullValueSubscriptionCancellation; set { _explicitNullValueSubscriptionCancellation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_cancellation"); else _explicitNullProperties?.Remove("subscription_cancellation"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellation? _explicitNullValueSubscriptionCancellation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellation SubscriptionCancellation { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellation SubscriptionCancellation { get => _explicitNullValueSubscriptionCancellation; set { _explicitNullValueSubscriptionCancellation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_cancellation"); else _explicitNullProperties?.Remove("subscription_cancellation"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellation _explicitNullValueSubscriptionCancellation = default!;
 #endif
         /// <summary>The subscription_creation property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreation? SubscriptionCreation { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreation? SubscriptionCreation { get => _explicitNullValueSubscriptionCreation; set { _explicitNullValueSubscriptionCreation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_creation"); else _explicitNullProperties?.Remove("subscription_creation"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreation? _explicitNullValueSubscriptionCreation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreation SubscriptionCreation { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreation SubscriptionCreation { get => _explicitNullValueSubscriptionCreation; set { _explicitNullValueSubscriptionCreation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_creation"); else _explicitNullProperties?.Remove("subscription_creation"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCreation _explicitNullValueSubscriptionCreation = default!;
 #endif
         /// <summary>The subscription_pause property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPause? SubscriptionPause { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPause? SubscriptionPause { get => _explicitNullValueSubscriptionPause; set { _explicitNullValueSubscriptionPause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_pause"); else _explicitNullProperties?.Remove("subscription_pause"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPause? _explicitNullValueSubscriptionPause = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPause SubscriptionPause { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPause SubscriptionPause { get => _explicitNullValueSubscriptionPause; set { _explicitNullValueSubscriptionPause = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_pause"); else _explicitNullProperties?.Remove("subscription_pause"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPause _explicitNullValueSubscriptionPause = default!;
 #endif
         /// <summary>The subscription_renewal property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewal? SubscriptionRenewal { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewal? SubscriptionRenewal { get => _explicitNullValueSubscriptionRenewal; set { _explicitNullValueSubscriptionRenewal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_renewal"); else _explicitNullProperties?.Remove("subscription_renewal"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewal? _explicitNullValueSubscriptionRenewal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewal SubscriptionRenewal { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewal SubscriptionRenewal { get => _explicitNullValueSubscriptionRenewal; set { _explicitNullValueSubscriptionRenewal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_renewal"); else _explicitNullProperties?.Remove("subscription_renewal"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewal _explicitNullValueSubscriptionRenewal = default!;
 #endif
         /// <summary>The subscription_resume property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResume? SubscriptionResume { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResume? SubscriptionResume { get => _explicitNullValueSubscriptionResume; set { _explicitNullValueSubscriptionResume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_resume"); else _explicitNullProperties?.Remove("subscription_resume"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResume? _explicitNullValueSubscriptionResume = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResume SubscriptionResume { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResume SubscriptionResume { get => _explicitNullValueSubscriptionResume; set { _explicitNullValueSubscriptionResume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscription_resume"); else _explicitNullProperties?.Remove("subscription_resume"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResume _explicitNullValueSubscriptionResume = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioConfig"/> and sets the default values.
@@ -70,7 +92,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioConfig CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioConfig();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioConfig(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,6 +121,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionPause>("subscription_pause", SubscriptionPause);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionRenewal>("subscription_renewal", SubscriptionRenewal);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResume>("subscription_resume", SubscriptionResume);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

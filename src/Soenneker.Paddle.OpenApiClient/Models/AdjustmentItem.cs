@@ -11,24 +11,38 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AdjustmentItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount adjusted for this transaction item. Required when item `type` is `partial`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Amount { get; set; }
+        public string? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public string Amount { get; set; }
+        public string Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string _explicitNullValueAmount = default!;
 #endif
         /// <summary>Unique Paddle ID for this transaction item, prefixed with `txnitm_`. Used when working with [adjustments](https://developer.paddle.com/build/transactions/create-transaction-adjustments).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemId { get; set; }
+        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        private string? _explicitNullValueItemId = default!;
 #nullable restore
 #else
-        public string ItemId { get; set; }
+        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        private string _explicitNullValueItemId = default!;
 #endif
         /// <summary>How proration was calculated for this adjustment item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -47,7 +61,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTotalsComposed Totals { get; private set; }
 #endif
         /// <summary>Type of adjustment for this transaction item. `tax` adjustments are automatically created by Paddle.Include `amount` when creating a `partial` adjustment.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTypeComposed? Type { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTypeComposed? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTypeComposed? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem"/> and sets the default values.
         /// </summary>
@@ -63,7 +78,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,6 +105,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("amount", Amount);
             writer.WriteStringValue("item_id", ItemId);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentItemTypeComposed>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

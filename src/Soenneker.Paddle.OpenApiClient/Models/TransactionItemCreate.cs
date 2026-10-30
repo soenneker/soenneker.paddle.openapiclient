@@ -12,7 +12,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionItemCreate : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPrice"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -49,17 +54,26 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             var result = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreate();
             if("TransactionItemCreateWithPrice".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TransactionItemCreateWithPrice = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPrice();
+                
             }
             else if("TransactionItemCreateWithPriceAndProduct".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TransactionItemCreateWithPriceAndProduct = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPriceAndProduct();
+                
             }
             else if("TransactionItemCreateWithPriceId".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TransactionItemCreateWithPriceId = new global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPriceId();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("quantity") != null && parseNode.GetChildNode("price_id") != null))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("quantity") != null && parseNode.GetChildNode("price") != null))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("quantity") != null && parseNode.GetChildNode("price") != null))();
+            if (result.TransactionItemCreateWithPrice == null && result.TransactionItemCreateWithPriceAndProduct == null && result.TransactionItemCreateWithPriceId == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2) result.TransactionItemCreateWithPriceId = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPriceId(), parseNode);
+            if (result.TransactionItemCreateWithPrice == null && result.TransactionItemCreateWithPriceAndProduct == null && result.TransactionItemCreateWithPriceId == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2) result.TransactionItemCreateWithPrice = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPrice(), parseNode);
+            if (result.TransactionItemCreateWithPrice == null && result.TransactionItemCreateWithPriceAndProduct == null && result.TransactionItemCreateWithPriceId == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1) result.TransactionItemCreateWithPriceAndProduct = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPriceAndProduct(), parseNode);
+            if (result.TransactionItemCreateWithPrice == null && result.TransactionItemCreateWithPriceAndProduct == null && result.TransactionItemCreateWithPriceId == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,17 +101,26 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (TransactionItemCreateWithPrice == null && TransactionItemCreateWithPriceAndProduct == null && TransactionItemCreateWithPriceId == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (TransactionItemCreateWithPrice != null && TransactionItemCreateWithPriceAndProduct == null && TransactionItemCreateWithPriceId == null) { if (TransactionItemCreateWithPrice is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransactionItemCreateWithPrice); return; }
+            if (TransactionItemCreateWithPriceAndProduct != null && TransactionItemCreateWithPrice == null && TransactionItemCreateWithPriceId == null) { if (TransactionItemCreateWithPriceAndProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransactionItemCreateWithPriceAndProduct); return; }
+            if (TransactionItemCreateWithPriceId != null && TransactionItemCreateWithPrice == null && TransactionItemCreateWithPriceAndProduct == null) { if (TransactionItemCreateWithPriceId is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, TransactionItemCreateWithPriceId); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(TransactionItemCreateWithPrice != null)
             {
+                if (TransactionItemCreateWithPrice is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPrice>(null, TransactionItemCreateWithPrice);
             }
             else if(TransactionItemCreateWithPriceAndProduct != null)
             {
+                if (TransactionItemCreateWithPriceAndProduct is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPriceAndProduct>(null, TransactionItemCreateWithPriceAndProduct);
             }
             else if(TransactionItemCreateWithPriceId != null)
             {
+                if (TransactionItemCreateWithPriceId is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreateWithPriceId>(null, TransactionItemCreateWithPriceId);
             }
         }

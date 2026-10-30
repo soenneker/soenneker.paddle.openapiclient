@@ -12,35 +12,58 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionPastDueRequestDataConsentRequirementsItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("consent_period") is { } nullNodeConsentPeriod && nullNodeConsentPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentPeriod = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("granted_at") is { } nullNodeGrantedAt && nullNodeGrantedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantedAt = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("requirement") is { } nullNodeRequirement && nullNodeRequirement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requirement = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("voided_at") is { } nullNodeVoidedAt && nullNodeVoidedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoidedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Period during which consent for this subscription can be granted. `null` if there is no `next_billed_at` or the consent requirement does not apply to the current billing period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemConsentPeriod? ConsentPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemConsentPeriod? ConsentPeriod { get => _explicitNullValueConsentPeriod; set { _explicitNullValueConsentPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_period"); else _explicitNullProperties?.Remove("consent_period"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemConsentPeriod? _explicitNullValueConsentPeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemConsentPeriod ConsentPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemConsentPeriod ConsentPeriod { get => _explicitNullValueConsentPeriod; set { _explicitNullValueConsentPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_period"); else _explicitNullProperties?.Remove("consent_period"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemConsentPeriod _explicitNullValueConsentPeriod = default!;
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>RFC 3339 datetime string of when the customer granted their consent. `null` if not yet granted.</summary>
-        public DateTimeOffset? GrantedAt { get; set; }
+        public DateTimeOffset? GrantedAt { get => _explicitNullValueGrantedAt; set { _explicitNullValueGrantedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("granted_at"); else _explicitNullProperties?.Remove("granted_at"); } }
+        private DateTimeOffset? _explicitNullValueGrantedAt = default!;
         /// <summary>Unique Paddle ID for this subscription consent requirement entity, prefixed with `subconreq_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Type of consent required for successful renewal.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemRequirement? Requirement { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemRequirement? Requirement { get => _explicitNullValueRequirement; set { _explicitNullValueRequirement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirement"); else _explicitNullProperties?.Remove("requirement"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemRequirement? _explicitNullValueRequirement = default!;
         /// <summary>Status of this consent requirement.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemStatus? Status { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemStatus? _explicitNullValueStatus = default!;
         /// <summary>RFC 3339 datetime string of when consent was voided or no longer required. `null` if not voided.</summary>
-        public DateTimeOffset? VoidedAt { get; set; }
+        public DateTimeOffset? VoidedAt { get => _explicitNullValueVoidedAt; set { _explicitNullValueVoidedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voided_at"); else _explicitNullProperties?.Remove("voided_at"); } }
+        private DateTimeOffset? _explicitNullValueVoidedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItem"/> and sets the default values.
         /// </summary>
@@ -56,7 +79,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +112,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemRequirement>("requirement", Requirement);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestDataConsentRequirementsItemStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("voided_at", VoidedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

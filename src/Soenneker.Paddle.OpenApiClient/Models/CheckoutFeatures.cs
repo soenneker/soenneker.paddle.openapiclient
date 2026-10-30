@@ -12,15 +12,28 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CheckoutFeatures : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("audience_opt_in") is { } nullNodeAudienceOptIn && nullNodeAudienceOptIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceOptIn = null;
+            if (parseNode.GetChildNode("discounts_enabled") is { } nullNodeDiscountsEnabled && nullNodeDiscountsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountsEnabled = null;
+            if (parseNode.GetChildNode("saved_payment_methods_enabled") is { } nullNodeSavedPaymentMethodsEnabled && nullNodeSavedPaymentMethodsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SavedPaymentMethodsEnabled = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the marketing consent checkbox is shown at checkout.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn? AudienceOptIn { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn? AudienceOptIn { get => _explicitNullValueAudienceOptIn; set { _explicitNullValueAudienceOptIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience_opt_in"); else _explicitNullProperties?.Remove("audience_opt_in"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn? _explicitNullValueAudienceOptIn = default!;
         /// <summary>Whether customers can enter discount codes at checkout.</summary>
-        public bool? DiscountsEnabled { get; set; }
+        public bool? DiscountsEnabled { get => _explicitNullValueDiscountsEnabled; set { _explicitNullValueDiscountsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discounts_enabled"); else _explicitNullProperties?.Remove("discounts_enabled"); } }
+        private bool? _explicitNullValueDiscountsEnabled = default!;
         /// <summary>Whether customers can save payment methods at checkout for future purchases.</summary>
-        public bool? SavedPaymentMethodsEnabled { get; set; }
+        public bool? SavedPaymentMethodsEnabled { get => _explicitNullValueSavedPaymentMethodsEnabled; set { _explicitNullValueSavedPaymentMethodsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saved_payment_methods_enabled"); else _explicitNullProperties?.Remove("saved_payment_methods_enabled"); } }
+        private bool? _explicitNullValueSavedPaymentMethodsEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeatures"/> and sets the default values.
         /// </summary>
@@ -36,7 +49,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeatures CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeatures();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeatures(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -61,6 +74,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn>("audience_opt_in", AudienceOptIn);
             writer.WriteBoolValue("discounts_enabled", DiscountsEnabled);
             writer.WriteBoolValue("saved_payment_methods_enabled", SavedPaymentMethodsEnabled);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

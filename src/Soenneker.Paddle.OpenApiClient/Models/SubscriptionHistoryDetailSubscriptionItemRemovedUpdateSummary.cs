@@ -12,11 +12,20 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionHistoryDetailSubscriptionItemRemovedUpdateSummary : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("quantity_delta") is { } nullNodeQuantityDelta && nullNodeQuantityDelta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuantityDelta = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Signed change in quantity. Positive when the quantity increased (or an item was added), negative when the quantity decreased (or an item was removed).</summary>
-        public int? QuantityDelta { get; set; }
+        public int? QuantityDelta { get => _explicitNullValueQuantityDelta; set { _explicitNullValueQuantityDelta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity_delta"); else _explicitNullProperties?.Remove("quantity_delta"); } }
+        private int? _explicitNullValueQuantityDelta = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemRemovedUpdateSummary"/> and sets the default values.
         /// </summary>
@@ -32,7 +41,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemRemovedUpdateSummary CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemRemovedUpdateSummary();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemRemovedUpdateSummary(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,6 +62,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteIntValue("quantity_delta", QuantityDelta);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,11 +12,20 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TaxSettings : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("default_tax_mode") is { } nullNodeDefaultTaxMode && nullNodeDefaultTaxMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultTaxMode = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Default setting of how tax is calculated for prices. Used when prices have a `tax_mode` of `account_setting`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.TaxSettingsDefaultTaxMode? DefaultTaxMode { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TaxSettingsDefaultTaxMode? DefaultTaxMode { get => _explicitNullValueDefaultTaxMode; set { _explicitNullValueDefaultTaxMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_tax_mode"); else _explicitNullProperties?.Remove("default_tax_mode"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TaxSettingsDefaultTaxMode? _explicitNullValueDefaultTaxMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TaxSettings"/> and sets the default values.
         /// </summary>
@@ -32,7 +41,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.TaxSettings CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.TaxSettings();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TaxSettings(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -53,6 +62,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxSettingsDefaultTaxMode>("default_tax_mode", DefaultTaxMode);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

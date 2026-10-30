@@ -12,24 +12,37 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionNextTransaction : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("adjustments") is { } nullNodeAdjustments && nullNodeAdjustments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Adjustments = null;
+            if (parseNode.GetChildNode("billing_period") is { } nullNodeBillingPeriod && nullNodeBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriod = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Preview of adjustments for the next transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview>? Adjustments { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview>? Adjustments { get => _explicitNullValueAdjustments; set { _explicitNullValueAdjustments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjustments"); else _explicitNullProperties?.Remove("adjustments"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview>? _explicitNullValueAdjustments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview> Adjustments { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview> Adjustments { get => _explicitNullValueAdjustments; set { _explicitNullValueAdjustments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjustments"); else _explicitNullProperties?.Remove("adjustments"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview> _explicitNullValueAdjustments = default!;
 #endif
         /// <summary>Billing period for the next transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransactionBillingPeriod? BillingPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransactionBillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransactionBillingPeriod? _explicitNullValueBillingPeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransactionBillingPeriod BillingPeriod { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransactionBillingPeriod BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransactionBillingPeriod _explicitNullValueBillingPeriod = default!;
 #endif
         /// <summary>Calculated totals for a transaction preview, including discounts, tax, and currency conversion. Considered the source of truth for totals on a transaction preview.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -54,7 +67,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransaction CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransaction();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransaction(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -78,6 +91,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview>("adjustments", Adjustments);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransactionBillingPeriod>("billing_period", BillingPeriod);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

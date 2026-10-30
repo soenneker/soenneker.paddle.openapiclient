@@ -12,24 +12,37 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MetricsExploreDataFields : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
+            if (parseNode.GetChildNode("measures") is { } nullNodeMeasures && nullNodeMeasures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Measures = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>One entry per requested dimension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldDimension>? Dimensions { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldDimension>? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldDimension>? _explicitNullValueDimensions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldDimension> Dimensions { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldDimension> Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldDimension> _explicitNullValueDimensions = default!;
 #endif
         /// <summary>One entry per requested measure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure>? Measures { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure>? Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure>? _explicitNullValueMeasures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure> Measures { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure> Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure> _explicitNullValueMeasures = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldDimension>("dimensions", Dimensions);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure>("measures", Measures);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

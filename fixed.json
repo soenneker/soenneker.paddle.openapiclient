@@ -51714,10 +51714,6 @@
         "description": "Details specific to \u0060subscription_scheduled_change_updated\u0060 actions."
       },
       "SubscriptionHistoryDetail": {
-        "required": [
-          "action"
-        ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/SubscriptionHistoryDetailSubscriptionActivated"
@@ -51819,12 +51815,7 @@
             "$ref": "#/components/schemas/SubscriptionHistoryDetailSubscriptionScheduledChangeUpdated"
           }
         ],
-        "properties": {
-          "action": {
-            "type": "string"
-          }
-        },
-        "discriminator": {
+        "x-client-original-discriminator": {
           "propertyName": "action",
           "mapping": {
             "subscription_activated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionActivated",
@@ -85011,141 +85002,19 @@
         "description": "Configuration for this scenario simulation. Use to simulate more granular flows and populate payloads with your own entity data. If omitted, Paddle simulates the default scenario flow and populates payloads with demo examples.",
         "oneOf": [
           {
-            "title": "Subscription cancellation config",
-            "type": "object",
-            "properties": {
-              "subscription_cancellation": {
-                "description": "Configuration for subscription canceled simulations.",
-                "$ref": "#/components/schemas/SimulationConfigSubscriptionCancellationConfigCreate"
-              },
-              "subscription_creation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_pause": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_renewal": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_resume": {
-                "type": "null",
-                "readOnly": true
-              }
-            },
-            "additionalProperties": false,
-            "description": "Configuration for subscription canceled simulations."
+            "$ref": "#/components/schemas/SimulationScenarioEventsCreateConfigOneOf1"
           },
           {
-            "title": "Subscription creation config",
-            "type": "object",
-            "properties": {
-              "subscription_creation": {
-                "$ref": "#/components/schemas/SimulationConfigSubscriptionCreationCreateSubscriptionCreationComposed"
-              },
-              "subscription_cancellation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_pause": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_renewal": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_resume": {
-                "type": "null",
-                "readOnly": true
-              }
-            },
-            "additionalProperties": false,
-            "description": "Configuration for subscription creation simulations."
+            "$ref": "#/components/schemas/SimulationScenarioEventsCreateConfigOneOf2"
           },
           {
-            "title": "Subscription paused config",
-            "type": "object",
-            "properties": {
-              "subscription_pause": {
-                "description": "Configuration for subscription paused simulations.",
-                "$ref": "#/components/schemas/SimulationConfigSubscriptionPauseConfigCreate"
-              },
-              "subscription_cancellation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_creation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_renewal": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_resume": {
-                "type": "null",
-                "readOnly": true
-              }
-            },
-            "additionalProperties": false,
-            "description": "Configuration for subscription paused simulations."
+            "$ref": "#/components/schemas/SimulationScenarioEventsCreateConfigOneOf3"
           },
           {
-            "title": "Subscription renewal config",
-            "type": "object",
-            "properties": {
-              "subscription_renewal": {
-                "$ref": "#/components/schemas/SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed"
-              },
-              "subscription_cancellation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_creation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_pause": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_resume": {
-                "type": "null",
-                "readOnly": true
-              }
-            },
-            "additionalProperties": false,
-            "description": "Configuration for subscription renewed simulations."
+            "$ref": "#/components/schemas/SimulationScenarioEventsCreateConfigOneOf4"
           },
           {
-            "title": "Subscription resume config",
-            "type": "object",
-            "properties": {
-              "subscription_resume": {
-                "$ref": "#/components/schemas/SimulationConfigSubscriptionResumeCreateSubscriptionResumeComposed"
-              },
-              "subscription_cancellation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_creation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_pause": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_renewal": {
-                "type": "null",
-                "readOnly": true
-              }
-            },
-            "additionalProperties": false,
-            "description": "Configuration for subscription resumed simulations."
+            "$ref": "#/components/schemas/SimulationScenarioEventsCreateConfigOneOf5"
           }
         ]
       },
@@ -85697,141 +85566,19 @@
         "description": "Configuration for this scenario simulation. Use to simulate more granular flows and populate payloads with your own entity data. If omitted, Paddle simulates the default scenario flow and populates payloads with demo examples.",
         "oneOf": [
           {
-            "title": "Subscription cancellation config",
-            "type": "object",
-            "properties": {
-              "subscription_cancellation": {
-                "description": "Configuration for subscription canceled simulations.",
-                "$ref": "#/components/schemas/SimulationConfigSubscriptionCancellationConfigCreate"
-              },
-              "subscription_creation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_pause": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_renewal": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_resume": {
-                "type": "null",
-                "readOnly": true
-              }
-            },
-            "additionalProperties": false,
-            "description": "Configuration for subscription canceled simulations."
+            "$ref": "#/components/schemas/SimulationScenarioEventsUpdateConfigOneOf1"
           },
           {
-            "title": "Subscription creation config",
-            "type": "object",
-            "properties": {
-              "subscription_creation": {
-                "$ref": "#/components/schemas/SimulationConfigSubscriptionCreationCreateSubscriptionCreationComposed"
-              },
-              "subscription_cancellation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_pause": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_renewal": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_resume": {
-                "type": "null",
-                "readOnly": true
-              }
-            },
-            "additionalProperties": false,
-            "description": "Configuration for subscription creation simulations."
+            "$ref": "#/components/schemas/SimulationScenarioEventsUpdateConfigOneOf2"
           },
           {
-            "title": "Subscription paused config",
-            "type": "object",
-            "properties": {
-              "subscription_pause": {
-                "description": "Configuration for subscription paused simulations.",
-                "$ref": "#/components/schemas/SimulationConfigSubscriptionPauseConfigCreate"
-              },
-              "subscription_cancellation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_creation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_renewal": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_resume": {
-                "type": "null",
-                "readOnly": true
-              }
-            },
-            "additionalProperties": false,
-            "description": "Configuration for subscription paused simulations."
+            "$ref": "#/components/schemas/SimulationScenarioEventsUpdateConfigOneOf3"
           },
           {
-            "title": "Subscription renewal config",
-            "type": "object",
-            "properties": {
-              "subscription_renewal": {
-                "$ref": "#/components/schemas/SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed"
-              },
-              "subscription_cancellation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_creation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_pause": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_resume": {
-                "type": "null",
-                "readOnly": true
-              }
-            },
-            "additionalProperties": false,
-            "description": "Configuration for subscription renewed simulations."
+            "$ref": "#/components/schemas/SimulationScenarioEventsUpdateConfigOneOf4"
           },
           {
-            "title": "Subscription resume config",
-            "type": "object",
-            "properties": {
-              "subscription_resume": {
-                "$ref": "#/components/schemas/SimulationConfigSubscriptionResumeCreateSubscriptionResumeComposed"
-              },
-              "subscription_cancellation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_creation": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_pause": {
-                "type": "null",
-                "readOnly": true
-              },
-              "subscription_renewal": {
-                "type": "null",
-                "readOnly": true
-              }
-            },
-            "additionalProperties": false,
-            "description": "Configuration for subscription resumed simulations."
+            "$ref": "#/components/schemas/SimulationScenarioEventsUpdateConfigOneOf5"
           }
         ]
       },
@@ -391184,6 +390931,280 @@
             }
           ]
         }
+      },
+      "SimulationScenarioEventsCreateConfigOneOf1": {
+        "title": "Subscription cancellation config",
+        "type": "object",
+        "properties": {
+          "subscription_cancellation": {
+            "description": "Configuration for subscription canceled simulations.",
+            "$ref": "#/components/schemas/SimulationConfigSubscriptionCancellationConfigCreate"
+          },
+          "subscription_creation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_pause": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_renewal": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_resume": {
+            "type": "null",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Configuration for subscription canceled simulations."
+      },
+      "SimulationScenarioEventsCreateConfigOneOf2": {
+        "title": "Subscription creation config",
+        "type": "object",
+        "properties": {
+          "subscription_creation": {
+            "$ref": "#/components/schemas/SimulationConfigSubscriptionCreationCreateSubscriptionCreationComposed"
+          },
+          "subscription_cancellation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_pause": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_renewal": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_resume": {
+            "type": "null",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Configuration for subscription creation simulations."
+      },
+      "SimulationScenarioEventsCreateConfigOneOf3": {
+        "title": "Subscription paused config",
+        "type": "object",
+        "properties": {
+          "subscription_pause": {
+            "description": "Configuration for subscription paused simulations.",
+            "$ref": "#/components/schemas/SimulationConfigSubscriptionPauseConfigCreate"
+          },
+          "subscription_cancellation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_creation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_renewal": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_resume": {
+            "type": "null",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Configuration for subscription paused simulations."
+      },
+      "SimulationScenarioEventsCreateConfigOneOf4": {
+        "title": "Subscription renewal config",
+        "type": "object",
+        "properties": {
+          "subscription_renewal": {
+            "$ref": "#/components/schemas/SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed"
+          },
+          "subscription_cancellation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_creation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_pause": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_resume": {
+            "type": "null",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Configuration for subscription renewed simulations."
+      },
+      "SimulationScenarioEventsCreateConfigOneOf5": {
+        "title": "Subscription resume config",
+        "type": "object",
+        "properties": {
+          "subscription_resume": {
+            "$ref": "#/components/schemas/SimulationConfigSubscriptionResumeCreateSubscriptionResumeComposed"
+          },
+          "subscription_cancellation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_creation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_pause": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_renewal": {
+            "type": "null",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Configuration for subscription resumed simulations."
+      },
+      "SimulationScenarioEventsUpdateConfigOneOf1": {
+        "title": "Subscription cancellation config",
+        "type": "object",
+        "properties": {
+          "subscription_cancellation": {
+            "description": "Configuration for subscription canceled simulations.",
+            "$ref": "#/components/schemas/SimulationConfigSubscriptionCancellationConfigCreate"
+          },
+          "subscription_creation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_pause": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_renewal": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_resume": {
+            "type": "null",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Configuration for subscription canceled simulations."
+      },
+      "SimulationScenarioEventsUpdateConfigOneOf2": {
+        "title": "Subscription creation config",
+        "type": "object",
+        "properties": {
+          "subscription_creation": {
+            "$ref": "#/components/schemas/SimulationConfigSubscriptionCreationCreateSubscriptionCreationComposed"
+          },
+          "subscription_cancellation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_pause": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_renewal": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_resume": {
+            "type": "null",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Configuration for subscription creation simulations."
+      },
+      "SimulationScenarioEventsUpdateConfigOneOf3": {
+        "title": "Subscription paused config",
+        "type": "object",
+        "properties": {
+          "subscription_pause": {
+            "description": "Configuration for subscription paused simulations.",
+            "$ref": "#/components/schemas/SimulationConfigSubscriptionPauseConfigCreate"
+          },
+          "subscription_cancellation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_creation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_renewal": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_resume": {
+            "type": "null",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Configuration for subscription paused simulations."
+      },
+      "SimulationScenarioEventsUpdateConfigOneOf4": {
+        "title": "Subscription renewal config",
+        "type": "object",
+        "properties": {
+          "subscription_renewal": {
+            "$ref": "#/components/schemas/SimulationConfigSubscriptionRenewalCreateSubscriptionRenewalComposed"
+          },
+          "subscription_cancellation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_creation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_pause": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_resume": {
+            "type": "null",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Configuration for subscription renewed simulations."
+      },
+      "SimulationScenarioEventsUpdateConfigOneOf5": {
+        "title": "Subscription resume config",
+        "type": "object",
+        "properties": {
+          "subscription_resume": {
+            "$ref": "#/components/schemas/SimulationConfigSubscriptionResumeCreateSubscriptionResumeComposed"
+          },
+          "subscription_cancellation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_creation": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_pause": {
+            "type": "null",
+            "readOnly": true
+          },
+          "subscription_renewal": {
+            "type": "null",
+            "readOnly": true
+          }
+        },
+        "additionalProperties": false,
+        "description": "Configuration for subscription resumed simulations."
       }
     },
     "parameters": {

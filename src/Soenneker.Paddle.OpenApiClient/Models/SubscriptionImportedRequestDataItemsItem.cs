@@ -12,47 +12,77 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionImportedRequestDataItemsItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("next_billed_at") is { } nullNodeNextBilledAt && nullNodeNextBilledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextBilledAt = null;
+            if (parseNode.GetChildNode("previously_billed_at") is { } nullNodePreviouslyBilledAt && nullNodePreviouslyBilledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviouslyBilledAt = null;
+            if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+            if (parseNode.GetChildNode("product") is { } nullNodeProduct && nullNodeProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Product = null;
+            if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
+            if (parseNode.GetChildNode("recurring") is { } nullNodeRecurring && nullNodeRecurring.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recurring = null;
+            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("trial_dates") is { } nullNodeTrialDates && nullNodeTrialDates.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrialDates = null;
+            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>RFC 3339 datetime string of when this item was added to this subscription.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>RFC 3339 datetime string of when this item is next scheduled to be billed.</summary>
-        public DateTimeOffset? NextBilledAt { get; set; }
+        public DateTimeOffset? NextBilledAt { get => _explicitNullValueNextBilledAt; set { _explicitNullValueNextBilledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_billed_at"); else _explicitNullProperties?.Remove("next_billed_at"); } }
+        private DateTimeOffset? _explicitNullValueNextBilledAt = default!;
         /// <summary>RFC 3339 datetime string of when this item was last billed.</summary>
-        public DateTimeOffset? PreviouslyBilledAt { get; set; }
+        public DateTimeOffset? PreviouslyBilledAt { get => _explicitNullValuePreviouslyBilledAt; set { _explicitNullValuePreviouslyBilledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("previously_billed_at"); else _explicitNullProperties?.Remove("previously_billed_at"); } }
+        private DateTimeOffset? _explicitNullValuePreviouslyBilledAt = default!;
         /// <summary>Related price entity for this item. This reflects the price entity at the time it was added to the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPrice? Price { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPrice? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPrice? _explicitNullValuePrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPrice Price { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPrice Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPrice _explicitNullValuePrice = default!;
 #endif
         /// <summary>Related product entity for this item. This reflects the product entity at the time it was added to the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemProduct? Product { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemProduct? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemProduct? _explicitNullValueProduct = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemProduct Product { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemProduct Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemProduct _explicitNullValueProduct = default!;
 #endif
         /// <summary>Quantity of this item on the subscription.</summary>
-        public double? Quantity { get; set; }
+        public double? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
+        private double? _explicitNullValueQuantity = default!;
         /// <summary>Whether this is a recurring item. `false` if one-time.</summary>
-        public bool? Recurring { get; set; }
+        public bool? Recurring { get => _explicitNullValueRecurring; set { _explicitNullValueRecurring = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recurring"); else _explicitNullProperties?.Remove("recurring"); } }
+        private bool? _explicitNullValueRecurring = default!;
         /// <summary>Status of this subscription item. Set automatically by Paddle.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemStatus? Status { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemStatus? _explicitNullValueStatus = default!;
         /// <summary>Trial dates for this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemTrialDates? TrialDates { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemTrialDates? TrialDates { get => _explicitNullValueTrialDates; set { _explicitNullValueTrialDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial_dates"); else _explicitNullProperties?.Remove("trial_dates"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemTrialDates? _explicitNullValueTrialDates = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemTrialDates TrialDates { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemTrialDates TrialDates { get => _explicitNullValueTrialDates; set { _explicitNullValueTrialDates = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial_dates"); else _explicitNullProperties?.Remove("trial_dates"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemTrialDates _explicitNullValueTrialDates = default!;
 #endif
         /// <summary>RFC 3339 datetime string of when this item was last updated on this subscription.</summary>
-        public DateTimeOffset? UpdatedAt { get; set; }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItem"/> and sets the default values.
         /// </summary>
@@ -68,7 +98,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,6 +137,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemStatus>("status", Status);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemTrialDates>("trial_dates", TrialDates);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

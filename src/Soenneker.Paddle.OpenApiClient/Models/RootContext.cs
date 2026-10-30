@@ -12,24 +12,37 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class RootContext : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("api") is { } nullNodeApi && nullNodeApi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Api = null;
+            if (parseNode.GetChildNode("caller") is { } nullNodeCaller && nullNodeCaller.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Caller = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about the Paddle API serving this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextApi? Api { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextApi? Api { get => _explicitNullValueApi; set { _explicitNullValueApi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api"); else _explicitNullProperties?.Remove("api"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.RootContextApi? _explicitNullValueApi = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextApi Api { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextApi Api { get => _explicitNullValueApi; set { _explicitNullValueApi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api"); else _explicitNullProperties?.Remove("api"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.RootContextApi _explicitNullValueApi = default!;
 #endif
         /// <summary>Information about the caller making this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextCaller? Caller { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextCaller? Caller { get => _explicitNullValueCaller; set { _explicitNullValueCaller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caller"); else _explicitNullProperties?.Remove("caller"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.RootContextCaller? _explicitNullValueCaller = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextCaller Caller { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextCaller Caller { get => _explicitNullValueCaller; set { _explicitNullValueCaller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caller"); else _explicitNullProperties?.Remove("caller"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.RootContextCaller _explicitNullValueCaller = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.RootContext"/> and sets the default values.
@@ -46,7 +59,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.RootContext CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.RootContext();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.RootContext(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -69,6 +82,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.RootContextApi>("api", Api);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.RootContextCaller>("caller", Caller);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

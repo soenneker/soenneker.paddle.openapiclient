@@ -12,22 +12,35 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CustomerPortalSessionUrlsComposed : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("general") is { } nullNodeGeneral && nullNodeGeneral.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) General = null;
+            if (parseNode.GetChildNode("subscriptions") is { } nullNodeSubscriptions && nullNodeSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriptions = null;
+        }
+
         /// <summary>Authenticated customer portal deep links that aren&apos;t associated with a specific entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsGeneralComposed? General { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsGeneralComposed? General { get => _explicitNullValueGeneral; set { _explicitNullValueGeneral = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general"); else _explicitNullProperties?.Remove("general"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsGeneralComposed? _explicitNullValueGeneral = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsGeneralComposed General { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsGeneralComposed General { get => _explicitNullValueGeneral; set { _explicitNullValueGeneral = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("general"); else _explicitNullProperties?.Remove("general"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsGeneralComposed _explicitNullValueGeneral = default!;
 #endif
         /// <summary>List of generated authenticated customer portal deep links for the subscriptions passed in the `subscription_ids` array in the request.If subscriptions are paused or canceled, links open the overview page for a subscription.Empty if no subscriptions passed in the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem>? Subscriptions { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem>? Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem>? _explicitNullValueSubscriptions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem> Subscriptions { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem> Subscriptions { get => _explicitNullValueSubscriptions; set { _explicitNullValueSubscriptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscriptions"); else _explicitNullProperties?.Remove("subscriptions"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem> _explicitNullValueSubscriptions = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,7 +50,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsComposed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsComposed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -59,7 +72,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsGeneralComposed>("general", General);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem>("subscriptions", Subscriptions);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.CustomerPortalSessionUrlsSubscriptionsItem>("subscriptions", Subscriptions);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

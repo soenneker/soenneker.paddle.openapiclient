@@ -12,7 +12,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionResume : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.EmptyObject"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -57,17 +62,24 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             var result = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResume();
             if("EmptyObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EmptyObject = new global::Soenneker.Paddle.OpenApiClient.Models.EmptyObject();
+                
             }
             else if("SubscriptionResumeImmediately".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SubscriptionResumeImmediately = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately();
+                
             }
             else if("SubscriptionResumeOnDate".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.SubscriptionResumeOnDate = new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDate();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("effective_from") != null && (parseNode.GetChildNode("on_resume") == null || (parseNode.GetChildNode("on_resume")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("continue_existing_billing_period".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "start_new_billing_period".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("effective_from") != null && (parseNode.GetChildNode("on_resume") == null || (parseNode.GetChildNode("on_resume")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString optionalTag1 && ("continue_existing_billing_period".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal) || "start_new_billing_period".Equals(optionalTag1.GetValue(), global::System.StringComparison.Ordinal))))))();
+            if (result.EmptyObject == null && result.SubscriptionResumeImmediately == null && result.SubscriptionResumeMember1 == null && result.SubscriptionResumeOnDate == null && matchesUnionBranch0 && !matchesUnionBranch1) result.SubscriptionResumeOnDate = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDate(), parseNode);
+            if (result.EmptyObject == null && result.SubscriptionResumeImmediately == null && result.SubscriptionResumeMember1 == null && result.SubscriptionResumeOnDate == null && matchesUnionBranch1 && !matchesUnionBranch0) result.SubscriptionResumeImmediately = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately(), parseNode);
+            if (result.EmptyObject == null && result.SubscriptionResumeImmediately == null && result.SubscriptionResumeMember1 == null && result.SubscriptionResumeOnDate == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -99,21 +111,31 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (EmptyObject == null && SubscriptionResumeImmediately == null && SubscriptionResumeMember1 == null && SubscriptionResumeOnDate == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (EmptyObject != null && SubscriptionResumeImmediately == null && SubscriptionResumeMember1 == null && SubscriptionResumeOnDate == null) { if (EmptyObject is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EmptyObject); return; }
+            if (SubscriptionResumeImmediately != null && EmptyObject == null && SubscriptionResumeMember1 == null && SubscriptionResumeOnDate == null) { if (SubscriptionResumeImmediately is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SubscriptionResumeImmediately); return; }
+            if (SubscriptionResumeOnDate != null && EmptyObject == null && SubscriptionResumeImmediately == null && SubscriptionResumeMember1 == null) { if (SubscriptionResumeOnDate is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SubscriptionResumeOnDate); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(EmptyObject != null)
             {
+                if (EmptyObject is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.EmptyObject>(null, EmptyObject);
             }
             else if(SubscriptionResumeImmediately != null)
             {
+                if (SubscriptionResumeImmediately is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeImmediately>(null, SubscriptionResumeImmediately);
             }
             else if(SubscriptionResumeMember1 != null)
             {
+                if (SubscriptionResumeMember1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeMember1>(null, SubscriptionResumeMember1);
             }
             else if(SubscriptionResumeOnDate != null)
             {
+                if (SubscriptionResumeOnDate is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumeOnDate>(null, SubscriptionResumeOnDate);
             }
         }

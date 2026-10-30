@@ -12,7 +12,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReportCreate : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsCreateModel"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -89,37 +94,56 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             var result = new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreate();
             if("ReportAdjustmentsCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ReportAdjustmentsCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsCreateModel();
+                
             }
             else if("ReportBalanceCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ReportBalanceCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModel();
+                
             }
             else if("ReportCheckoutsCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ReportCheckoutsCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportCheckoutsCreateModel();
+                
             }
             else if("ReportDiscountsCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ReportDiscountsCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsCreateModel();
+                
             }
             else if("ReportPayoutReconciliationCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ReportPayoutReconciliationCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel();
+                
             }
             else if("ReportProductsPricesCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ReportProductsPricesCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesCreateModel();
+                
             }
             else if("ReportSubscriptionsCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ReportSubscriptionsCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModel();
+                
             }
             else if("ReportTransactionsCreateModel".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.ReportTransactionsCreateModel = new global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsCreateModel();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("adjustments".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "adjustment_line_items".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("transactions".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal) || "transaction_line_items".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch2 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("products_prices".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch3 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("discounts".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch4 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("balance".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch5 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("payout_reconciliation".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch6 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("checkouts".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch7 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("subscriptions".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            if (result.ReportAdjustmentsCreateModel == null && result.ReportBalanceCreateModel == null && result.ReportCheckoutsCreateModel == null && result.ReportDiscountsCreateModel == null && result.ReportPayoutReconciliationCreateModel == null && result.ReportProductsPricesCreateModel == null && result.ReportSubscriptionsCreateModel == null && result.ReportTransactionsCreateModel == null && matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.ReportAdjustmentsCreateModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsCreateModel(), parseNode);
+            if (result.ReportAdjustmentsCreateModel == null && result.ReportBalanceCreateModel == null && result.ReportCheckoutsCreateModel == null && result.ReportDiscountsCreateModel == null && result.ReportPayoutReconciliationCreateModel == null && result.ReportProductsPricesCreateModel == null && result.ReportSubscriptionsCreateModel == null && result.ReportTransactionsCreateModel == null && matchesUnionBranch1 && !matchesUnionBranch0 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.ReportTransactionsCreateModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsCreateModel(), parseNode);
+            if (result.ReportAdjustmentsCreateModel == null && result.ReportBalanceCreateModel == null && result.ReportCheckoutsCreateModel == null && result.ReportDiscountsCreateModel == null && result.ReportPayoutReconciliationCreateModel == null && result.ReportProductsPricesCreateModel == null && result.ReportSubscriptionsCreateModel == null && result.ReportTransactionsCreateModel == null && matchesUnionBranch2 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.ReportProductsPricesCreateModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesCreateModel(), parseNode);
+            if (result.ReportAdjustmentsCreateModel == null && result.ReportBalanceCreateModel == null && result.ReportCheckoutsCreateModel == null && result.ReportDiscountsCreateModel == null && result.ReportPayoutReconciliationCreateModel == null && result.ReportProductsPricesCreateModel == null && result.ReportSubscriptionsCreateModel == null && result.ReportTransactionsCreateModel == null && matchesUnionBranch3 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.ReportDiscountsCreateModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsCreateModel(), parseNode);
+            if (result.ReportAdjustmentsCreateModel == null && result.ReportBalanceCreateModel == null && result.ReportCheckoutsCreateModel == null && result.ReportDiscountsCreateModel == null && result.ReportPayoutReconciliationCreateModel == null && result.ReportProductsPricesCreateModel == null && result.ReportSubscriptionsCreateModel == null && result.ReportTransactionsCreateModel == null && matchesUnionBranch4 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch5 && !matchesUnionBranch6 && !matchesUnionBranch7) result.ReportBalanceCreateModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModel(), parseNode);
+            if (result.ReportAdjustmentsCreateModel == null && result.ReportBalanceCreateModel == null && result.ReportCheckoutsCreateModel == null && result.ReportDiscountsCreateModel == null && result.ReportPayoutReconciliationCreateModel == null && result.ReportProductsPricesCreateModel == null && result.ReportSubscriptionsCreateModel == null && result.ReportTransactionsCreateModel == null && matchesUnionBranch5 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch6 && !matchesUnionBranch7) result.ReportPayoutReconciliationCreateModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel(), parseNode);
+            if (result.ReportAdjustmentsCreateModel == null && result.ReportBalanceCreateModel == null && result.ReportCheckoutsCreateModel == null && result.ReportDiscountsCreateModel == null && result.ReportPayoutReconciliationCreateModel == null && result.ReportProductsPricesCreateModel == null && result.ReportSubscriptionsCreateModel == null && result.ReportTransactionsCreateModel == null && matchesUnionBranch6 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch7) result.ReportCheckoutsCreateModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportCheckoutsCreateModel(), parseNode);
+            if (result.ReportAdjustmentsCreateModel == null && result.ReportBalanceCreateModel == null && result.ReportCheckoutsCreateModel == null && result.ReportDiscountsCreateModel == null && result.ReportPayoutReconciliationCreateModel == null && result.ReportProductsPricesCreateModel == null && result.ReportSubscriptionsCreateModel == null && result.ReportTransactionsCreateModel == null && matchesUnionBranch7 && !matchesUnionBranch0 && !matchesUnionBranch1 && !matchesUnionBranch2 && !matchesUnionBranch3 && !matchesUnionBranch4 && !matchesUnionBranch5 && !matchesUnionBranch6) result.ReportSubscriptionsCreateModel = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModel(), parseNode);
+            if (result.ReportAdjustmentsCreateModel == null && result.ReportBalanceCreateModel == null && result.ReportCheckoutsCreateModel == null && result.ReportDiscountsCreateModel == null && result.ReportPayoutReconciliationCreateModel == null && result.ReportProductsPricesCreateModel == null && result.ReportSubscriptionsCreateModel == null && result.ReportTransactionsCreateModel == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -167,37 +191,56 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (ReportAdjustmentsCreateModel == null && ReportBalanceCreateModel == null && ReportCheckoutsCreateModel == null && ReportDiscountsCreateModel == null && ReportPayoutReconciliationCreateModel == null && ReportProductsPricesCreateModel == null && ReportSubscriptionsCreateModel == null && ReportTransactionsCreateModel == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ReportAdjustmentsCreateModel != null && ReportBalanceCreateModel == null && ReportCheckoutsCreateModel == null && ReportDiscountsCreateModel == null && ReportPayoutReconciliationCreateModel == null && ReportProductsPricesCreateModel == null && ReportSubscriptionsCreateModel == null && ReportTransactionsCreateModel == null) { if (ReportAdjustmentsCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ReportAdjustmentsCreateModel); return; }
+            if (ReportBalanceCreateModel != null && ReportAdjustmentsCreateModel == null && ReportCheckoutsCreateModel == null && ReportDiscountsCreateModel == null && ReportPayoutReconciliationCreateModel == null && ReportProductsPricesCreateModel == null && ReportSubscriptionsCreateModel == null && ReportTransactionsCreateModel == null) { if (ReportBalanceCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ReportBalanceCreateModel); return; }
+            if (ReportCheckoutsCreateModel != null && ReportAdjustmentsCreateModel == null && ReportBalanceCreateModel == null && ReportDiscountsCreateModel == null && ReportPayoutReconciliationCreateModel == null && ReportProductsPricesCreateModel == null && ReportSubscriptionsCreateModel == null && ReportTransactionsCreateModel == null) { if (ReportCheckoutsCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ReportCheckoutsCreateModel); return; }
+            if (ReportDiscountsCreateModel != null && ReportAdjustmentsCreateModel == null && ReportBalanceCreateModel == null && ReportCheckoutsCreateModel == null && ReportPayoutReconciliationCreateModel == null && ReportProductsPricesCreateModel == null && ReportSubscriptionsCreateModel == null && ReportTransactionsCreateModel == null) { if (ReportDiscountsCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ReportDiscountsCreateModel); return; }
+            if (ReportPayoutReconciliationCreateModel != null && ReportAdjustmentsCreateModel == null && ReportBalanceCreateModel == null && ReportCheckoutsCreateModel == null && ReportDiscountsCreateModel == null && ReportProductsPricesCreateModel == null && ReportSubscriptionsCreateModel == null && ReportTransactionsCreateModel == null) { if (ReportPayoutReconciliationCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ReportPayoutReconciliationCreateModel); return; }
+            if (ReportProductsPricesCreateModel != null && ReportAdjustmentsCreateModel == null && ReportBalanceCreateModel == null && ReportCheckoutsCreateModel == null && ReportDiscountsCreateModel == null && ReportPayoutReconciliationCreateModel == null && ReportSubscriptionsCreateModel == null && ReportTransactionsCreateModel == null) { if (ReportProductsPricesCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ReportProductsPricesCreateModel); return; }
+            if (ReportSubscriptionsCreateModel != null && ReportAdjustmentsCreateModel == null && ReportBalanceCreateModel == null && ReportCheckoutsCreateModel == null && ReportDiscountsCreateModel == null && ReportPayoutReconciliationCreateModel == null && ReportProductsPricesCreateModel == null && ReportTransactionsCreateModel == null) { if (ReportSubscriptionsCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ReportSubscriptionsCreateModel); return; }
+            if (ReportTransactionsCreateModel != null && ReportAdjustmentsCreateModel == null && ReportBalanceCreateModel == null && ReportCheckoutsCreateModel == null && ReportDiscountsCreateModel == null && ReportPayoutReconciliationCreateModel == null && ReportProductsPricesCreateModel == null && ReportSubscriptionsCreateModel == null) { if (ReportTransactionsCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, ReportTransactionsCreateModel); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             if(ReportAdjustmentsCreateModel != null)
             {
+                if (ReportAdjustmentsCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsCreateModel>(null, ReportAdjustmentsCreateModel);
             }
             else if(ReportBalanceCreateModel != null)
             {
+                if (ReportBalanceCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceCreateModel>(null, ReportBalanceCreateModel);
             }
             else if(ReportCheckoutsCreateModel != null)
             {
+                if (ReportCheckoutsCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportCheckoutsCreateModel>(null, ReportCheckoutsCreateModel);
             }
             else if(ReportDiscountsCreateModel != null)
             {
+                if (ReportDiscountsCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsCreateModel>(null, ReportDiscountsCreateModel);
             }
             else if(ReportPayoutReconciliationCreateModel != null)
             {
+                if (ReportPayoutReconciliationCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationCreateModel>(null, ReportPayoutReconciliationCreateModel);
             }
             else if(ReportProductsPricesCreateModel != null)
             {
+                if (ReportProductsPricesCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesCreateModel>(null, ReportProductsPricesCreateModel);
             }
             else if(ReportSubscriptionsCreateModel != null)
             {
+                if (ReportSubscriptionsCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsCreateModel>(null, ReportSubscriptionsCreateModel);
             }
             else if(ReportTransactionsCreateModel != null)
             {
+                if (ReportTransactionsCreateModel is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
                 writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsCreateModel>(null, ReportTransactionsCreateModel);
             }
         }

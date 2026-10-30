@@ -12,14 +12,24 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CheckoutPaymentMethodSettingsUpdate : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("payment_methods") is { } nullNodePaymentMethods && nullNodePaymentMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethods = null;
+        }
+
         /// <summary>Settings to update for each payment method, keyed by payment method. Send only the payment methods that you want to change.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdatePaymentMethods? PaymentMethods { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdatePaymentMethods? PaymentMethods { get => _explicitNullValuePaymentMethods; set { _explicitNullValuePaymentMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_methods"); else _explicitNullProperties?.Remove("payment_methods"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdatePaymentMethods? _explicitNullValuePaymentMethods = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdatePaymentMethods PaymentMethods { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdatePaymentMethods PaymentMethods { get => _explicitNullValuePaymentMethods; set { _explicitNullValuePaymentMethods = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_methods"); else _explicitNullProperties?.Remove("payment_methods"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdatePaymentMethods _explicitNullValuePaymentMethods = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -29,7 +39,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdate CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdate();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdate(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -49,7 +59,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdatePaymentMethods>("payment_methods", PaymentMethods);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdatePaymentMethods>("payment_methods", PaymentMethods);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

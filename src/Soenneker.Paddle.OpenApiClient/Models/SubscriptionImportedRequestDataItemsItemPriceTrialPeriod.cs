@@ -12,30 +12,49 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SubscriptionImportedRequestDataItemsItemPriceTrialPeriod : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("frequency") is { } nullNodeFrequency && nullNodeFrequency.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Frequency = null;
+            if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
+            if (parseNode.GetChildNode("requires_payment_method") is { } nullNodeRequiresPaymentMethod && nullNodeRequiresPaymentMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RequiresPaymentMethod = null;
+            if (parseNode.GetChildNode("unit_price") is { } nullNodeUnitPrice && nullNodeUnitPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitPrice = null;
+            if (parseNode.GetChildNode("unit_price_overrides") is { } nullNodeUnitPriceOverrides && nullNodeUnitPriceOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitPriceOverrides = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount of time.</summary>
-        public int? Frequency { get; set; }
+        public int? Frequency { get => _explicitNullValueFrequency; set { _explicitNullValueFrequency = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("frequency"); else _explicitNullProperties?.Remove("frequency"); } }
+        private int? _explicitNullValueFrequency = default!;
         /// <summary>Unit of time.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodInterval? Interval { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodInterval? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodInterval? _explicitNullValueInterval = default!;
         /// <summary>Whether this price requires a payment method (`true`) or not (`false`) when trialing. If `false`, customers can sign up for subscription without entering their payment details, often referred to as a &quot;cardless trial.&quot;</summary>
-        public bool? RequiresPaymentMethod { get; set; }
+        public bool? RequiresPaymentMethod { get => _explicitNullValueRequiresPaymentMethod; set { _explicitNullValueRequiresPaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requires_payment_method"); else _explicitNullProperties?.Remove("requires_payment_method"); } }
+        private bool? _explicitNullValueRequiresPaymentMethod = default!;
         /// <summary>Trial price. Customers are billed this amount for the duration of the trial period. Applies to all customers except those in countries with `unit_price_overrides`. If `null`, customers are not charged during the trial.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPrice? UnitPrice { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPrice? UnitPrice { get => _explicitNullValueUnitPrice; set { _explicitNullValueUnitPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price"); else _explicitNullProperties?.Remove("unit_price"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPrice? _explicitNullValueUnitPrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPrice UnitPrice { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPrice UnitPrice { get => _explicitNullValueUnitPrice; set { _explicitNullValueUnitPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price"); else _explicitNullProperties?.Remove("unit_price"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPrice _explicitNullValueUnitPrice = default!;
 #endif
         /// <summary>List of unit price overrides for trial pricing. Use to override base trial price with a custom trial price and currency for a country or group of countries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItem>? UnitPriceOverrides { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItem>? UnitPriceOverrides { get => _explicitNullValueUnitPriceOverrides; set { _explicitNullValueUnitPriceOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price_overrides"); else _explicitNullProperties?.Remove("unit_price_overrides"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItem>? _explicitNullValueUnitPriceOverrides = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItem> UnitPriceOverrides { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItem> UnitPriceOverrides { get => _explicitNullValueUnitPriceOverrides; set { _explicitNullValueUnitPriceOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price_overrides"); else _explicitNullProperties?.Remove("unit_price_overrides"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItem> _explicitNullValueUnitPriceOverrides = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriod"/> and sets the default values.
@@ -53,7 +72,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriod CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriod();
+            // Preserve a nullable root response.
+            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) return null!;
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriod(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +103,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteBoolValue("requires_payment_method", RequiresPaymentMethod);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPrice>("unit_price", UnitPrice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataItemsItemPriceTrialPeriodUnitPriceOverridesItem>("unit_price_overrides", UnitPriceOverrides);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

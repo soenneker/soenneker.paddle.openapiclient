@@ -12,51 +12,77 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class DiscountCustom : IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("maximum_recurring_intervals") is { } nullNodeMaximumRecurringIntervals && nullNodeMaximumRecurringIntervals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaximumRecurringIntervals = null;
+            if (parseNode.GetChildNode("recur") is { } nullNodeRecur && nullNodeRecur.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Recur = null;
+            if (parseNode.GetChildNode("restrict_to") is { } nullNodeRestrictTo && nullNodeRestrictTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RestrictTo = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Amount to discount by. For `percentage` discounts, must be an amount between `0.01` and `100`. For `flat` and `flat_per_seat` discounts, amount in the lowest denomination for a currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Amount { get; set; }
+        public string? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public string Amount { get; set; }
+        public string Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string _explicitNullValueAmount = default!;
 #endif
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? CustomData { get; set; }
+        public UntypedNode? CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
+        private UntypedNode? _explicitNullValueCustomData = default!;
 #nullable restore
 #else
-        public UntypedNode CustomData { get; set; }
+        public UntypedNode CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
+        private UntypedNode _explicitNullValueCustomData = default!;
 #endif
         /// <summary>Short description for this discount for your reference. Not shown to customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Number of subscription billing periods that this discount recurs for. Requires `recur`. `null` if this discount recurs forever.Subscription renewals, midcycle changes, and one-time charges billed to a subscription aren&apos;t considered a redemption. `times_used` is not incremented in these cases.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomMaximumRecurringIntervals? MaximumRecurringIntervals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomMaximumRecurringIntervals? MaximumRecurringIntervals { get => _explicitNullValueMaximumRecurringIntervals; set { _explicitNullValueMaximumRecurringIntervals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_recurring_intervals"); else _explicitNullProperties?.Remove("maximum_recurring_intervals"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomMaximumRecurringIntervals? _explicitNullValueMaximumRecurringIntervals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomMaximumRecurringIntervals MaximumRecurringIntervals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomMaximumRecurringIntervals MaximumRecurringIntervals { get => _explicitNullValueMaximumRecurringIntervals; set { _explicitNullValueMaximumRecurringIntervals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("maximum_recurring_intervals"); else _explicitNullProperties?.Remove("maximum_recurring_intervals"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomMaximumRecurringIntervals _explicitNullValueMaximumRecurringIntervals = default!;
 #endif
         /// <summary>Whether this discount applies for multiple subscription billing periods (`true`) or not (`false`). If omitted, defaults to `false`.</summary>
-        public bool? Recur { get; set; }
+        public bool? Recur { get => _explicitNullValueRecur; set { _explicitNullValueRecur = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recur"); else _explicitNullProperties?.Remove("recur"); } }
+        private bool? _explicitNullValueRecur = default!;
         /// <summary>Product or price IDs that this discount is for. When including a product ID, all prices for that product can be discounted. `null` if this discount applies to all products and prices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomRestrictTo? RestrictTo { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomRestrictTo? RestrictTo { get => _explicitNullValueRestrictTo; set { _explicitNullValueRestrictTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restrict_to"); else _explicitNullProperties?.Remove("restrict_to"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomRestrictTo? _explicitNullValueRestrictTo = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomRestrictTo RestrictTo { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomRestrictTo RestrictTo { get => _explicitNullValueRestrictTo; set { _explicitNullValueRestrictTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restrict_to"); else _explicitNullProperties?.Remove("restrict_to"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomRestrictTo _explicitNullValueRestrictTo = default!;
 #endif
         /// <summary>Type of discount. Determines how this discount impacts the checkout or transaction total.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomType? Type { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom"/> and sets the default values.
         /// </summary>
@@ -72,7 +98,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -104,7 +130,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomMaximumRecurringIntervals>("maximum_recurring_intervals", MaximumRecurringIntervals);
             writer.WriteBoolValue("recur", Recur);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomRestrictTo>("restrict_to", RestrictTo);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustomType>("type", Type);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }

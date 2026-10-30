@@ -12,58 +12,86 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionPricingPreviewLineItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("discounts") is { } nullNodeDiscounts && nullNodeDiscounts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Discounts = null;
+            if (parseNode.GetChildNode("formatted_totals") is { } nullNodeFormattedTotals && nullNodeFormattedTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FormattedTotals = null;
+            if (parseNode.GetChildNode("formatted_unit_totals") is { } nullNodeFormattedUnitTotals && nullNodeFormattedUnitTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FormattedUnitTotals = null;
+            if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+            if (parseNode.GetChildNode("product") is { } nullNodeProduct && nullNodeProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Product = null;
+            if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
+            if (parseNode.GetChildNode("tax_rate") is { } nullNodeTaxRate && nullNodeTaxRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxRate = null;
+            if (parseNode.GetChildNode("unit_totals") is { } nullNodeUnitTotals && nullNodeUnitTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitTotals = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The discounts property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscount>? Discounts { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscount>? Discounts { get => _explicitNullValueDiscounts; set { _explicitNullValueDiscounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discounts"); else _explicitNullProperties?.Remove("discounts"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscount>? _explicitNullValueDiscounts = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscount> Discounts { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscount> Discounts { get => _explicitNullValueDiscounts; set { _explicitNullValueDiscounts = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discounts"); else _explicitNullProperties?.Remove("discounts"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscount> _explicitNullValueDiscounts = default!;
 #endif
         /// <summary>The financial breakdown of a charge in the format of a given currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemFormattedTotals? FormattedTotals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemFormattedTotals? FormattedTotals { get => _explicitNullValueFormattedTotals; set { _explicitNullValueFormattedTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted_totals"); else _explicitNullProperties?.Remove("formatted_totals"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemFormattedTotals? _explicitNullValueFormattedTotals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemFormattedTotals FormattedTotals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemFormattedTotals FormattedTotals { get => _explicitNullValueFormattedTotals; set { _explicitNullValueFormattedTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted_totals"); else _explicitNullProperties?.Remove("formatted_totals"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemFormattedTotals _explicitNullValueFormattedTotals = default!;
 #endif
         /// <summary>Breakdown of the charge for one unit in the format of a given currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemFormattedUnitTotals? FormattedUnitTotals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemFormattedUnitTotals? FormattedUnitTotals { get => _explicitNullValueFormattedUnitTotals; set { _explicitNullValueFormattedUnitTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted_unit_totals"); else _explicitNullProperties?.Remove("formatted_unit_totals"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemFormattedUnitTotals? _explicitNullValueFormattedUnitTotals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemFormattedUnitTotals FormattedUnitTotals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemFormattedUnitTotals FormattedUnitTotals { get => _explicitNullValueFormattedUnitTotals; set { _explicitNullValueFormattedUnitTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted_unit_totals"); else _explicitNullProperties?.Remove("formatted_unit_totals"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemFormattedUnitTotals _explicitNullValueFormattedUnitTotals = default!;
 #endif
         /// <summary>Related price entity for this preview line item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemPrice? Price { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemPrice? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemPrice? _explicitNullValuePrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemPrice Price { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemPrice Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemPrice _explicitNullValuePrice = default!;
 #endif
         /// <summary>Related product entity for this preview line item price.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemProduct? Product { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemProduct? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemProduct? _explicitNullValueProduct = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemProduct Product { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemProduct Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemProduct _explicitNullValueProduct = default!;
 #endif
         /// <summary>Quantity of this preview line item.</summary>
-        public int? Quantity { get; set; }
+        public int? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
+        private int? _explicitNullValueQuantity = default!;
         /// <summary>Rate used to calculate tax for this preview line item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TaxRate { get; set; }
+        public string? TaxRate { get => _explicitNullValueTaxRate; set { _explicitNullValueTaxRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_rate"); else _explicitNullProperties?.Remove("tax_rate"); } }
+        private string? _explicitNullValueTaxRate = default!;
 #nullable restore
 #else
-        public string TaxRate { get; set; }
+        public string TaxRate { get => _explicitNullValueTaxRate; set { _explicitNullValueTaxRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_rate"); else _explicitNullProperties?.Remove("tax_rate"); } }
+        private string _explicitNullValueTaxRate = default!;
 #endif
         /// <summary>Breakdown of a charge in the lowest denomination of a currency (e.g. cents for USD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -76,10 +104,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Breakdown of the charge for one unit in the lowest denomination of a currency (e.g. cents for USD).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemUnitTotals? UnitTotals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemUnitTotals? UnitTotals { get => _explicitNullValueUnitTotals; set { _explicitNullValueUnitTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_totals"); else _explicitNullProperties?.Remove("unit_totals"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemUnitTotals? _explicitNullValueUnitTotals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemUnitTotals UnitTotals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemUnitTotals UnitTotals { get => _explicitNullValueUnitTotals; set { _explicitNullValueUnitTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_totals"); else _explicitNullProperties?.Remove("unit_totals"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemUnitTotals _explicitNullValueUnitTotals = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItem"/> and sets the default values.
@@ -96,7 +126,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -132,6 +162,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteIntValue("quantity", Quantity);
             writer.WriteStringValue("tax_rate", TaxRate);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemUnitTotals>("unit_totals", UnitTotals);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

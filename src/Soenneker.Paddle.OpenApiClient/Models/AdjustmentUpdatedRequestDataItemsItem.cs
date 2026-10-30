@@ -11,51 +11,75 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AdjustmentUpdatedRequestDataItemsItem : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("item_id") is { } nullNodeItemId && nullNodeItemId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ItemId = null;
+            if (parseNode.GetChildNode("proration") is { } nullNodeProration && nullNodeProration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proration = null;
+            if (parseNode.GetChildNode("totals") is { } nullNodeTotals && nullNodeTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Totals = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Amount adjusted for this transaction item. Required when item `type` is `partial`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Amount { get; set; }
+        public string? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public string Amount { get; set; }
+        public string Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        private string _explicitNullValueAmount = default!;
 #endif
         /// <summary>Unique Paddle ID for this adjustment item, prefixed with `adjitm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>Paddle ID for the transaction item that this adjustment item relates to, prefixed with `txnitm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ItemId { get; set; }
+        public string? ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        private string? _explicitNullValueItemId = default!;
 #nullable restore
 #else
-        public string ItemId { get; set; }
+        public string ItemId { get => _explicitNullValueItemId; set { _explicitNullValueItemId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item_id"); else _explicitNullProperties?.Remove("item_id"); } }
+        private string _explicitNullValueItemId = default!;
 #endif
         /// <summary>How proration was calculated for this adjustment item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemProration? Proration { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemProration? Proration { get => _explicitNullValueProration; set { _explicitNullValueProration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proration"); else _explicitNullProperties?.Remove("proration"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemProration? _explicitNullValueProration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemProration Proration { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemProration Proration { get => _explicitNullValueProration; set { _explicitNullValueProration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proration"); else _explicitNullProperties?.Remove("proration"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemProration _explicitNullValueProration = default!;
 #endif
         /// <summary>Breakdown of the total for an adjustment item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemTotals? Totals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemTotals? Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemTotals? _explicitNullValueTotals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemTotals Totals { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemTotals Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemTotals _explicitNullValueTotals = default!;
 #endif
         /// <summary>Type of adjustment for this transaction item. `tax` adjustments are automatically created by Paddle.Include `amount` when creating a `partial` adjustment.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemType? Type { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItem"/> and sets the default values.
         /// </summary>
@@ -71,7 +95,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -102,6 +126,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemProration>("proration", Proration);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemTotals>("totals", Totals);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentUpdatedRequestDataItemsItemType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

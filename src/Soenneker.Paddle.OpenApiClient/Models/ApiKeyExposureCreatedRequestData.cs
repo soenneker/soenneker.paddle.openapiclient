@@ -12,49 +12,76 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ApiKeyExposureCreatedRequestData : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("action_taken") is { } nullNodeActionTaken && nullNodeActionTaken.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ActionTaken = null;
+            if (parseNode.GetChildNode("api_key_id") is { } nullNodeApiKeyId && nullNodeApiKeyId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiKeyId = null;
+            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("reference") is { } nullNodeReference && nullNodeReference.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reference = null;
+            if (parseNode.GetChildNode("risk_level") is { } nullNodeRiskLevel && nullNodeRiskLevel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RiskLevel = null;
+            if (parseNode.GetChildNode("source") is { } nullNodeSource && nullNodeSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Source = null;
+        }
+
         /// <summary>Action performed by Paddle as a result of this exposure.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExposureCreatedRequestDataActionTaken? ActionTaken { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExposureCreatedRequestDataActionTaken? ActionTaken { get => _explicitNullValueActionTaken; set { _explicitNullValueActionTaken = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action_taken"); else _explicitNullProperties?.Remove("action_taken"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExposureCreatedRequestDataActionTaken? _explicitNullValueActionTaken = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Unique Paddle ID for this API key entity, prefixed with `apikey_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ApiKeyId { get; set; }
+        public string? ApiKeyId { get => _explicitNullValueApiKeyId; set { _explicitNullValueApiKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_key_id"); else _explicitNullProperties?.Remove("api_key_id"); } }
+        private string? _explicitNullValueApiKeyId = default!;
 #nullable restore
 #else
-        public string ApiKeyId { get; set; }
+        public string ApiKeyId { get => _explicitNullValueApiKeyId; set { _explicitNullValueApiKeyId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_key_id"); else _explicitNullProperties?.Remove("api_key_id"); } }
+        private string _explicitNullValueApiKeyId = default!;
 #endif
         /// <summary>RFC 3339 datetime string of when this API key exposure was found. Set automatically by Paddle.</summary>
-        public DateTimeOffset? CreatedAt { get; set; }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Additional details about this exposure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get; set; }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get; set; }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Unique Paddle ID for this API key exposure entity, prefixed with `apkexp_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get; set; }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get; set; }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        private string _explicitNullValueId = default!;
 #endif
         /// <summary>A unique URL or reference pointing to the source of the exposure. When `source` is `github`, a URL to the location of the exposure is returned.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reference { get; set; }
+        public string? Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string? _explicitNullValueReference = default!;
 #nullable restore
 #else
-        public string Reference { get; set; }
+        public string Reference { get => _explicitNullValueReference; set { _explicitNullValueReference = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reference"); else _explicitNullProperties?.Remove("reference"); } }
+        private string _explicitNullValueReference = default!;
 #endif
         /// <summary>Risk level of this exposure.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExposureCreatedRequestDataRiskLevel? RiskLevel { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExposureCreatedRequestDataRiskLevel? RiskLevel { get => _explicitNullValueRiskLevel; set { _explicitNullValueRiskLevel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("risk_level"); else _explicitNullProperties?.Remove("risk_level"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExposureCreatedRequestDataRiskLevel? _explicitNullValueRiskLevel = default!;
         /// <summary>Source of this exposure.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.GithubSource? Source { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.GithubSource? Source { get => _explicitNullValueSource; set { _explicitNullValueSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("source"); else _explicitNullProperties?.Remove("source"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.GithubSource? _explicitNullValueSource = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExposureCreatedRequestData"/> and sets the default values.
         /// </summary>
@@ -70,7 +97,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExposureCreatedRequestData CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExposureCreatedRequestData();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExposureCreatedRequestData(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,6 +132,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("reference", Reference);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExposureCreatedRequestDataRiskLevel>("risk_level", RiskLevel);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.GithubSource>("source", Source);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -12,32 +12,48 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionAdjustmentsTotalsIncludeBreakdownComposed : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("chargeback") is { } nullNodeChargeback && nullNodeChargeback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Chargeback = null;
+            if (parseNode.GetChildNode("credit") is { } nullNodeCredit && nullNodeCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credit = null;
+            if (parseNode.GetChildNode("refund") is { } nullNodeRefund && nullNodeRefund.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Refund = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Total amount of chargeback adjustments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Chargeback { get; set; }
+        public string? Chargeback { get => _explicitNullValueChargeback; set { _explicitNullValueChargeback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chargeback"); else _explicitNullProperties?.Remove("chargeback"); } }
+        private string? _explicitNullValueChargeback = default!;
 #nullable restore
 #else
-        public string Chargeback { get; set; }
+        public string Chargeback { get => _explicitNullValueChargeback; set { _explicitNullValueChargeback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("chargeback"); else _explicitNullProperties?.Remove("chargeback"); } }
+        private string _explicitNullValueChargeback = default!;
 #endif
         /// <summary>Total amount of credit adjustments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Credit { get; set; }
+        public string? Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
+        private string? _explicitNullValueCredit = default!;
 #nullable restore
 #else
-        public string Credit { get; set; }
+        public string Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
+        private string _explicitNullValueCredit = default!;
 #endif
         /// <summary>Total amount of refund adjustments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Refund { get; set; }
+        public string? Refund { get => _explicitNullValueRefund; set { _explicitNullValueRefund = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refund"); else _explicitNullProperties?.Remove("refund"); } }
+        private string? _explicitNullValueRefund = default!;
 #nullable restore
 #else
-        public string Refund { get; set; }
+        public string Refund { get => _explicitNullValueRefund; set { _explicitNullValueRefund = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("refund"); else _explicitNullProperties?.Remove("refund"); } }
+        private string _explicitNullValueRefund = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("chargeback", Chargeback);
             writer.WriteStringValue("credit", Credit);
             writer.WriteStringValue("refund", Refund);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

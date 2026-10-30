@@ -12,7 +12,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TransactionPreviewLineItem : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("proration") is { } nullNodeProration && nullNodeProration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proration = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Paddle ID for the price related to this transaction line item, prefixed with `pri_`.The value is null for custom prices being previewed.</summary>
@@ -34,10 +42,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>How proration was calculated for this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration? Proration { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration? Proration { get => _explicitNullValueProration; set { _explicitNullValueProration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proration"); else _explicitNullProperties?.Remove("proration"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration? _explicitNullValueProration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration Proration { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration Proration { get => _explicitNullValueProration; set { _explicitNullValueProration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proration"); else _explicitNullProperties?.Remove("proration"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration _explicitNullValueProration = default!;
 #endif
         /// <summary>Quantity of this transaction line item.</summary>
         public int? Quantity { get; private set; }
@@ -80,7 +90,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItem();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItem(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -107,6 +117,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration>("proration", Proration);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

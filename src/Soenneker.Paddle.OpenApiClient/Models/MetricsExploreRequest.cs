@@ -12,62 +12,93 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class MetricsExploreRequest : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
+            if (parseNode.GetChildNode("entity") is { } nullNodeEntity && nullNodeEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entity = null;
+            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("from") is { } nullNodeFrom && nullNodeFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) From = null;
+            if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
+            if (parseNode.GetChildNode("measures") is { } nullNodeMeasures && nullNodeMeasures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Measures = null;
+            if (parseNode.GetChildNode("order_by") is { } nullNodeOrderBy && nullNodeOrderBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OrderBy = null;
+            if (parseNode.GetChildNode("per_page") is { } nullNodePerPage && nullNodePerPage.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PerPage = null;
+            if (parseNode.GetChildNode("to") is { } nullNodeTo && nullNodeTo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) To = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Dimensions to group results by. Each combination of values returns as a segment. `timestamp` is implied by `interval`, so don&apos;t include it here.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Dimensions { get; set; }
+        public List<string>? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        private List<string>? _explicitNullValueDimensions = default!;
 #nullable restore
 #else
-        public List<string> Dimensions { get; set; }
+        public List<string> Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        private List<string> _explicitNullValueDimensions = default!;
 #endif
         /// <summary>Entity name for a queryable Explore metric. Pass it as the `entity` when you query.`subscriptions` isn&apos;t available in sandbox, where it&apos;s treated as `unknown_entity`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestEntity? Entity { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestEntity? Entity { get => _explicitNullValueEntity; set { _explicitNullValueEntity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity"); else _explicitNullProperties?.Remove("entity"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestEntity? _explicitNullValueEntity = default!;
         /// <summary>Filters to narrow results by dimension. Multiple filters are combined, so results must match all of them.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilter>? Filters { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilter>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilter>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilter> Filters { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilter> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFilter> _explicitNullValueFilters = default!;
 #endif
         /// <summary>RFC 3339 datetime string or `YYYY-MM-DD` date for the start of the range, interpreted at 00:00 UTC. Inclusive. Must be within the metric&apos;s `max_lookback_days`, otherwise Paddle returns `max_lookback_exceeded`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? From { get; set; }
+        public string? From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
+        private string? _explicitNullValueFrom = default!;
 #nullable restore
 #else
-        public string From { get; set; }
+        public string From { get => _explicitNullValueFrom; set { _explicitNullValueFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("from"); else _explicitNullProperties?.Remove("from"); } }
+        private string _explicitNullValueFrom = default!;
 #endif
         /// <summary>Interval that a metric query is bucketed by. Buckets are UTC, and weeks start on Monday.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestInterval? Interval { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestInterval? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestInterval? _explicitNullValueInterval = default!;
         /// <summary>One or more measures to compute.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreMeasure>? Measures { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreMeasure>? Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreMeasure>? _explicitNullValueMeasures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreMeasure> Measures { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreMeasure> Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreMeasure> _explicitNullValueMeasures = default!;
 #endif
         /// <summary>Ordering. Required when you pass `dimensions`, because it decides which segments land on the page. Omitting it on a query with dimensions returns `invalid_field`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderBy>? OrderBy { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderBy>? OrderBy { get => _explicitNullValueOrderBy; set { _explicitNullValueOrderBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order_by"); else _explicitNullProperties?.Remove("order_by"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderBy>? _explicitNullValueOrderBy = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderBy> OrderBy { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderBy> OrderBy { get => _explicitNullValueOrderBy; set { _explicitNullValueOrderBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("order_by"); else _explicitNullProperties?.Remove("order_by"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderBy> _explicitNullValueOrderBy = default!;
 #endif
         /// <summary>Number of segments returned per page, not datapoints. Each segment carries its complete timeseries. Paddle returns the maximum if you request more, so check `meta.pagination.per_page` to see how many came back. A page can hold at most 10,000 datapoints (`per_page` multiplied by the time buckets in your range), otherwise Paddle returns `too_many_datapoints`.Default: `5`; Maximum: `50`.</summary>
-        public int? PerPage { get; set; }
+        public int? PerPage { get => _explicitNullValuePerPage; set { _explicitNullValuePerPage = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("per_page"); else _explicitNullProperties?.Remove("per_page"); } }
+        private int? _explicitNullValuePerPage = default!;
         /// <summary>RFC 3339 datetime string or `YYYY-MM-DD` date for the end of the range, interpreted at 00:00 UTC. Exclusive. Clamped to the current time if in the future.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? To { get; set; }
+        public string? To { get => _explicitNullValueTo; set { _explicitNullValueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to"); else _explicitNullProperties?.Remove("to"); } }
+        private string? _explicitNullValueTo = default!;
 #nullable restore
 #else
-        public string To { get; set; }
+        public string To { get => _explicitNullValueTo; set { _explicitNullValueTo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("to"); else _explicitNullProperties?.Remove("to"); } }
+        private string _explicitNullValueTo = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequest"/> and sets the default values.
@@ -85,7 +116,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -122,6 +153,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreOrderBy>("order_by", OrderBy);
             writer.WriteIntValue("per_page", PerPage);
             writer.WriteStringValue("to", To);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

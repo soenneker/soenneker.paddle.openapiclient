@@ -12,144 +12,202 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CheckoutPaymentMethodSettingsUpdatePaymentMethods : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("alipay") is { } nullNodeAlipay && nullNodeAlipay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Alipay = null;
+            if (parseNode.GetChildNode("apple_pay") is { } nullNodeApplePay && nullNodeApplePay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplePay = null;
+            if (parseNode.GetChildNode("bancontact") is { } nullNodeBancontact && nullNodeBancontact.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bancontact = null;
+            if (parseNode.GetChildNode("blik") is { } nullNodeBlik && nullNodeBlik.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Blik = null;
+            if (parseNode.GetChildNode("card") is { } nullNodeCard && nullNodeCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Card = null;
+            if (parseNode.GetChildNode("google_pay") is { } nullNodeGooglePay && nullNodeGooglePay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GooglePay = null;
+            if (parseNode.GetChildNode("ideal") is { } nullNodeIdeal && nullNodeIdeal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ideal = null;
+            if (parseNode.GetChildNode("kakao_pay") is { } nullNodeKakaoPay && nullNodeKakaoPay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KakaoPay = null;
+            if (parseNode.GetChildNode("mb_way") is { } nullNodeMbWay && nullNodeMbWay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MbWay = null;
+            if (parseNode.GetChildNode("naver_pay") is { } nullNodeNaverPay && nullNodeNaverPay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NaverPay = null;
+            if (parseNode.GetChildNode("payco") is { } nullNodePayco && nullNodePayco.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Payco = null;
+            if (parseNode.GetChildNode("paypal") is { } nullNodePaypal && nullNodePaypal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Paypal = null;
+            if (parseNode.GetChildNode("pix") is { } nullNodePix && nullNodePix.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pix = null;
+            if (parseNode.GetChildNode("samsung_pay") is { } nullNodeSamsungPay && nullNodeSamsungPay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SamsungPay = null;
+            if (parseNode.GetChildNode("south_korea_local_card") is { } nullNodeSouthKoreaLocalCard && nullNodeSouthKoreaLocalCard.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SouthKoreaLocalCard = null;
+            if (parseNode.GetChildNode("upi") is { } nullNodeUpi && nullNodeUpi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Upi = null;
+            if (parseNode.GetChildNode("wechat_pay") is { } nullNodeWechatPay && nullNodeWechatPay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) WechatPay = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Settings to update for the Alipay payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateAlipay? Alipay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateAlipay? Alipay { get => _explicitNullValueAlipay; set { _explicitNullValueAlipay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alipay"); else _explicitNullProperties?.Remove("alipay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateAlipay? _explicitNullValueAlipay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateAlipay Alipay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateAlipay Alipay { get => _explicitNullValueAlipay; set { _explicitNullValueAlipay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("alipay"); else _explicitNullProperties?.Remove("alipay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateAlipay _explicitNullValueAlipay = default!;
 #endif
         /// <summary>Settings to update for the Apple Pay payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateApplePay? ApplePay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateApplePay? ApplePay { get => _explicitNullValueApplePay; set { _explicitNullValueApplePay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apple_pay"); else _explicitNullProperties?.Remove("apple_pay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateApplePay? _explicitNullValueApplePay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateApplePay ApplePay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateApplePay ApplePay { get => _explicitNullValueApplePay; set { _explicitNullValueApplePay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apple_pay"); else _explicitNullProperties?.Remove("apple_pay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateApplePay _explicitNullValueApplePay = default!;
 #endif
         /// <summary>Settings to update for the Bancontact payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateBancontact? Bancontact { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateBancontact? Bancontact { get => _explicitNullValueBancontact; set { _explicitNullValueBancontact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bancontact"); else _explicitNullProperties?.Remove("bancontact"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateBancontact? _explicitNullValueBancontact = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateBancontact Bancontact { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateBancontact Bancontact { get => _explicitNullValueBancontact; set { _explicitNullValueBancontact = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bancontact"); else _explicitNullProperties?.Remove("bancontact"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateBancontact _explicitNullValueBancontact = default!;
 #endif
         /// <summary>Settings to update for the BLIK payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateBlik? Blik { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateBlik? Blik { get => _explicitNullValueBlik; set { _explicitNullValueBlik = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blik"); else _explicitNullProperties?.Remove("blik"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateBlik? _explicitNullValueBlik = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateBlik Blik { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateBlik Blik { get => _explicitNullValueBlik; set { _explicitNullValueBlik = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("blik"); else _explicitNullProperties?.Remove("blik"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateBlik _explicitNullValueBlik = default!;
 #endif
         /// <summary>Settings to update for the card payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateCard? Card { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateCard? Card { get => _explicitNullValueCard; set { _explicitNullValueCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card"); else _explicitNullProperties?.Remove("card"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateCard? _explicitNullValueCard = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateCard Card { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateCard Card { get => _explicitNullValueCard; set { _explicitNullValueCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("card"); else _explicitNullProperties?.Remove("card"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateCard _explicitNullValueCard = default!;
 #endif
         /// <summary>Settings to update for the Google Pay payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateGooglePay? GooglePay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateGooglePay? GooglePay { get => _explicitNullValueGooglePay; set { _explicitNullValueGooglePay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("google_pay"); else _explicitNullProperties?.Remove("google_pay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateGooglePay? _explicitNullValueGooglePay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateGooglePay GooglePay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateGooglePay GooglePay { get => _explicitNullValueGooglePay; set { _explicitNullValueGooglePay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("google_pay"); else _explicitNullProperties?.Remove("google_pay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateGooglePay _explicitNullValueGooglePay = default!;
 #endif
         /// <summary>Settings to update for the iDEAL payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateIdeal? Ideal { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateIdeal? Ideal { get => _explicitNullValueIdeal; set { _explicitNullValueIdeal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ideal"); else _explicitNullProperties?.Remove("ideal"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateIdeal? _explicitNullValueIdeal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateIdeal Ideal { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateIdeal Ideal { get => _explicitNullValueIdeal; set { _explicitNullValueIdeal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ideal"); else _explicitNullProperties?.Remove("ideal"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateIdeal _explicitNullValueIdeal = default!;
 #endif
         /// <summary>Settings to update for the KakaoPay payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateKakaoPay? KakaoPay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateKakaoPay? KakaoPay { get => _explicitNullValueKakaoPay; set { _explicitNullValueKakaoPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kakao_pay"); else _explicitNullProperties?.Remove("kakao_pay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateKakaoPay? _explicitNullValueKakaoPay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateKakaoPay KakaoPay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateKakaoPay KakaoPay { get => _explicitNullValueKakaoPay; set { _explicitNullValueKakaoPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("kakao_pay"); else _explicitNullProperties?.Remove("kakao_pay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateKakaoPay _explicitNullValueKakaoPay = default!;
 #endif
         /// <summary>Settings to update for the MB WAY payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateMbWay? MbWay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateMbWay? MbWay { get => _explicitNullValueMbWay; set { _explicitNullValueMbWay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mb_way"); else _explicitNullProperties?.Remove("mb_way"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateMbWay? _explicitNullValueMbWay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateMbWay MbWay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateMbWay MbWay { get => _explicitNullValueMbWay; set { _explicitNullValueMbWay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mb_way"); else _explicitNullProperties?.Remove("mb_way"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateMbWay _explicitNullValueMbWay = default!;
 #endif
         /// <summary>Settings to update for the Naver Pay payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateNaverPay? NaverPay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateNaverPay? NaverPay { get => _explicitNullValueNaverPay; set { _explicitNullValueNaverPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("naver_pay"); else _explicitNullProperties?.Remove("naver_pay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateNaverPay? _explicitNullValueNaverPay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateNaverPay NaverPay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateNaverPay NaverPay { get => _explicitNullValueNaverPay; set { _explicitNullValueNaverPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("naver_pay"); else _explicitNullProperties?.Remove("naver_pay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateNaverPay _explicitNullValueNaverPay = default!;
 #endif
         /// <summary>Settings to update for the Payco payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePayco? Payco { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePayco? Payco { get => _explicitNullValuePayco; set { _explicitNullValuePayco = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payco"); else _explicitNullProperties?.Remove("payco"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePayco? _explicitNullValuePayco = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePayco Payco { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePayco Payco { get => _explicitNullValuePayco; set { _explicitNullValuePayco = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payco"); else _explicitNullProperties?.Remove("payco"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePayco _explicitNullValuePayco = default!;
 #endif
         /// <summary>Settings to update for the PayPal payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePaypal? Paypal { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePaypal? Paypal { get => _explicitNullValuePaypal; set { _explicitNullValuePaypal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paypal"); else _explicitNullProperties?.Remove("paypal"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePaypal? _explicitNullValuePaypal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePaypal Paypal { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePaypal Paypal { get => _explicitNullValuePaypal; set { _explicitNullValuePaypal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("paypal"); else _explicitNullProperties?.Remove("paypal"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePaypal _explicitNullValuePaypal = default!;
 #endif
         /// <summary>Settings to update for the Pix payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePix? Pix { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePix? Pix { get => _explicitNullValuePix; set { _explicitNullValuePix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix"); else _explicitNullProperties?.Remove("pix"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePix? _explicitNullValuePix = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePix Pix { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePix Pix { get => _explicitNullValuePix; set { _explicitNullValuePix = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pix"); else _explicitNullProperties?.Remove("pix"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdatePix _explicitNullValuePix = default!;
 #endif
         /// <summary>Settings to update for the Samsung Pay payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateSamsungPay? SamsungPay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateSamsungPay? SamsungPay { get => _explicitNullValueSamsungPay; set { _explicitNullValueSamsungPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("samsung_pay"); else _explicitNullProperties?.Remove("samsung_pay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateSamsungPay? _explicitNullValueSamsungPay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateSamsungPay SamsungPay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateSamsungPay SamsungPay { get => _explicitNullValueSamsungPay; set { _explicitNullValueSamsungPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("samsung_pay"); else _explicitNullProperties?.Remove("samsung_pay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateSamsungPay _explicitNullValueSamsungPay = default!;
 #endif
         /// <summary>Settings to update for the South Korea local card payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateSouthKoreaLocalCard? SouthKoreaLocalCard { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateSouthKoreaLocalCard? SouthKoreaLocalCard { get => _explicitNullValueSouthKoreaLocalCard; set { _explicitNullValueSouthKoreaLocalCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("south_korea_local_card"); else _explicitNullProperties?.Remove("south_korea_local_card"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateSouthKoreaLocalCard? _explicitNullValueSouthKoreaLocalCard = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateSouthKoreaLocalCard SouthKoreaLocalCard { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateSouthKoreaLocalCard SouthKoreaLocalCard { get => _explicitNullValueSouthKoreaLocalCard; set { _explicitNullValueSouthKoreaLocalCard = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("south_korea_local_card"); else _explicitNullProperties?.Remove("south_korea_local_card"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateSouthKoreaLocalCard _explicitNullValueSouthKoreaLocalCard = default!;
 #endif
         /// <summary>Settings to update for the UPI payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateUpi? Upi { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateUpi? Upi { get => _explicitNullValueUpi; set { _explicitNullValueUpi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upi"); else _explicitNullProperties?.Remove("upi"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateUpi? _explicitNullValueUpi = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateUpi Upi { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateUpi Upi { get => _explicitNullValueUpi; set { _explicitNullValueUpi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upi"); else _explicitNullProperties?.Remove("upi"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateUpi _explicitNullValueUpi = default!;
 #endif
         /// <summary>Settings to update for the WeChat Pay payment method.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateWechatPay? WechatPay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateWechatPay? WechatPay { get => _explicitNullValueWechatPay; set { _explicitNullValueWechatPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wechat_pay"); else _explicitNullProperties?.Remove("wechat_pay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateWechatPay? _explicitNullValueWechatPay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateWechatPay WechatPay { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateWechatPay WechatPay { get => _explicitNullValueWechatPay; set { _explicitNullValueWechatPay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("wechat_pay"); else _explicitNullProperties?.Remove("wechat_pay"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateWechatPay _explicitNullValueWechatPay = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdatePaymentMethods"/> and sets the default values.
@@ -166,7 +224,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdatePaymentMethods CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdatePaymentMethods();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodSettingsUpdatePaymentMethods(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -219,6 +277,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateSouthKoreaLocalCard>("south_korea_local_card", SouthKoreaLocalCard);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateUpi>("upi", Upi);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsUpdateWechatPay>("wechat_pay", WechatPay);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

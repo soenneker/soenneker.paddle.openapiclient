@@ -8,50 +8,55 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember1"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember2"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember3"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember4"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember5"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf1"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf2"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf3"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf4"/>, <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf5"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class SimulationScenarioEventsUpdateConfig : IComposedTypeWrapper, IParsable
-    {
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember1"/></summary>
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf1"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember1? SimulationScenarioEventsUpdateConfigMember1 { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf1? SimulationScenarioEventsUpdateConfigOneOf1 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember1 SimulationScenarioEventsUpdateConfigMember1 { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf1 SimulationScenarioEventsUpdateConfigOneOf1 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember2"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf2"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember2? SimulationScenarioEventsUpdateConfigMember2 { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf2? SimulationScenarioEventsUpdateConfigOneOf2 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember2 SimulationScenarioEventsUpdateConfigMember2 { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf2 SimulationScenarioEventsUpdateConfigOneOf2 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember3"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf3"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember3? SimulationScenarioEventsUpdateConfigMember3 { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf3? SimulationScenarioEventsUpdateConfigOneOf3 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember3 SimulationScenarioEventsUpdateConfigMember3 { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf3 SimulationScenarioEventsUpdateConfigOneOf3 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember4"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf4"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember4? SimulationScenarioEventsUpdateConfigMember4 { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf4? SimulationScenarioEventsUpdateConfigOneOf4 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember4 SimulationScenarioEventsUpdateConfigMember4 { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf4 SimulationScenarioEventsUpdateConfigOneOf4 { get; set; }
 #endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember5"/></summary>
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf5"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember5? SimulationScenarioEventsUpdateConfigMember5 { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf5? SimulationScenarioEventsUpdateConfigOneOf5 { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember5 SimulationScenarioEventsUpdateConfigMember5 { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf5 SimulationScenarioEventsUpdateConfigOneOf5 { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -63,7 +68,30 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfig();
-            return result;
+            if("SimulationScenarioEventsUpdateConfigOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("SimulationScenarioEventsUpdateConfigOneOf2".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("SimulationScenarioEventsUpdateConfigOneOf3".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("SimulationScenarioEventsUpdateConfigOneOf4".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            else if("SimulationScenarioEventsUpdateConfigOneOf5".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            {
+                
+            }
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            if (result.SimulationScenarioEventsUpdateConfigOneOf1 == null && result.SimulationScenarioEventsUpdateConfigOneOf2 == null && result.SimulationScenarioEventsUpdateConfigOneOf3 == null && result.SimulationScenarioEventsUpdateConfigOneOf4 == null && result.SimulationScenarioEventsUpdateConfigOneOf5 == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -71,25 +99,25 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(SimulationScenarioEventsUpdateConfigMember1 != null)
+            if(SimulationScenarioEventsUpdateConfigOneOf1 != null)
             {
-                return SimulationScenarioEventsUpdateConfigMember1.GetFieldDeserializers();
+                return SimulationScenarioEventsUpdateConfigOneOf1.GetFieldDeserializers();
             }
-            else if(SimulationScenarioEventsUpdateConfigMember2 != null)
+            else if(SimulationScenarioEventsUpdateConfigOneOf2 != null)
             {
-                return SimulationScenarioEventsUpdateConfigMember2.GetFieldDeserializers();
+                return SimulationScenarioEventsUpdateConfigOneOf2.GetFieldDeserializers();
             }
-            else if(SimulationScenarioEventsUpdateConfigMember3 != null)
+            else if(SimulationScenarioEventsUpdateConfigOneOf3 != null)
             {
-                return SimulationScenarioEventsUpdateConfigMember3.GetFieldDeserializers();
+                return SimulationScenarioEventsUpdateConfigOneOf3.GetFieldDeserializers();
             }
-            else if(SimulationScenarioEventsUpdateConfigMember4 != null)
+            else if(SimulationScenarioEventsUpdateConfigOneOf4 != null)
             {
-                return SimulationScenarioEventsUpdateConfigMember4.GetFieldDeserializers();
+                return SimulationScenarioEventsUpdateConfigOneOf4.GetFieldDeserializers();
             }
-            else if(SimulationScenarioEventsUpdateConfigMember5 != null)
+            else if(SimulationScenarioEventsUpdateConfigOneOf5 != null)
             {
-                return SimulationScenarioEventsUpdateConfigMember5.GetFieldDeserializers();
+                return SimulationScenarioEventsUpdateConfigOneOf5.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -99,26 +127,39 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (SimulationScenarioEventsUpdateConfigOneOf1 == null && SimulationScenarioEventsUpdateConfigOneOf2 == null && SimulationScenarioEventsUpdateConfigOneOf3 == null && SimulationScenarioEventsUpdateConfigOneOf4 == null && SimulationScenarioEventsUpdateConfigOneOf5 == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (SimulationScenarioEventsUpdateConfigOneOf1 != null && SimulationScenarioEventsUpdateConfigOneOf2 == null && SimulationScenarioEventsUpdateConfigOneOf3 == null && SimulationScenarioEventsUpdateConfigOneOf4 == null && SimulationScenarioEventsUpdateConfigOneOf5 == null) { if (SimulationScenarioEventsUpdateConfigOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SimulationScenarioEventsUpdateConfigOneOf1); return; }
+            if (SimulationScenarioEventsUpdateConfigOneOf2 != null && SimulationScenarioEventsUpdateConfigOneOf1 == null && SimulationScenarioEventsUpdateConfigOneOf3 == null && SimulationScenarioEventsUpdateConfigOneOf4 == null && SimulationScenarioEventsUpdateConfigOneOf5 == null) { if (SimulationScenarioEventsUpdateConfigOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SimulationScenarioEventsUpdateConfigOneOf2); return; }
+            if (SimulationScenarioEventsUpdateConfigOneOf3 != null && SimulationScenarioEventsUpdateConfigOneOf1 == null && SimulationScenarioEventsUpdateConfigOneOf2 == null && SimulationScenarioEventsUpdateConfigOneOf4 == null && SimulationScenarioEventsUpdateConfigOneOf5 == null) { if (SimulationScenarioEventsUpdateConfigOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SimulationScenarioEventsUpdateConfigOneOf3); return; }
+            if (SimulationScenarioEventsUpdateConfigOneOf4 != null && SimulationScenarioEventsUpdateConfigOneOf1 == null && SimulationScenarioEventsUpdateConfigOneOf2 == null && SimulationScenarioEventsUpdateConfigOneOf3 == null && SimulationScenarioEventsUpdateConfigOneOf5 == null) { if (SimulationScenarioEventsUpdateConfigOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SimulationScenarioEventsUpdateConfigOneOf4); return; }
+            if (SimulationScenarioEventsUpdateConfigOneOf5 != null && SimulationScenarioEventsUpdateConfigOneOf1 == null && SimulationScenarioEventsUpdateConfigOneOf2 == null && SimulationScenarioEventsUpdateConfigOneOf3 == null && SimulationScenarioEventsUpdateConfigOneOf4 == null) { if (SimulationScenarioEventsUpdateConfigOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, SimulationScenarioEventsUpdateConfigOneOf5); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(SimulationScenarioEventsUpdateConfigMember1 != null)
+            if(SimulationScenarioEventsUpdateConfigOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember1>(null, SimulationScenarioEventsUpdateConfigMember1);
+                if (SimulationScenarioEventsUpdateConfigOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf1>(null, SimulationScenarioEventsUpdateConfigOneOf1);
             }
-            else if(SimulationScenarioEventsUpdateConfigMember2 != null)
+            else if(SimulationScenarioEventsUpdateConfigOneOf2 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember2>(null, SimulationScenarioEventsUpdateConfigMember2);
+                if (SimulationScenarioEventsUpdateConfigOneOf2 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf2>(null, SimulationScenarioEventsUpdateConfigOneOf2);
             }
-            else if(SimulationScenarioEventsUpdateConfigMember3 != null)
+            else if(SimulationScenarioEventsUpdateConfigOneOf3 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember3>(null, SimulationScenarioEventsUpdateConfigMember3);
+                if (SimulationScenarioEventsUpdateConfigOneOf3 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf3>(null, SimulationScenarioEventsUpdateConfigOneOf3);
             }
-            else if(SimulationScenarioEventsUpdateConfigMember4 != null)
+            else if(SimulationScenarioEventsUpdateConfigOneOf4 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember4>(null, SimulationScenarioEventsUpdateConfigMember4);
+                if (SimulationScenarioEventsUpdateConfigOneOf4 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf4>(null, SimulationScenarioEventsUpdateConfigOneOf4);
             }
-            else if(SimulationScenarioEventsUpdateConfigMember5 != null)
+            else if(SimulationScenarioEventsUpdateConfigOneOf5 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigMember5>(null, SimulationScenarioEventsUpdateConfigMember5);
+                if (SimulationScenarioEventsUpdateConfigOneOf5 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsUpdateConfigOneOf5>(null, SimulationScenarioEventsUpdateConfigOneOf5);
             }
         }
     }

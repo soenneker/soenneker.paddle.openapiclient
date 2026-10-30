@@ -12,7 +12,16 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReportDiscountsModel : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
@@ -22,10 +31,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Filter criteria for this report. If no `gte` filter for `updated_at` is passed, reports are filtered to include data updated in the last month. This means `updated_at` is greater than or equal to (`gte`) the same date and time one calendar month before the report was generated, so the window is between 28 and 31 days depending on the month.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscounts>? Filters { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscounts>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscounts>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscounts> Filters { get; set; }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscounts> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscounts> _explicitNullValueFilters = default!;
 #endif
         /// <summary>Unique Paddle ID for this entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -40,7 +51,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Status of this report. Set automatically by Paddle.Reports are created as `pending` initially, then move to `ready` when they&apos;re available to download.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsModelStatus? Status { get; private set; }
         /// <summary>Type of report.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsModelType? Type { get; set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsModelType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsModelType? _explicitNullValueType = default!;
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
         public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
@@ -58,7 +70,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public static global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsModel CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsModel();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsModel(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +99,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterDiscounts>("filters", Filters);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsModelType>("type", Type);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
