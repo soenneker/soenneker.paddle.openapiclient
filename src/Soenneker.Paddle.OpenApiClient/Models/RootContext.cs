@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("api") is { } nullNodeApi && nullNodeApi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Api = null;
-            if (parseNode.GetChildNode("caller") is { } nullNodeCaller && nullNodeCaller.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Caller = null;
+            if (parseNode.GetChildNode("api") is null) { _explicitNullValueApi = default!; _explicitNullProperties?.Remove("api"); }
+            else if (parseNode.GetChildNode("api") is { } nullNodeApi && nullNodeApi.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Api = null;
+            if (parseNode.GetChildNode("caller") is null) { _explicitNullValueCaller = default!; _explicitNullProperties?.Remove("caller"); }
+            else if (parseNode.GetChildNode("caller") is { } nullNodeCaller && nullNodeCaller.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Caller = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Information about the Paddle API serving this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextApi? Api { get => _explicitNullValueApi; set { _explicitNullValueApi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api"); else _explicitNullProperties?.Remove("api"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextApi? Api { get => _explicitNullValueApi; set { _explicitNullValueApi = value; AdditionalData?.Remove("api"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api"); else _explicitNullProperties?.Remove("api"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.RootContextApi? _explicitNullValueApi = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextApi Api { get => _explicitNullValueApi; set { _explicitNullValueApi = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api"); else _explicitNullProperties?.Remove("api"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextApi Api { get => _explicitNullValueApi; set { _explicitNullValueApi = value; AdditionalData?.Remove("api"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api"); else _explicitNullProperties?.Remove("api"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.RootContextApi _explicitNullValueApi = default!;
 #endif
         /// <summary>Information about the caller making this request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextCaller? Caller { get => _explicitNullValueCaller; set { _explicitNullValueCaller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caller"); else _explicitNullProperties?.Remove("caller"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextCaller? Caller { get => _explicitNullValueCaller; set { _explicitNullValueCaller = value; AdditionalData?.Remove("caller"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caller"); else _explicitNullProperties?.Remove("caller"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.RootContextCaller? _explicitNullValueCaller = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextCaller Caller { get => _explicitNullValueCaller; set { _explicitNullValueCaller = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caller"); else _explicitNullProperties?.Remove("caller"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootContextCaller Caller { get => _explicitNullValueCaller; set { _explicitNullValueCaller = value; AdditionalData?.Remove("caller"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("caller"); else _explicitNullProperties?.Remove("caller"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.RootContextCaller _explicitNullValueCaller = default!;
 #endif
         /// <summary>

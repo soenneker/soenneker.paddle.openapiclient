@@ -18,24 +18,27 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("include_in_totals") is { } nullNodeIncludeInTotals && nullNodeIncludeInTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeInTotals = null;
-            if (parseNode.GetChildNode("price_id") is { } nullNodePriceId && nullNodePriceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PriceId = null;
-            if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
+            if (parseNode.GetChildNode("include_in_totals") is null) { _explicitNullValueIncludeInTotals = default!; _explicitNullProperties?.Remove("include_in_totals"); }
+            else if (parseNode.GetChildNode("include_in_totals") is { } nullNodeIncludeInTotals && nullNodeIncludeInTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeInTotals = null;
+            if (parseNode.GetChildNode("price_id") is null) { _explicitNullValuePriceId = default!; _explicitNullProperties?.Remove("price_id"); }
+            else if (parseNode.GetChildNode("price_id") is { } nullNodePriceId && nullNodePriceId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PriceId = null;
+            if (parseNode.GetChildNode("quantity") is null) { _explicitNullValueQuantity = default!; _explicitNullProperties?.Remove("quantity"); }
+            else if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this item should be included in totals for this transaction preview. Typically used to exclude one-time charges from calculations.</summary>
-        public bool? IncludeInTotals { get => _explicitNullValueIncludeInTotals; set { _explicitNullValueIncludeInTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_in_totals"); else _explicitNullProperties?.Remove("include_in_totals"); } }
+        public bool? IncludeInTotals { get => _explicitNullValueIncludeInTotals; set { _explicitNullValueIncludeInTotals = value; AdditionalData?.Remove("include_in_totals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_in_totals"); else _explicitNullProperties?.Remove("include_in_totals"); } }
         private bool? _explicitNullValueIncludeInTotals = default!;
         /// <summary>Unique Paddle ID for this price, prefixed with `pri_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PriceId { get => _explicitNullValuePriceId; set { _explicitNullValuePriceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_id"); else _explicitNullProperties?.Remove("price_id"); } }
+        public string? PriceId { get => _explicitNullValuePriceId; set { _explicitNullValuePriceId = value; AdditionalData?.Remove("price_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_id"); else _explicitNullProperties?.Remove("price_id"); } }
         private string? _explicitNullValuePriceId = default!;
 #nullable restore
 #else
-        public string PriceId { get => _explicitNullValuePriceId; set { _explicitNullValuePriceId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_id"); else _explicitNullProperties?.Remove("price_id"); } }
+        public string PriceId { get => _explicitNullValuePriceId; set { _explicitNullValuePriceId = value; AdditionalData?.Remove("price_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price_id"); else _explicitNullProperties?.Remove("price_id"); } }
         private string _explicitNullValuePriceId = default!;
 #endif
         /// <summary>How proration was calculated for this item. `null` for transaction previews.</summary>
@@ -47,7 +50,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration Proration { get; private set; }
 #endif
         /// <summary>Quantity of this item on the transaction.</summary>
-        public int? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
+        public int? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; AdditionalData?.Remove("quantity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
         private int? _explicitNullValueQuantity = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceIdRequest"/> and sets the default values.

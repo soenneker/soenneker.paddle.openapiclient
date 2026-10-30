@@ -18,9 +18,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("discount") is { } nullNodeDiscount && nullNodeDiscount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Discount = null;
-            if (parseNode.GetChildNode("formatted_total") is { } nullNodeFormattedTotal && nullNodeFormattedTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FormattedTotal = null;
-            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("discount") is null) { _explicitNullValueDiscount = default!; _explicitNullProperties?.Remove("discount"); }
+            else if (parseNode.GetChildNode("discount") is { } nullNodeDiscount && nullNodeDiscount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Discount = null;
+            if (parseNode.GetChildNode("formatted_total") is null) { _explicitNullValueFormattedTotal = default!; _explicitNullProperties?.Remove("formatted_total"); }
+            else if (parseNode.GetChildNode("formatted_total") is { } nullNodeFormattedTotal && nullNodeFormattedTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FormattedTotal = null;
+            if (parseNode.GetChildNode("total") is null) { _explicitNullValueTotal = default!; _explicitNullProperties?.Remove("total"); }
+            else if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Related discount entity for this preview line item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscountDiscount? Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscountDiscount? Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscountDiscount? _explicitNullValueDiscount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscountDiscount Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscountDiscount Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItemDiscountDiscount _explicitNullValueDiscount = default!;
 #endif
         /// <summary>Total amount discounted as a result of this discount in the format of a given currency. &apos;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? FormattedTotal { get => _explicitNullValueFormattedTotal; set { _explicitNullValueFormattedTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted_total"); else _explicitNullProperties?.Remove("formatted_total"); } }
+        public string? FormattedTotal { get => _explicitNullValueFormattedTotal; set { _explicitNullValueFormattedTotal = value; AdditionalData?.Remove("formatted_total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted_total"); else _explicitNullProperties?.Remove("formatted_total"); } }
         private string? _explicitNullValueFormattedTotal = default!;
 #nullable restore
 #else
-        public string FormattedTotal { get => _explicitNullValueFormattedTotal; set { _explicitNullValueFormattedTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted_total"); else _explicitNullProperties?.Remove("formatted_total"); } }
+        public string FormattedTotal { get => _explicitNullValueFormattedTotal; set { _explicitNullValueFormattedTotal = value; AdditionalData?.Remove("formatted_total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("formatted_total"); else _explicitNullProperties?.Remove("formatted_total"); } }
         private string _explicitNullValueFormattedTotal = default!;
 #endif
         /// <summary>Total amount discounted as a result of this discount.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public string? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private string? _explicitNullValueTotal = default!;
 #nullable restore
 #else
-        public string Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public string Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private string _explicitNullValueTotal = default!;
 #endif
         /// <summary>

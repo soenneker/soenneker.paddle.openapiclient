@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
-            if (parseNode.GetChildNode("original") is { } nullNodeOriginal && nullNodeOriginal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Original = null;
+            if (parseNode.GetChildNode("amount") is null) { _explicitNullValueAmount = default!; _explicitNullProperties?.Remove("amount"); }
+            else if (parseNode.GetChildNode("amount") is { } nullNodeAmount && nullNodeAmount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Amount = null;
+            if (parseNode.GetChildNode("original") is null) { _explicitNullValueOriginal = default!; _explicitNullProperties?.Remove("original"); }
+            else if (parseNode.GetChildNode("original") is { } nullNodeOriginal && nullNodeOriginal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Original = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Chargeback fee converted into the payout currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public string? Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private string? _explicitNullValueAmount = default!;
 #nullable restore
 #else
-        public string Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
+        public string Amount { get => _explicitNullValueAmount; set { _explicitNullValueAmount = value; AdditionalData?.Remove("amount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("amount"); else _explicitNullProperties?.Remove("amount"); } }
         private string _explicitNullValueAmount = default!;
 #endif
         /// <summary>Chargeback fee before conversion to the payout currency. `null` when the chargeback fee is the same as the payout currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsAdjustedPayoutTotalsChargebackFeeOriginal? Original { get => _explicitNullValueOriginal; set { _explicitNullValueOriginal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original"); else _explicitNullProperties?.Remove("original"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsAdjustedPayoutTotalsChargebackFeeOriginal? Original { get => _explicitNullValueOriginal; set { _explicitNullValueOriginal = value; AdditionalData?.Remove("original"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original"); else _explicitNullProperties?.Remove("original"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsAdjustedPayoutTotalsChargebackFeeOriginal? _explicitNullValueOriginal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsAdjustedPayoutTotalsChargebackFeeOriginal Original { get => _explicitNullValueOriginal; set { _explicitNullValueOriginal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original"); else _explicitNullProperties?.Remove("original"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsAdjustedPayoutTotalsChargebackFeeOriginal Original { get => _explicitNullValueOriginal; set { _explicitNullValueOriginal = value; AdditionalData?.Remove("original"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original"); else _explicitNullProperties?.Remove("original"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionRevisedRequestDataDetailsAdjustedPayoutTotalsChargebackFeeOriginal _explicitNullValueOriginal = default!;
 #endif
         /// <summary>

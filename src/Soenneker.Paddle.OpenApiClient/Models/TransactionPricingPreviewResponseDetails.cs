@@ -17,7 +17,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("line_items") is { } nullNodeLineItems && nullNodeLineItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LineItems = null;
+            if (parseNode.GetChildNode("line_items") is null) { _explicitNullValueLineItems = default!; _explicitNullProperties?.Remove("line_items"); }
+            else if (parseNode.GetChildNode("line_items") is { } nullNodeLineItems && nullNodeLineItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LineItems = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The line_items property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItem>? LineItems { get => _explicitNullValueLineItems; set { _explicitNullValueLineItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line_items"); else _explicitNullProperties?.Remove("line_items"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItem>? LineItems { get => _explicitNullValueLineItems; set { _explicitNullValueLineItems = value; AdditionalData?.Remove("line_items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line_items"); else _explicitNullProperties?.Remove("line_items"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItem>? _explicitNullValueLineItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItem> LineItems { get => _explicitNullValueLineItems; set { _explicitNullValueLineItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line_items"); else _explicitNullProperties?.Remove("line_items"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItem> LineItems { get => _explicitNullValueLineItems; set { _explicitNullValueLineItems = value; AdditionalData?.Remove("line_items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line_items"); else _explicitNullProperties?.Remove("line_items"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewLineItem> _explicitNullValueLineItems = default!;
 #endif
         /// <summary>

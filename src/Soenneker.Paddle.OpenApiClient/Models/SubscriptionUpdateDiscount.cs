@@ -18,23 +18,25 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("effective_from") is { } nullNodeEffectiveFrom && nullNodeEffectiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveFrom = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("effective_from") is null) { _explicitNullValueEffectiveFrom = default!; _explicitNullProperties?.Remove("effective_from"); }
+            else if (parseNode.GetChildNode("effective_from") is { } nullNodeEffectiveFrom && nullNodeEffectiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveFrom = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When this subscription change should take effect from. Defaults to `next_billing_period`, which creates a`scheduled_change` to apply the subscription change at the end of the billing period.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateDiscountEffectiveFrom? EffectiveFrom { get => _explicitNullValueEffectiveFrom; set { _explicitNullValueEffectiveFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_from"); else _explicitNullProperties?.Remove("effective_from"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateDiscountEffectiveFrom? EffectiveFrom { get => _explicitNullValueEffectiveFrom; set { _explicitNullValueEffectiveFrom = value; AdditionalData?.Remove("effective_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_from"); else _explicitNullProperties?.Remove("effective_from"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateDiscountEffectiveFrom? _explicitNullValueEffectiveFrom = default!;
         /// <summary>Unique Paddle ID for this discount, prefixed with `dsc_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "effective_from", n => { EffectiveFrom = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateDiscountEffectiveFrom>(); } },
+                { "effective_from", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionUpdateDiscountEffectiveFrom>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEffectiveFrom = default; _explicitNullProperties?.Remove("effective_from"); AdditionalData["effective_from"] = unknown; } else { EffectiveFrom = parsed; AdditionalData.Remove("effective_from"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
             };
         }

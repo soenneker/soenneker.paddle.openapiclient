@@ -18,17 +18,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("effective_from") is { } nullNodeEffectiveFrom && nullNodeEffectiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveFrom = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("effective_from") is null) { _explicitNullValueEffectiveFrom = default!; _explicitNullProperties?.Remove("effective_from"); }
+            else if (parseNode.GetChildNode("effective_from") is { } nullNodeEffectiveFrom && nullNodeEffectiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveFrom = null;
         }
 
         /// <summary>What happened on the subscription.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPausedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPausedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPausedAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the subscription pause took effect.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPausedEffectiveFrom? EffectiveFrom { get => _explicitNullValueEffectiveFrom; set { _explicitNullValueEffectiveFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_from"); else _explicitNullProperties?.Remove("effective_from"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPausedEffectiveFrom? EffectiveFrom { get => _explicitNullValueEffectiveFrom; set { _explicitNullValueEffectiveFrom = value; AdditionalData?.Remove("effective_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_from"); else _explicitNullProperties?.Remove("effective_from"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPausedEffectiveFrom? _explicitNullValueEffectiveFrom = default!;
         /// <summary>Status of this subscription. Set automatically by Paddle. Use the pause subscription or cancel subscription operations to change.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPausedStatus? Status { get; private set; }
@@ -57,8 +59,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPausedAction>(); } },
-                { "effective_from", n => { EffectiveFrom = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPausedEffectiveFrom>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPausedAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
+                { "effective_from", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPausedEffectiveFrom>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEffectiveFrom = default; _explicitNullProperties?.Remove("effective_from"); AdditionalData["effective_from"] = unknown; } else { EffectiveFrom = parsed; AdditionalData.Remove("effective_from"); } } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionPausedStatus>(); } },
             };
         }

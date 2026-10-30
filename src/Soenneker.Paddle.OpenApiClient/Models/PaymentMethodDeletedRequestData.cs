@@ -18,14 +18,22 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("address_id") is { } nullNodeAddressId && nullNodeAddressId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddressId = null;
-            if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
-            if (parseNode.GetChildNode("deletion_reason") is { } nullNodeDeletionReason && nullNodeDeletionReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletionReason = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
-            if (parseNode.GetChildNode("saved_at") is { } nullNodeSavedAt && nullNodeSavedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SavedAt = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("address_id") is null) { _explicitNullValueAddressId = default!; _explicitNullProperties?.Remove("address_id"); }
+            else if (parseNode.GetChildNode("address_id") is { } nullNodeAddressId && nullNodeAddressId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddressId = null;
+            if (parseNode.GetChildNode("customer_id") is null) { _explicitNullValueCustomerId = default!; _explicitNullProperties?.Remove("customer_id"); }
+            else if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
+            if (parseNode.GetChildNode("deletion_reason") is null) { _explicitNullValueDeletionReason = default!; _explicitNullProperties?.Remove("deletion_reason"); }
+            else if (parseNode.GetChildNode("deletion_reason") is { } nullNodeDeletionReason && nullNodeDeletionReason.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeletionReason = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("origin") is null) { _explicitNullValueOrigin = default!; _explicitNullProperties?.Remove("origin"); }
+            else if (parseNode.GetChildNode("origin") is { } nullNodeOrigin && nullNodeOrigin.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Origin = null;
+            if (parseNode.GetChildNode("saved_at") is null) { _explicitNullValueSavedAt = default!; _explicitNullProperties?.Remove("saved_at"); }
+            else if (parseNode.GetChildNode("saved_at") is { } nullNodeSavedAt && nullNodeSavedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SavedAt = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,47 +41,47 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Unique Paddle ID for the address, prefixed with `add_`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressId { get => _explicitNullValueAddressId; set { _explicitNullValueAddressId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_id"); else _explicitNullProperties?.Remove("address_id"); } }
+        public string? AddressId { get => _explicitNullValueAddressId; set { _explicitNullValueAddressId = value; AdditionalData?.Remove("address_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_id"); else _explicitNullProperties?.Remove("address_id"); } }
         private string? _explicitNullValueAddressId = default!;
 #nullable restore
 #else
-        public string AddressId { get => _explicitNullValueAddressId; set { _explicitNullValueAddressId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_id"); else _explicitNullProperties?.Remove("address_id"); } }
+        public string AddressId { get => _explicitNullValueAddressId; set { _explicitNullValueAddressId = value; AdditionalData?.Remove("address_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_id"); else _explicitNullProperties?.Remove("address_id"); } }
         private string _explicitNullValueAddressId = default!;
 #endif
         /// <summary>Unique Paddle ID for the customer, prefixed with `ctm_`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
         private string? _explicitNullValueCustomerId = default!;
 #nullable restore
 #else
-        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
         private string _explicitNullValueCustomerId = default!;
 #endif
         /// <summary>Reason why this payment method was deleted.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataDeletionReason? DeletionReason { get => _explicitNullValueDeletionReason; set { _explicitNullValueDeletionReason = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletion_reason"); else _explicitNullProperties?.Remove("deletion_reason"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataDeletionReason? DeletionReason { get => _explicitNullValueDeletionReason; set { _explicitNullValueDeletionReason = value; AdditionalData?.Remove("deletion_reason"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("deletion_reason"); else _explicitNullProperties?.Remove("deletion_reason"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataDeletionReason? _explicitNullValueDeletionReason = default!;
         /// <summary>Unique Paddle ID for the payment method, prefixed with `paymtd_`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Describes how this payment method was saved.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataOrigin? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataOrigin? Origin { get => _explicitNullValueOrigin; set { _explicitNullValueOrigin = value; AdditionalData?.Remove("origin"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("origin"); else _explicitNullProperties?.Remove("origin"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataOrigin? _explicitNullValueOrigin = default!;
         /// <summary>RFC 3339 datetime string of when this entity was saved. Set automatically by Paddle.</summary>
-        public DateTimeOffset? SavedAt { get => _explicitNullValueSavedAt; set { _explicitNullValueSavedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saved_at"); else _explicitNullProperties?.Remove("saved_at"); } }
+        public DateTimeOffset? SavedAt { get => _explicitNullValueSavedAt; set { _explicitNullValueSavedAt = value; AdditionalData?.Remove("saved_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saved_at"); else _explicitNullProperties?.Remove("saved_at"); } }
         private DateTimeOffset? _explicitNullValueSavedAt = default!;
         /// <summary>Type of payment method saved.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataType? _explicitNullValueType = default!;
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
-        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestData"/> and sets the default values.
@@ -102,11 +110,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "address_id", n => { AddressId = n.GetStringValue(); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
-                { "deletion_reason", n => { DeletionReason = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataDeletionReason>(); } },
+                { "deletion_reason", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataDeletionReason>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDeletionReason = default; _explicitNullProperties?.Remove("deletion_reason"); AdditionalData["deletion_reason"] = unknown; } else { DeletionReason = parsed; AdditionalData.Remove("deletion_reason"); } } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "origin", n => { Origin = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataOrigin>(); } },
+                { "origin", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataOrigin>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOrigin = default; _explicitNullProperties?.Remove("origin"); AdditionalData["origin"] = unknown; } else { Origin = parsed; AdditionalData.Remove("origin"); } } },
                 { "saved_at", n => { SavedAt = n.GetDateTimeOffsetValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodDeletedRequestDataType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }

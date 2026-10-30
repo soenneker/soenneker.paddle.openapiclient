@@ -18,7 +18,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("payment_methods") is { } nullNodePaymentMethods && nullNodePaymentMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethods = null;
+            if (parseNode.GetChildNode("payment_methods") is null) { _explicitNullValuePaymentMethods = default!; _explicitNullProperties?.Remove("payment_methods"); }
+            else if (parseNode.GetChildNode("payment_methods") is { } nullNodePaymentMethods && nullNodePaymentMethods.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentMethods = null;
         }
 
         /// <summary>Settings to update for each payment method, keyed by payment method. Send only the payment methods that you want to change.</summary>

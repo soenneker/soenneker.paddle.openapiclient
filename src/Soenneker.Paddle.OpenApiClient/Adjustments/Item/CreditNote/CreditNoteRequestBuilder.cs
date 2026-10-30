@@ -71,7 +71,7 @@ namespace Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Adjustments.Item.CreditNote.CreditNoteRequestBuilder.CreditNoteRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://sandbox-api.paddle.com", "/adjustments/{adjustmentId}/credit-note", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

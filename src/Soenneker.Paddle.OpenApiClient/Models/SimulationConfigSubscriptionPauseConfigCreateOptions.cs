@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("effective_from") is { } nullNodeEffectiveFrom && nullNodeEffectiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveFrom = null;
-            if (parseNode.GetChildNode("has_past_due_transaction") is { } nullNodeHasPastDueTransaction && nullNodeHasPastDueTransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPastDueTransaction = null;
+            if (parseNode.GetChildNode("effective_from") is null) { _explicitNullValueEffectiveFrom = default!; _explicitNullProperties?.Remove("effective_from"); }
+            else if (parseNode.GetChildNode("effective_from") is { } nullNodeEffectiveFrom && nullNodeEffectiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveFrom = null;
+            if (parseNode.GetChildNode("has_past_due_transaction") is null) { _explicitNullValueHasPastDueTransaction = default!; _explicitNullProperties?.Remove("has_past_due_transaction"); }
+            else if (parseNode.GetChildNode("has_past_due_transaction") is { } nullNodeHasPastDueTransaction && nullNodeHasPastDueTransaction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) HasPastDueTransaction = null;
         }
 
         /// <summary>Determines which webhooks are sent based on when the subscription is paused or canceled. If omitted, defaults to `immediately`.</summary>

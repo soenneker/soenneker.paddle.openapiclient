@@ -18,23 +18,25 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("agg") is { } nullNodeAgg && nullNodeAgg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Agg = null;
-            if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
+            if (parseNode.GetChildNode("agg") is null) { _explicitNullValueAgg = default!; _explicitNullProperties?.Remove("agg"); }
+            else if (parseNode.GetChildNode("agg") is { } nullNodeAgg && nullNodeAgg.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Agg = null;
+            if (parseNode.GetChildNode("field") is null) { _explicitNullValueField = default!; _explicitNullProperties?.Remove("field"); }
+            else if (parseNode.GetChildNode("field") is { } nullNodeField && nullNodeField.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Field = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Aggregation to apply. Must be allowed for this field, otherwise `invalid_aggregation`. Omit for derived measures.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsAggregation? Agg { get => _explicitNullValueAgg; set { _explicitNullValueAgg = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agg"); else _explicitNullProperties?.Remove("agg"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsAggregation? Agg { get => _explicitNullValueAgg; set { _explicitNullValueAgg = value; AdditionalData?.Remove("agg"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("agg"); else _explicitNullProperties?.Remove("agg"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricsAggregation? _explicitNullValueAgg = default!;
         /// <summary>Measure field. An unknown field returns `unknown_field`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        public string? Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
         private string? _explicitNullValueField = default!;
 #nullable restore
 #else
-        public string Field { get => _explicitNullValueField; set { _explicitNullValueField = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
+        public string Field { get => _explicitNullValueField; set { _explicitNullValueField = value; AdditionalData?.Remove("field"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("field"); else _explicitNullProperties?.Remove("field"); } }
         private string _explicitNullValueField = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "agg", n => { Agg = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsAggregation>(); } },
+                { "agg", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsAggregation>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAgg = default; _explicitNullProperties?.Remove("agg"); AdditionalData["agg"] = unknown; } else { Agg = parsed; AdditionalData.Remove("agg"); } } },
                 { "field", n => { Field = n.GetStringValue(); } },
             };
         }

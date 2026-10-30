@@ -71,7 +71,7 @@ namespace Soenneker.Paddle.OpenApiClient.Subscriptions.Item.History
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Paddle.OpenApiClient.Subscriptions.Item.History.HistoryRequestBuilder.HistoryRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://sandbox-api.paddle.com", "/subscriptions/{subscriptionId}/history", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

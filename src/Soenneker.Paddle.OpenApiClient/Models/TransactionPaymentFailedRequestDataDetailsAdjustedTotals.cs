@@ -18,100 +18,109 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currency_code") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
-            if (parseNode.GetChildNode("earnings") is { } nullNodeEarnings && nullNodeEarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Earnings = null;
-            if (parseNode.GetChildNode("fee") is { } nullNodeFee && nullNodeFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fee = null;
-            if (parseNode.GetChildNode("grand_total") is { } nullNodeGrandTotal && nullNodeGrandTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrandTotal = null;
-            if (parseNode.GetChildNode("grand_total_tax") is { } nullNodeGrandTotalTax && nullNodeGrandTotalTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrandTotalTax = null;
-            if (parseNode.GetChildNode("retained_fee") is { } nullNodeRetainedFee && nullNodeRetainedFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetainedFee = null;
-            if (parseNode.GetChildNode("subtotal") is { } nullNodeSubtotal && nullNodeSubtotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtotal = null;
-            if (parseNode.GetChildNode("tax") is { } nullNodeTax && nullNodeTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tax = null;
-            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("currency_code") is null) { _explicitNullValueCurrencyCode = default!; _explicitNullProperties?.Remove("currency_code"); }
+            else if (parseNode.GetChildNode("currency_code") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
+            if (parseNode.GetChildNode("earnings") is null) { _explicitNullValueEarnings = default!; _explicitNullProperties?.Remove("earnings"); }
+            else if (parseNode.GetChildNode("earnings") is { } nullNodeEarnings && nullNodeEarnings.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Earnings = null;
+            if (parseNode.GetChildNode("fee") is null) { _explicitNullValueFee = default!; _explicitNullProperties?.Remove("fee"); }
+            else if (parseNode.GetChildNode("fee") is { } nullNodeFee && nullNodeFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fee = null;
+            if (parseNode.GetChildNode("grand_total") is null) { _explicitNullValueGrandTotal = default!; _explicitNullProperties?.Remove("grand_total"); }
+            else if (parseNode.GetChildNode("grand_total") is { } nullNodeGrandTotal && nullNodeGrandTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrandTotal = null;
+            if (parseNode.GetChildNode("grand_total_tax") is null) { _explicitNullValueGrandTotalTax = default!; _explicitNullProperties?.Remove("grand_total_tax"); }
+            else if (parseNode.GetChildNode("grand_total_tax") is { } nullNodeGrandTotalTax && nullNodeGrandTotalTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrandTotalTax = null;
+            if (parseNode.GetChildNode("retained_fee") is null) { _explicitNullValueRetainedFee = default!; _explicitNullProperties?.Remove("retained_fee"); }
+            else if (parseNode.GetChildNode("retained_fee") is { } nullNodeRetainedFee && nullNodeRetainedFee.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RetainedFee = null;
+            if (parseNode.GetChildNode("subtotal") is null) { _explicitNullValueSubtotal = default!; _explicitNullProperties?.Remove("subtotal"); }
+            else if (parseNode.GetChildNode("subtotal") is { } nullNodeSubtotal && nullNodeSubtotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtotal = null;
+            if (parseNode.GetChildNode("tax") is null) { _explicitNullValueTax = default!; _explicitNullProperties?.Remove("tax"); }
+            else if (parseNode.GetChildNode("tax") is { } nullNodeTax && nullNodeTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tax = null;
+            if (parseNode.GetChildNode("total") is null) { _explicitNullValueTotal = default!; _explicitNullProperties?.Remove("total"); }
+            else if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Three-letter ISO 4217 currency code of the currency used for this transaction.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataDetailsAdjustedTotalsCurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataDetailsAdjustedTotalsCurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataDetailsAdjustedTotalsCurrencyCode? _explicitNullValueCurrencyCode = default!;
         /// <summary>Total earnings for this transaction. This is the total minus the fee.`null` until the transaction is `completed` and the fee is processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Earnings { get => _explicitNullValueEarnings; set { _explicitNullValueEarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("earnings"); else _explicitNullProperties?.Remove("earnings"); } }
+        public string? Earnings { get => _explicitNullValueEarnings; set { _explicitNullValueEarnings = value; AdditionalData?.Remove("earnings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("earnings"); else _explicitNullProperties?.Remove("earnings"); } }
         private string? _explicitNullValueEarnings = default!;
 #nullable restore
 #else
-        public string Earnings { get => _explicitNullValueEarnings; set { _explicitNullValueEarnings = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("earnings"); else _explicitNullProperties?.Remove("earnings"); } }
+        public string Earnings { get => _explicitNullValueEarnings; set { _explicitNullValueEarnings = value; AdditionalData?.Remove("earnings"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("earnings"); else _explicitNullProperties?.Remove("earnings"); } }
         private string _explicitNullValueEarnings = default!;
 #endif
         /// <summary>Total fee taken by Paddle for this transaction. `null` until the transaction is `completed` and the fee is processed.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Fee { get => _explicitNullValueFee; set { _explicitNullValueFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fee"); else _explicitNullProperties?.Remove("fee"); } }
+        public string? Fee { get => _explicitNullValueFee; set { _explicitNullValueFee = value; AdditionalData?.Remove("fee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fee"); else _explicitNullProperties?.Remove("fee"); } }
         private string? _explicitNullValueFee = default!;
 #nullable restore
 #else
-        public string Fee { get => _explicitNullValueFee; set { _explicitNullValueFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fee"); else _explicitNullProperties?.Remove("fee"); } }
+        public string Fee { get => _explicitNullValueFee; set { _explicitNullValueFee = value; AdditionalData?.Remove("fee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fee"); else _explicitNullProperties?.Remove("fee"); } }
         private string _explicitNullValueFee = default!;
 #endif
         /// <summary>Total due after credits but before any payments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GrandTotal { get => _explicitNullValueGrandTotal; set { _explicitNullValueGrandTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grand_total"); else _explicitNullProperties?.Remove("grand_total"); } }
+        public string? GrandTotal { get => _explicitNullValueGrandTotal; set { _explicitNullValueGrandTotal = value; AdditionalData?.Remove("grand_total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grand_total"); else _explicitNullProperties?.Remove("grand_total"); } }
         private string? _explicitNullValueGrandTotal = default!;
 #nullable restore
 #else
-        public string GrandTotal { get => _explicitNullValueGrandTotal; set { _explicitNullValueGrandTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grand_total"); else _explicitNullProperties?.Remove("grand_total"); } }
+        public string GrandTotal { get => _explicitNullValueGrandTotal; set { _explicitNullValueGrandTotal = value; AdditionalData?.Remove("grand_total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grand_total"); else _explicitNullProperties?.Remove("grand_total"); } }
         private string _explicitNullValueGrandTotal = default!;
 #endif
         /// <summary>Net tax amount included in `grand_total`. Equals the full `tax` amount unless credits are applied, in which case this value is proportionally reduced.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? GrandTotalTax { get => _explicitNullValueGrandTotalTax; set { _explicitNullValueGrandTotalTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grand_total_tax"); else _explicitNullProperties?.Remove("grand_total_tax"); } }
+        public string? GrandTotalTax { get => _explicitNullValueGrandTotalTax; set { _explicitNullValueGrandTotalTax = value; AdditionalData?.Remove("grand_total_tax"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grand_total_tax"); else _explicitNullProperties?.Remove("grand_total_tax"); } }
         private string? _explicitNullValueGrandTotalTax = default!;
 #nullable restore
 #else
-        public string GrandTotalTax { get => _explicitNullValueGrandTotalTax; set { _explicitNullValueGrandTotalTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grand_total_tax"); else _explicitNullProperties?.Remove("grand_total_tax"); } }
+        public string GrandTotalTax { get => _explicitNullValueGrandTotalTax; set { _explicitNullValueGrandTotalTax = value; AdditionalData?.Remove("grand_total_tax"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("grand_total_tax"); else _explicitNullProperties?.Remove("grand_total_tax"); } }
         private string _explicitNullValueGrandTotalTax = default!;
 #endif
         /// <summary>Total Paddle fees retained for this adjustment.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RetainedFee { get => _explicitNullValueRetainedFee; set { _explicitNullValueRetainedFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retained_fee"); else _explicitNullProperties?.Remove("retained_fee"); } }
+        public string? RetainedFee { get => _explicitNullValueRetainedFee; set { _explicitNullValueRetainedFee = value; AdditionalData?.Remove("retained_fee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retained_fee"); else _explicitNullProperties?.Remove("retained_fee"); } }
         private string? _explicitNullValueRetainedFee = default!;
 #nullable restore
 #else
-        public string RetainedFee { get => _explicitNullValueRetainedFee; set { _explicitNullValueRetainedFee = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retained_fee"); else _explicitNullProperties?.Remove("retained_fee"); } }
+        public string RetainedFee { get => _explicitNullValueRetainedFee; set { _explicitNullValueRetainedFee = value; AdditionalData?.Remove("retained_fee"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("retained_fee"); else _explicitNullProperties?.Remove("retained_fee"); } }
         private string _explicitNullValueRetainedFee = default!;
 #endif
         /// <summary>Subtotal before discount, tax, and deductions. If an item, unit price multiplied by quantity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subtotal { get => _explicitNullValueSubtotal; set { _explicitNullValueSubtotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotal"); else _explicitNullProperties?.Remove("subtotal"); } }
+        public string? Subtotal { get => _explicitNullValueSubtotal; set { _explicitNullValueSubtotal = value; AdditionalData?.Remove("subtotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotal"); else _explicitNullProperties?.Remove("subtotal"); } }
         private string? _explicitNullValueSubtotal = default!;
 #nullable restore
 #else
-        public string Subtotal { get => _explicitNullValueSubtotal; set { _explicitNullValueSubtotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotal"); else _explicitNullProperties?.Remove("subtotal"); } }
+        public string Subtotal { get => _explicitNullValueSubtotal; set { _explicitNullValueSubtotal = value; AdditionalData?.Remove("subtotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotal"); else _explicitNullProperties?.Remove("subtotal"); } }
         private string _explicitNullValueSubtotal = default!;
 #endif
         /// <summary>Total tax on the subtotal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tax { get => _explicitNullValueTax; set { _explicitNullValueTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax"); else _explicitNullProperties?.Remove("tax"); } }
+        public string? Tax { get => _explicitNullValueTax; set { _explicitNullValueTax = value; AdditionalData?.Remove("tax"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax"); else _explicitNullProperties?.Remove("tax"); } }
         private string? _explicitNullValueTax = default!;
 #nullable restore
 #else
-        public string Tax { get => _explicitNullValueTax; set { _explicitNullValueTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax"); else _explicitNullProperties?.Remove("tax"); } }
+        public string Tax { get => _explicitNullValueTax; set { _explicitNullValueTax = value; AdditionalData?.Remove("tax"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax"); else _explicitNullProperties?.Remove("tax"); } }
         private string _explicitNullValueTax = default!;
 #endif
         /// <summary>Total after tax.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public string? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private string? _explicitNullValueTotal = default!;
 #nullable restore
 #else
-        public string Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public string Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private string _explicitNullValueTotal = default!;
 #endif
         /// <summary>
@@ -139,7 +148,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataDetailsAdjustedTotalsCurrencyCode>(); } },
+                { "currency_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataDetailsAdjustedTotalsCurrencyCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCurrencyCode = default; _explicitNullProperties?.Remove("currency_code"); AdditionalData["currency_code"] = unknown; } else { CurrencyCode = parsed; AdditionalData.Remove("currency_code"); } } },
                 { "earnings", n => { Earnings = n.GetStringValue(); } },
                 { "fee", n => { Fee = n.GetStringValue(); } },
                 { "grand_total", n => { GrandTotal = n.GetStringValue(); } },

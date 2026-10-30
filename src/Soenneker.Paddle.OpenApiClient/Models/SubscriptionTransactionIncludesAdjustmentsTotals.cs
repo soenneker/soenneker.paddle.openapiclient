@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("breakdown") is { } nullNodeBreakdown && nullNodeBreakdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Breakdown = null;
-            if (parseNode.GetChildNode("currency_code") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
+            if (parseNode.GetChildNode("breakdown") is null) { _explicitNullValueBreakdown = default!; _explicitNullProperties?.Remove("breakdown"); }
+            else if (parseNode.GetChildNode("breakdown") is { } nullNodeBreakdown && nullNodeBreakdown.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Breakdown = null;
+            if (parseNode.GetChildNode("currency_code") is null) { _explicitNullValueCurrencyCode = default!; _explicitNullProperties?.Remove("currency_code"); }
+            else if (parseNode.GetChildNode("currency_code") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Breakdown of the total adjustments by adjustment action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed? Breakdown { get => _explicitNullValueBreakdown; set { _explicitNullValueBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdown"); else _explicitNullProperties?.Remove("breakdown"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed? Breakdown { get => _explicitNullValueBreakdown; set { _explicitNullValueBreakdown = value; AdditionalData?.Remove("breakdown"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdown"); else _explicitNullProperties?.Remove("breakdown"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed? _explicitNullValueBreakdown = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed Breakdown { get => _explicitNullValueBreakdown; set { _explicitNullValueBreakdown = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdown"); else _explicitNullProperties?.Remove("breakdown"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed Breakdown { get => _explicitNullValueBreakdown; set { _explicitNullValueBreakdown = value; AdditionalData?.Remove("breakdown"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("breakdown"); else _explicitNullProperties?.Remove("breakdown"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed _explicitNullValueBreakdown = default!;
 #endif
         /// <summary>Supported three-letter ISO 4217 currency code.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeCurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeCurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeCurrencyCode? _explicitNullValueCurrencyCode = default!;
         /// <summary>Total earnings. This is the subtotal minus the fee.For tax adjustments, this value is negative, which means a positive effect in the transaction earnings.This is because the fee is originally calculated from the transaction total, so if a tax adjustment is made,then the fee portion of it is returned.As a result, the earnings from all the adjustments performed could be either negative, positive or zero.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -111,7 +113,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "breakdown", n => { Breakdown = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeBreakdownComposed.CreateFromDiscriminatorValue); } },
-                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeCurrencyCode>(); } },
+                { "currency_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionAdjustmentsTotalsIncludeCurrencyCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCurrencyCode = default; _explicitNullProperties?.Remove("currency_code"); AdditionalData["currency_code"] = unknown; } else { CurrencyCode = parsed; AdditionalData.Remove("currency_code"); } } },
                 { "earnings", n => { Earnings = n.GetStringValue(); } },
                 { "fee", n => { Fee = n.GetStringValue(); } },
                 { "retained_fee", n => { RetainedFee = n.GetStringValue(); } },

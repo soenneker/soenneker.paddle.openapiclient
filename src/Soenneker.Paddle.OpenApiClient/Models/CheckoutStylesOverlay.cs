@@ -18,7 +18,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("primary_checkout_color") is { } nullNodePrimaryCheckoutColor && nullNodePrimaryCheckoutColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryCheckoutColor = null;
+            if (parseNode.GetChildNode("primary_checkout_color") is null) { _explicitNullValuePrimaryCheckoutColor = default!; _explicitNullProperties?.Remove("primary_checkout_color"); }
+            else if (parseNode.GetChildNode("primary_checkout_color") is { } nullNodePrimaryCheckoutColor && nullNodePrimaryCheckoutColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryCheckoutColor = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Brand color for overlay checkout, as a six-digit hex code including the leading `#`.`null` when no brand color is set, in which case the default checkout color applies.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayPrimaryCheckoutColor? PrimaryCheckoutColor { get => _explicitNullValuePrimaryCheckoutColor; set { _explicitNullValuePrimaryCheckoutColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_checkout_color"); else _explicitNullProperties?.Remove("primary_checkout_color"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayPrimaryCheckoutColor? PrimaryCheckoutColor { get => _explicitNullValuePrimaryCheckoutColor; set { _explicitNullValuePrimaryCheckoutColor = value; AdditionalData?.Remove("primary_checkout_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_checkout_color"); else _explicitNullProperties?.Remove("primary_checkout_color"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayPrimaryCheckoutColor? _explicitNullValuePrimaryCheckoutColor = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayPrimaryCheckoutColor PrimaryCheckoutColor { get => _explicitNullValuePrimaryCheckoutColor; set { _explicitNullValuePrimaryCheckoutColor = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_checkout_color"); else _explicitNullProperties?.Remove("primary_checkout_color"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayPrimaryCheckoutColor PrimaryCheckoutColor { get => _explicitNullValuePrimaryCheckoutColor; set { _explicitNullValuePrimaryCheckoutColor = value; AdditionalData?.Remove("primary_checkout_color"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("primary_checkout_color"); else _explicitNullProperties?.Remove("primary_checkout_color"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutStylesOverlayPrimaryCheckoutColor _explicitNullValuePrimaryCheckoutColor = default!;
 #endif
         /// <summary>

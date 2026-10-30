@@ -18,7 +18,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("overview") is { } nullNodeOverview && nullNodeOverview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Overview = null;
+            if (parseNode.GetChildNode("overview") is null) { _explicitNullValueOverview = default!; _explicitNullProperties?.Remove("overview"); }
+            else if (parseNode.GetChildNode("overview") is { } nullNodeOverview && nullNodeOverview.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Overview = null;
         }
 
         /// <summary>Link to the overview page in the customer portal.</summary>

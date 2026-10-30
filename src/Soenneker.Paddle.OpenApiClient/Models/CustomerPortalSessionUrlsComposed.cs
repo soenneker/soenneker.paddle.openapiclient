@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("general") is { } nullNodeGeneral && nullNodeGeneral.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) General = null;
-            if (parseNode.GetChildNode("subscriptions") is { } nullNodeSubscriptions && nullNodeSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriptions = null;
+            if (parseNode.GetChildNode("general") is null) { _explicitNullValueGeneral = default!; _explicitNullProperties?.Remove("general"); }
+            else if (parseNode.GetChildNode("general") is { } nullNodeGeneral && nullNodeGeneral.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) General = null;
+            if (parseNode.GetChildNode("subscriptions") is null) { _explicitNullValueSubscriptions = default!; _explicitNullProperties?.Remove("subscriptions"); }
+            else if (parseNode.GetChildNode("subscriptions") is { } nullNodeSubscriptions && nullNodeSubscriptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subscriptions = null;
         }
 
         /// <summary>Authenticated customer portal deep links that aren&apos;t associated with a specific entity.</summary>

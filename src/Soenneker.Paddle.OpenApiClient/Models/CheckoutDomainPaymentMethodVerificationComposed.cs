@@ -17,7 +17,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("apple_pay") is { } nullNodeApplePay && nullNodeApplePay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplePay = null;
+            if (parseNode.GetChildNode("apple_pay") is null) { _explicitNullValueApplePay = default!; _explicitNullProperties?.Remove("apple_pay"); }
+            else if (parseNode.GetChildNode("apple_pay") is { } nullNodeApplePay && nullNodeApplePay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApplePay = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Apple Pay verification status for this checkout domain.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutDomainApplePayVerification? ApplePay { get => _explicitNullValueApplePay; set { _explicitNullValueApplePay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apple_pay"); else _explicitNullProperties?.Remove("apple_pay"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutDomainApplePayVerification? ApplePay { get => _explicitNullValueApplePay; set { _explicitNullValueApplePay = value; AdditionalData?.Remove("apple_pay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apple_pay"); else _explicitNullProperties?.Remove("apple_pay"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutDomainApplePayVerification? _explicitNullValueApplePay = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutDomainApplePayVerification ApplePay { get => _explicitNullValueApplePay; set { _explicitNullValueApplePay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apple_pay"); else _explicitNullProperties?.Remove("apple_pay"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutDomainApplePayVerification ApplePay { get => _explicitNullValueApplePay; set { _explicitNullValueApplePay = value; AdditionalData?.Remove("apple_pay"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("apple_pay"); else _explicitNullProperties?.Remove("apple_pay"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutDomainApplePayVerification _explicitNullValueApplePay = default!;
 #endif
         /// <summary>

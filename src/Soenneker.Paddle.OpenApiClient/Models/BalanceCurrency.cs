@@ -18,7 +18,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("preferred") is { } nullNodePreferred && nullNodePreferred.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preferred = null;
+            if (parseNode.GetChildNode("preferred") is null) { _explicitNullValuePreferred = default!; _explicitNullProperties?.Remove("preferred"); }
+            else if (parseNode.GetChildNode("preferred") is { } nullNodePreferred && nullNodePreferred.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Preferred = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,7 +33,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public List<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyCode?> Enabled { get; private set; }
 #endif
         /// <summary>Supported three-letter ISO 4217 currency code for balance currencies.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPreferred? Preferred { get => _explicitNullValuePreferred; set { _explicitNullValuePreferred = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred"); else _explicitNullProperties?.Remove("preferred"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPreferred? Preferred { get => _explicitNullValuePreferred; set { _explicitNullValuePreferred = value; AdditionalData?.Remove("preferred"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preferred"); else _explicitNullProperties?.Remove("preferred"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPreferred? _explicitNullValuePreferred = default!;
         /// <summary>Supported three-letter ISO 4217 currency code for balance currencies.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPrimary? Primary { get; private set; }
@@ -62,7 +63,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "enabled", n => { Enabled = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyCode>()?.AsList(); } },
-                { "preferred", n => { Preferred = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPreferred>(); } },
+                { "preferred", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPreferred>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePreferred = default; _explicitNullProperties?.Remove("preferred"); AdditionalData["preferred"] = unknown; } else { Preferred = parsed; AdditionalData.Remove("preferred"); } } },
                 { "primary", n => { Primary = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.BalanceCurrencyPrimary>(); } },
             };
         }

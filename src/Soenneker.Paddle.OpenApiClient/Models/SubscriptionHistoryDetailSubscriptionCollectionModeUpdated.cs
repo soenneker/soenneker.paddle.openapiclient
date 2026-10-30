@@ -18,17 +18,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("collection_mode") is { } nullNodeCollectionMode && nullNodeCollectionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectionMode = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("collection_mode") is null) { _explicitNullValueCollectionMode = default!; _explicitNullProperties?.Remove("collection_mode"); }
+            else if (parseNode.GetChildNode("collection_mode") is { } nullNodeCollectionMode && nullNodeCollectionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectionMode = null;
         }
 
         /// <summary>What happened on the subscription.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCollectionModeUpdatedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCollectionModeUpdatedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCollectionModeUpdatedAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How payment is collected. `automatic` for checkout, `manual` for invoices.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdatedCollectionMode? CollectionMode { get => _explicitNullValueCollectionMode; set { _explicitNullValueCollectionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collection_mode"); else _explicitNullProperties?.Remove("collection_mode"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdatedCollectionMode? CollectionMode { get => _explicitNullValueCollectionMode; set { _explicitNullValueCollectionMode = value; AdditionalData?.Remove("collection_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collection_mode"); else _explicitNullProperties?.Remove("collection_mode"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdatedCollectionMode? _explicitNullValueCollectionMode = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdated"/> and sets the default values.
@@ -55,8 +57,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCollectionModeUpdatedAction>(); } },
-                { "collection_mode", n => { CollectionMode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdatedCollectionMode>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCollectionModeUpdatedAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
+                { "collection_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionCollectionModeUpdatedCollectionMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCollectionMode = default; _explicitNullProperties?.Remove("collection_mode"); AdditionalData["collection_mode"] = unknown; } else { CollectionMode = parsed; AdditionalData.Remove("collection_mode"); } } },
             };
         }
         /// <summary>

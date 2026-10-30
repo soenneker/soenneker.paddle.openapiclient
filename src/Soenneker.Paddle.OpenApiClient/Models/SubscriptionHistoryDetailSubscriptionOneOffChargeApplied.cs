@@ -18,42 +18,47 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("effective_from") is { } nullNodeEffectiveFrom && nullNodeEffectiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveFrom = null;
-            if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
-            if (parseNode.GetChildNode("on_payment_failure") is { } nullNodeOnPaymentFailure && nullNodeOnPaymentFailure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnPaymentFailure = null;
-            if (parseNode.GetChildNode("transaction_id") is { } nullNodeTransactionId && nullNodeTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionId = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("effective_from") is null) { _explicitNullValueEffectiveFrom = default!; _explicitNullProperties?.Remove("effective_from"); }
+            else if (parseNode.GetChildNode("effective_from") is { } nullNodeEffectiveFrom && nullNodeEffectiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveFrom = null;
+            if (parseNode.GetChildNode("items") is null) { _explicitNullValueItems = default!; _explicitNullProperties?.Remove("items"); }
+            else if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
+            if (parseNode.GetChildNode("on_payment_failure") is null) { _explicitNullValueOnPaymentFailure = default!; _explicitNullProperties?.Remove("on_payment_failure"); }
+            else if (parseNode.GetChildNode("on_payment_failure") is { } nullNodeOnPaymentFailure && nullNodeOnPaymentFailure.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnPaymentFailure = null;
+            if (parseNode.GetChildNode("transaction_id") is null) { _explicitNullValueTransactionId = default!; _explicitNullProperties?.Remove("transaction_id"); }
+            else if (parseNode.GetChildNode("transaction_id") is { } nullNodeTransactionId && nullNodeTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionId = null;
         }
 
         /// <summary>What happened on the subscription.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOneOffChargeAppliedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOneOffChargeAppliedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOneOffChargeAppliedAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When the customer was or will be billed for the one-off charge.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeAppliedEffectiveFrom? EffectiveFrom { get => _explicitNullValueEffectiveFrom; set { _explicitNullValueEffectiveFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_from"); else _explicitNullProperties?.Remove("effective_from"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeAppliedEffectiveFrom? EffectiveFrom { get => _explicitNullValueEffectiveFrom; set { _explicitNullValueEffectiveFrom = value; AdditionalData?.Remove("effective_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_from"); else _explicitNullProperties?.Remove("effective_from"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeAppliedEffectiveFrom? _explicitNullValueEffectiveFrom = default!;
         /// <summary>Items that were charged as part of the one-off charge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; AdditionalData?.Remove("items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem>? _explicitNullValueItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; AdditionalData?.Remove("items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem> _explicitNullValueItems = default!;
 #endif
         /// <summary>How Paddle should handle changes made to a subscription or its items if the payment fails during update. If omitted, defaults to `prevent_change`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeAppliedOnPaymentFailure? OnPaymentFailure { get => _explicitNullValueOnPaymentFailure; set { _explicitNullValueOnPaymentFailure = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_payment_failure"); else _explicitNullProperties?.Remove("on_payment_failure"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeAppliedOnPaymentFailure? OnPaymentFailure { get => _explicitNullValueOnPaymentFailure; set { _explicitNullValueOnPaymentFailure = value; AdditionalData?.Remove("on_payment_failure"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_payment_failure"); else _explicitNullProperties?.Remove("on_payment_failure"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeAppliedOnPaymentFailure? _explicitNullValueOnPaymentFailure = default!;
         /// <summary>Paddle ID of the transaction created for the one-off charge, prefixed with `txn_`. `null` if no transaction was created.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransactionId { get => _explicitNullValueTransactionId; set { _explicitNullValueTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_id"); else _explicitNullProperties?.Remove("transaction_id"); } }
+        public string? TransactionId { get => _explicitNullValueTransactionId; set { _explicitNullValueTransactionId = value; AdditionalData?.Remove("transaction_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_id"); else _explicitNullProperties?.Remove("transaction_id"); } }
         private string? _explicitNullValueTransactionId = default!;
 #nullable restore
 #else
-        public string TransactionId { get => _explicitNullValueTransactionId; set { _explicitNullValueTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_id"); else _explicitNullProperties?.Remove("transaction_id"); } }
+        public string TransactionId { get => _explicitNullValueTransactionId; set { _explicitNullValueTransactionId = value; AdditionalData?.Remove("transaction_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_id"); else _explicitNullProperties?.Remove("transaction_id"); } }
         private string _explicitNullValueTransactionId = default!;
 #endif
         /// <summary>
@@ -81,10 +86,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOneOffChargeAppliedAction>(); } },
-                { "effective_from", n => { EffectiveFrom = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeAppliedEffectiveFrom>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionOneOffChargeAppliedAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
+                { "effective_from", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeAppliedEffectiveFrom>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEffectiveFrom = default; _explicitNullProperties?.Remove("effective_from"); AdditionalData["effective_from"] = unknown; } else { EffectiveFrom = parsed; AdditionalData.Remove("effective_from"); } } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "on_payment_failure", n => { OnPaymentFailure = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeAppliedOnPaymentFailure>(); } },
+                { "on_payment_failure", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionOneOffChargeAppliedOnPaymentFailure>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOnPaymentFailure = default; _explicitNullProperties?.Remove("on_payment_failure"); AdditionalData["on_payment_failure"] = unknown; } else { OnPaymentFailure = parsed; AdditionalData.Remove("on_payment_failure"); } } },
                 { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
             };
         }

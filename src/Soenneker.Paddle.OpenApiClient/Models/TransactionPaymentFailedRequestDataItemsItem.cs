@@ -17,9 +17,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
-            if (parseNode.GetChildNode("proration") is { } nullNodeProration && nullNodeProration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proration = null;
-            if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
+            if (parseNode.GetChildNode("price") is null) { _explicitNullValuePrice = default!; _explicitNullProperties?.Remove("price"); }
+            else if (parseNode.GetChildNode("price") is { } nullNodePrice && nullNodePrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Price = null;
+            if (parseNode.GetChildNode("proration") is null) { _explicitNullValueProration = default!; _explicitNullProperties?.Remove("proration"); }
+            else if (parseNode.GetChildNode("proration") is { } nullNodeProration && nullNodeProration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proration = null;
+            if (parseNode.GetChildNode("quantity") is null) { _explicitNullValueQuantity = default!; _explicitNullProperties?.Remove("quantity"); }
+            else if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,25 +30,25 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Represents a price entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataItemsItemPrice? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataItemsItemPrice? Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; AdditionalData?.Remove("price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataItemsItemPrice? _explicitNullValuePrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataItemsItemPrice Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataItemsItemPrice Price { get => _explicitNullValuePrice; set { _explicitNullValuePrice = value; AdditionalData?.Remove("price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("price"); else _explicitNullProperties?.Remove("price"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataItemsItemPrice _explicitNullValuePrice = default!;
 #endif
         /// <summary>How proration was calculated for this item. Populated when a transaction is created from a subscription change, where `proration_billing_mode` was `prorated_immediately` or `prorated_next_billing_period`. Set automatically by Paddle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataItemsItemProration? Proration { get => _explicitNullValueProration; set { _explicitNullValueProration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proration"); else _explicitNullProperties?.Remove("proration"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataItemsItemProration? Proration { get => _explicitNullValueProration; set { _explicitNullValueProration = value; AdditionalData?.Remove("proration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proration"); else _explicitNullProperties?.Remove("proration"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataItemsItemProration? _explicitNullValueProration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataItemsItemProration Proration { get => _explicitNullValueProration; set { _explicitNullValueProration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proration"); else _explicitNullProperties?.Remove("proration"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataItemsItemProration Proration { get => _explicitNullValueProration; set { _explicitNullValueProration = value; AdditionalData?.Remove("proration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proration"); else _explicitNullProperties?.Remove("proration"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataItemsItemProration _explicitNullValueProration = default!;
 #endif
         /// <summary>Quantity of this item on the transaction.</summary>
-        public int? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
+        public int? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; AdditionalData?.Remove("quantity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
         private int? _explicitNullValueQuantity = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataItemsItem"/> and sets the default values.

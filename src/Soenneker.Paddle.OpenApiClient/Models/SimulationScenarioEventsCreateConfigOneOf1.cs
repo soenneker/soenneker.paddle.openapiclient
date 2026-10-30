@@ -18,7 +18,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("subscription_cancellation") is { } nullNodeSubscriptionCancellation && nullNodeSubscriptionCancellation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionCancellation = null;
+            if (parseNode.GetChildNode("subscription_cancellation") is null) { _explicitNullValueSubscriptionCancellation = default!; _explicitNullProperties?.Remove("subscription_cancellation"); }
+            else if (parseNode.GetChildNode("subscription_cancellation") is { } nullNodeSubscriptionCancellation && nullNodeSubscriptionCancellation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionCancellation = null;
         }
 
         /// <summary>Configuration for subscription canceled simulations.</summary>

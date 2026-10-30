@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("country_codes") is { } nullNodeCountryCodes && nullNodeCountryCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCodes = null;
-            if (parseNode.GetChildNode("unit_price") is { } nullNodeUnitPrice && nullNodeUnitPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitPrice = null;
+            if (parseNode.GetChildNode("country_codes") is null) { _explicitNullValueCountryCodes = default!; _explicitNullProperties?.Remove("country_codes"); }
+            else if (parseNode.GetChildNode("country_codes") is { } nullNodeCountryCodes && nullNodeCountryCodes.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCodes = null;
+            if (parseNode.GetChildNode("unit_price") is null) { _explicitNullValueUnitPrice = default!; _explicitNullProperties?.Remove("unit_price"); }
+            else if (parseNode.GetChildNode("unit_price") is { } nullNodeUnitPrice && nullNodeUnitPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitPrice = null;
         }
 
         /// <summary>Supported two-letter ISO 3166-1 alpha-2 country code. Customers located in the listed countries are charged the override price.</summary>

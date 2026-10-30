@@ -18,55 +18,63 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currency_code") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
-            if (parseNode.GetChildNode("ends_at") is { } nullNodeEndsAt && nullNodeEndsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndsAt = null;
-            if (parseNode.GetChildNode("entity") is { } nullNodeEntity && nullNodeEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entity = null;
-            if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
-            if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
-            if (parseNode.GetChildNode("series") is { } nullNodeSeries && nullNodeSeries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Series = null;
-            if (parseNode.GetChildNode("starts_at") is { } nullNodeStartsAt && nullNodeStartsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsAt = null;
-            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("currency_code") is null) { _explicitNullValueCurrencyCode = default!; _explicitNullProperties?.Remove("currency_code"); }
+            else if (parseNode.GetChildNode("currency_code") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
+            if (parseNode.GetChildNode("ends_at") is null) { _explicitNullValueEndsAt = default!; _explicitNullProperties?.Remove("ends_at"); }
+            else if (parseNode.GetChildNode("ends_at") is { } nullNodeEndsAt && nullNodeEndsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndsAt = null;
+            if (parseNode.GetChildNode("entity") is null) { _explicitNullValueEntity = default!; _explicitNullProperties?.Remove("entity"); }
+            else if (parseNode.GetChildNode("entity") is { } nullNodeEntity && nullNodeEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entity = null;
+            if (parseNode.GetChildNode("fields") is null) { _explicitNullValueFields = default!; _explicitNullProperties?.Remove("fields"); }
+            else if (parseNode.GetChildNode("fields") is { } nullNodeFields && nullNodeFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Fields = null;
+            if (parseNode.GetChildNode("interval") is null) { _explicitNullValueInterval = default!; _explicitNullProperties?.Remove("interval"); }
+            else if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
+            if (parseNode.GetChildNode("series") is null) { _explicitNullValueSeries = default!; _explicitNullProperties?.Remove("series"); }
+            else if (parseNode.GetChildNode("series") is { } nullNodeSeries && nullNodeSeries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Series = null;
+            if (parseNode.GetChildNode("starts_at") is null) { _explicitNullValueStartsAt = default!; _explicitNullProperties?.Remove("starts_at"); }
+            else if (parseNode.GetChildNode("starts_at") is { } nullNodeStartsAt && nullNodeStartsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsAt = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Supported three-letter ISO 4217 currency code.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataCurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataCurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataCurrencyCode? _explicitNullValueCurrencyCode = default!;
         /// <summary>RFC 3339 datetime string.</summary>
-        public DateTimeOffset? EndsAt { get => _explicitNullValueEndsAt; set { _explicitNullValueEndsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ends_at"); else _explicitNullProperties?.Remove("ends_at"); } }
+        public DateTimeOffset? EndsAt { get => _explicitNullValueEndsAt; set { _explicitNullValueEndsAt = value; AdditionalData?.Remove("ends_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ends_at"); else _explicitNullProperties?.Remove("ends_at"); } }
         private DateTimeOffset? _explicitNullValueEndsAt = default!;
         /// <summary>Entity name for a queryable Explore metric. Pass it as the `entity` when you query.`subscriptions` isn&apos;t available in sandbox, where it&apos;s treated as `unknown_entity`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataEntity? Entity { get => _explicitNullValueEntity; set { _explicitNullValueEntity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity"); else _explicitNullProperties?.Remove("entity"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataEntity? Entity { get => _explicitNullValueEntity; set { _explicitNullValueEntity = value; AdditionalData?.Remove("entity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity"); else _explicitNullProperties?.Remove("entity"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataEntity? _explicitNullValueEntity = default!;
         /// <summary>Describes the dimension and measure fields in this result.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields? Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; AdditionalData?.Remove("fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields? _explicitNullValueFields = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields Fields { get => _explicitNullValueFields; set { _explicitNullValueFields = value; AdditionalData?.Remove("fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fields"); else _explicitNullProperties?.Remove("fields"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields _explicitNullValueFields = default!;
 #endif
         /// <summary>Interval that a metric query is bucketed by. Buckets are UTC, and weeks start on Monday.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataInterval? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataInterval? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; AdditionalData?.Remove("interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataInterval? _explicitNullValueInterval = default!;
         /// <summary>One entry per segment (dimension combination), each carrying its full time series. Capped by `per_page`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries>? Series { get => _explicitNullValueSeries; set { _explicitNullValueSeries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("series"); else _explicitNullProperties?.Remove("series"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries>? Series { get => _explicitNullValueSeries; set { _explicitNullValueSeries = value; AdditionalData?.Remove("series"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("series"); else _explicitNullProperties?.Remove("series"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries>? _explicitNullValueSeries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries> Series { get => _explicitNullValueSeries; set { _explicitNullValueSeries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("series"); else _explicitNullProperties?.Remove("series"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries> Series { get => _explicitNullValueSeries; set { _explicitNullValueSeries = value; AdditionalData?.Remove("series"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("series"); else _explicitNullProperties?.Remove("series"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries> _explicitNullValueSeries = default!;
 #endif
         /// <summary>RFC 3339 datetime string.</summary>
-        public DateTimeOffset? StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starts_at"); else _explicitNullProperties?.Remove("starts_at"); } }
+        public DateTimeOffset? StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; AdditionalData?.Remove("starts_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starts_at"); else _explicitNullProperties?.Remove("starts_at"); } }
         private DateTimeOffset? _explicitNullValueStartsAt = default!;
         /// <summary>RFC 3339 datetime string.</summary>
-        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreData"/> and sets the default values.
@@ -93,11 +101,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataCurrencyCode>(); } },
+                { "currency_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataCurrencyCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCurrencyCode = default; _explicitNullProperties?.Remove("currency_code"); AdditionalData["currency_code"] = unknown; } else { CurrencyCode = parsed; AdditionalData.Remove("currency_code"); } } },
                 { "ends_at", n => { EndsAt = n.GetDateTimeOffsetValue(); } },
-                { "entity", n => { Entity = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataEntity>(); } },
+                { "entity", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataEntity>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEntity = default; _explicitNullProperties?.Remove("entity"); AdditionalData["entity"] = unknown; } else { Entity = parsed; AdditionalData.Remove("entity"); } } },
                 { "fields", n => { Fields = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataFields.CreateFromDiscriminatorValue); } },
-                { "interval", n => { Interval = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataInterval>(); } },
+                { "interval", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataInterval>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInterval = default; _explicitNullProperties?.Remove("interval"); AdditionalData["interval"] = unknown; } else { Interval = parsed; AdditionalData.Remove("interval"); } } },
                 { "series", n => { Series = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeries.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "starts_at", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },

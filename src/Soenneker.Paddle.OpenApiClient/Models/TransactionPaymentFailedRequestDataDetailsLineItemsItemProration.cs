@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("billing_period") is { } nullNodeBillingPeriod && nullNodeBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriod = null;
-            if (parseNode.GetChildNode("rate") is { } nullNodeRate && nullNodeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rate = null;
+            if (parseNode.GetChildNode("billing_period") is null) { _explicitNullValueBillingPeriod = default!; _explicitNullProperties?.Remove("billing_period"); }
+            else if (parseNode.GetChildNode("billing_period") is { } nullNodeBillingPeriod && nullNodeBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriod = null;
+            if (parseNode.GetChildNode("rate") is null) { _explicitNullValueRate = default!; _explicitNullProperties?.Remove("rate"); }
+            else if (parseNode.GetChildNode("rate") is { } nullNodeRate && nullNodeRate.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Rate = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Billing period that proration is based on.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataDetailsLineItemsItemProrationBillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataDetailsLineItemsItemProrationBillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; AdditionalData?.Remove("billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataDetailsLineItemsItemProrationBillingPeriod? _explicitNullValueBillingPeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataDetailsLineItemsItemProrationBillingPeriod BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataDetailsLineItemsItemProrationBillingPeriod BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; AdditionalData?.Remove("billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataDetailsLineItemsItemProrationBillingPeriod _explicitNullValueBillingPeriod = default!;
 #endif
         /// <summary>Rate used to calculate proration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
+        public string? Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; AdditionalData?.Remove("rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
         private string? _explicitNullValueRate = default!;
 #nullable restore
 #else
-        public string Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
+        public string Rate { get => _explicitNullValueRate; set { _explicitNullValueRate = value; AdditionalData?.Remove("rate"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rate"); else _explicitNullProperties?.Remove("rate"); } }
         private string _explicitNullValueRate = default!;
 #endif
         /// <summary>

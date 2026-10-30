@@ -17,8 +17,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("line_items") is { } nullNodeLineItems && nullNodeLineItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LineItems = null;
-            if (parseNode.GetChildNode("totals") is { } nullNodeTotals && nullNodeTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Totals = null;
+            if (parseNode.GetChildNode("line_items") is null) { _explicitNullValueLineItems = default!; _explicitNullProperties?.Remove("line_items"); }
+            else if (parseNode.GetChildNode("line_items") is { } nullNodeLineItems && nullNodeLineItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LineItems = null;
+            if (parseNode.GetChildNode("totals") is null) { _explicitNullValueTotals = default!; _explicitNullProperties?.Remove("totals"); }
+            else if (parseNode.GetChildNode("totals") is { } nullNodeTotals && nullNodeTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Totals = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +28,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Information about line items for this transaction preview. Different from transaction preview `items` as they include totals calculated by Paddle. Considered the source of truth for line item totals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItem>? LineItems { get => _explicitNullValueLineItems; set { _explicitNullValueLineItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line_items"); else _explicitNullProperties?.Remove("line_items"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItem>? LineItems { get => _explicitNullValueLineItems; set { _explicitNullValueLineItems = value; AdditionalData?.Remove("line_items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line_items"); else _explicitNullProperties?.Remove("line_items"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItem>? _explicitNullValueLineItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItem> LineItems { get => _explicitNullValueLineItems; set { _explicitNullValueLineItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line_items"); else _explicitNullProperties?.Remove("line_items"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItem> LineItems { get => _explicitNullValueLineItems; set { _explicitNullValueLineItems = value; AdditionalData?.Remove("line_items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("line_items"); else _explicitNullProperties?.Remove("line_items"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewLineItem> _explicitNullValueLineItems = default!;
 #endif
         /// <summary>List of tax rates applied to this transaction preview.</summary>
@@ -44,11 +46,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Breakdown of the total for a transaction preview. `fee` and `earnings` always return `null` for transaction previews.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsTotals? Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsTotals? Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; AdditionalData?.Remove("totals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsTotals? _explicitNullValueTotals = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsTotals Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsTotals Totals { get => _explicitNullValueTotals; set { _explicitNullValueTotals = value; AdditionalData?.Remove("totals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("totals"); else _explicitNullProperties?.Remove("totals"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsTotals _explicitNullValueTotals = default!;
 #endif
         /// <summary>

@@ -29998,7 +29998,7 @@
             "$ref": "#/components/schemas/AddressCountryCode"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/AddressCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/AddressStatus"
@@ -30116,28 +30116,28 @@
         "type": "object",
         "properties": {
           "description": {
-            "$ref": "#/components/schemas/AddressUpdateDescription"
+            "$ref": "#/components/schemas/AddressCreateDescription"
           },
           "first_line": {
-            "$ref": "#/components/schemas/AddressUpdateFirstLine"
+            "$ref": "#/components/schemas/AddressCreateFirstLine"
           },
           "second_line": {
-            "$ref": "#/components/schemas/AddressUpdateSecondLine"
+            "$ref": "#/components/schemas/AddressCreateSecondLine"
           },
           "city": {
-            "$ref": "#/components/schemas/AddressUpdateCity"
+            "$ref": "#/components/schemas/AddressCreateCity"
           },
           "postal_code": {
-            "$ref": "#/components/schemas/AddressUpdatePostalCode"
+            "$ref": "#/components/schemas/AddressCreatePostalCode"
           },
           "region": {
-            "$ref": "#/components/schemas/AddressUpdateRegion"
+            "$ref": "#/components/schemas/AddressCreateRegion"
           },
           "country_code": {
             "$ref": "#/components/schemas/AddressUpdateCountryCode"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/AddressUpdateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "description": "Whether this entity can be used in Paddle.",
@@ -31724,7 +31724,7 @@
             "$ref": "#/components/schemas/BusinessCreateName"
           },
           "company_number": {
-            "$ref": "#/components/schemas/BusinessCreateCompanyNumber"
+            "$ref": "#/components/schemas/BusinessCompanyNumber"
           },
           "tax_identifier": {
             "$ref": "#/components/schemas/BusinessCreateTaxIdentifier"
@@ -31733,10 +31733,10 @@
             "$ref": "#/components/schemas/BusinessCreateContacts"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/BusinessCreateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/BusinessCreateImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "additionalProperties": false,
@@ -31803,7 +31803,7 @@
             "$ref": "#/components/schemas/BusinessCompanyNumber"
           },
           "tax_identifier": {
-            "$ref": "#/components/schemas/BusinessTaxIdentifier"
+            "$ref": "#/components/schemas/BusinessCreateTaxIdentifier"
           },
           "status": {
             "$ref": "#/components/schemas/BusinessStatus"
@@ -31832,10 +31832,10 @@
             "readOnly": true
           },
           "custom_data": {
-            "$ref": "#/components/schemas/BusinessCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/BusinessImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Represents a business entity."
@@ -31848,20 +31848,20 @@
             "$ref": "#/components/schemas/BusinessUpdateName"
           },
           "company_number": {
-            "$ref": "#/components/schemas/BusinessUpdateCompanyNumber"
+            "$ref": "#/components/schemas/BusinessCompanyNumber"
           },
           "tax_identifier": {
-            "$ref": "#/components/schemas/BusinessUpdateTaxIdentifier"
+            "$ref": "#/components/schemas/BusinessCreateTaxIdentifier"
           },
           "status": {
             "description": "Whether this entity can be used in Paddle.",
             "$ref": "#/components/schemas/Status"
           },
           "contacts": {
-            "$ref": "#/components/schemas/BusinessUpdateContacts"
+            "$ref": "#/components/schemas/BusinessCreateContacts"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/BusinessUpdateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           }
         },
         "additionalProperties": false,
@@ -32462,7 +32462,7 @@
             "default": true
           },
           "unit_price": {
-            "$ref": "#/components/schemas/PriceTrialDurationUnitPrice"
+            "$ref": "#/components/schemas/PriceTrialDurationCreateUnitPrice"
           },
           "unit_price_overrides": {
             "maxItems": 250,
@@ -33148,7 +33148,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/ProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/ProductType"
@@ -33158,16 +33158,16 @@
             "$ref": "#/components/schemas/TaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/ProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/ProductStatus"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/ProductImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -34451,7 +34451,7 @@
         "type": "object",
         "properties": {
           "url": {
-            "$ref": "#/components/schemas/TransactionCheckoutUrl"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataCheckoutUrl"
           }
         },
         "description": "Paddle Checkout details for this transaction. Returned for automatically-collected transactions and where \u0060billing_details.enable_checkout\u0060 is \u0060true\u0060 for manually-collected transactions; \u0060null\u0060 otherwise."
@@ -34923,7 +34923,7 @@
             "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/PriceTrialPeriod"
+            "$ref": "#/components/schemas/PriceIncludesTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/PriceTaxMode"
@@ -34946,10 +34946,10 @@
             "$ref": "#/components/schemas/PriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/PriceImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -35198,7 +35198,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/ProductPreviewDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/ProductPreviewType"
@@ -35208,16 +35208,16 @@
             "$ref": "#/components/schemas/TaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/ProductPreviewImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductPreviewCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/ProductPreviewStatus"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/ProductPreviewImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -39907,7 +39907,7 @@
             "x-external-readOnly": true
           },
           "custom_data": {
-            "$ref": "#/components/schemas/CustomerCreateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "locale": {
             "type": "string",
@@ -39915,7 +39915,7 @@
             "default": "en"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/CustomerCreateImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "additionalProperties": false,
@@ -39970,7 +39970,7 @@
             "$ref": "#/components/schemas/CustomerStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/CustomerCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "locale": {
             "type": "string",
@@ -39992,7 +39992,7 @@
             "readOnly": true
           },
           "import_meta": {
-            "$ref": "#/components/schemas/CustomerImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Represents a customer entity."
@@ -40097,7 +40097,7 @@
             "description": "Quantity of this item on the transaction."
           },
           "proration": {
-            "$ref": "#/components/schemas/TransactionItemProrationComposed"
+            "$ref": "#/components/schemas/TransactionDetailsLineItemProration"
           }
         }
       },
@@ -40265,7 +40265,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/TransactionCurrencyCode"
@@ -40283,7 +40283,7 @@
             "x-external-readOnly": true
           },
           "invoice_id": {
-            "$ref": "#/components/schemas/TransactionInvoiceId"
+            "$ref": "#/components/schemas/SubscriptionTransactionIncludesInvoiceId"
           },
           "invoice_number": {
             "type": [
@@ -40304,10 +40304,10 @@
             "description": "Paddle ID of the discount applied to this transaction, prefixed with \u0060dsc_\u0060."
           },
           "billing_details": {
-            "$ref": "#/components/schemas/TransactionBillingDetails"
+            "$ref": "#/components/schemas/SubscriptionBillingDetails"
           },
           "billing_period": {
-            "$ref": "#/components/schemas/TransactionBillingPeriod"
+            "$ref": "#/components/schemas/SubscriptionTransactionIncludesBillingPeriod"
           },
           "items": {
             "maxItems": 100,
@@ -40330,7 +40330,7 @@
             "readOnly": true
           },
           "checkout": {
-            "$ref": "#/components/schemas/TransactionCheckoutComposed"
+            "$ref": "#/components/schemas/SubscriptionTransactionIncludesCheckout"
           },
           "created_at": {
             "title": "Created at",
@@ -40416,7 +40416,7 @@
             "$ref": "#/components/schemas/CustomerIncludesStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/CustomerIncludesCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "locale": {
             "type": "string",
@@ -40438,7 +40438,7 @@
             "readOnly": true
           },
           "import_meta": {
-            "$ref": "#/components/schemas/CustomerIncludesImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Represents a customer entity with included entities."
@@ -40474,7 +40474,7 @@
             "$ref": "#/components/schemas/Status"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/CustomerUpdateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "locale": {
             "type": "string",
@@ -40482,7 +40482,7 @@
             "default": "en"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/CustomerUpdateImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "additionalProperties": false,
@@ -40769,7 +40769,7 @@
             "readOnly": true
           },
           "import_meta": {
-            "$ref": "#/components/schemas/DiscountGroupImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Represents a discount group entity."
@@ -40885,7 +40885,7 @@
             "format": "date-time"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/DiscountCreateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "times_used": {
             "type": "integer",
@@ -40915,7 +40915,7 @@
             "description": "Paddle ID for the discount group related to this discount, prefixed with \u0060dsg_\u0060. \u0060null\u0060 if not in a discount group."
           },
           "import_meta": {
-            "$ref": "#/components/schemas/DiscountCreateImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "additionalProperties": false,
@@ -41077,7 +41077,7 @@
             "description": "Amount to discount by. For \u0060percentage\u0060 discounts, must be an amount between \u00600.01\u0060 and \u0060100\u0060. For \u0060flat\u0060 and \u0060flat_per_seat\u0060 discounts, amount in the lowest denomination for a currency."
           },
           "currency_code": {
-            "$ref": "#/components/schemas/DiscountIncludesCurrencyCode"
+            "$ref": "#/components/schemas/DiscountCreateCurrencyCode"
           },
           "recur": {
             "type": "boolean",
@@ -41085,13 +41085,13 @@
             "default": false
           },
           "maximum_recurring_intervals": {
-            "$ref": "#/components/schemas/DiscountIncludesMaximumRecurringIntervals"
+            "$ref": "#/components/schemas/DiscountCreateMaximumRecurringIntervals"
           },
           "usage_limit": {
-            "$ref": "#/components/schemas/DiscountIncludesUsageLimit"
+            "$ref": "#/components/schemas/DiscountCreateUsageLimit"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountIncludesRestrictTo"
+            "$ref": "#/components/schemas/DiscountCreateRestrictTo"
           },
           "expires_at": {
             "type": [
@@ -41102,7 +41102,7 @@
             "format": "date-time"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/DiscountIncludesCustomData"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataCustomData"
           },
           "times_used": {
             "type": "integer",
@@ -41132,7 +41132,7 @@
             "readOnly": true
           },
           "import_meta": {
-            "$ref": "#/components/schemas/DiscountIncludesImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "discount_group": {
             "$ref": "#/components/schemas/DiscountIncludesDiscountGroup"
@@ -41209,7 +41209,7 @@
             "description": "Amount to discount by. For \u0060percentage\u0060 discounts, must be an amount between \u00600.01\u0060 and \u0060100\u0060. For \u0060flat\u0060 and \u0060flat_per_seat\u0060 discounts, amount in the lowest denomination for a currency."
           },
           "currency_code": {
-            "$ref": "#/components/schemas/DiscountCurrencyCode"
+            "$ref": "#/components/schemas/DiscountCreateCurrencyCode"
           },
           "recur": {
             "type": "boolean",
@@ -41217,13 +41217,13 @@
             "default": false
           },
           "maximum_recurring_intervals": {
-            "$ref": "#/components/schemas/DiscountMaximumRecurringIntervals"
+            "$ref": "#/components/schemas/DiscountCreateMaximumRecurringIntervals"
           },
           "usage_limit": {
-            "$ref": "#/components/schemas/DiscountUsageLimit"
+            "$ref": "#/components/schemas/DiscountCreateUsageLimit"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountRestrictToComposed"
+            "$ref": "#/components/schemas/DiscountCreateRestrictTo"
           },
           "expires_at": {
             "type": [
@@ -41234,7 +41234,7 @@
             "format": "date-time"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/DiscountCustomData"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataCustomData"
           },
           "times_used": {
             "type": "integer",
@@ -41264,7 +41264,7 @@
             "readOnly": true
           },
           "import_meta": {
-            "$ref": "#/components/schemas/DiscountImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Represents a discount entity."
@@ -41316,7 +41316,7 @@
             "description": "Amount to discount by. For \u0060percentage\u0060 discounts, must be an amount between \u00600.01\u0060 and \u0060100\u0060. For \u0060flat\u0060 and \u0060flat_per_seat\u0060 discounts, amount in the lowest denomination for a currency."
           },
           "currency_code": {
-            "$ref": "#/components/schemas/DiscountUpdateCurrencyCode"
+            "$ref": "#/components/schemas/DiscountCreateCurrencyCode"
           },
           "recur": {
             "type": "boolean",
@@ -41324,13 +41324,13 @@
             "default": false
           },
           "maximum_recurring_intervals": {
-            "$ref": "#/components/schemas/DiscountUpdateMaximumRecurringIntervals"
+            "$ref": "#/components/schemas/DiscountCreateMaximumRecurringIntervals"
           },
           "usage_limit": {
-            "$ref": "#/components/schemas/DiscountUpdateUsageLimit"
+            "$ref": "#/components/schemas/DiscountCreateUsageLimit"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountUpdateRestrictTo"
+            "$ref": "#/components/schemas/DiscountCreateRestrictTo"
           },
           "expires_at": {
             "type": [
@@ -41341,7 +41341,7 @@
             "format": "date-time"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/DiscountUpdateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "times_used": {
             "type": "integer",
@@ -41371,7 +41371,7 @@
             "description": "Paddle ID for the discount group related to this discount, prefixed with \u0060dsg_\u0060. \u0060null\u0060 if not in a discount group."
           },
           "import_meta": {
-            "$ref": "#/components/schemas/DiscountUpdateImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "additionalProperties": false,
@@ -41928,7 +41928,7 @@
         "type": "object",
         "properties": {
           "postal_code": {
-            "$ref": "#/components/schemas/AddressPreviewPostalCode"
+            "$ref": "#/components/schemas/AddressPreviewCreatePostalCode"
           },
           "country_code": {
             "$ref": "#/components/schemas/AddressPreviewCountryCode"
@@ -41990,7 +41990,7 @@
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdName"
           },
           "billing_cycle": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdBillingCycle"
+            "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdTrialPeriod"
@@ -42013,7 +42013,7 @@
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdQuantity"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "product_id": {
             "title": "Product ID",
@@ -44069,10 +44069,10 @@
             "$ref": "#/components/schemas/PriceCreateQuantity"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceCreateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/PriceCreateImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "additionalProperties": false,
@@ -44114,10 +44114,10 @@
             "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductCreateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/ProductCreateImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "additionalProperties": false,
@@ -44234,7 +44234,7 @@
             "description": "Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills."
           },
           "billing_cycle": {
-            "$ref": "#/components/schemas/PriceIncludesBillingCycle"
+            "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
             "$ref": "#/components/schemas/PriceIncludesTrialPeriod"
@@ -44260,10 +44260,10 @@
             "$ref": "#/components/schemas/PriceIncludesStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceIncludesCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/PriceIncludesImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -44365,10 +44365,10 @@
             "description": "Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills."
           },
           "billing_cycle": {
-            "$ref": "#/components/schemas/PriceWithProductCollectionIncludesBillingCycle"
+            "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/PriceWithProductCollectionIncludesTrialPeriod"
+            "$ref": "#/components/schemas/PriceIncludesTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/PriceWithProductCollectionIncludesTaxMode"
@@ -44391,10 +44391,10 @@
             "$ref": "#/components/schemas/PriceWithProductCollectionIncludesStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceWithProductCollectionIncludesCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/PriceWithProductCollectionIncludesImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -44435,7 +44435,7 @@
             "default": true
           },
           "unit_price": {
-            "$ref": "#/components/schemas/PriceTrialDurationUpdateUnitPrice"
+            "$ref": "#/components/schemas/PriceTrialDurationCreateUnitPrice"
           },
           "unit_price_overrides": {
             "maxItems": 250,
@@ -44471,7 +44471,7 @@
             "description": "Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills."
           },
           "billing_cycle": {
-            "$ref": "#/components/schemas/PriceUpdateBillingCycle"
+            "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
             "$ref": "#/components/schemas/PriceUpdateTrialPeriod"
@@ -44498,7 +44498,7 @@
             "$ref": "#/components/schemas/Status"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceUpdateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           }
         },
         "additionalProperties": false,
@@ -44803,7 +44803,7 @@
             "description": "Paddle ID of the business that this preview is for, prefixed with \u0060biz_\u0060."
           },
           "currency_code": {
-            "$ref": "#/components/schemas/TransactionPricingPreviewResponseCurrencyCode"
+            "$ref": "#/components/schemas/TransactionPreviewCreateAddressCurrencyCode"
           },
           "discount_id": {
             "pattern": "^dsc_[a-z\\d]{26}$",
@@ -44904,7 +44904,7 @@
             "description": "Paddle ID of the business that this preview is for, prefixed with \u0060biz_\u0060."
           },
           "currency_code": {
-            "$ref": "#/components/schemas/TransactionPricingPreviewRequestCurrencyCode"
+            "$ref": "#/components/schemas/TransactionPreviewCreateAddressCurrencyCode"
           },
           "discount_id": {
             "pattern": "^dsc_[a-z\\d]{26}$",
@@ -45080,7 +45080,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/ProductIncludesDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/ProductIncludesType"
@@ -45090,16 +45090,16 @@
             "$ref": "#/components/schemas/TaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/ProductIncludesImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductIncludesCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/ProductIncludesStatus"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/ProductIncludesImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -45138,7 +45138,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/ProductUpdateDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/ProductUpdateType"
@@ -45148,10 +45148,10 @@
             "$ref": "#/components/schemas/TaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/ProductUpdateImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductUpdateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "description": "Whether this entity can be used in Paddle.",
@@ -45332,10 +45332,10 @@
             "$ref": "#/components/schemas/ReportFilterAdjustmentsNameComposed"
           },
           "operator": {
-            "$ref": "#/components/schemas/ReportFilterAdjustmentsOperator"
+            "$ref": "#/components/schemas/ReportFilterAdjustmentsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterAdjustmentsValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "Filter criteria for this report. If no \u0060gte\u0060 filter for \u0060updated_at\u0060 is passed when creating, reports are filtered to include data updated in the last month. This means \u0060updated_at\u0060 is greater than or equal to (\u0060gte\u0060) the same date and time one calendar month before the report was generated, so the window is between 28 and 31 days depending on the month."
@@ -45511,10 +45511,10 @@
             "$ref": "#/components/schemas/ReportFilterTransactionsName"
           },
           "operator": {
-            "$ref": "#/components/schemas/ReportFilterTransactionsOperator"
+            "$ref": "#/components/schemas/ReportFilterAdjustmentsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterTransactionsValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         }
       },
@@ -45689,10 +45689,10 @@
             "$ref": "#/components/schemas/ReportFilterProductsPricesNameComposed"
           },
           "operator": {
-            "$ref": "#/components/schemas/ReportFilterProductsPricesOperator"
+            "$ref": "#/components/schemas/ReportFilterAdjustmentsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterProductsPricesValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportProductsPricesFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -45844,10 +45844,10 @@
             "$ref": "#/components/schemas/ReportFilterDiscountsName"
           },
           "operator": {
-            "$ref": "#/components/schemas/ReportFilterDiscountsOperator"
+            "$ref": "#/components/schemas/ReportFilterAdjustmentsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterDiscountsValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -45985,10 +45985,10 @@
             "$ref": "#/components/schemas/ReportFilterBalanceNameComposed"
           },
           "operator": {
-            "$ref": "#/components/schemas/ReportFilterBalanceOperator"
+            "$ref": "#/components/schemas/ReportFilterAdjustmentsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterBalanceValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -46235,10 +46235,10 @@
             "$ref": "#/components/schemas/ReportFilterReconciliationNameComposed"
           },
           "operator": {
-            "$ref": "#/components/schemas/ReportFilterReconciliationOperator"
+            "$ref": "#/components/schemas/ReportFilterReconciliationCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterReconciliationValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -46381,10 +46381,10 @@
             "$ref": "#/components/schemas/ReportFilterCheckoutsNameComposed"
           },
           "operator": {
-            "$ref": "#/components/schemas/ReportFilterCheckoutsOperator"
+            "$ref": "#/components/schemas/ReportFilterCheckoutsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterCheckoutsValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -46646,10 +46646,10 @@
             "$ref": "#/components/schemas/ReportFilterSubscriptionsNameComposed"
           },
           "operator": {
-            "$ref": "#/components/schemas/ReportFilterSubscriptionsOperator"
+            "$ref": "#/components/schemas/ReportFilterSubscriptionsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterSubscriptionsValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -46764,7 +46764,7 @@
             "$ref": "#/components/schemas/ReportFilterAdjustmentsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterAdjustmentsCreateValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "Filter criteria for this report. If no \u0060gte\u0060 filter for \u0060updated_at\u0060 is passed when creating, reports are filtered to include data updated in the last month. This means \u0060updated_at\u0060 is greater than or equal to (\u0060gte\u0060) the same date and time one calendar month before the report was generated, so the window is between 28 and 31 days depending on the month."
@@ -46798,10 +46798,10 @@
             "$ref": "#/components/schemas/ReportFilterTransactionsCreateName"
           },
           "operator": {
-            "$ref": "#/components/schemas/ReportFilterTransactionsCreateOperator"
+            "$ref": "#/components/schemas/ReportFilterAdjustmentsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterTransactionsCreateValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         }
       },
@@ -46834,10 +46834,10 @@
             "$ref": "#/components/schemas/ReportFilterProductsPricesCreateName"
           },
           "operator": {
-            "$ref": "#/components/schemas/ReportFilterProductsPricesCreateOperator"
+            "$ref": "#/components/schemas/ReportFilterAdjustmentsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterProductsPricesCreateValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportProductsPricesFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -46871,10 +46871,10 @@
             "$ref": "#/components/schemas/ReportFilterDiscountsCreateName"
           },
           "operator": {
-            "$ref": "#/components/schemas/ReportFilterDiscountsCreateOperator"
+            "$ref": "#/components/schemas/ReportFilterAdjustmentsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterDiscountsCreateValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -46908,10 +46908,10 @@
             "$ref": "#/components/schemas/ReportFilterBalanceCreateName"
           },
           "operator": {
-            "$ref": "#/components/schemas/ReportFilterBalanceCreateOperator"
+            "$ref": "#/components/schemas/ReportFilterAdjustmentsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterBalanceCreateValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -46949,7 +46949,7 @@
             "$ref": "#/components/schemas/ReportFilterReconciliationCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterReconciliationCreateValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -46986,7 +46986,7 @@
             "$ref": "#/components/schemas/ReportFilterCheckoutsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterCheckoutsCreateValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -47023,7 +47023,7 @@
             "$ref": "#/components/schemas/ReportFilterSubscriptionsCreateOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportFilterSubscriptionsCreateValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -52033,16 +52033,16 @@
             "readOnly": true
           },
           "discount": {
-            "$ref": "#/components/schemas/SubscriptionIncludesDiscount"
+            "$ref": "#/components/schemas/SubscriptionDiscountComposed"
           },
           "collection_mode": {
             "$ref": "#/components/schemas/SubscriptionIncludesCollectionMode"
           },
           "billing_details": {
-            "$ref": "#/components/schemas/SubscriptionIncludesBillingDetails"
+            "$ref": "#/components/schemas/SubscriptionBillingDetails"
           },
           "current_billing_period": {
-            "$ref": "#/components/schemas/SubscriptionIncludesCurrentBillingPeriod"
+            "$ref": "#/components/schemas/SubscriptionCurrentBillingPeriod"
           },
           "billing_cycle": {
             "$ref": "#/components/schemas/SubscriptionIncludesBillingCycle"
@@ -52064,10 +52064,10 @@
             "readOnly": true
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionIncludesCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/SubscriptionIncludesImportMeta"
+            "$ref": "#/components/schemas/SubscriptionImportMeta"
           },
           "consent_requirements": {
             "type": "array",
@@ -52222,7 +52222,7 @@
             "$ref": "#/components/schemas/SubscriptionBillingCycle"
           },
           "scheduled_change": {
-            "$ref": "#/components/schemas/SubscriptionScheduledChangeComposed"
+            "$ref": "#/components/schemas/SubscriptionIncludesScheduledChange"
           },
           "management_urls": {
             "$ref": "#/components/schemas/SubscriptionManagementUrlsComposed"
@@ -52238,7 +52238,7 @@
             "readOnly": true
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionImportMeta"
@@ -52271,7 +52271,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/BillingDetailsCreateAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/BillingDetailsCreatePaymentTerms"
@@ -52515,7 +52515,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/BillingDetailsUpdateAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/BillingDetailsUpdatePaymentTerms"
@@ -52580,17 +52580,17 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/TransactionSubscriptionProductCreateDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "tax_category": {
             "description": "Tax category for this product. Used for charging the correct rate of tax. Selected tax category must be enabled on your Paddle account.",
             "$ref": "#/components/schemas/TaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/TransactionSubscriptionProductCreateImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionSubscriptionProductCreateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           }
         },
         "additionalProperties": false
@@ -52611,13 +52611,13 @@
             "description": "Internal description for this price, not shown to customers. Typically notes for your team."
           },
           "name": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductName"
+            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdName"
           },
           "billing_cycle": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductBillingCycle"
+            "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductTrialPeriod"
+            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductTaxMode"
@@ -52637,7 +52637,7 @@
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductQuantity"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "product": {
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductProduct"
@@ -52734,7 +52734,7 @@
             "description": "List of items on this subscription. Only recurring items may be added. Send the complete list of items that should be on this subscription, including existing items to retain."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionUpdateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "proration_billing_mode": {
             "description": "How Paddle should handle proration calculation for changes made to a subscription or its items. Required when making\nchanges that impact billing.\n\nFor automatically-collected subscriptions, responses may take longer than usual if a proration billing mode that\ncollects for payment immediately is used.",
@@ -52938,22 +52938,22 @@
             "readOnly": true
           },
           "discount": {
-            "$ref": "#/components/schemas/SubscriptionPreviewDiscount"
+            "$ref": "#/components/schemas/SubscriptionDiscountComposed"
           },
           "collection_mode": {
             "$ref": "#/components/schemas/SubscriptionPreviewCollectionMode"
           },
           "billing_details": {
-            "$ref": "#/components/schemas/SubscriptionPreviewBillingDetails"
+            "$ref": "#/components/schemas/SubscriptionBillingDetails"
           },
           "current_billing_period": {
-            "$ref": "#/components/schemas/SubscriptionPreviewCurrentBillingPeriod"
+            "$ref": "#/components/schemas/SubscriptionCurrentBillingPeriod"
           },
           "billing_cycle": {
             "$ref": "#/components/schemas/SubscriptionPreviewBillingCycle"
           },
           "scheduled_change": {
-            "$ref": "#/components/schemas/SubscriptionPreviewScheduledChange"
+            "$ref": "#/components/schemas/SubscriptionIncludesScheduledChange"
           },
           "management_urls": {
             "$ref": "#/components/schemas/SubscriptionPreviewManagementUrls"
@@ -52969,7 +52969,7 @@
             "readOnly": true
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionPreviewCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "immediate_transaction": {
             "$ref": "#/components/schemas/SubscriptionPreviewImmediateTransaction"
@@ -52984,7 +52984,7 @@
             "$ref": "#/components/schemas/SubscriptionPreviewUpdateSummary"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/SubscriptionPreviewImportMeta"
+            "$ref": "#/components/schemas/SubscriptionImportMeta"
           },
           "consent_requirements": {
             "type": "array",
@@ -53008,7 +53008,7 @@
         "type": "object",
         "properties": {
           "effective_from": {
-            "$ref": "#/components/schemas/SubscriptionPauseEffectiveFrom"
+            "$ref": "#/components/schemas/SubscriptionCancelEffectiveFrom"
           },
           "resume_at": {
             "type": [
@@ -53269,7 +53269,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionTransactionIncludesCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/SubscriptionTransactionIncludesCurrencyCode"
@@ -53308,7 +53308,7 @@
             "description": "Paddle ID of the discount applied to this transaction, prefixed with \u0060dsc_\u0060."
           },
           "billing_details": {
-            "$ref": "#/components/schemas/SubscriptionTransactionIncludesBillingDetails"
+            "$ref": "#/components/schemas/SubscriptionBillingDetails"
           },
           "billing_period": {
             "$ref": "#/components/schemas/SubscriptionTransactionIncludesBillingPeriod"
@@ -53445,7 +53445,7 @@
             "description": "Internal description for this price, not shown to customers. Typically notes for your team."
           },
           "name": {
-            "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceInternalPriceModelName"
+            "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceAndProductPriceName"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceInternalPriceModelTaxMode"
@@ -53464,7 +53464,7 @@
             "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceInternalPriceModelQuantity"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceInternalPriceModelCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           }
         }
       },
@@ -53525,7 +53525,7 @@
             "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceAndProductPriceQuantity"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceAndProductPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "product": {
             "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceAndProductPriceProduct"
@@ -53684,7 +53684,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionIncludesCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/TransactionIncludesCurrencyCode"
@@ -53702,7 +53702,7 @@
             "x-external-readOnly": true
           },
           "invoice_id": {
-            "$ref": "#/components/schemas/TransactionIncludesInvoiceId"
+            "$ref": "#/components/schemas/SubscriptionTransactionIncludesInvoiceId"
           },
           "invoice_number": {
             "type": [
@@ -53723,10 +53723,10 @@
             "description": "Paddle ID of the discount applied to this transaction, prefixed with \u0060dsc_\u0060."
           },
           "billing_details": {
-            "$ref": "#/components/schemas/TransactionIncludesBillingDetails"
+            "$ref": "#/components/schemas/SubscriptionBillingDetails"
           },
           "billing_period": {
-            "$ref": "#/components/schemas/TransactionIncludesBillingPeriod"
+            "$ref": "#/components/schemas/SubscriptionTransactionIncludesBillingPeriod"
           },
           "items": {
             "maxItems": 100,
@@ -53749,7 +53749,7 @@
             "readOnly": true
           },
           "checkout": {
-            "$ref": "#/components/schemas/TransactionIncludesCheckout"
+            "$ref": "#/components/schemas/SubscriptionTransactionIncludesCheckout"
           },
           "created_at": {
             "title": "Created at",
@@ -54146,10 +54146,10 @@
             "default": false
           },
           "maximum_recurring_intervals": {
-            "$ref": "#/components/schemas/DiscountCustomMaximumRecurringIntervals"
+            "$ref": "#/components/schemas/DiscountCreateMaximumRecurringIntervals"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/DiscountCustomCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "restrict_to": {
             "$ref": "#/components/schemas/DiscountCustomRestrictTo"
@@ -54172,7 +54172,7 @@
             "description": "Quantity of this item on the transaction."
           },
           "proration": {
-            "$ref": "#/components/schemas/TransactionItemCreateWithPriceIdProration"
+            "$ref": "#/components/schemas/TransactionDetailsLineItemProration"
           },
           "price_id": {
             "title": "Price ID",
@@ -54198,7 +54198,7 @@
             "description": "Quantity of this item on the transaction."
           },
           "proration": {
-            "$ref": "#/components/schemas/TransactionItemCreateWithPriceProration"
+            "$ref": "#/components/schemas/TransactionDetailsLineItemProration"
           },
           "price": {
             "$ref": "#/components/schemas/TransactionItemCreateWithPricePrice"
@@ -54220,7 +54220,7 @@
             "description": "Quantity of this item on the transaction."
           },
           "proration": {
-            "$ref": "#/components/schemas/TransactionItemCreateWithPriceAndProductProration"
+            "$ref": "#/components/schemas/TransactionDetailsLineItemProration"
           },
           "price": {
             "$ref": "#/components/schemas/TransactionItemCreateWithPriceAndProductPrice"
@@ -54293,7 +54293,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060. Requires \u0060customer_id\u0060. "
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionCreateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/TransactionCreateCurrencyCode"
@@ -54311,7 +54311,7 @@
             "x-external-readOnly": true
           },
           "invoice_id": {
-            "$ref": "#/components/schemas/TransactionCreateInvoiceId"
+            "$ref": "#/components/schemas/SubscriptionTransactionIncludesInvoiceId"
           },
           "invoice_number": {
             "examples": [
@@ -54342,7 +54342,7 @@
             "$ref": "#/components/schemas/TransactionCreateBillingDetails"
           },
           "billing_period": {
-            "$ref": "#/components/schemas/TransactionCreateBillingPeriod"
+            "$ref": "#/components/schemas/SubscriptionTransactionIncludesBillingPeriod"
           },
           "items": {
             "maxItems": 100,
@@ -54445,10 +54445,10 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/UpdateTransactionBodyCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
-            "$ref": "#/components/schemas/UpdateTransactionBodyCurrencyCode"
+            "$ref": "#/components/schemas/TransactionCreateCurrencyCode"
           },
           "origin": {
             "$ref": "#/components/schemas/TransactionOrigin"
@@ -54463,7 +54463,7 @@
             "x-external-readOnly": true
           },
           "invoice_id": {
-            "$ref": "#/components/schemas/UpdateTransactionBodyInvoiceId"
+            "$ref": "#/components/schemas/SubscriptionTransactionIncludesInvoiceId"
           },
           "invoice_number": {
             "examples": [
@@ -54488,20 +54488,20 @@
             "description": "Paddle ID of the discount to apply to this transaction, prefixed with \u0060dsc_\u0060. Send one of \u0060discount_id\u0060 or \u0060discount\u0060."
           },
           "discount": {
-            "$ref": "#/components/schemas/UpdateTransactionBodyDiscount"
+            "$ref": "#/components/schemas/TransactionCreateDiscount"
           },
           "billing_details": {
             "$ref": "#/components/schemas/UpdateTransactionBodyBillingDetails"
           },
           "billing_period": {
-            "$ref": "#/components/schemas/UpdateTransactionBodyBillingPeriod"
+            "$ref": "#/components/schemas/SubscriptionTransactionIncludesBillingPeriod"
           },
           "items": {
             "maxItems": 100,
             "minItems": 1,
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/TransactionItemUpdate"
+              "$ref": "#/components/schemas/TransactionItemCreate"
             },
             "description": "List of items on this transaction.\n\nWhen making a request, each object must contain either a \u0060price_id\u0060 or a \u0060price\u0060 object, and a \u0060quantity\u0060.\n\nInclude a \u0060price_id\u0060 to charge for an existing catalog item, or a \u0060price\u0060 object to charge for a non-catalog item."
           },
@@ -54517,7 +54517,7 @@
             "readOnly": true
           },
           "checkout": {
-            "$ref": "#/components/schemas/UpdateTransactionBodyCheckout"
+            "$ref": "#/components/schemas/TransactionCreateCheckout"
           },
           "created_at": {
             "title": "Created at",
@@ -54603,10 +54603,10 @@
             "description": "Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills."
           },
           "billing_cycle": {
-            "$ref": "#/components/schemas/PricePreviewBillingCycle"
+            "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/PricePreviewTrialPeriod"
+            "$ref": "#/components/schemas/PriceIncludesTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/PricePreviewTaxMode"
@@ -54629,10 +54629,10 @@
             "$ref": "#/components/schemas/PricePreviewStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PricePreviewCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/PricePreviewImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -54786,7 +54786,7 @@
             "default": true
           },
           "proration": {
-            "$ref": "#/components/schemas/TransactionPreviewItemWithPriceIdRequestProration"
+            "$ref": "#/components/schemas/TransactionPreviewItemProration"
           },
           "price_id": {
             "title": "Price ID",
@@ -54816,7 +54816,7 @@
             "default": true
           },
           "proration": {
-            "$ref": "#/components/schemas/TransactionPreviewItemWithPriceRequestProration"
+            "$ref": "#/components/schemas/TransactionPreviewItemProration"
           },
           "price": {
             "$ref": "#/components/schemas/TransactionPreviewItemWithPriceRequestPrice"
@@ -54842,7 +54842,7 @@
             "default": true
           },
           "proration": {
-            "$ref": "#/components/schemas/TransactionPreviewItemWithPriceAndProductRequestProration"
+            "$ref": "#/components/schemas/TransactionPreviewItemProration"
           },
           "price": {
             "$ref": "#/components/schemas/TransactionPreviewItemWithPriceAndProductRequestPrice"
@@ -54879,7 +54879,7 @@
             "description": "Paddle ID of the customer that this transaction preview is for, prefixed with \u0060ctm_\u0060."
           },
           "currency_code": {
-            "$ref": "#/components/schemas/TransactionPreviewCreateWithoutAddressCurrencyCode"
+            "$ref": "#/components/schemas/TransactionPreviewCreateAddressCurrencyCode"
           },
           "discount_id": {
             "pattern": "^dsc_[a-z\\d]{26}$",
@@ -54890,7 +54890,7 @@
             "description": "Paddle ID of the discount to apply to this transaction preview, prefixed with \u0060dsc_\u0060. Send one of \u0060discount_id\u0060 or \u0060discount\u0060."
           },
           "discount": {
-            "$ref": "#/components/schemas/TransactionPreviewCreateWithoutAddressDiscount"
+            "$ref": "#/components/schemas/TransactionCreateDiscount"
           },
           "ignore_trials": {
             "type": "boolean",
@@ -54935,7 +54935,7 @@
             "description": "Paddle ID of the discount to apply to this transaction preview, prefixed with \u0060dsc_\u0060. Send one of \u0060discount_id\u0060 or \u0060discount\u0060."
           },
           "discount": {
-            "$ref": "#/components/schemas/TransactionPreviewCreateAddressDiscount"
+            "$ref": "#/components/schemas/TransactionCreateDiscount"
           },
           "ignore_trials": {
             "type": "boolean",
@@ -54972,7 +54972,7 @@
             "description": "Paddle ID of the customer that this transaction preview is for, prefixed with \u0060ctm_\u0060."
           },
           "currency_code": {
-            "$ref": "#/components/schemas/TransactionPreviewCreateIpAddressCurrencyCode"
+            "$ref": "#/components/schemas/TransactionPreviewCreateAddressCurrencyCode"
           },
           "discount_id": {
             "pattern": "^dsc_[a-z\\d]{26}$",
@@ -54983,7 +54983,7 @@
             "description": "Paddle ID of the discount to apply to this transaction preview, prefixed with \u0060dsc_\u0060. Send one of \u0060discount_id\u0060 or \u0060discount\u0060."
           },
           "discount": {
-            "$ref": "#/components/schemas/TransactionPreviewCreateIpAddressDiscount"
+            "$ref": "#/components/schemas/TransactionCreateDiscount"
           },
           "ignore_trials": {
             "type": "boolean",
@@ -55014,7 +55014,7 @@
         "type": "object",
         "properties": {
           "currency_code": {
-            "$ref": "#/components/schemas/TransactionPreviewCreatePaddleIdsCurrencyCode"
+            "$ref": "#/components/schemas/TransactionPreviewCreateAddressCurrencyCode"
           },
           "discount_id": {
             "pattern": "^dsc_[a-z\\d]{26}$",
@@ -55025,7 +55025,7 @@
             "description": "Paddle ID of the discount to apply to this transaction preview, prefixed with \u0060dsc_\u0060. Send one of \u0060discount_id\u0060 or \u0060discount\u0060."
           },
           "discount": {
-            "$ref": "#/components/schemas/TransactionPreviewCreatePaddleIdsDiscount"
+            "$ref": "#/components/schemas/TransactionCreateDiscount"
           },
           "ignore_trials": {
             "type": "boolean",
@@ -63685,7 +63685,7 @@
             "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/PriceTrialPeriod"
+            "$ref": "#/components/schemas/PriceIncludesTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/PriceTaxMode"
@@ -63708,10 +63708,10 @@
             "$ref": "#/components/schemas/PriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/PriceImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -63762,7 +63762,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/ProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/ProductType"
@@ -63772,16 +63772,16 @@
             "$ref": "#/components/schemas/TaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/ProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/ProductStatus"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/ProductImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -64105,7 +64105,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/ProductPreviewDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/ProductPreviewType"
@@ -64115,16 +64115,16 @@
             "$ref": "#/components/schemas/TaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/ProductPreviewImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductPreviewCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/ProductPreviewStatus"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/ProductPreviewImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -68965,7 +68965,7 @@
             "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/PriceTrialPeriod"
+            "$ref": "#/components/schemas/PriceIncludesTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/PriceTaxMode"
@@ -68988,10 +68988,10 @@
             "$ref": "#/components/schemas/PriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/PriceImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -69161,7 +69161,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/ProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/ProductType"
@@ -69171,16 +69171,16 @@
             "$ref": "#/components/schemas/TaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/ProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/ProductStatus"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/ProductImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -70627,7 +70627,7 @@
             "readOnly": true
           },
           "import_meta": {
-            "$ref": "#/components/schemas/DiscountGroupImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Discount group for this discount. Returned when the \u0060include\u0060 parameter is used with the \u0060discount_group\u0060 value and the discount has a \u0060discount_group_id\u0060.",
@@ -77806,7 +77806,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/ProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/ProductType"
@@ -77816,16 +77816,16 @@
             "$ref": "#/components/schemas/TaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/ProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/ProductStatus"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/ProductImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -78111,7 +78111,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/ProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/ProductType"
@@ -78121,16 +78121,16 @@
             "$ref": "#/components/schemas/TaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/ProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/ProductStatus"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/ProductImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -78432,7 +78432,7 @@
             "description": "Amount to discount by. For \u0060percentage\u0060 discounts, must be an amount between \u00600.01\u0060 and \u0060100\u0060. For \u0060flat\u0060 and \u0060flat_per_seat\u0060 discounts, amount in the lowest denomination for a currency."
           },
           "currency_code": {
-            "$ref": "#/components/schemas/DiscountCurrencyCode"
+            "$ref": "#/components/schemas/DiscountCreateCurrencyCode"
           },
           "recur": {
             "type": "boolean",
@@ -78440,13 +78440,13 @@
             "default": false
           },
           "maximum_recurring_intervals": {
-            "$ref": "#/components/schemas/DiscountMaximumRecurringIntervals"
+            "$ref": "#/components/schemas/DiscountCreateMaximumRecurringIntervals"
           },
           "usage_limit": {
-            "$ref": "#/components/schemas/DiscountUsageLimit"
+            "$ref": "#/components/schemas/DiscountCreateUsageLimit"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountRestrictToComposed"
+            "$ref": "#/components/schemas/DiscountCreateRestrictTo"
           },
           "expires_at": {
             "type": [
@@ -78457,7 +78457,7 @@
             "format": "date-time"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/DiscountCustomData"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataCustomData"
           },
           "times_used": {
             "type": "integer",
@@ -78487,7 +78487,7 @@
             "readOnly": true
           },
           "import_meta": {
-            "$ref": "#/components/schemas/DiscountImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Related discount entity for this preview line item."
@@ -78548,7 +78548,7 @@
             "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/PriceTrialPeriod"
+            "$ref": "#/components/schemas/PriceIncludesTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/PriceTaxMode"
@@ -78571,10 +78571,10 @@
             "$ref": "#/components/schemas/PriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/PriceImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -78756,7 +78756,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/ProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/ProductType"
@@ -78766,16 +78766,16 @@
             "$ref": "#/components/schemas/TaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/ProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/ProductStatus"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/ProductImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -80435,31 +80435,6 @@
           {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/AdjustmentStatus"
-            }
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AdjustmentAction"
-            }
-          },
-          {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string.",
-            "format": "date-time"
-          },
-          {
-            "type": "string",
-            "format": "date"
-          },
-          {
-            "type": "array",
-            "items": {
               "type": "string"
             }
           },
@@ -81304,12 +81279,6 @@
           },
           {
             "type": "string"
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BalanceMovementType"
-            }
           }
         ],
         "description": "Value to filter by. Check the allowed values descriptions for the \u0060name\u0060 field to see valid values for a field."
@@ -81628,18 +81597,6 @@
           },
           {
             "type": "string"
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SubscriptionStatusFilter"
-            }
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SubscriptionScheduledChangeActionFilter"
-            }
           }
         ],
         "description": "Value to filter by. Check the allowed values descriptions for the \u0060name\u0060 field to see valid values for a field."
@@ -81799,31 +81756,6 @@
       },
       "ReportFilterAdjustmentsCreateValue": {
         "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AdjustmentStatus"
-            }
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/AdjustmentAction"
-            }
-          },
-          {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string.",
-            "format": "date-time"
-          },
-          {
-            "type": "string",
-            "format": "date"
-          },
           {
             "type": "array",
             "items": {
@@ -82326,12 +82258,6 @@
           },
           {
             "type": "string"
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/BalanceMovementType"
-            }
           }
         ],
         "description": "Value to filter by. Check the allowed values descriptions for the \u0060name\u0060 field to see valid values for a field."
@@ -82512,18 +82438,6 @@
           },
           {
             "type": "string"
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SubscriptionStatusFilter"
-            }
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SubscriptionScheduledChangeActionFilter"
-            }
           }
         ],
         "description": "Value to filter by. Check the allowed values descriptions for the \u0060name\u0060 field to see valid values for a field."
@@ -87492,7 +87406,7 @@
             "$ref": "#/components/schemas/AddressCountryCode"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/AddressCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/AddressStatus"
@@ -87687,7 +87601,7 @@
             "$ref": "#/components/schemas/BusinessCompanyNumber"
           },
           "tax_identifier": {
-            "$ref": "#/components/schemas/BusinessTaxIdentifier"
+            "$ref": "#/components/schemas/BusinessCreateTaxIdentifier"
           },
           "status": {
             "$ref": "#/components/schemas/BusinessStatus"
@@ -87716,10 +87630,10 @@
             "readOnly": true
           },
           "custom_data": {
-            "$ref": "#/components/schemas/BusinessCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/BusinessImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "New business on the subscription."
@@ -87761,7 +87675,7 @@
             "$ref": "#/components/schemas/BusinessCompanyNumber"
           },
           "tax_identifier": {
-            "$ref": "#/components/schemas/BusinessTaxIdentifier"
+            "$ref": "#/components/schemas/BusinessCreateTaxIdentifier"
           },
           "status": {
             "$ref": "#/components/schemas/BusinessStatus"
@@ -87790,10 +87704,10 @@
             "readOnly": true
           },
           "custom_data": {
-            "$ref": "#/components/schemas/BusinessCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/BusinessImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Business that was removed from the subscription."
@@ -87835,7 +87749,7 @@
             "$ref": "#/components/schemas/BusinessCompanyNumber"
           },
           "tax_identifier": {
-            "$ref": "#/components/schemas/BusinessTaxIdentifier"
+            "$ref": "#/components/schemas/BusinessCreateTaxIdentifier"
           },
           "status": {
             "$ref": "#/components/schemas/BusinessStatus"
@@ -87864,10 +87778,10 @@
             "readOnly": true
           },
           "custom_data": {
-            "$ref": "#/components/schemas/BusinessCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/BusinessImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Updated business on the subscription. This is what the business was changed to."
@@ -88026,7 +87940,7 @@
             "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/PriceTrialPeriod"
+            "$ref": "#/components/schemas/PriceIncludesTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/PriceTaxMode"
@@ -88049,10 +87963,10 @@
             "$ref": "#/components/schemas/PriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/PriceImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -88139,7 +88053,7 @@
             "description": "Amount to discount by. For \u0060percentage\u0060 discounts, must be an amount between \u00600.01\u0060 and \u0060100\u0060. For \u0060flat\u0060 and \u0060flat_per_seat\u0060 discounts, amount in the lowest denomination for a currency."
           },
           "currency_code": {
-            "$ref": "#/components/schemas/DiscountCurrencyCode"
+            "$ref": "#/components/schemas/DiscountCreateCurrencyCode"
           },
           "recur": {
             "type": "boolean",
@@ -88147,13 +88061,13 @@
             "default": false
           },
           "maximum_recurring_intervals": {
-            "$ref": "#/components/schemas/DiscountMaximumRecurringIntervals"
+            "$ref": "#/components/schemas/DiscountCreateMaximumRecurringIntervals"
           },
           "usage_limit": {
-            "$ref": "#/components/schemas/DiscountUsageLimit"
+            "$ref": "#/components/schemas/DiscountCreateUsageLimit"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountRestrictToComposed"
+            "$ref": "#/components/schemas/DiscountCreateRestrictTo"
           },
           "expires_at": {
             "type": [
@@ -88164,7 +88078,7 @@
             "format": "date-time"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/DiscountCustomData"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataCustomData"
           },
           "times_used": {
             "type": "integer",
@@ -88194,7 +88108,7 @@
             "readOnly": true
           },
           "import_meta": {
-            "$ref": "#/components/schemas/DiscountImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Discount on the subscription."
@@ -88706,7 +88620,7 @@
             "$ref": "#/components/schemas/CustomerStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/CustomerCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "locale": {
             "type": "string",
@@ -88728,7 +88642,7 @@
             "readOnly": true
           },
           "import_meta": {
-            "$ref": "#/components/schemas/CustomerImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Updated customer on the subscription. This is what the customer was changed to."
@@ -88885,7 +88799,7 @@
             "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/PriceTrialPeriod"
+            "$ref": "#/components/schemas/PriceIncludesTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/PriceTaxMode"
@@ -88908,10 +88822,10 @@
             "$ref": "#/components/schemas/PriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/PriceImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -89085,7 +88999,7 @@
             "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/PriceTrialPeriod"
+            "$ref": "#/components/schemas/PriceIncludesTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/PriceTaxMode"
@@ -89108,10 +89022,10 @@
             "$ref": "#/components/schemas/PriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/PriceImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -89285,7 +89199,7 @@
             "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/PriceTrialPeriod"
+            "$ref": "#/components/schemas/PriceIncludesTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/PriceTaxMode"
@@ -89308,10 +89222,10 @@
             "$ref": "#/components/schemas/PriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/PriceImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -91400,7 +91314,7 @@
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdName"
           },
           "billing_cycle": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdBillingCycle"
+            "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdTrialPeriod"
@@ -91423,7 +91337,7 @@
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdQuantity"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "product_id": {
             "title": "Product ID",
@@ -91646,17 +91560,17 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/TransactionSubscriptionProductCreateDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "tax_category": {
             "description": "Tax category for this product. Used for charging the correct rate of tax. Selected tax category must be enabled on your Paddle account.",
             "$ref": "#/components/schemas/TaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/TransactionSubscriptionProductCreateImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionSubscriptionProductCreateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           }
         },
         "additionalProperties": false,
@@ -91677,13 +91591,13 @@
             "description": "Internal description for this price, not shown to customers. Typically notes for your team."
           },
           "name": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductName"
+            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdName"
           },
           "billing_cycle": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductBillingCycle"
+            "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductTrialPeriod"
+            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductTaxMode"
@@ -91703,7 +91617,7 @@
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductQuantity"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "product": {
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductProduct"
@@ -93995,7 +93909,7 @@
             "$ref": "#/components/schemas/CustomerStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/CustomerCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "locale": {
             "type": "string",
@@ -94017,7 +93931,7 @@
             "readOnly": true
           },
           "import_meta": {
-            "$ref": "#/components/schemas/CustomerImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Related customer for this transaction. Only returned if the API key has a Customers (Read) permission."
@@ -94107,7 +94021,7 @@
             "$ref": "#/components/schemas/AddressCountryCode"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/AddressCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/AddressStatus"
@@ -94169,7 +94083,7 @@
             "$ref": "#/components/schemas/BusinessCompanyNumber"
           },
           "tax_identifier": {
-            "$ref": "#/components/schemas/BusinessTaxIdentifier"
+            "$ref": "#/components/schemas/BusinessCreateTaxIdentifier"
           },
           "status": {
             "$ref": "#/components/schemas/BusinessStatus"
@@ -94198,10 +94112,10 @@
             "readOnly": true
           },
           "custom_data": {
-            "$ref": "#/components/schemas/BusinessCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/BusinessImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Related business for this transaction. Only returned if a business exists for this transaction and the API key has a Businesses (Read) permission."
@@ -94274,7 +94188,7 @@
             "description": "Amount to discount by. For \u0060percentage\u0060 discounts, must be an amount between \u00600.01\u0060 and \u0060100\u0060. For \u0060flat\u0060 and \u0060flat_per_seat\u0060 discounts, amount in the lowest denomination for a currency."
           },
           "currency_code": {
-            "$ref": "#/components/schemas/DiscountCurrencyCode"
+            "$ref": "#/components/schemas/DiscountCreateCurrencyCode"
           },
           "recur": {
             "type": "boolean",
@@ -94282,13 +94196,13 @@
             "default": false
           },
           "maximum_recurring_intervals": {
-            "$ref": "#/components/schemas/DiscountMaximumRecurringIntervals"
+            "$ref": "#/components/schemas/DiscountCreateMaximumRecurringIntervals"
           },
           "usage_limit": {
-            "$ref": "#/components/schemas/DiscountUsageLimit"
+            "$ref": "#/components/schemas/DiscountCreateUsageLimit"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountRestrictToComposed"
+            "$ref": "#/components/schemas/DiscountCreateRestrictTo"
           },
           "expires_at": {
             "type": [
@@ -94299,7 +94213,7 @@
             "format": "date-time"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/DiscountCustomData"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataCustomData"
           },
           "times_used": {
             "type": "integer",
@@ -94329,7 +94243,7 @@
             "readOnly": true
           },
           "import_meta": {
-            "$ref": "#/components/schemas/DiscountImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Related discount for this transaction. Only returned if a discount exists for this transaction and the API key has a Discounts (Read) permission."
@@ -94563,7 +94477,7 @@
             "description": "Internal description for this price, not shown to customers. Typically notes for your team."
           },
           "name": {
-            "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceInternalPriceModelName"
+            "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceAndProductPriceName"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceInternalPriceModelTaxMode"
@@ -94582,7 +94496,7 @@
             "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceInternalPriceModelQuantity"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceInternalPriceModelCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           }
         },
         "description": "Price object for a non-catalog item to bill for. Include a \u0060product_id\u0060 to relate this non-catalog price to an existing catalog price."
@@ -94727,17 +94641,17 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/TransactionSubscriptionProductCreateDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "tax_category": {
             "description": "Tax category for this product. Used for charging the correct rate of tax. Selected tax category must be enabled on your Paddle account.",
             "$ref": "#/components/schemas/TaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/TransactionSubscriptionProductCreateImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionSubscriptionProductCreateCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           }
         },
         "additionalProperties": false,
@@ -94778,7 +94692,7 @@
             "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceAndProductPriceQuantity"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceAndProductPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "product": {
             "$ref": "#/components/schemas/SubscriptionChargeCreateWithPriceAndProductPriceProduct"
@@ -95456,7 +95370,7 @@
             "$ref": "#/components/schemas/AddressCountryCode"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/AddressCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/AddressStatus"
@@ -95590,7 +95504,7 @@
             "$ref": "#/components/schemas/BusinessCompanyNumber"
           },
           "tax_identifier": {
-            "$ref": "#/components/schemas/BusinessTaxIdentifier"
+            "$ref": "#/components/schemas/BusinessCreateTaxIdentifier"
           },
           "status": {
             "$ref": "#/components/schemas/BusinessStatus"
@@ -95619,10 +95533,10 @@
             "readOnly": true
           },
           "custom_data": {
-            "$ref": "#/components/schemas/BusinessCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/BusinessImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Business for this transaction. Reflects the entity at the time it was added to the transaction, or its revision if \u0060revised_at\u0060 is not \u0060null\u0060. Returned when the \u0060include\u0060 parameter is used with the \u0060business\u0060 value and the transaction has a \u0060business_id\u0060.",
@@ -95676,7 +95590,7 @@
             "$ref": "#/components/schemas/CustomerStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/CustomerCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "locale": {
             "type": "string",
@@ -95698,7 +95612,7 @@
             "readOnly": true
           },
           "import_meta": {
-            "$ref": "#/components/schemas/CustomerImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Customer for this transaction. Reflects the entity at the time it was added to the transaction, or its revision if \u0060revised_at\u0060 is not \u0060null\u0060. Returned when the \u0060include\u0060 parameter is used with the \u0060customer\u0060 value and the transaction has a \u0060customer_id\u0060.",
@@ -95772,7 +95686,7 @@
             "description": "Amount to discount by. For \u0060percentage\u0060 discounts, must be an amount between \u00600.01\u0060 and \u0060100\u0060. For \u0060flat\u0060 and \u0060flat_per_seat\u0060 discounts, amount in the lowest denomination for a currency."
           },
           "currency_code": {
-            "$ref": "#/components/schemas/DiscountCurrencyCode"
+            "$ref": "#/components/schemas/DiscountCreateCurrencyCode"
           },
           "recur": {
             "type": "boolean",
@@ -95780,13 +95694,13 @@
             "default": false
           },
           "maximum_recurring_intervals": {
-            "$ref": "#/components/schemas/DiscountMaximumRecurringIntervals"
+            "$ref": "#/components/schemas/DiscountCreateMaximumRecurringIntervals"
           },
           "usage_limit": {
-            "$ref": "#/components/schemas/DiscountUsageLimit"
+            "$ref": "#/components/schemas/DiscountCreateUsageLimit"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountRestrictToComposed"
+            "$ref": "#/components/schemas/DiscountCreateRestrictTo"
           },
           "expires_at": {
             "type": [
@@ -95797,7 +95711,7 @@
             "format": "date-time"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/DiscountCustomData"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataCustomData"
           },
           "times_used": {
             "type": "integer",
@@ -95827,7 +95741,7 @@
             "readOnly": true
           },
           "import_meta": {
-            "$ref": "#/components/schemas/DiscountImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           }
         },
         "description": "Discount for this transaction. Reflects the entity at the time it was added to the transaction. Returned when the \u0060include\u0060 parameter is used with the \u0060discount\u0060 value and the transaction has a \u0060discount_id\u0060.",
@@ -95965,7 +95879,7 @@
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdName"
           },
           "billing_cycle": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdBillingCycle"
+            "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdTrialPeriod"
@@ -95988,7 +95902,7 @@
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdQuantity"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "product_id": {
             "title": "Product ID",
@@ -96026,13 +95940,13 @@
             "description": "Internal description for this price, not shown to customers. Typically notes for your team."
           },
           "name": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductName"
+            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdName"
           },
           "billing_cycle": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductBillingCycle"
+            "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductTrialPeriod"
+            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductTaxMode"
@@ -96052,7 +95966,7 @@
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductQuantity"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "product": {
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductProduct"
@@ -96889,10 +96803,10 @@
             "description": "Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills."
           },
           "billing_cycle": {
-            "$ref": "#/components/schemas/PricePreviewBillingCycle"
+            "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/PricePreviewTrialPeriod"
+            "$ref": "#/components/schemas/PriceIncludesTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/PricePreviewTaxMode"
@@ -96915,10 +96829,10 @@
             "$ref": "#/components/schemas/PricePreviewStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PricePreviewCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
-            "$ref": "#/components/schemas/PricePreviewImportMeta"
+            "$ref": "#/components/schemas/AddressCreateImportMeta"
           },
           "created_at": {
             "title": "Created at",
@@ -97305,7 +97219,7 @@
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdName"
           },
           "billing_cycle": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdBillingCycle"
+            "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdTrialPeriod"
@@ -97328,7 +97242,7 @@
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdQuantity"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "product_id": {
             "title": "Product ID",
@@ -97366,13 +97280,13 @@
             "description": "Internal description for this price, not shown to customers. Typically notes for your team."
           },
           "name": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductName"
+            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdName"
           },
           "billing_cycle": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductBillingCycle"
+            "$ref": "#/components/schemas/PriceBillingCycle"
           },
           "trial_period": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductTrialPeriod"
+            "$ref": "#/components/schemas/TransactionPriceCreateWithProductIdTrialPeriod"
           },
           "tax_mode": {
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductTaxMode"
@@ -97392,7 +97306,7 @@
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductQuantity"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPriceCreateWithProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "product": {
             "$ref": "#/components/schemas/TransactionPriceCreateWithProductProduct"
@@ -97936,7 +97850,7 @@
             "description": "Amount adjusted for this transaction item. Required when item \u0060type\u0060 is \u0060partial\u0060."
           },
           "proration": {
-            "$ref": "#/components/schemas/AdjustmentItemsItemProration"
+            "$ref": "#/components/schemas/AdjustmentItemProration"
           },
           "totals": {
             "$ref": "#/components/schemas/AdjustmentItemsItemTotals"
@@ -167053,31 +166967,6 @@
           {
             "type": "array",
             "items": {
-              "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item"
-            }
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item"
-            }
-          },
-          {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string.",
-            "format": "date-time"
-          },
-          {
-            "type": "string",
-            "format": "date"
-          },
-          {
-            "type": "array",
-            "items": {
               "type": "string"
             }
           },
@@ -167153,12 +167042,6 @@
           },
           {
             "type": "string"
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReportCreatedRequestDataReportPayoutReconciliationFiltersItemValueAnyOf3Item"
-            }
           }
         ],
         "description": "Value to filter by. Check the allowed values descriptions for the \u0060name\u0060 field to see valid values for a field."
@@ -167187,49 +167070,12 @@
           },
           {
             "type": "string"
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReportCreatedRequestDataReportSubscriptionsFiltersItemValueAnyOf3Item"
-            }
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReportCreatedRequestDataReportSubscriptionsFiltersItemValueAnyOf4Item"
-            }
           }
         ],
         "description": "Value to filter by. Check the allowed values descriptions for the \u0060name\u0060 field to see valid values for a field."
       },
       "ReportUpdatedRequestDataReportAdjustmentsFiltersItemValue": {
         "anyOf": [
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReportUpdatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item"
-            }
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReportUpdatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item"
-            }
-          },
-          {
-            "examples": [
-              "2024-10-12T07:20:50.52Z"
-            ],
-            "title": "Timestamp",
-            "type": "string",
-            "description": "RFC 3339 datetime string.",
-            "format": "date-time"
-          },
-          {
-            "type": "string",
-            "format": "date"
-          },
           {
             "type": "array",
             "items": {
@@ -167308,12 +167154,6 @@
           },
           {
             "type": "string"
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReportUpdatedRequestDataReportPayoutReconciliationFiltersItemValueAnyOf3Item"
-            }
           }
         ],
         "description": "Value to filter by. Check the allowed values descriptions for the \u0060name\u0060 field to see valid values for a field."
@@ -167342,18 +167182,6 @@
           },
           {
             "type": "string"
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReportUpdatedRequestDataReportSubscriptionsFiltersItemValueAnyOf3Item"
-            }
-          },
-          {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ReportUpdatedRequestDataReportSubscriptionsFiltersItemValueAnyOf4Item"
-            }
           }
         ],
         "description": "Value to filter by. Check the allowed values descriptions for the \u0060name\u0060 field to see valid values for a field."
@@ -167459,7 +167287,7 @@
             "$ref": "#/components/schemas/AddressCreatedRequestDataCountryCode"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/AddressCreatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/AddressCreatedRequestDataStatus"
@@ -167526,28 +167354,28 @@
             "description": "The ID of the customer this address belongs to."
           },
           "description": {
-            "$ref": "#/components/schemas/AddressImportedRequestDataDescription"
+            "$ref": "#/components/schemas/AddressCreatedRequestDataDescription"
           },
           "first_line": {
-            "$ref": "#/components/schemas/AddressImportedRequestDataFirstLine"
+            "$ref": "#/components/schemas/AddressCreatedRequestDataFirstLine"
           },
           "second_line": {
-            "$ref": "#/components/schemas/AddressImportedRequestDataSecondLine"
+            "$ref": "#/components/schemas/AddressCreatedRequestDataSecondLine"
           },
           "city": {
-            "$ref": "#/components/schemas/AddressImportedRequestDataCity"
+            "$ref": "#/components/schemas/AddressCreatedRequestDataCity"
           },
           "postal_code": {
-            "$ref": "#/components/schemas/AddressImportedRequestDataPostalCode"
+            "$ref": "#/components/schemas/AddressCreatedRequestDataPostalCode"
           },
           "region": {
-            "$ref": "#/components/schemas/AddressImportedRequestDataRegion"
+            "$ref": "#/components/schemas/AddressCreatedRequestDataRegion"
           },
           "country_code": {
             "$ref": "#/components/schemas/AddressImportedRequestDataCountryCode"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/AddressImportedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/AddressImportedRequestDataStatus"
@@ -167614,28 +167442,28 @@
             "description": "The ID of the customer this address belongs to."
           },
           "description": {
-            "$ref": "#/components/schemas/AddressUpdatedRequestDataDescription"
+            "$ref": "#/components/schemas/AddressCreatedRequestDataDescription"
           },
           "first_line": {
-            "$ref": "#/components/schemas/AddressUpdatedRequestDataFirstLine"
+            "$ref": "#/components/schemas/AddressCreatedRequestDataFirstLine"
           },
           "second_line": {
-            "$ref": "#/components/schemas/AddressUpdatedRequestDataSecondLine"
+            "$ref": "#/components/schemas/AddressCreatedRequestDataSecondLine"
           },
           "city": {
-            "$ref": "#/components/schemas/AddressUpdatedRequestDataCity"
+            "$ref": "#/components/schemas/AddressCreatedRequestDataCity"
           },
           "postal_code": {
-            "$ref": "#/components/schemas/AddressUpdatedRequestDataPostalCode"
+            "$ref": "#/components/schemas/AddressCreatedRequestDataPostalCode"
           },
           "region": {
-            "$ref": "#/components/schemas/AddressUpdatedRequestDataRegion"
+            "$ref": "#/components/schemas/AddressCreatedRequestDataRegion"
           },
           "country_code": {
             "$ref": "#/components/schemas/AddressUpdatedRequestDataCountryCode"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/AddressUpdatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/AddressUpdatedRequestDataStatus"
@@ -168590,7 +168418,7 @@
             }
           },
           "custom_data": {
-            "$ref": "#/components/schemas/BusinessCreatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/BusinessCreatedRequestDataImportMeta"
@@ -168661,10 +168489,10 @@
             "description": "Full name."
           },
           "company_number": {
-            "$ref": "#/components/schemas/BusinessImportedRequestDataCompanyNumber"
+            "$ref": "#/components/schemas/BusinessCreatedRequestDataCompanyNumber"
           },
           "tax_identifier": {
-            "$ref": "#/components/schemas/BusinessImportedRequestDataTaxIdentifier"
+            "$ref": "#/components/schemas/BusinessCreatedRequestDataTaxIdentifier"
           },
           "status": {
             "$ref": "#/components/schemas/BusinessImportedRequestDataStatus"
@@ -168676,7 +168504,7 @@
             }
           },
           "custom_data": {
-            "$ref": "#/components/schemas/BusinessImportedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/BusinessImportedRequestDataImportMeta"
@@ -168747,10 +168575,10 @@
             "description": "Full name."
           },
           "company_number": {
-            "$ref": "#/components/schemas/BusinessUpdatedRequestDataCompanyNumber"
+            "$ref": "#/components/schemas/BusinessCreatedRequestDataCompanyNumber"
           },
           "tax_identifier": {
-            "$ref": "#/components/schemas/BusinessUpdatedRequestDataTaxIdentifier"
+            "$ref": "#/components/schemas/BusinessCreatedRequestDataTaxIdentifier"
           },
           "status": {
             "$ref": "#/components/schemas/BusinessUpdatedRequestDataStatus"
@@ -168762,7 +168590,7 @@
             }
           },
           "custom_data": {
-            "$ref": "#/components/schemas/BusinessUpdatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/BusinessUpdatedRequestDataImportMeta"
@@ -169059,7 +168887,7 @@
             "$ref": "#/components/schemas/CustomerCreatedRequestDataStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/CustomerCreatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "locale": {
             "type": "string",
@@ -169114,7 +168942,7 @@
             "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060."
           },
           "name": {
-            "$ref": "#/components/schemas/CustomerImportedRequestDataName"
+            "$ref": "#/components/schemas/CustomerCreatedRequestDataName"
           },
           "email": {
             "examples": [
@@ -169135,7 +168963,7 @@
             "$ref": "#/components/schemas/CustomerImportedRequestDataStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/CustomerImportedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "locale": {
             "type": "string",
@@ -169190,7 +169018,7 @@
             "description": "Unique Paddle ID for this customer entity, prefixed with \u0060ctm_\u0060."
           },
           "name": {
-            "$ref": "#/components/schemas/CustomerUpdatedRequestDataName"
+            "$ref": "#/components/schemas/CustomerCreatedRequestDataName"
           },
           "email": {
             "examples": [
@@ -169211,7 +169039,7 @@
             "$ref": "#/components/schemas/CustomerUpdatedRequestDataStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/CustomerUpdatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "locale": {
             "type": "string",
@@ -169411,10 +169239,10 @@
             "description": "Whether this discount applies for multiple subscription billing periods (\u0060true\u0060) or not (\u0060false\u0060)."
           },
           "maximum_recurring_intervals": {
-            "$ref": "#/components/schemas/DiscountCreatedRequestDataMaximumRecurringIntervals"
+            "$ref": "#/components/schemas/DiscountCreateMaximumRecurringIntervals"
           },
           "usage_limit": {
-            "$ref": "#/components/schemas/DiscountCreatedRequestDataUsageLimit"
+            "$ref": "#/components/schemas/DiscountCreateUsageLimit"
           },
           "restrict_to": {
             "$ref": "#/components/schemas/DiscountCreatedRequestDataRestrictTo"
@@ -169507,7 +169335,7 @@
             "description": "Whether this discount can be redeemed by customers at checkout (\u0060true\u0060) or not (\u0060false\u0060)."
           },
           "code": {
-            "$ref": "#/components/schemas/DiscountImportedRequestDataCode"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataCode"
           },
           "type": {
             "$ref": "#/components/schemas/DiscountImportedRequestDataType"
@@ -169524,13 +169352,13 @@
             "description": "Whether this discount applies for multiple subscription billing periods (\u0060true\u0060) or not (\u0060false\u0060)."
           },
           "maximum_recurring_intervals": {
-            "$ref": "#/components/schemas/DiscountImportedRequestDataMaximumRecurringIntervals"
+            "$ref": "#/components/schemas/DiscountCreateMaximumRecurringIntervals"
           },
           "usage_limit": {
-            "$ref": "#/components/schemas/DiscountImportedRequestDataUsageLimit"
+            "$ref": "#/components/schemas/DiscountCreateUsageLimit"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountImportedRequestDataRestrictTo"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataRestrictTo"
           },
           "expires_at": {
             "type": [
@@ -169544,10 +169372,10 @@
             "$ref": "#/components/schemas/DiscountImportedRequestDataMode"
           },
           "discount_group_id": {
-            "$ref": "#/components/schemas/DiscountImportedRequestDataDiscountGroupId"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataDiscountGroupId"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/DiscountImportedRequestDataCustomData"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/DiscountImportedRequestDataImportMeta"
@@ -169620,7 +169448,7 @@
             "description": "Whether this discount can be redeemed by customers at checkout (\u0060true\u0060) or not (\u0060false\u0060)."
           },
           "code": {
-            "$ref": "#/components/schemas/DiscountUpdatedRequestDataCode"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataCode"
           },
           "type": {
             "$ref": "#/components/schemas/DiscountUpdatedRequestDataType"
@@ -169637,13 +169465,13 @@
             "description": "Whether this discount applies for multiple subscription billing periods (\u0060true\u0060) or not (\u0060false\u0060)."
           },
           "maximum_recurring_intervals": {
-            "$ref": "#/components/schemas/DiscountUpdatedRequestDataMaximumRecurringIntervals"
+            "$ref": "#/components/schemas/DiscountCreateMaximumRecurringIntervals"
           },
           "usage_limit": {
-            "$ref": "#/components/schemas/DiscountUpdatedRequestDataUsageLimit"
+            "$ref": "#/components/schemas/DiscountCreateUsageLimit"
           },
           "restrict_to": {
-            "$ref": "#/components/schemas/DiscountUpdatedRequestDataRestrictTo"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataRestrictTo"
           },
           "expires_at": {
             "type": [
@@ -169657,10 +169485,10 @@
             "$ref": "#/components/schemas/DiscountUpdatedRequestDataMode"
           },
           "discount_group_id": {
-            "$ref": "#/components/schemas/DiscountUpdatedRequestDataDiscountGroupId"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataDiscountGroupId"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/DiscountUpdatedRequestDataCustomData"
+            "$ref": "#/components/schemas/DiscountCreatedRequestDataCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/DiscountUpdatedRequestDataImportMeta"
@@ -169967,7 +169795,7 @@
             "$ref": "#/components/schemas/PriceCreatedRequestDataStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceCreatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/PriceCreatedRequestDataImportMeta"
@@ -170075,7 +169903,7 @@
             "$ref": "#/components/schemas/PriceImportedRequestDataStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceImportedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/PriceImportedRequestDataImportMeta"
@@ -170183,7 +170011,7 @@
             "$ref": "#/components/schemas/PriceUpdatedRequestDataStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/PriceUpdatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/PriceUpdatedRequestDataImportMeta"
@@ -170240,7 +170068,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/ProductCreatedRequestDataDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/ProductCreatedRequestDataType"
@@ -170249,10 +170077,10 @@
             "$ref": "#/components/schemas/ProductCreatedRequestDataTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/ProductCreatedRequestDataImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductCreatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/ProductCreatedRequestDataStatus"
@@ -170313,7 +170141,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/ProductImportedRequestDataDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/ProductImportedRequestDataType"
@@ -170322,10 +170150,10 @@
             "$ref": "#/components/schemas/ProductImportedRequestDataTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/ProductImportedRequestDataImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductImportedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/ProductImportedRequestDataStatus"
@@ -170386,7 +170214,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/ProductUpdatedRequestDataDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/ProductUpdatedRequestDataType"
@@ -170395,10 +170223,10 @@
             "$ref": "#/components/schemas/ProductUpdatedRequestDataTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/ProductUpdatedRequestDataImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/ProductUpdatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/ProductUpdatedRequestDataStatus"
@@ -170588,7 +170416,7 @@
             "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionActivatedRequestDataImportMeta"
@@ -170758,7 +170586,7 @@
             "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionCanceledRequestDataImportMeta"
@@ -170929,7 +170757,7 @@
             "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionCreatedRequestDataImportMeta"
@@ -171108,7 +170936,7 @@
             "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionImportedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionImportedRequestDataImportMeta"
@@ -171278,7 +171106,7 @@
             "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionPastDueRequestDataImportMeta"
@@ -171448,7 +171276,7 @@
             "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionPausedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionPausedRequestDataImportMeta"
@@ -171618,7 +171446,7 @@
             "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionResumedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionResumedRequestDataImportMeta"
@@ -171788,7 +171616,7 @@
             "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionTrialingRequestDataImportMeta"
@@ -171958,7 +171786,7 @@
             "description": "List of active consent requirements for the subscription\u0027s current billing period."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataImportMeta"
@@ -172031,7 +171859,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionBilledRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/TransactionBilledRequestDataCurrencyCode"
@@ -172201,7 +172029,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionCanceledRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/TransactionCanceledRequestDataCurrencyCode"
@@ -172218,7 +172046,7 @@
             "description": "Paddle ID of the subscription that this transaction is for, prefixed with \u0060sub_\u0060."
           },
           "invoice_id": {
-            "$ref": "#/components/schemas/TransactionCanceledRequestDataInvoiceId"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataInvoiceId"
           },
           "invoice_number": {
             "examples": [
@@ -172371,7 +172199,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionCompletedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/TransactionCompletedRequestDataCurrencyCode"
@@ -172388,7 +172216,7 @@
             "description": "Paddle ID of the subscription that this transaction is for, prefixed with \u0060sub_\u0060."
           },
           "invoice_id": {
-            "$ref": "#/components/schemas/TransactionCompletedRequestDataInvoiceId"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataInvoiceId"
           },
           "invoice_number": {
             "examples": [
@@ -172541,7 +172369,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionCreatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/TransactionCreatedRequestDataCurrencyCode"
@@ -172558,7 +172386,7 @@
             "description": "Paddle ID of the subscription that this transaction is for, prefixed with \u0060sub_\u0060."
           },
           "invoice_id": {
-            "$ref": "#/components/schemas/TransactionCreatedRequestDataInvoiceId"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataInvoiceId"
           },
           "invoice_number": {
             "examples": [
@@ -172711,7 +172539,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPaidRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/TransactionPaidRequestDataCurrencyCode"
@@ -172728,7 +172556,7 @@
             "description": "Paddle ID of the subscription that this transaction is for, prefixed with \u0060sub_\u0060."
           },
           "invoice_id": {
-            "$ref": "#/components/schemas/TransactionPaidRequestDataInvoiceId"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataInvoiceId"
           },
           "invoice_number": {
             "examples": [
@@ -172881,7 +172709,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPastDueRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/TransactionPastDueRequestDataCurrencyCode"
@@ -172898,7 +172726,7 @@
             "description": "Paddle ID of the subscription that this transaction is for, prefixed with \u0060sub_\u0060."
           },
           "invoice_id": {
-            "$ref": "#/components/schemas/TransactionPastDueRequestDataInvoiceId"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataInvoiceId"
           },
           "invoice_number": {
             "examples": [
@@ -173051,7 +172879,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataCurrencyCode"
@@ -173068,7 +172896,7 @@
             "description": "Paddle ID of the subscription that this transaction is for, prefixed with \u0060sub_\u0060."
           },
           "invoice_id": {
-            "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataInvoiceId"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataInvoiceId"
           },
           "invoice_number": {
             "examples": [
@@ -173221,7 +173049,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionReadyRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/TransactionReadyRequestDataCurrencyCode"
@@ -173238,7 +173066,7 @@
             "description": "Paddle ID of the subscription that this transaction is for, prefixed with \u0060sub_\u0060."
           },
           "invoice_id": {
-            "$ref": "#/components/schemas/TransactionReadyRequestDataInvoiceId"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataInvoiceId"
           },
           "invoice_number": {
             "examples": [
@@ -173391,7 +173219,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionRevisedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/TransactionRevisedRequestDataCurrencyCode"
@@ -173408,7 +173236,7 @@
             "description": "Paddle ID of the subscription that this transaction is for, prefixed with \u0060sub_\u0060."
           },
           "invoice_id": {
-            "$ref": "#/components/schemas/TransactionRevisedRequestDataInvoiceId"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataInvoiceId"
           },
           "invoice_number": {
             "examples": [
@@ -173561,7 +173389,7 @@
             "description": "Paddle ID of the business that this transaction is for, prefixed with \u0060biz_\u0060."
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionUpdatedRequestDataCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "currency_code": {
             "$ref": "#/components/schemas/TransactionUpdatedRequestDataCurrencyCode"
@@ -173578,7 +173406,7 @@
             "description": "Paddle ID of the subscription that this transaction is for, prefixed with \u0060sub_\u0060."
           },
           "invoice_id": {
-            "$ref": "#/components/schemas/TransactionUpdatedRequestDataInvoiceId"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataInvoiceId"
           },
           "invoice_number": {
             "examples": [
@@ -173703,7 +173531,7 @@
             "$ref": "#/components/schemas/ReportCreatedRequestDataReportTransactionsFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportCreatedRequestDataReportTransactionsFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         }
       },
@@ -173744,7 +173572,7 @@
             "$ref": "#/components/schemas/ReportCreatedRequestDataReportDiscountsFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportCreatedRequestDataReportDiscountsFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -173765,7 +173593,7 @@
             "$ref": "#/components/schemas/ReportCreatedRequestDataReportBalanceFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportCreatedRequestDataReportBalanceFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -173785,7 +173613,7 @@
             "$ref": "#/components/schemas/ReportCreatedRequestDataReportPayoutReconciliationFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportCreatedRequestDataReportPayoutReconciliationFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -173805,7 +173633,7 @@
             "$ref": "#/components/schemas/ReportCreatedRequestDataReportCheckoutsFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportCreatedRequestDataReportCheckoutsFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -173826,7 +173654,7 @@
             "$ref": "#/components/schemas/ReportCreatedRequestDataReportSubscriptionsFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportCreatedRequestDataReportSubscriptionsFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -173847,7 +173675,7 @@
             "$ref": "#/components/schemas/ReportUpdatedRequestDataReportAdjustmentsFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportUpdatedRequestDataReportAdjustmentsFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "Filter criteria for this report. If no \u0060gte\u0060 filter for \u0060updated_at\u0060 is passed when creating, reports are filtered to include data updated in the last month. This means \u0060updated_at\u0060 is greater than or equal to (\u0060gte\u0060) the same date and time one calendar month before the report was generated, so the window is between 28 and 31 days depending on the month."
@@ -173868,7 +173696,7 @@
             "$ref": "#/components/schemas/ReportUpdatedRequestDataReportTransactionsFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportUpdatedRequestDataReportTransactionsFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         }
       },
@@ -173888,7 +173716,7 @@
             "$ref": "#/components/schemas/ReportUpdatedRequestDataReportProductsPricesFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportUpdatedRequestDataReportProductsPricesFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportProductsPricesFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -173909,7 +173737,7 @@
             "$ref": "#/components/schemas/ReportUpdatedRequestDataReportDiscountsFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportUpdatedRequestDataReportDiscountsFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -173930,7 +173758,7 @@
             "$ref": "#/components/schemas/ReportUpdatedRequestDataReportBalanceFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportUpdatedRequestDataReportBalanceFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -173950,7 +173778,7 @@
             "$ref": "#/components/schemas/ReportUpdatedRequestDataReportPayoutReconciliationFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportUpdatedRequestDataReportPayoutReconciliationFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -173970,7 +173798,7 @@
             "$ref": "#/components/schemas/ReportUpdatedRequestDataReportCheckoutsFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportUpdatedRequestDataReportCheckoutsFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -173991,7 +173819,7 @@
             "$ref": "#/components/schemas/ReportUpdatedRequestDataReportSubscriptionsFiltersItemOperator"
           },
           "value": {
-            "$ref": "#/components/schemas/ReportUpdatedRequestDataReportSubscriptionsFiltersItemValue"
+            "$ref": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsFiltersItemValue"
           }
         },
         "description": "List of filters applied to this report."
@@ -175542,7 +175370,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/SubscriptionActivatedRequestDataBillingDetailsPaymentTerms"
@@ -175863,7 +175691,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/SubscriptionCanceledRequestDataBillingDetailsPaymentTerms"
@@ -176184,7 +176012,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/SubscriptionCreatedRequestDataBillingDetailsPaymentTerms"
@@ -176505,7 +176333,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/SubscriptionImportedRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/SubscriptionImportedRequestDataBillingDetailsPaymentTerms"
@@ -176826,7 +176654,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/SubscriptionPastDueRequestDataBillingDetailsPaymentTerms"
@@ -177147,7 +176975,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/SubscriptionPausedRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/SubscriptionPausedRequestDataBillingDetailsPaymentTerms"
@@ -177468,7 +177296,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/SubscriptionResumedRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/SubscriptionResumedRequestDataBillingDetailsPaymentTerms"
@@ -177789,7 +177617,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/SubscriptionTrialingRequestDataBillingDetailsPaymentTerms"
@@ -178110,7 +177938,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataBillingDetailsPaymentTerms"
@@ -178388,7 +178216,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/TransactionBilledRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/TransactionBilledRequestDataBillingDetailsPaymentTerms"
@@ -178600,7 +178428,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/TransactionCanceledRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/TransactionCanceledRequestDataBillingDetailsPaymentTerms"
@@ -178784,7 +178612,7 @@
         ],
         "properties": {
           "url": {
-            "$ref": "#/components/schemas/TransactionCanceledRequestDataCheckoutUrl"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataCheckoutUrl"
           }
         },
         "description": "Paddle Checkout details for this transaction. Returned for automatically-collected transactions and where \u0060billing_details.enable_checkout\u0060 is \u0060true\u0060 for manually-collected transactions; \u0060null\u0060 otherwise."
@@ -178812,7 +178640,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/TransactionCompletedRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/TransactionCompletedRequestDataBillingDetailsPaymentTerms"
@@ -178996,7 +178824,7 @@
         ],
         "properties": {
           "url": {
-            "$ref": "#/components/schemas/TransactionCompletedRequestDataCheckoutUrl"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataCheckoutUrl"
           }
         },
         "description": "Paddle Checkout details for this transaction. Returned for automatically-collected transactions and where \u0060billing_details.enable_checkout\u0060 is \u0060true\u0060 for manually-collected transactions; \u0060null\u0060 otherwise."
@@ -179024,7 +178852,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/TransactionCreatedRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/TransactionCreatedRequestDataBillingDetailsPaymentTerms"
@@ -179208,7 +179036,7 @@
         ],
         "properties": {
           "url": {
-            "$ref": "#/components/schemas/TransactionCreatedRequestDataCheckoutUrl"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataCheckoutUrl"
           }
         },
         "description": "Paddle Checkout details for this transaction. Returned for automatically-collected transactions and where \u0060billing_details.enable_checkout\u0060 is \u0060true\u0060 for manually-collected transactions; \u0060null\u0060 otherwise."
@@ -179236,7 +179064,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/TransactionPaidRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/TransactionPaidRequestDataBillingDetailsPaymentTerms"
@@ -179420,7 +179248,7 @@
         ],
         "properties": {
           "url": {
-            "$ref": "#/components/schemas/TransactionPaidRequestDataCheckoutUrl"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataCheckoutUrl"
           }
         },
         "description": "Paddle Checkout details for this transaction. Returned for automatically-collected transactions and where \u0060billing_details.enable_checkout\u0060 is \u0060true\u0060 for manually-collected transactions; \u0060null\u0060 otherwise."
@@ -179448,7 +179276,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/TransactionPastDueRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/TransactionPastDueRequestDataBillingDetailsPaymentTerms"
@@ -179632,7 +179460,7 @@
         ],
         "properties": {
           "url": {
-            "$ref": "#/components/schemas/TransactionPastDueRequestDataCheckoutUrl"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataCheckoutUrl"
           }
         },
         "description": "Paddle Checkout details for this transaction. Returned for automatically-collected transactions and where \u0060billing_details.enable_checkout\u0060 is \u0060true\u0060 for manually-collected transactions; \u0060null\u0060 otherwise."
@@ -179660,7 +179488,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataBillingDetailsPaymentTerms"
@@ -179844,7 +179672,7 @@
         ],
         "properties": {
           "url": {
-            "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataCheckoutUrl"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataCheckoutUrl"
           }
         },
         "description": "Paddle Checkout details for this transaction. Returned for automatically-collected transactions and where \u0060billing_details.enable_checkout\u0060 is \u0060true\u0060 for manually-collected transactions; \u0060null\u0060 otherwise."
@@ -179872,7 +179700,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/TransactionReadyRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/TransactionReadyRequestDataBillingDetailsPaymentTerms"
@@ -180056,7 +179884,7 @@
         ],
         "properties": {
           "url": {
-            "$ref": "#/components/schemas/TransactionReadyRequestDataCheckoutUrl"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataCheckoutUrl"
           }
         },
         "description": "Paddle Checkout details for this transaction. Returned for automatically-collected transactions and where \u0060billing_details.enable_checkout\u0060 is \u0060true\u0060 for manually-collected transactions; \u0060null\u0060 otherwise."
@@ -180084,7 +179912,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/TransactionRevisedRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/TransactionRevisedRequestDataBillingDetailsPaymentTerms"
@@ -180268,7 +180096,7 @@
         ],
         "properties": {
           "url": {
-            "$ref": "#/components/schemas/TransactionRevisedRequestDataCheckoutUrl"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataCheckoutUrl"
           }
         },
         "description": "Paddle Checkout details for this transaction. Returned for automatically-collected transactions and where \u0060billing_details.enable_checkout\u0060 is \u0060true\u0060 for manually-collected transactions; \u0060null\u0060 otherwise."
@@ -180296,7 +180124,7 @@
             "description": "Customer purchase order number. Appears on invoice documents."
           },
           "additional_information": {
-            "$ref": "#/components/schemas/TransactionUpdatedRequestDataBillingDetailsAdditionalInformation"
+            "$ref": "#/components/schemas/BillingDetailsAdditionalInformation"
           },
           "payment_terms": {
             "$ref": "#/components/schemas/TransactionUpdatedRequestDataBillingDetailsPaymentTerms"
@@ -180480,7 +180308,7 @@
         ],
         "properties": {
           "url": {
-            "$ref": "#/components/schemas/TransactionUpdatedRequestDataCheckoutUrl"
+            "$ref": "#/components/schemas/TransactionBilledRequestDataCheckoutUrl"
           }
         },
         "description": "Paddle Checkout details for this transaction. Returned for automatically-collected transactions and where \u0060billing_details.enable_checkout\u0060 is \u0060true\u0060 for manually-collected transactions; \u0060null\u0060 otherwise."
@@ -181017,7 +180845,7 @@
             "$ref": "#/components/schemas/SubscriptionActivatedRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionActivatedRequestDataItemsItemPriceImportMeta"
@@ -181077,7 +180905,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/SubscriptionActivatedRequestDataItemsItemProductType"
@@ -181086,10 +180914,10 @@
             "$ref": "#/components/schemas/SubscriptionActivatedRequestDataItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionActivatedRequestDataItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/SubscriptionActivatedRequestDataItemsItemProductStatus"
@@ -181284,7 +181112,7 @@
             "$ref": "#/components/schemas/SubscriptionCanceledRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionCanceledRequestDataItemsItemPriceImportMeta"
@@ -181344,7 +181172,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/SubscriptionCanceledRequestDataItemsItemProductType"
@@ -181353,10 +181181,10 @@
             "$ref": "#/components/schemas/SubscriptionCanceledRequestDataItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionCanceledRequestDataItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/SubscriptionCanceledRequestDataItemsItemProductStatus"
@@ -181551,7 +181379,7 @@
             "$ref": "#/components/schemas/SubscriptionCreatedRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionCreatedRequestDataItemsItemPriceImportMeta"
@@ -181611,7 +181439,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/SubscriptionCreatedRequestDataItemsItemProductType"
@@ -181620,10 +181448,10 @@
             "$ref": "#/components/schemas/SubscriptionCreatedRequestDataItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionCreatedRequestDataItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/SubscriptionCreatedRequestDataItemsItemProductStatus"
@@ -181818,7 +181646,7 @@
             "$ref": "#/components/schemas/SubscriptionImportedRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionImportedRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionImportedRequestDataItemsItemPriceImportMeta"
@@ -181878,7 +181706,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/SubscriptionImportedRequestDataItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/SubscriptionImportedRequestDataItemsItemProductType"
@@ -181887,10 +181715,10 @@
             "$ref": "#/components/schemas/SubscriptionImportedRequestDataItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/SubscriptionImportedRequestDataItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionImportedRequestDataItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/SubscriptionImportedRequestDataItemsItemProductStatus"
@@ -182085,7 +181913,7 @@
             "$ref": "#/components/schemas/SubscriptionPastDueRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionPastDueRequestDataItemsItemPriceImportMeta"
@@ -182145,7 +181973,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/SubscriptionPastDueRequestDataItemsItemProductType"
@@ -182154,10 +181982,10 @@
             "$ref": "#/components/schemas/SubscriptionPastDueRequestDataItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionPastDueRequestDataItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/SubscriptionPastDueRequestDataItemsItemProductStatus"
@@ -182352,7 +182180,7 @@
             "$ref": "#/components/schemas/SubscriptionPausedRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionPausedRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionPausedRequestDataItemsItemPriceImportMeta"
@@ -182412,7 +182240,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/SubscriptionPausedRequestDataItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/SubscriptionPausedRequestDataItemsItemProductType"
@@ -182421,10 +182249,10 @@
             "$ref": "#/components/schemas/SubscriptionPausedRequestDataItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/SubscriptionPausedRequestDataItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionPausedRequestDataItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/SubscriptionPausedRequestDataItemsItemProductStatus"
@@ -182619,7 +182447,7 @@
             "$ref": "#/components/schemas/SubscriptionResumedRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionResumedRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionResumedRequestDataItemsItemPriceImportMeta"
@@ -182679,7 +182507,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/SubscriptionResumedRequestDataItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/SubscriptionResumedRequestDataItemsItemProductType"
@@ -182688,10 +182516,10 @@
             "$ref": "#/components/schemas/SubscriptionResumedRequestDataItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/SubscriptionResumedRequestDataItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionResumedRequestDataItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/SubscriptionResumedRequestDataItemsItemProductStatus"
@@ -182886,7 +182714,7 @@
             "$ref": "#/components/schemas/SubscriptionTrialingRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionTrialingRequestDataItemsItemPriceImportMeta"
@@ -182946,7 +182774,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/SubscriptionTrialingRequestDataItemsItemProductType"
@@ -182955,10 +182783,10 @@
             "$ref": "#/components/schemas/SubscriptionTrialingRequestDataItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionTrialingRequestDataItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/SubscriptionTrialingRequestDataItemsItemProductStatus"
@@ -183153,7 +182981,7 @@
             "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataItemsItemPriceImportMeta"
@@ -183213,7 +183041,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataItemsItemProductType"
@@ -183222,10 +183050,10 @@
             "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/SubscriptionUpdatedRequestDataItemsItemProductStatus"
@@ -183389,7 +183217,7 @@
             "$ref": "#/components/schemas/TransactionBilledRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionBilledRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/TransactionBilledRequestDataItemsItemPriceImportMeta"
@@ -184030,7 +183858,7 @@
             "$ref": "#/components/schemas/TransactionCanceledRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionCanceledRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/TransactionCanceledRequestDataItemsItemPriceImportMeta"
@@ -184671,7 +184499,7 @@
             "$ref": "#/components/schemas/TransactionCompletedRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionCompletedRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/TransactionCompletedRequestDataItemsItemPriceImportMeta"
@@ -185312,7 +185140,7 @@
             "$ref": "#/components/schemas/TransactionCreatedRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionCreatedRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/TransactionCreatedRequestDataItemsItemPriceImportMeta"
@@ -185953,7 +185781,7 @@
             "$ref": "#/components/schemas/TransactionPaidRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPaidRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/TransactionPaidRequestDataItemsItemPriceImportMeta"
@@ -186594,7 +186422,7 @@
             "$ref": "#/components/schemas/TransactionPastDueRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPastDueRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/TransactionPastDueRequestDataItemsItemPriceImportMeta"
@@ -187235,7 +187063,7 @@
             "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataItemsItemPriceImportMeta"
@@ -187876,7 +187704,7 @@
             "$ref": "#/components/schemas/TransactionReadyRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionReadyRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/TransactionReadyRequestDataItemsItemPriceImportMeta"
@@ -188517,7 +188345,7 @@
             "$ref": "#/components/schemas/TransactionRevisedRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionRevisedRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/TransactionRevisedRequestDataItemsItemPriceImportMeta"
@@ -189158,7 +188986,7 @@
             "$ref": "#/components/schemas/TransactionUpdatedRequestDataItemsItemPriceStatus"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionUpdatedRequestDataItemsItemPriceCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "import_meta": {
             "$ref": "#/components/schemas/TransactionUpdatedRequestDataItemsItemPriceImportMeta"
@@ -192049,7 +191877,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/TransactionBilledRequestDataDetailsLineItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/TransactionBilledRequestDataDetailsLineItemsItemProductType"
@@ -192058,10 +191886,10 @@
             "$ref": "#/components/schemas/TransactionBilledRequestDataDetailsLineItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/TransactionBilledRequestDataDetailsLineItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionBilledRequestDataDetailsLineItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/TransactionBilledRequestDataDetailsLineItemsItemProductStatus"
@@ -192598,7 +192426,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/TransactionCanceledRequestDataDetailsLineItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/TransactionCanceledRequestDataDetailsLineItemsItemProductType"
@@ -192607,10 +192435,10 @@
             "$ref": "#/components/schemas/TransactionCanceledRequestDataDetailsLineItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/TransactionCanceledRequestDataDetailsLineItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionCanceledRequestDataDetailsLineItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/TransactionCanceledRequestDataDetailsLineItemsItemProductStatus"
@@ -193147,7 +192975,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/TransactionCompletedRequestDataDetailsLineItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/TransactionCompletedRequestDataDetailsLineItemsItemProductType"
@@ -193156,10 +192984,10 @@
             "$ref": "#/components/schemas/TransactionCompletedRequestDataDetailsLineItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/TransactionCompletedRequestDataDetailsLineItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionCompletedRequestDataDetailsLineItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/TransactionCompletedRequestDataDetailsLineItemsItemProductStatus"
@@ -193696,7 +193524,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/TransactionCreatedRequestDataDetailsLineItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/TransactionCreatedRequestDataDetailsLineItemsItemProductType"
@@ -193705,10 +193533,10 @@
             "$ref": "#/components/schemas/TransactionCreatedRequestDataDetailsLineItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/TransactionCreatedRequestDataDetailsLineItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionCreatedRequestDataDetailsLineItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/TransactionCreatedRequestDataDetailsLineItemsItemProductStatus"
@@ -194245,7 +194073,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/TransactionPaidRequestDataDetailsLineItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/TransactionPaidRequestDataDetailsLineItemsItemProductType"
@@ -194254,10 +194082,10 @@
             "$ref": "#/components/schemas/TransactionPaidRequestDataDetailsLineItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/TransactionPaidRequestDataDetailsLineItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPaidRequestDataDetailsLineItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/TransactionPaidRequestDataDetailsLineItemsItemProductStatus"
@@ -194794,7 +194622,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/TransactionPastDueRequestDataDetailsLineItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/TransactionPastDueRequestDataDetailsLineItemsItemProductType"
@@ -194803,10 +194631,10 @@
             "$ref": "#/components/schemas/TransactionPastDueRequestDataDetailsLineItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/TransactionPastDueRequestDataDetailsLineItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPastDueRequestDataDetailsLineItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/TransactionPastDueRequestDataDetailsLineItemsItemProductStatus"
@@ -195343,7 +195171,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataDetailsLineItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataDetailsLineItemsItemProductType"
@@ -195352,10 +195180,10 @@
             "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataDetailsLineItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataDetailsLineItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataDetailsLineItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/TransactionPaymentFailedRequestDataDetailsLineItemsItemProductStatus"
@@ -195892,7 +195720,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/TransactionReadyRequestDataDetailsLineItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/TransactionReadyRequestDataDetailsLineItemsItemProductType"
@@ -195901,10 +195729,10 @@
             "$ref": "#/components/schemas/TransactionReadyRequestDataDetailsLineItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/TransactionReadyRequestDataDetailsLineItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionReadyRequestDataDetailsLineItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/TransactionReadyRequestDataDetailsLineItemsItemProductStatus"
@@ -196441,7 +196269,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/TransactionRevisedRequestDataDetailsLineItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/TransactionRevisedRequestDataDetailsLineItemsItemProductType"
@@ -196450,10 +196278,10 @@
             "$ref": "#/components/schemas/TransactionRevisedRequestDataDetailsLineItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/TransactionRevisedRequestDataDetailsLineItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionRevisedRequestDataDetailsLineItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/TransactionRevisedRequestDataDetailsLineItemsItemProductStatus"
@@ -196990,7 +196818,7 @@
             "description": "Name of this product."
           },
           "description": {
-            "$ref": "#/components/schemas/TransactionUpdatedRequestDataDetailsLineItemsItemProductDescription"
+            "$ref": "#/components/schemas/ProductCreateDescription"
           },
           "type": {
             "$ref": "#/components/schemas/TransactionUpdatedRequestDataDetailsLineItemsItemProductType"
@@ -196999,10 +196827,10 @@
             "$ref": "#/components/schemas/TransactionUpdatedRequestDataDetailsLineItemsItemProductTaxCategory"
           },
           "image_url": {
-            "$ref": "#/components/schemas/TransactionUpdatedRequestDataDetailsLineItemsItemProductImageUrl"
+            "$ref": "#/components/schemas/ProductCreateImageUrl"
           },
           "custom_data": {
-            "$ref": "#/components/schemas/TransactionUpdatedRequestDataDetailsLineItemsItemProductCustomData"
+            "$ref": "#/components/schemas/AddressCreateCustomData"
           },
           "status": {
             "$ref": "#/components/schemas/TransactionUpdatedRequestDataDetailsLineItemsItemProductStatus"

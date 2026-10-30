@@ -18,23 +18,25 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("custom_data") is null) { _explicitNullValueCustomData = default!; _explicitNullProperties?.Remove("custom_data"); }
+            else if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
         }
 
         /// <summary>What happened on the subscription.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCustomDataUpdatedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCustomDataUpdatedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCustomDataUpdatedAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Updated custom data on the subscription. `null` if custom data was removed. This is what the custom data was changed to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
+        public UntypedNode? CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; AdditionalData?.Remove("custom_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
         private UntypedNode? _explicitNullValueCustomData = default!;
 #nullable restore
 #else
-        public UntypedNode CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
+        public UntypedNode CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; AdditionalData?.Remove("custom_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
         private UntypedNode _explicitNullValueCustomData = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCustomDataUpdatedAction>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCustomDataUpdatedAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
             };
         }

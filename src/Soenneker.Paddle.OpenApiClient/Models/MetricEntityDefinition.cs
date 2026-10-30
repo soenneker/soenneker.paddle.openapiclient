@@ -18,10 +18,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
-            if (parseNode.GetChildNode("entity") is { } nullNodeEntity && nullNodeEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entity = null;
-            if (parseNode.GetChildNode("measures") is { } nullNodeMeasures && nullNodeMeasures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Measures = null;
-            if (parseNode.GetChildNode("time_dimension") is { } nullNodeTimeDimension && nullNodeTimeDimension.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeDimension = null;
+            if (parseNode.GetChildNode("dimensions") is null) { _explicitNullValueDimensions = default!; _explicitNullProperties?.Remove("dimensions"); }
+            else if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
+            if (parseNode.GetChildNode("entity") is null) { _explicitNullValueEntity = default!; _explicitNullProperties?.Remove("entity"); }
+            else if (parseNode.GetChildNode("entity") is { } nullNodeEntity && nullNodeEntity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entity = null;
+            if (parseNode.GetChildNode("measures") is null) { _explicitNullValueMeasures = default!; _explicitNullProperties?.Remove("measures"); }
+            else if (parseNode.GetChildNode("measures") is { } nullNodeMeasures && nullNodeMeasures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Measures = null;
+            if (parseNode.GetChildNode("time_dimension") is null) { _explicitNullValueTimeDimension = default!; _explicitNullProperties?.Remove("time_dimension"); }
+            else if (parseNode.GetChildNode("time_dimension") is { } nullNodeTimeDimension && nullNodeTimeDimension.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeDimension = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,34 +33,34 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Dimensions available to group and filter this metric by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension>? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension>? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; AdditionalData?.Remove("dimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension>? _explicitNullValueDimensions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension> Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension> Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; AdditionalData?.Remove("dimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension> _explicitNullValueDimensions = default!;
 #endif
         /// <summary>Entity name for a queryable Explore metric. Pass it as the `entity` when you query.`subscriptions` isn&apos;t available in sandbox, where it&apos;s treated as `unknown_entity`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionEntity? Entity { get => _explicitNullValueEntity; set { _explicitNullValueEntity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity"); else _explicitNullProperties?.Remove("entity"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionEntity? Entity { get => _explicitNullValueEntity; set { _explicitNullValueEntity = value; AdditionalData?.Remove("entity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entity"); else _explicitNullProperties?.Remove("entity"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionEntity? _explicitNullValueEntity = default!;
         /// <summary>Measures available to select and aggregate.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityMeasure>? Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityMeasure>? Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; AdditionalData?.Remove("measures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityMeasure>? _explicitNullValueMeasures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityMeasure> Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityMeasure> Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; AdditionalData?.Remove("measures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityMeasure> _explicitNullValueMeasures = default!;
 #endif
         /// <summary>The metric&apos;s time axis and allowed bucketing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionTimeDimension? TimeDimension { get => _explicitNullValueTimeDimension; set { _explicitNullValueTimeDimension = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_dimension"); else _explicitNullProperties?.Remove("time_dimension"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionTimeDimension? TimeDimension { get => _explicitNullValueTimeDimension; set { _explicitNullValueTimeDimension = value; AdditionalData?.Remove("time_dimension"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_dimension"); else _explicitNullProperties?.Remove("time_dimension"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionTimeDimension? _explicitNullValueTimeDimension = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionTimeDimension TimeDimension { get => _explicitNullValueTimeDimension; set { _explicitNullValueTimeDimension = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_dimension"); else _explicitNullProperties?.Remove("time_dimension"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionTimeDimension TimeDimension { get => _explicitNullValueTimeDimension; set { _explicitNullValueTimeDimension = value; AdditionalData?.Remove("time_dimension"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_dimension"); else _explicitNullProperties?.Remove("time_dimension"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionTimeDimension _explicitNullValueTimeDimension = default!;
 #endif
         /// <summary>
@@ -85,7 +89,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "dimensions", n => { Dimensions = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension>(global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "entity", n => { Entity = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionEntity>(); } },
+                { "entity", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionEntity>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEntity = default; _explicitNullProperties?.Remove("entity"); AdditionalData["entity"] = unknown; } else { Entity = parsed; AdditionalData.Remove("entity"); } } },
                 { "measures", n => { Measures = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityMeasure>(global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityMeasure.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "time_dimension", n => { TimeDimension = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionTimeDimension>(global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionTimeDimension.CreateFromDiscriminatorValue); } },
             };

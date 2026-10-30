@@ -18,9 +18,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("import_meta") is { } nullNodeImportMeta && nullNodeImportMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportMeta = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("import_meta") is null) { _explicitNullValueImportMeta = default!; _explicitNullProperties?.Remove("import_meta"); }
+            else if (parseNode.GetChildNode("import_meta") is { } nullNodeImportMeta && nullNodeImportMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportMeta = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,25 +41,25 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Import information for this entity. `null` if this entity is not imported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta? ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta? ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; AdditionalData?.Remove("import_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta? _explicitNullValueImportMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; AdditionalData?.Remove("import_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta _explicitNullValueImportMeta = default!;
 #endif
         /// <summary>Unique name of this discount group, typically something short and memorable for categorization. Not shown to customers.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Whether this entity can be used in Paddle.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.Status? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.Status? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.Status? _explicitNullValueStatus = default!;
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
         public DateTimeOffset? UpdatedAt { get; private set; }
@@ -89,7 +92,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>(); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }

@@ -18,7 +18,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default_url") is { } nullNodeDefaultUrl && nullNodeDefaultUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultUrl = null;
+            if (parseNode.GetChildNode("default_url") is null) { _explicitNullValueDefaultUrl = default!; _explicitNullProperties?.Remove("default_url"); }
+            else if (parseNode.GetChildNode("default_url") is { } nullNodeDefaultUrl && nullNodeDefaultUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultUrl = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>URL that Paddle opens when a checkout is created without a URL of its own. `null` until set.Must use `https`. In live accounts, its domain must also be an approved checkout domain for your account.Paddle appends `?_ptxn=` and the transaction ID to this URL. The page must have Paddle.js set up to read it and open the checkout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultUrl { get => _explicitNullValueDefaultUrl; set { _explicitNullValueDefaultUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_url"); else _explicitNullProperties?.Remove("default_url"); } }
+        public string? DefaultUrl { get => _explicitNullValueDefaultUrl; set { _explicitNullValueDefaultUrl = value; AdditionalData?.Remove("default_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_url"); else _explicitNullProperties?.Remove("default_url"); } }
         private string? _explicitNullValueDefaultUrl = default!;
 #nullable restore
 #else
-        public string DefaultUrl { get => _explicitNullValueDefaultUrl; set { _explicitNullValueDefaultUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_url"); else _explicitNullProperties?.Remove("default_url"); } }
+        public string DefaultUrl { get => _explicitNullValueDefaultUrl; set { _explicitNullValueDefaultUrl = value; AdditionalData?.Remove("default_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_url"); else _explicitNullProperties?.Remove("default_url"); } }
         private string _explicitNullValueDefaultUrl = default!;
 #endif
         /// <summary>

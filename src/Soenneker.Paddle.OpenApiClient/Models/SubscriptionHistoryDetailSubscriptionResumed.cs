@@ -18,17 +18,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("on_resume") is { } nullNodeOnResume && nullNodeOnResume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnResume = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("on_resume") is null) { _explicitNullValueOnResume = default!; _explicitNullProperties?.Remove("on_resume"); }
+            else if (parseNode.GetChildNode("on_resume") is { } nullNodeOnResume && nullNodeOnResume.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OnResume = null;
         }
 
         /// <summary>What happened on the subscription.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumedAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>How Paddle should set the billing period for the subscription when resuming. If omitted, defaults to `start_new_billing_period`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedOnResume? OnResume { get => _explicitNullValueOnResume; set { _explicitNullValueOnResume = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_resume"); else _explicitNullProperties?.Remove("on_resume"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedOnResume? OnResume { get => _explicitNullValueOnResume; set { _explicitNullValueOnResume = value; AdditionalData?.Remove("on_resume"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("on_resume"); else _explicitNullProperties?.Remove("on_resume"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedOnResume? _explicitNullValueOnResume = default!;
         /// <summary>Status of this subscription. Set automatically by Paddle. Use the pause subscription or cancel subscription operations to change.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedStatus? Status { get; private set; }
@@ -57,8 +59,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumedAction>(); } },
-                { "on_resume", n => { OnResume = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedOnResume>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionResumedAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
+                { "on_resume", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedOnResume>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOnResume = default; _explicitNullProperties?.Remove("on_resume"); AdditionalData["on_resume"] = unknown; } else { OnResume = parsed; AdditionalData.Remove("on_resume"); } } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionResumedStatus>(); } },
             };
         }

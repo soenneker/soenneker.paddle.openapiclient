@@ -18,14 +18,22 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("product") is { } nullNodeProduct && nullNodeProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Product = null;
-            if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
-            if (parseNode.GetChildNode("tax_mode") is { } nullNodeTaxMode && nullNodeTaxMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxMode = null;
-            if (parseNode.GetChildNode("unit_price") is { } nullNodeUnitPrice && nullNodeUnitPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitPrice = null;
-            if (parseNode.GetChildNode("unit_price_overrides") is { } nullNodeUnitPriceOverrides && nullNodeUnitPriceOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitPriceOverrides = null;
+            if (parseNode.GetChildNode("custom_data") is null) { _explicitNullValueCustomData = default!; _explicitNullProperties?.Remove("custom_data"); }
+            else if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("product") is null) { _explicitNullValueProduct = default!; _explicitNullProperties?.Remove("product"); }
+            else if (parseNode.GetChildNode("product") is { } nullNodeProduct && nullNodeProduct.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Product = null;
+            if (parseNode.GetChildNode("quantity") is null) { _explicitNullValueQuantity = default!; _explicitNullProperties?.Remove("quantity"); }
+            else if (parseNode.GetChildNode("quantity") is { } nullNodeQuantity && nullNodeQuantity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Quantity = null;
+            if (parseNode.GetChildNode("tax_mode") is null) { _explicitNullValueTaxMode = default!; _explicitNullProperties?.Remove("tax_mode"); }
+            else if (parseNode.GetChildNode("tax_mode") is { } nullNodeTaxMode && nullNodeTaxMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxMode = null;
+            if (parseNode.GetChildNode("unit_price") is null) { _explicitNullValueUnitPrice = default!; _explicitNullProperties?.Remove("unit_price"); }
+            else if (parseNode.GetChildNode("unit_price") is { } nullNodeUnitPrice && nullNodeUnitPrice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitPrice = null;
+            if (parseNode.GetChildNode("unit_price_overrides") is null) { _explicitNullValueUnitPriceOverrides = default!; _explicitNullProperties?.Remove("unit_price_overrides"); }
+            else if (parseNode.GetChildNode("unit_price_overrides") is { } nullNodeUnitPriceOverrides && nullNodeUnitPriceOverrides.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UnitPriceOverrides = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -33,74 +41,74 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
+        public UntypedNode? CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; AdditionalData?.Remove("custom_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
         private UntypedNode? _explicitNullValueCustomData = default!;
 #nullable restore
 #else
-        public UntypedNode CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
+        public UntypedNode CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; AdditionalData?.Remove("custom_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
         private UntypedNode _explicitNullValueCustomData = default!;
 #endif
         /// <summary>Internal description for this price, not shown to customers. Typically notes for your team.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceName? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceName Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceName Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceName _explicitNullValueName = default!;
 #endif
         /// <summary>Product object for a non-catalog item to charge for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceProduct? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceProduct? Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; AdditionalData?.Remove("product"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceProduct? _explicitNullValueProduct = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceProduct Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceProduct Product { get => _explicitNullValueProduct; set { _explicitNullValueProduct = value; AdditionalData?.Remove("product"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("product"); else _explicitNullProperties?.Remove("product"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceProduct _explicitNullValueProduct = default!;
 #endif
         /// <summary>Limits on how many times the related product can be purchased at this price. Useful for discount campaigns. If omitted, defaults to 1-100.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceQuantity? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceQuantity? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; AdditionalData?.Remove("quantity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceQuantity? _explicitNullValueQuantity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceQuantity Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceQuantity Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; AdditionalData?.Remove("quantity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceQuantity _explicitNullValueQuantity = default!;
 #endif
         /// <summary>How tax is calculated for this price.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceTaxMode? TaxMode { get => _explicitNullValueTaxMode; set { _explicitNullValueTaxMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_mode"); else _explicitNullProperties?.Remove("tax_mode"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceTaxMode? TaxMode { get => _explicitNullValueTaxMode; set { _explicitNullValueTaxMode = value; AdditionalData?.Remove("tax_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_mode"); else _explicitNullProperties?.Remove("tax_mode"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceTaxMode? _explicitNullValueTaxMode = default!;
         /// <summary>Base price. This price applies to all customers, except for customers located in countries where you have `unit_price_overrides`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceUnitPrice? UnitPrice { get => _explicitNullValueUnitPrice; set { _explicitNullValueUnitPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price"); else _explicitNullProperties?.Remove("unit_price"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceUnitPrice? UnitPrice { get => _explicitNullValueUnitPrice; set { _explicitNullValueUnitPrice = value; AdditionalData?.Remove("unit_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price"); else _explicitNullProperties?.Remove("unit_price"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceUnitPrice? _explicitNullValueUnitPrice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceUnitPrice UnitPrice { get => _explicitNullValueUnitPrice; set { _explicitNullValueUnitPrice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price"); else _explicitNullProperties?.Remove("unit_price"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceUnitPrice UnitPrice { get => _explicitNullValueUnitPrice; set { _explicitNullValueUnitPrice = value; AdditionalData?.Remove("unit_price"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price"); else _explicitNullProperties?.Remove("unit_price"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceUnitPrice _explicitNullValueUnitPrice = default!;
 #endif
         /// <summary>List of unit price overrides. Use to override the base price with a custom price and currency for a country or group of countries.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>? UnitPriceOverrides { get => _explicitNullValueUnitPriceOverrides; set { _explicitNullValueUnitPriceOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price_overrides"); else _explicitNullProperties?.Remove("unit_price_overrides"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>? UnitPriceOverrides { get => _explicitNullValueUnitPriceOverrides; set { _explicitNullValueUnitPriceOverrides = value; AdditionalData?.Remove("unit_price_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price_overrides"); else _explicitNullProperties?.Remove("unit_price_overrides"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>? _explicitNullValueUnitPriceOverrides = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride> UnitPriceOverrides { get => _explicitNullValueUnitPriceOverrides; set { _explicitNullValueUnitPriceOverrides = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price_overrides"); else _explicitNullProperties?.Remove("unit_price_overrides"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride> UnitPriceOverrides { get => _explicitNullValueUnitPriceOverrides; set { _explicitNullValueUnitPriceOverrides = value; AdditionalData?.Remove("unit_price_overrides"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("unit_price_overrides"); else _explicitNullProperties?.Remove("unit_price_overrides"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride> _explicitNullValueUnitPriceOverrides = default!;
 #endif
         /// <summary>
@@ -133,7 +141,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "name", n => { Name = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceName>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceName.CreateFromDiscriminatorValue); } },
                 { "product", n => { Product = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceProduct>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceProduct.CreateFromDiscriminatorValue); } },
                 { "quantity", n => { Quantity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceQuantity>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceQuantity.CreateFromDiscriminatorValue); } },
-                { "tax_mode", n => { TaxMode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceTaxMode>(); } },
+                { "tax_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceTaxMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTaxMode = default; _explicitNullProperties?.Remove("tax_mode"); AdditionalData["tax_mode"] = unknown; } else { TaxMode = parsed; AdditionalData.Remove("tax_mode"); } } },
                 { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceUnitPrice>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionChargeCreateWithPriceAndProductPriceUnitPrice.CreateFromDiscriminatorValue); } },
                 { "unit_price_overrides", n => { UnitPriceOverrides = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>(global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride.CreateFromDiscriminatorValue)?.AsList(); } },
             };

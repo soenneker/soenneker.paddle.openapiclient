@@ -18,11 +18,16 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("image_url") is { } nullNodeImageUrl && nullNodeImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUrl = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("tax_category") is { } nullNodeTaxCategory && nullNodeTaxCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCategory = null;
+            if (parseNode.GetChildNode("custom_data") is null) { _explicitNullValueCustomData = default!; _explicitNullProperties?.Remove("custom_data"); }
+            else if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("image_url") is null) { _explicitNullValueImageUrl = default!; _explicitNullProperties?.Remove("image_url"); }
+            else if (parseNode.GetChildNode("image_url") is { } nullNodeImageUrl && nullNodeImageUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImageUrl = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("tax_category") is null) { _explicitNullValueTaxCategory = default!; _explicitNullProperties?.Remove("tax_category"); }
+            else if (parseNode.GetChildNode("tax_category") is { } nullNodeTaxCategory && nullNodeTaxCategory.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxCategory = null;
         }
 
         /// <summary>Your own structured key-value data.</summary>
@@ -38,22 +43,22 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Short description for this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription? _explicitNullValueDescription = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription _explicitNullValueDescription = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription _explicitNullValueDescription = default!;
 #endif
         /// <summary>Image for this product. Included in the checkout and on some customer documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl? ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_url"); else _explicitNullProperties?.Remove("image_url"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl? _explicitNullValueImageUrl = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl? ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_url"); else _explicitNullProperties?.Remove("image_url"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl? _explicitNullValueImageUrl = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_url"); else _explicitNullProperties?.Remove("image_url"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl _explicitNullValueImageUrl = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl ImageUrl { get => _explicitNullValueImageUrl; set { _explicitNullValueImageUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("image_url"); else _explicitNullProperties?.Remove("image_url"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl _explicitNullValueImageUrl = default!;
 #endif
         /// <summary>Name of this product.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -87,8 +92,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription.CreateFromDiscriminatorValue); } },
-                { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription.CreateFromDiscriminatorValue); } },
+                { "image_url", n => { ImageUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl>(global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "tax_category", n => { TaxCategory = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory>(); } },
             };
@@ -101,8 +106,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteObjectValue<UntypedNode>("custom_data", CustomData);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionSubscriptionProductCreateImageUrl>("image_url", ImageUrl);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateDescription>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductCreateImageUrl>("image_url", ImageUrl);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TaxCategory>("tax_category", TaxCategory);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             

@@ -18,20 +18,34 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("city") is { } nullNodeCity && nullNodeCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) City = null;
-            if (parseNode.GetChildNode("country_code") is { } nullNodeCountryCode && nullNodeCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCode = null;
-            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
-            if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("first_line") is { } nullNodeFirstLine && nullNodeFirstLine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstLine = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("import_meta") is { } nullNodeImportMeta && nullNodeImportMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportMeta = null;
-            if (parseNode.GetChildNode("postal_code") is { } nullNodePostalCode && nullNodePostalCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostalCode = null;
-            if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
-            if (parseNode.GetChildNode("second_line") is { } nullNodeSecondLine && nullNodeSecondLine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondLine = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
+            if (parseNode.GetChildNode("city") is null) { _explicitNullValueCity = default!; _explicitNullProperties?.Remove("city"); }
+            else if (parseNode.GetChildNode("city") is { } nullNodeCity && nullNodeCity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) City = null;
+            if (parseNode.GetChildNode("country_code") is null) { _explicitNullValueCountryCode = default!; _explicitNullProperties?.Remove("country_code"); }
+            else if (parseNode.GetChildNode("country_code") is { } nullNodeCountryCode && nullNodeCountryCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CountryCode = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("custom_data") is null) { _explicitNullValueCustomData = default!; _explicitNullProperties?.Remove("custom_data"); }
+            else if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
+            if (parseNode.GetChildNode("customer_id") is null) { _explicitNullValueCustomerId = default!; _explicitNullProperties?.Remove("customer_id"); }
+            else if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("first_line") is null) { _explicitNullValueFirstLine = default!; _explicitNullProperties?.Remove("first_line"); }
+            else if (parseNode.GetChildNode("first_line") is { } nullNodeFirstLine && nullNodeFirstLine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstLine = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("import_meta") is null) { _explicitNullValueImportMeta = default!; _explicitNullProperties?.Remove("import_meta"); }
+            else if (parseNode.GetChildNode("import_meta") is { } nullNodeImportMeta && nullNodeImportMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportMeta = null;
+            if (parseNode.GetChildNode("postal_code") is null) { _explicitNullValuePostalCode = default!; _explicitNullProperties?.Remove("postal_code"); }
+            else if (parseNode.GetChildNode("postal_code") is { } nullNodePostalCode && nullNodePostalCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PostalCode = null;
+            if (parseNode.GetChildNode("region") is null) { _explicitNullValueRegion = default!; _explicitNullProperties?.Remove("region"); }
+            else if (parseNode.GetChildNode("region") is { } nullNodeRegion && nullNodeRegion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Region = null;
+            if (parseNode.GetChildNode("second_line") is null) { _explicitNullValueSecondLine = default!; _explicitNullProperties?.Remove("second_line"); }
+            else if (parseNode.GetChildNode("second_line") is { } nullNodeSecondLine && nullNodeSecondLine.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SecondLine = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("updated_at") is null) { _explicitNullValueUpdatedAt = default!; _explicitNullProperties?.Remove("updated_at"); }
+            else if (parseNode.GetChildNode("updated_at") is { } nullNodeUpdatedAt && nullNodeUpdatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatedAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -39,114 +53,114 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The city property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCity? City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCity? _explicitNullValueCity = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataCity? City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; AdditionalData?.Remove("city"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataCity? _explicitNullValueCity = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCity City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCity _explicitNullValueCity = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataCity City { get => _explicitNullValueCity; set { _explicitNullValueCity = value; AdditionalData?.Remove("city"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("city"); else _explicitNullProperties?.Remove("city"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataCity _explicitNullValueCity = default!;
 #endif
         /// <summary>The country_code property</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCode? CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_code"); else _explicitNullProperties?.Remove("country_code"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCode? CountryCode { get => _explicitNullValueCountryCode; set { _explicitNullValueCountryCode = value; AdditionalData?.Remove("country_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("country_code"); else _explicitNullProperties?.Remove("country_code"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCode? _explicitNullValueCountryCode = default!;
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
-        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
+        public UntypedNode? CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; AdditionalData?.Remove("custom_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
         private UntypedNode? _explicitNullValueCustomData = default!;
 #nullable restore
 #else
-        public UntypedNode CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
+        public UntypedNode CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; AdditionalData?.Remove("custom_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
         private UntypedNode _explicitNullValueCustomData = default!;
 #endif
         /// <summary>The ID of the customer this address belongs to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
         private string? _explicitNullValueCustomerId = default!;
 #nullable restore
 #else
-        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
         private string _explicitNullValueCustomerId = default!;
 #endif
         /// <summary>The description property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataDescription? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataDescription? _explicitNullValueDescription = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataDescription? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataDescription? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataDescription Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataDescription _explicitNullValueDescription = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataDescription Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataDescription _explicitNullValueDescription = default!;
 #endif
         /// <summary>The first_line property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataFirstLine? FirstLine { get => _explicitNullValueFirstLine; set { _explicitNullValueFirstLine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_line"); else _explicitNullProperties?.Remove("first_line"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataFirstLine? _explicitNullValueFirstLine = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataFirstLine? FirstLine { get => _explicitNullValueFirstLine; set { _explicitNullValueFirstLine = value; AdditionalData?.Remove("first_line"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_line"); else _explicitNullProperties?.Remove("first_line"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataFirstLine? _explicitNullValueFirstLine = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataFirstLine FirstLine { get => _explicitNullValueFirstLine; set { _explicitNullValueFirstLine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_line"); else _explicitNullProperties?.Remove("first_line"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataFirstLine _explicitNullValueFirstLine = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataFirstLine FirstLine { get => _explicitNullValueFirstLine; set { _explicitNullValueFirstLine = value; AdditionalData?.Remove("first_line"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_line"); else _explicitNullProperties?.Remove("first_line"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataFirstLine _explicitNullValueFirstLine = default!;
 #endif
         /// <summary>Unique Paddle ID for this address entity, prefixed with `add_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Import information for this entity. `null` if this entity is not imported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataImportMeta? ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataImportMeta? ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; AdditionalData?.Remove("import_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataImportMeta? _explicitNullValueImportMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataImportMeta ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataImportMeta ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; AdditionalData?.Remove("import_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataImportMeta _explicitNullValueImportMeta = default!;
 #endif
         /// <summary>The postal_code property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataPostalCode? PostalCode { get => _explicitNullValuePostalCode; set { _explicitNullValuePostalCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postal_code"); else _explicitNullProperties?.Remove("postal_code"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataPostalCode? _explicitNullValuePostalCode = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataPostalCode? PostalCode { get => _explicitNullValuePostalCode; set { _explicitNullValuePostalCode = value; AdditionalData?.Remove("postal_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postal_code"); else _explicitNullProperties?.Remove("postal_code"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataPostalCode? _explicitNullValuePostalCode = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataPostalCode PostalCode { get => _explicitNullValuePostalCode; set { _explicitNullValuePostalCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postal_code"); else _explicitNullProperties?.Remove("postal_code"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataPostalCode _explicitNullValuePostalCode = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataPostalCode PostalCode { get => _explicitNullValuePostalCode; set { _explicitNullValuePostalCode = value; AdditionalData?.Remove("postal_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("postal_code"); else _explicitNullProperties?.Remove("postal_code"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataPostalCode _explicitNullValuePostalCode = default!;
 #endif
         /// <summary>The region property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataRegion? _explicitNullValueRegion = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataRegion? Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataRegion? _explicitNullValueRegion = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataRegion Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataRegion _explicitNullValueRegion = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataRegion Region { get => _explicitNullValueRegion; set { _explicitNullValueRegion = value; AdditionalData?.Remove("region"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("region"); else _explicitNullProperties?.Remove("region"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataRegion _explicitNullValueRegion = default!;
 #endif
         /// <summary>The second_line property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataSecondLine? SecondLine { get => _explicitNullValueSecondLine; set { _explicitNullValueSecondLine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("second_line"); else _explicitNullProperties?.Remove("second_line"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataSecondLine? _explicitNullValueSecondLine = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataSecondLine? SecondLine { get => _explicitNullValueSecondLine; set { _explicitNullValueSecondLine = value; AdditionalData?.Remove("second_line"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("second_line"); else _explicitNullProperties?.Remove("second_line"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataSecondLine? _explicitNullValueSecondLine = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataSecondLine SecondLine { get => _explicitNullValueSecondLine; set { _explicitNullValueSecondLine = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("second_line"); else _explicitNullProperties?.Remove("second_line"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataSecondLine _explicitNullValueSecondLine = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataSecondLine SecondLine { get => _explicitNullValueSecondLine; set { _explicitNullValueSecondLine = value; AdditionalData?.Remove("second_line"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("second_line"); else _explicitNullProperties?.Remove("second_line"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataSecondLine _explicitNullValueSecondLine = default!;
 #endif
         /// <summary>Whether this entity can be used in Paddle.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataStatus? _explicitNullValueStatus = default!;
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
-        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
+        public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestData"/> and sets the default values.
@@ -173,19 +187,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "city", n => { City = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCity>(global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCity.CreateFromDiscriminatorValue); } },
-                { "country_code", n => { CountryCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCode>(); } },
+                { "city", n => { City = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataCity>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataCity.CreateFromDiscriminatorValue); } },
+                { "country_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCountryCode = default; _explicitNullProperties?.Remove("country_code"); AdditionalData["country_code"] = unknown; } else { CountryCode = parsed; AdditionalData.Remove("country_code"); } } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
-                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataDescription>(global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataDescription.CreateFromDiscriminatorValue); } },
-                { "first_line", n => { FirstLine = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataFirstLine>(global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataFirstLine.CreateFromDiscriminatorValue); } },
+                { "description", n => { Description = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataDescription>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataDescription.CreateFromDiscriminatorValue); } },
+                { "first_line", n => { FirstLine = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataFirstLine>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataFirstLine.CreateFromDiscriminatorValue); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataImportMeta.CreateFromDiscriminatorValue); } },
-                { "postal_code", n => { PostalCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataPostalCode>(global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataPostalCode.CreateFromDiscriminatorValue); } },
-                { "region", n => { Region = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataRegion>(global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataRegion.CreateFromDiscriminatorValue); } },
-                { "second_line", n => { SecondLine = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataSecondLine>(global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataSecondLine.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataStatus>(); } },
+                { "postal_code", n => { PostalCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataPostalCode>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataPostalCode.CreateFromDiscriminatorValue); } },
+                { "region", n => { Region = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataRegion>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataRegion.CreateFromDiscriminatorValue); } },
+                { "second_line", n => { SecondLine = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataSecondLine>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataSecondLine.CreateFromDiscriminatorValue); } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -196,18 +210,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCity>("city", City);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataCity>("city", City);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataCountryCode>("country_code", CountryCode);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteObjectValue<UntypedNode>("custom_data", CustomData);
             writer.WriteStringValue("customer_id", CustomerId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataDescription>("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataFirstLine>("first_line", FirstLine);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataDescription>("description", Description);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataFirstLine>("first_line", FirstLine);
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataImportMeta>("import_meta", ImportMeta);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataPostalCode>("postal_code", PostalCode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataRegion>("region", Region);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataSecondLine>("second_line", SecondLine);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataPostalCode>("postal_code", PostalCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataRegion>("region", Region);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreatedRequestDataSecondLine>("second_line", SecondLine);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressImportedRequestDataStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

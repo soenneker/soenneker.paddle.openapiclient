@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("filters") is null) { _explicitNullValueFilters = default!; _explicitNullProperties?.Remove("filters"); }
+            else if (parseNode.GetChildNode("filters") is { } nullNodeFilters && nullNodeFilters.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Filters = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,11 +33,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Filter criteria for this report. `product_updated_at` and `price_updated_at` are defaulted independently: a field with no `gte` filter is filtered to include data updated in the last month, even when the other field has one. This means the field is set to greater than or equal to (`gte`) the same date and time one calendar month before the report was generated, so the window is between 28 and 31 days depending on the month.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPrices>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPrices>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPrices>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPrices> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPrices> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; AdditionalData?.Remove("filters"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPrices> _explicitNullValueFilters = default!;
 #endif
         /// <summary>Unique Paddle ID for this entity.</summary>
@@ -51,7 +53,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Status of this report. Set automatically by Paddle.Reports are created as `pending` initially, then move to `ready` when they&apos;re available to download.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesModelStatus? Status { get; private set; }
         /// <summary>Type of report.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesModelType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesModelType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesModelType? _explicitNullValueType = default!;
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
         public DateTimeOffset? UpdatedAt { get; private set; }
@@ -86,7 +88,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "rows", n => { Rows = n.GetIntValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesModelStatus>(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesModelType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesModelType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }

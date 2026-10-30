@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
-            if (parseNode.GetChildNode("timeseries") is { } nullNodeTimeseries && nullNodeTimeseries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeseries = null;
+            if (parseNode.GetChildNode("dimensions") is null) { _explicitNullValueDimensions = default!; _explicitNullProperties?.Remove("dimensions"); }
+            else if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
+            if (parseNode.GetChildNode("timeseries") is null) { _explicitNullValueTimeseries = default!; _explicitNullProperties?.Remove("timeseries"); }
+            else if (parseNode.GetChildNode("timeseries") is { } nullNodeTimeseries && nullNodeTimeseries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeseries = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Dimension values for this segment, keyed by a subset of the requested dimensions. Empty for a result with no breakdown applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeriesDimensionsProperty? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeriesDimensionsProperty? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; AdditionalData?.Remove("dimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeriesDimensionsProperty? _explicitNullValueDimensions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeriesDimensionsProperty Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeriesDimensionsProperty Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; AdditionalData?.Remove("dimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreSeriesDimensionsProperty _explicitNullValueDimensions = default!;
 #endif
         /// <summary>Time series for this segment. One entry per time bucket, ordered chronologically.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPoint>? Timeseries { get => _explicitNullValueTimeseries; set { _explicitNullValueTimeseries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeseries"); else _explicitNullProperties?.Remove("timeseries"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPoint>? Timeseries { get => _explicitNullValueTimeseries; set { _explicitNullValueTimeseries = value; AdditionalData?.Remove("timeseries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeseries"); else _explicitNullProperties?.Remove("timeseries"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPoint>? _explicitNullValueTimeseries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPoint> Timeseries { get => _explicitNullValueTimeseries; set { _explicitNullValueTimeseries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeseries"); else _explicitNullProperties?.Remove("timeseries"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPoint> Timeseries { get => _explicitNullValueTimeseries; set { _explicitNullValueTimeseries = value; AdditionalData?.Remove("timeseries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeseries"); else _explicitNullProperties?.Remove("timeseries"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPoint> _explicitNullValueTimeseries = default!;
 #endif
         /// <summary>

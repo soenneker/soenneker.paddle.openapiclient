@@ -18,23 +18,25 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("discount") is { } nullNodeDiscount && nullNodeDiscount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Discount = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("discount") is null) { _explicitNullValueDiscount = default!; _explicitNullProperties?.Remove("discount"); }
+            else if (parseNode.GetChildNode("discount") is { } nullNodeDiscount && nullNodeDiscount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Discount = null;
         }
 
         /// <summary>What happened on the subscription.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountAddedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountAddedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountAddedAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Discount added to the subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAddedDiscount? Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAddedDiscount? Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAddedDiscount? _explicitNullValueDiscount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAddedDiscount Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAddedDiscount Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAddedDiscount _explicitNullValueDiscount = default!;
 #endif
         /// <summary>
@@ -62,7 +64,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountAddedAction>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscountAddedAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAddedDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionDiscountAddedDiscount.CreateFromDiscriminatorValue); } },
             };
         }

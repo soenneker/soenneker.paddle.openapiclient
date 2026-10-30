@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("entities") is { } nullNodeEntities && nullNodeEntities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entities = null;
-            if (parseNode.GetChildNode("options") is { } nullNodeOptions && nullNodeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Options = null;
+            if (parseNode.GetChildNode("entities") is null) { _explicitNullValueEntities = default!; _explicitNullProperties?.Remove("entities"); }
+            else if (parseNode.GetChildNode("entities") is { } nullNodeEntities && nullNodeEntities.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Entities = null;
+            if (parseNode.GetChildNode("options") is null) { _explicitNullValueOptions = default!; _explicitNullProperties?.Remove("options"); }
+            else if (parseNode.GetChildNode("options") is { } nullNodeOptions && nullNodeOptions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Options = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Adds details of existing Paddle entities to webhook payloads sent in the simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationEntitiesComposed? Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationEntitiesComposed? Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; AdditionalData?.Remove("entities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationEntitiesComposed? _explicitNullValueEntities = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationEntitiesComposed Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationEntitiesComposed Entities { get => _explicitNullValueEntities; set { _explicitNullValueEntities = value; AdditionalData?.Remove("entities"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("entities"); else _explicitNullProperties?.Remove("entities"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationEntitiesComposed _explicitNullValueEntities = default!;
 #endif
         /// <summary>Options that determine which webhooks are sent as part of a simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsComposed? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsComposed? Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; AdditionalData?.Remove("options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsComposed? _explicitNullValueOptions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsComposed Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsComposed Options { get => _explicitNullValueOptions; set { _explicitNullValueOptions = value; AdditionalData?.Remove("options"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("options"); else _explicitNullProperties?.Remove("options"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionCancellationOptionsComposed _explicitNullValueOptions = default!;
 #endif
         /// <summary>

@@ -18,10 +18,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("filter_ops") is { } nullNodeFilterOps && nullNodeFilterOps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterOps = null;
-            if (parseNode.GetChildNode("multi_valued") is { } nullNodeMultiValued && nullNodeMultiValued.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultiValued = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("filter_ops") is null) { _explicitNullValueFilterOps = default!; _explicitNullProperties?.Remove("filter_ops"); }
+            else if (parseNode.GetChildNode("filter_ops") is { } nullNodeFilterOps && nullNodeFilterOps.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterOps = null;
+            if (parseNode.GetChildNode("multi_valued") is null) { _explicitNullValueMultiValued = default!; _explicitNullProperties?.Remove("multi_valued"); }
+            else if (parseNode.GetChildNode("multi_valued") is { } nullNodeMultiValued && nullNodeMultiValued.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MultiValued = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,28 +33,28 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Filter operators supported for this dimension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator?>? FilterOps { get => _explicitNullValueFilterOps; set { _explicitNullValueFilterOps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_ops"); else _explicitNullProperties?.Remove("filter_ops"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator?>? FilterOps { get => _explicitNullValueFilterOps; set { _explicitNullValueFilterOps = value; AdditionalData?.Remove("filter_ops"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_ops"); else _explicitNullProperties?.Remove("filter_ops"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator?>? _explicitNullValueFilterOps = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator?> FilterOps { get => _explicitNullValueFilterOps; set { _explicitNullValueFilterOps = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_ops"); else _explicitNullProperties?.Remove("filter_ops"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator?> FilterOps { get => _explicitNullValueFilterOps; set { _explicitNullValueFilterOps = value; AdditionalData?.Remove("filter_ops"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_ops"); else _explicitNullProperties?.Remove("filter_ops"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator?> _explicitNullValueFilterOps = default!;
 #endif
         /// <summary>Whether the dimension can hold more than one value per record. When `true`, a single record can appear under more than one value, so a breakdown on this dimension can total more than the figure with no breakdown applied. `false` if omitted.</summary>
-        public bool? MultiValued { get => _explicitNullValueMultiValued; set { _explicitNullValueMultiValued = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multi_valued"); else _explicitNullProperties?.Remove("multi_valued"); } }
+        public bool? MultiValued { get => _explicitNullValueMultiValued; set { _explicitNullValueMultiValued = value; AdditionalData?.Remove("multi_valued"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("multi_valued"); else _explicitNullProperties?.Remove("multi_valued"); } }
         private bool? _explicitNullValueMultiValued = default!;
         /// <summary>Dimension identifier.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>Value type of a metrics field, whether a dimension or a measure. Numeric values are returned as strings to preserve precision.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimension"/> and sets the default values.
@@ -81,7 +85,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "filter_ops", n => { FilterOps = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsFilterOperator>()?.AsList(); } },
                 { "multi_valued", n => { MultiValued = n.GetBoolValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDimensionType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

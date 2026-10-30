@@ -19,7 +19,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("korea_local") is { } nullNodeKoreaLocal && nullNodeKoreaLocal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KoreaLocal = null;
+            if (parseNode.GetChildNode("korea_local") is null) { _explicitNullValueKoreaLocal = default!; _explicitNullProperties?.Remove("korea_local"); }
+            else if (parseNode.GetChildNode("korea_local") is { } nullNodeKoreaLocal && nullNodeKoreaLocal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KoreaLocal = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,11 +28,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Information about the Korean payment method used to pay. `null` unless the type is `korea_local`. Deprecated - use top-level type objects instead.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataPaymentsItemMethodDetailsUnderlyingDetailsKoreaLocal? KoreaLocal { get => _explicitNullValueKoreaLocal; set { _explicitNullValueKoreaLocal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("korea_local"); else _explicitNullProperties?.Remove("korea_local"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataPaymentsItemMethodDetailsUnderlyingDetailsKoreaLocal? KoreaLocal { get => _explicitNullValueKoreaLocal; set { _explicitNullValueKoreaLocal = value; AdditionalData?.Remove("korea_local"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("korea_local"); else _explicitNullProperties?.Remove("korea_local"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataPaymentsItemMethodDetailsUnderlyingDetailsKoreaLocal? _explicitNullValueKoreaLocal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataPaymentsItemMethodDetailsUnderlyingDetailsKoreaLocal KoreaLocal { get => _explicitNullValueKoreaLocal; set { _explicitNullValueKoreaLocal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("korea_local"); else _explicitNullProperties?.Remove("korea_local"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataPaymentsItemMethodDetailsUnderlyingDetailsKoreaLocal KoreaLocal { get => _explicitNullValueKoreaLocal; set { _explicitNullValueKoreaLocal = value; AdditionalData?.Remove("korea_local"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("korea_local"); else _explicitNullProperties?.Remove("korea_local"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPaymentFailedRequestDataPaymentsItemMethodDetailsUnderlyingDetailsKoreaLocal _explicitNullValueKoreaLocal = default!;
 #endif
         /// <summary>

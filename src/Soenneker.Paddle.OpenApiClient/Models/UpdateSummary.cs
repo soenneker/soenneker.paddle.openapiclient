@@ -18,9 +18,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("charge") is { } nullNodeCharge && nullNodeCharge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Charge = null;
-            if (parseNode.GetChildNode("credit") is { } nullNodeCredit && nullNodeCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credit = null;
-            if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
+            if (parseNode.GetChildNode("charge") is null) { _explicitNullValueCharge = default!; _explicitNullProperties?.Remove("charge"); }
+            else if (parseNode.GetChildNode("charge") is { } nullNodeCharge && nullNodeCharge.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Charge = null;
+            if (parseNode.GetChildNode("credit") is null) { _explicitNullValueCredit = default!; _explicitNullProperties?.Remove("credit"); }
+            else if (parseNode.GetChildNode("credit") is { } nullNodeCredit && nullNodeCredit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Credit = null;
+            if (parseNode.GetChildNode("result") is null) { _explicitNullValueResult = default!; _explicitNullProperties?.Remove("result"); }
+            else if (parseNode.GetChildNode("result") is { } nullNodeResult && nullNodeResult.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Result = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Details of the transaction to be created for this update. Paddle creates a transaction to bill for new charges.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryCharge? Charge { get => _explicitNullValueCharge; set { _explicitNullValueCharge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charge"); else _explicitNullProperties?.Remove("charge"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryCharge? Charge { get => _explicitNullValueCharge; set { _explicitNullValueCharge = value; AdditionalData?.Remove("charge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charge"); else _explicitNullProperties?.Remove("charge"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryCharge? _explicitNullValueCharge = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryCharge Charge { get => _explicitNullValueCharge; set { _explicitNullValueCharge = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charge"); else _explicitNullProperties?.Remove("charge"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryCharge Charge { get => _explicitNullValueCharge; set { _explicitNullValueCharge = value; AdditionalData?.Remove("charge"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("charge"); else _explicitNullProperties?.Remove("charge"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryCharge _explicitNullValueCharge = default!;
 #endif
         /// <summary>Details of any credit adjustments created for this update. Paddle creates adjustments against existing transactions when prorating.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryCredit? Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryCredit? Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; AdditionalData?.Remove("credit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryCredit? _explicitNullValueCredit = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryCredit Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryCredit Credit { get => _explicitNullValueCredit; set { _explicitNullValueCredit = value; AdditionalData?.Remove("credit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("credit"); else _explicitNullProperties?.Remove("credit"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryCredit _explicitNullValueCredit = default!;
 #endif
         /// <summary>Details of the result of credits and charges. Where the total of any credit adjustments is greater than the total charge, the result is a prorated credit; otherwise, the result is a prorated charge.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultComposed? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultComposed? Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultComposed? _explicitNullValueResult = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultComposed Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultComposed Result { get => _explicitNullValueResult; set { _explicitNullValueResult = value; AdditionalData?.Remove("result"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("result"); else _explicitNullProperties?.Remove("result"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.UpdateSummaryResultComposed _explicitNullValueResult = default!;
 #endif
         /// <summary>

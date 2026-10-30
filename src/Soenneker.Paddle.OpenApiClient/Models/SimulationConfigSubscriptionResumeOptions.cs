@@ -18,17 +18,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dunning_exhausted_action") is { } nullNodeDunningExhaustedAction && nullNodeDunningExhaustedAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DunningExhaustedAction = null;
-            if (parseNode.GetChildNode("payment_outcome") is { } nullNodePaymentOutcome && nullNodePaymentOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentOutcome = null;
+            if (parseNode.GetChildNode("dunning_exhausted_action") is null) { _explicitNullValueDunningExhaustedAction = default!; _explicitNullProperties?.Remove("dunning_exhausted_action"); }
+            else if (parseNode.GetChildNode("dunning_exhausted_action") is { } nullNodeDunningExhaustedAction && nullNodeDunningExhaustedAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DunningExhaustedAction = null;
+            if (parseNode.GetChildNode("payment_outcome") is null) { _explicitNullValuePaymentOutcome = default!; _explicitNullProperties?.Remove("payment_outcome"); }
+            else if (parseNode.GetChildNode("payment_outcome") is { } nullNodePaymentOutcome && nullNodePaymentOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentOutcome = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Determines which webhooks are sent based on what happens to the subscription when payment recovery attempts are exhausted. Only applies when `payment_outcome` is `failed`. If omitted, defaults to `null`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedAction? DunningExhaustedAction { get => _explicitNullValueDunningExhaustedAction; set { _explicitNullValueDunningExhaustedAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dunning_exhausted_action"); else _explicitNullProperties?.Remove("dunning_exhausted_action"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedAction? DunningExhaustedAction { get => _explicitNullValueDunningExhaustedAction; set { _explicitNullValueDunningExhaustedAction = value; AdditionalData?.Remove("dunning_exhausted_action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dunning_exhausted_action"); else _explicitNullProperties?.Remove("dunning_exhausted_action"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedAction? _explicitNullValueDunningExhaustedAction = default!;
         /// <summary>Determines which webhooks are sent based on the outcome of the payment. If omitted, defaults to `success`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentPaymentOutcomeComposed? PaymentOutcome { get => _explicitNullValuePaymentOutcome; set { _explicitNullValuePaymentOutcome = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_outcome"); else _explicitNullProperties?.Remove("payment_outcome"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentPaymentOutcomeComposed? PaymentOutcome { get => _explicitNullValuePaymentOutcome; set { _explicitNullValuePaymentOutcome = value; AdditionalData?.Remove("payment_outcome"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_outcome"); else _explicitNullProperties?.Remove("payment_outcome"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentPaymentOutcomeComposed? _explicitNullValuePaymentOutcome = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigSubscriptionResumeOptions"/> and sets the default values.
@@ -55,8 +57,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "dunning_exhausted_action", n => { DunningExhaustedAction = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedAction>(); } },
-                { "payment_outcome", n => { PaymentOutcome = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentPaymentOutcomeComposed>(); } },
+                { "dunning_exhausted_action", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentDunningExhaustedAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueDunningExhaustedAction = default; _explicitNullProperties?.Remove("dunning_exhausted_action"); AdditionalData["dunning_exhausted_action"] = unknown; } else { DunningExhaustedAction = parsed; AdditionalData.Remove("dunning_exhausted_action"); } } },
+                { "payment_outcome", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationConfigOptionsPaymentPaymentOutcomeComposed>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValuePaymentOutcome = default; _explicitNullProperties?.Remove("payment_outcome"); AdditionalData["payment_outcome"] = unknown; } else { PaymentOutcome = parsed; AdditionalData.Remove("payment_outcome"); } } },
             };
         }
         /// <summary>

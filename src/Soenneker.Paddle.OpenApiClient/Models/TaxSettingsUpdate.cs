@@ -18,7 +18,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("default_tax_mode") is { } nullNodeDefaultTaxMode && nullNodeDefaultTaxMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultTaxMode = null;
+            if (parseNode.GetChildNode("default_tax_mode") is null) { _explicitNullValueDefaultTaxMode = default!; _explicitNullProperties?.Remove("default_tax_mode"); }
+            else if (parseNode.GetChildNode("default_tax_mode") is { } nullNodeDefaultTaxMode && nullNodeDefaultTaxMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DefaultTaxMode = null;
         }
 
         /// <summary>Default setting of how tax is calculated for prices. Used when prices have a `tax_mode` of `account_setting`.</summary>

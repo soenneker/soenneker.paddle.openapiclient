@@ -18,9 +18,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("subtotal") is { } nullNodeSubtotal && nullNodeSubtotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtotal = null;
-            if (parseNode.GetChildNode("tax") is { } nullNodeTax && nullNodeTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tax = null;
-            if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
+            if (parseNode.GetChildNode("subtotal") is null) { _explicitNullValueSubtotal = default!; _explicitNullProperties?.Remove("subtotal"); }
+            else if (parseNode.GetChildNode("subtotal") is { } nullNodeSubtotal && nullNodeSubtotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Subtotal = null;
+            if (parseNode.GetChildNode("tax") is null) { _explicitNullValueTax = default!; _explicitNullProperties?.Remove("tax"); }
+            else if (parseNode.GetChildNode("tax") is { } nullNodeTax && nullNodeTax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tax = null;
+            if (parseNode.GetChildNode("total") is null) { _explicitNullValueTotal = default!; _explicitNullProperties?.Remove("total"); }
+            else if (parseNode.GetChildNode("total") is { } nullNodeTotal && nullNodeTotal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Total = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Amount multiplied by quantity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Subtotal { get => _explicitNullValueSubtotal; set { _explicitNullValueSubtotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotal"); else _explicitNullProperties?.Remove("subtotal"); } }
+        public string? Subtotal { get => _explicitNullValueSubtotal; set { _explicitNullValueSubtotal = value; AdditionalData?.Remove("subtotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotal"); else _explicitNullProperties?.Remove("subtotal"); } }
         private string? _explicitNullValueSubtotal = default!;
 #nullable restore
 #else
-        public string Subtotal { get => _explicitNullValueSubtotal; set { _explicitNullValueSubtotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotal"); else _explicitNullProperties?.Remove("subtotal"); } }
+        public string Subtotal { get => _explicitNullValueSubtotal; set { _explicitNullValueSubtotal = value; AdditionalData?.Remove("subtotal"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subtotal"); else _explicitNullProperties?.Remove("subtotal"); } }
         private string _explicitNullValueSubtotal = default!;
 #endif
         /// <summary>Total tax on the subtotal.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Tax { get => _explicitNullValueTax; set { _explicitNullValueTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax"); else _explicitNullProperties?.Remove("tax"); } }
+        public string? Tax { get => _explicitNullValueTax; set { _explicitNullValueTax = value; AdditionalData?.Remove("tax"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax"); else _explicitNullProperties?.Remove("tax"); } }
         private string? _explicitNullValueTax = default!;
 #nullable restore
 #else
-        public string Tax { get => _explicitNullValueTax; set { _explicitNullValueTax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax"); else _explicitNullProperties?.Remove("tax"); } }
+        public string Tax { get => _explicitNullValueTax; set { _explicitNullValueTax = value; AdditionalData?.Remove("tax"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax"); else _explicitNullProperties?.Remove("tax"); } }
         private string _explicitNullValueTax = default!;
 #endif
         /// <summary>Total after tax.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public string? Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private string? _explicitNullValueTotal = default!;
 #nullable restore
 #else
-        public string Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
+        public string Total { get => _explicitNullValueTotal; set { _explicitNullValueTotal = value; AdditionalData?.Remove("total"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("total"); else _explicitNullProperties?.Remove("total"); } }
         private string _explicitNullValueTotal = default!;
 #endif
         /// <summary>

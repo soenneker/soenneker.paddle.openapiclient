@@ -18,11 +18,16 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cardholder_name") is { } nullNodeCardholderName && nullNodeCardholderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardholderName = null;
-            if (parseNode.GetChildNode("expiry_month") is { } nullNodeExpiryMonth && nullNodeExpiryMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryMonth = null;
-            if (parseNode.GetChildNode("expiry_year") is { } nullNodeExpiryYear && nullNodeExpiryYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryYear = null;
-            if (parseNode.GetChildNode("last4") is { } nullNodeLast4 && nullNodeLast4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Last4 = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("cardholder_name") is null) { _explicitNullValueCardholderName = default!; _explicitNullProperties?.Remove("cardholder_name"); }
+            else if (parseNode.GetChildNode("cardholder_name") is { } nullNodeCardholderName && nullNodeCardholderName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CardholderName = null;
+            if (parseNode.GetChildNode("expiry_month") is null) { _explicitNullValueExpiryMonth = default!; _explicitNullProperties?.Remove("expiry_month"); }
+            else if (parseNode.GetChildNode("expiry_month") is { } nullNodeExpiryMonth && nullNodeExpiryMonth.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryMonth = null;
+            if (parseNode.GetChildNode("expiry_year") is null) { _explicitNullValueExpiryYear = default!; _explicitNullProperties?.Remove("expiry_year"); }
+            else if (parseNode.GetChildNode("expiry_year") is { } nullNodeExpiryYear && nullNodeExpiryYear.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExpiryYear = null;
+            if (parseNode.GetChildNode("last4") is null) { _explicitNullValueLast4 = default!; _explicitNullProperties?.Remove("last4"); }
+            else if (parseNode.GetChildNode("last4") is { } nullNodeLast4 && nullNodeLast4.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Last4 = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -30,31 +35,31 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>The name on the card used to pay.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CardholderName { get => _explicitNullValueCardholderName; set { _explicitNullValueCardholderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardholder_name"); else _explicitNullProperties?.Remove("cardholder_name"); } }
+        public string? CardholderName { get => _explicitNullValueCardholderName; set { _explicitNullValueCardholderName = value; AdditionalData?.Remove("cardholder_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardholder_name"); else _explicitNullProperties?.Remove("cardholder_name"); } }
         private string? _explicitNullValueCardholderName = default!;
 #nullable restore
 #else
-        public string CardholderName { get => _explicitNullValueCardholderName; set { _explicitNullValueCardholderName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardholder_name"); else _explicitNullProperties?.Remove("cardholder_name"); } }
+        public string CardholderName { get => _explicitNullValueCardholderName; set { _explicitNullValueCardholderName = value; AdditionalData?.Remove("cardholder_name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cardholder_name"); else _explicitNullProperties?.Remove("cardholder_name"); } }
         private string _explicitNullValueCardholderName = default!;
 #endif
         /// <summary>Month of the expiry date of the card used to pay.</summary>
-        public int? ExpiryMonth { get => _explicitNullValueExpiryMonth; set { _explicitNullValueExpiryMonth = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiry_month"); else _explicitNullProperties?.Remove("expiry_month"); } }
+        public int? ExpiryMonth { get => _explicitNullValueExpiryMonth; set { _explicitNullValueExpiryMonth = value; AdditionalData?.Remove("expiry_month"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiry_month"); else _explicitNullProperties?.Remove("expiry_month"); } }
         private int? _explicitNullValueExpiryMonth = default!;
         /// <summary>Year of the expiry date of the card used to pay.</summary>
-        public int? ExpiryYear { get => _explicitNullValueExpiryYear; set { _explicitNullValueExpiryYear = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiry_year"); else _explicitNullProperties?.Remove("expiry_year"); } }
+        public int? ExpiryYear { get => _explicitNullValueExpiryYear; set { _explicitNullValueExpiryYear = value; AdditionalData?.Remove("expiry_year"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expiry_year"); else _explicitNullProperties?.Remove("expiry_year"); } }
         private int? _explicitNullValueExpiryYear = default!;
         /// <summary>Last four digits of the card used to pay.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Last4 { get => _explicitNullValueLast4; set { _explicitNullValueLast4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last4"); else _explicitNullProperties?.Remove("last4"); } }
+        public string? Last4 { get => _explicitNullValueLast4; set { _explicitNullValueLast4 = value; AdditionalData?.Remove("last4"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last4"); else _explicitNullProperties?.Remove("last4"); } }
         private string? _explicitNullValueLast4 = default!;
 #nullable restore
 #else
-        public string Last4 { get => _explicitNullValueLast4; set { _explicitNullValueLast4 = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last4"); else _explicitNullProperties?.Remove("last4"); } }
+        public string Last4 { get => _explicitNullValueLast4; set { _explicitNullValueLast4 = value; AdditionalData?.Remove("last4"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("last4"); else _explicitNullProperties?.Remove("last4"); } }
         private string _explicitNullValueLast4 = default!;
 #endif
         /// <summary>Type of credit or debit card used to pay.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPastDueRequestDataPaymentsItemMethodDetailsCardType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPastDueRequestDataPaymentsItemMethodDetailsCardType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPastDueRequestDataPaymentsItemMethodDetailsCardType? _explicitNullValueType = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionPastDueRequestDataPaymentsItemMethodDetailsCard"/> and sets the default values.
@@ -87,7 +92,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "expiry_month", n => { ExpiryMonth = n.GetIntValue(); } },
                 { "expiry_year", n => { ExpiryYear = n.GetIntValue(); } },
                 { "last4", n => { Last4 = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPastDueRequestDataPaymentsItemMethodDetailsCardType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPastDueRequestDataPaymentsItemMethodDetailsCardType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
             };
         }
         /// <summary>

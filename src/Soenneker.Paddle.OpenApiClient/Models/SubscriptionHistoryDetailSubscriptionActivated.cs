@@ -18,44 +18,49 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("current_billing_period") is { } nullNodeCurrentBillingPeriod && nullNodeCurrentBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentBillingPeriod = null;
-            if (parseNode.GetChildNode("first_billed_at") is { } nullNodeFirstBilledAt && nullNodeFirstBilledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstBilledAt = null;
-            if (parseNode.GetChildNode("next_billed_at") is { } nullNodeNextBilledAt && nullNodeNextBilledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextBilledAt = null;
-            if (parseNode.GetChildNode("transaction_id") is { } nullNodeTransactionId && nullNodeTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionId = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("current_billing_period") is null) { _explicitNullValueCurrentBillingPeriod = default!; _explicitNullProperties?.Remove("current_billing_period"); }
+            else if (parseNode.GetChildNode("current_billing_period") is { } nullNodeCurrentBillingPeriod && nullNodeCurrentBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentBillingPeriod = null;
+            if (parseNode.GetChildNode("first_billed_at") is null) { _explicitNullValueFirstBilledAt = default!; _explicitNullProperties?.Remove("first_billed_at"); }
+            else if (parseNode.GetChildNode("first_billed_at") is { } nullNodeFirstBilledAt && nullNodeFirstBilledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FirstBilledAt = null;
+            if (parseNode.GetChildNode("next_billed_at") is null) { _explicitNullValueNextBilledAt = default!; _explicitNullProperties?.Remove("next_billed_at"); }
+            else if (parseNode.GetChildNode("next_billed_at") is { } nullNodeNextBilledAt && nullNodeNextBilledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextBilledAt = null;
+            if (parseNode.GetChildNode("transaction_id") is null) { _explicitNullValueTransactionId = default!; _explicitNullProperties?.Remove("transaction_id"); }
+            else if (parseNode.GetChildNode("transaction_id") is { } nullNodeTransactionId && nullNodeTransactionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransactionId = null;
         }
 
         /// <summary>What happened on the subscription.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Billing period of the subscription at the time of activation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedCurrentBillingPeriod? CurrentBillingPeriod { get => _explicitNullValueCurrentBillingPeriod; set { _explicitNullValueCurrentBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_billing_period"); else _explicitNullProperties?.Remove("current_billing_period"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedCurrentBillingPeriod? CurrentBillingPeriod { get => _explicitNullValueCurrentBillingPeriod; set { _explicitNullValueCurrentBillingPeriod = value; AdditionalData?.Remove("current_billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_billing_period"); else _explicitNullProperties?.Remove("current_billing_period"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedCurrentBillingPeriod? _explicitNullValueCurrentBillingPeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedCurrentBillingPeriod CurrentBillingPeriod { get => _explicitNullValueCurrentBillingPeriod; set { _explicitNullValueCurrentBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_billing_period"); else _explicitNullProperties?.Remove("current_billing_period"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedCurrentBillingPeriod CurrentBillingPeriod { get => _explicitNullValueCurrentBillingPeriod; set { _explicitNullValueCurrentBillingPeriod = value; AdditionalData?.Remove("current_billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("current_billing_period"); else _explicitNullProperties?.Remove("current_billing_period"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedCurrentBillingPeriod _explicitNullValueCurrentBillingPeriod = default!;
 #endif
         /// <summary>RFC 3339 datetime string of when the subscription was first billed. `null` when the subscription has never been billed — for example, an imported subscription recovering from `past_due`.</summary>
-        public DateTimeOffset? FirstBilledAt { get => _explicitNullValueFirstBilledAt; set { _explicitNullValueFirstBilledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_billed_at"); else _explicitNullProperties?.Remove("first_billed_at"); } }
+        public DateTimeOffset? FirstBilledAt { get => _explicitNullValueFirstBilledAt; set { _explicitNullValueFirstBilledAt = value; AdditionalData?.Remove("first_billed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("first_billed_at"); else _explicitNullProperties?.Remove("first_billed_at"); } }
         private DateTimeOffset? _explicitNullValueFirstBilledAt = default!;
         /// <summary>RFC 3339 datetime string of when the subscription was next scheduled to be billed at the time of activation. `null` when the subscription has no next billing date — for example, a recovered `past_due` subscription that is scheduled to cancel or pause.</summary>
-        public DateTimeOffset? NextBilledAt { get => _explicitNullValueNextBilledAt; set { _explicitNullValueNextBilledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_billed_at"); else _explicitNullProperties?.Remove("next_billed_at"); } }
+        public DateTimeOffset? NextBilledAt { get => _explicitNullValueNextBilledAt; set { _explicitNullValueNextBilledAt = value; AdditionalData?.Remove("next_billed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_billed_at"); else _explicitNullProperties?.Remove("next_billed_at"); } }
         private DateTimeOffset? _explicitNullValueNextBilledAt = default!;
         /// <summary>Status of this subscription. Set automatically by Paddle. Use the pause subscription or cancel subscription operations to change.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedStatus? Status { get; private set; }
         /// <summary>Unique Paddle ID for this transaction entity, prefixed with `txn_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? TransactionId { get => _explicitNullValueTransactionId; set { _explicitNullValueTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_id"); else _explicitNullProperties?.Remove("transaction_id"); } }
+        public string? TransactionId { get => _explicitNullValueTransactionId; set { _explicitNullValueTransactionId = value; AdditionalData?.Remove("transaction_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_id"); else _explicitNullProperties?.Remove("transaction_id"); } }
         private string? _explicitNullValueTransactionId = default!;
 #nullable restore
 #else
-        public string TransactionId { get => _explicitNullValueTransactionId; set { _explicitNullValueTransactionId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_id"); else _explicitNullProperties?.Remove("transaction_id"); } }
+        public string TransactionId { get => _explicitNullValueTransactionId; set { _explicitNullValueTransactionId = value; AdditionalData?.Remove("transaction_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transaction_id"); else _explicitNullProperties?.Remove("transaction_id"); } }
         private string _explicitNullValueTransactionId = default!;
 #endif
         /// <summary>
@@ -83,7 +88,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedAction>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionActivatedAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "current_billing_period", n => { CurrentBillingPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedCurrentBillingPeriod>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionActivatedCurrentBillingPeriod.CreateFromDiscriminatorValue); } },
                 { "first_billed_at", n => { FirstBilledAt = n.GetDateTimeOffsetValue(); } },
                 { "next_billed_at", n => { NextBilledAt = n.GetDateTimeOffsetValue(); } },

@@ -18,9 +18,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("available") is { } nullNodeAvailable && nullNodeAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Available = null;
-            if (parseNode.GetChildNode("reserved") is { } nullNodeReserved && nullNodeReserved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reserved = null;
-            if (parseNode.GetChildNode("used") is { } nullNodeUsed && nullNodeUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Used = null;
+            if (parseNode.GetChildNode("available") is null) { _explicitNullValueAvailable = default!; _explicitNullProperties?.Remove("available"); }
+            else if (parseNode.GetChildNode("available") is { } nullNodeAvailable && nullNodeAvailable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Available = null;
+            if (parseNode.GetChildNode("reserved") is null) { _explicitNullValueReserved = default!; _explicitNullProperties?.Remove("reserved"); }
+            else if (parseNode.GetChildNode("reserved") is { } nullNodeReserved && nullNodeReserved.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Reserved = null;
+            if (parseNode.GetChildNode("used") is null) { _explicitNullValueUsed = default!; _explicitNullProperties?.Remove("used"); }
+            else if (parseNode.GetChildNode("used") is { } nullNodeUsed && nullNodeUsed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Used = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,31 +31,31 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Total amount of credit available to use.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Available { get => _explicitNullValueAvailable; set { _explicitNullValueAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available"); else _explicitNullProperties?.Remove("available"); } }
+        public string? Available { get => _explicitNullValueAvailable; set { _explicitNullValueAvailable = value; AdditionalData?.Remove("available"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available"); else _explicitNullProperties?.Remove("available"); } }
         private string? _explicitNullValueAvailable = default!;
 #nullable restore
 #else
-        public string Available { get => _explicitNullValueAvailable; set { _explicitNullValueAvailable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available"); else _explicitNullProperties?.Remove("available"); } }
+        public string Available { get => _explicitNullValueAvailable; set { _explicitNullValueAvailable = value; AdditionalData?.Remove("available"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available"); else _explicitNullProperties?.Remove("available"); } }
         private string _explicitNullValueAvailable = default!;
 #endif
         /// <summary>Total amount of credit temporarily reserved for `billed` transactions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Reserved { get => _explicitNullValueReserved; set { _explicitNullValueReserved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reserved"); else _explicitNullProperties?.Remove("reserved"); } }
+        public string? Reserved { get => _explicitNullValueReserved; set { _explicitNullValueReserved = value; AdditionalData?.Remove("reserved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reserved"); else _explicitNullProperties?.Remove("reserved"); } }
         private string? _explicitNullValueReserved = default!;
 #nullable restore
 #else
-        public string Reserved { get => _explicitNullValueReserved; set { _explicitNullValueReserved = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reserved"); else _explicitNullProperties?.Remove("reserved"); } }
+        public string Reserved { get => _explicitNullValueReserved; set { _explicitNullValueReserved = value; AdditionalData?.Remove("reserved"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("reserved"); else _explicitNullProperties?.Remove("reserved"); } }
         private string _explicitNullValueReserved = default!;
 #endif
         /// <summary>Total amount of credit used.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Used { get => _explicitNullValueUsed; set { _explicitNullValueUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used"); else _explicitNullProperties?.Remove("used"); } }
+        public string? Used { get => _explicitNullValueUsed; set { _explicitNullValueUsed = value; AdditionalData?.Remove("used"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used"); else _explicitNullProperties?.Remove("used"); } }
         private string? _explicitNullValueUsed = default!;
 #nullable restore
 #else
-        public string Used { get => _explicitNullValueUsed; set { _explicitNullValueUsed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used"); else _explicitNullProperties?.Remove("used"); } }
+        public string Used { get => _explicitNullValueUsed; set { _explicitNullValueUsed = value; AdditionalData?.Remove("used"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("used"); else _explicitNullProperties?.Remove("used"); } }
         private string _explicitNullValueUsed = default!;
 #endif
         /// <summary>

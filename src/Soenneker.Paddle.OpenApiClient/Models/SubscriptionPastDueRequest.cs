@@ -17,11 +17,16 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
-            if (parseNode.GetChildNode("event_id") is { } nullNodeEventId && nullNodeEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventId = null;
-            if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
-            if (parseNode.GetChildNode("notification_id") is { } nullNodeNotificationId && nullNodeNotificationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationId = null;
-            if (parseNode.GetChildNode("occurred_at") is { } nullNodeOccurredAt && nullNodeOccurredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OccurredAt = null;
+            if (parseNode.GetChildNode("data") is null) { _explicitNullValueData = default!; _explicitNullProperties?.Remove("data"); }
+            else if (parseNode.GetChildNode("data") is { } nullNodeData && nullNodeData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Data = null;
+            if (parseNode.GetChildNode("event_id") is null) { _explicitNullValueEventId = default!; _explicitNullProperties?.Remove("event_id"); }
+            else if (parseNode.GetChildNode("event_id") is { } nullNodeEventId && nullNodeEventId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventId = null;
+            if (parseNode.GetChildNode("event_type") is null) { _explicitNullValueEventType = default!; _explicitNullProperties?.Remove("event_type"); }
+            else if (parseNode.GetChildNode("event_type") is { } nullNodeEventType && nullNodeEventType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EventType = null;
+            if (parseNode.GetChildNode("notification_id") is null) { _explicitNullValueNotificationId = default!; _explicitNullProperties?.Remove("notification_id"); }
+            else if (parseNode.GetChildNode("notification_id") is { } nullNodeNotificationId && nullNodeNotificationId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NotificationId = null;
+            if (parseNode.GetChildNode("occurred_at") is null) { _explicitNullValueOccurredAt = default!; _explicitNullProperties?.Remove("occurred_at"); }
+            else if (parseNode.GetChildNode("occurred_at") is { } nullNodeOccurredAt && nullNodeOccurredAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) OccurredAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,38 +34,38 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>New or changed entity.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestData? Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestData? _explicitNullValueData = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestData Data { get => _explicitNullValueData; set { _explicitNullValueData = value; AdditionalData?.Remove("data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("data"); else _explicitNullProperties?.Remove("data"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestData _explicitNullValueData = default!;
 #endif
         /// <summary>Unique Paddle ID for this event, prefixed with `evt_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
+        public string? EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; AdditionalData?.Remove("event_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
         private string? _explicitNullValueEventId = default!;
 #nullable restore
 #else
-        public string EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
+        public string EventId { get => _explicitNullValueEventId; set { _explicitNullValueEventId = value; AdditionalData?.Remove("event_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_id"); else _explicitNullProperties?.Remove("event_id"); } }
         private string _explicitNullValueEventId = default!;
 #endif
         /// <summary>Type of event sent by Paddle, in the format `entity.event_type`.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestEventType? EventType { get => _explicitNullValueEventType; set { _explicitNullValueEventType = value; AdditionalData?.Remove("event_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("event_type"); else _explicitNullProperties?.Remove("event_type"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestEventType? _explicitNullValueEventType = default!;
         /// <summary>Unique Paddle ID for this notification, prefixed with `ntf_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? NotificationId { get => _explicitNullValueNotificationId; set { _explicitNullValueNotificationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_id"); else _explicitNullProperties?.Remove("notification_id"); } }
+        public string? NotificationId { get => _explicitNullValueNotificationId; set { _explicitNullValueNotificationId = value; AdditionalData?.Remove("notification_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_id"); else _explicitNullProperties?.Remove("notification_id"); } }
         private string? _explicitNullValueNotificationId = default!;
 #nullable restore
 #else
-        public string NotificationId { get => _explicitNullValueNotificationId; set { _explicitNullValueNotificationId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_id"); else _explicitNullProperties?.Remove("notification_id"); } }
+        public string NotificationId { get => _explicitNullValueNotificationId; set { _explicitNullValueNotificationId = value; AdditionalData?.Remove("notification_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("notification_id"); else _explicitNullProperties?.Remove("notification_id"); } }
         private string _explicitNullValueNotificationId = default!;
 #endif
         /// <summary>RFC 3339 datetime string of when this event occurred.</summary>
-        public DateTimeOffset? OccurredAt { get => _explicitNullValueOccurredAt; set { _explicitNullValueOccurredAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("occurred_at"); else _explicitNullProperties?.Remove("occurred_at"); } }
+        public DateTimeOffset? OccurredAt { get => _explicitNullValueOccurredAt; set { _explicitNullValueOccurredAt = value; AdditionalData?.Remove("occurred_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("occurred_at"); else _explicitNullProperties?.Remove("occurred_at"); } }
         private DateTimeOffset? _explicitNullValueOccurredAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequest"/> and sets the default values.
@@ -89,7 +94,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "data", n => { Data = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestData>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestData.CreateFromDiscriminatorValue); } },
                 { "event_id", n => { EventId = n.GetStringValue(); } },
-                { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestEventType>(); } },
+                { "event_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPastDueRequestEventType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEventType = default; _explicitNullProperties?.Remove("event_type"); AdditionalData["event_type"] = unknown; } else { EventType = parsed; AdditionalData.Remove("event_type"); } } },
                 { "notification_id", n => { NotificationId = n.GetStringValue(); } },
                 { "occurred_at", n => { OccurredAt = n.GetDateTimeOffsetValue(); } },
             };

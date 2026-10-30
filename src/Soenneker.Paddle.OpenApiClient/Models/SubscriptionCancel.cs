@@ -17,13 +17,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("effective_from") is { } nullNodeEffectiveFrom && nullNodeEffectiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveFrom = null;
+            if (parseNode.GetChildNode("effective_from") is null) { _explicitNullValueEffectiveFrom = default!; _explicitNullProperties?.Remove("effective_from"); }
+            else if (parseNode.GetChildNode("effective_from") is { } nullNodeEffectiveFrom && nullNodeEffectiveFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveFrom = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The effective_from property</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom? EffectiveFrom { get => _explicitNullValueEffectiveFrom; set { _explicitNullValueEffectiveFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_from"); else _explicitNullProperties?.Remove("effective_from"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom? EffectiveFrom { get => _explicitNullValueEffectiveFrom; set { _explicitNullValueEffectiveFrom = value; AdditionalData?.Remove("effective_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_from"); else _explicitNullProperties?.Remove("effective_from"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom? _explicitNullValueEffectiveFrom = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCancel"/> and sets the default values.
@@ -50,7 +51,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "effective_from", n => { EffectiveFrom = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom>(); } },
+                { "effective_from", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.EffectiveFrom>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEffectiveFrom = default; _explicitNullProperties?.Remove("effective_from"); AdditionalData["effective_from"] = unknown; } else { EffectiveFrom = parsed; AdditionalData.Remove("effective_from"); } } },
             };
         }
         /// <summary>

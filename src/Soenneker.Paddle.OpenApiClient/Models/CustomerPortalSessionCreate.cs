@@ -18,7 +18,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("subscription_ids") is { } nullNodeSubscriptionIds && nullNodeSubscriptionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionIds = null;
+            if (parseNode.GetChildNode("subscription_ids") is null) { _explicitNullValueSubscriptionIds = default!; _explicitNullProperties?.Remove("subscription_ids"); }
+            else if (parseNode.GetChildNode("subscription_ids") is { } nullNodeSubscriptionIds && nullNodeSubscriptionIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionIds = null;
         }
 
         /// <summary>List of subscriptions to create authenticated customer portal deep links for.</summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
-            if (parseNode.GetChildNode("measures") is { } nullNodeMeasures && nullNodeMeasures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Measures = null;
+            if (parseNode.GetChildNode("dimensions") is null) { _explicitNullValueDimensions = default!; _explicitNullProperties?.Remove("dimensions"); }
+            else if (parseNode.GetChildNode("dimensions") is { } nullNodeDimensions && nullNodeDimensions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Dimensions = null;
+            if (parseNode.GetChildNode("measures") is null) { _explicitNullValueMeasures = default!; _explicitNullProperties?.Remove("measures"); }
+            else if (parseNode.GetChildNode("measures") is { } nullNodeMeasures && nullNodeMeasures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Measures = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>One entry per requested dimension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldDimension>? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldDimension>? Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; AdditionalData?.Remove("dimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldDimension>? _explicitNullValueDimensions = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldDimension> Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldDimension> Dimensions { get => _explicitNullValueDimensions; set { _explicitNullValueDimensions = value; AdditionalData?.Remove("dimensions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("dimensions"); else _explicitNullProperties?.Remove("dimensions"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldDimension> _explicitNullValueDimensions = default!;
 #endif
         /// <summary>One entry per requested measure.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure>? Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure>? Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; AdditionalData?.Remove("measures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure>? _explicitNullValueMeasures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure> Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure> Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; AdditionalData?.Remove("measures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreFieldMeasure> _explicitNullValueMeasures = default!;
 #endif
         /// <summary>

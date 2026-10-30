@@ -18,23 +18,29 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("company_number") is { } nullNodeCompanyNumber && nullNodeCompanyNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyNumber = null;
-            if (parseNode.GetChildNode("contacts") is { } nullNodeContacts && nullNodeContacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contacts = null;
-            if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("tax_identifier") is { } nullNodeTaxIdentifier && nullNodeTaxIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxIdentifier = null;
+            if (parseNode.GetChildNode("company_number") is null) { _explicitNullValueCompanyNumber = default!; _explicitNullProperties?.Remove("company_number"); }
+            else if (parseNode.GetChildNode("company_number") is { } nullNodeCompanyNumber && nullNodeCompanyNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CompanyNumber = null;
+            if (parseNode.GetChildNode("contacts") is null) { _explicitNullValueContacts = default!; _explicitNullProperties?.Remove("contacts"); }
+            else if (parseNode.GetChildNode("contacts") is { } nullNodeContacts && nullNodeContacts.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Contacts = null;
+            if (parseNode.GetChildNode("custom_data") is null) { _explicitNullValueCustomData = default!; _explicitNullProperties?.Remove("custom_data"); }
+            else if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("tax_identifier") is null) { _explicitNullValueTaxIdentifier = default!; _explicitNullProperties?.Remove("tax_identifier"); }
+            else if (parseNode.GetChildNode("tax_identifier") is { } nullNodeTaxIdentifier && nullNodeTaxIdentifier.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TaxIdentifier = null;
         }
 
         /// <summary>Company number for this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateCompanyNumber? CompanyNumber { get => _explicitNullValueCompanyNumber; set { _explicitNullValueCompanyNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company_number"); else _explicitNullProperties?.Remove("company_number"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateCompanyNumber? _explicitNullValueCompanyNumber = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCompanyNumber? CompanyNumber { get => _explicitNullValueCompanyNumber; set { _explicitNullValueCompanyNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company_number"); else _explicitNullProperties?.Remove("company_number"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.BusinessCompanyNumber? _explicitNullValueCompanyNumber = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateCompanyNumber CompanyNumber { get => _explicitNullValueCompanyNumber; set { _explicitNullValueCompanyNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company_number"); else _explicitNullProperties?.Remove("company_number"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateCompanyNumber _explicitNullValueCompanyNumber = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCompanyNumber CompanyNumber { get => _explicitNullValueCompanyNumber; set { _explicitNullValueCompanyNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("company_number"); else _explicitNullProperties?.Remove("company_number"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.BusinessCompanyNumber _explicitNullValueCompanyNumber = default!;
 #endif
         /// <summary>List of contacts related to this business, typically used for sending invoices.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -72,12 +78,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Tax or VAT Number for this business.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateTaxIdentifier? TaxIdentifier { get => _explicitNullValueTaxIdentifier; set { _explicitNullValueTaxIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_identifier"); else _explicitNullProperties?.Remove("tax_identifier"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateTaxIdentifier? _explicitNullValueTaxIdentifier = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateTaxIdentifier? TaxIdentifier { get => _explicitNullValueTaxIdentifier; set { _explicitNullValueTaxIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_identifier"); else _explicitNullProperties?.Remove("tax_identifier"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateTaxIdentifier? _explicitNullValueTaxIdentifier = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateTaxIdentifier TaxIdentifier { get => _explicitNullValueTaxIdentifier; set { _explicitNullValueTaxIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_identifier"); else _explicitNullProperties?.Remove("tax_identifier"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateTaxIdentifier _explicitNullValueTaxIdentifier = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateTaxIdentifier TaxIdentifier { get => _explicitNullValueTaxIdentifier; set { _explicitNullValueTaxIdentifier = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_identifier"); else _explicitNullProperties?.Remove("tax_identifier"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateTaxIdentifier _explicitNullValueTaxIdentifier = default!;
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -97,12 +103,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "company_number", n => { CompanyNumber = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateCompanyNumber>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateCompanyNumber.CreateFromDiscriminatorValue); } },
+                { "company_number", n => { CompanyNumber = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCompanyNumber>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCompanyNumber.CreateFromDiscriminatorValue); } },
                 { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ContactsCreate>(global::Soenneker.Paddle.OpenApiClient.Models.ContactsCreate.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>(); } },
-                { "tax_identifier", n => { TaxIdentifier = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateTaxIdentifier>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateTaxIdentifier.CreateFromDiscriminatorValue); } },
+                { "tax_identifier", n => { TaxIdentifier = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateTaxIdentifier>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateTaxIdentifier.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -112,12 +118,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateCompanyNumber>("company_number", CompanyNumber);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCompanyNumber>("company_number", CompanyNumber);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ContactsCreate>("contacts", Contacts);
             writer.WriteObjectValue<UntypedNode>("custom_data", CustomData);
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.Status>("status", Status);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessUpdateTaxIdentifier>("tax_identifier", TaxIdentifier);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreateTaxIdentifier>("tax_identifier", TaxIdentifier);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

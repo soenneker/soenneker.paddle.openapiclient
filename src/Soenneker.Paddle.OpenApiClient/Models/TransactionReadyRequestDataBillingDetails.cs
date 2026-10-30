@@ -18,10 +18,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("additional_information") is { } nullNodeAdditionalInformation && nullNodeAdditionalInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalInformation = null;
-            if (parseNode.GetChildNode("enable_checkout") is { } nullNodeEnableCheckout && nullNodeEnableCheckout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableCheckout = null;
-            if (parseNode.GetChildNode("payment_terms") is { } nullNodePaymentTerms && nullNodePaymentTerms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentTerms = null;
-            if (parseNode.GetChildNode("purchase_order_number") is { } nullNodePurchaseOrderNumber && nullNodePurchaseOrderNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchaseOrderNumber = null;
+            if (parseNode.GetChildNode("additional_information") is null) { _explicitNullValueAdditionalInformation = default!; _explicitNullProperties?.Remove("additional_information"); }
+            else if (parseNode.GetChildNode("additional_information") is { } nullNodeAdditionalInformation && nullNodeAdditionalInformation.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdditionalInformation = null;
+            if (parseNode.GetChildNode("enable_checkout") is null) { _explicitNullValueEnableCheckout = default!; _explicitNullProperties?.Remove("enable_checkout"); }
+            else if (parseNode.GetChildNode("enable_checkout") is { } nullNodeEnableCheckout && nullNodeEnableCheckout.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EnableCheckout = null;
+            if (parseNode.GetChildNode("payment_terms") is null) { _explicitNullValuePaymentTerms = default!; _explicitNullProperties?.Remove("payment_terms"); }
+            else if (parseNode.GetChildNode("payment_terms") is { } nullNodePaymentTerms && nullNodePaymentTerms.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentTerms = null;
+            if (parseNode.GetChildNode("purchase_order_number") is null) { _explicitNullValuePurchaseOrderNumber = default!; _explicitNullProperties?.Remove("purchase_order_number"); }
+            else if (parseNode.GetChildNode("purchase_order_number") is { } nullNodePurchaseOrderNumber && nullNodePurchaseOrderNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PurchaseOrderNumber = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -29,34 +33,34 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Notes or other information to include on this invoice. Appears on invoice documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsAdditionalInformation? AdditionalInformation { get => _explicitNullValueAdditionalInformation; set { _explicitNullValueAdditionalInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_information"); else _explicitNullProperties?.Remove("additional_information"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsAdditionalInformation? _explicitNullValueAdditionalInformation = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsAdditionalInformation? AdditionalInformation { get => _explicitNullValueAdditionalInformation; set { _explicitNullValueAdditionalInformation = value; AdditionalData?.Remove("additional_information"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_information"); else _explicitNullProperties?.Remove("additional_information"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsAdditionalInformation? _explicitNullValueAdditionalInformation = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsAdditionalInformation AdditionalInformation { get => _explicitNullValueAdditionalInformation; set { _explicitNullValueAdditionalInformation = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_information"); else _explicitNullProperties?.Remove("additional_information"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsAdditionalInformation _explicitNullValueAdditionalInformation = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsAdditionalInformation AdditionalInformation { get => _explicitNullValueAdditionalInformation; set { _explicitNullValueAdditionalInformation = value; AdditionalData?.Remove("additional_information"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("additional_information"); else _explicitNullProperties?.Remove("additional_information"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsAdditionalInformation _explicitNullValueAdditionalInformation = default!;
 #endif
         /// <summary>Whether the related transaction may be paid using Paddle Checkout. If omitted when creating a transaction, defaults to `false`.</summary>
-        public bool? EnableCheckout { get => _explicitNullValueEnableCheckout; set { _explicitNullValueEnableCheckout = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_checkout"); else _explicitNullProperties?.Remove("enable_checkout"); } }
+        public bool? EnableCheckout { get => _explicitNullValueEnableCheckout; set { _explicitNullValueEnableCheckout = value; AdditionalData?.Remove("enable_checkout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enable_checkout"); else _explicitNullProperties?.Remove("enable_checkout"); } }
         private bool? _explicitNullValueEnableCheckout = default!;
         /// <summary>How long a customer has to pay this invoice once issued. The invoice is due at the end of its payment terms, and is marked as `past_due` 24 hours after its due date if unpaid.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsPaymentTerms? PaymentTerms { get => _explicitNullValuePaymentTerms; set { _explicitNullValuePaymentTerms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_terms"); else _explicitNullProperties?.Remove("payment_terms"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsPaymentTerms? PaymentTerms { get => _explicitNullValuePaymentTerms; set { _explicitNullValuePaymentTerms = value; AdditionalData?.Remove("payment_terms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_terms"); else _explicitNullProperties?.Remove("payment_terms"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsPaymentTerms? _explicitNullValuePaymentTerms = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsPaymentTerms PaymentTerms { get => _explicitNullValuePaymentTerms; set { _explicitNullValuePaymentTerms = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_terms"); else _explicitNullProperties?.Remove("payment_terms"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsPaymentTerms PaymentTerms { get => _explicitNullValuePaymentTerms; set { _explicitNullValuePaymentTerms = value; AdditionalData?.Remove("payment_terms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payment_terms"); else _explicitNullProperties?.Remove("payment_terms"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsPaymentTerms _explicitNullValuePaymentTerms = default!;
 #endif
         /// <summary>Customer purchase order number. Appears on invoice documents.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PurchaseOrderNumber { get => _explicitNullValuePurchaseOrderNumber; set { _explicitNullValuePurchaseOrderNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchase_order_number"); else _explicitNullProperties?.Remove("purchase_order_number"); } }
+        public string? PurchaseOrderNumber { get => _explicitNullValuePurchaseOrderNumber; set { _explicitNullValuePurchaseOrderNumber = value; AdditionalData?.Remove("purchase_order_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchase_order_number"); else _explicitNullProperties?.Remove("purchase_order_number"); } }
         private string? _explicitNullValuePurchaseOrderNumber = default!;
 #nullable restore
 #else
-        public string PurchaseOrderNumber { get => _explicitNullValuePurchaseOrderNumber; set { _explicitNullValuePurchaseOrderNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchase_order_number"); else _explicitNullProperties?.Remove("purchase_order_number"); } }
+        public string PurchaseOrderNumber { get => _explicitNullValuePurchaseOrderNumber; set { _explicitNullValuePurchaseOrderNumber = value; AdditionalData?.Remove("purchase_order_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("purchase_order_number"); else _explicitNullProperties?.Remove("purchase_order_number"); } }
         private string _explicitNullValuePurchaseOrderNumber = default!;
 #endif
         /// <summary>
@@ -87,7 +91,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "additional_information", n => { AdditionalInformation = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsAdditionalInformation>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsAdditionalInformation.CreateFromDiscriminatorValue); } },
+                { "additional_information", n => { AdditionalInformation = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsAdditionalInformation>(global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsAdditionalInformation.CreateFromDiscriminatorValue); } },
                 { "enable_checkout", n => { EnableCheckout = n.GetBoolValue(); } },
                 { "payment_terms", n => { PaymentTerms = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsPaymentTerms>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsPaymentTerms.CreateFromDiscriminatorValue); } },
                 { "purchase_order_number", n => { PurchaseOrderNumber = n.GetStringValue(); } },
@@ -100,7 +104,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsAdditionalInformation>("additional_information", AdditionalInformation);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsAdditionalInformation>("additional_information", AdditionalInformation);
             writer.WriteBoolValue("enable_checkout", EnableCheckout);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionReadyRequestDataBillingDetailsPaymentTerms>("payment_terms", PaymentTerms);
             writer.WriteStringValue("purchase_order_number", PurchaseOrderNumber);

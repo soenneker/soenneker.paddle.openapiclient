@@ -18,7 +18,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("primary_checkout_color") is { } nullNodePrimaryCheckoutColor && nullNodePrimaryCheckoutColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryCheckoutColor = null;
+            if (parseNode.GetChildNode("primary_checkout_color") is null) { _explicitNullValuePrimaryCheckoutColor = default!; _explicitNullProperties?.Remove("primary_checkout_color"); }
+            else if (parseNode.GetChildNode("primary_checkout_color") is { } nullNodePrimaryCheckoutColor && nullNodePrimaryCheckoutColor.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PrimaryCheckoutColor = null;
         }
 
         /// <summary>Brand color for overlay checkout, as a six-digit hex code including the leading `#`.Pass `null` to clear the brand color and fall back to the default checkout color.</summary>

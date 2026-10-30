@@ -18,15 +18,24 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
-            if (parseNode.GetChildNode("address_id") is { } nullNodeAddressId && nullNodeAddressId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddressId = null;
-            if (parseNode.GetChildNode("business_id") is { } nullNodeBusinessId && nullNodeBusinessId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessId = null;
-            if (parseNode.GetChildNode("currency_code") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
-            if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
-            if (parseNode.GetChildNode("customer_ip_address") is { } nullNodeCustomerIpAddress && nullNodeCustomerIpAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerIpAddress = null;
-            if (parseNode.GetChildNode("discount_id") is { } nullNodeDiscountId && nullNodeDiscountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountId = null;
-            if (parseNode.GetChildNode("ignore_trials") is { } nullNodeIgnoreTrials && nullNodeIgnoreTrials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreTrials = null;
-            if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
+            if (parseNode.GetChildNode("address") is null) { _explicitNullValueAddress = default!; _explicitNullProperties?.Remove("address"); }
+            else if (parseNode.GetChildNode("address") is { } nullNodeAddress && nullNodeAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Address = null;
+            if (parseNode.GetChildNode("address_id") is null) { _explicitNullValueAddressId = default!; _explicitNullProperties?.Remove("address_id"); }
+            else if (parseNode.GetChildNode("address_id") is { } nullNodeAddressId && nullNodeAddressId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddressId = null;
+            if (parseNode.GetChildNode("business_id") is null) { _explicitNullValueBusinessId = default!; _explicitNullProperties?.Remove("business_id"); }
+            else if (parseNode.GetChildNode("business_id") is { } nullNodeBusinessId && nullNodeBusinessId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessId = null;
+            if (parseNode.GetChildNode("currency_code") is null) { _explicitNullValueCurrencyCode = default!; _explicitNullProperties?.Remove("currency_code"); }
+            else if (parseNode.GetChildNode("currency_code") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
+            if (parseNode.GetChildNode("customer_id") is null) { _explicitNullValueCustomerId = default!; _explicitNullProperties?.Remove("customer_id"); }
+            else if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
+            if (parseNode.GetChildNode("customer_ip_address") is null) { _explicitNullValueCustomerIpAddress = default!; _explicitNullProperties?.Remove("customer_ip_address"); }
+            else if (parseNode.GetChildNode("customer_ip_address") is { } nullNodeCustomerIpAddress && nullNodeCustomerIpAddress.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerIpAddress = null;
+            if (parseNode.GetChildNode("discount_id") is null) { _explicitNullValueDiscountId = default!; _explicitNullProperties?.Remove("discount_id"); }
+            else if (parseNode.GetChildNode("discount_id") is { } nullNodeDiscountId && nullNodeDiscountId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountId = null;
+            if (parseNode.GetChildNode("ignore_trials") is null) { _explicitNullValueIgnoreTrials = default!; _explicitNullProperties?.Remove("ignore_trials"); }
+            else if (parseNode.GetChildNode("ignore_trials") is { } nullNodeIgnoreTrials && nullNodeIgnoreTrials.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IgnoreTrials = null;
+            if (parseNode.GetChildNode("items") is null) { _explicitNullValueItems = default!; _explicitNullProperties?.Remove("items"); }
+            else if (parseNode.GetChildNode("items") is { } nullNodeItems && nullNodeItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Items = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -34,21 +43,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Address for this transaction preview. Send one of `address_id`, `customer_ip_address`, or the `address` object when previewing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview _explicitNullValueAddress = default!;
 #endif
         /// <summary>Paddle ID of the address that this transaction preview is for, prefixed with `add_`. Send one of `address_id`, `customer_ip_address`, or the `address` object when previewing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressId { get => _explicitNullValueAddressId; set { _explicitNullValueAddressId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_id"); else _explicitNullProperties?.Remove("address_id"); } }
+        public string? AddressId { get => _explicitNullValueAddressId; set { _explicitNullValueAddressId = value; AdditionalData?.Remove("address_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_id"); else _explicitNullProperties?.Remove("address_id"); } }
         private string? _explicitNullValueAddressId = default!;
 #nullable restore
 #else
-        public string AddressId { get => _explicitNullValueAddressId; set { _explicitNullValueAddressId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_id"); else _explicitNullProperties?.Remove("address_id"); } }
+        public string AddressId { get => _explicitNullValueAddressId; set { _explicitNullValueAddressId = value; AdditionalData?.Remove("address_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_id"); else _explicitNullProperties?.Remove("address_id"); } }
         private string _explicitNullValueAddressId = default!;
 #endif
         /// <summary>List of available payment methods for Paddle Checkout given the price and location information passed.</summary>
@@ -62,34 +71,34 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID of the business that this transaction preview is for, prefixed with `biz_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessId { get => _explicitNullValueBusinessId; set { _explicitNullValueBusinessId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_id"); else _explicitNullProperties?.Remove("business_id"); } }
+        public string? BusinessId { get => _explicitNullValueBusinessId; set { _explicitNullValueBusinessId = value; AdditionalData?.Remove("business_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_id"); else _explicitNullProperties?.Remove("business_id"); } }
         private string? _explicitNullValueBusinessId = default!;
 #nullable restore
 #else
-        public string BusinessId { get => _explicitNullValueBusinessId; set { _explicitNullValueBusinessId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_id"); else _explicitNullProperties?.Remove("business_id"); } }
+        public string BusinessId { get => _explicitNullValueBusinessId; set { _explicitNullValueBusinessId = value; AdditionalData?.Remove("business_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_id"); else _explicitNullProperties?.Remove("business_id"); } }
         private string _explicitNullValueBusinessId = default!;
 #endif
         /// <summary>Supported three-letter ISO 4217 currency code.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCurrencyCode? _explicitNullValueCurrencyCode = default!;
         /// <summary>Paddle ID of the customer that this transaction preview is for, prefixed with `ctm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
         private string? _explicitNullValueCustomerId = default!;
 #nullable restore
 #else
-        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
         private string _explicitNullValueCustomerId = default!;
 #endif
         /// <summary>IP address for this transaction preview. Send one of `address_id`, `customer_ip_address`, or the `address` object when previewing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerIpAddress { get => _explicitNullValueCustomerIpAddress; set { _explicitNullValueCustomerIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_ip_address"); else _explicitNullProperties?.Remove("customer_ip_address"); } }
+        public string? CustomerIpAddress { get => _explicitNullValueCustomerIpAddress; set { _explicitNullValueCustomerIpAddress = value; AdditionalData?.Remove("customer_ip_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_ip_address"); else _explicitNullProperties?.Remove("customer_ip_address"); } }
         private string? _explicitNullValueCustomerIpAddress = default!;
 #nullable restore
 #else
-        public string CustomerIpAddress { get => _explicitNullValueCustomerIpAddress; set { _explicitNullValueCustomerIpAddress = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_ip_address"); else _explicitNullProperties?.Remove("customer_ip_address"); } }
+        public string CustomerIpAddress { get => _explicitNullValueCustomerIpAddress; set { _explicitNullValueCustomerIpAddress = value; AdditionalData?.Remove("customer_ip_address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_ip_address"); else _explicitNullProperties?.Remove("customer_ip_address"); } }
         private string _explicitNullValueCustomerIpAddress = default!;
 #endif
         /// <summary>The details property</summary>
@@ -103,24 +112,24 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle ID of the discount applied to this transaction preview, prefixed with `dsc_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DiscountId { get => _explicitNullValueDiscountId; set { _explicitNullValueDiscountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount_id"); else _explicitNullProperties?.Remove("discount_id"); } }
+        public string? DiscountId { get => _explicitNullValueDiscountId; set { _explicitNullValueDiscountId = value; AdditionalData?.Remove("discount_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount_id"); else _explicitNullProperties?.Remove("discount_id"); } }
         private string? _explicitNullValueDiscountId = default!;
 #nullable restore
 #else
-        public string DiscountId { get => _explicitNullValueDiscountId; set { _explicitNullValueDiscountId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount_id"); else _explicitNullProperties?.Remove("discount_id"); } }
+        public string DiscountId { get => _explicitNullValueDiscountId; set { _explicitNullValueDiscountId = value; AdditionalData?.Remove("discount_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount_id"); else _explicitNullProperties?.Remove("discount_id"); } }
         private string _explicitNullValueDiscountId = default!;
 #endif
         /// <summary>Whether trials should be ignored for transaction preview calculations.By default, recurring items with trials are considered to have a zero charge when previewing. Set to `true` to disable this.</summary>
-        public bool? IgnoreTrials { get => _explicitNullValueIgnoreTrials; set { _explicitNullValueIgnoreTrials = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignore_trials"); else _explicitNullProperties?.Remove("ignore_trials"); } }
+        public bool? IgnoreTrials { get => _explicitNullValueIgnoreTrials; set { _explicitNullValueIgnoreTrials = value; AdditionalData?.Remove("ignore_trials"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ignore_trials"); else _explicitNullProperties?.Remove("ignore_trials"); } }
         private bool? _explicitNullValueIgnoreTrials = default!;
         /// <summary>List of items to preview transaction calculations for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItem>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItem>? Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; AdditionalData?.Remove("items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItem>? _explicitNullValueItems = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItem> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItem> Items { get => _explicitNullValueItems; set { _explicitNullValueItems = value; AdditionalData?.Remove("items"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("items"); else _explicitNullProperties?.Remove("items"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItem> _explicitNullValueItems = default!;
 #endif
         /// <summary>
@@ -153,7 +162,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "address_id", n => { AddressId = n.GetStringValue(); } },
                 { "available_payment_methods", n => { AvailablePaymentMethods = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodType>()?.AsList(); } },
                 { "business_id", n => { BusinessId = n.GetStringValue(); } },
-                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCurrencyCode>(); } },
+                { "currency_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCurrencyCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCurrencyCode = default; _explicitNullProperties?.Remove("currency_code"); AdditionalData["currency_code"] = unknown; } else { CurrencyCode = parsed; AdditionalData.Remove("currency_code"); } } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "customer_ip_address", n => { CustomerIpAddress = n.GetStringValue(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsComposed>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewDetailsComposed.CreateFromDiscriminatorValue); } },

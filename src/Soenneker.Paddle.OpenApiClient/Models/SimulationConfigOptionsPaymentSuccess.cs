@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("dunning_exhausted_action") is { } nullNodeDunningExhaustedAction && nullNodeDunningExhaustedAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DunningExhaustedAction = null;
-            if (parseNode.GetChildNode("payment_outcome") is { } nullNodePaymentOutcome && nullNodePaymentOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentOutcome = null;
+            if (parseNode.GetChildNode("dunning_exhausted_action") is null) { _explicitNullValueDunningExhaustedAction = default!; _explicitNullProperties?.Remove("dunning_exhausted_action"); }
+            else if (parseNode.GetChildNode("dunning_exhausted_action") is { } nullNodeDunningExhaustedAction && nullNodeDunningExhaustedAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DunningExhaustedAction = null;
+            if (parseNode.GetChildNode("payment_outcome") is null) { _explicitNullValuePaymentOutcome = default!; _explicitNullProperties?.Remove("payment_outcome"); }
+            else if (parseNode.GetChildNode("payment_outcome") is { } nullNodePaymentOutcome && nullNodePaymentOutcome.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PaymentOutcome = null;
         }
 
         /// <summary>Determines which webhooks are sent based on what happens to the subscription when payment recovery attempts are exhausted. Only applies when `payment_outcome` is `failed`. If omitted, defaults to `null`.</summary>

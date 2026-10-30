@@ -17,7 +17,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ipv4_cidrs") is { } nullNodeIpv4Cidrs && nullNodeIpv4Cidrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv4Cidrs = null;
+            if (parseNode.GetChildNode("ipv4_cidrs") is null) { _explicitNullValueIpv4Cidrs = default!; _explicitNullProperties?.Remove("ipv4_cidrs"); }
+            else if (parseNode.GetChildNode("ipv4_cidrs") is { } nullNodeIpv4Cidrs && nullNodeIpv4Cidrs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ipv4Cidrs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>List of Paddle IPv4 CIDRs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ipv4Cidrs { get => _explicitNullValueIpv4Cidrs; set { _explicitNullValueIpv4Cidrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4_cidrs"); else _explicitNullProperties?.Remove("ipv4_cidrs"); } }
+        public List<string>? Ipv4Cidrs { get => _explicitNullValueIpv4Cidrs; set { _explicitNullValueIpv4Cidrs = value; AdditionalData?.Remove("ipv4_cidrs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4_cidrs"); else _explicitNullProperties?.Remove("ipv4_cidrs"); } }
         private List<string>? _explicitNullValueIpv4Cidrs = default!;
 #nullable restore
 #else
-        public List<string> Ipv4Cidrs { get => _explicitNullValueIpv4Cidrs; set { _explicitNullValueIpv4Cidrs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4_cidrs"); else _explicitNullProperties?.Remove("ipv4_cidrs"); } }
+        public List<string> Ipv4Cidrs { get => _explicitNullValueIpv4Cidrs; set { _explicitNullValueIpv4Cidrs = value; AdditionalData?.Remove("ipv4_cidrs"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ipv4_cidrs"); else _explicitNullProperties?.Remove("ipv4_cidrs"); } }
         private List<string> _explicitNullValueIpv4Cidrs = default!;
 #endif
         /// <summary>

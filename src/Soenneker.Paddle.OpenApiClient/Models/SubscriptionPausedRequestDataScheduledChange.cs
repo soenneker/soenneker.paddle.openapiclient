@@ -18,21 +18,24 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
-            if (parseNode.GetChildNode("effective_at") is { } nullNodeEffectiveAt && nullNodeEffectiveAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveAt = null;
-            if (parseNode.GetChildNode("resume_at") is { } nullNodeResumeAt && nullNodeResumeAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResumeAt = null;
+            if (parseNode.GetChildNode("action") is null) { _explicitNullValueAction = default!; _explicitNullProperties?.Remove("action"); }
+            else if (parseNode.GetChildNode("action") is { } nullNodeAction && nullNodeAction.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Action = null;
+            if (parseNode.GetChildNode("effective_at") is null) { _explicitNullValueEffectiveAt = default!; _explicitNullProperties?.Remove("effective_at"); }
+            else if (parseNode.GetChildNode("effective_at") is { } nullNodeEffectiveAt && nullNodeEffectiveAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EffectiveAt = null;
+            if (parseNode.GetChildNode("resume_at") is null) { _explicitNullValueResumeAt = default!; _explicitNullProperties?.Remove("resume_at"); }
+            else if (parseNode.GetChildNode("resume_at") is { } nullNodeResumeAt && nullNodeResumeAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResumeAt = null;
         }
 
         /// <summary>Kind of change that&apos;s scheduled to be applied to this subscription.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPausedRequestDataScheduledChangeAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPausedRequestDataScheduledChangeAction? Action { get => _explicitNullValueAction; set { _explicitNullValueAction = value; AdditionalData?.Remove("action"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("action"); else _explicitNullProperties?.Remove("action"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPausedRequestDataScheduledChangeAction? _explicitNullValueAction = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>RFC 3339 datetime string of when this scheduled change takes effect.</summary>
-        public DateTimeOffset? EffectiveAt { get => _explicitNullValueEffectiveAt; set { _explicitNullValueEffectiveAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_at"); else _explicitNullProperties?.Remove("effective_at"); } }
+        public DateTimeOffset? EffectiveAt { get => _explicitNullValueEffectiveAt; set { _explicitNullValueEffectiveAt = value; AdditionalData?.Remove("effective_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("effective_at"); else _explicitNullProperties?.Remove("effective_at"); } }
         private DateTimeOffset? _explicitNullValueEffectiveAt = default!;
         /// <summary>RFC 3339 datetime string of when a paused subscription should resume. Only used for `pause` scheduled changes.</summary>
-        public DateTimeOffset? ResumeAt { get => _explicitNullValueResumeAt; set { _explicitNullValueResumeAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resume_at"); else _explicitNullProperties?.Remove("resume_at"); } }
+        public DateTimeOffset? ResumeAt { get => _explicitNullValueResumeAt; set { _explicitNullValueResumeAt = value; AdditionalData?.Remove("resume_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resume_at"); else _explicitNullProperties?.Remove("resume_at"); } }
         private DateTimeOffset? _explicitNullValueResumeAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPausedRequestDataScheduledChange"/> and sets the default values.
@@ -61,7 +64,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "action", n => { Action = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPausedRequestDataScheduledChangeAction>(); } },
+                { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionPausedRequestDataScheduledChangeAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "effective_at", n => { EffectiveAt = n.GetDateTimeOffsetValue(); } },
                 { "resume_at", n => { ResumeAt = n.GetDateTimeOffsetValue(); } },
             };

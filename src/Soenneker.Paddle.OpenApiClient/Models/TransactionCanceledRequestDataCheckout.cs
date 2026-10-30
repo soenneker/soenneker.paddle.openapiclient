@@ -18,7 +18,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
+            if (parseNode.GetChildNode("url") is null) { _explicitNullValueUrl = default!; _explicitNullProperties?.Remove("url"); }
+            else if (parseNode.GetChildNode("url") is { } nullNodeUrl && nullNodeUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Url = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,12 +27,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle Checkout URL for this transaction, composed of the URL passed in the request or your default payment URL + `?_ptxn=` and the Paddle ID for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCanceledRequestDataCheckoutUrl? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionCanceledRequestDataCheckoutUrl? _explicitNullValueUrl = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataCheckoutUrl? Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataCheckoutUrl? _explicitNullValueUrl = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCanceledRequestDataCheckoutUrl Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionCanceledRequestDataCheckoutUrl _explicitNullValueUrl = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataCheckoutUrl Url { get => _explicitNullValueUrl; set { _explicitNullValueUrl = value; AdditionalData?.Remove("url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("url"); else _explicitNullProperties?.Remove("url"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataCheckoutUrl _explicitNullValueUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.TransactionCanceledRequestDataCheckout"/> and sets the default values.
@@ -60,7 +61,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "url", n => { Url = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCanceledRequestDataCheckoutUrl>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCanceledRequestDataCheckoutUrl.CreateFromDiscriminatorValue); } },
+                { "url", n => { Url = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataCheckoutUrl>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataCheckoutUrl.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -70,7 +71,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCanceledRequestDataCheckoutUrl>("url", Url);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionBilledRequestDataCheckoutUrl>("url", Url);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

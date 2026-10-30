@@ -18,13 +18,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("quantity_delta") is { } nullNodeQuantityDelta && nullNodeQuantityDelta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuantityDelta = null;
+            if (parseNode.GetChildNode("quantity_delta") is null) { _explicitNullValueQuantityDelta = default!; _explicitNullProperties?.Remove("quantity_delta"); }
+            else if (parseNode.GetChildNode("quantity_delta") is { } nullNodeQuantityDelta && nullNodeQuantityDelta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) QuantityDelta = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Signed change in quantity. Positive when the quantity increased (or an item was added), negative when the quantity decreased (or an item was removed).</summary>
-        public int? QuantityDelta { get => _explicitNullValueQuantityDelta; set { _explicitNullValueQuantityDelta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity_delta"); else _explicitNullProperties?.Remove("quantity_delta"); } }
+        public int? QuantityDelta { get => _explicitNullValueQuantityDelta; set { _explicitNullValueQuantityDelta = value; AdditionalData?.Remove("quantity_delta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity_delta"); else _explicitNullProperties?.Remove("quantity_delta"); } }
         private int? _explicitNullValueQuantityDelta = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemQuantityUpdatedUpdateSummary"/> and sets the default values.

@@ -18,7 +18,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("proration") is { } nullNodeProration && nullNodeProration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proration = null;
+            if (parseNode.GetChildNode("proration") is null) { _explicitNullValueProration = default!; _explicitNullProperties?.Remove("proration"); }
+            else if (parseNode.GetChildNode("proration") is { } nullNodeProration && nullNodeProration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Proration = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -42,11 +43,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>How proration was calculated for this item.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration? Proration { get => _explicitNullValueProration; set { _explicitNullValueProration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proration"); else _explicitNullProperties?.Remove("proration"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration? Proration { get => _explicitNullValueProration; set { _explicitNullValueProration = value; AdditionalData?.Remove("proration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proration"); else _explicitNullProperties?.Remove("proration"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration? _explicitNullValueProration = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration Proration { get => _explicitNullValueProration; set { _explicitNullValueProration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proration"); else _explicitNullProperties?.Remove("proration"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration Proration { get => _explicitNullValueProration; set { _explicitNullValueProration = value; AdditionalData?.Remove("proration"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("proration"); else _explicitNullProperties?.Remove("proration"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration _explicitNullValueProration = default!;
 #endif
         /// <summary>Quantity of this transaction line item.</summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("adjustments") is { } nullNodeAdjustments && nullNodeAdjustments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Adjustments = null;
-            if (parseNode.GetChildNode("billing_period") is { } nullNodeBillingPeriod && nullNodeBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriod = null;
+            if (parseNode.GetChildNode("adjustments") is null) { _explicitNullValueAdjustments = default!; _explicitNullProperties?.Remove("adjustments"); }
+            else if (parseNode.GetChildNode("adjustments") is { } nullNodeAdjustments && nullNodeAdjustments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Adjustments = null;
+            if (parseNode.GetChildNode("billing_period") is null) { _explicitNullValueBillingPeriod = default!; _explicitNullProperties?.Remove("billing_period"); }
+            else if (parseNode.GetChildNode("billing_period") is { } nullNodeBillingPeriod && nullNodeBillingPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingPeriod = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Preview of adjustments for the next transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview>? Adjustments { get => _explicitNullValueAdjustments; set { _explicitNullValueAdjustments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjustments"); else _explicitNullProperties?.Remove("adjustments"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview>? Adjustments { get => _explicitNullValueAdjustments; set { _explicitNullValueAdjustments = value; AdditionalData?.Remove("adjustments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjustments"); else _explicitNullProperties?.Remove("adjustments"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview>? _explicitNullValueAdjustments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview> Adjustments { get => _explicitNullValueAdjustments; set { _explicitNullValueAdjustments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjustments"); else _explicitNullProperties?.Remove("adjustments"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview> Adjustments { get => _explicitNullValueAdjustments; set { _explicitNullValueAdjustments = value; AdditionalData?.Remove("adjustments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjustments"); else _explicitNullProperties?.Remove("adjustments"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPreview> _explicitNullValueAdjustments = default!;
 #endif
         /// <summary>Billing period for the next transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransactionBillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransactionBillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; AdditionalData?.Remove("billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransactionBillingPeriod? _explicitNullValueBillingPeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransactionBillingPeriod BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransactionBillingPeriod BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; AdditionalData?.Remove("billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionNextTransactionBillingPeriod _explicitNullValueBillingPeriod = default!;
 #endif
         /// <summary>Calculated totals for a transaction preview, including discounts, tax, and currency conversion. Considered the source of truth for totals on a transaction preview.</summary>

@@ -18,28 +18,31 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
-            if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("operator") is null) { _explicitNullValueOperator = default!; _explicitNullProperties?.Remove("operator"); }
+            else if (parseNode.GetChildNode("operator") is { } nullNodeOperator && nullNodeOperator.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Operator = null;
+            if (parseNode.GetChildNode("value") is null) { _explicitNullValueValue = default!; _explicitNullProperties?.Remove("value"); }
+            else if (parseNode.GetChildNode("value") is { } nullNodeValue && nullNodeValue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Value = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Field name to filter by.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesNameComposed? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesNameComposed? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesNameComposed? _explicitNullValueName = default!;
         /// <summary>Operator to use when filtering. Valid when filtering by `updated_at`, `null` otherwise.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.OperatorType? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.OperatorType? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; AdditionalData?.Remove("operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.OperatorType? _explicitNullValueOperator = default!;
         /// <summary>Value to filter by.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesValue? _explicitNullValueValue = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportProductsPricesFiltersItemValue? Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportProductsPricesFiltersItemValue? _explicitNullValueValue = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesValue _explicitNullValueValue = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportProductsPricesFiltersItemValue Value { get => _explicitNullValueValue; set { _explicitNullValueValue = value; AdditionalData?.Remove("value"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("value"); else _explicitNullProperties?.Remove("value"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportProductsPricesFiltersItemValue _explicitNullValueValue = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPrices"/> and sets the default values.
@@ -66,9 +69,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "name", n => { Name = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesNameComposed>(); } },
-                { "operator", n => { Operator = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.OperatorType>(); } },
-                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesValue>(global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesValue.CreateFromDiscriminatorValue); } },
+                { "name", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesNameComposed>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueName = default; _explicitNullProperties?.Remove("name"); AdditionalData["name"] = unknown; } else { Name = parsed; AdditionalData.Remove("name"); } } },
+                { "operator", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.OperatorType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOperator = default; _explicitNullProperties?.Remove("operator"); AdditionalData["operator"] = unknown; } else { Operator = parsed; AdditionalData.Remove("operator"); } } },
+                { "value", n => { Value = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportProductsPricesFiltersItemValue>(global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportProductsPricesFiltersItemValue.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -80,7 +83,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesNameComposed>("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.OperatorType>("operator", Operator);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportFilterProductsPricesValue>("value", Value);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportProductsPricesFiltersItemValue>("value", Value);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

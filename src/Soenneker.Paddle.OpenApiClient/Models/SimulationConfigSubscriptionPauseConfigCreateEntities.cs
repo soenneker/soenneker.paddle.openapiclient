@@ -18,7 +18,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("subscription_id") is { } nullNodeSubscriptionId && nullNodeSubscriptionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionId = null;
+            if (parseNode.GetChildNode("subscription_id") is null) { _explicitNullValueSubscriptionId = default!; _explicitNullProperties?.Remove("subscription_id"); }
+            else if (parseNode.GetChildNode("subscription_id") is { } nullNodeSubscriptionId && nullNodeSubscriptionId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscriptionId = null;
         }
 
         /// <summary>Paddle ID of a subscription to simulate as paused. Adds details of that subscription to webhook payloads.</summary>

@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("intervals") is { } nullNodeIntervals && nullNodeIntervals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Intervals = null;
-            if (parseNode.GetChildNode("max_lookback_days") is { } nullNodeMaxLookbackDays && nullNodeMaxLookbackDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLookbackDays = null;
+            if (parseNode.GetChildNode("intervals") is null) { _explicitNullValueIntervals = default!; _explicitNullProperties?.Remove("intervals"); }
+            else if (parseNode.GetChildNode("intervals") is { } nullNodeIntervals && nullNodeIntervals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Intervals = null;
+            if (parseNode.GetChildNode("max_lookback_days") is null) { _explicitNullValueMaxLookbackDays = default!; _explicitNullProperties?.Remove("max_lookback_days"); }
+            else if (parseNode.GetChildNode("max_lookback_days") is { } nullNodeMaxLookbackDays && nullNodeMaxLookbackDays.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) MaxLookbackDays = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,15 +29,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Allowed grouping intervals for the metric&apos;s time dimension.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsBucketInterval?>? Intervals { get => _explicitNullValueIntervals; set { _explicitNullValueIntervals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intervals"); else _explicitNullProperties?.Remove("intervals"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsBucketInterval?>? Intervals { get => _explicitNullValueIntervals; set { _explicitNullValueIntervals = value; AdditionalData?.Remove("intervals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intervals"); else _explicitNullProperties?.Remove("intervals"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsBucketInterval?>? _explicitNullValueIntervals = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsBucketInterval?> Intervals { get => _explicitNullValueIntervals; set { _explicitNullValueIntervals = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intervals"); else _explicitNullProperties?.Remove("intervals"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsBucketInterval?> Intervals { get => _explicitNullValueIntervals; set { _explicitNullValueIntervals = value; AdditionalData?.Remove("intervals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("intervals"); else _explicitNullProperties?.Remove("intervals"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsBucketInterval?> _explicitNullValueIntervals = default!;
 #endif
         /// <summary>Maximum supported look-back window, in days, when querying this metric.</summary>
-        public int? MaxLookbackDays { get => _explicitNullValueMaxLookbackDays; set { _explicitNullValueMaxLookbackDays = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_lookback_days"); else _explicitNullProperties?.Remove("max_lookback_days"); } }
+        public int? MaxLookbackDays { get => _explicitNullValueMaxLookbackDays; set { _explicitNullValueMaxLookbackDays = value; AdditionalData?.Remove("max_lookback_days"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("max_lookback_days"); else _explicitNullProperties?.Remove("max_lookback_days"); } }
         private int? _explicitNullValueMaxLookbackDays = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.MetricEntityDefinitionTimeDimension"/> and sets the default values.

@@ -17,9 +17,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("cancel") is { } nullNodeCancel && nullNodeCancel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cancel = null;
-            if (parseNode.GetChildNode("update_payment_method") is { } nullNodeUpdatePaymentMethod && nullNodeUpdatePaymentMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatePaymentMethod = null;
-            if (parseNode.GetChildNode("view_subscription") is { } nullNodeViewSubscription && nullNodeViewSubscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewSubscription = null;
+            if (parseNode.GetChildNode("cancel") is null) { _explicitNullValueCancel = default!; _explicitNullProperties?.Remove("cancel"); }
+            else if (parseNode.GetChildNode("cancel") is { } nullNodeCancel && nullNodeCancel.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Cancel = null;
+            if (parseNode.GetChildNode("update_payment_method") is null) { _explicitNullValueUpdatePaymentMethod = default!; _explicitNullProperties?.Remove("update_payment_method"); }
+            else if (parseNode.GetChildNode("update_payment_method") is { } nullNodeUpdatePaymentMethod && nullNodeUpdatePaymentMethod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) UpdatePaymentMethod = null;
+            if (parseNode.GetChildNode("view_subscription") is null) { _explicitNullValueViewSubscription = default!; _explicitNullProperties?.Remove("view_subscription"); }
+            else if (parseNode.GetChildNode("view_subscription") is { } nullNodeViewSubscription && nullNodeViewSubscription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ViewSubscription = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,31 +30,31 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Link to the page for this subscription in the customer portal with the subscription cancellation form pre-opened. Use as part of cancel subscription workflows.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Cancel { get => _explicitNullValueCancel; set { _explicitNullValueCancel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancel"); else _explicitNullProperties?.Remove("cancel"); } }
+        public string? Cancel { get => _explicitNullValueCancel; set { _explicitNullValueCancel = value; AdditionalData?.Remove("cancel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancel"); else _explicitNullProperties?.Remove("cancel"); } }
         private string? _explicitNullValueCancel = default!;
 #nullable restore
 #else
-        public string Cancel { get => _explicitNullValueCancel; set { _explicitNullValueCancel = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancel"); else _explicitNullProperties?.Remove("cancel"); } }
+        public string Cancel { get => _explicitNullValueCancel; set { _explicitNullValueCancel = value; AdditionalData?.Remove("cancel"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("cancel"); else _explicitNullProperties?.Remove("cancel"); } }
         private string _explicitNullValueCancel = default!;
 #endif
         /// <summary>Link to the page for this subscription in the customer portal with the payment method update form pre-opened. Use as part of workflows to let customers update their payment details. `null` for manually-collected subscriptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatePaymentMethod { get => _explicitNullValueUpdatePaymentMethod; set { _explicitNullValueUpdatePaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_payment_method"); else _explicitNullProperties?.Remove("update_payment_method"); } }
+        public string? UpdatePaymentMethod { get => _explicitNullValueUpdatePaymentMethod; set { _explicitNullValueUpdatePaymentMethod = value; AdditionalData?.Remove("update_payment_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_payment_method"); else _explicitNullProperties?.Remove("update_payment_method"); } }
         private string? _explicitNullValueUpdatePaymentMethod = default!;
 #nullable restore
 #else
-        public string UpdatePaymentMethod { get => _explicitNullValueUpdatePaymentMethod; set { _explicitNullValueUpdatePaymentMethod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_payment_method"); else _explicitNullProperties?.Remove("update_payment_method"); } }
+        public string UpdatePaymentMethod { get => _explicitNullValueUpdatePaymentMethod; set { _explicitNullValueUpdatePaymentMethod = value; AdditionalData?.Remove("update_payment_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_payment_method"); else _explicitNullProperties?.Remove("update_payment_method"); } }
         private string _explicitNullValueUpdatePaymentMethod = default!;
 #endif
         /// <summary>Link to the page for this subscription in the customer portal, with no form pre-opened. Use to let customers manage the subscription themselves rather than sending them into one specific action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ViewSubscription { get => _explicitNullValueViewSubscription; set { _explicitNullValueViewSubscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_subscription"); else _explicitNullProperties?.Remove("view_subscription"); } }
+        public string? ViewSubscription { get => _explicitNullValueViewSubscription; set { _explicitNullValueViewSubscription = value; AdditionalData?.Remove("view_subscription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_subscription"); else _explicitNullProperties?.Remove("view_subscription"); } }
         private string? _explicitNullValueViewSubscription = default!;
 #nullable restore
 #else
-        public string ViewSubscription { get => _explicitNullValueViewSubscription; set { _explicitNullValueViewSubscription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_subscription"); else _explicitNullProperties?.Remove("view_subscription"); } }
+        public string ViewSubscription { get => _explicitNullValueViewSubscription; set { _explicitNullValueViewSubscription = value; AdditionalData?.Remove("view_subscription"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("view_subscription"); else _explicitNullProperties?.Remove("view_subscription"); } }
         private string _explicitNullValueViewSubscription = default!;
 #endif
         /// <summary>

@@ -18,21 +18,24 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("audience_opt_in") is { } nullNodeAudienceOptIn && nullNodeAudienceOptIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceOptIn = null;
-            if (parseNode.GetChildNode("discounts_enabled") is { } nullNodeDiscountsEnabled && nullNodeDiscountsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountsEnabled = null;
-            if (parseNode.GetChildNode("saved_payment_methods_enabled") is { } nullNodeSavedPaymentMethodsEnabled && nullNodeSavedPaymentMethodsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SavedPaymentMethodsEnabled = null;
+            if (parseNode.GetChildNode("audience_opt_in") is null) { _explicitNullValueAudienceOptIn = default!; _explicitNullProperties?.Remove("audience_opt_in"); }
+            else if (parseNode.GetChildNode("audience_opt_in") is { } nullNodeAudienceOptIn && nullNodeAudienceOptIn.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudienceOptIn = null;
+            if (parseNode.GetChildNode("discounts_enabled") is null) { _explicitNullValueDiscountsEnabled = default!; _explicitNullProperties?.Remove("discounts_enabled"); }
+            else if (parseNode.GetChildNode("discounts_enabled") is { } nullNodeDiscountsEnabled && nullNodeDiscountsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscountsEnabled = null;
+            if (parseNode.GetChildNode("saved_payment_methods_enabled") is null) { _explicitNullValueSavedPaymentMethodsEnabled = default!; _explicitNullProperties?.Remove("saved_payment_methods_enabled"); }
+            else if (parseNode.GetChildNode("saved_payment_methods_enabled") is { } nullNodeSavedPaymentMethodsEnabled && nullNodeSavedPaymentMethodsEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SavedPaymentMethodsEnabled = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether the marketing consent checkbox is shown at checkout.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn? AudienceOptIn { get => _explicitNullValueAudienceOptIn; set { _explicitNullValueAudienceOptIn = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience_opt_in"); else _explicitNullProperties?.Remove("audience_opt_in"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn? AudienceOptIn { get => _explicitNullValueAudienceOptIn; set { _explicitNullValueAudienceOptIn = value; AdditionalData?.Remove("audience_opt_in"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audience_opt_in"); else _explicitNullProperties?.Remove("audience_opt_in"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn? _explicitNullValueAudienceOptIn = default!;
         /// <summary>Whether customers can enter discount codes at checkout.</summary>
-        public bool? DiscountsEnabled { get => _explicitNullValueDiscountsEnabled; set { _explicitNullValueDiscountsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discounts_enabled"); else _explicitNullProperties?.Remove("discounts_enabled"); } }
+        public bool? DiscountsEnabled { get => _explicitNullValueDiscountsEnabled; set { _explicitNullValueDiscountsEnabled = value; AdditionalData?.Remove("discounts_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discounts_enabled"); else _explicitNullProperties?.Remove("discounts_enabled"); } }
         private bool? _explicitNullValueDiscountsEnabled = default!;
         /// <summary>Whether customers can save payment methods at checkout for future purchases.</summary>
-        public bool? SavedPaymentMethodsEnabled { get => _explicitNullValueSavedPaymentMethodsEnabled; set { _explicitNullValueSavedPaymentMethodsEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saved_payment_methods_enabled"); else _explicitNullProperties?.Remove("saved_payment_methods_enabled"); } }
+        public bool? SavedPaymentMethodsEnabled { get => _explicitNullValueSavedPaymentMethodsEnabled; set { _explicitNullValueSavedPaymentMethodsEnabled = value; AdditionalData?.Remove("saved_payment_methods_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("saved_payment_methods_enabled"); else _explicitNullProperties?.Remove("saved_payment_methods_enabled"); } }
         private bool? _explicitNullValueSavedPaymentMethodsEnabled = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeatures"/> and sets the default values.
@@ -59,7 +62,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "audience_opt_in", n => { AudienceOptIn = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn>(); } },
+                { "audience_opt_in", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutFeaturesAudienceOptIn>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAudienceOptIn = default; _explicitNullProperties?.Remove("audience_opt_in"); AdditionalData["audience_opt_in"] = unknown; } else { AudienceOptIn = parsed; AdditionalData.Remove("audience_opt_in"); } } },
                 { "discounts_enabled", n => { DiscountsEnabled = n.GetBoolValue(); } },
                 { "saved_payment_methods_enabled", n => { SavedPaymentMethodsEnabled = n.GetBoolValue(); } },
             };

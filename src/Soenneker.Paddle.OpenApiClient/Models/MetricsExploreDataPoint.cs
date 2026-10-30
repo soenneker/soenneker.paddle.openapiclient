@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("measures") is { } nullNodeMeasures && nullNodeMeasures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Measures = null;
-            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("measures") is null) { _explicitNullValueMeasures = default!; _explicitNullProperties?.Remove("measures"); }
+            else if (parseNode.GetChildNode("measures") is { } nullNodeMeasures && nullNodeMeasures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Measures = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Measure values for this bucket, keyed by the measure `name` from `fields.measures`. Numeric values are strings to preserve precision.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPointMeasuresProperty? Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPointMeasuresProperty? Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; AdditionalData?.Remove("measures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPointMeasuresProperty? _explicitNullValueMeasures = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPointMeasuresProperty Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPointMeasuresProperty Measures { get => _explicitNullValueMeasures; set { _explicitNullValueMeasures = value; AdditionalData?.Remove("measures"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("measures"); else _explicitNullProperties?.Remove("measures"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreDataPointMeasuresProperty _explicitNullValueMeasures = default!;
 #endif
         /// <summary>RFC 3339 datetime string or `YYYY-MM-DD` date for the start of this time bucket, in UTC. The Monday for weekly intervals, and the 1st for monthly intervals.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public string? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private string? _explicitNullValueTimestamp = default!;
 #nullable restore
 #else
-        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public string Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private string _explicitNullValueTimestamp = default!;
 #endif
         /// <summary>

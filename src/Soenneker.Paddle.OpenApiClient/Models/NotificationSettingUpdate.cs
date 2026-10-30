@@ -18,58 +18,65 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
-            if (parseNode.GetChildNode("api_version") is { } nullNodeApiVersion && nullNodeApiVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiVersion = null;
-            if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
-            if (parseNode.GetChildNode("destination") is { } nullNodeDestination && nullNodeDestination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destination = null;
-            if (parseNode.GetChildNode("include_sensitive_fields") is { } nullNodeIncludeSensitiveFields && nullNodeIncludeSensitiveFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeSensitiveFields = null;
-            if (parseNode.GetChildNode("subscribed_events") is { } nullNodeSubscribedEvents && nullNodeSubscribedEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscribedEvents = null;
-            if (parseNode.GetChildNode("traffic_source") is { } nullNodeTrafficSource && nullNodeTrafficSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficSource = null;
+            if (parseNode.GetChildNode("active") is null) { _explicitNullValueActive = default!; _explicitNullProperties?.Remove("active"); }
+            else if (parseNode.GetChildNode("active") is { } nullNodeActive && nullNodeActive.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Active = null;
+            if (parseNode.GetChildNode("api_version") is null) { _explicitNullValueApiVersion = default!; _explicitNullProperties?.Remove("api_version"); }
+            else if (parseNode.GetChildNode("api_version") is { } nullNodeApiVersion && nullNodeApiVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ApiVersion = null;
+            if (parseNode.GetChildNode("description") is null) { _explicitNullValueDescription = default!; _explicitNullProperties?.Remove("description"); }
+            else if (parseNode.GetChildNode("description") is { } nullNodeDescription && nullNodeDescription.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Description = null;
+            if (parseNode.GetChildNode("destination") is null) { _explicitNullValueDestination = default!; _explicitNullProperties?.Remove("destination"); }
+            else if (parseNode.GetChildNode("destination") is { } nullNodeDestination && nullNodeDestination.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Destination = null;
+            if (parseNode.GetChildNode("include_sensitive_fields") is null) { _explicitNullValueIncludeSensitiveFields = default!; _explicitNullProperties?.Remove("include_sensitive_fields"); }
+            else if (parseNode.GetChildNode("include_sensitive_fields") is { } nullNodeIncludeSensitiveFields && nullNodeIncludeSensitiveFields.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IncludeSensitiveFields = null;
+            if (parseNode.GetChildNode("subscribed_events") is null) { _explicitNullValueSubscribedEvents = default!; _explicitNullProperties?.Remove("subscribed_events"); }
+            else if (parseNode.GetChildNode("subscribed_events") is { } nullNodeSubscribedEvents && nullNodeSubscribedEvents.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SubscribedEvents = null;
+            if (parseNode.GetChildNode("traffic_source") is null) { _explicitNullValueTrafficSource = default!; _explicitNullProperties?.Remove("traffic_source"); }
+            else if (parseNode.GetChildNode("traffic_source") is { } nullNodeTrafficSource && nullNodeTrafficSource.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrafficSource = null;
         }
 
         /// <summary>Whether Paddle should try to deliver events to this notification destination.</summary>
-        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
+        public bool? Active { get => _explicitNullValueActive; set { _explicitNullValueActive = value; AdditionalData?.Remove("active"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("active"); else _explicitNullProperties?.Remove("active"); } }
         private bool? _explicitNullValueActive = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>API version that returned objects for events should conform to. Must be a valid version of the Paddle API. Can&apos;t be a version older than your account default. Defaults to your account default if omitted.</summary>
-        public int? ApiVersion { get => _explicitNullValueApiVersion; set { _explicitNullValueApiVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_version"); else _explicitNullProperties?.Remove("api_version"); } }
+        public int? ApiVersion { get => _explicitNullValueApiVersion; set { _explicitNullValueApiVersion = value; AdditionalData?.Remove("api_version"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("api_version"); else _explicitNullProperties?.Remove("api_version"); } }
         private int? _explicitNullValueApiVersion = default!;
         /// <summary>Short description for this notification destination. Shown in the Paddle Dashboard.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string? Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string? _explicitNullValueDescription = default!;
 #nullable restore
 #else
-        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
+        public string Description { get => _explicitNullValueDescription; set { _explicitNullValueDescription = value; AdditionalData?.Remove("description"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("description"); else _explicitNullProperties?.Remove("description"); } }
         private string _explicitNullValueDescription = default!;
 #endif
         /// <summary>Webhook endpoint URL or email address.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
+        public string? Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; AdditionalData?.Remove("destination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
         private string? _explicitNullValueDestination = default!;
 #nullable restore
 #else
-        public string Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
+        public string Destination { get => _explicitNullValueDestination; set { _explicitNullValueDestination = value; AdditionalData?.Remove("destination"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("destination"); else _explicitNullProperties?.Remove("destination"); } }
         private string _explicitNullValueDestination = default!;
 #endif
         /// <summary>Whether potentially sensitive fields should be sent to this notification destination.</summary>
-        public bool? IncludeSensitiveFields { get => _explicitNullValueIncludeSensitiveFields; set { _explicitNullValueIncludeSensitiveFields = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_sensitive_fields"); else _explicitNullProperties?.Remove("include_sensitive_fields"); } }
+        public bool? IncludeSensitiveFields { get => _explicitNullValueIncludeSensitiveFields; set { _explicitNullValueIncludeSensitiveFields = value; AdditionalData?.Remove("include_sensitive_fields"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("include_sensitive_fields"); else _explicitNullProperties?.Remove("include_sensitive_fields"); } }
         private bool? _explicitNullValueIncludeSensitiveFields = default!;
         /// <summary>Subscribed events for this notification destination. When creating or updating a notification destination, pass an array of event type names only. Paddle returns the complete event type object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName?>? SubscribedEvents { get => _explicitNullValueSubscribedEvents; set { _explicitNullValueSubscribedEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscribed_events"); else _explicitNullProperties?.Remove("subscribed_events"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName?>? SubscribedEvents { get => _explicitNullValueSubscribedEvents; set { _explicitNullValueSubscribedEvents = value; AdditionalData?.Remove("subscribed_events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscribed_events"); else _explicitNullProperties?.Remove("subscribed_events"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName?>? _explicitNullValueSubscribedEvents = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName?> SubscribedEvents { get => _explicitNullValueSubscribedEvents; set { _explicitNullValueSubscribedEvents = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscribed_events"); else _explicitNullProperties?.Remove("subscribed_events"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName?> SubscribedEvents { get => _explicitNullValueSubscribedEvents; set { _explicitNullValueSubscribedEvents = value; AdditionalData?.Remove("subscribed_events"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("subscribed_events"); else _explicitNullProperties?.Remove("subscribed_events"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName?> _explicitNullValueSubscribedEvents = default!;
 #endif
         /// <summary>Whether Paddle should deliver real platform events, simulation events or both to this notification destination.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdateTrafficSource? TrafficSource { get => _explicitNullValueTrafficSource; set { _explicitNullValueTrafficSource = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_source"); else _explicitNullProperties?.Remove("traffic_source"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdateTrafficSource? TrafficSource { get => _explicitNullValueTrafficSource; set { _explicitNullValueTrafficSource = value; AdditionalData?.Remove("traffic_source"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("traffic_source"); else _explicitNullProperties?.Remove("traffic_source"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdateTrafficSource? _explicitNullValueTrafficSource = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdate"/> and sets the default values.
@@ -104,7 +111,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "destination", n => { Destination = n.GetStringValue(); } },
                 { "include_sensitive_fields", n => { IncludeSensitiveFields = n.GetBoolValue(); } },
                 { "subscribed_events", n => { SubscribedEvents = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.EventTypeName>()?.AsList(); } },
-                { "traffic_source", n => { TrafficSource = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdateTrafficSource>(); } },
+                { "traffic_source", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.NotificationSettingUpdateTrafficSource>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTrafficSource = default; _explicitNullProperties?.Remove("traffic_source"); AdditionalData["traffic_source"] = unknown; } else { TrafficSource = parsed; AdditionalData.Remove("traffic_source"); } } },
             };
         }
         /// <summary>

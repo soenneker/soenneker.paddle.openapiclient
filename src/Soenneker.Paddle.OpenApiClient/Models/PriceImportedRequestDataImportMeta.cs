@@ -18,8 +18,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("external_id") is { } nullNodeExternalId && nullNodeExternalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalId = null;
-            if (parseNode.GetChildNode("imported_from") is { } nullNodeImportedFrom && nullNodeImportedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportedFrom = null;
+            if (parseNode.GetChildNode("external_id") is null) { _explicitNullValueExternalId = default!; _explicitNullProperties?.Remove("external_id"); }
+            else if (parseNode.GetChildNode("external_id") is { } nullNodeExternalId && nullNodeExternalId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalId = null;
+            if (parseNode.GetChildNode("imported_from") is null) { _explicitNullValueImportedFrom = default!; _explicitNullProperties?.Remove("imported_from"); }
+            else if (parseNode.GetChildNode("imported_from") is { } nullNodeImportedFrom && nullNodeImportedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportedFrom = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -27,21 +29,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Reference or identifier for this entity from the provider where it was imported from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
+        public string? ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; AdditionalData?.Remove("external_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
         private string? _explicitNullValueExternalId = default!;
 #nullable restore
 #else
-        public string ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
+        public string ExternalId { get => _explicitNullValueExternalId; set { _explicitNullValueExternalId = value; AdditionalData?.Remove("external_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_id"); else _explicitNullProperties?.Remove("external_id"); } }
         private string _explicitNullValueExternalId = default!;
 #endif
         /// <summary>Name of the platform or provider where this entity was imported from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ImportedFrom { get => _explicitNullValueImportedFrom; set { _explicitNullValueImportedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imported_from"); else _explicitNullProperties?.Remove("imported_from"); } }
+        public string? ImportedFrom { get => _explicitNullValueImportedFrom; set { _explicitNullValueImportedFrom = value; AdditionalData?.Remove("imported_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imported_from"); else _explicitNullProperties?.Remove("imported_from"); } }
         private string? _explicitNullValueImportedFrom = default!;
 #nullable restore
 #else
-        public string ImportedFrom { get => _explicitNullValueImportedFrom; set { _explicitNullValueImportedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imported_from"); else _explicitNullProperties?.Remove("imported_from"); } }
+        public string ImportedFrom { get => _explicitNullValueImportedFrom; set { _explicitNullValueImportedFrom = value; AdditionalData?.Remove("imported_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("imported_from"); else _explicitNullProperties?.Remove("imported_from"); } }
         private string _explicitNullValueImportedFrom = default!;
 #endif
         /// <summary>

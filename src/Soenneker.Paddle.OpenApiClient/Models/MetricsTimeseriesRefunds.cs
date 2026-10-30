@@ -18,35 +18,40 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currency_code") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
-            if (parseNode.GetChildNode("ends_at") is { } nullNodeEndsAt && nullNodeEndsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndsAt = null;
-            if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
-            if (parseNode.GetChildNode("starts_at") is { } nullNodeStartsAt && nullNodeStartsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsAt = null;
-            if (parseNode.GetChildNode("timeseries") is { } nullNodeTimeseries && nullNodeTimeseries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeseries = null;
+            if (parseNode.GetChildNode("currency_code") is null) { _explicitNullValueCurrencyCode = default!; _explicitNullProperties?.Remove("currency_code"); }
+            else if (parseNode.GetChildNode("currency_code") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
+            if (parseNode.GetChildNode("ends_at") is null) { _explicitNullValueEndsAt = default!; _explicitNullProperties?.Remove("ends_at"); }
+            else if (parseNode.GetChildNode("ends_at") is { } nullNodeEndsAt && nullNodeEndsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) EndsAt = null;
+            if (parseNode.GetChildNode("interval") is null) { _explicitNullValueInterval = default!; _explicitNullProperties?.Remove("interval"); }
+            else if (parseNode.GetChildNode("interval") is { } nullNodeInterval && nullNodeInterval.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Interval = null;
+            if (parseNode.GetChildNode("starts_at") is null) { _explicitNullValueStartsAt = default!; _explicitNullProperties?.Remove("starts_at"); }
+            else if (parseNode.GetChildNode("starts_at") is { } nullNodeStartsAt && nullNodeStartsAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StartsAt = null;
+            if (parseNode.GetChildNode("timeseries") is null) { _explicitNullValueTimeseries = default!; _explicitNullProperties?.Remove("timeseries"); }
+            else if (parseNode.GetChildNode("timeseries") is { } nullNodeTimeseries && nullNodeTimeseries.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timeseries = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Supported three-letter ISO 4217 currency code.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsCurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsCurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsCurrencyCode? _explicitNullValueCurrencyCode = default!;
         /// <summary>RFC 3339 datetime string.</summary>
-        public DateTimeOffset? EndsAt { get => _explicitNullValueEndsAt; set { _explicitNullValueEndsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ends_at"); else _explicitNullProperties?.Remove("ends_at"); } }
+        public DateTimeOffset? EndsAt { get => _explicitNullValueEndsAt; set { _explicitNullValueEndsAt = value; AdditionalData?.Remove("ends_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ends_at"); else _explicitNullProperties?.Remove("ends_at"); } }
         private DateTimeOffset? _explicitNullValueEndsAt = default!;
         /// <summary>Time granularity for the datapoints.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsInterval? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsInterval? Interval { get => _explicitNullValueInterval; set { _explicitNullValueInterval = value; AdditionalData?.Remove("interval"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interval"); else _explicitNullProperties?.Remove("interval"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsInterval? _explicitNullValueInterval = default!;
         /// <summary>RFC 3339 datetime string.</summary>
-        public DateTimeOffset? StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starts_at"); else _explicitNullProperties?.Remove("starts_at"); } }
+        public DateTimeOffset? StartsAt { get => _explicitNullValueStartsAt; set { _explicitNullValueStartsAt = value; AdditionalData?.Remove("starts_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("starts_at"); else _explicitNullProperties?.Remove("starts_at"); } }
         private DateTimeOffset? _explicitNullValueStartsAt = default!;
         /// <summary>Array of datapoints. Empty if `to` and `from` are the same.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsDatapoint>? Timeseries { get => _explicitNullValueTimeseries; set { _explicitNullValueTimeseries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeseries"); else _explicitNullProperties?.Remove("timeseries"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsDatapoint>? Timeseries { get => _explicitNullValueTimeseries; set { _explicitNullValueTimeseries = value; AdditionalData?.Remove("timeseries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeseries"); else _explicitNullProperties?.Remove("timeseries"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsDatapoint>? _explicitNullValueTimeseries = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsDatapoint> Timeseries { get => _explicitNullValueTimeseries; set { _explicitNullValueTimeseries = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeseries"); else _explicitNullProperties?.Remove("timeseries"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsDatapoint> Timeseries { get => _explicitNullValueTimeseries; set { _explicitNullValueTimeseries = value; AdditionalData?.Remove("timeseries"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timeseries"); else _explicitNullProperties?.Remove("timeseries"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsDatapoint> _explicitNullValueTimeseries = default!;
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
@@ -76,9 +81,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsCurrencyCode>(); } },
+                { "currency_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsCurrencyCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCurrencyCode = default; _explicitNullProperties?.Remove("currency_code"); AdditionalData["currency_code"] = unknown; } else { CurrencyCode = parsed; AdditionalData.Remove("currency_code"); } } },
                 { "ends_at", n => { EndsAt = n.GetDateTimeOffsetValue(); } },
-                { "interval", n => { Interval = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsInterval>(); } },
+                { "interval", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsInterval>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueInterval = default; _explicitNullProperties?.Remove("interval"); AdditionalData["interval"] = unknown; } else { Interval = parsed; AdditionalData.Remove("interval"); } } },
                 { "starts_at", n => { StartsAt = n.GetDateTimeOffsetValue(); } },
                 { "timeseries", n => { Timeseries = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsDatapoint>(global::Soenneker.Paddle.OpenApiClient.Models.MetricsTimeseriesRefundsDatapoint.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },

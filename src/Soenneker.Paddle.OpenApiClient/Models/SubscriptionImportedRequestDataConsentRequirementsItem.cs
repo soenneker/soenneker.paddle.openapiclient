@@ -18,13 +18,20 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("consent_period") is { } nullNodeConsentPeriod && nullNodeConsentPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentPeriod = null;
-            if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
-            if (parseNode.GetChildNode("granted_at") is { } nullNodeGrantedAt && nullNodeGrantedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantedAt = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("requirement") is { } nullNodeRequirement && nullNodeRequirement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requirement = null;
-            if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
-            if (parseNode.GetChildNode("voided_at") is { } nullNodeVoidedAt && nullNodeVoidedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoidedAt = null;
+            if (parseNode.GetChildNode("consent_period") is null) { _explicitNullValueConsentPeriod = default!; _explicitNullProperties?.Remove("consent_period"); }
+            else if (parseNode.GetChildNode("consent_period") is { } nullNodeConsentPeriod && nullNodeConsentPeriod.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentPeriod = null;
+            if (parseNode.GetChildNode("created_at") is null) { _explicitNullValueCreatedAt = default!; _explicitNullProperties?.Remove("created_at"); }
+            else if (parseNode.GetChildNode("created_at") is { } nullNodeCreatedAt && nullNodeCreatedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CreatedAt = null;
+            if (parseNode.GetChildNode("granted_at") is null) { _explicitNullValueGrantedAt = default!; _explicitNullProperties?.Remove("granted_at"); }
+            else if (parseNode.GetChildNode("granted_at") is { } nullNodeGrantedAt && nullNodeGrantedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) GrantedAt = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("requirement") is null) { _explicitNullValueRequirement = default!; _explicitNullProperties?.Remove("requirement"); }
+            else if (parseNode.GetChildNode("requirement") is { } nullNodeRequirement && nullNodeRequirement.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Requirement = null;
+            if (parseNode.GetChildNode("status") is null) { _explicitNullValueStatus = default!; _explicitNullProperties?.Remove("status"); }
+            else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
+            if (parseNode.GetChildNode("voided_at") is null) { _explicitNullValueVoidedAt = default!; _explicitNullProperties?.Remove("voided_at"); }
+            else if (parseNode.GetChildNode("voided_at") is { } nullNodeVoidedAt && nullNodeVoidedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) VoidedAt = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -32,37 +39,37 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Period during which consent for this subscription can be granted. `null` if there is no `next_billed_at` or the consent requirement does not apply to the current billing period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemConsentPeriod? ConsentPeriod { get => _explicitNullValueConsentPeriod; set { _explicitNullValueConsentPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_period"); else _explicitNullProperties?.Remove("consent_period"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemConsentPeriod? ConsentPeriod { get => _explicitNullValueConsentPeriod; set { _explicitNullValueConsentPeriod = value; AdditionalData?.Remove("consent_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_period"); else _explicitNullProperties?.Remove("consent_period"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemConsentPeriod? _explicitNullValueConsentPeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemConsentPeriod ConsentPeriod { get => _explicitNullValueConsentPeriod; set { _explicitNullValueConsentPeriod = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_period"); else _explicitNullProperties?.Remove("consent_period"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemConsentPeriod ConsentPeriod { get => _explicitNullValueConsentPeriod; set { _explicitNullValueConsentPeriod = value; AdditionalData?.Remove("consent_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_period"); else _explicitNullProperties?.Remove("consent_period"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemConsentPeriod _explicitNullValueConsentPeriod = default!;
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
-        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
+        public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>RFC 3339 datetime string of when the customer granted their consent. `null` if not yet granted.</summary>
-        public DateTimeOffset? GrantedAt { get => _explicitNullValueGrantedAt; set { _explicitNullValueGrantedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("granted_at"); else _explicitNullProperties?.Remove("granted_at"); } }
+        public DateTimeOffset? GrantedAt { get => _explicitNullValueGrantedAt; set { _explicitNullValueGrantedAt = value; AdditionalData?.Remove("granted_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("granted_at"); else _explicitNullProperties?.Remove("granted_at"); } }
         private DateTimeOffset? _explicitNullValueGrantedAt = default!;
         /// <summary>Unique Paddle ID for this subscription consent requirement entity, prefixed with `subconreq_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Type of consent required for successful renewal.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemRequirement? Requirement { get => _explicitNullValueRequirement; set { _explicitNullValueRequirement = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirement"); else _explicitNullProperties?.Remove("requirement"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemRequirement? Requirement { get => _explicitNullValueRequirement; set { _explicitNullValueRequirement = value; AdditionalData?.Remove("requirement"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("requirement"); else _explicitNullProperties?.Remove("requirement"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemRequirement? _explicitNullValueRequirement = default!;
         /// <summary>Status of this consent requirement.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; AdditionalData?.Remove("status"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemStatus? _explicitNullValueStatus = default!;
         /// <summary>RFC 3339 datetime string of when consent was voided or no longer required. `null` if not voided.</summary>
-        public DateTimeOffset? VoidedAt { get => _explicitNullValueVoidedAt; set { _explicitNullValueVoidedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voided_at"); else _explicitNullProperties?.Remove("voided_at"); } }
+        public DateTimeOffset? VoidedAt { get => _explicitNullValueVoidedAt; set { _explicitNullValueVoidedAt = value; AdditionalData?.Remove("voided_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("voided_at"); else _explicitNullProperties?.Remove("voided_at"); } }
         private DateTimeOffset? _explicitNullValueVoidedAt = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItem"/> and sets the default values.
@@ -93,8 +100,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "granted_at", n => { GrantedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "requirement", n => { Requirement = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemRequirement>(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemStatus>(); } },
+                { "requirement", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemRequirement>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueRequirement = default; _explicitNullProperties?.Remove("requirement"); AdditionalData["requirement"] = unknown; } else { Requirement = parsed; AdditionalData.Remove("requirement"); } } },
+                { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionImportedRequestDataConsentRequirementsItemStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "voided_at", n => { VoidedAt = n.GetDateTimeOffsetValue(); } },
             };
         }

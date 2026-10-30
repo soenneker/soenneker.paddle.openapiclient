@@ -2,14 +2,13 @@
 #pragma warning disable CS0618
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
-using Microsoft.Kiota.Abstractions;
 using System.Collections.Generic;
 using System.IO;
 using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="Date"/>, <see cref="DateTimeOffset"/>, <see cref="string"/>, List&lt;global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item&gt;, List&lt;global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item&gt;, List&lt;string&gt;
+    /// Composed type wrapper for classes <see cref="string"/>, List&lt;string&gt;
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ReportCreatedRequestDataReportAdjustmentsFiltersItemValue : IComposedTypeWrapper, IParsable
@@ -19,26 +18,6 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
         public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
 
-        /// <summary>Composed type representation for type <see cref="Date"/></summary>
-        public Date? DateOnly { get; set; }
-        /// <summary>Composed type representation for type <see cref="DateTimeOffset"/></summary>
-        public DateTimeOffset? DateTimeOffset { get; set; }
-        /// <summary>Composed type representation for type List&lt;global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item>? ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item> ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item { get; set; }
-#endif
-        /// <summary>Composed type representation for type List&lt;global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item&gt;</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item>? ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item> ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item { get; set; }
-#endif
         /// <summary>Composed type representation for type <see cref="string"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -64,26 +43,9 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
             var result = new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValue();
-            if (parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray ambiguousArray) { result.UnrecognizedValue = ambiguousArray; return result; }
-            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetDateValue() is Date dateOnlyValue)
-            {
-                result.DateOnly = dateOnlyValue;
-            }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetDateTimeOffsetValue() is DateTimeOffset dateTimeOffsetValue)
-            {
-                result.DateTimeOffset = dateTimeOffsetValue;
-            }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string reportCreatedRequestDataReportAdjustmentsFiltersItemValueStringValue)
+            if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString && parseNode.GetStringValue() is string reportCreatedRequestDataReportAdjustmentsFiltersItemValueStringValue)
             {
                 result.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueString = reportCreatedRequestDataReportAdjustmentsFiltersItemValueStringValue;
-            }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item>(global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item> reportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1ItemValue)
-            {
-                result.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item = reportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1ItemValue;
-            }
-            else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && parseNode.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item>(global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item.CreateFromDiscriminatorValue)?.AsList() is List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item> reportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2ItemValue)
-            {
-                result.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item = reportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2ItemValue;
             }
             else if(parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray && global::System.Linq.Enumerable.All(((global::Microsoft.Kiota.Abstractions.Serialization.UntypedArray)parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue)).GetValue(), item => item is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString) && parseNode.GetCollectionOfPrimitiveValues<string>()?.AsList() is List<string> stringValue)
             {
@@ -91,7 +53,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             }
             
             var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
-            if (result.DateOnly == null && result.DateTimeOffset == null && result.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item == null && result.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item == null && result.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueString == null && result.String == null) result.UnrecognizedValue = unionPayload;
+            if (result.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueString == null && result.String == null) result.UnrecognizedValue = unionPayload;
 return result;
         }
         /// <summary>
@@ -100,6 +62,8 @@ return result;
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
+            if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawFields) { var fields = new global::System.Collections.Generic.Dictionary<string, global::System.Action<IParseNode>>(); foreach (var entry in rawFields.GetValue()) fields[entry.Key] = _ => { }; return fields; }
+
             return new Dictionary<string, Action<IParseNode>>();
         }
         /// <summary>
@@ -109,28 +73,12 @@ return result;
         public virtual void Serialize(ISerializationWriter writer)
         {
             if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
-            if (DateOnly == null && DateTimeOffset == null && ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item == null && ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item == null && ReportCreatedRequestDataReportAdjustmentsFiltersItemValueString == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (ReportCreatedRequestDataReportAdjustmentsFiltersItemValueString == null && String == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
 
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(DateOnly != null)
-            {
-                writer.WriteDateValue(null, DateOnly);
-            }
-            else if(DateTimeOffset != null)
-            {
-                writer.WriteDateTimeOffsetValue(null, DateTimeOffset);
-            }
-            else if(ReportCreatedRequestDataReportAdjustmentsFiltersItemValueString != null)
+            if(ReportCreatedRequestDataReportAdjustmentsFiltersItemValueString != null)
             {
                 writer.WriteStringValue(null, ReportCreatedRequestDataReportAdjustmentsFiltersItemValueString);
-            }
-            else if(ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item != null)
-            {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item>(null, ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf1Item);
-            }
-            else if(ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item != null)
-            {
-                writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item>(null, ReportCreatedRequestDataReportAdjustmentsFiltersItemValueAnyOf2Item);
             }
             else if(String != null)
             {

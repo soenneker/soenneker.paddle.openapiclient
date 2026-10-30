@@ -18,34 +18,37 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
-            if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
-            if (parseNode.GetChildNode("permissions") is { } nullNodePermissions && nullNodePermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permissions = null;
+            if (parseNode.GetChildNode("account") is null) { _explicitNullValueAccount = default!; _explicitNullProperties?.Remove("account"); }
+            else if (parseNode.GetChildNode("account") is { } nullNodeAccount && nullNodeAccount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Account = null;
+            if (parseNode.GetChildNode("auth_type") is null) { _explicitNullValueAuthType = default!; _explicitNullProperties?.Remove("auth_type"); }
+            else if (parseNode.GetChildNode("auth_type") is { } nullNodeAuthType && nullNodeAuthType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AuthType = null;
+            if (parseNode.GetChildNode("permissions") is null) { _explicitNullValuePermissions = default!; _explicitNullProperties?.Remove("permissions"); }
+            else if (parseNode.GetChildNode("permissions") is { } nullNodePermissions && nullNodePermissions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Permissions = null;
         }
 
         /// <summary>Account that the caller is authenticated against. `null` when the request doesn&apos;t have valid credentials.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount? _explicitNullValueAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount _explicitNullValueAccount = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Authentication method used for this request. `null` when the request doesn&apos;t have valid credentials.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootAuthType? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootAuthType? AuthType { get => _explicitNullValueAuthType; set { _explicitNullValueAuthType = value; AdditionalData?.Remove("auth_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("auth_type"); else _explicitNullProperties?.Remove("auth_type"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.RootAuthType? _explicitNullValueAuthType = default!;
         /// <summary>Names of the permissions granted to the caller, for example `transaction.read`. Empty when the request doesn&apos;t have valid credentials.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        public List<string>? Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; AdditionalData?.Remove("permissions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
         private List<string>? _explicitNullValuePermissions = default!;
 #nullable restore
 #else
-        public List<string> Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
+        public List<string> Permissions { get => _explicitNullValuePermissions; set { _explicitNullValuePermissions = value; AdditionalData?.Remove("permissions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("permissions"); else _explicitNullProperties?.Remove("permissions"); } }
         private List<string> _explicitNullValuePermissions = default!;
 #endif
         /// <summary>
@@ -74,7 +77,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "account", n => { Account = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount>(global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount.CreateFromDiscriminatorValue); } },
-                { "auth_type", n => { AuthType = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.RootAuthType>(); } },
+                { "auth_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.RootAuthType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthType = default; _explicitNullProperties?.Remove("auth_type"); AdditionalData["auth_type"] = unknown; } else { AuthType = parsed; AdditionalData.Remove("auth_type"); } } },
                 { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
         }

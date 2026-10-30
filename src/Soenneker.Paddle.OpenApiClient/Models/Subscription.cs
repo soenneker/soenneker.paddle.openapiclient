@@ -18,19 +18,32 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("address_id") is { } nullNodeAddressId && nullNodeAddressId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddressId = null;
-            if (parseNode.GetChildNode("billing_details") is { } nullNodeBillingDetails && nullNodeBillingDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingDetails = null;
-            if (parseNode.GetChildNode("business_id") is { } nullNodeBusinessId && nullNodeBusinessId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessId = null;
-            if (parseNode.GetChildNode("collection_mode") is { } nullNodeCollectionMode && nullNodeCollectionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectionMode = null;
-            if (parseNode.GetChildNode("consent_requirements") is { } nullNodeConsentRequirements && nullNodeConsentRequirements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentRequirements = null;
-            if (parseNode.GetChildNode("currency_code") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
-            if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
-            if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
-            if (parseNode.GetChildNode("discount") is { } nullNodeDiscount && nullNodeDiscount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Discount = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("import_meta") is { } nullNodeImportMeta && nullNodeImportMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportMeta = null;
-            if (parseNode.GetChildNode("next_billed_at") is { } nullNodeNextBilledAt && nullNodeNextBilledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextBilledAt = null;
-            if (parseNode.GetChildNode("scheduled_change") is { } nullNodeScheduledChange && nullNodeScheduledChange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledChange = null;
+            if (parseNode.GetChildNode("address_id") is null) { _explicitNullValueAddressId = default!; _explicitNullProperties?.Remove("address_id"); }
+            else if (parseNode.GetChildNode("address_id") is { } nullNodeAddressId && nullNodeAddressId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddressId = null;
+            if (parseNode.GetChildNode("billing_details") is null) { _explicitNullValueBillingDetails = default!; _explicitNullProperties?.Remove("billing_details"); }
+            else if (parseNode.GetChildNode("billing_details") is { } nullNodeBillingDetails && nullNodeBillingDetails.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BillingDetails = null;
+            if (parseNode.GetChildNode("business_id") is null) { _explicitNullValueBusinessId = default!; _explicitNullProperties?.Remove("business_id"); }
+            else if (parseNode.GetChildNode("business_id") is { } nullNodeBusinessId && nullNodeBusinessId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) BusinessId = null;
+            if (parseNode.GetChildNode("collection_mode") is null) { _explicitNullValueCollectionMode = default!; _explicitNullProperties?.Remove("collection_mode"); }
+            else if (parseNode.GetChildNode("collection_mode") is { } nullNodeCollectionMode && nullNodeCollectionMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CollectionMode = null;
+            if (parseNode.GetChildNode("consent_requirements") is null) { _explicitNullValueConsentRequirements = default!; _explicitNullProperties?.Remove("consent_requirements"); }
+            else if (parseNode.GetChildNode("consent_requirements") is { } nullNodeConsentRequirements && nullNodeConsentRequirements.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ConsentRequirements = null;
+            if (parseNode.GetChildNode("currency_code") is null) { _explicitNullValueCurrencyCode = default!; _explicitNullProperties?.Remove("currency_code"); }
+            else if (parseNode.GetChildNode("currency_code") is { } nullNodeCurrencyCode && nullNodeCurrencyCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrencyCode = null;
+            if (parseNode.GetChildNode("custom_data") is null) { _explicitNullValueCustomData = default!; _explicitNullProperties?.Remove("custom_data"); }
+            else if (parseNode.GetChildNode("custom_data") is { } nullNodeCustomData && nullNodeCustomData.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomData = null;
+            if (parseNode.GetChildNode("customer_id") is null) { _explicitNullValueCustomerId = default!; _explicitNullProperties?.Remove("customer_id"); }
+            else if (parseNode.GetChildNode("customer_id") is { } nullNodeCustomerId && nullNodeCustomerId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CustomerId = null;
+            if (parseNode.GetChildNode("discount") is null) { _explicitNullValueDiscount = default!; _explicitNullProperties?.Remove("discount"); }
+            else if (parseNode.GetChildNode("discount") is { } nullNodeDiscount && nullNodeDiscount.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Discount = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("import_meta") is null) { _explicitNullValueImportMeta = default!; _explicitNullProperties?.Remove("import_meta"); }
+            else if (parseNode.GetChildNode("import_meta") is { } nullNodeImportMeta && nullNodeImportMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ImportMeta = null;
+            if (parseNode.GetChildNode("next_billed_at") is null) { _explicitNullValueNextBilledAt = default!; _explicitNullProperties?.Remove("next_billed_at"); }
+            else if (parseNode.GetChildNode("next_billed_at") is { } nullNodeNextBilledAt && nullNodeNextBilledAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) NextBilledAt = null;
+            if (parseNode.GetChildNode("scheduled_change") is null) { _explicitNullValueScheduledChange = default!; _explicitNullProperties?.Remove("scheduled_change"); }
+            else if (parseNode.GetChildNode("scheduled_change") is { } nullNodeScheduledChange && nullNodeScheduledChange.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ScheduledChange = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -38,11 +51,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Unique Paddle ID for this address entity, prefixed with `add_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AddressId { get => _explicitNullValueAddressId; set { _explicitNullValueAddressId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_id"); else _explicitNullProperties?.Remove("address_id"); } }
+        public string? AddressId { get => _explicitNullValueAddressId; set { _explicitNullValueAddressId = value; AdditionalData?.Remove("address_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_id"); else _explicitNullProperties?.Remove("address_id"); } }
         private string? _explicitNullValueAddressId = default!;
 #nullable restore
 #else
-        public string AddressId { get => _explicitNullValueAddressId; set { _explicitNullValueAddressId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_id"); else _explicitNullProperties?.Remove("address_id"); } }
+        public string AddressId { get => _explicitNullValueAddressId; set { _explicitNullValueAddressId = value; AdditionalData?.Remove("address_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address_id"); else _explicitNullProperties?.Remove("address_id"); } }
         private string _explicitNullValueAddressId = default!;
 #endif
         /// <summary>How often this subscription renews. Set automatically by Paddle based on the prices on this subscription.</summary>
@@ -56,42 +69,42 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Details for invoicing. Required if `collection_mode` is `manual`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BillingDetails? BillingDetails { get => _explicitNullValueBillingDetails; set { _explicitNullValueBillingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_details"); else _explicitNullProperties?.Remove("billing_details"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BillingDetails? BillingDetails { get => _explicitNullValueBillingDetails; set { _explicitNullValueBillingDetails = value; AdditionalData?.Remove("billing_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_details"); else _explicitNullProperties?.Remove("billing_details"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.BillingDetails? _explicitNullValueBillingDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BillingDetails BillingDetails { get => _explicitNullValueBillingDetails; set { _explicitNullValueBillingDetails = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_details"); else _explicitNullProperties?.Remove("billing_details"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.BillingDetails BillingDetails { get => _explicitNullValueBillingDetails; set { _explicitNullValueBillingDetails = value; AdditionalData?.Remove("billing_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_details"); else _explicitNullProperties?.Remove("billing_details"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.BillingDetails _explicitNullValueBillingDetails = default!;
 #endif
         /// <summary>Paddle ID of the business that this subscription is for, prefixed with `biz_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? BusinessId { get => _explicitNullValueBusinessId; set { _explicitNullValueBusinessId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_id"); else _explicitNullProperties?.Remove("business_id"); } }
+        public string? BusinessId { get => _explicitNullValueBusinessId; set { _explicitNullValueBusinessId = value; AdditionalData?.Remove("business_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_id"); else _explicitNullProperties?.Remove("business_id"); } }
         private string? _explicitNullValueBusinessId = default!;
 #nullable restore
 #else
-        public string BusinessId { get => _explicitNullValueBusinessId; set { _explicitNullValueBusinessId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_id"); else _explicitNullProperties?.Remove("business_id"); } }
+        public string BusinessId { get => _explicitNullValueBusinessId; set { _explicitNullValueBusinessId = value; AdditionalData?.Remove("business_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("business_id"); else _explicitNullProperties?.Remove("business_id"); } }
         private string _explicitNullValueBusinessId = default!;
 #endif
         /// <summary>RFC 3339 datetime string of when this subscription was canceled. Set automatically by Paddle when the cancel subscription operation is used. `null` if not canceled.</summary>
         public DateTimeOffset? CanceledAt { get; private set; }
         /// <summary>How payment is collected. `automatic` for checkout, `manual` for invoices.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCollectionMode? CollectionMode { get => _explicitNullValueCollectionMode; set { _explicitNullValueCollectionMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collection_mode"); else _explicitNullProperties?.Remove("collection_mode"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCollectionMode? CollectionMode { get => _explicitNullValueCollectionMode; set { _explicitNullValueCollectionMode = value; AdditionalData?.Remove("collection_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collection_mode"); else _explicitNullProperties?.Remove("collection_mode"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCollectionMode? _explicitNullValueCollectionMode = default!;
         /// <summary>List of active consent requirements for the subscription&apos;s current billing period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirement>? ConsentRequirements { get => _explicitNullValueConsentRequirements; set { _explicitNullValueConsentRequirements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_requirements"); else _explicitNullProperties?.Remove("consent_requirements"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirement>? ConsentRequirements { get => _explicitNullValueConsentRequirements; set { _explicitNullValueConsentRequirements = value; AdditionalData?.Remove("consent_requirements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_requirements"); else _explicitNullProperties?.Remove("consent_requirements"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirement>? _explicitNullValueConsentRequirements = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirement> ConsentRequirements { get => _explicitNullValueConsentRequirements; set { _explicitNullValueConsentRequirements = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_requirements"); else _explicitNullProperties?.Remove("consent_requirements"); } }
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirement> ConsentRequirements { get => _explicitNullValueConsentRequirements; set { _explicitNullValueConsentRequirements = value; AdditionalData?.Remove("consent_requirements"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("consent_requirements"); else _explicitNullProperties?.Remove("consent_requirements"); } }
         private List<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirement> _explicitNullValueConsentRequirements = default!;
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
         /// <summary>Supported three-letter ISO 4217 currency code.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCurrencyCode? _explicitNullValueCurrencyCode = default!;
         /// <summary>Current billing period for this subscription. Set automatically by Paddle based on the billing cycle. `null` for `paused` and `canceled` subscriptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -104,31 +117,31 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Your own structured key-value data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
+        public UntypedNode? CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; AdditionalData?.Remove("custom_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
         private UntypedNode? _explicitNullValueCustomData = default!;
 #nullable restore
 #else
-        public UntypedNode CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
+        public UntypedNode CustomData { get => _explicitNullValueCustomData; set { _explicitNullValueCustomData = value; AdditionalData?.Remove("custom_data"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("custom_data"); else _explicitNullProperties?.Remove("custom_data"); } }
         private UntypedNode _explicitNullValueCustomData = default!;
 #endif
         /// <summary>Unique Paddle ID for this customer entity, prefixed with `ctm_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        public string? CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
         private string? _explicitNullValueCustomerId = default!;
 #nullable restore
 #else
-        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
+        public string CustomerId { get => _explicitNullValueCustomerId; set { _explicitNullValueCustomerId = value; AdditionalData?.Remove("customer_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("customer_id"); else _explicitNullProperties?.Remove("customer_id"); } }
         private string _explicitNullValueCustomerId = default!;
 #endif
         /// <summary>Details of the discount applied to this subscription.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscount? Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscount? Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscount? _explicitNullValueDiscount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscount Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscount Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionDiscount _explicitNullValueDiscount = default!;
 #endif
         /// <summary>RFC 3339 datetime string of when this subscription was first billed. This may be different from `started_at` if the subscription started in trial.</summary>
@@ -136,21 +149,21 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Unique Paddle ID for this subscription entity, prefixed with `sub_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Import information for this entity. `null` if this entity is not imported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ImportMetaSubscription? ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ImportMetaSubscription? ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; AdditionalData?.Remove("import_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.ImportMetaSubscription? _explicitNullValueImportMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ImportMetaSubscription ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.ImportMetaSubscription ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; AdditionalData?.Remove("import_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.ImportMetaSubscription _explicitNullValueImportMeta = default!;
 #endif
         /// <summary>List of items on this subscription. Only recurring items are returned.</summary>
@@ -170,18 +183,18 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionManagementUrlsComposed ManagementUrls { get; private set; }
 #endif
         /// <summary>RFC 3339 datetime string of when this subscription is next scheduled to be billed.</summary>
-        public DateTimeOffset? NextBilledAt { get => _explicitNullValueNextBilledAt; set { _explicitNullValueNextBilledAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_billed_at"); else _explicitNullProperties?.Remove("next_billed_at"); } }
+        public DateTimeOffset? NextBilledAt { get => _explicitNullValueNextBilledAt; set { _explicitNullValueNextBilledAt = value; AdditionalData?.Remove("next_billed_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("next_billed_at"); else _explicitNullProperties?.Remove("next_billed_at"); } }
         private DateTimeOffset? _explicitNullValueNextBilledAt = default!;
         /// <summary>RFC 3339 datetime string of when this subscription was paused. Set automatically by Paddle when the pause subscription operation is used. `null` if not paused.</summary>
         public DateTimeOffset? PausedAt { get; private set; }
         /// <summary>Change that&apos;s scheduled to be applied to a subscription. Use the pause subscription, cancel subscription, and resume subscription operations to create scheduled changes. `null` if no scheduled changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChange? ScheduledChange { get => _explicitNullValueScheduledChange; set { _explicitNullValueScheduledChange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_change"); else _explicitNullProperties?.Remove("scheduled_change"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChange? ScheduledChange { get => _explicitNullValueScheduledChange; set { _explicitNullValueScheduledChange = value; AdditionalData?.Remove("scheduled_change"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_change"); else _explicitNullProperties?.Remove("scheduled_change"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChange? _explicitNullValueScheduledChange = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChange ScheduledChange { get => _explicitNullValueScheduledChange; set { _explicitNullValueScheduledChange = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_change"); else _explicitNullProperties?.Remove("scheduled_change"); } }
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChange ScheduledChange { get => _explicitNullValueScheduledChange; set { _explicitNullValueScheduledChange = value; AdditionalData?.Remove("scheduled_change"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("scheduled_change"); else _explicitNullProperties?.Remove("scheduled_change"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionScheduledChange _explicitNullValueScheduledChange = default!;
 #endif
         /// <summary>RFC 3339 datetime string of when this subscription started. This may be different from `first_billed_at` if the subscription started in trial.</summary>
@@ -220,10 +233,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "billing_details", n => { BillingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BillingDetails>(global::Soenneker.Paddle.OpenApiClient.Models.BillingDetails.CreateFromDiscriminatorValue); } },
                 { "business_id", n => { BusinessId = n.GetStringValue(); } },
                 { "canceled_at", n => { CanceledAt = n.GetDateTimeOffsetValue(); } },
-                { "collection_mode", n => { CollectionMode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCollectionMode>(); } },
+                { "collection_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCollectionMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCollectionMode = default; _explicitNullProperties?.Remove("collection_mode"); AdditionalData["collection_mode"] = unknown; } else { CollectionMode = parsed; AdditionalData.Remove("collection_mode"); } } },
                 { "consent_requirements", n => { ConsentRequirements = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirement>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionConsentRequirement.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "currency_code", n => { CurrencyCode = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCurrencyCode>(); } },
+                { "currency_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCurrencyCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCurrencyCode = default; _explicitNullProperties?.Remove("currency_code"); AdditionalData["currency_code"] = unknown; } else { CurrencyCode = parsed; AdditionalData.Remove("currency_code"); } } },
                 { "current_billing_period", n => { CurrentBillingPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod>(global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod.CreateFromDiscriminatorValue); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
