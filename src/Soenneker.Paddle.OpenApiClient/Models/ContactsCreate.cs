@@ -60,6 +60,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
+
             };
         }
         /// <summary>

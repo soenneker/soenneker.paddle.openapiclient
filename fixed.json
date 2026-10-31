@@ -456,6 +456,55 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAddress201Response"
+                },
+                "examples": {
+                  "Create an address for a customer (201)": {
+                    "summary": "Create an address for a customer (201)",
+                    "value": {
+                      "data": {
+                        "id": "add_01hv8gq3318ktkfengj2r75gfx",
+                        "status": "active",
+                        "customer_id": "ctm_01hv6y1jedq4p1n0yqn5ba3ky4",
+                        "description": "Head Office",
+                        "first_line": "4050 Jefferson Plaza, 41st Floor",
+                        "second_line": null,
+                        "city": "New York",
+                        "postal_code": "10021",
+                        "region": "NY",
+                        "country_code": "US",
+                        "custom_data": null,
+                        "created_at": "2024-04-12T06:42:58.785Z",
+                        "updated_at": "2024-04-12T06:42:58.785Z",
+                        "import_meta": null
+                      },
+                      "meta": {
+                        "request_id": "dd6bbb71-6551-4e4a-843c-b10611cddb6e"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -1249,6 +1298,90 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateAdjustment201Response"
+                },
+                "examples": {
+                  "Create an adjustment (201)": {
+                    "summary": "Create an adjustment (201)",
+                    "value": {
+                      "data": {
+                        "id": "adj_01hvgf2s84dr6reszzg29zbvcm",
+                        "action": "refund",
+                        "type": "partial",
+                        "transaction_id": "txn_01hvcc93znj3mpqt1tenkjb04y",
+                        "subscription_id": "sub_01hvccbx32q2gb40sqx7n42430",
+                        "customer_id": "ctm_01hrffh7gvp29kc7xahm8wddwa",
+                        "reason": "error",
+                        "currency_code": "USD",
+                        "status": "pending_approval",
+                        "items": [
+                          {
+                            "id": "adjitm_01hvgf2s84dr6reszzg2gx70gj",
+                            "item_id": "txnitm_01hvcc94b7qgz60qmrqmbm19zw",
+                            "type": "partial",
+                            "amount": "100",
+                            "proration": null,
+                            "totals": {
+                              "subtotal": "92",
+                              "tax": "8",
+                              "total": "100"
+                            }
+                          }
+                        ],
+                        "totals": {
+                          "subtotal": "92",
+                          "tax": "8",
+                          "total": "100",
+                          "fee": "5",
+                          "earnings": "87",
+                          "currency_code": "USD",
+                          "retained_fee": "5"
+                        },
+                        "payout_totals": {
+                          "subtotal": "92",
+                          "tax": "8",
+                          "total": "100",
+                          "fee": "5",
+                          "earnings": "87",
+                          "currency_code": "USD",
+                          "retained_fee": "5",
+                          "chargeback_fee": {
+                            "amount": "10",
+                            "original": null
+                          }
+                        },
+                        "created_at": "2024-04-15T08:48:20.239695Z",
+                        "updated_at": "2024-04-15T08:48:20.239695Z",
+                        "credit_applied_to_balance": null,
+                        "tax_rates_used": []
+                      },
+                      "meta": {
+                        "request_id": "c1906ac5-c210-4443-ba9b-122ecaeb506d"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -1760,6 +1893,57 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateBusiness201Response"
+                },
+                "examples": {
+                  "Create a business for a customer (201)": {
+                    "summary": "Create a business for a customer (201)",
+                    "value": {
+                      "data": {
+                        "id": "biz_01hv8hkr641vmpwytx38znv56k",
+                        "status": "active",
+                        "customer_id": "ctm_01hv6y1jedq4p1n0yqn5ba3ky4",
+                        "name": "Uplift Inc.",
+                        "company_number": "555775291485",
+                        "tax_identifier": "555952383",
+                        "contacts": [
+                          {
+                            "name": "Parker Jones",
+                            "email": "parker@example.com"
+                          }
+                        ],
+                        "custom_data": null,
+                        "created_at": "2024-04-12T06:58:37.892Z",
+                        "updated_at": "2024-04-12T06:58:37.892Z",
+                        "import_meta": null
+                      },
+                      "meta": {
+                        "request_id": "e925073f-12cd-4871-825d-2c43632edbc0"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -3465,6 +3649,49 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateClientToken201Response"
+                },
+                "examples": {
+                  "Create a client-side token (201)": {
+                    "summary": "Create a client-side token (201)",
+                    "value": {
+                      "data": {
+                        "id": "ctkn_01ghbkd0frb9k95cnhwd1bxpvk",
+                        "token": "live_7d279f61a3499fed520f7cd8c08",
+                        "name": "Pricing page integration",
+                        "description": "Used to display prices and open checkout within our pricing page on our marketing domain.",
+                        "status": "active",
+                        "created_at": "2025-06-26T14:36:14.695Z",
+                        "updated_at": "2025-06-26T14:36:14.695Z",
+                        "revoked_at": null
+                      },
+                      "meta": {
+                        "request_id": "1681f87f-9c36-4557-a1da-bbb622afa0cc"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -4937,6 +5164,51 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateCustomer201Response"
+                },
+                "examples": {
+                  "Create a customer (201)": {
+                    "summary": "Create a customer (201)",
+                    "value": {
+                      "data": {
+                        "id": "ctm_01hv6y1jedq4p1n0yqn5ba3ky4",
+                        "status": "active",
+                        "custom_data": null,
+                        "name": "Jo Brown",
+                        "email": "jo@example.com",
+                        "marketing_consent": false,
+                        "locale": "en",
+                        "created_at": "2024-04-11T15:57:24.813Z",
+                        "updated_at": "2024-04-11T15:57:24.813Z",
+                        "import_meta": null
+                      },
+                      "meta": {
+                        "request_id": "9bcdcc29-e180-4055-ad3d-d37e5dc5e56d"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -5424,6 +5696,57 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateCustomerPortalSession201Response"
+                },
+                "examples": {
+                  "Create a customer portal session (201)": {
+                    "summary": "Create a customer portal session (201)",
+                    "value": {
+                      "data": {
+                        "id": "cpls_01h4ge9r64c22exjsx0fy8b48b",
+                        "customer_id": "ctm_01gysfvfy7vqhpzkq8rjmrq7an",
+                        "urls": {
+                          "general": {
+                            "overview": "https://customer-portal.paddle.com/cpl_01j7zbyqs3vah3aafp4jf62qaw?action=overview\u0026token=pga_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjdG1fMDFncm5uNHp0YTVhMW1mMDJqanplN3kyeXMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE3Mjc2NzkyMzh9._oO12IejzdKmyKTwb7BLjmiILkx4_cSyGjXraOBUI_g"
+                          },
+                          "subscriptions": [
+                            {
+                              "id": "sub_01h04vsc0qhwtsbsxh3422wjs4",
+                              "cancel_subscription": "https://customer-portal.paddle.com/cpl_01j7zbyqs3vah3aafp4jf62qaw?action=cancel_subscription\u0026subscription_id=sub_01h04vsc0qhwtsbsxh3422wjs4\u0026token=pga_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjdG1fMDFncm5uNHp0YTVhMW1mMDJqanplN3kyeXMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE3Mjc2NzkyMzh9._oO12IejzdKmyKTwb7BLjmiILkx4_cSyGjXraOBUI_g",
+                              "update_subscription_payment_method": "https://customer-portal.paddle.com/cpl_01j7zbyqs3vah3aafp4jf62qaw?action=update_subscription_payment_method\u0026subscription_id=sub_01h04vsc0qhwtsbsxh3422wjs4\u0026token=pga_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjdG1fMDFncm5uNHp0YTVhMW1mMDJqanplN3kyeXMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE3Mjc2NzkyMzh9._oO12IejzdKmyKTwb7BLjmiILkx4_cSyGjXraOBUI_g",
+                              "view_subscription": "https://customer-portal.paddle.com/cpl_01j7zbyqs3vah3aafp4jf62qaw?action=view_subscription\u0026subscription_id=sub_01h04vsc0qhwtsbsxh3422wjs4\u0026token=pga_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjdG1fMDFncm5uNHp0YTVhMW1mMDJqanplN3kyeXMiLCJuYW1lIjoiSm9obiBEb2UiLCJpYXQiOjE3Mjc2NzkyMzh9._oO12IejzdKmyKTwb7BLjmiILkx4_cSyGjXraOBUI_g"
+                            }
+                          ]
+                        },
+                        "created_at": "2024-10-25T06:53:58Z"
+                      },
+                      "meta": {
+                        "request_id": "fa176777-4bca-49ec-aa1e-f53885333cb7"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -5616,6 +5939,47 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateDiscountGroup201Response"
+                },
+                "examples": {
+                  "Create a discount group (201)": {
+                    "summary": "Create a discount group (201)",
+                    "value": {
+                      "data": {
+                        "id": "dsg_01js2gqehzccfkywgx1jk2mtsp",
+                        "status": "active",
+                        "name": "Black Friday 2024",
+                        "import_meta": null,
+                        "created_at": "2024-11-28T14:36:14.695Z",
+                        "updated_at": "2024-11-28T14:36:14.695Z"
+                      },
+                      "meta": {
+                        "request_id": "1681f87f-9c36-4557-a1da-bbb622afa0cc"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -6104,6 +6468,61 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateDiscount201Response"
+                },
+                "examples": {
+                  "Create a discount (201)": {
+                    "summary": "Create a discount (201)",
+                    "value": {
+                      "data": {
+                        "id": "dsc_01hv6scyf7qdnzcdq01t2y8dx4",
+                        "status": "active",
+                        "description": "All orders (10% off)",
+                        "enabled_for_checkout": true,
+                        "code": "BF10OFF",
+                        "type": "percentage",
+                        "mode": "standard",
+                        "amount": "10",
+                        "currency_code": null,
+                        "recur": true,
+                        "maximum_recurring_intervals": 3,
+                        "usage_limit": null,
+                        "restrict_to": null,
+                        "expires_at": "2024-12-03T00:00:00Z",
+                        "times_used": 0,
+                        "discount_group_id": "dsg_01js2gqehzccfkywgx1jk2mtsp",
+                        "custom_data": null,
+                        "import_meta": null,
+                        "created_at": "2024-11-28T14:36:14.695Z",
+                        "updated_at": "2024-11-28T14:36:14.695Z"
+                      },
+                      "meta": {
+                        "request_id": "1681f87f-9c36-4557-a1da-bbb622afa0cc"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -10950,6 +11369,172 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateNotificationSetting201Response"
+                },
+                "examples": {
+                  "Create a notification setting (201)": {
+                    "summary": "Create a notification setting (201)",
+                    "value": {
+                      "data": {
+                        "id": "ntfset_01gkpjp8bkm3tm53kdgkx6sms7",
+                        "description": "Slack notifications",
+                        "type": "url",
+                        "destination": "https://hooks.slack.com/example",
+                        "active": true,
+                        "api_version": 1,
+                        "include_sensitive_fields": false,
+                        "traffic_source": "all",
+                        "subscribed_events": [
+                          {
+                            "name": "transaction.billed",
+                            "description": "Occurs when a transaction is billed.",
+                            "group": "Transaction",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "transaction.canceled",
+                            "description": "Occurs when a transaction is canceled.",
+                            "group": "Transaction",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "transaction.completed",
+                            "description": "Occurs when a transaction is completed.",
+                            "group": "Transaction",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "transaction.created",
+                            "description": "Occurs when a transaction is created.",
+                            "group": "Transaction",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "transaction.payment_failed",
+                            "description": "Occurs when a payment fails for a transaction.",
+                            "group": "Transaction",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "transaction.ready",
+                            "description": "Occurs when a transaction is ready.",
+                            "group": "Transaction",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "transaction.updated",
+                            "description": "Occurs when a transaction is updated.",
+                            "group": "Transaction",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "subscription.activated",
+                            "description": "Occurs when a subscription is activated.",
+                            "group": "Subscription",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "subscription.canceled",
+                            "description": "Occurs when a subscription is canceled.",
+                            "group": "Subscription",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "subscription.created",
+                            "description": "Occurs when a subscription is created.",
+                            "group": "Subscription",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "subscription.past_due",
+                            "description": "Occurs when a subscription is past due.",
+                            "group": "Subscription",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "subscription.paused",
+                            "description": "Occurs when a subscription is paused.",
+                            "group": "Subscription",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "subscription.resumed",
+                            "description": "Occurs when a subscription is resumed.",
+                            "group": "Subscription",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "subscription.trialing",
+                            "description": "Occurs when a subscription is trialing.",
+                            "group": "Subscription",
+                            "available_versions": [
+                              1
+                            ]
+                          },
+                          {
+                            "name": "subscription.updated",
+                            "description": "Occurs when a subscription is updated.",
+                            "group": "Subscription",
+                            "available_versions": [
+                              1
+                            ]
+                          }
+                        ],
+                        "endpoint_secret_key": "pdl_ntfset_01gkpjp8bkm3tm53kdgkx6sms7_6h3qd3uFSi9YCD3OLYAShQI90XTI5vEI"
+                      },
+                      "meta": {
+                        "request_id": "fd55d51a-6242-4645-8572-af2a8b6f41b6"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -12434,6 +13019,42 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has been accepted for processing, but processing has not yet completed.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReplayNotification202Response"
+                },
+                "examples": {
+                  "Replay a notification (202)": {
+                    "summary": "Replay a notification (202)",
+                    "value": {
+                      "data": {
+                        "notification_id": "ntf_01h46h1s2zabpkdks7yt4vkgkc"
+                      },
+                      "meta": {
+                        "request_id": "cfe92cac-86a1-49fe-ac50-20620dcd024f"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "x-permissions": [
@@ -13342,6 +13963,113 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreatePrice201Response"
+                },
+                "examples": {
+                  "Create a price with a paid trial (201)": {
+                    "summary": "Create a price with a paid trial (201)",
+                    "value": {
+                      "data": {
+                        "id": "pri_01hv0vax6rv18t4tamj848ne4d",
+                        "product_id": "pro_01htz88xpr0mm7b3ta2pjkr7w2",
+                        "type": "standard",
+                        "description": "Monthly (per seat) with 14 day paid trial",
+                        "name": "Monthly (per seat)",
+                        "billing_cycle": {
+                          "interval": "month",
+                          "frequency": 1
+                        },
+                        "trial_period": {
+                          "interval": "day",
+                          "frequency": 14,
+                          "requires_payment_method": true,
+                          "unit_price": {
+                            "amount": "100",
+                            "currency_code": "USD"
+                          }
+                        },
+                        "tax_mode": "account_setting",
+                        "unit_price": {
+                          "amount": "500",
+                          "currency_code": "USD"
+                        },
+                        "unit_price_overrides": [],
+                        "custom_data": null,
+                        "status": "active",
+                        "quantity": {
+                          "minimum": 1,
+                          "maximum": 100
+                        },
+                        "import_meta": null,
+                        "created_at": "2024-04-09T07:14:38.424504286Z",
+                        "updated_at": "2024-04-09T07:14:38.424504359Z"
+                      },
+                      "meta": {
+                        "request_id": "9e7f51e8-838b-4b2c-b0fa-d52d0593354c"
+                      }
+                    }
+                  },
+                  "Create a price (201)": {
+                    "summary": "Create a price (201)",
+                    "value": {
+                      "data": {
+                        "id": "pri_01hv0vax6rv18t4tamj848ne4d",
+                        "product_id": "pro_01htz88xpr0mm7b3ta2pjkr7w2",
+                        "type": "standard",
+                        "description": "Monthly (per seat) with 14 day trial",
+                        "name": "Monthly (per seat)",
+                        "billing_cycle": {
+                          "interval": "month",
+                          "frequency": 1
+                        },
+                        "trial_period": {
+                          "interval": "day",
+                          "frequency": 14,
+                          "requires_payment_method": false
+                        },
+                        "tax_mode": "account_setting",
+                        "unit_price": {
+                          "amount": "500",
+                          "currency_code": "USD"
+                        },
+                        "unit_price_overrides": [],
+                        "custom_data": null,
+                        "status": "active",
+                        "quantity": {
+                          "minimum": 1,
+                          "maximum": 100
+                        },
+                        "import_meta": null,
+                        "created_at": "2024-04-09T07:14:38.424504286Z",
+                        "updated_at": "2024-04-09T07:14:38.424504359Z"
+                      },
+                      "meta": {
+                        "request_id": "9e7f51e8-838b-4b2c-b0fa-d52d0593354c"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -14279,6 +15007,66 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateProduct201Response"
+                },
+                "examples": {
+                  "Create a product (201)": {
+                    "summary": "Create a product (201)",
+                    "value": {
+                      "data": {
+                        "id": "pro_01htz88xpr0mm7b3ta2pjkr7w2",
+                        "name": "AeroEdit Student",
+                        "tax_category": "standard",
+                        "type": "standard",
+                        "description": "Essential tools for student pilots to manage flight logs, analyze performance, and plan routes, and ensure compliance. Valid student pilot certificate from the FAA required.",
+                        "image_url": "https://paddle.s3.amazonaws.com/user/165798/bT1XUOJAQhOUxGs83cbk_pro.png",
+                        "custom_data": {
+                          "features": {
+                            "aircraft_performance": true,
+                            "compliance_monitoring": false,
+                            "flight_log_management": true,
+                            "payment_by_invoice": false,
+                            "route_planning": true,
+                            "sso": false
+                          },
+                          "suggested_addons": [
+                            "pro_01h1vjes1y163xfj1rh1tkfb65",
+                            "pro_01gsz97mq9pa4fkyy0wqenepkz"
+                          ],
+                          "upgrade_description": null
+                        },
+                        "status": "active",
+                        "import_meta": null,
+                        "created_at": "2024-04-08T16:22:16.024Z",
+                        "updated_at": "2024-04-08T16:22:16.024Z"
+                      },
+                      "meta": {
+                        "request_id": "cf40234b-e140-44d1-a83f-7bbdedd88589"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -14838,6 +15626,67 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateReport201Response"
+                },
+                "examples": {
+                  "Create a report (201)": {
+                    "summary": "Create a report (201)",
+                    "value": {
+                      "data": {
+                        "id": "rep_01hvgdhtthn1q35n79dgeqm3pv",
+                        "type": "transactions",
+                        "rows": null,
+                        "status": "pending",
+                        "filters": [
+                          {
+                            "name": "collection_mode",
+                            "value": [
+                              "manual"
+                            ],
+                            "operator": null
+                          },
+                          {
+                            "name": "updated_at",
+                            "value": "2024-04-15",
+                            "operator": "lt"
+                          },
+                          {
+                            "name": "updated_at",
+                            "value": "2024-01-01",
+                            "operator": "gte"
+                          }
+                        ],
+                        "expires_at": null,
+                        "created_at": "2024-04-15T08:21:36.209Z",
+                        "updated_at": "2024-04-15T08:21:36.209Z"
+                      },
+                      "meta": {
+                        "request_id": "0774e52b-fcc3-4d7e-8047-b1b1a05a3f27"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -16275,6 +17124,181 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSimulation201Response"
+                },
+                "examples": {
+                  "Standard - 201 Created": {
+                    "summary": "Standard - 201 Created",
+                    "description": "Create a simulation - subscription renewal failed scenario (201)",
+                    "value": {
+                      "data": {
+                        "id": "ntfsim_01j82g2mggsgjpb3mjg0xq6p5k",
+                        "notification_setting_id": "ntfset_01j82d983j814ypzx7m1fw2jpz",
+                        "name": "Create a subscription renewal simulation with config",
+                        "type": "subscription_renewal",
+                        "status": "active",
+                        "payload": null,
+                        "config": {
+                          "subscription_cancellation": null,
+                          "subscription_creation": null,
+                          "subscription_pause": null,
+                          "subscription_renewal": {
+                            "entities": {
+                              "subscription_id": "sub_01h04vsc0qhwtsbsxh3422wjs4"
+                            },
+                            "options": {
+                              "payment_outcome": "recovered_updated_payment_method",
+                              "dunning_exhausted_action": null
+                            }
+                          },
+                          "subscription_resume": null
+                        },
+                        "last_run_at": null,
+                        "created_at": "2024-09-18T12:00:25.616392Z",
+                        "updated_at": "2024-09-18T12:00:25.616392Z"
+                      },
+                      "meta": {
+                        "request_id": "72351248-13bf-45be-befe-b3a5b5234588"
+                      }
+                    }
+                  },
+                  "Create a simulation - subscription renewal scenario (201)": {
+                    "summary": "Create a simulation - subscription renewal scenario (201)",
+                    "value": {
+                      "data": {
+                        "id": "ntfsim_01j82g2mggsgjpb3mjg0xq6p5k",
+                        "notification_setting_id": "ntfset_01j82d983j814ypzx7m1fw2jpz",
+                        "name": "Create a subscription renewal simulation with config",
+                        "type": "subscription_renewal",
+                        "status": "active",
+                        "payload": null,
+                        "config": {
+                          "subscription_cancellation": null,
+                          "subscription_creation": null,
+                          "subscription_pause": null,
+                          "subscription_renewal": {
+                            "entities": {
+                              "subscription_id": "sub_01h04vsc0qhwtsbsxh3422wjs4"
+                            },
+                            "options": {
+                              "payment_outcome": "recovered_updated_payment_method",
+                              "dunning_exhausted_action": null
+                            }
+                          },
+                          "subscription_resume": null
+                        },
+                        "last_run_at": null,
+                        "created_at": "2024-09-18T12:00:25.616392Z",
+                        "updated_at": "2024-09-18T12:00:25.616392Z"
+                      },
+                      "meta": {
+                        "request_id": "72351248-13bf-45be-befe-b3a5b5234588"
+                      }
+                    }
+                  },
+                  "Create a simulation - subscription creation scenario (201)": {
+                    "summary": "Create a simulation - subscription creation scenario (201)",
+                    "value": {
+                      "data": {
+                        "id": "ntfsim_01j82g2mggsgjpb3mjg0xq6p5k",
+                        "notification_setting_id": "ntfset_01j82d983j814ypzx7m1fw2jpz",
+                        "name": "Create a subscription creation simulation with config",
+                        "type": "subscription_creation",
+                        "status": "active",
+                        "payload": null,
+                        "config": {
+                          "subscription_cancellation": null,
+                          "subscription_creation": {
+                            "entities": {
+                              "customer_id": "ctm_01grnn4zta5a1mf02jjze7y2ys",
+                              "address_id": "add_01gm302t81w94gyjpjpqypkzkf",
+                              "business_id": "biz_01grrebrzaee2qj2fqqhmcyzaj",
+                              "payment_method_id": "paymtd_01hkm9xwqpbbpr1ksmvg3sx3v1",
+                              "discount_id": "dsc_01gv5kpg05xp104ek2fmgjwttf",
+                              "transaction_id": null,
+                              "items": [
+                                {
+                                  "price_id": "pri_01gsz8z1q1n00f12qt82y31smh",
+                                  "quantity": 5
+                                }
+                              ]
+                            },
+                            "options": {
+                              "customer_simulated_as": "existing_details_prefilled",
+                              "business_simulated_as": "existing_details_prefilled",
+                              "discount_simulated_as": "prefilled"
+                            }
+                          },
+                          "subscription_pause": null,
+                          "subscription_renewal": null,
+                          "subscription_resume": null
+                        },
+                        "last_run_at": null,
+                        "created_at": "2024-09-18T12:00:25.616392Z",
+                        "updated_at": "2024-09-18T12:00:25.616392Z"
+                      },
+                      "meta": {
+                        "request_id": "72351248-13bf-45be-befe-b3a5b5234588"
+                      }
+                    }
+                  },
+                  "Create a simulation (201)": {
+                    "summary": "Create a simulation (201)",
+                    "value": {
+                      "data": {
+                        "id": "ntfsim_01j82g2mggsgjpb3mjg0xq6p5k",
+                        "notification_setting_id": "ntfset_01j82d983j814ypzx7m1fw2jpz",
+                        "name": "New US address created for CRM",
+                        "type": "address.created",
+                        "config": null,
+                        "status": "active",
+                        "payload": {
+                          "id": "add_01hv8gq3318ktkfengj2r75gfx",
+                          "city": "New York",
+                          "region": "NY",
+                          "status": "active",
+                          "created_at": "2024-04-12T06:42:58.785Z",
+                          "first_line": "4050 Jefferson Plaza, 41st Floor",
+                          "updated_at": "2024-04-12T06:42:58.785Z",
+                          "custom_data": null,
+                          "customer_id": "ctm_01hv6y1jedq4p1n0yqn5ba3ky4",
+                          "description": "Head Office",
+                          "import_meta": null,
+                          "postal_code": "10021",
+                          "second_line": null,
+                          "country_code": "US"
+                        },
+                        "last_run_at": null,
+                        "created_at": "2024-09-18T12:00:25.616392Z",
+                        "updated_at": "2024-09-18T12:00:25.616392Z"
+                      },
+                      "meta": {
+                        "request_id": "72351248-13bf-45be-befe-b3a5b5234588"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -16761,6 +17785,46 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSimulationRun201Response"
+                },
+                "examples": {
+                  "Create a run for a simulation (201)": {
+                    "summary": "Create a run for a simulation (201)",
+                    "value": {
+                      "data": {
+                        "id": "ntfsimrun_01j82h13n87yq2sfv187hm2r0p",
+                        "status": "pending",
+                        "type": "subscription_creation",
+                        "created_at": "2024-09-18T12:17:04.168467Z",
+                        "updated_at": "2024-09-18T12:17:04.168467Z"
+                      },
+                      "meta": {
+                        "request_id": "2201997e-d23b-4a49-acdb-8a9f8cc72ff6"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -17281,6 +18345,64 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has been accepted for processing, but processing has not yet completed.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ReplaySimulationRunEvent202Response"
+                },
+                "examples": {
+                  "Replay an event for a simulation run (202)": {
+                    "summary": "Replay an event for a simulation run (202)",
+                    "value": {
+                      "data": {
+                        "id": "ntfsimevt_01j82j3tr93j99gfv26tsngc27",
+                        "status": "pending",
+                        "event_type": "address.created",
+                        "payload": {
+                          "id": "add_01hv8gq3318ktkfengj2r75gfx",
+                          "city": "New York",
+                          "region": "NY",
+                          "status": "active",
+                          "created_at": "2024-04-12T06:42:58.785Z",
+                          "first_line": "4050 Jefferson Plaza, 41st Floor",
+                          "updated_at": "2024-04-12T06:42:58.785Z",
+                          "custom_data": null,
+                          "customer_id": "ctm_01hv6y1jedq4p1n0yqn5ba3ky4",
+                          "description": "Head Office",
+                          "import_meta": null,
+                          "postal_code": "10021",
+                          "second_line": null,
+                          "country_code": "US"
+                        },
+                        "request": null,
+                        "response": null,
+                        "created_at": "2024-09-18T12:36:01.929359Z",
+                        "updated_at": "2024-09-18T12:37:35.659788Z"
+                      },
+                      "meta": {
+                        "request_id": "0369cb98-380b-40a9-bfd8-8ac4856c05f6"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "202"
           }
         },
         "x-permissions": [
@@ -21310,6 +22432,240 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateSubscriptionCharge201Response"
+                },
+                "examples": {
+                  "Create a one-time charge for a subscription (201)": {
+                    "summary": "Create a one-time charge for a subscription (201)",
+                    "value": {
+                      "data": {
+                        "id": "sub_01hv8y5ehszzq0yv20ttx3166y",
+                        "status": "active",
+                        "customer_id": "ctm_01hv8wt8nffez4p2t6typn4a5j",
+                        "address_id": "add_01hv8y4jk511j9g2n9a2mexjbx",
+                        "business_id": null,
+                        "currency_code": "USD",
+                        "created_at": "2024-04-12T10:38:00.761Z",
+                        "updated_at": "2024-04-12T10:56:12.174Z",
+                        "started_at": "2024-04-12T10:37:59.556997Z",
+                        "first_billed_at": "2024-04-12T10:37:59.556997Z",
+                        "next_billed_at": "2024-05-12T10:37:59.556997Z",
+                        "paused_at": null,
+                        "canceled_at": null,
+                        "collection_mode": "automatic",
+                        "billing_details": null,
+                        "current_billing_period": {
+                          "starts_at": "2024-04-12T10:37:59.556997Z",
+                          "ends_at": "2024-05-12T10:37:59.556997Z"
+                        },
+                        "billing_cycle": {
+                          "frequency": 1,
+                          "interval": "month"
+                        },
+                        "scheduled_change": null,
+                        "items": [
+                          {
+                            "status": "active",
+                            "quantity": 20,
+                            "recurring": true,
+                            "created_at": "2024-04-12T10:38:00.761Z",
+                            "updated_at": "2024-04-12T10:49:38.76Z",
+                            "previously_billed_at": "2024-04-12T10:37:59.556997Z",
+                            "next_billed_at": "2024-05-12T10:37:59.556997Z",
+                            "trial_dates": null,
+                            "price": {
+                              "id": "pri_01gsz8x8sawmvhz1pv30nge1ke",
+                              "product_id": "pro_01gsz4t5hdjse780zja8vvr7jg",
+                              "type": "standard",
+                              "description": "Monthly",
+                              "name": "Monthly (per seat)",
+                              "tax_mode": "account_setting",
+                              "billing_cycle": {
+                                "frequency": 1,
+                                "interval": "month"
+                              },
+                              "trial_period": null,
+                              "unit_price": {
+                                "amount": "3000",
+                                "currency_code": "USD"
+                              },
+                              "unit_price_overrides": [],
+                              "custom_data": null,
+                              "status": "active",
+                              "quantity": {
+                                "minimum": 1,
+                                "maximum": 999
+                              },
+                              "import_meta": null,
+                              "created_at": "2023-02-23T13:55:22.538367Z",
+                              "updated_at": "2024-04-11T13:54:52.254748Z"
+                            },
+                            "product": {
+                              "id": "pro_01gsz4t5hdjse780zja8vvr7jg",
+                              "name": "AeroEdit Pro",
+                              "type": "standard",
+                              "tax_category": "standard",
+                              "description": "Designed for professional pilots, including all features plus in Basic plus compliance monitoring, route optimization, and third-party integrations.",
+                              "image_url": "https://paddle.s3.amazonaws.com/user/165798/bT1XUOJAQhOUxGs83cbk_pro.png",
+                              "custom_data": {
+                                "features": {
+                                  "aircraft_performance": true,
+                                  "compliance_monitoring": true,
+                                  "flight_log_management": true,
+                                  "payment_by_invoice": false,
+                                  "route_planning": true,
+                                  "sso": false
+                                },
+                                "suggested_addons": [
+                                  "pro_01h1vjes1y163xfj1rh1tkfb65",
+                                  "pro_01gsz97mq9pa4fkyy0wqenepkz"
+                                ],
+                                "upgrade_description": "Move from Basic to Pro to take advantage of aircraft performance, advanced route planning, and compliance monitoring."
+                              },
+                              "status": "active",
+                              "import_meta": null,
+                              "created_at": "2023-02-23T12:43:46.605Z",
+                              "updated_at": "2024-04-05T15:53:44.687Z"
+                            }
+                          },
+                          {
+                            "status": "active",
+                            "quantity": 1,
+                            "recurring": true,
+                            "created_at": "2024-04-12T10:38:00.761Z",
+                            "updated_at": "2024-04-12T10:38:00.761Z",
+                            "previously_billed_at": "2024-04-12T10:37:59.556997Z",
+                            "next_billed_at": "2024-05-12T10:37:59.556997Z",
+                            "trial_dates": null,
+                            "price": {
+                              "id": "pri_01h1vjfevh5etwq3rb416a23h2",
+                              "product_id": "pro_01h1vjes1y163xfj1rh1tkfb65",
+                              "type": "standard",
+                              "description": "Monthly",
+                              "name": "Monthly (recurring addon)",
+                              "tax_mode": "account_setting",
+                              "billing_cycle": {
+                                "frequency": 1,
+                                "interval": "month"
+                              },
+                              "trial_period": null,
+                              "unit_price": {
+                                "amount": "10000",
+                                "currency_code": "USD"
+                              },
+                              "unit_price_overrides": [],
+                              "custom_data": null,
+                              "status": "active",
+                              "quantity": {
+                                "minimum": 1,
+                                "maximum": 100
+                              },
+                              "import_meta": null,
+                              "created_at": "2023-06-01T13:31:12.625056Z",
+                              "updated_at": "2024-04-09T07:23:00.907834Z"
+                            },
+                            "product": {
+                              "id": "pro_01h1vjes1y163xfj1rh1tkfb65",
+                              "name": "Analytics addon",
+                              "type": "standard",
+                              "tax_category": "standard",
+                              "description": "Unlock advanced insights into your flight data with enhanced analytics and reporting features. Includes customizable reporting templates and trend analysis across flights.",
+                              "image_url": "https://paddle.s3.amazonaws.com/user/165798/97dRpA6SXzcE6ekK9CAr_analytics.png",
+                              "custom_data": null,
+                              "status": "active",
+                              "import_meta": null,
+                              "created_at": "2023-06-01T13:30:50.302Z",
+                              "updated_at": "2024-04-05T15:47:17.163Z"
+                            }
+                          },
+                          {
+                            "status": "active",
+                            "quantity": 1,
+                            "recurring": true,
+                            "created_at": "2024-04-12T10:49:38.765Z",
+                            "updated_at": "2024-04-12T10:49:38.765Z",
+                            "previously_billed_at": "2024-04-12T10:49:38.765Z",
+                            "next_billed_at": "2024-05-12T10:37:59.556997Z",
+                            "trial_dates": null,
+                            "price": {
+                              "id": "pri_01gsz95g2zrkagg294kpstx54r",
+                              "product_id": "pro_01gsz92krfzy3hcx5h5rtgnfwz",
+                              "type": "standard",
+                              "description": "Monthly (recurring addon)",
+                              "name": "Monthly (recurring addon)",
+                              "tax_mode": "account_setting",
+                              "billing_cycle": {
+                                "frequency": 1,
+                                "interval": "month"
+                              },
+                              "trial_period": null,
+                              "unit_price": {
+                                "amount": "25000",
+                                "currency_code": "USD"
+                              },
+                              "unit_price_overrides": [],
+                              "custom_data": null,
+                              "status": "active",
+                              "quantity": {
+                                "minimum": 1,
+                                "maximum": 1
+                              },
+                              "import_meta": null,
+                              "created_at": "2023-02-23T13:59:52.159927Z",
+                              "updated_at": "2024-04-09T07:27:48.018296Z"
+                            },
+                            "product": {
+                              "id": "pro_01gsz92krfzy3hcx5h5rtgnfwz",
+                              "name": "VIP support",
+                              "type": "standard",
+                              "tax_category": "standard",
+                              "description": "Get exclusive access to our expert team of product specialists, available to help you make the most of your AeroEdit subscription.",
+                              "image_url": "https://paddle.s3.amazonaws.com/user/165798/qgyipKJwRtq98YNboipo_vip-support.png",
+                              "custom_data": null,
+                              "status": "active",
+                              "import_meta": null,
+                              "created_at": "2023-02-23T13:58:17.615Z",
+                              "updated_at": "2024-04-05T15:44:02.893Z"
+                            }
+                          }
+                        ],
+                        "custom_data": null,
+                        "management_urls": {
+                          "update_payment_method": "https://buyer-portal.paddle.com/subscriptions/sub_01hv8y5ehszzq0yv20ttx3166y/update-payment-method",
+                          "cancel": "https://buyer-portal.paddle.com/subscriptions/sub_01hv8y5ehszzq0yv20ttx3166y/cancel",
+                          "view_subscription": "https://buyer-portal.paddle.com/subscriptions/sub_01hv8y5ehszzq0yv20ttx3166y/view-subscription"
+                        },
+                        "discount": null,
+                        "import_meta": null,
+                        "consent_requirements": []
+                      },
+                      "meta": {
+                        "request_id": "53283483-dbd9-4987-9aa1-94656326dc58"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
@@ -24247,6 +25603,316 @@
                 }
               }
             }
+          },
+          "200": {
+            "description": "The request has succeeded and a new resource has been created as a result.",
+            "headers": {
+              "Request-Id": {
+                "required": true,
+                "schema": {
+                  "examples": [
+                    "b15ec92e-8688-40d4-a04d-f44cbec93355"
+                  ],
+                  "type": "string",
+                  "description": "Unique ID for the request relating to this response. Provide this when contacting Paddle support about a specific request."
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CreateTransaction201Response"
+                },
+                "examples": {
+                  "Create a transaction (201)": {
+                    "summary": "Create a transaction (201)",
+                    "value": {
+                      "data": {
+                        "id": "txn_01hv8m0mnx3sj85e7gxc6kga03",
+                        "status": "ready",
+                        "customer_id": "ctm_01hv6y1jedq4p1n0yqn5ba3ky4",
+                        "address_id": "add_01hv8gq3318ktkfengj2r75gfx",
+                        "business_id": null,
+                        "custom_data": null,
+                        "origin": "api",
+                        "collection_mode": "manual",
+                        "subscription_id": null,
+                        "invoice_id": null,
+                        "invoice_number": null,
+                        "discount_id": null,
+                        "billing_details": {
+                          "enable_checkout": false,
+                          "payment_terms": {
+                            "interval": "day",
+                            "frequency": 14
+                          },
+                          "purchase_order_number": "PO-123",
+                          "additional_information": null
+                        },
+                        "billing_period": {
+                          "starts_at": "2024-04-12T00:00:00Z",
+                          "ends_at": "2025-04-11T23:59:00Z"
+                        },
+                        "currency_code": "USD",
+                        "created_at": "2024-04-12T07:40:38.007040251Z",
+                        "updated_at": "2024-04-12T07:40:38.007040251Z",
+                        "billed_at": null,
+                        "revised_at": null,
+                        "items": [
+                          {
+                            "price": {
+                              "id": "pri_01gsz91wy9k1yn7kx82aafwvea",
+                              "description": "Annual",
+                              "type": "standard",
+                              "name": "Annual (per seat)",
+                              "product_id": "pro_01gsz4vmqbjk3x4vvtafffd540",
+                              "billing_cycle": {
+                                "interval": "year",
+                                "frequency": 1
+                              },
+                              "trial_period": null,
+                              "tax_mode": "account_setting",
+                              "unit_price": {
+                                "amount": "50000",
+                                "currency_code": "USD"
+                              },
+                              "unit_price_overrides": [],
+                              "custom_data": null,
+                              "quantity": {
+                                "minimum": 1,
+                                "maximum": 100
+                              },
+                              "status": "active",
+                              "created_at": "2023-02-23T13:57:54.249913Z",
+                              "updated_at": "2024-04-05T14:32:00.471447Z",
+                              "import_meta": null
+                            },
+                            "quantity": 20,
+                            "proration": null
+                          },
+                          {
+                            "price": {
+                              "id": "pri_01gsz96z29d88jrmsf2ztbfgjg",
+                              "description": "Annual (recurring addon)",
+                              "type": "standard",
+                              "name": "Annual (recurring addon)",
+                              "product_id": "pro_01gsz92krfzy3hcx5h5rtgnfwz",
+                              "billing_cycle": {
+                                "interval": "year",
+                                "frequency": 1
+                              },
+                              "trial_period": null,
+                              "tax_mode": "account_setting",
+                              "unit_price": {
+                                "amount": "300000",
+                                "currency_code": "USD"
+                              },
+                              "unit_price_overrides": [],
+                              "custom_data": null,
+                              "quantity": {
+                                "minimum": 1,
+                                "maximum": 1
+                              },
+                              "status": "active",
+                              "created_at": "2023-02-23T14:00:40.265185Z",
+                              "updated_at": "2024-03-25T14:31:18.587603Z",
+                              "import_meta": null
+                            },
+                            "quantity": 1,
+                            "proration": null
+                          },
+                          {
+                            "price": {
+                              "id": "pri_01gsz98e27ak2tyhexptwc58yk",
+                              "description": "One-time addon",
+                              "type": "standard",
+                              "name": "One-time addon",
+                              "product_id": "pro_01gsz97mq9pa4fkyy0wqenepkz",
+                              "billing_cycle": null,
+                              "trial_period": null,
+                              "tax_mode": "account_setting",
+                              "unit_price": {
+                                "amount": "19900",
+                                "currency_code": "USD"
+                              },
+                              "unit_price_overrides": [],
+                              "custom_data": null,
+                              "quantity": {
+                                "minimum": 1,
+                                "maximum": 1
+                              },
+                              "status": "active",
+                              "created_at": "2023-02-23T14:01:28.391712Z",
+                              "updated_at": "2024-04-09T07:23:10.921392Z",
+                              "import_meta": null
+                            },
+                            "quantity": 1,
+                            "proration": null
+                          }
+                        ],
+                        "details": {
+                          "tax_rates_used": [
+                            {
+                              "tax_rate": "0.08875",
+                              "totals": {
+                                "subtotal": "1319900",
+                                "discount": "0",
+                                "tax": "117141",
+                                "total": "1437041"
+                              }
+                            }
+                          ],
+                          "totals": {
+                            "subtotal": "1319900",
+                            "tax": "117141",
+                            "discount": "0",
+                            "total": "1437041",
+                            "grand_total": "1437041",
+                            "grand_total_tax": "117141",
+                            "fee": null,
+                            "credit": "0",
+                            "credit_to_balance": "0",
+                            "balance": "1437041",
+                            "earnings": null,
+                            "currency_code": "USD"
+                          },
+                          "adjusted_totals": {
+                            "subtotal": "1319900",
+                            "tax": "117141",
+                            "total": "1437041",
+                            "grand_total": "1437041",
+                            "grand_total_tax": "117141",
+                            "fee": "0",
+                            "earnings": "0",
+                            "currency_code": "USD",
+                            "retained_fee": "0"
+                          },
+                          "payout_totals": null,
+                          "adjusted_payout_totals": null,
+                          "line_items": [
+                            {
+                              "id": "txnitm_01hv8m0n6xqk32jsq5q6pv7mpk",
+                              "price_id": "pri_01gsz91wy9k1yn7kx82aafwvea",
+                              "quantity": 20,
+                              "totals": {
+                                "subtotal": "1000000",
+                                "tax": "88750",
+                                "discount": "0",
+                                "total": "1088750"
+                              },
+                              "product": {
+                                "id": "pro_01gsz4vmqbjk3x4vvtafffd540",
+                                "name": "AeroEdit Enterprise",
+                                "description": "The ultimate solution for organizations, featuring all Pro capabilities plus multi-user support, advanced data storage capabilities, plus personalized onboarding, dedicated account management, and the ability to pay via invoice.",
+                                "type": "standard",
+                                "tax_category": "standard",
+                                "image_url": "https://paddle.s3.amazonaws.com/user/165798/Ws808ziTS76a6YbnMkiK_enterprise.png",
+                                "custom_data": {
+                                  "features": {
+                                    "aircraft_performance": true,
+                                    "compliance_monitoring": true,
+                                    "flight_log_management": true,
+                                    "payment_by_invoice": true,
+                                    "route_planning": true,
+                                    "sso": true
+                                  },
+                                  "suggested_addons": [],
+                                  "upgrade_description": "Ready to reach new heights? Upgrade to enterprise to unlock single sign-on, payment by invoice, and dedicated account management."
+                                },
+                                "status": "active",
+                                "created_at": "2023-02-23T12:44:34.923Z",
+                                "updated_at": "2024-04-05T15:58:28.309Z",
+                                "import_meta": null
+                              },
+                              "tax_rate": "0.08875",
+                              "unit_totals": {
+                                "subtotal": "50000",
+                                "tax": "4437",
+                                "discount": "0",
+                                "total": "54437"
+                              },
+                              "proration": null
+                            },
+                            {
+                              "id": "txnitm_01hv8m0n6yajavvy3q3297hd45",
+                              "price_id": "pri_01gsz96z29d88jrmsf2ztbfgjg",
+                              "quantity": 1,
+                              "totals": {
+                                "subtotal": "300000",
+                                "tax": "26625",
+                                "discount": "0",
+                                "total": "326625"
+                              },
+                              "product": {
+                                "id": "pro_01gsz92krfzy3hcx5h5rtgnfwz",
+                                "name": "VIP support",
+                                "description": "Get exclusive access to our expert team of product specialists, available to help you make the most of your AeroEdit subscription.",
+                                "type": "standard",
+                                "tax_category": "standard",
+                                "image_url": "https://paddle.s3.amazonaws.com/user/165798/qgyipKJwRtq98YNboipo_vip-support.png",
+                                "custom_data": null,
+                                "status": "active",
+                                "created_at": "2023-02-23T13:58:17.615Z",
+                                "updated_at": "2024-04-05T15:44:02.893Z",
+                                "import_meta": null
+                              },
+                              "tax_rate": "0.08875",
+                              "unit_totals": {
+                                "subtotal": "300000",
+                                "tax": "26625",
+                                "discount": "0",
+                                "total": "326625"
+                              },
+                              "proration": null
+                            },
+                            {
+                              "id": "txnitm_01hv8m0n6yajavvy3q376fjpht",
+                              "price_id": "pri_01gsz98e27ak2tyhexptwc58yk",
+                              "quantity": 1,
+                              "totals": {
+                                "subtotal": "19900",
+                                "tax": "1766",
+                                "discount": "0",
+                                "total": "21666"
+                              },
+                              "product": {
+                                "id": "pro_01gsz97mq9pa4fkyy0wqenepkz",
+                                "name": "Custom domains",
+                                "description": "Make AeroEdit truly your own with custom domains. Custom domains reinforce your brand identity and make it easy for your team to access your account.",
+                                "type": "standard",
+                                "tax_category": "standard",
+                                "image_url": "https://paddle.s3.amazonaws.com/user/165798/XIG7UXoJQHmlIAiKcnkA_custom-domains.png",
+                                "custom_data": null,
+                                "status": "active",
+                                "created_at": "2023-02-23T14:01:02.441Z",
+                                "updated_at": "2024-04-05T15:43:28.971Z",
+                                "import_meta": null
+                              },
+                              "tax_rate": "0.08875",
+                              "unit_totals": {
+                                "subtotal": "19900",
+                                "tax": "1766",
+                                "discount": "0",
+                                "total": "21666"
+                              },
+                              "proration": null
+                            }
+                          ]
+                        },
+                        "payments": [],
+                        "checkout": {
+                          "url": null
+                        }
+                      },
+                      "meta": {
+                        "request_id": "c7db9b4e-da8c-4b05-871b-f7f47264fd72"
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "x-permissions": [
