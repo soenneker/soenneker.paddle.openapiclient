@@ -40,12 +40,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Link to the page for this subscription in the customer portal with the payment method update form pre-opened. Use as part of workflows to let customers update their payment details. `null` for manually-collected subscriptions.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? UpdatePaymentMethod { get => _explicitNullValueUpdatePaymentMethod; set { _explicitNullValueUpdatePaymentMethod = value; AdditionalData?.Remove("update_payment_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_payment_method"); else _explicitNullProperties?.Remove("update_payment_method"); } }
-        private string? _explicitNullValueUpdatePaymentMethod = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionManagementUrlsUpdatePaymentMethod? UpdatePaymentMethod { get => _explicitNullValueUpdatePaymentMethod; set { _explicitNullValueUpdatePaymentMethod = value; AdditionalData?.Remove("update_payment_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_payment_method"); else _explicitNullProperties?.Remove("update_payment_method"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionManagementUrlsUpdatePaymentMethod? _explicitNullValueUpdatePaymentMethod = default!;
 #nullable restore
 #else
-        public string UpdatePaymentMethod { get => _explicitNullValueUpdatePaymentMethod; set { _explicitNullValueUpdatePaymentMethod = value; AdditionalData?.Remove("update_payment_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_payment_method"); else _explicitNullProperties?.Remove("update_payment_method"); } }
-        private string _explicitNullValueUpdatePaymentMethod = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionManagementUrlsUpdatePaymentMethod UpdatePaymentMethod { get => _explicitNullValueUpdatePaymentMethod; set { _explicitNullValueUpdatePaymentMethod = value; AdditionalData?.Remove("update_payment_method"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("update_payment_method"); else _explicitNullProperties?.Remove("update_payment_method"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionManagementUrlsUpdatePaymentMethod _explicitNullValueUpdatePaymentMethod = default!;
 #endif
         /// <summary>Link to the page for this subscription in the customer portal, with no form pre-opened. Use to let customers manage the subscription themselves rather than sending them into one specific action.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -83,7 +83,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "cancel", n => { Cancel = n.GetStringValue(); } },
-                { "update_payment_method", n => { UpdatePaymentMethod = n.GetStringValue(); } },
+                { "update_payment_method", n => { UpdatePaymentMethod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionManagementUrlsUpdatePaymentMethod>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionManagementUrlsUpdatePaymentMethod.CreateFromDiscriminatorValue); } },
                 { "view_subscription", n => { ViewSubscription = n.GetStringValue(); } },
             };
         }
@@ -95,7 +95,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("cancel", Cancel);
-            writer.WriteStringValue("update_payment_method", UpdatePaymentMethod);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionManagementUrlsUpdatePaymentMethod>("update_payment_method", UpdatePaymentMethod);
             writer.WriteStringValue("view_subscription", ViewSubscription);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -38,12 +38,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Address for this preview. Send one of `address_id`, `customer_ip_address`, or the `address` object when previewing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview? _explicitNullValueAddress = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewResponseAddress? Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewResponseAddress? _explicitNullValueAddress = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview _explicitNullValueAddress = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewResponseAddress Address { get => _explicitNullValueAddress; set { _explicitNullValueAddress = value; AdditionalData?.Remove("address"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("address"); else _explicitNullProperties?.Remove("address"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewResponseAddress _explicitNullValueAddress = default!;
 #endif
         /// <summary>Paddle ID of the address that this preview is for, prefixed with `add_`. Send one of `address_id`, `customer_ip_address`, or the `address` object when previewing.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -139,7 +139,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview>(global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview.CreateFromDiscriminatorValue); } },
+                { "address", n => { Address = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewResponseAddress>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewResponseAddress.CreateFromDiscriminatorValue); } },
                 { "address_id", n => { AddressId = n.GetStringValue(); } },
                 { "available_payment_methods", n => { AvailablePaymentMethods = n.GetCollectionOfEnumValues<global::Soenneker.Paddle.OpenApiClient.Models.PaymentMethodType>()?.AsList(); } },
                 { "business_id", n => { BusinessId = n.GetStringValue(); } },
@@ -157,7 +157,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressPreview>("address", Address);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPricingPreviewResponseAddress>("address", Address);
             writer.WriteStringValue("address_id", AddressId);
             writer.WriteStringValue("business_id", BusinessId);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode>("currency_code", CurrencyCode);

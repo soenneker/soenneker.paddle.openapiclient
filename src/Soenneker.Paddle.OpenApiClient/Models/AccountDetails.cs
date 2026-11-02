@@ -79,12 +79,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Website for the product or service sold through this account. Only Paddle can change this, so contact Paddle support to update it.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; AdditionalData?.Remove("website"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
-        private string? _explicitNullValueWebsite = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsWebsite? Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; AdditionalData?.Remove("website"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsWebsite? _explicitNullValueWebsite = default!;
 #nullable restore
 #else
-        public string Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; AdditionalData?.Remove("website"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
-        private string _explicitNullValueWebsite = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsWebsite Website { get => _explicitNullValueWebsite; set { _explicitNullValueWebsite = value; AdditionalData?.Remove("website"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("website"); else _explicitNullProperties?.Remove("website"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsWebsite _explicitNullValueWebsite = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AccountDetails"/> and sets the default values.
@@ -116,7 +116,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "legacy_id", n => { LegacyId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegacyId>(global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegacyId.CreateFromDiscriminatorValue); } },
                 { "legal_name", n => { LegalName = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName>(global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName.CreateFromDiscriminatorValue); } },
-                { "website", n => { Website = n.GetStringValue(); } },
+                { "website", n => { Website = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsWebsite>(global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsWebsite.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -129,7 +129,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsDisplayName>("display_name", DisplayName);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsEmail>("email", Email);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsLegalName>("legal_name", LegalName);
-            writer.WriteStringValue("website", Website);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AccountDetailsWebsite>("website", Website);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

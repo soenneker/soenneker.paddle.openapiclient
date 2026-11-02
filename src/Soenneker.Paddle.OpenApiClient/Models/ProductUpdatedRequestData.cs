@@ -114,8 +114,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataTaxCategory? TaxCategory { get => _explicitNullValueTaxCategory; set { _explicitNullValueTaxCategory = value; AdditionalData?.Remove("tax_category"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tax_category"); else _explicitNullProperties?.Remove("tax_category"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataTaxCategory? _explicitNullValueTaxCategory = default!;
         /// <summary>Type of item. Standard items are considered part of your catalog and are shown in the Paddle dashboard.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataType? _explicitNullValueType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataType Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataType _explicitNullValueType = default!;
+#endif
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
         public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
@@ -153,7 +160,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "tax_category", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataTaxCategory>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTaxCategory = default; _explicitNullProperties?.Remove("tax_category"); AdditionalData["tax_category"] = unknown; } else { TaxCategory = parsed; AdditionalData.Remove("tax_category"); } } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataType>(global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataType.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -173,7 +180,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataTaxCategory>("tax_category", TaxCategory);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ProductUpdatedRequestDataType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

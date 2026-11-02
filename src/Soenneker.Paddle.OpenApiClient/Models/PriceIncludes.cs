@@ -53,12 +53,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>How often this price should be charged. `null` if price is non-recurring (one-time).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.Duration? BillingCycle { get => _explicitNullValueBillingCycle; set { _explicitNullValueBillingCycle = value; AdditionalData?.Remove("billing_cycle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_cycle"); else _explicitNullProperties?.Remove("billing_cycle"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.Duration? _explicitNullValueBillingCycle = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceBillingCycle? BillingCycle { get => _explicitNullValueBillingCycle; set { _explicitNullValueBillingCycle = value; AdditionalData?.Remove("billing_cycle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_cycle"); else _explicitNullProperties?.Remove("billing_cycle"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.PriceBillingCycle? _explicitNullValueBillingCycle = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.Duration BillingCycle { get => _explicitNullValueBillingCycle; set { _explicitNullValueBillingCycle = value; AdditionalData?.Remove("billing_cycle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_cycle"); else _explicitNullProperties?.Remove("billing_cycle"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.Duration _explicitNullValueBillingCycle = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceBillingCycle BillingCycle { get => _explicitNullValueBillingCycle; set { _explicitNullValueBillingCycle = value; AdditionalData?.Remove("billing_cycle"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_cycle"); else _explicitNullProperties?.Remove("billing_cycle"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.PriceBillingCycle _explicitNullValueBillingCycle = default!;
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
@@ -93,12 +93,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Import information for this entity. `null` if this entity is not imported.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta? ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; AdditionalData?.Remove("import_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta? _explicitNullValueImportMeta = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateImportMeta? ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; AdditionalData?.Remove("import_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateImportMeta? _explicitNullValueImportMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; AdditionalData?.Remove("import_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta _explicitNullValueImportMeta = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateImportMeta ImportMeta { get => _explicitNullValueImportMeta; set { _explicitNullValueImportMeta = value; AdditionalData?.Remove("import_meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("import_meta"); else _explicitNullProperties?.Remove("import_meta"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateImportMeta _explicitNullValueImportMeta = default!;
 #endif
         /// <summary>Name of this price, shown to customers at checkout and on invoices. Typically describes how often the related product bills.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -149,12 +149,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Trial period for the product related to this price. The billing cycle begins once the trial period is over. `null` for no trial period. Requires `billing_cycle`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDuration? TrialPeriod { get => _explicitNullValueTrialPeriod; set { _explicitNullValueTrialPeriod = value; AdditionalData?.Remove("trial_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial_period"); else _explicitNullProperties?.Remove("trial_period"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDuration? _explicitNullValueTrialPeriod = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesTrialPeriod? TrialPeriod { get => _explicitNullValueTrialPeriod; set { _explicitNullValueTrialPeriod = value; AdditionalData?.Remove("trial_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial_period"); else _explicitNullProperties?.Remove("trial_period"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesTrialPeriod? _explicitNullValueTrialPeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDuration TrialPeriod { get => _explicitNullValueTrialPeriod; set { _explicitNullValueTrialPeriod = value; AdditionalData?.Remove("trial_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial_period"); else _explicitNullProperties?.Remove("trial_period"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDuration _explicitNullValueTrialPeriod = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesTrialPeriod TrialPeriod { get => _explicitNullValueTrialPeriod; set { _explicitNullValueTrialPeriod = value; AdditionalData?.Remove("trial_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("trial_period"); else _explicitNullProperties?.Remove("trial_period"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesTrialPeriod _explicitNullValueTrialPeriod = default!;
 #endif
         /// <summary>Type of item. Standard items are considered part of your catalog and are shown in the Paddle dashboard.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
@@ -206,19 +206,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "billing_cycle", n => { BillingCycle = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Duration>(global::Soenneker.Paddle.OpenApiClient.Models.Duration.CreateFromDiscriminatorValue); } },
+                { "billing_cycle", n => { BillingCycle = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceBillingCycle>(global::Soenneker.Paddle.OpenApiClient.Models.PriceBillingCycle.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta.CreateFromDiscriminatorValue); } },
+                { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateImportMeta.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "product", n => { Product = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesProduct>(global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesProduct.CreateFromDiscriminatorValue); } },
                 { "product_id", n => { ProductId = n.GetStringValue(); } },
                 { "quantity", n => { Quantity = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesQuantity>(global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesQuantity.CreateFromDiscriminatorValue); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "tax_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesTaxMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTaxMode = default; _explicitNullProperties?.Remove("tax_mode"); AdditionalData["tax_mode"] = unknown; } else { TaxMode = parsed; AdditionalData.Remove("tax_mode"); } } },
-                { "trial_period", n => { TrialPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDuration>(global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDuration.CreateFromDiscriminatorValue); } },
+                { "trial_period", n => { TrialPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesTrialPeriod>(global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesTrialPeriod.CreateFromDiscriminatorValue); } },
                 { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesUnitPrice>(global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesUnitPrice.CreateFromDiscriminatorValue); } },
                 { "unit_price_overrides", n => { UnitPriceOverrides = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>(global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -232,17 +232,17 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.Duration>("billing_cycle", BillingCycle);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceBillingCycle>("billing_cycle", BillingCycle);
             writer.WriteObjectValue<UntypedNode>("custom_data", CustomData);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ImportMeta>("import_meta", ImportMeta);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCreateImportMeta>("import_meta", ImportMeta);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesProduct>("product", Product);
             writer.WriteStringValue("product_id", ProductId);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesQuantity>("quantity", Quantity);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesTaxMode>("tax_mode", TaxMode);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceTrialDuration>("trial_period", TrialPeriod);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesTrialPeriod>("trial_period", TrialPeriod);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceIncludesUnitPrice>("unit_price", UnitPrice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.UnitPriceOverride>("unit_price_overrides", UnitPriceOverrides);

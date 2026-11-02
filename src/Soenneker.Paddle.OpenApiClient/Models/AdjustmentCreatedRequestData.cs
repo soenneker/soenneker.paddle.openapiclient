@@ -160,8 +160,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         private string _explicitNullValueTransactionId = default!;
 #endif
         /// <summary>Type of adjustment. Use `full` to adjust the grand total for the related transaction. Include an `items` array when creating a `partial` adjustment. If omitted, defaults to `partial`.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataType? _explicitNullValueType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataType Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataType _explicitNullValueType = default!;
+#endif
         /// <summary>Timestamp following the RFC 3339 standard. This is set by the system, and cannot be changed via the API.</summary>
         public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; AdditionalData?.Remove("updated_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
@@ -204,7 +211,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "tax_rates_used", n => { TaxRatesUsed = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataTaxRatesUsedItem>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataTaxRatesUsedItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataTotals>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataTotals.CreateFromDiscriminatorValue); } },
                 { "transaction_id", n => { TransactionId = n.GetStringValue(); } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataType>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataType.CreateFromDiscriminatorValue); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -229,7 +236,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataTaxRatesUsedItem>("tax_rates_used", TaxRatesUsed);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataTotals>("totals", Totals);
             writer.WriteStringValue("transaction_id", TransactionId);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentCreatedRequestDataType>("type", Type);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

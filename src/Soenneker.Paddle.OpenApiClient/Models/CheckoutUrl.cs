@@ -27,12 +27,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>URL that Paddle opens when a checkout is created without a URL of its own. `null` until set.Must use `https`. In live accounts, its domain must also be an approved checkout domain for your account.Paddle appends `?_ptxn=` and the transaction ID to this URL. The page must have Paddle.js set up to read it and open the checkout.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DefaultUrl { get => _explicitNullValueDefaultUrl; set { _explicitNullValueDefaultUrl = value; AdditionalData?.Remove("default_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_url"); else _explicitNullProperties?.Remove("default_url"); } }
-        private string? _explicitNullValueDefaultUrl = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutUrlDefaultUrl? DefaultUrl { get => _explicitNullValueDefaultUrl; set { _explicitNullValueDefaultUrl = value; AdditionalData?.Remove("default_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_url"); else _explicitNullProperties?.Remove("default_url"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutUrlDefaultUrl? _explicitNullValueDefaultUrl = default!;
 #nullable restore
 #else
-        public string DefaultUrl { get => _explicitNullValueDefaultUrl; set { _explicitNullValueDefaultUrl = value; AdditionalData?.Remove("default_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_url"); else _explicitNullProperties?.Remove("default_url"); } }
-        private string _explicitNullValueDefaultUrl = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutUrlDefaultUrl DefaultUrl { get => _explicitNullValueDefaultUrl; set { _explicitNullValueDefaultUrl = value; AdditionalData?.Remove("default_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("default_url"); else _explicitNullProperties?.Remove("default_url"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutUrlDefaultUrl _explicitNullValueDefaultUrl = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.CheckoutUrl"/> and sets the default values.
@@ -59,7 +59,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "default_url", n => { DefaultUrl = n.GetStringValue(); } },
+                { "default_url", n => { DefaultUrl = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutUrlDefaultUrl>(global::Soenneker.Paddle.OpenApiClient.Models.CheckoutUrlDefaultUrl.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,7 +69,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteStringValue("default_url", DefaultUrl);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutUrlDefaultUrl>("default_url", DefaultUrl);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

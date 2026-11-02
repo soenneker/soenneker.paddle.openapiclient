@@ -67,22 +67,22 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Details for invoicing. Required if `collection_mode` is `manual`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsUpdate? BillingDetails { get => _explicitNullValueBillingDetails; set { _explicitNullValueBillingDetails = value; AdditionalData?.Remove("billing_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_details"); else _explicitNullProperties?.Remove("billing_details"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsUpdate? _explicitNullValueBillingDetails = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyBillingDetails? BillingDetails { get => _explicitNullValueBillingDetails; set { _explicitNullValueBillingDetails = value; AdditionalData?.Remove("billing_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_details"); else _explicitNullProperties?.Remove("billing_details"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyBillingDetails? _explicitNullValueBillingDetails = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsUpdate BillingDetails { get => _explicitNullValueBillingDetails; set { _explicitNullValueBillingDetails = value; AdditionalData?.Remove("billing_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_details"); else _explicitNullProperties?.Remove("billing_details"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsUpdate _explicitNullValueBillingDetails = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyBillingDetails BillingDetails { get => _explicitNullValueBillingDetails; set { _explicitNullValueBillingDetails = value; AdditionalData?.Remove("billing_details"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_details"); else _explicitNullProperties?.Remove("billing_details"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyBillingDetails _explicitNullValueBillingDetails = default!;
 #endif
         /// <summary>Time period that this transaction is for. Set automatically by Paddle for subscription renewals to describe the period that charges are for.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; AdditionalData?.Remove("billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod? _explicitNullValueBillingPeriod = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionTransactionIncludesBillingPeriod? BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; AdditionalData?.Remove("billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionTransactionIncludesBillingPeriod? _explicitNullValueBillingPeriod = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; AdditionalData?.Remove("billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod _explicitNullValueBillingPeriod = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionTransactionIncludesBillingPeriod BillingPeriod { get => _explicitNullValueBillingPeriod; set { _explicitNullValueBillingPeriod = value; AdditionalData?.Remove("billing_period"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("billing_period"); else _explicitNullProperties?.Remove("billing_period"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionTransactionIncludesBillingPeriod _explicitNullValueBillingPeriod = default!;
 #endif
         /// <summary>Paddle ID of the business that this transaction is for, prefixed with `biz_`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -97,12 +97,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Paddle Checkout details for this transaction. You may pass a URL when creating or updating an automatically-collected transaction, or when creating or updating a manually-collected transaction where `billing_details.enable_checkout` is `true`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreate? Checkout { get => _explicitNullValueCheckout; set { _explicitNullValueCheckout = value; AdditionalData?.Remove("checkout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkout"); else _explicitNullProperties?.Remove("checkout"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreate? _explicitNullValueCheckout = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateCheckout? Checkout { get => _explicitNullValueCheckout; set { _explicitNullValueCheckout = value; AdditionalData?.Remove("checkout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkout"); else _explicitNullProperties?.Remove("checkout"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateCheckout? _explicitNullValueCheckout = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreate Checkout { get => _explicitNullValueCheckout; set { _explicitNullValueCheckout = value; AdditionalData?.Remove("checkout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkout"); else _explicitNullProperties?.Remove("checkout"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreate _explicitNullValueCheckout = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateCheckout Checkout { get => _explicitNullValueCheckout; set { _explicitNullValueCheckout = value; AdditionalData?.Remove("checkout"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("checkout"); else _explicitNullProperties?.Remove("checkout"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateCheckout _explicitNullValueCheckout = default!;
 #endif
         /// <summary>How payment is collected. `automatic` for checkout, `manual` for invoices.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCollectionMode? CollectionMode { get => _explicitNullValueCollectionMode; set { _explicitNullValueCollectionMode = value; AdditionalData?.Remove("collection_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collection_mode"); else _explicitNullProperties?.Remove("collection_mode"); } }
@@ -143,12 +143,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Apply a non-catalog discount to a transaction. Send one of `discount_id` or `discount`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom? Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom? _explicitNullValueDiscount = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount? Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount? _explicitNullValueDiscount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom _explicitNullValueDiscount = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount _explicitNullValueDiscount = default!;
 #endif
         /// <summary>Paddle ID of the discount to apply to this transaction, prefixed with `dsc_`. Send one of `discount_id` or `discount`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -248,17 +248,17 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "address_id", n => { AddressId = n.GetStringValue(); } },
                 { "billed_at", n => { BilledAt = n.GetDateTimeOffsetValue(); } },
-                { "billing_details", n => { BillingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsUpdate>(global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsUpdate.CreateFromDiscriminatorValue); } },
-                { "billing_period", n => { BillingPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod>(global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod.CreateFromDiscriminatorValue); } },
+                { "billing_details", n => { BillingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyBillingDetails>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyBillingDetails.CreateFromDiscriminatorValue); } },
+                { "billing_period", n => { BillingPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionTransactionIncludesBillingPeriod>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionTransactionIncludesBillingPeriod.CreateFromDiscriminatorValue); } },
                 { "business_id", n => { BusinessId = n.GetStringValue(); } },
-                { "checkout", n => { Checkout = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreate>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreate.CreateFromDiscriminatorValue); } },
+                { "checkout", n => { Checkout = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateCheckout>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateCheckout.CreateFromDiscriminatorValue); } },
                 { "collection_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCollectionMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCollectionMode = default; _explicitNullProperties?.Remove("collection_mode"); AdditionalData["collection_mode"] = unknown; } else { CollectionMode = parsed; AdditionalData.Remove("collection_mode"); } } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCurrencyCode = default; _explicitNullProperties?.Remove("currency_code"); AdditionalData["currency_code"] = unknown; } else { CurrencyCode = parsed; AdditionalData.Remove("currency_code"); } } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "details", n => { Details = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDetails>(global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyDetails.CreateFromDiscriminatorValue); } },
-                { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom.CreateFromDiscriminatorValue); } },
+                { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount.CreateFromDiscriminatorValue); } },
                 { "discount_id", n => { DiscountId = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "invoice_id", n => { InvoiceId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionTransactionIncludesInvoiceId>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionTransactionIncludesInvoiceId.CreateFromDiscriminatorValue); } },
@@ -279,15 +279,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("address_id", AddressId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BillingDetailsUpdate>("billing_details", BillingDetails);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TimePeriod>("billing_period", BillingPeriod);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyBillingDetails>("billing_details", BillingDetails);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionTransactionIncludesBillingPeriod>("billing_period", BillingPeriod);
             writer.WriteStringValue("business_id", BusinessId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCheckoutCreate>("checkout", Checkout);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateCheckout>("checkout", Checkout);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.UpdateTransactionBodyCollectionMode>("collection_mode", CollectionMode);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode>("currency_code", CurrencyCode);
             writer.WriteObjectValue<UntypedNode>("custom_data", CustomData);
             writer.WriteStringValue("customer_id", CustomerId);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom>("discount", Discount);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount>("discount", Discount);
             writer.WriteStringValue("discount_id", DiscountId);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemCreate>("items", Items);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionOrigin>("origin", Origin);

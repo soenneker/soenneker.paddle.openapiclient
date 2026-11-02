@@ -17,12 +17,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("adjusted_payout_totals") is null) { _explicitNullValueAdjustedPayoutTotals = default!; _explicitNullProperties?.Remove("adjusted_payout_totals"); }
-            else if (parseNode.GetChildNode("adjusted_payout_totals") is { } nullNodeAdjustedPayoutTotals && nullNodeAdjustedPayoutTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AdjustedPayoutTotals = null;
             if (parseNode.GetChildNode("line_items") is null) { _explicitNullValueLineItems = default!; _explicitNullProperties?.Remove("line_items"); }
             else if (parseNode.GetChildNode("line_items") is { } nullNodeLineItems && nullNodeLineItems.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LineItems = null;
-            if (parseNode.GetChildNode("payout_totals") is null) { _explicitNullValuePayoutTotals = default!; _explicitNullProperties?.Remove("payout_totals"); }
-            else if (parseNode.GetChildNode("payout_totals") is { } nullNodePayoutTotals && nullNodePayoutTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PayoutTotals = null;
             if (parseNode.GetChildNode("totals") is null) { _explicitNullValueTotals = default!; _explicitNullProperties?.Remove("totals"); }
             else if (parseNode.GetChildNode("totals") is { } nullNodeTotals && nullNodeTotals.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Totals = null;
         }
@@ -32,12 +28,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Breakdown of the payout total for a transaction after adjustments. `null` until the transaction is `completed`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjusted? AdjustedPayoutTotals { get => _explicitNullValueAdjustedPayoutTotals; set { _explicitNullValueAdjustedPayoutTotals = value; AdditionalData?.Remove("adjusted_payout_totals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjusted_payout_totals"); else _explicitNullProperties?.Remove("adjusted_payout_totals"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjusted? _explicitNullValueAdjustedPayoutTotals = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsAdjustedPayoutTotals? AdjustedPayoutTotals { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjusted AdjustedPayoutTotals { get => _explicitNullValueAdjustedPayoutTotals; set { _explicitNullValueAdjustedPayoutTotals = value; AdditionalData?.Remove("adjusted_payout_totals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("adjusted_payout_totals"); else _explicitNullProperties?.Remove("adjusted_payout_totals"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjusted _explicitNullValueAdjustedPayoutTotals = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsAdjustedPayoutTotals AdjustedPayoutTotals { get; private set; }
 #endif
         /// <summary>Breakdown of the totals for a transaction after adjustments.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -60,12 +54,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Breakdown of the payout total for a transaction. `null` until the transaction is `completed`. Returned in your payout currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotals? PayoutTotals { get => _explicitNullValuePayoutTotals; set { _explicitNullValuePayoutTotals = value; AdditionalData?.Remove("payout_totals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payout_totals"); else _explicitNullProperties?.Remove("payout_totals"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotals? _explicitNullValuePayoutTotals = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsPayoutTotals? PayoutTotals { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotals PayoutTotals { get => _explicitNullValuePayoutTotals; set { _explicitNullValuePayoutTotals = value; AdditionalData?.Remove("payout_totals"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payout_totals"); else _explicitNullProperties?.Remove("payout_totals"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotals _explicitNullValuePayoutTotals = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsPayoutTotals PayoutTotals { get; private set; }
 #endif
         /// <summary>List of tax rates applied for this transaction.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -110,10 +102,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "adjusted_payout_totals", n => { AdjustedPayoutTotals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjusted>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjusted.CreateFromDiscriminatorValue); } },
+                { "adjusted_payout_totals", n => { AdjustedPayoutTotals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsAdjustedPayoutTotals>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsAdjustedPayoutTotals.CreateFromDiscriminatorValue); } },
                 { "adjusted_totals", n => { AdjustedTotals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotalsAdjusted.CreateFromDiscriminatorValue); } },
                 { "line_items", n => { LineItems = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "payout_totals", n => { PayoutTotals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotals>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotals.CreateFromDiscriminatorValue); } },
+                { "payout_totals", n => { PayoutTotals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsPayoutTotals>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsPayoutTotals.CreateFromDiscriminatorValue); } },
                 { "tax_rates_used", n => { TaxRatesUsed = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsTaxRatesUsedItem>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsTaxRatesUsedItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "totals", n => { Totals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotals>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotals.CreateFromDiscriminatorValue); } },
             };
@@ -125,9 +117,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotalsAdjusted>("adjusted_payout_totals", AdjustedPayoutTotals);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItem>("line_items", LineItems);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPayoutTotals>("payout_totals", PayoutTotals);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionTotals>("totals", Totals);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

@@ -154,8 +154,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         private global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataTrialPeriod _explicitNullValueTrialPeriod = default!;
 #endif
         /// <summary>Type of item. Standard items are considered part of your catalog and are shown in the Paddle dashboard.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataType? _explicitNullValueType = default!;
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataType Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataType _explicitNullValueType = default!;
+#endif
         /// <summary>Base price. This price applies to all customers, except for customers located in countries where you have `unit_price_overrides`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -216,7 +223,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
                 { "tax_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataTaxMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueTaxMode = default; _explicitNullProperties?.Remove("tax_mode"); AdditionalData["tax_mode"] = unknown; } else { TaxMode = parsed; AdditionalData.Remove("tax_mode"); } } },
                 { "trial_period", n => { TrialPeriod = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataTrialPeriod>(global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataTrialPeriod.CreateFromDiscriminatorValue); } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
+                { "type", n => { Type = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataType>(global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataType.CreateFromDiscriminatorValue); } },
                 { "unit_price", n => { UnitPrice = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataUnitPrice>(global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataUnitPrice.CreateFromDiscriminatorValue); } },
                 { "unit_price_overrides", n => { UnitPriceOverrides = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataUnitPriceOverridesItem>(global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataUnitPriceOverridesItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
@@ -241,7 +248,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataStatus>("status", Status);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataTaxMode>("tax_mode", TaxMode);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataTrialPeriod>("trial_period", TrialPeriod);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataType>("type", Type);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataType>("type", Type);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataUnitPrice>("unit_price", UnitPrice);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.PriceCreatedRequestDataUnitPriceOverridesItem>("unit_price_overrides", UnitPriceOverrides);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);

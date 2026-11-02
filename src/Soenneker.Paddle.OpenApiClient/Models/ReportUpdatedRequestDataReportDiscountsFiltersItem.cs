@@ -32,8 +32,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscountsFiltersItemName? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscountsFiltersItemName? _explicitNullValueName = default!;
         /// <summary>Operator to use when filtering. Valid when filtering by `updated_at`, `null` otherwise.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscountsFiltersItemOperator? Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; AdditionalData?.Remove("operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscountsFiltersItemOperator? _explicitNullValueOperator = default!;
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscountsFiltersItemOperator Operator { get => _explicitNullValueOperator; set { _explicitNullValueOperator = value; AdditionalData?.Remove("operator"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("operator"); else _explicitNullProperties?.Remove("operator"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscountsFiltersItemOperator _explicitNullValueOperator = default!;
+#endif
         /// <summary>Value to filter by. Check the allowed values descriptions for the `name` field to see valid values for a field.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -70,7 +77,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "name", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscountsFiltersItemName>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueName = default; _explicitNullProperties?.Remove("name"); AdditionalData["name"] = unknown; } else { Name = parsed; AdditionalData.Remove("name"); } } },
-                { "operator", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscountsFiltersItemOperator>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOperator = default; _explicitNullProperties?.Remove("operator"); AdditionalData["operator"] = unknown; } else { Operator = parsed; AdditionalData.Remove("operator"); } } },
+                { "operator", n => { Operator = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscountsFiltersItemOperator>(global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscountsFiltersItemOperator.CreateFromDiscriminatorValue); } },
                 { "value", n => { Value = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValue>(global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValue.CreateFromDiscriminatorValue); } },
             };
         }
@@ -82,7 +89,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscountsFiltersItemName>("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscountsFiltersItemOperator>("operator", Operator);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportUpdatedRequestDataReportDiscountsFiltersItemOperator>("operator", Operator);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItemValue>("value", Value);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);

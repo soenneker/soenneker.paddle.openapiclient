@@ -114,8 +114,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public DateTimeOffset? CanceledAt { get => _explicitNullValueCanceledAt; set { _explicitNullValueCanceledAt = value; AdditionalData?.Remove("canceled_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("canceled_at"); else _explicitNullProperties?.Remove("canceled_at"); } }
         private DateTimeOffset? _explicitNullValueCanceledAt = default!;
         /// <summary>How payment is collected for transactions created for this subscription. `automatic` for checkout, `manual` for invoices.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataCollectionMode? CollectionMode { get => _explicitNullValueCollectionMode; set { _explicitNullValueCollectionMode = value; AdditionalData?.Remove("collection_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collection_mode"); else _explicitNullProperties?.Remove("collection_mode"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataCollectionMode? _explicitNullValueCollectionMode = default!;
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataCollectionMode CollectionMode { get => _explicitNullValueCollectionMode; set { _explicitNullValueCollectionMode = value; AdditionalData?.Remove("collection_mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("collection_mode"); else _explicitNullProperties?.Remove("collection_mode"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataCollectionMode _explicitNullValueCollectionMode = default!;
+#endif
         /// <summary>List of active consent requirements for the subscription&apos;s current billing period.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -270,7 +277,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "billing_details", n => { BillingDetails = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataBillingDetails>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataBillingDetails.CreateFromDiscriminatorValue); } },
                 { "business_id", n => { BusinessId = n.GetStringValue(); } },
                 { "canceled_at", n => { CanceledAt = n.GetDateTimeOffsetValue(); } },
-                { "collection_mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataCollectionMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCollectionMode = default; _explicitNullProperties?.Remove("collection_mode"); AdditionalData["collection_mode"] = unknown; } else { CollectionMode = parsed; AdditionalData.Remove("collection_mode"); } } },
+                { "collection_mode", n => { CollectionMode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataCollectionMode>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataCollectionMode.CreateFromDiscriminatorValue); } },
                 { "consent_requirements", n => { ConsentRequirements = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataConsentRequirementsItem>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataConsentRequirementsItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "currency_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataCurrencyCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCurrencyCode = default; _explicitNullProperties?.Remove("currency_code"); AdditionalData["currency_code"] = unknown; } else { CurrencyCode = parsed; AdditionalData.Remove("currency_code"); } } },
@@ -303,7 +310,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataBillingDetails>("billing_details", BillingDetails);
             writer.WriteStringValue("business_id", BusinessId);
             writer.WriteDateTimeOffsetValue("canceled_at", CanceledAt);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataCollectionMode>("collection_mode", CollectionMode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataCollectionMode>("collection_mode", CollectionMode);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataConsentRequirementsItem>("consent_requirements", ConsentRequirements);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionCreatedRequestDataCurrencyCode>("currency_code", CurrencyCode);

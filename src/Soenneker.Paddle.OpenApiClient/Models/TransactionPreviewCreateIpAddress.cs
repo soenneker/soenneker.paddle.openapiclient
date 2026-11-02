@@ -62,12 +62,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Apply a non-catalog discount to a transaction. Send one of `discount_id` or `discount`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom? Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom? _explicitNullValueDiscount = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount? Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount? _explicitNullValueDiscount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom _explicitNullValueDiscount = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; AdditionalData?.Remove("discount"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount _explicitNullValueDiscount = default!;
 #endif
         /// <summary>Paddle ID of the discount to apply to this transaction preview, prefixed with `dsc_`. Send one of `discount_id` or `discount`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,7 +121,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "currency_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCurrencyCode = default; _explicitNullProperties?.Remove("currency_code"); AdditionalData["currency_code"] = unknown; } else { CurrencyCode = parsed; AdditionalData.Remove("currency_code"); } } },
                 { "customer_id", n => { CustomerId = n.GetStringValue(); } },
                 { "customer_ip_address", n => { CustomerIpAddress = n.GetStringValue(); } },
-                { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom.CreateFromDiscriminatorValue); } },
+                { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount.CreateFromDiscriminatorValue); } },
                 { "discount_id", n => { DiscountId = n.GetStringValue(); } },
                 { "ignore_trials", n => { IgnoreTrials = n.GetBoolValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateItems>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateItems.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -137,7 +137,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.CurrencyCode>("currency_code", CurrencyCode);
             writer.WriteStringValue("customer_id", CustomerId);
             writer.WriteStringValue("customer_ip_address", CustomerIpAddress);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCustom>("discount", Discount);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionCreateDiscount>("discount", Discount);
             writer.WriteStringValue("discount_id", DiscountId);
             writer.WriteBoolValue("ignore_trials", IgnoreTrials);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewCreateItems>("items", Items);

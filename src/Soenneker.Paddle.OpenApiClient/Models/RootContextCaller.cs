@@ -29,12 +29,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Account that the caller is authenticated against. `null` when the request doesn&apos;t have valid credentials.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount? _explicitNullValueAccount = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccountComposed? Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccountComposed? _explicitNullValueAccount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount _explicitNullValueAccount = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccountComposed Account { get => _explicitNullValueAccount; set { _explicitNullValueAccount = value; AdditionalData?.Remove("account"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("account"); else _explicitNullProperties?.Remove("account"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccountComposed _explicitNullValueAccount = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -76,7 +76,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "account", n => { Account = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount>(global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount.CreateFromDiscriminatorValue); } },
+                { "account", n => { Account = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccountComposed>(global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccountComposed.CreateFromDiscriminatorValue); } },
                 { "auth_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.RootAuthType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAuthType = default; _explicitNullProperties?.Remove("auth_type"); AdditionalData["auth_type"] = unknown; } else { AuthType = parsed; AdditionalData.Remove("auth_type"); } } },
                 { "permissions", n => { Permissions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
             };
@@ -88,7 +88,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccount>("account", Account);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.RootCallerAccountComposed>("account", Account);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.RootAuthType>("auth_type", AuthType);
             writer.WriteCollectionOfPrimitiveValues<string>("permissions", Permissions);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);

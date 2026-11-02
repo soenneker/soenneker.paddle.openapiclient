@@ -84,8 +84,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public DateTimeOffset? CreatedAt { get => _explicitNullValueCreatedAt; set { _explicitNullValueCreatedAt = value; AdditionalData?.Remove("created_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("created_at"); else _explicitNullProperties?.Remove("created_at"); } }
         private DateTimeOffset? _explicitNullValueCreatedAt = default!;
         /// <summary>Supported three-letter ISO 4217 currency code.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataCurrencyCode? CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataCurrencyCode? _explicitNullValueCurrencyCode = default!;
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataCurrencyCode CurrencyCode { get => _explicitNullValueCurrencyCode; set { _explicitNullValueCurrencyCode = value; AdditionalData?.Remove("currency_code"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currency_code"); else _explicitNullProperties?.Remove("currency_code"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataCurrencyCode _explicitNullValueCurrencyCode = default!;
+#endif
         /// <summary>The custom_data property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -153,8 +160,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreateMaximumRecurringIntervals _explicitNullValueMaximumRecurringIntervals = default!;
 #endif
         /// <summary>Discount mode. Standard discounts are considered part of your catalog and are shown in the Paddle dashboard.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
         public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataMode? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
         private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataMode? _explicitNullValueMode = default!;
+#nullable restore
+#else
+        public global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataMode Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; AdditionalData?.Remove("mode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataMode _explicitNullValueMode = default!;
+#endif
         /// <summary>Whether this discount applies for multiple subscription billing periods (`true`) or not (`false`).</summary>
         public bool? Recur { get => _explicitNullValueRecur; set { _explicitNullValueRecur = value; AdditionalData?.Remove("recur"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("recur"); else _explicitNullProperties?.Remove("recur"); } }
         private bool? _explicitNullValueRecur = default!;
@@ -215,7 +229,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "amount", n => { Amount = n.GetStringValue(); } },
                 { "code", n => { Code = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataCode>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataCode.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
-                { "currency_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataCurrencyCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCurrencyCode = default; _explicitNullProperties?.Remove("currency_code"); AdditionalData["currency_code"] = unknown; } else { CurrencyCode = parsed; AdditionalData.Remove("currency_code"); } } },
+                { "currency_code", n => { CurrencyCode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataCurrencyCode>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataCurrencyCode.CreateFromDiscriminatorValue); } },
                 { "custom_data", n => { CustomData = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "discount_group_id", n => { DiscountGroupId = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataDiscountGroupId>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataDiscountGroupId.CreateFromDiscriminatorValue); } },
@@ -224,7 +238,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "import_meta", n => { ImportMeta = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataImportMeta>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataImportMeta.CreateFromDiscriminatorValue); } },
                 { "maximum_recurring_intervals", n => { MaximumRecurringIntervals = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreateMaximumRecurringIntervals>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreateMaximumRecurringIntervals.CreateFromDiscriminatorValue); } },
-                { "mode", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataMode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueMode = default; _explicitNullProperties?.Remove("mode"); AdditionalData["mode"] = unknown; } else { Mode = parsed; AdditionalData.Remove("mode"); } } },
+                { "mode", n => { Mode = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataMode>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataMode.CreateFromDiscriminatorValue); } },
                 { "recur", n => { Recur = n.GetBoolValue(); } },
                 { "restrict_to", n => { RestrictTo = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataRestrictTo>(global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataRestrictTo.CreateFromDiscriminatorValue); } },
                 { "status", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataStatus>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueStatus = default; _explicitNullProperties?.Remove("status"); AdditionalData["status"] = unknown; } else { Status = parsed; AdditionalData.Remove("status"); } } },
@@ -243,7 +257,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("amount", Amount);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataCode>("code", Code);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataCurrencyCode>("currency_code", CurrencyCode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataCurrencyCode>("currency_code", CurrencyCode);
             writer.WriteObjectValue<UntypedNode>("custom_data", CustomData);
             writer.WriteStringValue("description", Description);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataDiscountGroupId>("discount_group_id", DiscountGroupId);
@@ -252,7 +266,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             writer.WriteStringValue("id", Id);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataImportMeta>("import_meta", ImportMeta);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreateMaximumRecurringIntervals>("maximum_recurring_intervals", MaximumRecurringIntervals);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataMode>("mode", Mode);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataMode>("mode", Mode);
             writer.WriteBoolValue("recur", Recur);
             writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataRestrictTo>("restrict_to", RestrictTo);
             writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.DiscountCreatedRequestDataStatus>("status", Status);

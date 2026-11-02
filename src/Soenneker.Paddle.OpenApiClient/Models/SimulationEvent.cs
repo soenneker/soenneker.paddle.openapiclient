@@ -49,22 +49,22 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Information about the request. Sent by Paddle as part of the simulation.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequest? Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; AdditionalData?.Remove("request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequest? _explicitNullValueRequest = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequestComposed? Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; AdditionalData?.Remove("request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequestComposed? _explicitNullValueRequest = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequest Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; AdditionalData?.Remove("request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequest _explicitNullValueRequest = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequestComposed Request { get => _explicitNullValueRequest; set { _explicitNullValueRequest = value; AdditionalData?.Remove("request"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("request"); else _explicitNullProperties?.Remove("request"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequestComposed _explicitNullValueRequest = default!;
 #endif
         /// <summary>Information about the response. Sent by the responding server for the notification setting.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponse? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponse? _explicitNullValueResponse = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponseComposed? Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponseComposed? _explicitNullValueResponse = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponse Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponse _explicitNullValueResponse = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponseComposed Response { get => _explicitNullValueResponse; set { _explicitNullValueResponse = value; AdditionalData?.Remove("response"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("response"); else _explicitNullProperties?.Remove("response"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponseComposed _explicitNullValueResponse = default!;
 #endif
         /// <summary>Status of this simulation run log.</summary>
         public global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventStatusComposed? Status { get; private set; }
@@ -99,8 +99,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
                 { "event_type", n => { EventType = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventEventType>(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "payload", n => { Payload = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventPayload>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventPayload.CreateFromDiscriminatorValue); } },
-                { "request", n => { Request = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequest>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequest.CreateFromDiscriminatorValue); } },
-                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponse>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponse.CreateFromDiscriminatorValue); } },
+                { "request", n => { Request = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequestComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequestComposed.CreateFromDiscriminatorValue); } },
+                { "response", n => { Response = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponseComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponseComposed.CreateFromDiscriminatorValue); } },
                 { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventStatusComposed>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
@@ -112,8 +112,8 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequest>("request", Request);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponse>("response", Response);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventRequestComposed>("request", Request);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationEventResponseComposed>("response", Response);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

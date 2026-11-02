@@ -39,12 +39,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Chargeback fee before conversion to the payout currency. `null` when the chargeback fee is the same as the payout currency.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginal? Original { get => _explicitNullValueOriginal; set { _explicitNullValueOriginal = value; AdditionalData?.Remove("original"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original"); else _explicitNullProperties?.Remove("original"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginal? _explicitNullValueOriginal = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginalComposed? Original { get => _explicitNullValueOriginal; set { _explicitNullValueOriginal = value; AdditionalData?.Remove("original"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original"); else _explicitNullProperties?.Remove("original"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginalComposed? _explicitNullValueOriginal = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginal Original { get => _explicitNullValueOriginal; set { _explicitNullValueOriginal = value; AdditionalData?.Remove("original"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original"); else _explicitNullProperties?.Remove("original"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginal _explicitNullValueOriginal = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginalComposed Original { get => _explicitNullValueOriginal; set { _explicitNullValueOriginal = value; AdditionalData?.Remove("original"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("original"); else _explicitNullProperties?.Remove("original"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginalComposed _explicitNullValueOriginal = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeComposed"/> and sets the default values.
@@ -72,7 +72,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "amount", n => { Amount = n.GetStringValue(); } },
-                { "original", n => { Original = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginal>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginal.CreateFromDiscriminatorValue); } },
+                { "original", n => { Original = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginalComposed>(global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginalComposed.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -83,7 +83,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteStringValue("amount", Amount);
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginal>("original", Original);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.AdjustmentPayoutTotalsChargebackFeeOriginalComposed>("original", Original);
             if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }

@@ -27,12 +27,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>Discount offered in the recovery email, or `null` when no discount is offered.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscount? Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscount? _explicitNullValueDiscount = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountComposed? Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountComposed? _explicitNullValueDiscount = default!;
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscount Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscount _explicitNullValueDiscount = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountComposed Discount { get => _explicitNullValueDiscount; set { _explicitNullValueDiscount = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("discount"); else _explicitNullProperties?.Remove("discount"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountComposed _explicitNullValueDiscount = default!;
 #endif
         /// <summary>Whether Paddle emails customers who abandon a checkout.</summary>
         public bool? Enabled { get => _explicitNullValueEnabled; set { _explicitNullValueEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("enabled"); else _explicitNullProperties?.Remove("enabled"); } }
@@ -55,7 +55,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscount.CreateFromDiscriminatorValue); } },
+                { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountComposed>(global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountComposed.CreateFromDiscriminatorValue); } },
                 { "enabled", n => { Enabled = n.GetBoolValue(); } },
             };
         }
@@ -66,7 +66,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscount>("discount", Discount);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutRecoveryDiscountComposed>("discount", Discount);
             writer.WriteBoolValue("enabled", Enabled);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }

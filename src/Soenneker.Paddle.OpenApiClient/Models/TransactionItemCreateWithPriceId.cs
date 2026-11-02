@@ -39,10 +39,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>How proration was calculated for this item. Populated when a transaction is created from a subscription change, where `proration_billing_mode` was `prorated_immediately` or `prorated_next_billing_period`. Set automatically by Paddle.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration? Proration { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItemProration? Proration { get; private set; }
 #nullable restore
 #else
-        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration Proration { get; private set; }
+        public global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItemProration Proration { get; private set; }
 #endif
         /// <summary>Quantity of this item on the transaction.</summary>
         public int? Quantity { get => _explicitNullValueQuantity; set { _explicitNullValueQuantity = value; AdditionalData?.Remove("quantity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("quantity"); else _explicitNullProperties?.Remove("quantity"); } }
@@ -73,7 +73,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "price_id", n => { PriceId = n.GetStringValue(); } },
-                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionItemProration.CreateFromDiscriminatorValue); } },
+                { "proration", n => { Proration = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItemProration>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionDetailsLineItemProration.CreateFromDiscriminatorValue); } },
                 { "quantity", n => { Quantity = n.GetIntValue(); } },
             };
         }
