@@ -11,7 +11,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// Entity when working with reports for adjustments or adjustment line items.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ReportReportAdjustmentsModel : global::Soenneker.Paddle.OpenApiClient.Models.Report, IParsable
+    public partial class ReportAdjustmentsModelVariant : global::Soenneker.Paddle.OpenApiClient.Models.Report, IParsable
     {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -54,12 +54,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportReportAdjustmentsModel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsModelVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportAdjustmentsModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsModelVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportAdjustmentsModel(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsModelVariant(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

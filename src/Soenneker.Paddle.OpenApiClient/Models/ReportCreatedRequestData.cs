@@ -52,16 +52,16 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "adjustments" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCreatedRequestDataReportAdjustments(),
-                "adjustment_line_items" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCreatedRequestDataReportAdjustments(),
-                "balance" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCreatedRequestDataReportBalance(),
-                "checkouts" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCreatedRequestDataReportCheckouts(),
-                "discounts" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCreatedRequestDataReportDiscounts(),
-                "payout_reconciliation" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCreatedRequestDataReportPayoutReconciliation(),
-                "products_prices" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCreatedRequestDataReportProductsPrices(),
-                "subscriptions" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCreatedRequestDataReportSubscriptions(),
-                "transactions" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCreatedRequestDataReportTransactions(),
-                "transaction_line_items" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCreatedRequestDataReportTransactions(),
+                "adjustments" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsVariant(),
+                "adjustment_line_items" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsVariant(),
+                "balance" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportBalanceVariant(),
+                "checkouts" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCheckoutsVariant(),
+                "discounts" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportDiscountsVariant(),
+                "payout_reconciliation" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportPayoutReconciliationVariant(),
+                "products_prices" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportProductsPricesVariant(),
+                "subscriptions" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportSubscriptionsVariant(),
+                "transactions" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportTransactionsVariant(),
+                "transaction_line_items" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportTransactionsVariant(),
                 _ => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestData(),
             };
         }

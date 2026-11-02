@@ -8,10 +8,10 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Scenario simulations play all events sent for a subscription lifecycle event.
+    /// Single event simulations play a single event.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SimulationRunSimulationRunScenarioModel : global::Soenneker.Paddle.OpenApiClient.Models.SimulationRun, IParsable
+    public partial class SimulationRunSingleEventModelVariant : global::Soenneker.Paddle.OpenApiClient.Models.SimulationRun, IParsable
     {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -38,12 +38,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSimulationRunScenarioModel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModelVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSimulationRunScenarioModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModelVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSimulationRunScenarioModel(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SimulationRunSingleEventModelVariant(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

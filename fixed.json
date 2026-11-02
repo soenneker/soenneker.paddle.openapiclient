@@ -39815,16 +39815,16 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "adjustments": "#/components/schemas/ReportReportAdjustmentsModel",
-            "adjustment_line_items": "#/components/schemas/ReportReportAdjustmentsModel",
-            "transactions": "#/components/schemas/ReportReportTransactionsModel",
-            "transaction_line_items": "#/components/schemas/ReportReportTransactionsModel",
-            "products_prices": "#/components/schemas/ReportReportProductsPricesModel",
-            "discounts": "#/components/schemas/ReportReportDiscountsModel",
-            "balance": "#/components/schemas/ReportReportBalanceModel",
-            "payout_reconciliation": "#/components/schemas/ReportReportPayoutReconciliationModel",
-            "checkouts": "#/components/schemas/ReportReportCheckoutsModel",
-            "subscriptions": "#/components/schemas/ReportReportSubscriptionsModel"
+            "adjustments": "#/components/schemas/ReportAdjustmentsModelVariant",
+            "adjustment_line_items": "#/components/schemas/ReportAdjustmentsModelVariant",
+            "transactions": "#/components/schemas/ReportTransactionsModelVariant",
+            "transaction_line_items": "#/components/schemas/ReportTransactionsModelVariant",
+            "products_prices": "#/components/schemas/ReportProductsPricesModelVariant",
+            "discounts": "#/components/schemas/ReportDiscountsModelVariant",
+            "balance": "#/components/schemas/ReportBalanceModelVariant",
+            "payout_reconciliation": "#/components/schemas/ReportPayoutReconciliationModelVariant",
+            "checkouts": "#/components/schemas/ReportCheckoutsModelVariant",
+            "subscriptions": "#/components/schemas/ReportSubscriptionsModelVariant"
           }
         },
         "x-client-original-tagged-union": {
@@ -40315,67 +40315,67 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "address.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "address.imported": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "address.updated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "adjustment.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "adjustment.updated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "api_key.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "api_key.expired": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "api_key.expiring": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "api_key.revoked": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "api_key.updated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "api_key_exposure.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "business.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "business.imported": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "business.updated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "client_token.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "client_token.revoked": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "client_token.updated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "customer.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "customer.imported": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "customer.updated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "discount.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "discount.imported": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "discount.updated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "discount_group.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "discount_group.updated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "payment_method.saved": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "payment_method.deleted": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "payout.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "payout.paid": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "price.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "price.imported": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "price.updated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "product.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "product.imported": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "product.updated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "report.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "report.updated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "subscription.activated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "subscription.canceled": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "subscription.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "subscription.imported": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "subscription.past_due": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "subscription.paused": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "subscription.resumed": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "subscription.trialing": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "subscription.updated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "transaction.billed": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "transaction.canceled": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "transaction.completed": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "transaction.created": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "transaction.paid": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "transaction.past_due": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "transaction.payment_failed": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "transaction.ready": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "transaction.revised": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "transaction.updated": "#/components/schemas/SimulationSimulationStandardEventsModel",
-            "subscription_creation": "#/components/schemas/SimulationSimulationScenarioEventsModel",
-            "subscription_renewal": "#/components/schemas/SimulationSimulationScenarioEventsModel",
-            "subscription_pause": "#/components/schemas/SimulationSimulationScenarioEventsModel",
-            "subscription_resume": "#/components/schemas/SimulationSimulationScenarioEventsModel",
-            "subscription_cancellation": "#/components/schemas/SimulationSimulationScenarioEventsModel"
+            "address.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "address.imported": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "address.updated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "adjustment.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "adjustment.updated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "api_key.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "api_key.expired": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "api_key.expiring": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "api_key.revoked": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "api_key.updated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "api_key_exposure.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "business.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "business.imported": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "business.updated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "client_token.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "client_token.revoked": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "client_token.updated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "customer.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "customer.imported": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "customer.updated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "discount.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "discount.imported": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "discount.updated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "discount_group.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "discount_group.updated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "payment_method.saved": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "payment_method.deleted": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "payout.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "payout.paid": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "price.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "price.imported": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "price.updated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "product.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "product.imported": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "product.updated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "report.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "report.updated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "subscription.activated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "subscription.canceled": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "subscription.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "subscription.imported": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "subscription.past_due": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "subscription.paused": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "subscription.resumed": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "subscription.trialing": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "subscription.updated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "transaction.billed": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "transaction.canceled": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "transaction.completed": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "transaction.created": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "transaction.paid": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "transaction.past_due": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "transaction.payment_failed": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "transaction.ready": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "transaction.revised": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "transaction.updated": "#/components/schemas/SimulationStandardEventsModelVariant",
+            "subscription_creation": "#/components/schemas/SimulationScenarioEventsModelVariant",
+            "subscription_renewal": "#/components/schemas/SimulationScenarioEventsModelVariant",
+            "subscription_pause": "#/components/schemas/SimulationScenarioEventsModelVariant",
+            "subscription_resume": "#/components/schemas/SimulationScenarioEventsModelVariant",
+            "subscription_cancellation": "#/components/schemas/SimulationScenarioEventsModelVariant"
           }
         },
         "x-client-original-tagged-union": {
@@ -41378,67 +41378,67 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "address.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "address.imported": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "address.updated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "adjustment.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "adjustment.updated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "api_key.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "api_key.expired": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "api_key.expiring": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "api_key.revoked": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "api_key.updated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "api_key_exposure.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "business.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "business.imported": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "business.updated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "client_token.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "client_token.revoked": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "client_token.updated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "customer.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "customer.imported": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "customer.updated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "discount.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "discount.imported": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "discount.updated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "discount_group.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "discount_group.updated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "payment_method.saved": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "payment_method.deleted": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "payout.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "payout.paid": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "price.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "price.imported": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "price.updated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "product.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "product.imported": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "product.updated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "report.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "report.updated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "subscription.activated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "subscription.canceled": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "subscription.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "subscription.imported": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "subscription.past_due": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "subscription.paused": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "subscription.resumed": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "subscription.trialing": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "subscription.updated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "transaction.billed": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "transaction.canceled": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "transaction.completed": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "transaction.created": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "transaction.paid": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "transaction.past_due": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "transaction.payment_failed": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "transaction.ready": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "transaction.revised": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "transaction.updated": "#/components/schemas/SimulationRunSimulationRunSingleEventModel",
-            "subscription_creation": "#/components/schemas/SimulationRunSimulationRunScenarioModel",
-            "subscription_renewal": "#/components/schemas/SimulationRunSimulationRunScenarioModel",
-            "subscription_pause": "#/components/schemas/SimulationRunSimulationRunScenarioModel",
-            "subscription_resume": "#/components/schemas/SimulationRunSimulationRunScenarioModel",
-            "subscription_cancellation": "#/components/schemas/SimulationRunSimulationRunScenarioModel"
+            "address.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "address.imported": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "address.updated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "adjustment.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "adjustment.updated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "api_key.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "api_key.expired": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "api_key.expiring": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "api_key.revoked": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "api_key.updated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "api_key_exposure.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "business.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "business.imported": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "business.updated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "client_token.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "client_token.revoked": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "client_token.updated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "customer.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "customer.imported": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "customer.updated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "discount.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "discount.imported": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "discount.updated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "discount_group.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "discount_group.updated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "payment_method.saved": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "payment_method.deleted": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "payout.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "payout.paid": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "price.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "price.imported": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "price.updated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "product.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "product.imported": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "product.updated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "report.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "report.updated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "subscription.activated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "subscription.canceled": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "subscription.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "subscription.imported": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "subscription.past_due": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "subscription.paused": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "subscription.resumed": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "subscription.trialing": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "subscription.updated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "transaction.billed": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "transaction.canceled": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "transaction.completed": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "transaction.created": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "transaction.paid": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "transaction.past_due": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "transaction.payment_failed": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "transaction.ready": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "transaction.revised": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "transaction.updated": "#/components/schemas/SimulationRunSingleEventModelVariant",
+            "subscription_creation": "#/components/schemas/SimulationRunScenarioModelVariant",
+            "subscription_renewal": "#/components/schemas/SimulationRunScenarioModelVariant",
+            "subscription_pause": "#/components/schemas/SimulationRunScenarioModelVariant",
+            "subscription_resume": "#/components/schemas/SimulationRunScenarioModelVariant",
+            "subscription_cancellation": "#/components/schemas/SimulationRunScenarioModelVariant"
           }
         },
         "x-client-original-tagged-union": {
@@ -102393,16 +102393,16 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "adjustments": "#/components/schemas/ReportCreatedRequestDataReportCreatedRequestDataReportAdjustments",
-            "adjustment_line_items": "#/components/schemas/ReportCreatedRequestDataReportCreatedRequestDataReportAdjustments",
-            "transactions": "#/components/schemas/ReportCreatedRequestDataReportCreatedRequestDataReportTransactions",
-            "transaction_line_items": "#/components/schemas/ReportCreatedRequestDataReportCreatedRequestDataReportTransactions",
-            "products_prices": "#/components/schemas/ReportCreatedRequestDataReportCreatedRequestDataReportProductsPrices",
-            "discounts": "#/components/schemas/ReportCreatedRequestDataReportCreatedRequestDataReportDiscounts",
-            "balance": "#/components/schemas/ReportCreatedRequestDataReportCreatedRequestDataReportBalance",
-            "payout_reconciliation": "#/components/schemas/ReportCreatedRequestDataReportCreatedRequestDataReportPayoutReconciliation",
-            "checkouts": "#/components/schemas/ReportCreatedRequestDataReportCreatedRequestDataReportCheckouts",
-            "subscriptions": "#/components/schemas/ReportCreatedRequestDataReportCreatedRequestDataReportSubscriptions"
+            "adjustments": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsVariant",
+            "adjustment_line_items": "#/components/schemas/ReportCreatedRequestDataReportAdjustmentsVariant",
+            "transactions": "#/components/schemas/ReportCreatedRequestDataReportTransactionsVariant",
+            "transaction_line_items": "#/components/schemas/ReportCreatedRequestDataReportTransactionsVariant",
+            "products_prices": "#/components/schemas/ReportCreatedRequestDataReportProductsPricesVariant",
+            "discounts": "#/components/schemas/ReportCreatedRequestDataReportDiscountsVariant",
+            "balance": "#/components/schemas/ReportCreatedRequestDataReportBalanceVariant",
+            "payout_reconciliation": "#/components/schemas/ReportCreatedRequestDataReportPayoutReconciliationVariant",
+            "checkouts": "#/components/schemas/ReportCreatedRequestDataReportCheckoutsVariant",
+            "subscriptions": "#/components/schemas/ReportCreatedRequestDataReportSubscriptionsVariant"
           }
         },
         "x-client-original-tagged-union": {
@@ -102464,16 +102464,16 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "adjustments": "#/components/schemas/ReportUpdatedRequestDataReportUpdatedRequestDataReportAdjustments",
-            "adjustment_line_items": "#/components/schemas/ReportUpdatedRequestDataReportUpdatedRequestDataReportAdjustments",
-            "transactions": "#/components/schemas/ReportUpdatedRequestDataReportUpdatedRequestDataReportTransactions",
-            "transaction_line_items": "#/components/schemas/ReportUpdatedRequestDataReportUpdatedRequestDataReportTransactions",
-            "products_prices": "#/components/schemas/ReportUpdatedRequestDataReportUpdatedRequestDataReportProductsPrices",
-            "discounts": "#/components/schemas/ReportUpdatedRequestDataReportUpdatedRequestDataReportDiscounts",
-            "balance": "#/components/schemas/ReportUpdatedRequestDataReportUpdatedRequestDataReportBalance",
-            "payout_reconciliation": "#/components/schemas/ReportUpdatedRequestDataReportUpdatedRequestDataReportPayoutReconciliation",
-            "checkouts": "#/components/schemas/ReportUpdatedRequestDataReportUpdatedRequestDataReportCheckouts",
-            "subscriptions": "#/components/schemas/ReportUpdatedRequestDataReportUpdatedRequestDataReportSubscriptions"
+            "adjustments": "#/components/schemas/ReportUpdatedRequestDataReportAdjustmentsVariant",
+            "adjustment_line_items": "#/components/schemas/ReportUpdatedRequestDataReportAdjustmentsVariant",
+            "transactions": "#/components/schemas/ReportUpdatedRequestDataReportTransactionsVariant",
+            "transaction_line_items": "#/components/schemas/ReportUpdatedRequestDataReportTransactionsVariant",
+            "products_prices": "#/components/schemas/ReportUpdatedRequestDataReportProductsPricesVariant",
+            "discounts": "#/components/schemas/ReportUpdatedRequestDataReportDiscountsVariant",
+            "balance": "#/components/schemas/ReportUpdatedRequestDataReportBalanceVariant",
+            "payout_reconciliation": "#/components/schemas/ReportUpdatedRequestDataReportPayoutReconciliationVariant",
+            "checkouts": "#/components/schemas/ReportUpdatedRequestDataReportCheckoutsVariant",
+            "subscriptions": "#/components/schemas/ReportUpdatedRequestDataReportSubscriptionsVariant"
           }
         },
         "x-client-original-tagged-union": {
@@ -278155,7 +278155,7 @@
         "additionalProperties": false,
         "description": "Configuration for subscription resumed simulations."
       },
-      "ReportReportAdjustmentsModel": {
+      "ReportAdjustmentsModelVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Report"
@@ -278231,7 +278231,7 @@
           }
         ]
       },
-      "ReportReportTransactionsModel": {
+      "ReportTransactionsModelVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Report"
@@ -278307,7 +278307,7 @@
           }
         ]
       },
-      "ReportReportProductsPricesModel": {
+      "ReportProductsPricesModelVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Report"
@@ -278383,7 +278383,7 @@
           }
         ]
       },
-      "ReportReportDiscountsModel": {
+      "ReportDiscountsModelVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Report"
@@ -278459,7 +278459,7 @@
           }
         ]
       },
-      "ReportReportBalanceModel": {
+      "ReportBalanceModelVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Report"
@@ -278536,7 +278536,7 @@
           }
         ]
       },
-      "ReportReportPayoutReconciliationModel": {
+      "ReportPayoutReconciliationModelVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Report"
@@ -278612,7 +278612,7 @@
           }
         ]
       },
-      "ReportReportCheckoutsModel": {
+      "ReportCheckoutsModelVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Report"
@@ -278688,7 +278688,7 @@
           }
         ]
       },
-      "ReportReportSubscriptionsModel": {
+      "ReportSubscriptionsModelVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Report"
@@ -278989,7 +278989,7 @@
           }
         ]
       },
-      "SimulationSimulationStandardEventsModel": {
+      "SimulationStandardEventsModelVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Simulation"
@@ -279077,7 +279077,7 @@
           }
         ]
       },
-      "SimulationSimulationScenarioEventsModel": {
+      "SimulationScenarioEventsModelVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/Simulation"
@@ -279353,7 +279353,7 @@
           }
         ]
       },
-      "SimulationRunSimulationRunSingleEventModel": {
+      "SimulationRunSingleEventModelVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SimulationRun"
@@ -279402,7 +279402,7 @@
           }
         ]
       },
-      "SimulationRunSimulationRunScenarioModel": {
+      "SimulationRunScenarioModelVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/SimulationRun"
@@ -279451,7 +279451,7 @@
           }
         ]
       },
-      "ReportCreatedRequestDataReportCreatedRequestDataReportAdjustments": {
+      "ReportCreatedRequestDataReportAdjustmentsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportCreatedRequestData"
@@ -279546,7 +279546,7 @@
           }
         ]
       },
-      "ReportCreatedRequestDataReportCreatedRequestDataReportTransactions": {
+      "ReportCreatedRequestDataReportTransactionsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportCreatedRequestData"
@@ -279641,7 +279641,7 @@
           }
         ]
       },
-      "ReportCreatedRequestDataReportCreatedRequestDataReportProductsPrices": {
+      "ReportCreatedRequestDataReportProductsPricesVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportCreatedRequestData"
@@ -279736,7 +279736,7 @@
           }
         ]
       },
-      "ReportCreatedRequestDataReportCreatedRequestDataReportDiscounts": {
+      "ReportCreatedRequestDataReportDiscountsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportCreatedRequestData"
@@ -279831,7 +279831,7 @@
           }
         ]
       },
-      "ReportCreatedRequestDataReportCreatedRequestDataReportBalance": {
+      "ReportCreatedRequestDataReportBalanceVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportCreatedRequestData"
@@ -279927,7 +279927,7 @@
           }
         ]
       },
-      "ReportCreatedRequestDataReportCreatedRequestDataReportPayoutReconciliation": {
+      "ReportCreatedRequestDataReportPayoutReconciliationVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportCreatedRequestData"
@@ -280022,7 +280022,7 @@
           }
         ]
       },
-      "ReportCreatedRequestDataReportCreatedRequestDataReportCheckouts": {
+      "ReportCreatedRequestDataReportCheckoutsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportCreatedRequestData"
@@ -280117,7 +280117,7 @@
           }
         ]
       },
-      "ReportCreatedRequestDataReportCreatedRequestDataReportSubscriptions": {
+      "ReportCreatedRequestDataReportSubscriptionsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportCreatedRequestData"
@@ -280212,7 +280212,7 @@
           }
         ]
       },
-      "ReportUpdatedRequestDataReportUpdatedRequestDataReportAdjustments": {
+      "ReportUpdatedRequestDataReportAdjustmentsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportUpdatedRequestData"
@@ -280307,7 +280307,7 @@
           }
         ]
       },
-      "ReportUpdatedRequestDataReportUpdatedRequestDataReportTransactions": {
+      "ReportUpdatedRequestDataReportTransactionsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportUpdatedRequestData"
@@ -280402,7 +280402,7 @@
           }
         ]
       },
-      "ReportUpdatedRequestDataReportUpdatedRequestDataReportProductsPrices": {
+      "ReportUpdatedRequestDataReportProductsPricesVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportUpdatedRequestData"
@@ -280497,7 +280497,7 @@
           }
         ]
       },
-      "ReportUpdatedRequestDataReportUpdatedRequestDataReportDiscounts": {
+      "ReportUpdatedRequestDataReportDiscountsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportUpdatedRequestData"
@@ -280592,7 +280592,7 @@
           }
         ]
       },
-      "ReportUpdatedRequestDataReportUpdatedRequestDataReportBalance": {
+      "ReportUpdatedRequestDataReportBalanceVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportUpdatedRequestData"
@@ -280688,7 +280688,7 @@
           }
         ]
       },
-      "ReportUpdatedRequestDataReportUpdatedRequestDataReportPayoutReconciliation": {
+      "ReportUpdatedRequestDataReportPayoutReconciliationVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportUpdatedRequestData"
@@ -280783,7 +280783,7 @@
           }
         ]
       },
-      "ReportUpdatedRequestDataReportUpdatedRequestDataReportCheckouts": {
+      "ReportUpdatedRequestDataReportCheckoutsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportUpdatedRequestData"
@@ -280878,7 +280878,7 @@
           }
         ]
       },
-      "ReportUpdatedRequestDataReportUpdatedRequestDataReportSubscriptions": {
+      "ReportUpdatedRequestDataReportSubscriptionsVariant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/ReportUpdatedRequestData"
@@ -301491,39 +301491,39 @@
       "discriminator": {
         "propertyName": "action",
         "mapping": {
-          "subscription_activated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionActivated",
-          "subscription_address_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionAddressUpdated",
-          "subscription_billing_cycle_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionBillingCycleUpdated",
-          "subscription_billing_date_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionBillingDateUpdated",
-          "subscription_billing_details_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionBillingDetailsUpdated",
-          "subscription_business_added": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionBusinessAdded",
-          "subscription_business_removed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionBusinessRemoved",
-          "subscription_business_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionBusinessUpdated",
-          "subscription_canceled": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionCanceled",
-          "subscription_collection_mode_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionCollectionModeUpdated",
-          "subscription_consent_requirement_granted": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionConsentRequirementGranted",
-          "subscription_created": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionCreated",
-          "subscription_currency_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionCurrencyUpdated",
-          "subscription_custom_data_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionCustomDataUpdated",
-          "subscription_customer_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionCustomerUpdated",
-          "subscription_discount_added": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionDiscountAdded",
-          "subscription_discount_expired": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionDiscountExpired",
-          "subscription_discount_removed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionDiscountRemoved",
-          "subscription_item_added": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionItemAdded",
-          "subscription_item_quantity_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionItemQuantityUpdated",
-          "subscription_item_removed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionItemRemoved",
-          "subscription_one_off_charge_applied": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionOneOffChargeApplied",
-          "subscription_past_due": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionPastDue",
-          "subscription_paused": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionPaused",
-          "subscription_payment_attempted": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionPaymentAttempted",
-          "subscription_payment_method_added": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionPaymentMethodAdded",
-          "subscription_payment_method_removed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionPaymentMethodRemoved",
-          "subscription_payment_method_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionPaymentMethodUpdated",
-          "subscription_renewed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionRenewed",
-          "subscription_resumed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionResumed",
-          "subscription_scheduled_change_added": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionScheduledChangeAdded",
-          "subscription_scheduled_change_removed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionScheduledChangeRemoved",
-          "subscription_scheduled_change_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionScheduledChangeUpdated"
+          "subscription_activated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionActivatedVariant",
+          "subscription_address_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionAddressUpdatedVariant",
+          "subscription_billing_cycle_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionBillingCycleUpdatedVariant",
+          "subscription_billing_date_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionBillingDateUpdatedVariant",
+          "subscription_billing_details_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionBillingDetailsUpdatedVariant",
+          "subscription_business_added": "#/components/schemas/SubscriptionHistoryDetailSubscriptionBusinessAddedVariant",
+          "subscription_business_removed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionBusinessRemovedVariant",
+          "subscription_business_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionBusinessUpdatedVariant",
+          "subscription_canceled": "#/components/schemas/SubscriptionHistoryDetailSubscriptionCanceledVariant",
+          "subscription_collection_mode_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionCollectionModeUpdatedVariant",
+          "subscription_consent_requirement_granted": "#/components/schemas/SubscriptionHistoryDetailSubscriptionConsentRequirementGrantedVariant",
+          "subscription_created": "#/components/schemas/SubscriptionHistoryDetailSubscriptionCreatedVariant",
+          "subscription_currency_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionCurrencyUpdatedVariant",
+          "subscription_custom_data_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionCustomDataUpdatedVariant",
+          "subscription_customer_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionCustomerUpdatedVariant",
+          "subscription_discount_added": "#/components/schemas/SubscriptionHistoryDetailSubscriptionDiscountAddedVariant",
+          "subscription_discount_expired": "#/components/schemas/SubscriptionHistoryDetailSubscriptionDiscountExpiredVariant",
+          "subscription_discount_removed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionDiscountRemovedVariant",
+          "subscription_item_added": "#/components/schemas/SubscriptionHistoryDetailSubscriptionItemAddedVariant",
+          "subscription_item_quantity_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionItemQuantityUpdatedVariant",
+          "subscription_item_removed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionItemRemovedVariant",
+          "subscription_one_off_charge_applied": "#/components/schemas/SubscriptionHistoryDetailSubscriptionOneOffChargeAppliedVariant",
+          "subscription_past_due": "#/components/schemas/SubscriptionHistoryDetailSubscriptionPastDueVariant",
+          "subscription_paused": "#/components/schemas/SubscriptionHistoryDetailSubscriptionPausedVariant",
+          "subscription_payment_attempted": "#/components/schemas/SubscriptionHistoryDetailSubscriptionPaymentAttemptedVariant",
+          "subscription_payment_method_added": "#/components/schemas/SubscriptionHistoryDetailSubscriptionPaymentMethodAddedVariant",
+          "subscription_payment_method_removed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionPaymentMethodRemovedVariant",
+          "subscription_payment_method_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionPaymentMethodUpdatedVariant",
+          "subscription_renewed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionRenewedVariant",
+          "subscription_resumed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionResumedVariant",
+          "subscription_scheduled_change_added": "#/components/schemas/SubscriptionHistoryDetailSubscriptionScheduledChangeAddedVariant",
+          "subscription_scheduled_change_removed": "#/components/schemas/SubscriptionHistoryDetailSubscriptionScheduledChangeRemovedVariant",
+          "subscription_scheduled_change_updated": "#/components/schemas/SubscriptionHistoryDetailSubscriptionScheduledChangeUpdatedVariant"
         }
       },
       "x-client-original-tagged-union": {
@@ -410180,7 +410180,7 @@
         ]
       }
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionActivated": {
+    "SubscriptionHistoryDetailSubscriptionActivatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410233,7 +410233,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionAddressUpdated": {
+    "SubscriptionHistoryDetailSubscriptionAddressUpdatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410257,7 +410257,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionBillingCycleUpdated": {
+    "SubscriptionHistoryDetailSubscriptionBillingCycleUpdatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410294,7 +410294,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionBillingDateUpdated": {
+    "SubscriptionHistoryDetailSubscriptionBillingDateUpdatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410340,7 +410340,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionBillingDetailsUpdated": {
+    "SubscriptionHistoryDetailSubscriptionBillingDetailsUpdatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410364,7 +410364,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionBusinessAdded": {
+    "SubscriptionHistoryDetailSubscriptionBusinessAddedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410388,7 +410388,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionBusinessRemoved": {
+    "SubscriptionHistoryDetailSubscriptionBusinessRemovedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410412,7 +410412,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionBusinessUpdated": {
+    "SubscriptionHistoryDetailSubscriptionBusinessUpdatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410436,7 +410436,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionCanceled": {
+    "SubscriptionHistoryDetailSubscriptionCanceledVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410460,7 +410460,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionCollectionModeUpdated": {
+    "SubscriptionHistoryDetailSubscriptionCollectionModeUpdatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410484,7 +410484,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionConsentRequirementGranted": {
+    "SubscriptionHistoryDetailSubscriptionConsentRequirementGrantedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410508,7 +410508,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionCreated": {
+    "SubscriptionHistoryDetailSubscriptionCreatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410591,7 +410591,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionCurrencyUpdated": {
+    "SubscriptionHistoryDetailSubscriptionCurrencyUpdatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410615,7 +410615,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionCustomDataUpdated": {
+    "SubscriptionHistoryDetailSubscriptionCustomDataUpdatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410639,7 +410639,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionCustomerUpdated": {
+    "SubscriptionHistoryDetailSubscriptionCustomerUpdatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410663,7 +410663,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionDiscountAdded": {
+    "SubscriptionHistoryDetailSubscriptionDiscountAddedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410687,7 +410687,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionDiscountExpired": {
+    "SubscriptionHistoryDetailSubscriptionDiscountExpiredVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410711,7 +410711,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionDiscountRemoved": {
+    "SubscriptionHistoryDetailSubscriptionDiscountRemovedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410735,7 +410735,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionItemAdded": {
+    "SubscriptionHistoryDetailSubscriptionItemAddedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410785,7 +410785,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionItemQuantityUpdated": {
+    "SubscriptionHistoryDetailSubscriptionItemQuantityUpdatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410835,7 +410835,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionItemRemoved": {
+    "SubscriptionHistoryDetailSubscriptionItemRemovedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410885,7 +410885,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionOneOffChargeApplied": {
+    "SubscriptionHistoryDetailSubscriptionOneOffChargeAppliedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410930,7 +410930,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionPastDue": {
+    "SubscriptionHistoryDetailSubscriptionPastDueVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410961,7 +410961,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionPaused": {
+    "SubscriptionHistoryDetailSubscriptionPausedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -410989,7 +410989,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionPaymentAttempted": {
+    "SubscriptionHistoryDetailSubscriptionPaymentAttemptedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -411020,7 +411020,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionPaymentMethodAdded": {
+    "SubscriptionHistoryDetailSubscriptionPaymentMethodAddedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -411040,7 +411040,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionPaymentMethodRemoved": {
+    "SubscriptionHistoryDetailSubscriptionPaymentMethodRemovedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -411060,7 +411060,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionPaymentMethodUpdated": {
+    "SubscriptionHistoryDetailSubscriptionPaymentMethodUpdatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -411080,7 +411080,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionRenewed": {
+    "SubscriptionHistoryDetailSubscriptionRenewedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -411118,7 +411118,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionResumed": {
+    "SubscriptionHistoryDetailSubscriptionResumedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -411146,7 +411146,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionScheduledChangeAdded": {
+    "SubscriptionHistoryDetailSubscriptionScheduledChangeAddedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -411170,7 +411170,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionScheduledChangeRemoved": {
+    "SubscriptionHistoryDetailSubscriptionScheduledChangeRemovedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"
@@ -411194,7 +411194,7 @@
         }
       ]
     },
-    "SubscriptionHistoryDetailSubscriptionHistoryDetailSubscriptionScheduledChangeUpdated": {
+    "SubscriptionHistoryDetailSubscriptionScheduledChangeUpdatedVariant": {
       "allOf": [
         {
           "$ref": "#/components/schemas/SubscriptionHistoryDetail"

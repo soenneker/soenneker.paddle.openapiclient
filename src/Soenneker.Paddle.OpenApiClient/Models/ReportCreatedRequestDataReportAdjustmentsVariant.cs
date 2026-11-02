@@ -8,10 +8,10 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Report entity when working with checkouts reports.
+    /// Report entity when working with adjustments reports.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ReportCreatedRequestDataReportCreatedRequestDataReportCheckouts : global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestData, IParsable
+    public partial class ReportCreatedRequestDataReportAdjustmentsVariant : global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestData, IParsable
     {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -41,15 +41,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>RFC 3339 datetime string of when this report expires. The report is no longer available to download after this date.</summary>
         public DateTimeOffset? ExpiresAt { get => _explicitNullValueExpiresAt; set { _explicitNullValueExpiresAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("expires_at"); else _explicitNullProperties?.Remove("expires_at"); } }
         private DateTimeOffset? _explicitNullValueExpiresAt = default!;
-        /// <summary>Filter criteria for this report. If no `gte` filter for `checkout_created_at` is passed, reports are filtered to include checkouts created in the last month. This means `checkout_created_at` is greater than or equal to (`gte`) the same date and time one calendar month before the report was generated, so the window is between 28 and 31 days depending on the month. To filter by a specific date range, pass two `checkout_created_at` filters with `gte` and `lt` operators.</summary>
+        /// <summary>Filter criteria for this report. If no `gte` filter for `updated_at` is passed, reports are filtered to include data updated in the last month. This means `updated_at` is greater than or equal to (`gte`) the same date and time one calendar month before the report was generated, so the window is between 28 and 31 days depending on the month.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCheckoutsFiltersItem>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
-        private List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCheckoutsFiltersItem>? _explicitNullValueFilters = default!;
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItem>? Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItem>? _explicitNullValueFilters = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCheckoutsFiltersItem> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
-        private List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCheckoutsFiltersItem> _explicitNullValueFilters = default!;
+        public List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItem> Filters { get => _explicitNullValueFilters; set { _explicitNullValueFilters = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filters"); else _explicitNullProperties?.Remove("filters"); } }
+        private List<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItem> _explicitNullValueFilters = default!;
 #endif
         /// <summary>Unique Paddle ID for this report, prefixed with `rep_`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -65,20 +65,20 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         public int? Rows { get => _explicitNullValueRows; set { _explicitNullValueRows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("rows"); else _explicitNullProperties?.Remove("rows"); } }
         private int? _explicitNullValueRows = default!;
         /// <summary>Status of this report. Set automatically by Paddle.Reports are created as `pending` initially, then move to `ready` when they&apos;re available to download.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCheckoutsStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCheckoutsStatus? _explicitNullValueStatus = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsStatus? _explicitNullValueStatus = default!;
         /// <summary>RFC 3339 datetime string of when this report was last updated.</summary>
         public DateTimeOffset? UpdatedAt { get => _explicitNullValueUpdatedAt; set { _explicitNullValueUpdatedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("updated_at"); else _explicitNullProperties?.Remove("updated_at"); } }
         private DateTimeOffset? _explicitNullValueUpdatedAt = default!;
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCreatedRequestDataReportCheckouts"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCreatedRequestDataReportCheckouts CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCreatedRequestDataReportCheckouts(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsVariant(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -90,10 +90,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             {
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "expires_at", n => { ExpiresAt = n.GetDateTimeOffsetValue(); } },
-                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCheckoutsFiltersItem>(global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCheckoutsFiltersItem.CreateFromDiscriminatorValue)?.AsList(); } },
+                { "filters", n => { Filters = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItem>(global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItem.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "rows", n => { Rows = n.GetIntValue(); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCheckoutsStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -107,10 +107,10 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             base.Serialize(writer);
             writer.WriteDateTimeOffsetValue("created_at", CreatedAt);
             writer.WriteDateTimeOffsetValue("expires_at", ExpiresAt);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCheckoutsFiltersItem>("filters", Filters);
+            writer.WriteCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsFiltersItem>("filters", Filters);
             writer.WriteStringValue("id", Id);
             writer.WriteIntValue("rows", Rows);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportCheckoutsStatus>("status", Status);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ReportCreatedRequestDataReportAdjustmentsStatus>("status", Status);
             writer.WriteDateTimeOffsetValue("updated_at", UpdatedAt);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }

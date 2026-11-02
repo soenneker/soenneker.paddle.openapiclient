@@ -11,7 +11,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
     /// Entity when working with reports for transaction or transaction line items.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class ReportReportTransactionsModel : global::Soenneker.Paddle.OpenApiClient.Models.Report, IParsable
+    public partial class ReportTransactionsModelVariant : global::Soenneker.Paddle.OpenApiClient.Models.Report, IParsable
     {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -54,12 +54,12 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportReportTransactionsModel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsModelVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportTransactionsModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsModelVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportTransactionsModel(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsModelVariant(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model

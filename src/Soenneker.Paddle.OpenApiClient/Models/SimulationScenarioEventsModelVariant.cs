@@ -8,10 +8,10 @@ using System;
 namespace Soenneker.Paddle.OpenApiClient.Models
 {
     /// <summary>
-    /// Single event simulations play a single event.
+    /// Scenario simulations play all events sent for a subscription lifecycle event.
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public partial class SimulationSimulationStandardEventsModel : global::Soenneker.Paddle.OpenApiClient.Models.Simulation, IParsable
+    public partial class SimulationScenarioEventsModelVariant : global::Soenneker.Paddle.OpenApiClient.Models.Simulation, IParsable
     {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
@@ -31,15 +31,15 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             else if (parseNode.GetChildNode("status") is { } nullNodeStatus && nullNodeStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Status = null;
         }
 
-        /// <summary>Configuration for scenario simulations. `null` for single events.</summary>
+        /// <summary>Configuration for this scenario simulation. Determines which granular flow is simulated and what entities are used to populate webhook payloads with.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public UntypedNode? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
-        private UntypedNode? _explicitNullValueConfig = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelConfig? Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelConfig? _explicitNullValueConfig = default!;
 #nullable restore
 #else
-        public UntypedNode Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
-        private UntypedNode _explicitNullValueConfig = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelConfig Config { get => _explicitNullValueConfig; set { _explicitNullValueConfig = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("config"); else _explicitNullProperties?.Remove("config"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelConfig _explicitNullValueConfig = default!;
 #endif
         /// <summary>RFC 3339 datetime string of when this entity was created. Set automatically by Paddle.</summary>
         public DateTimeOffset? CreatedAt { get; private set; }
@@ -72,7 +72,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
 #else
         public string NotificationSettingId { get; private set; }
 #endif
-        /// <summary>Simulation payload.</summary>
+        /// <summary>Simulation payload. `null` for scenarios.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public UntypedNode? Payload { get => _explicitNullValuePayload; set { _explicitNullValuePayload = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("payload"); else _explicitNullProperties?.Remove("payload"); } }
@@ -83,19 +83,19 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         private UntypedNode _explicitNullValuePayload = default!;
 #endif
         /// <summary>Whether this entity can be used in Paddle.</summary>
-        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
-        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelStatus? _explicitNullValueStatus = default!;
+        public global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelStatus? Status { get => _explicitNullValueStatus; set { _explicitNullValueStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status"); else _explicitNullProperties?.Remove("status"); } }
+        private global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelStatus? _explicitNullValueStatus = default!;
         /// <summary>RFC 3339 datetime string of when this entity was updated. Set automatically by Paddle.</summary>
         public DateTimeOffset? UpdatedAt { get; private set; }
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationSimulationStandardEventsModel"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelVariant"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static new global::Soenneker.Paddle.OpenApiClient.Models.SimulationSimulationStandardEventsModel CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelVariant CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SimulationSimulationStandardEventsModel(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelVariant(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -105,14 +105,14 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "config", n => { Config = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
+                { "config", n => { Config = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelConfig>(global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelConfig.CreateFromDiscriminatorValue); } },
                 { "created_at", n => { CreatedAt = n.GetDateTimeOffsetValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "last_run_at", n => { LastRunAt = n.GetDateTimeOffsetValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "notification_setting_id", n => { NotificationSettingId = n.GetStringValue(); } },
                 { "payload", n => { Payload = n.GetObjectValue<UntypedNode>(UntypedNode.CreateFromDiscriminatorValue); } },
-                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelStatus>(); } },
+                { "status", n => { Status = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelStatus>(); } },
                 { "updated_at", n => { UpdatedAt = n.GetDateTimeOffsetValue(); } },
             };
         }
@@ -124,11 +124,11 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteObjectValue<UntypedNode>("config", Config);
+            writer.WriteObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelConfig>("config", Config);
             writer.WriteDateTimeOffsetValue("last_run_at", LastRunAt);
             writer.WriteStringValue("name", Name);
             writer.WriteObjectValue<UntypedNode>("payload", Payload);
-            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationStandardEventsModelStatus>("status", Status);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            writer.WriteEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SimulationScenarioEventsModelStatus>("status", Status);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             
         }
     }

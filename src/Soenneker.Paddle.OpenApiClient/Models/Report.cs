@@ -52,16 +52,16 @@ namespace Soenneker.Paddle.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "adjustments" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportAdjustmentsModel(),
-                "adjustment_line_items" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportAdjustmentsModel(),
-                "balance" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportBalanceModel(),
-                "checkouts" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportCheckoutsModel(),
-                "discounts" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportDiscountsModel(),
-                "payout_reconciliation" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportPayoutReconciliationModel(),
-                "products_prices" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportProductsPricesModel(),
-                "subscriptions" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportSubscriptionsModel(),
-                "transactions" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportTransactionsModel(),
-                "transaction_line_items" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportReportTransactionsModel(),
+                "adjustments" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsModelVariant(),
+                "adjustment_line_items" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportAdjustmentsModelVariant(),
+                "balance" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportBalanceModelVariant(),
+                "checkouts" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportCheckoutsModelVariant(),
+                "discounts" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportDiscountsModelVariant(),
+                "payout_reconciliation" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportPayoutReconciliationModelVariant(),
+                "products_prices" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportProductsPricesModelVariant(),
+                "subscriptions" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportSubscriptionsModelVariant(),
+                "transactions" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsModelVariant(),
+                "transaction_line_items" => new global::Soenneker.Paddle.OpenApiClient.Models.ReportTransactionsModelVariant(),
                 _ => new global::Soenneker.Paddle.OpenApiClient.Models.Report(),
             };
         }
