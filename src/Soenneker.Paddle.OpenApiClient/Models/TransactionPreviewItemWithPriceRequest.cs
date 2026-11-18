@@ -76,7 +76,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "include_in_totals", n => { IncludeInTotals = n.GetBoolValue(); } },
                 { "price", n => { Price = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceRequestPrice>(global::Soenneker.Paddle.OpenApiClient.Models.TransactionPreviewItemWithPriceRequestPrice.CreateFromDiscriminatorValue); } },

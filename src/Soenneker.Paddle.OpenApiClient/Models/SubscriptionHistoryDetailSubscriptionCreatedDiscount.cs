@@ -74,7 +74,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "discount", n => { Discount = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountDiscount>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDiscountDiscount.CreateFromDiscriminatorValue); } },
                 { "ends_at", n => { EndsAt = n.GetDateTimeOffsetValue(); } },

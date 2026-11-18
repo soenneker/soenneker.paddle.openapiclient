@@ -91,7 +91,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "actor", n => { Actor = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryActor>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryActor.CreateFromDiscriminatorValue); } },
                 { "detail", n => { Detail = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailComposed>(global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailComposed.CreateFromDiscriminatorValue); } },

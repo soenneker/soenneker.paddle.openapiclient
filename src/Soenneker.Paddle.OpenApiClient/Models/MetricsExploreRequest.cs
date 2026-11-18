@@ -133,7 +133,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(9)
             {
                 { "dimensions", n => { Dimensions = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "entity", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.MetricsExploreRequestEntity>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueEntity = default; _explicitNullProperties?.Remove("entity"); AdditionalData["entity"] = unknown; } else { Entity = parsed; AdditionalData.Remove("entity"); } } },

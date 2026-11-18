@@ -101,7 +101,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "action", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionItemAddedAction>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAction = default; _explicitNullProperties?.Remove("action"); AdditionalData["action"] = unknown; } else { Action = parsed; AdditionalData.Remove("action"); } } },
                 { "on_payment_failure", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.SubscriptionHistoryDetailSubscriptionItemAddedOnPaymentFailure>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueOnPaymentFailure = default; _explicitNullProperties?.Remove("on_payment_failure"); AdditionalData["on_payment_failure"] = unknown; } else { OnPaymentFailure = parsed; AdditionalData.Remove("on_payment_failure"); } } },

@@ -113,7 +113,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(8)
             {
                 { "action_taken", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.ApiKeyExposureCreatedRequestDataActionTaken>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueActionTaken = default; _explicitNullProperties?.Remove("action_taken"); AdditionalData["action_taken"] = unknown; } else { ActionTaken = parsed; AdditionalData.Remove("action_taken"); } } },
                 { "api_key_id", n => { ApiKeyId = n.GetStringValue(); } },

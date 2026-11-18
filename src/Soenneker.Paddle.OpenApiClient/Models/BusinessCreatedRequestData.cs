@@ -156,7 +156,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(11)
             {
                 { "company_number", n => { CompanyNumber = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreatedRequestDataCompanyNumber>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreatedRequestDataCompanyNumber.CreateFromDiscriminatorValue); } },
                 { "contacts", n => { Contacts = n.GetCollectionOfObjectValues<global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreatedRequestDataContactsItem>(global::Soenneker.Paddle.OpenApiClient.Models.BusinessCreatedRequestDataContactsItem.CreateFromDiscriminatorValue)?.AsList(); } },

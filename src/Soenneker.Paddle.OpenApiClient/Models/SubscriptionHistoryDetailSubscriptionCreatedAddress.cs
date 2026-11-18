@@ -173,7 +173,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "city", n => { City = n.GetStringValue(); } },
                 { "country_code", n => { var parsed = n.GetEnumValue<global::Soenneker.Paddle.OpenApiClient.Models.AddressCountryCode>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueCountryCode = default; _explicitNullProperties?.Remove("country_code"); AdditionalData["country_code"] = unknown; } else { CountryCode = parsed; AdditionalData.Remove("country_code"); } } },

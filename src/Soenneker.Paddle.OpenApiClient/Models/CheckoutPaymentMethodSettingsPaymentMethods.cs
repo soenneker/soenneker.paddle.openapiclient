@@ -249,7 +249,7 @@ namespace Soenneker.Paddle.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(17)
             {
                 { "alipay", n => { Alipay = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsAlipay>(global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsAlipay.CreateFromDiscriminatorValue); } },
                 { "apple_pay", n => { ApplePay = n.GetObjectValue<global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsApplePay>(global::Soenneker.Paddle.OpenApiClient.Models.CheckoutPaymentMethodsApplePay.CreateFromDiscriminatorValue); } },
